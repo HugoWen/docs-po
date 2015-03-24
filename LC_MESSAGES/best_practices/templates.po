@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/templates.rst:2
 msgid "Templates"
-msgstr ""
+msgstr "模板"
 
 #: ../../best_practices/templates.rst:4
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 #: ../../best_practices/templates.rst:0 ../../best_practices/templates.rst:0
 #: ../../best_practices/templates.rst:0 ../../best_practices/templates.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/templates.rst:10
 msgid "Use Twig templating format for your templates."
@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../best_practices/templates.rst:26
 msgid "Template Locations"
-msgstr ""
+msgstr "模板文件的位置"
 
 #: ../../best_practices/templates.rst:30
 msgid ""
@@ -134,7 +134,7 @@ msgstr ""
 
 #: ../../best_practices/templates.rst:59
 msgid "Twig Extensions"
-msgstr ""
+msgstr "Twig扩展"
 
 #: ../../best_practices/templates.rst:63
 msgid ""

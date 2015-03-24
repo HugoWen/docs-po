@@ -35,7 +35,7 @@ msgstr ""
 #: ../../best_practices/controllers.rst:0
 #: ../../best_practices/controllers.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/controllers.rst:16
 msgid ""
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../../best_practices/controllers.rst:37
 msgid "Routing Configuration"
-msgstr ""
+msgstr "Route规则定义"
 
 #: ../../best_practices/controllers.rst:39
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../best_practices/controllers.rst:72
 msgid "Template Configuration"
-msgstr ""
+msgstr "指定模板"
 
 #: ../../best_practices/controllers.rst:76
 msgid ""
@@ -128,7 +128,7 @@ msgstr ""
 
 #: ../../best_practices/controllers.rst:121
 msgid "Using the ParamConverter"
-msgstr ""
+msgstr "运用ParamConverter"
 
 #: ../../best_practices/controllers.rst:123
 msgid ""

@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:2
 msgid "Creating the Project"
-msgstr ""
+msgstr "创建项目"
 
 #: ../../best_practices/creating-the-project.rst:5
 msgid "Installing Symfony"
-msgstr ""
+msgstr "安装Symfony"
 
 #: ../../best_practices/creating-the-project.rst:7
 msgid ""
@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:12
 msgid "Linux and Mac OS X Systems"
-msgstr ""
+msgstr "Linux和Mac OS X系统"
 
 #: ../../best_practices/creating-the-project.rst:14
 #: ../../best_practices/creating-the-project.rst:28
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:26
 msgid "Windows Systems"
-msgstr ""
+msgstr "Windows系统"
 
 #: ../../best_practices/creating-the-project.rst:34
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:42
 msgid "Creating the Blog Application"
-msgstr ""
+msgstr "创建博客应用"
 
 #: ../../best_practices/creating-the-project.rst:44
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:72
 msgid "Structuring the Application"
-msgstr ""
+msgstr "代码目录结构"
 
 #: ../../best_practices/creating-the-project.rst:74
 msgid ""
@@ -138,7 +138,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:108
 msgid "Application Bundles"
-msgstr ""
+msgstr "项目bundle"
 
 #: ../../best_practices/creating-the-project.rst:110
 msgid ""
@@ -158,7 +158,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/creating-the-project.rst:122
 msgid "Create only one bundle called AppBundle for your application logic"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../../best_practices/creating-the-project.rst:163
 msgid "Extending the Directory Structure"
-msgstr ""
+msgstr "修改默认的目录结构"
 
 #: ../../best_practices/creating-the-project.rst:165
 msgid ""

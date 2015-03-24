@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:2
 msgid "Forms"
-msgstr ""
+msgstr "表单"
 
 #: ../../best_practices/forms.rst:4
 msgid ""
@@ -24,12 +24,12 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:9
 msgid "Building Forms"
-msgstr ""
+msgstr "定义Forms"
 
 #: ../../best_practices/forms.rst:0 ../../best_practices/forms.rst:0
 #: ../../best_practices/forms.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/forms.rst:13
 msgid "Define your forms as PHP classes."
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:66
 msgid "Registering Forms as Services"
-msgstr ""
+msgstr "把表单注册为Services"
 
 #: ../../best_practices/forms.rst:68
 msgid ""
@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:79
 msgid "Form Button Configuration"
-msgstr ""
+msgstr "表单按钮的配置"
 
 #: ../../best_practices/forms.rst:81
 msgid ""
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:150
 msgid "Rendering the Form"
-msgstr ""
+msgstr "输出表单HTML"
 
 #: ../../best_practices/forms.rst:152
 msgid ""
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../best_practices/forms.rst:173
 msgid "Handling Form Submits"
-msgstr ""
+msgstr "处理表单提交"
 
 #: ../../best_practices/forms.rst:175
 msgid "Handling a form submit usually follows a similar template:"

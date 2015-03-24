@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../best_practices/security.rst:2
 msgid "Security"
-msgstr ""
+msgstr "安全"
 
 #: ../../best_practices/security.rst:5
 msgid "Authentication and Firewalls (i.e. Getting the User's Credentials)"
-msgstr ""
+msgstr "身份校验与“防火墙”"
 
 #: ../../best_practices/security.rst:7
 msgid ""
@@ -36,7 +36,7 @@ msgstr ""
 #: ../../best_practices/security.rst:0 ../../best_practices/security.rst:0
 #: ../../best_practices/security.rst:0 ../../best_practices/security.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/security.rst:17
 msgid ""
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../best_practices/security.rst:74
 msgid "Authorization (i.e. Denying Access)"
-msgstr ""
+msgstr "权限"
 
 #: ../../best_practices/security.rst:76
 msgid ""
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../best_practices/security.rst:101
 msgid "The @Security Annotation"
-msgstr ""
+msgstr "@Security注解"
 
 #: ../../best_practices/security.rst:103
 msgid ""
@@ -148,7 +148,7 @@ msgstr ""
 
 #: ../../best_practices/security.rst:128
 msgid "Using Expressions for Complex Security Restrictions"
-msgstr ""
+msgstr "使用表达式来实现复杂的访问控制"
 
 #: ../../best_practices/security.rst:130
 msgid ""
@@ -188,7 +188,7 @@ msgstr ""
 
 #: ../../best_practices/security.rst:215
 msgid "Checking Permissions without @Security"
-msgstr ""
+msgstr "不使用@Security注解来检查权限"
 
 #: ../../best_practices/security.rst:217
 msgid ""
@@ -233,7 +233,7 @@ msgstr ""
 
 #: ../../best_practices/security.rst:343
 msgid "Learn More"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../best_practices/security.rst:345
 msgid ""

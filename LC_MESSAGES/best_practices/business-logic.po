@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:2
 msgid "Organizing Your Business Logic"
-msgstr ""
+msgstr "业务逻辑代码的组织"
 
 #: ../../best_practices/business-logic.rst:4
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:28
 msgid "Storing Classes Outside of the Bundle?"
-msgstr ""
+msgstr "所有文件一定要放在Bundle里吗？"
 
 #: ../../best_practices/business-logic.rst:30
 msgid ""
@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:53
 msgid "Services: Naming and Format"
-msgstr ""
+msgstr "服务的命名与定义"
 
 #: ../../best_practices/business-logic.rst:55
 msgid ""
@@ -89,7 +89,7 @@ msgstr ""
 #: ../../best_practices/business-logic.rst:0
 #: ../../best_practices/business-logic.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/business-logic.rst:94
 msgid ""
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:116
 msgid "Service Format: YAML"
-msgstr ""
+msgstr "推荐的服务定义格式：YAML"
 
 #: ../../best_practices/business-logic.rst:118
 msgid "In the previous section, YAML was used to define the service."
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:133
 msgid "Service: No Class Parameter"
-msgstr ""
+msgstr "不必把服务的类名注册为参数"
 
 #: ../../best_practices/business-logic.rst:135
 msgid ""
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:163
 msgid "Using a Persistence Layer"
-msgstr ""
+msgstr "持久层"
 
 #: ../../best_practices/business-logic.rst:165
 msgid ""
@@ -193,7 +193,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:194
 msgid "Doctrine Mapping Information"
-msgstr ""
+msgstr "Doctrine的映射配置"
 
 #: ../../best_practices/business-logic.rst:196
 msgid ""
@@ -222,7 +222,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:277
 msgid "Data Fixtures"
-msgstr ""
+msgstr "测试数据"
 
 #: ../../best_practices/business-logic.rst:279
 msgid ""
@@ -251,7 +251,7 @@ msgstr ""
 
 #: ../../best_practices/business-logic.rst:328
 msgid "Coding Standards"
-msgstr ""
+msgstr "代码规范"
 
 #: ../../best_practices/business-logic.rst:330
 msgid ""
