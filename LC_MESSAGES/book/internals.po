@@ -1,0 +1,843 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/internals.rst:5 ../../book/internals.rst:1
+#: ../../book/internals.rst:77 ../../book/internals.rst:93
+#: ../../book/internals.rst:143 ../../book/internals.rst:189
+msgid "Internals"
+msgstr ""
+
+#: ../../book/internals.rst:7
+msgid ""
+"Looks like you want to understand how Symfony works and how to extend it. "
+"That makes me very happy! This section is an in-depth explanation of the "
+"Symfony internals."
+msgstr ""
+
+#: ../../book/internals.rst:13
+msgid ""
+"You only need to read this section if you want to understand how Symfony "
+"works behind the scenes, or if you want to extend Symfony."
+msgstr ""
+
+#: ../../book/internals.rst:17
+msgid "Overview"
+msgstr ""
+
+#: ../../book/internals.rst:19
+msgid ""
+"The Symfony code is made of several independent layers. Each layer is built "
+"on top of the previous one."
+msgstr ""
+
+#: ../../book/internals.rst:24
+msgid ""
+"Autoloading is not managed by the framework directly; it's done by using "
+"Composer's autoloader (``vendor/autoload.php``), which is included in the "
+"``app/autoload.php`` file."
+msgstr ""
+
+#: ../../book/internals.rst:29
+msgid "HttpFoundation Component"
+msgstr ""
+
+#: ../../book/internals.rst:31
+msgid ""
+"The deepest level is the :namespace:`Symfony\\\\Component\\\\HttpFoundation`"
+" component. HttpFoundation provides the main objects needed to deal with "
+"HTTP. It is an object-oriented abstraction of some native PHP functions and "
+"variables:"
+msgstr ""
+
+#: ../../book/internals.rst:36
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` class "
+"abstracts the main PHP global variables like ``$_GET``, ``$_POST``, "
+"``$_COOKIE``, ``$_FILES``, and ``$_SERVER``;"
+msgstr ""
+
+#: ../../book/internals.rst:40
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` class "
+"abstracts some PHP functions like ``header()``, ``setcookie()``, and "
+"``echo``;"
+msgstr ""
+
+#: ../../book/internals.rst:43
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session` class and "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\SessionStorage\\\\SessionStorageInterface`"
+" interface abstract session management ``session_*()`` functions."
+msgstr ""
+
+#: ../../book/internals.rst:49
+msgid ""
+"Read more about the :doc:`HttpFoundation component "
+"</components/http_foundation/introduction>`."
+msgstr ""
+
+#: ../../book/internals.rst:52
+msgid "HttpKernel Component"
+msgstr ""
+
+#: ../../book/internals.rst:54
+msgid ""
+"On top of HttpFoundation is the "
+":namespace:`Symfony\\\\Component\\\\HttpKernel` component. HttpKernel "
+"handles the dynamic part of HTTP; it is a thin wrapper on top of the Request"
+" and Response classes to standardize the way requests are handled. It also "
+"provides extension points and tools that makes it the ideal starting point "
+"to create a Web framework without too much overhead."
+msgstr ""
+
+#: ../../book/internals.rst:60
+msgid ""
+"It also optionally adds configurability and extensibility, thanks to the "
+"DependencyInjection component and a powerful plugin system (bundles)."
+msgstr ""
+
+#: ../../book/internals.rst:65
+msgid ""
+"Read more about the :doc:`HttpKernel component "
+"</components/http_kernel/introduction>`, :doc:`Dependency Injection "
+"</book/service_container>` and :doc:`Bundles "
+"</cookbook/bundles/best_practices>`."
+msgstr ""
+
+#: ../../book/internals.rst:70
+msgid "FrameworkBundle"
+msgstr ""
+
+#: ../../book/internals.rst:72
+msgid ""
+"The :namespace:`Symfony\\\\Bundle\\\\FrameworkBundle` bundle is the bundle "
+"that ties the main components and libraries together to make a lightweight "
+"and fast MVC framework. It comes with a sensible default configuration and "
+"conventions to ease the learning curve."
+msgstr ""
+
+#: ../../book/internals.rst:81 ../../book/internals.rst:77
+#: ../../book/internals.rst:205
+msgid "Kernel"
+msgstr ""
+
+#: ../../book/internals.rst:83
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernel` class is the "
+"central class of Symfony and is responsible for handling client requests. "
+"Its main goal is to \"convert\" a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` object to a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` object."
+msgstr ""
+
+#: ../../book/internals.rst:88
+msgid ""
+"Every Symfony Kernel implements "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernelInterface`::"
+msgstr ""
+
+#: ../../book/internals.rst:97
+msgid "Controllers"
+msgstr ""
+
+#: ../../book/internals.rst:99
+msgid ""
+"To convert a Request to a Response, the Kernel relies on a \"Controller\". A"
+" Controller can be any valid PHP callable."
+msgstr ""
+
+#: ../../book/internals.rst:102
+msgid ""
+"The Kernel delegates the selection of what Controller should be executed to "
+"an implementation of "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Controller\\\\ControllerResolverInterface`::"
+msgstr ""
+
+#: ../../book/internals.rst:110
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Controller\\\\ControllerResolverInterface::getController`"
+" method returns the Controller (a PHP callable) associated with the given "
+"Request. The default implementation "
+"(:class:`Symfony\\\\Component\\\\HttpKernel\\\\Controller\\\\ControllerResolver`)"
+" looks for a ``_controller`` request attribute that represents the "
+"controller name (a \"class::method\" string, like "
+"``Bundle\\BlogBundle\\PostController:indexAction``)."
+msgstr ""
+
+#: ../../book/internals.rst:120
+msgid ""
+"The default implementation uses the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\EventListener\\\\RouterListener`"
+" to define the ``_controller`` Request attribute (see :ref:`kernel-core-"
+"request`)."
+msgstr ""
+
+#: ../../book/internals.rst:124
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Controller\\\\ControllerResolverInterface::getArguments`"
+" method returns an array of arguments to pass to the Controller callable. "
+"The default implementation automatically resolves the method arguments, "
+"based on the Request attributes."
+msgstr ""
+
+#: ../../book/internals.rst:0
+msgid "Matching Controller Method Arguments from Request Attributes"
+msgstr ""
+
+#: ../../book/internals.rst:132
+msgid ""
+"For each method argument, Symfony tries to get the value of a Request "
+"attribute with the same name. If it is not defined, the argument default "
+"value is used if defined::"
+msgstr ""
+
+#: ../../book/internals.rst:147
+msgid "Handling Requests"
+msgstr ""
+
+#: ../../book/internals.rst:149
+msgid ""
+"The :method:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernel::handle` "
+"method takes a ``Request`` and *always* returns a ``Response``. To convert "
+"the ``Request``, ``handle()`` relies on the Resolver and an ordered chain of"
+" Event notifications (see the next section for more information about each "
+"Event):"
+msgstr ""
+
+#: ../../book/internals.rst:155
+msgid ""
+"Before doing anything else, the ``kernel.request`` event is notified -- if "
+"one of the listeners returns a ``Response``, it jumps to step 8 directly;"
+msgstr ""
+
+#: ../../book/internals.rst:158
+msgid "The Resolver is called to determine the Controller to execute;"
+msgstr ""
+
+#: ../../book/internals.rst:160
+msgid ""
+"Listeners of the ``kernel.controller`` event can now manipulate the "
+"Controller callable the way they want (change it, wrap it, ...);"
+msgstr ""
+
+#: ../../book/internals.rst:163
+msgid ""
+"The Kernel checks that the Controller is actually a valid PHP callable;"
+msgstr ""
+
+#: ../../book/internals.rst:165
+msgid ""
+"The Resolver is called to determine the arguments to pass to the Controller;"
+msgstr ""
+
+#: ../../book/internals.rst:167
+msgid "The Kernel calls the Controller;"
+msgstr ""
+
+#: ../../book/internals.rst:169
+msgid ""
+"If the Controller does not return a ``Response``, listeners of the "
+"``kernel.view`` event can convert the Controller return value to a "
+"``Response``;"
+msgstr ""
+
+#: ../../book/internals.rst:172
+msgid ""
+"Listeners of the ``kernel.response`` event can manipulate the ``Response`` "
+"(content and headers);"
+msgstr ""
+
+#: ../../book/internals.rst:175
+msgid "The Response is returned;"
+msgstr ""
+
+#: ../../book/internals.rst:177
+msgid ""
+"Listeners of the ``kernel.terminate`` event can perform tasks after the "
+"Response has been served."
+msgstr ""
+
+#: ../../book/internals.rst:180
+msgid ""
+"If an Exception is thrown during processing, the ``kernel.exception`` is "
+"notified and listeners are given a chance to convert the Exception to a "
+"Response. If that works, the ``kernel.response`` event is notified; if not, "
+"the Exception is re-thrown."
+msgstr ""
+
+#: ../../book/internals.rst:185
+msgid ""
+"If you don't want Exceptions to be caught (for embedded requests for "
+"instance), disable the ``kernel.exception`` event by passing ``false`` as "
+"the third argument to the ``handle()`` method."
+msgstr ""
+
+#: ../../book/internals.rst:193
+msgid "Internal Requests"
+msgstr ""
+
+#: ../../book/internals.rst:195
+msgid ""
+"At any time during the handling of a request (the 'master' one), a sub-"
+"request can be handled. You can pass the request type to the ``handle()`` "
+"method (its second argument):"
+msgstr ""
+
+#: ../../book/internals.rst:199
+msgid "``HttpKernelInterface::MASTER_REQUEST``;"
+msgstr ""
+
+#: ../../book/internals.rst:200
+msgid "``HttpKernelInterface::SUB_REQUEST``."
+msgstr ""
+
+#: ../../book/internals.rst:202
+msgid ""
+"The type is passed to all events and listeners can act accordingly (some "
+"processing must only occur on the master request)."
+msgstr ""
+
+#: ../../book/internals.rst:209
+msgid "Events"
+msgstr ""
+
+#: ../../book/internals.rst:211
+msgid ""
+"Each event thrown by the Kernel is a subclass of "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent`. This "
+"means that each event has access to the same basic information:"
+msgstr ""
+
+#: ../../book/internals.rst:217
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getRequestType`"
+msgstr ""
+
+#: ../../book/internals.rst:216
+msgid ""
+"Returns the *type* of the request (``HttpKernelInterface::MASTER_REQUEST`` "
+"or ``HttpKernelInterface::SUB_REQUEST``)."
+msgstr ""
+
+#: ../../book/internals.rst:220
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::isMasterRequest`"
+msgstr ""
+
+#: ../../book/internals.rst:220
+msgid "Checks if it is a master request."
+msgstr ""
+
+#: ../../book/internals.rst:223
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getKernel`"
+msgstr ""
+
+#: ../../book/internals.rst:223
+msgid "Returns the Kernel handling the request."
+msgstr ""
+
+#: ../../book/internals.rst:226
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getRequest`"
+msgstr ""
+
+#: ../../book/internals.rst:226
+msgid "Returns the current ``Request`` being handled."
+msgstr ""
+
+#: ../../book/internals.rst:229
+msgid "``isMasterRequest()``"
+msgstr ""
+
+#: ../../book/internals.rst:231
+msgid ""
+"The ``isMasterRequest()`` method allows listeners to check the type of the "
+"request. For instance, if a listener must only be active for master "
+"requests, add the following code at the beginning of your listener method::"
+msgstr ""
+
+#: ../../book/internals.rst:244
+msgid ""
+"If you are not yet familiar with the Symfony EventDispatcher, read the "
+":doc:`EventDispatcher component documentation "
+"</components/event_dispatcher/introduction>` section first."
+msgstr ""
+
+#: ../../book/internals.rst:254
+msgid "``kernel.request`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:256
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:258
+msgid ""
+"The goal of this event is to either return a ``Response`` object immediately"
+" or setup variables so that a Controller can be called after the event. Any "
+"listener can return a ``Response`` object via the ``setResponse()`` method "
+"on the event. In this case, all other listeners won't be called."
+msgstr ""
+
+#: ../../book/internals.rst:263
+msgid ""
+"This event is used by the FrameworkBundle to populate the ``_controller`` "
+"``Request`` attribute, via the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\EventListener\\\\RouterListener`."
+" RequestListener uses a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouterInterface` object to match "
+"the ``Request`` and determine the Controller name (stored in the "
+"``_controller`` ``Request`` attribute)."
+msgstr ""
+
+#: ../../book/internals.rst:272
+msgid ""
+"Read more on the :ref:`kernel.request event <component-http-kernel-kernel-"
+"request>`."
+msgstr ""
+
+#: ../../book/internals.rst:278
+msgid "``kernel.controller`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:280
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterControllerEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:282
+msgid ""
+"This event is not used by the FrameworkBundle, but can be an entry point "
+"used to modify the controller that should be executed::"
+msgstr ""
+
+#: ../../book/internals.rst:298
+msgid ""
+"Read more on the :ref:`kernel.controller event <component-http-kernel-"
+"kernel-controller>`."
+msgstr ""
+
+#: ../../book/internals.rst:304
+msgid "``kernel.view`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:306
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseForControllerResultEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:308
+msgid ""
+"This event is not used by the FrameworkBundle, but it can be used to "
+"implement a view sub-system. This event is called *only* if the Controller "
+"does *not* return a ``Response`` object. The purpose of the event is to "
+"allow some other return value to be converted into a ``Response``."
+msgstr ""
+
+#: ../../book/internals.rst:313
+msgid ""
+"The value returned by the Controller is accessible via the "
+"``getControllerResult`` method::"
+msgstr ""
+
+#: ../../book/internals.rst:331
+msgid ""
+"Read more on the :ref:`kernel.view event <component-http-kernel-kernel-"
+"view>`."
+msgstr ""
+
+#: ../../book/internals.rst:337
+msgid "``kernel.response`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:339
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:341
+msgid ""
+"The purpose of this event is to allow other systems to modify or replace the"
+" ``Response`` object after its creation::"
+msgstr ""
+
+#: ../../book/internals.rst:351
+msgid "The FrameworkBundle registers several listeners:"
+msgstr ""
+
+#: ../../book/internals.rst:354
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ProfilerListener`"
+msgstr ""
+
+#: ../../book/internals.rst:354
+msgid "Collects data for the current request."
+msgstr ""
+
+#: ../../book/internals.rst:357
+msgid ""
+":class:`Symfony\\\\Bundle\\\\WebProfilerBundle\\\\EventListener\\\\WebDebugToolbarListener`"
+msgstr ""
+
+#: ../../book/internals.rst:357
+msgid "Injects the Web Debug Toolbar."
+msgstr ""
+
+#: ../../book/internals.rst:360
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ResponseListener`"
+msgstr ""
+
+#: ../../book/internals.rst:360
+msgid "Fixes the Response ``Content-Type`` based on the request format."
+msgstr ""
+
+#: ../../book/internals.rst:364
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\EsiListener`"
+msgstr ""
+
+#: ../../book/internals.rst:363
+msgid ""
+"Adds a ``Surrogate-Control`` HTTP header when the Response needs to be "
+"parsed for ESI tags."
+msgstr ""
+
+#: ../../book/internals.rst:368
+msgid ""
+"Read more on the :ref:`kernel.response event <component-http-kernel-kernel-"
+"response>`."
+msgstr ""
+
+#: ../../book/internals.rst:374
+msgid "``kernel.finish_request`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:376
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FinishRequestEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:378
+msgid ""
+"The purpose of this event is to handle tasks that should be performed after "
+"the request has been handled but that do not need to modify the response. "
+"Event listeners for the ``kernel.finish_request`` event are called in both "
+"successful and exception cases."
+msgstr ""
+
+#: ../../book/internals.rst:387
+msgid "``kernel.terminate`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:389
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\PostResponseEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:391
+msgid ""
+"The purpose of this event is to perform \"heavier\" tasks after the response"
+" was already served to the client."
+msgstr ""
+
+#: ../../book/internals.rst:396
+msgid ""
+"Read more on the :ref:`kernel.terminate event <component-http-kernel-kernel-"
+"terminate>`."
+msgstr ""
+
+#: ../../book/internals.rst:404
+msgid "``kernel.exception`` Event"
+msgstr ""
+
+#: ../../book/internals.rst:406
+msgid ""
+"*Event Class*: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseForExceptionEvent`"
+msgstr ""
+
+#: ../../book/internals.rst:408
+msgid ""
+"The FrameworkBundle registers an "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ExceptionListener`"
+" that forwards the ``Request`` to a given Controller (the value of the "
+"``exception_listener.controller`` parameter -- must be in the "
+"``class::method`` notation)."
+msgstr ""
+
+#: ../../book/internals.rst:414
+msgid ""
+"A listener on this event can create and set a ``Response`` object, create "
+"and set a new ``Exception`` object, or do nothing::"
+msgstr ""
+
+#: ../../book/internals.rst:434
+msgid ""
+"As Symfony ensures that the Response status code is set to the most "
+"appropriate one depending on the exception, setting the status on the "
+"response won't work. If you want to overwrite the status code (which you "
+"should not without a good reason), set the ``X-Status-Code`` header::"
+msgstr ""
+
+#: ../../book/internals.rst:445
+msgid "Support for HTTP status code constants was introduced in Symfony 2.4."
+msgstr ""
+
+#: ../../book/internals.rst:450
+msgid ""
+"Read more on the :ref:`kernel.exception event <component-http-kernel-kernel-"
+"exception>`."
+msgstr ""
+
+#: ../../book/internals.rst:456
+msgid "The EventDispatcher"
+msgstr ""
+
+#: ../../book/internals.rst:458
+msgid ""
+"The EventDispatcher is a standalone component that is responsible for much "
+"of the underlying logic and flow behind a Symfony request. For more "
+"information, see the :doc:`EventDispatcher component documentation "
+"</components/event_dispatcher/introduction>`."
+msgstr ""
+
+#: ../../book/internals.rst:468 ../../book/internals.rst:462
+#: ../../book/internals.rst:489 ../../book/internals.rst:519
+#: ../../book/internals.rst:569
+msgid "Profiler"
+msgstr ""
+
+#: ../../book/internals.rst:470
+msgid ""
+"When enabled, the Symfony profiler collects useful information about each "
+"request made to your application and store them for later analysis. Use the "
+"profiler in the development environment to help you to debug your code and "
+"enhance performance; use it in the production environment to explore "
+"problems after the fact."
+msgstr ""
+
+#: ../../book/internals.rst:476
+msgid ""
+"You rarely have to deal with the profiler directly as Symfony provides "
+"visualizer tools like the Web Debug Toolbar and the Web Profiler. If you use"
+" the Symfony Standard Edition, the profiler, the web debug toolbar, and the "
+"web profiler are all already configured with sensible settings."
+msgstr ""
+
+#: ../../book/internals.rst:483
+msgid ""
+"The profiler collects information for all requests (simple requests, "
+"redirects, exceptions, Ajax requests, ESI requests; and for all HTTP methods"
+" and all formats). It means that for a single URL, you can have several "
+"associated profiling data (one per external request/response pair)."
+msgstr ""
+
+#: ../../book/internals.rst:493
+msgid "Visualizing Profiling Data"
+msgstr ""
+
+#: ../../book/internals.rst:496
+msgid "Using the Web Debug Toolbar"
+msgstr ""
+
+#: ../../book/internals.rst:498
+msgid ""
+"In the development environment, the web debug toolbar is available at the "
+"bottom of all pages. It displays a good summary of the profiling data that "
+"gives you instant access to a lot of useful information when something does "
+"not work as expected."
+msgstr ""
+
+#: ../../book/internals.rst:503
+msgid ""
+"If the summary provided by the Web Debug Toolbar is not enough, click on the"
+" token link (a string made of 13 random characters) to access the Web "
+"Profiler."
+msgstr ""
+
+#: ../../book/internals.rst:508
+msgid ""
+"If the token is not clickable, it means that the profiler routes are not "
+"registered (see below for configuration information)."
+msgstr ""
+
+#: ../../book/internals.rst:512
+msgid "Analyzing Profiling Data with the Web Profiler"
+msgstr ""
+
+#: ../../book/internals.rst:514
+msgid ""
+"The Web Profiler is a visualization tool for profiling data that you can use"
+" in development to debug your code and enhance performance; but it can also "
+"be used to explore problems that occur in production. It exposes all "
+"information collected by the profiler in a web interface."
+msgstr ""
+
+#: ../../book/internals.rst:523
+msgid "Accessing the Profiling information"
+msgstr ""
+
+#: ../../book/internals.rst:525
+msgid ""
+"You don't need to use the default visualizer to access the profiling "
+"information. But how can you retrieve profiling information for a specific "
+"request after the fact? When the profiler stores data about a Request, it "
+"also associates a token with it; this token is available in the ``X-Debug-"
+"Token`` HTTP header of the Response::"
+msgstr ""
+
+#: ../../book/internals.rst:537
+msgid ""
+"When the profiler is enabled but not the web debug toolbar, or when you want"
+" to get the token for an Ajax request, use a tool like Firebug to get the "
+"value of the ``X-Debug-Token`` HTTP header."
+msgstr ""
+
+#: ../../book/internals.rst:541
+msgid ""
+"Use the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Profiler\\\\Profiler::find` "
+"method to access tokens based on some criteria::"
+msgstr ""
+
+#: ../../book/internals.rst:557
+msgid ""
+"If you want to manipulate profiling data on a different machine than the one"
+" where the information were generated, use the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Profiler\\\\Profiler::export`"
+" and "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Profiler\\\\Profiler::import`"
+" methods::"
+msgstr ""
+
+#: ../../book/internals.rst:573
+msgid "Configuration"
+msgstr ""
+
+#: ../../book/internals.rst:575
+msgid ""
+"The default Symfony configuration comes with sensible settings for the "
+"profiler, the web debug toolbar, and the web profiler. Here is for instance "
+"the configuration for the development environment:"
+msgstr ""
+
+#: ../../book/internals.rst:630
+msgid ""
+"When ``only_exceptions`` is set to ``true``, the profiler only collects data"
+" when an exception is thrown by the application."
+msgstr ""
+
+#: ../../book/internals.rst:633
+msgid ""
+"When ``intercept_redirects`` is set to ``true``, the web profiler intercepts"
+" the redirects and gives you the opportunity to look at the collected data "
+"before following the redirect."
+msgstr ""
+
+#: ../../book/internals.rst:637
+msgid ""
+"If you enable the web profiler, you also need to mount the profiler routes:"
+msgstr ""
+
+#: ../../book/internals.rst:672
+msgid ""
+"As the profiler adds some overhead, you might want to enable it only under "
+"certain circumstances in the production environment. The ``only_exceptions``"
+" settings limits profiling to exceptions, but what if you want to get "
+"information when the client IP comes from a specific address, or for a "
+"limited portion of the website? You can use a Profiler Matcher, learn more "
+"about that in \":doc:`/cookbook/profiler/matchers`\"."
+msgstr ""
+
+#: ../../book/internals.rst:680
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/internals.rst:682
+msgid ":doc:`/cookbook/testing/profiling`"
+msgstr ""
+
+#: ../../book/internals.rst:683
+msgid ":doc:`/cookbook/profiler/data_collector`"
+msgstr ""
+
+#: ../../book/internals.rst:684
+msgid ":doc:`/cookbook/event_dispatcher/class_extension`"
+msgstr ""
+
+#: ../../book/internals.rst:685
+msgid ":doc:`/cookbook/event_dispatcher/method_behavior`"
+msgstr ""
+
+#: ../../book/internals.rst:93
+msgid "Controller resolver"
+msgstr ""
+
+#: ../../book/internals.rst:143
+msgid "Request handling"
+msgstr ""
+
+#: ../../book/internals.rst:189
+msgid "Internal requests"
+msgstr ""
+
+#: ../../book/internals.rst:205 ../../book/internals.rst:248
+#: ../../book/internals.rst:274 ../../book/internals.rst:300
+#: ../../book/internals.rst:333 ../../book/internals.rst:370
+#: ../../book/internals.rst:383 ../../book/internals.rst:398
+msgid "Event"
+msgstr ""
+
+#: ../../book/internals.rst:248
+msgid "kernel.request"
+msgstr ""
+
+#: ../../book/internals.rst:274
+msgid "kernel.controller"
+msgstr ""
+
+#: ../../book/internals.rst:300
+msgid "kernel.view"
+msgstr ""
+
+#: ../../book/internals.rst:333
+msgid "kernel.response"
+msgstr ""
+
+#: ../../book/internals.rst:370
+msgid "kernel.finish_request"
+msgstr ""
+
+#: ../../book/internals.rst:383
+msgid "kernel.terminate"
+msgstr ""
+
+#: ../../book/internals.rst:398
+msgid "kernel.exception"
+msgstr ""
+
+#: ../../book/internals.rst:452
+msgid "EventDispatcher"
+msgstr ""
+
+#: ../../book/internals.rst:489 ../../book/internals.rst:569
+msgid "Visualizing"
+msgstr ""
+
+#: ../../book/internals.rst:519
+msgid "Using the profiler service"
+msgstr ""

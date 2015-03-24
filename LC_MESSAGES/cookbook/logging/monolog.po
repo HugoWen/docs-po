@@ -1,0 +1,181 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/logging/monolog.rst:5
+msgid "How to Use Monolog to Write Logs"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:7
+msgid ""
+"Monolog_ is a logging library for PHP used by Symfony. It is inspired by the"
+" Python LogBook library."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:11
+msgid "Usage"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:13
+msgid ""
+"To log a message simply get the ``logger`` service from the container in "
+"your controller::"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:25
+msgid ""
+"The ``logger`` service has different methods for different logging levels. "
+"See LoggerInterface_ for details on which methods are available."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:29
+msgid "Handlers and Channels: Writing Logs to different Locations"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:31
+msgid ""
+"In Monolog each logger defines a logging channel, which organizes your log "
+"messages into different \"categories\". Then, each channel has a stack of "
+"handlers to write the logs (the handlers can be shared)."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:37
+msgid ""
+"When injecting the logger in a service you can :ref:`use a custom channel "
+"<dic_tags-monolog>` control which \"channel\" the logger will log to."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:41
+msgid ""
+"The basic handler is the ``StreamHandler`` which writes logs in a stream (by"
+" default in the ``app/logs/prod.log`` in the prod environment and "
+"``app/logs/dev.log`` in the dev environment)."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:45
+msgid ""
+"Monolog comes also with a powerful built-in handler for the logging in prod "
+"environment: ``FingersCrossedHandler``. It allows you to store the messages "
+"in a buffer and to log them only if a message reaches the action level "
+"(``error`` in the configuration provided in the Standard Edition) by "
+"forwarding the messages to another handler."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:52
+msgid "Using several Handlers"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:54
+msgid ""
+"The logger uses a stack of handlers which are called successively. This "
+"allows you to log the messages in several ways easily."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:143
+msgid ""
+"The above configuration defines a stack of handlers which will be called in "
+"the order they are defined."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:148
+msgid ""
+"The handler named \"file\" will not be included in the stack itself as it is"
+" used as a nested handler of the ``fingers_crossed`` handler."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:153
+msgid ""
+"If you want to change the config of MonologBundle in another config file you"
+" need to redefine the whole stack. It cannot be merged because the order "
+"matters and a merge does not allow to control the order."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:159
+msgid "Changing the Formatter"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:161
+msgid ""
+"The handler uses a ``Formatter`` to format the record before logging it. All"
+" Monolog handlers use an instance of ``Monolog\\Formatter\\LineFormatter`` "
+"by default but you can replace it easily. Your formatter must implement "
+"``Monolog\\Formatter\\FormatterInterface``."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:225
+msgid "Adding some extra Data in the Log Messages"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:227
+msgid ""
+"Monolog allows you to process the record before logging it to add some extra"
+" data. A processor can be applied for the whole handler stack or only for a "
+"specific handler."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:233
+msgid ""
+"Beware that log file sizes can grow very rapidly, leading to disk space "
+"exhaustion. This is specially true in the ``dev`` environment, where a "
+"simple request can generate hundreds of log lines. Consider using tools like"
+" the `logrotate`_ Linux command to rotate log files before they become a "
+"problem."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:238
+msgid ""
+"A processor is simply a callable receiving the record as its first argument."
+" Processors are configured using the ``monolog.processor`` DIC tag. See the "
+":ref:`reference about it <dic_tags-monolog-processor>`."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:243
+msgid "Adding a Session/Request Token"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:245
+msgid ""
+"Sometimes it is hard to tell which entries in the log belong to which "
+"session and/or request. The following example will add a unique token for "
+"each request using a processor."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:375
+msgid ""
+"If you use several handlers, you can also register a processor at the "
+"handler level or at the channel level instead of registering it globally "
+"(see the following sections)."
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:380
+msgid "Registering Processors per Handler"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:382
+msgid ""
+"You can register a processor per handler using the ``handler`` option of the"
+" ``monolog.processor`` tag:"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:431
+msgid "Registering Processors per Channel"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:433
+msgid ""
+"You can register a processor per channel using the ``channel`` option of the"
+" ``monolog.processor`` tag:"
+msgstr ""
+
+#: ../../cookbook/logging/monolog.rst:1
+msgid "Logging"
+msgstr ""

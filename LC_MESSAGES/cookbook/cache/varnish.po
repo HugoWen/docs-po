@@ -1,0 +1,231 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/cache/varnish.rst:5
+msgid "How to Use Varnish to Speed up my Website"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:7
+msgid ""
+"Because Symfony's cache uses the standard HTTP cache headers, the :ref"
+":`symfony-gateway-cache` can easily be replaced with any other reverse "
+"proxy. `Varnish`_ is a powerful, open-source, HTTP accelerator capable of "
+"serving cached content fast and including support for :ref:`Edge Side "
+"Includes <edge-side-includes>`."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:16
+msgid "Make Symfony Trust the Reverse Proxy"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:18
+msgid ""
+"For ESI to work correctly and for the :ref:`X-FORWARDED <varnish-x"
+"-forwarded-headers>` headers to be used, you need to configure Varnish as a "
+":doc:`trusted proxy </cookbook/request/load_balancer_reverse_proxy>`."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:25
+msgid "Routing and X-FORWARDED Headers"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:27
+msgid ""
+"To ensure that the Symfony Router generates URLs correctly with Varnish, a "
+"``X-Forwarded-Port`` header must be present for Symfony to use the correct "
+"port number."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:31
+msgid ""
+"This port depends on your setup. Lets say that external connections come in "
+"on the default HTTP port 80. For HTTPS connections, there is another proxy "
+"(as Varnish does not do HTTPS itself) on the default HTTPS port 443 that "
+"handles the SSL termination and forwards the requests as HTTP requests to "
+"Varnish with a ``X-Forwarded-Proto`` header. In this case, you need to add "
+"the following configuration snippet:"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:50
+msgid ""
+"Remember to configure :ref:`framework.trusted_proxies <reference-framework-"
+"trusted-proxies>` in the Symfony configuration so that Varnish is seen as a "
+"trusted proxy and the ``X-Forwarded-*`` headers are used."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:54
+msgid ""
+"Varnish automatically forwards the IP as ``X-Forwarded-For`` and leaves the "
+"``X-Forwarded-Proto`` header in the request. If you do not configure Varnish"
+" as trusted proxy, Symfony will see all requests as coming through insecure "
+"HTTP connections from the Varnish host instead of the real client."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:59
+msgid ""
+"If the ``X-Forwarded-Port`` header is not set correctly, Symfony will append"
+" the port where the PHP application is running when generating absolute "
+"URLs, e.g. ``http://example.com:8080/my/path``."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:64
+msgid "Cookies and Caching"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:66
+msgid ""
+"By default, a sane caching proxy does not cache anything when a request is "
+"sent with :ref:`cookies or a basic authentication header<http-cache-"
+"introduction>`. This is because the content of the page is supposed to "
+"depend on the cookie value or authentication header."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:71
+msgid ""
+"If you know for sure that the backend never uses sessions or basic "
+"authentication, have varnish remove the corresponding header from requests "
+"to prevent clients from bypassing the cache. In practice, you will need "
+"sessions at least for some parts of the site, e.g. when using forms with "
+":ref:`CSRF Protection <forms-csrf>`. In this situation, make sure to "
+":doc:`only start a session when actually needed "
+"</cookbook/session/avoid_session_start>` and clear the session when it is no"
+" longer needed. Alternatively, you can look into "
+":doc:`/cookbook/cache/form_csrf_caching`."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:80
+msgid ""
+"Cookies created in Javascript and used only in the frontend, e.g. when using"
+" Google analytics are nonetheless sent to the server. These cookies are not "
+"relevant for the backend and should not affect the caching decision. "
+"Configure your Varnish cache to `clean the cookies header`_. You want to "
+"keep the session cookie, if there is one, and get rid of all other cookies "
+"so that pages are cached if there is no active session. Unless you changed "
+"the default configuration of PHP, your session cookie has the name "
+"PHPSESSID:"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:108
+msgid ""
+"If content is not different for every user, but depends on the roles of a "
+"user, a solution is to separate the cache per group. This pattern is "
+"implemented and explained by the FOSHttpCacheBundle_ under the name `User "
+"Context`_."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:114
+msgid "Ensure Consistent Caching Behaviour"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:116
+msgid ""
+"Varnish uses the cache headers sent by your application to determine how to "
+"cache content. However, versions prior to Varnish 4 did not respect ``Cache-"
+"Control: no-cache``, ``no-store`` and ``private``. To ensure consistent "
+"behavior, use the following configuration if you are still using Varnish 3:"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:140
+msgid ""
+"You can see the default behavior of Varnish in the form of a VCL file: "
+"`default.vcl`_ for Varnish 3, `builtin.vcl`_ for Varnish 4."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:144
+msgid "Enable Edge Side Includes (ESI)"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:146
+msgid ""
+"As explained in the :ref:`Edge Side Includes section<edge-side-includes>`, "
+"Symfony detects whether it talks to a reverse proxy that understands ESI or "
+"not. When you use the Symfony reverse proxy, you don't need to do anything. "
+"But to make Varnish instead of Symfony resolve the ESI tags, you need some "
+"configuration in Varnish. Symfony uses the ``Surrogate-Capability`` header "
+"from the `Edge Architecture`_ described by Akamai."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:155
+msgid ""
+"Varnish only supports the ``src`` attribute for ESI tags (``onerror`` and "
+"``alt`` attributes are ignored)."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:158
+msgid ""
+"First, configure Varnish so that it advertises its ESI support by adding a "
+"``Surrogate-Capability`` header to requests forwarded to the backend "
+"application:"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:171
+msgid ""
+"The ``abc`` part of the header isn't important unless you have multiple "
+"\"surrogates\" that need to advertise their capabilities. See `Surrogate-"
+"Capability Header`_ for details."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:174
+msgid ""
+"Then, optimize Varnish so that it only parses the Response contents when "
+"there is at least one ESI tag by checking the ``Surrogate-Control`` header "
+"that Symfony adds automatically:"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:202
+msgid ""
+"If you followed the advice about ensuring a consistent caching behavior, "
+"those vcl functions already exist. Just append the code to the end of the "
+"function, they won't interfere with each other."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:210
+msgid "Cache Invalidation"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:212
+msgid ""
+"If you want to cache content that changes frequently and still serve the "
+"most recent version to users, you need to invalidate that content. While "
+"`cache invalidation`_ allows you to purge content from your proxy before it "
+"has expired, it adds complexity to your caching setup."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:219
+msgid ""
+"The open source `FOSHttpCacheBundle`_ takes the pain out of cache "
+"invalidation by helping you to organize your caching and invalidation setup."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:223
+msgid ""
+"The documentation of the `FOSHttpCacheBundle`_ explains how to configure "
+"Varnish and other reverse proxies for cache invalidation."
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:1
+msgid "Cache"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:1 ../../cookbook/cache/varnish.rst:12
+#: ../../cookbook/cache/varnish.rst:206
+msgid "Varnish"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:12
+msgid "configuration"
+msgstr ""
+
+#: ../../cookbook/cache/varnish.rst:206
+msgid "Invalidation"
+msgstr ""

@@ -1,0 +1,709 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/forms/types/datetime.rst:5
+msgid "datetime Field Type"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:7
+msgid ""
+"This field type allows the user to modify data that represents a specific "
+"date and time (e.g. ``1984-06-05 12:15:30``)."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:10
+msgid ""
+"Can be rendered as a text input or select tags. The underlying format of the"
+" data can be a ``DateTime`` object, a string, a timestamp or an array."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:14
+msgid "Underlying Data Type"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:14
+msgid ""
+"can be ``DateTime``, string, timestamp, or array (see the ``input`` option)"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:16
+msgid "Rendered as"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:16
+msgid "single text box or three select fields"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:18
+msgid "Options"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:18
+msgid "`date_format`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:19
+msgid "`date_widget`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:20
+msgid "`days`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:21
+msgid "`placeholder`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:22
+msgid "`format`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:23
+msgid "`hours`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:24
+msgid "`html5`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:25
+msgid "`input`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:26
+msgid "`minutes`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:27
+msgid "`model_timezone`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:28
+msgid "`months`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:29
+msgid "`seconds`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:30
+msgid "`time_widget`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:31
+msgid "`view_timezone`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:32
+msgid "`widget`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:33
+msgid "`with_minutes`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:34
+msgid "`with_seconds`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:35
+msgid "`years`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:37
+msgid "Inherited options"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:37
+msgid "`data`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:38
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:39
+msgid "`inherit_data`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:40
+msgid "`invalid_message`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:41
+msgid "`invalid_message_parameters`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:42
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:43
+msgid "`read_only`_"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:45
+msgid "Parent type"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:45
+msgid ":doc:`form </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:47
+msgid "Class"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:47
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\DateTimeType`"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:51
+msgid "Field Options"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:54
+msgid "date_format"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:56
+msgid ""
+"**type**: ``integer`` or ``string`` **default**: "
+"``IntlDateFormatter::MEDIUM``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:58
+msgid ""
+"Defines the ``format`` option that will be passed down to the date field. "
+"See the :ref:`date type's format option <reference-forms-type-date-format>` "
+"for more details."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:63
+msgid "date_widget"
+msgstr ""
+
+#: ../../reference/forms/types/options/date_widget_description.rst.inc:1
+#: ../../reference/forms/types/datetime.rst:115
+msgid "**type**: ``string`` **default**: ``choice``"
+msgstr ""
+
+#: ../../reference/forms/types/options/date_widget_description.rst.inc:3
+msgid ""
+"The basic way in which this field should be rendered. Can be one of the "
+"following:"
+msgstr ""
+
+#: ../../reference/forms/types/options/date_widget_description.rst.inc:5
+msgid ""
+"``choice``: renders three select inputs. The order of the selects is defined"
+" in the `format`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/options/date_widget_description.rst.inc:8
+msgid ""
+"``text``: renders a three field input of type ``text`` (month, day, year)."
+msgstr ""
+
+#: ../../reference/forms/types/options/date_widget_description.rst.inc:10
+msgid ""
+"``single_text``: renders a single input of type ``date``. User's input is "
+"validated based on the `format`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/options/days.rst.inc:2
+msgid "days"
+msgstr ""
+
+#: ../../reference/forms/types/options/days.rst.inc:4
+msgid "**type**: ``array`` **default**: 1 to 31"
+msgstr ""
+
+#: ../../reference/forms/types/options/days.rst.inc:6
+msgid ""
+"List of days available to the day field type. This option is only relevant "
+"when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:2
+msgid "placeholder"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:4
+msgid ""
+"The ``placeholder`` option was introduced in Symfony 2.6 in favor of "
+"``empty_value``, which is available prior to 2.6."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:8
+msgid ""
+"Since Symfony 2.3, empty values are also supported if the ``expanded`` "
+"option is set to true."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:12
+msgid "**type**: ``string`` or ``Boolean``"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:14
+msgid ""
+"This option determines whether or not a special \"empty\" option (e.g. "
+"\"Choose an option\") will appear at the top of a select widget. This option"
+" only applies if the ``multiple`` option is set to false."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:18
+msgid "Add an empty value with \"Choose an option\" as the text::"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:24
+msgid "Guarantee that no \"empty\" value option is displayed::"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:30
+msgid ""
+"If you leave the ``placeholder`` option unset, then a blank (with no text) "
+"option will automatically be added if and only if the ``required`` option is"
+" false::"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:72
+msgid "format"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:74
+msgid ""
+"**type**: ``string`` **default**: "
+"``Symfony\\Component\\Form\\Extension\\Core\\Type\\DateTimeType::HTML5_FORMAT``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:76
+msgid ""
+"If the ``widget`` option is set to ``single_text``, this option specifies "
+"the format of the input, i.e. how Symfony will interpret the given input as "
+"a datetime string. It defaults to the `RFC 3339`_ format which is used by "
+"the HTML5 ``datetime`` field. Keeping the default value will cause the field"
+" to be rendered as an ``input`` field with ``type=\"datetime\"``."
+msgstr ""
+
+#: ../../reference/forms/types/options/hours.rst.inc:2
+msgid "hours"
+msgstr ""
+
+#: ../../reference/forms/types/options/hours.rst.inc:4
+msgid "**type**: ``array`` **default**: 0 to 23"
+msgstr ""
+
+#: ../../reference/forms/types/options/hours.rst.inc:6
+msgid ""
+"List of hours available to the hours field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../reference/forms/types/options/html5.rst.inc:2
+msgid "html5"
+msgstr ""
+
+#: ../../reference/forms/types/options/html5.rst.inc:4
+msgid "The ``html5`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/forms/types/options/html5.rst.inc:7
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/html5.rst.inc:9
+msgid ""
+"If this is set to ``true`` (the default), it'll use the HTML5 type (date, "
+"time or datetime) to render the field. When set to ``false``, it'll use the "
+"text type."
+msgstr ""
+
+#: ../../reference/forms/types/options/html5.rst.inc:12
+msgid ""
+"This is useful when you want to use a custom JavaScript datapicker, which "
+"often requires a text type instead of an HTML5 type."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:87
+msgid "input"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:89
+msgid "**type**: ``string`` **default**: ``datetime``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:91
+msgid ""
+"The format of the *input* data - i.e. the format that the date is stored on "
+"your underlying object. Valid values are:"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:94
+msgid "``string`` (e.g. ``2011-06-05 12:15:00``)"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:95
+msgid "``datetime`` (a ``DateTime`` object)"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:96
+msgid "``array`` (e.g. ``array(2011, 06, 05, 12, 15, 0)``)"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:97
+msgid "``timestamp`` (e.g. ``1307276100``)"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:99
+msgid ""
+"The value that comes back from the form will also be normalized back into "
+"this format."
+msgstr ""
+
+#: ../../reference/forms/types/options/_date_limitation.rst.inc:3
+msgid ""
+"If ``timestamp`` is used, ``DateType`` is limited to dates between Fri, 13 "
+"Dec 1901 20:45:54 GMT and Tue, 19 Jan 2038 03:14:07 GMT on 32bit systems. "
+"This is due to a `limitation in PHP itself "
+"<http://php.net/manual/en/function.date.php#refsect1-function.date-"
+"changelog>`_."
+msgstr ""
+
+#: ../../reference/forms/types/options/minutes.rst.inc:2
+msgid "minutes"
+msgstr ""
+
+#: ../../reference/forms/types/options/minutes.rst.inc:4
+#: ../../reference/forms/types/options/seconds.rst.inc:4
+msgid "**type**: ``array`` **default**: 0 to 59"
+msgstr ""
+
+#: ../../reference/forms/types/options/minutes.rst.inc:6
+msgid ""
+"List of minutes available to the minutes field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../reference/forms/types/options/model_timezone.rst.inc:2
+msgid "model_timezone"
+msgstr ""
+
+#: ../../reference/forms/types/options/model_timezone.rst.inc:4
+#: ../../reference/forms/types/options/view_timezone.rst.inc:4
+msgid "**type**: ``string`` **default**: system default timezone"
+msgstr ""
+
+#: ../../reference/forms/types/options/model_timezone.rst.inc:6
+msgid ""
+"Timezone that the input data is stored in. This must be one of the `PHP "
+"supported timezones`_."
+msgstr ""
+
+#: ../../reference/forms/types/options/months.rst.inc:2
+msgid "months"
+msgstr ""
+
+#: ../../reference/forms/types/options/months.rst.inc:4
+msgid "**type**: ``array`` **default**: 1 to 12"
+msgstr ""
+
+#: ../../reference/forms/types/options/months.rst.inc:6
+msgid ""
+"List of months available to the month field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../reference/forms/types/options/seconds.rst.inc:2
+msgid "seconds"
+msgstr ""
+
+#: ../../reference/forms/types/options/seconds.rst.inc:6
+msgid ""
+"List of seconds available to the seconds field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:113
+msgid "time_widget"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:117
+msgid ""
+"Defines the ``widget`` option for the :doc:`time "
+"</reference/forms/types/time>` type"
+msgstr ""
+
+#: ../../reference/forms/types/options/view_timezone.rst.inc:2
+msgid "view_timezone"
+msgstr ""
+
+#: ../../reference/forms/types/options/view_timezone.rst.inc:6
+msgid ""
+"Timezone for how the data should be shown to the user (and therefore also "
+"the data that the user submits). This must be one of the `PHP supported "
+"timezones`_."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:122
+#: ../../reference/forms/types/datetime.rst:161
+msgid "widget"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:124
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:126
+msgid ""
+"Defines the ``widget`` option for both the :doc:`date "
+"</reference/forms/types/date>` type and :doc:`time "
+"</reference/forms/types/time>` type. This can be overridden with the "
+"`date_widget`_ and `time_widget`_ options."
+msgstr ""
+
+#: ../../reference/forms/types/options/with_minutes.rst.inc:2
+msgid "with_minutes"
+msgstr ""
+
+#: ../../reference/forms/types/options/with_minutes.rst.inc:4
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/with_minutes.rst.inc:6
+msgid ""
+"Whether or not to include minutes in the input. This will result in an "
+"additional input to capture minutes."
+msgstr ""
+
+#: ../../reference/forms/types/options/with_seconds.rst.inc:2
+msgid "with_seconds"
+msgstr ""
+
+#: ../../reference/forms/types/options/with_seconds.rst.inc:4
+#: ../../reference/forms/types/options/read_only.rst.inc:4
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/with_seconds.rst.inc:6
+msgid ""
+"Whether or not to include seconds in the input. This will result in an "
+"additional input to capture seconds."
+msgstr ""
+
+#: ../../reference/forms/types/options/years.rst.inc:2
+msgid "years"
+msgstr ""
+
+#: ../../reference/forms/types/options/years.rst.inc:4
+msgid ""
+"**type**: ``array`` **default**: five years before to five years after the "
+"current year"
+msgstr ""
+
+#: ../../reference/forms/types/options/years.rst.inc:7
+msgid ""
+"List of years available to the year field type. This option is only relevant"
+" when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:137
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:139
+msgid ""
+"These options inherit from the :doc:`form </reference/forms/types/form>` "
+"type:"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:2
+msgid "data"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying object "
+"(if there is one)"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain object (if an object is bound to"
+" the form). If you want to override the initial value for the form or just "
+"an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:17
+msgid ""
+"The default values for form fields are taken directly from the underlying "
+"data structure (e.g. an entity or an array). The ``data`` option overrides "
+"this default value."
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:2
+msgid "disabled"
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:2
+msgid "inherit_data"
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:4
+msgid ""
+"The ``inherit_data`` option was introduced in Symfony 2.3. Before, it was "
+"known as ``virtual``."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:8
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:10
+msgid ""
+"This option determines if the form will inherit data from its parent form. "
+"This can be useful if you have a set of fields that are duplicated across "
+"multiple forms. See :doc:`/cookbook/form/inherit_data_option`."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:16
+msgid ""
+"When a field has the ``inherit_data`` option set, it uses the data of the "
+"parent form as is. This means that :doc:`Data Transformers "
+"</cookbook/form/data_transformers>` won't be applied to that field."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:2
+msgid "invalid_message"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:4
+msgid "**type**: ``string`` **default**: ``This value is not valid``"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:6
+msgid ""
+"This is the validation error message that's used if the data entered into "
+"this field doesn't make sense (i.e. fails validation)."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:9
+msgid ""
+"This might happen, for example, if the user enters a nonsense string into a "
+":doc:`time</reference/forms/types/time>` field that cannot be converted into"
+" a real time or if the user enters a string (e.g. ``apple``) into a number "
+"field."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:14
+msgid ""
+"Normal (business logic) validation (such as when setting a minimum length "
+"for a field) should be set using validation messages with your validation "
+"rules (:ref:`reference<book-validation-constraint-configuration>`)."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:2
+msgid "invalid_message_parameters"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:4
+msgid "**type**: ``array`` **default**: ``array()``"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:6
+msgid ""
+"When setting the ``invalid_message`` option, you may need to include some "
+"variables in the string. This can be done by adding placeholders to that "
+"option and including the variables in this option::"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:2
+msgid "mapped"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the object, "
+"you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../reference/forms/types/options/read_only.rst.inc:2
+msgid "read_only"
+msgstr ""
+
+#: ../../reference/forms/types/options/read_only.rst.inc:6
+msgid ""
+"If this option is true, the field will be rendered with the ``readonly`` "
+"attribute so that the field is not editable."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:156
+msgid "Field Variables"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:159
+msgid "Variable"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:159
+msgid "Type"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:159
+msgid "Usage"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:161
+msgid "``mixed``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:161
+msgid "The value of the `widget`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:163
+msgid "type"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:163
+msgid "``string``"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:163
+msgid ""
+"Only present when widget is ``single_text`` and HTML5 is activated, contains"
+" the input type to use (``datetime``, ``date`` or ``time``)."
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:1
+msgid "Forms"
+msgstr ""
+
+#: ../../reference/forms/types/datetime.rst:1
+msgid "Fields; datetime"
+msgstr ""

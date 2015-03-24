@@ -1,0 +1,123 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/tablehelper.rst:5
+#: ../../components/console/helpers/tablehelper.rst:1
+msgid "Table Helper"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:7
+msgid "The ``table`` helper was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:12
+msgid ""
+"The Table Helper was deprecated in Symfony 2.5 and will be removed in "
+"Symfony 3.0. You should now use the :doc:`Table "
+"</components/console/helpers/table>` class instead which is more powerful."
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:17
+msgid ""
+"When building a console application it may be useful to display tabular "
+"data:"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:21
+msgid ""
+"To display a table, use the "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper`, set "
+"headers, rows and render::"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:36
+msgid ""
+"The table layout can be customized as well. There are two ways to customize "
+"table rendering: using named layouts or by customizing rendering options."
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:40
+msgid "Customize Table Layout using Named Layouts"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:42
+msgid "The Table helper ships with three preconfigured table layouts:"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:44
+msgid "``TableHelper::LAYOUT_DEFAULT``"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:46
+msgid "``TableHelper::LAYOUT_BORDERLESS``"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:48
+msgid "``TableHelper::LAYOUT_COMPACT``"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:50
+msgid ""
+"Layout can be set using "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setLayout`"
+" method."
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:53
+msgid "Customize Table Layout using Rendering Options"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:55
+msgid ""
+"You can also control table rendering by setting custom rendering option "
+"values:"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:57
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setPaddingChar`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:58
+msgid ""
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setHorizontalBorderChar`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:59
+msgid ""
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setVerticalBorderChar`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:60
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setCrossingChar`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:61
+msgid ""
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setCellHeaderFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:62
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setCellRowFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:63
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setBorderFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:64
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableHelper::setPadType`"
+msgstr ""
+
+#: ../../components/console/helpers/tablehelper.rst:1
+msgid "Console Helpers"
+msgstr ""

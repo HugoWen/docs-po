@@ -1,0 +1,103 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/http_foundation/trusting_proxies.rst:5
+msgid "Trusting Proxies"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:9
+msgid ""
+"If you're using the Symfony Framework, start by reading "
+":doc:`/cookbook/request/load_balancer_reverse_proxy`."
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:12
+msgid ""
+"If you find yourself behind some sort of proxy - like a load balancer - then"
+" certain header information may be sent to you using special "
+"``X-Forwarded-*`` headers. For example, the ``Host`` HTTP header is usually "
+"used to return the requested host. But when you're behind a proxy, the true "
+"host may be stored in a ``X-Forwarded-Host`` header."
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:18
+msgid ""
+"Since HTTP headers can be spoofed, Symfony does *not* trust these proxy "
+"headers by default. If you are behind a proxy, you should manually whitelist"
+" your proxy."
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:22
+msgid ""
+"CIDR notation support was introduced in Symfony 2.3, so you can whitelist "
+"whole subnets (e.g. ``10.0.0.0/8``, ``fc00::/7``)."
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:34
+msgid "Configuring Header Names"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:36
+msgid "By default, the following proxy headers are trusted:"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:38
+msgid ""
+"``X-Forwarded-For`` Used in "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getClientIp`;"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:39
+msgid ""
+"``X-Forwarded-Host`` Used in "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getHost`;"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:40
+msgid ""
+"``X-Forwarded-Port`` Used in "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getPort`;"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:41
+msgid ""
+"``X-Forwarded-Proto`` Used in "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getScheme` and "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::isSecure`;"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:43
+msgid ""
+"If your reverse proxy uses a different header name for any of these, you can"
+" configure that header name via "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::setTrustedHeaderName`::"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:52
+msgid "Not Trusting certain Headers"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:54
+msgid ""
+"By default, if you whitelist your proxy's IP address, then all four headers "
+"listed above are trusted. If you need to trust some of these headers but not"
+" others, you can do that as well::"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:1
+msgid "Request"
+msgstr ""
+
+#: ../../components/http_foundation/trusting_proxies.rst:1
+msgid "Trusted Proxies"
+msgstr ""

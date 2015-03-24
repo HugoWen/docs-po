@@ -1,0 +1,322 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/translation/usage.rst:5
+msgid "Using the Translator"
+msgstr ""
+
+#: ../../components/translation/usage.rst:7
+msgid ""
+"Imagine you want to translate the string *\"Symfony is great\"* into "
+"French::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:20
+msgid ""
+"In this example, the message *\"Symfony is great!\"* will be translated into"
+" the locale set in the constructor (``fr_FR``) if the message exists in one "
+"of the message catalogs."
+msgstr ""
+
+#: ../../components/translation/usage.rst:27
+msgid "Message Placeholders"
+msgstr ""
+
+#: ../../components/translation/usage.rst:29
+msgid "Sometimes, a message containing a variable needs to be translated::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:36
+msgid ""
+"However, creating a translation for this string is impossible since the "
+"translator will try to look up the exact message, including the variable "
+"portions (e.g. *\"Hello Ryan\"* or *\"Hello Fabien\"*). Instead of writing a"
+" translation for every possible iteration of the ``$name`` variable, you can"
+" replace the variable with a \"placeholder\"::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:50
+msgid ""
+"Symfony will now look for a translation of the raw message (``Hello "
+"%name%``) and *then* replace the placeholders with their values. Creating a "
+"translation is done just as before:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:82
+msgid ""
+"The placeholders can take on any form as the full message is reconstructed "
+"using the PHP :phpfunction:`strtr function<strtr>`. But the ``%...%`` form "
+"is recommended, to avoid problems when using Twig."
+msgstr ""
+
+#: ../../components/translation/usage.rst:86
+msgid "As you've seen, creating a translation is a two-step process:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:88
+msgid ""
+"Abstract the message that needs to be translated by processing it through "
+"the ``Translator``."
+msgstr ""
+
+#: ../../components/translation/usage.rst:91
+msgid ""
+"Create a translation for the message in each locale that you choose to "
+"support."
+msgstr ""
+
+#: ../../components/translation/usage.rst:94
+msgid ""
+"The second step is done by creating message catalogs that define the "
+"translations for any number of different locales."
+msgstr ""
+
+#: ../../components/translation/usage.rst:98
+msgid "Creating Translations"
+msgstr ""
+
+#: ../../components/translation/usage.rst:100
+msgid ""
+"The act of creating translation files is an important part of "
+"\"localization\" (often abbreviated `L10n`_). Translation files consist of a"
+" series of id-translation pairs for the given domain and locale. The source "
+"is the identifier for the individual translation, and can be the message in "
+"the main locale (e.g. *\"Symfony is great\"*) of your application or a "
+"unique identifier (e.g. ``symfony.great`` - see the sidebar below)."
+msgstr ""
+
+#: ../../components/translation/usage.rst:107
+msgid ""
+"Translation files can be created in several different formats, XLIFF being "
+"the recommended format. These files are parsed by one of the loader classes."
+msgstr ""
+
+#: ../../components/translation/usage.rst:0
+msgid "Using Real or Keyword Messages"
+msgstr ""
+
+#: ../../components/translation/usage.rst:144
+msgid ""
+"This example illustrates the two different philosophies when creating "
+"messages to be translated::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:151
+msgid ""
+"In the first method, messages are written in the language of the default "
+"locale (English in this case). That message is then used as the \"id\" when "
+"creating translations."
+msgstr ""
+
+#: ../../components/translation/usage.rst:155
+msgid ""
+"In the second method, messages are actually \"keywords\" that convey the "
+"idea of the message. The keyword message is then used as the \"id\" for any "
+"translations. In this case, translations must be made for the default locale"
+" (i.e. to translate ``symfony.great`` to ``Symfony is great``)."
+msgstr ""
+
+#: ../../components/translation/usage.rst:160
+msgid ""
+"The second method is handy because the message key won't need to be changed "
+"in every translation file if you decide that the message should actually "
+"read \"Symfony is really great\" in the default locale."
+msgstr ""
+
+#: ../../components/translation/usage.rst:164
+msgid ""
+"The choice of which method to use is entirely up to you, but the \"keyword\""
+" format is often recommended."
+msgstr ""
+
+#: ../../components/translation/usage.rst:167
+msgid ""
+"Additionally, the ``php`` and ``yaml`` file formats support nested ids to "
+"avoid repeating yourself if you use keywords instead of real text for your "
+"ids:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:201
+msgid ""
+"The multiple levels are flattened into single id/translation pairs by adding"
+" a dot (``.``) between every level, therefore the above examples are "
+"equivalent to the following:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:226
+msgid "Pluralization"
+msgstr ""
+
+#: ../../components/translation/usage.rst:228
+msgid ""
+"Message pluralization is a tough topic as the rules can be quite complex. "
+"For instance, here is the mathematical representation of the Russian "
+"pluralization rules::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:242
+msgid ""
+"As you can see, in Russian, you can have three different plural forms, each "
+"given an index of 0, 1 or 2. For each form, the plural is different, and so "
+"the translation is also different."
+msgstr ""
+
+#: ../../components/translation/usage.rst:246
+msgid ""
+"When a translation has different forms due to pluralization, you can provide"
+" all the forms as a string separated by a pipe (``|``)::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:251
+msgid ""
+"To translate pluralized messages, use the "
+":method:`Symfony\\\\Component\\\\Translation\\\\Translator::transChoice` "
+"method::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:260
+msgid ""
+"The second argument (``10`` in this example) is the *number* of objects "
+"being described and is used to determine which translation to use and also "
+"to populate the ``%count%`` placeholder."
+msgstr ""
+
+#: ../../components/translation/usage.rst:264
+msgid ""
+"Based on the given number, the translator chooses the right plural form. In "
+"English, most words have a singular form when there is exactly one object "
+"and a plural form for all other numbers (0, 2, 3...). So, if ``count`` is "
+"``1``, the translator will use the first string (``There is one apple``) as "
+"the translation. Otherwise it will use ``There are %count% apples``."
+msgstr ""
+
+#: ../../components/translation/usage.rst:270
+msgid "Here is the French translation:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:276
+msgid ""
+"Even if the string looks similar (it is made of two sub-strings separated by"
+" a pipe), the French rules are different: the first form (no plural) is used"
+" when ``count`` is ``0`` or ``1``. So, the translator will automatically use"
+" the first string (``Il y a %count% pomme``) when ``count`` is ``0`` or "
+"``1``."
+msgstr ""
+
+#: ../../components/translation/usage.rst:281
+msgid ""
+"Each locale has its own set of rules, with some having as many as six "
+"different plural forms with complex rules behind which numbers map to which "
+"plural form. The rules are quite simple for English and French, but for "
+"Russian, you'd may want a hint to know which rule matches which string. To "
+"help translators, you can optionally \"tag\" each string:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:293
+msgid ""
+"The tags are really only hints for translators and don't affect the logic "
+"used to determine which plural form to use. The tags can be any descriptive "
+"string that ends with a colon (``:``). The tags also do not need to be the "
+"same in the original message as in the translated one."
+msgstr ""
+
+#: ../../components/translation/usage.rst:300
+msgid ""
+"As tags are optional, the translator doesn't use them (the translator will "
+"only get a string based on its position in the string)."
+msgstr ""
+
+#: ../../components/translation/usage.rst:304
+msgid "Explicit Interval Pluralization"
+msgstr ""
+
+#: ../../components/translation/usage.rst:306
+msgid ""
+"The easiest way to pluralize a message is to let the Translator use internal"
+" logic to choose which string to use based on a given number. Sometimes, "
+"you'll need more control or want a different translation for specific cases "
+"(for ``0``, or when the count is negative, for example). For such cases, you"
+" can use explicit math intervals:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:316
+msgid ""
+"The intervals follow the `ISO 31-11`_ notation. The above string specifies "
+"four different intervals: exactly ``0``, exactly ``1``, ``2-19``, and ``20``"
+" and higher."
+msgstr ""
+
+#: ../../components/translation/usage.rst:320
+msgid ""
+"You can also mix explicit math rules and standard rules. In this case, if "
+"the count is not matched by a specific interval, the standard rules take "
+"effect after removing the explicit rules:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:328
+msgid ""
+"For example, for ``1`` apple, the standard rule ``There is one apple`` will "
+"be used. For ``2-19`` apples, the second standard rule ``There are %count% "
+"apples`` will be selected."
+msgstr ""
+
+#: ../../components/translation/usage.rst:332
+msgid ""
+"An :class:`Symfony\\\\Component\\\\Translation\\\\Interval` can represent a "
+"finite set of numbers:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:339
+msgid "Or numbers between two other numbers:"
+msgstr ""
+
+#: ../../components/translation/usage.rst:346
+msgid ""
+"The left delimiter can be ``[`` (inclusive) or ``]`` (exclusive). The right "
+"delimiter can be ``[`` (exclusive) or ``]`` (inclusive). Beside numbers, you"
+" can use ``-Inf`` and ``+Inf`` for the infinite."
+msgstr ""
+
+#: ../../components/translation/usage.rst:351
+msgid "Forcing the Translator Locale"
+msgstr ""
+
+#: ../../components/translation/usage.rst:353
+msgid ""
+"When translating a message, the Translator uses the specified locale or the "
+"``fallback`` locale if necessary. You can also manually specify the locale "
+"to use for translation::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:376
+msgid "Retrieving the Message Catalogue"
+msgstr ""
+
+#: ../../components/translation/usage.rst:378
+msgid ""
+"In case you want to use the same translation catalogue outside your "
+"application (e.g. use translation on the client side), it's possible to "
+"fetch raw translation messages. Just specify the required locale::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:384
+msgid "The ``$messages`` variable will have the following structure::"
+msgstr ""
+
+#: ../../components/translation/usage.rst:1
+msgid "Translation"
+msgstr ""
+
+#: ../../components/translation/usage.rst:1
+msgid "Usage"
+msgstr ""

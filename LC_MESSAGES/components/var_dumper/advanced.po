@@ -1,0 +1,299 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/var_dumper/advanced.rst:6
+msgid "Advanced Usage of the VarDumper Component"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:8
+msgid ""
+"The ``dump()`` function is just a thin wrapper and a more convenient way to "
+"call :method:`VarDumper::dump() "
+"<Symfony\\\\Component\\\\VarDumper\\\\VarDumper::dump>`. You can change the "
+"behavior of this function by calling "
+":method:`VarDumper::setHandler($callable) "
+"<Symfony\\\\Component\\\\VarDumper\\\\VarDumper::setHandler>`. Calls to "
+"``dump()`` will then be forwarded to ``$callable``."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:14
+msgid ""
+"By adding a handler, you can customize the `Cloners`_, `Dumpers`_ and "
+"`Casters`_ as explained below. A simple implementation of a handler function"
+" might look like this::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:31
+msgid "Cloners"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:33
+msgid ""
+"A cloner is used to create an intermediate representation of any PHP "
+"variable. Its output is a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object that "
+"wraps this representation."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:37
+msgid ""
+"You can create a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object this "
+"way::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:48
+msgid ""
+"A cloner also applies limits when creating the representation, so that the "
+"corresponding Data object could represent only a subset of the cloned "
+"variable. Before calling "
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\VarCloner::cloneVar`,"
+" you can configure these limits:"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:53
+msgid ""
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\VarCloner::setMaxItems`"
+" configures the maximum number of items that will be cloned *past the first "
+"nesting level*. Items are counted using a breadth-first algorithm so that "
+"lower level items have higher priority than deeply nested items;"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:58
+msgid ""
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\VarCloner::setMaxString`"
+" configures the maximum number of characters that will be cloned before "
+"cutting overlong strings;"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:61
+msgid "in both cases, specifying `-1` removes any limit."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:63
+msgid ""
+"Before dumping it, you can further limit the resulting "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object by "
+"calling its "
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data::getLimitedClone`"
+" method:"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:68
+msgid ""
+"the first ``$maxDepth`` argument allows limiting dumps in the depth "
+"dimension,"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:69
+msgid ""
+"the second ``$maxItemsPerDepth`` limits the number of items per depth level,"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:70
+msgid ""
+"and the last ``$useRefHandles`` defaults to ``true``, but allows removing "
+"internal objects' handles for sparser output,"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:72
+msgid ""
+"but unlike the previous limits on cloners that remove data on purpose, these"
+" can be changed back and forth before dumping since they do not affect the "
+"intermediate representation internally."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:78
+msgid ""
+"When no limit is applied, a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object is as "
+"accurate as the native :phpfunction:`serialize` function, and thus could be "
+"for purposes beyond dumping for debugging."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:83
+msgid "Dumpers"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:85
+msgid ""
+"A dumper is responsible for outputting a string representation of a PHP "
+"variable, using a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object as "
+"input. The destination and the formatting of this output vary with dumpers."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:89
+msgid ""
+"This component comes with an "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\HtmlDumper` for HTML "
+"output and a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\CliDumper` for "
+"optionally colored command line output."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:93
+msgid "For example, if you want to dump some ``$variable``, just do::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:103
+msgid ""
+"By using the first argument of the constructor, you can select the output "
+"stream where the dump will be written. By default, the ``CliDumper`` writes "
+"on ``php://stdout`` and the ``HtmlDumper`` on ``php://output``. But any PHP "
+"stream (resource or URL) is acceptable."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:108
+msgid ""
+"Instead of a stream destination, you can also pass it a ``callable`` that "
+"will be called repeatedly for each line generated by a dumper. This callable"
+" can be configured using the first argument of a dumper's constructor, but "
+"also using the "
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\AbstractDumper::setOutput`"
+" method or the second argument of the "
+":method:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\AbstractDumper::dump`"
+" method."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:116
+msgid "For example, to get a dump as a string in a variable, you can do::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:138
+msgid "Another option for doing the same could be::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:153
+msgid ""
+"Dumpers implement the "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\DataDumperInterface` "
+"interface that specifies the :method:`dump(Data $data) "
+"<Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\DataDumperInterface::dump>` "
+"method. They also typically implement the "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\DumperInterface` that"
+" frees them from re-implementing the logic required to walk through a "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` object's "
+"internal structure."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:162
+msgid "Casters"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:164
+msgid ""
+"Objects and resources nested in a PHP variable are \"cast\" to arrays in the"
+" intermediate :class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Data` "
+"representation. You can tweak the array representation for each "
+"object/resource by hooking a Caster into this process. The component already"
+" includes many casters for base PHP classes and other common classes."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:170
+msgid ""
+"If you want to build your own Caster, you can register one before cloning a "
+"PHP variable. Casters are registered using either a Cloner's constructor or "
+"its ``addCasters()`` method::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:183
+msgid ""
+"The provided ``$myCasters`` argument is an array that maps a class, an "
+"interface or a resource type to a callable::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:191
+msgid ""
+"As you can notice, resource types are prefixed by a ``:`` to prevent "
+"colliding with a class name."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:194
+msgid ""
+"Because an object has one main class and potentially many parent classes or "
+"interfaces, many casters can be applied to one object. In this case, casters"
+" are called one after the other, starting from casters bound to the "
+"interfaces, the parents classes and then the main class. Several casters can"
+" also be registered for the same resource type/class/interface. They are "
+"called in registration order."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:201
+msgid ""
+"Casters are responsible for returning the properties of the object or "
+"resource being cloned in an array. They are callables that accept four "
+"arguments:"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:204
+msgid "the object or resource being casted,"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:205
+msgid ""
+"an array modelled for objects after PHP's native ``(array)`` cast operator,"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:206
+msgid ""
+"a :class:`Symfony\\\\Component\\\\VarDumper\\\\Cloner\\\\Stub` object "
+"representing the main properties of the object (class, type, etc.),"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:208
+msgid "true/false when the caster is called nested in a structure or not."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:210
+msgid "Here is a simple caster not doing anything::"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:219
+msgid ""
+"For objects, the ``$array`` parameter comes pre-populated using PHP's native"
+" ``(array)`` casting operator or with the return value of "
+"``$object->__debugInfo()`` if the magic method exists. Then, the return "
+"value of one Caster is given as the array argument to the next Caster in the"
+" chain."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:224
+msgid ""
+"When casting with the ``(array)`` operator, PHP prefixes protected "
+"properties with a ``\\0*\\0`` and private ones with the class owning the "
+"property. For example, ``\\0Foobar\\0`` will be the prefix for all private "
+"properties of objects of type Foobar. Casters follow this convention and add"
+" two more prefixes: ``\\0~\\0`` is used for virtual properties and "
+"``\\0+\\0`` for dynamic ones (runtime added properties not in the class "
+"declaration)."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:233
+msgid ""
+"Although you can, it is advised to not alter the state of an object while "
+"casting it in a Caster."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:238
+msgid "Before writing your own casters, you should check the existing ones."
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:1
+#: ../../components/var_dumper/advanced.rst:1
+msgid "VarDumper"
+msgstr ""
+
+#: ../../components/var_dumper/advanced.rst:1
+msgid "Components"
+msgstr ""

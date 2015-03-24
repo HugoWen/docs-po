@@ -1,0 +1,420 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/form/dynamic_form_modification.rst:5
+msgid "How to Dynamically Modify Forms Using Form Events"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:7
+msgid ""
+"Often times, a form can't be created statically. In this entry, you'll learn"
+" how to customize your form based on three common use-cases:"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:10
+msgid ":ref:`cookbook-form-events-underlying-data`"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:13
+msgid "Example: you have a \"Product\" form and need to modify/add/remove a field"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:13
+msgid "based on the data on the underlying Product being edited."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:15
+msgid ":ref:`cookbook-form-events-user-data`"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:17
+msgid ""
+"Example: you create a \"Friend Message\" form and need to build a drop-down "
+"that contains only users that are friends with the *current* authenticated "
+"user."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:21
+msgid ":ref:`cookbook-form-events-submitted-data`"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:23
+msgid ""
+"Example: on a registration form, you have a \"country\" field and a "
+"\"state\" field which should populate dynamically based on the value in the "
+"\"country\" field."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:27
+msgid ""
+"If you wish to learn more about the basics behind form events, you can take "
+"a look at the :doc:`Form Events </components/form/form_events>` "
+"documentation."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:34
+msgid "Customizing your Form Based on the Underlying Data"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:36
+msgid ""
+"Before jumping right into dynamic form generation, hold on and recall what a"
+" bare form class looks like::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:69
+msgid ""
+"If this particular section of code isn't already familiar to you, you "
+"probably need to take a step back and first review the :doc:`Forms chapter "
+"</book/forms>` before proceeding."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:73
+msgid ""
+"Assume for a moment that this form utilizes an imaginary \"Product\" class "
+"that has only two properties (\"name\" and \"price\"). The form generated "
+"from this class will look the exact same regardless if a new Product is "
+"being created or if an existing product is being edited (e.g. a product "
+"fetched from the database)."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:78
+msgid ""
+"Suppose now, that you don't want the user to be able to change the ``name`` "
+"value once the object has been created. To do this, you can rely on "
+"Symfony's :doc:`EventDispatcher </components/event_dispatcher/introduction>`"
+" system to analyze the data on the object and modify the form based on the "
+"Product object's data. In this entry, you'll learn how to add this level of "
+"flexibility to your forms."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:88
+msgid "Adding an Event Listener to a Form Class"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:90
+msgid ""
+"So, instead of directly adding that ``name`` widget, the responsibility of "
+"creating that particular field is delegated to an event listener::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:115
+msgid ""
+"The goal is to create a ``name`` field *only* if the underlying ``Product`` "
+"object is new (e.g. hasn't been persisted to the database). Based on that, "
+"the event listener might look like the following::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:138
+msgid ""
+"The ``FormEvents::PRE_SET_DATA`` line actually resolves to the string "
+"``form.pre_set_data``. :class:`Symfony\\\\Component\\\\Form\\\\FormEvents` "
+"serves an organizational purpose. It is a centralized location in which you "
+"can find all of the various form events available. You can view the full "
+"list of form events via the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormEvents` class."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:148
+msgid "Adding an Event Subscriber to a Form Class"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:150
+msgid ""
+"For better reusability or if there is some heavy logic in your event "
+"listener, you can also move the logic for creating the ``name`` field to an "
+":ref:`event subscriber <event_dispatcher-using-event-subscribers>`::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:172
+msgid ""
+"Now the logic for creating the ``name`` field resides in it own subscriber "
+"class::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:206
+msgid "How to dynamically Generate Forms Based on user Data"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:208
+msgid ""
+"Sometimes you want a form to be generated dynamically based not only on data"
+" from the form but also on something else - like some data from the current "
+"user. Suppose you have a social website where a user can only message people"
+" marked as friends on the website. In this case, a \"choice list\" of whom "
+"to message should only contain users that are the current user's friends."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:215
+msgid "Creating the Form Type"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:217
+msgid "Using an event listener, your form might look like this::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:247
+msgid ""
+"The problem is now to get the current user and create a choice field that "
+"contains only this user's friends."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:250
+msgid ""
+"Luckily it is pretty easy to inject a service inside of the form. This can "
+"be done in the constructor::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:262
+msgid ""
+"You might wonder, now that you have access to the User (through the token "
+"storage), why not just use it directly in ``buildForm`` and omit the event "
+"listener? This is because doing so in the ``buildForm`` method would result "
+"in the whole form type being modified and not just this one form instance. "
+"This may not usually be a problem, but technically a single form type could "
+"be used on a single request to create many forms or fields."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:271
+msgid "Customizing the Form Type"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:273
+msgid ""
+"Now that you have all the basics in place you can take advantage of the "
+"``TokenStorageInterface`` and fill in the listener logic::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:334
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\Storage\\\\TokenStorageInterface`"
+" was introduced in Symfony 2.6. Prior, you had to use the ``getToken()`` "
+"method of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\SecurityContextInterface`."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:341
+msgid ""
+"The ``multiple`` and ``expanded`` form options will default to false because"
+" the type of the friend field is ``entity``."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:345
+msgid "Using the Form"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:347
+msgid ""
+"Our form is now ready to use and there are two possible ways to use it "
+"inside of a controller:"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:350
+msgid "create it manually and remember to pass the token storage to it;"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:352
+msgid "or"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:354
+msgid "define it as a service."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:357
+msgid "a) Creating the Form manually"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:359
+msgid ""
+"This is very simple, and is probably the better approach unless you're using"
+" your new form type in many places or embedding it into other forms::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:376
+msgid "b) Defining the Form as a Service"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:378
+msgid ""
+"To define your form as a service, just create a normal service and then tag "
+"it with :ref:`dic-tags-form-type`."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:414
+msgid ""
+"If you wish to create it from within a controller or any other service that "
+"has access to the form factory, you then use::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:429
+msgid ""
+"If you extend the "
+"``Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller`` class, you can "
+"simply call::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:433
+msgid "You can also easily embed the form type into another form::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:444
+msgid "Dynamic Generation for Submitted Forms"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:446
+msgid ""
+"Another case that can appear is that you want to customize the form specific"
+" to the data that was submitted by the user. For example, imagine you have a"
+" registration form for sports gatherings. Some events will allow you to "
+"specify your preferred position on the field. This would be a ``choice`` "
+"field for example. However the possible choices will depend on each sport. "
+"Football will have attack, defense, goalkeeper etc... Baseball will have a "
+"pitcher but will not have a goalkeeper. You will need the correct options in"
+" order for validation to pass."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:454
+msgid ""
+"The meetup is passed as an entity field to the form. So we can access each "
+"sport like this::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:500
+msgid ""
+"The ``placeholder`` option was introduced in Symfony 2.6 in favor of "
+"``empty_value``, which is available prior to 2.6."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:504
+msgid ""
+"When you're building this form to display to the user for the first time, "
+"then this example works perfectly."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:507
+msgid ""
+"However, things get more difficult when you handle the form submission. This"
+" is because the ``PRE_SET_DATA`` event tells us the data that you're "
+"starting with (e.g. an empty ``SportMeetup`` object), *not* the submitted "
+"data."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:511
+msgid "On a form, we can usually listen to the following events:"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:513
+msgid "``PRE_SET_DATA``"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:514
+msgid "``POST_SET_DATA``"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:515
+msgid "``PRE_SUBMIT``"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:516
+msgid "``SUBMIT``"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:517
+msgid "``POST_SUBMIT``"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:519
+msgid ""
+"The events ``PRE_SUBMIT``, ``SUBMIT`` and ``POST_SUBMIT`` were introduced in"
+" Symfony 2.3. Before, they were named ``PRE_BIND``, ``BIND`` and "
+"``POST_BIND``."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:523
+msgid ""
+"The key is to add a ``POST_SUBMIT`` listener to the field that your new "
+"field depends on. If you add a ``POST_SUBMIT`` listener to a form child "
+"(e.g. ``sport``), and add new children to the parent form, the Form "
+"component will detect the new field automatically and map it to the "
+"submitted client data."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:528
+msgid "The type would now look like::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:585
+msgid ""
+"You can see that you need to listen on these two events and have different "
+"callbacks only because in two different scenarios, the data that you can use"
+" is available in different events. Other than that, the listeners always "
+"perform exactly the same things on a given form."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:590
+msgid ""
+"One piece that is still missing is the client-side updating of your form "
+"after the sport is selected. This should be handled by making an AJAX call "
+"back to your application. Assume that you have a sport meetup creation "
+"controller::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:623
+msgid ""
+"The associated template uses some JavaScript to update the ``position`` form"
+" field according to the current selection in the ``sport`` field:"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:698
+msgid ""
+"The major benefit of submitting the whole form to just extract the updated "
+"``position`` field is that no additional server-side code is needed; all the"
+" code from above to generate the submitted form can be reused."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:705
+msgid "Suppressing Form Validation"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:707
+msgid ""
+"To suppress form validation you can use the ``POST_SUBMIT`` event and "
+"prevent the "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Validator\\\\EventListener\\\\ValidationListener`"
+" from being called."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:711
+msgid ""
+"The reason for needing to do this is that even if you set "
+"``group_validation`` to ``false`` there  are still some integrity checks "
+"executed. For example an uploaded file will still be checked to see if it is"
+" too large and the form will still check to see if non-existing fields were "
+"submitted. To disable all of this, use a listener::"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:732
+msgid ""
+"By doing this, you may accidentally disable something more than just form "
+"validation, since the ``POST_SUBMIT`` event may have other listeners."
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:1
+msgid "Form"
+msgstr ""
+
+#: ../../cookbook/form/dynamic_form_modification.rst:1
+msgid "Events"
+msgstr ""

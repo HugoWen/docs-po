@@ -1,0 +1,126 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/requirements.rst:7
+msgid "Requirements for Running Symfony"
+msgstr ""
+
+#: ../../reference/requirements.rst:9
+msgid ""
+"To run Symfony, your system needs to adhere to a list of requirements. You "
+"can easily see if your system passes all requirements by running the "
+"``web/config.php`` in your Symfony distribution. Since the CLI often uses a "
+"different ``php.ini`` configuration file, it's also a good idea to check "
+"your requirements from the command line via:"
+msgstr ""
+
+#: ../../reference/requirements.rst:19
+msgid "Below is the list of required and optional requirements."
+msgstr ""
+
+#: ../../reference/requirements.rst:22
+msgid "Required"
+msgstr ""
+
+#: ../../reference/requirements.rst:24
+msgid "PHP needs to be a minimum version of PHP 5.3.9"
+msgstr ""
+
+#: ../../reference/requirements.rst:25
+msgid "JSON needs to be enabled"
+msgstr ""
+
+#: ../../reference/requirements.rst:26
+msgid "ctype needs to be enabled"
+msgstr ""
+
+#: ../../reference/requirements.rst:27
+msgid "Your ``php.ini`` needs to have the ``date.timezone`` setting"
+msgstr ""
+
+#: ../../reference/requirements.rst:31
+msgid ""
+"Be aware that Symfony has some known limitations when using PHP 5.3.16. For "
+"more information see the `Requirements section of the README`_."
+msgstr ""
+
+#: ../../reference/requirements.rst:35
+msgid "Optional"
+msgstr ""
+
+#: ../../reference/requirements.rst:37
+msgid "You need to have the PHP-XML module installed"
+msgstr ""
+
+#: ../../reference/requirements.rst:38
+msgid "You need to have at least version 2.6.21 of libxml"
+msgstr ""
+
+#: ../../reference/requirements.rst:39
+msgid "PHP tokenizer needs to be enabled"
+msgstr ""
+
+#: ../../reference/requirements.rst:40
+msgid "mbstring functions need to be enabled"
+msgstr ""
+
+#: ../../reference/requirements.rst:41
+msgid "iconv needs to be enabled"
+msgstr ""
+
+#: ../../reference/requirements.rst:42
+msgid "POSIX needs to be enabled (only on \\*nix)"
+msgstr ""
+
+#: ../../reference/requirements.rst:43
+msgid "Intl needs to be installed with ICU 4+"
+msgstr ""
+
+#: ../../reference/requirements.rst:44
+msgid "APC 3.0.17+ (or another opcode cache needs to be installed)"
+msgstr ""
+
+#: ../../reference/requirements.rst:45
+msgid "``php.ini`` recommended settings"
+msgstr ""
+
+#: ../../reference/requirements.rst:47
+msgid "``short_open_tag = Off``"
+msgstr ""
+
+#: ../../reference/requirements.rst:48
+msgid "``magic_quotes_gpc = Off``"
+msgstr ""
+
+#: ../../reference/requirements.rst:49
+msgid "``register_globals = Off``"
+msgstr ""
+
+#: ../../reference/requirements.rst:50
+msgid "``session.auto_start = Off``"
+msgstr ""
+
+#: ../../reference/requirements.rst:53
+msgid "Doctrine"
+msgstr ""
+
+#: ../../reference/requirements.rst:55
+msgid ""
+"If you want to use Doctrine, you will need to have PDO installed. "
+"Additionally, you need to have the PDO driver installed for the database "
+"server you want to use."
+msgstr ""
+
+#: ../../reference/requirements.rst:1
+msgid "Requirements"
+msgstr ""

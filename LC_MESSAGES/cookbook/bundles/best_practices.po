@@ -1,0 +1,536 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/bundles/best_practices.rst:5
+msgid "Best Practices for Reusable Bundles"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:7
+msgid "There are 2 types of bundles:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:9
+msgid "Application-specific bundles: only used to build your application;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:10
+msgid "Reusable bundles: meant to be shared across many projects."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:12
+msgid ""
+"This article is all about how to structure your **reusable bundles** so that"
+" they're easy to configure and extend. Many of these recommendations do not "
+"apply to application bundles because you'll want to keep those as simple as "
+"possible. For application bundles, just follow the practices shown "
+"throughout the book and cookbook."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:20
+msgid ""
+"The best practices for application-specific bundles are discussed in "
+":doc:`/best_practices/introduction`."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:29
+msgid "Bundle Name"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:31
+msgid ""
+"A bundle is also a PHP namespace. The namespace must follow the technical "
+"interoperability `standards`_ for PHP namespaces and class names: it starts "
+"with a vendor segment, followed by zero or more category segments, and it "
+"ends with the namespace short name, which must end with a ``Bundle`` suffix."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:36
+msgid ""
+"A namespace becomes a bundle as soon as you add a bundle class to it. The "
+"bundle class name must follow these simple rules:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:39
+msgid "Use only alphanumeric characters and underscores;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:40
+msgid "Use a CamelCased name;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:41
+msgid "Use a descriptive and short name (no more than 2 words);"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:42
+msgid ""
+"Prefix the name with the concatenation of the vendor (and optionally the "
+"category namespaces);"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:44
+msgid "Suffix the name with ``Bundle``."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:46
+msgid "Here are some valid bundle namespaces and class names:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:49
+msgid "Namespace"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:49
+msgid "Bundle Class Name"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:51
+msgid "``Acme\\Bundle\\BlogBundle``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:51
+#: ../../cookbook/bundles/best_practices.rst:55
+msgid "``AcmeBlogBundle``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:53
+msgid "``Acme\\Bundle\\Social\\BlogBundle``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:53
+msgid "``AcmeSocialBlogBundle``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:55
+msgid "``Acme\\BlogBundle``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:58
+msgid ""
+"By convention, the ``getName()`` method of the bundle class should return "
+"the class name."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:63
+msgid ""
+"If you share your bundle publicly, you must use the bundle class name as the"
+" name of the repository (``AcmeBlogBundle`` and not ``BlogBundle`` for "
+"instance)."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:69
+msgid ""
+"Symfony core Bundles do not prefix the Bundle class with ``Symfony`` and "
+"always add a ``Bundle`` sub-namespace; for example: "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\FrameworkBundle`."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:73
+msgid ""
+"Each bundle has an alias, which is the lower-cased short version of the "
+"bundle name using underscores (``acme_hello`` for ``AcmeHelloBundle``, or "
+"``acme_social_blog`` for ``Acme\\Social\\BlogBundle`` for instance). This "
+"alias is used to enforce uniqueness within a bundle (see below for some "
+"usage examples)."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:80
+msgid "Directory Structure"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:82
+msgid "The basic directory structure of a HelloBundle must read as follows:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:101
+msgid ""
+"The ``XXX`` directory(ies) reflects the namespace structure of the bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:103
+msgid "The following files are mandatory:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:105
+msgid "``HelloBundle.php``;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:106
+msgid "``Resources/meta/LICENSE``: The full license for the code;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:107
+msgid ""
+"``Resources/doc/index.rst``: The root file for the Bundle documentation."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:111
+msgid ""
+"These conventions ensure that automated tools can rely on this default "
+"structure to work."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:114
+msgid ""
+"The depth of sub-directories should be kept to the minimal for most used "
+"classes and files (2 levels at a maximum). More levels can be defined for "
+"non-strategic, less-used files."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:118
+msgid ""
+"The bundle directory is read-only. If you need to write temporary files, "
+"store them under the ``cache/`` or ``log/`` directory of the host "
+"application. Tools can generate files in the bundle directory structure, but"
+" only if the generated files are going to be part of the repository."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:123
+msgid "The following classes and files have specific emplacements:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:126
+msgid "Type"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:126
+msgid "Directory"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:128
+msgid "Commands"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:128
+msgid "``Command/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:130
+msgid "Controllers"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:130
+msgid "``Controller/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:132
+msgid "Service Container Extensions"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:132
+msgid "``DependencyInjection/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:134
+msgid "Event Listeners"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:134
+msgid "``EventListener/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:136
+#: ../../cookbook/bundles/best_practices.rst:288
+msgid "Configuration"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:136
+msgid "``Resources/config/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:138
+msgid "Web Resources"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:138
+msgid "``Resources/public/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:140
+msgid "Translation files"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:140
+msgid "``Resources/translations/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:142
+#: ../../cookbook/bundles/best_practices.rst:274
+msgid "Templates"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:142
+msgid "``Resources/views/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:144
+msgid "Unit and Functional Tests"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:144
+msgid "``Tests/``"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:149
+msgid ""
+"When building a reusable bundle, model classes should be placed in the "
+"``Model`` namespace. See :doc:`/cookbook/doctrine/mapping_model_classes` for"
+" how to handle the mapping with a compiler pass."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:154
+msgid "Classes"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:156
+msgid ""
+"The bundle directory structure is used as the namespace hierarchy. For "
+"instance, a ``HelloController`` controller is stored in "
+"``Bundle/HelloBundle/Controller/HelloController.php`` and the fully "
+"qualified class name is "
+"``Bundle\\HelloBundle\\Controller\\HelloController``."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:161
+msgid ""
+"All classes and files must follow the Symfony coding :doc:`standards "
+"</contributing/code/standards>`."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:163
+msgid ""
+"Some classes should be seen as facades and should be as short as possible, "
+"like Commands, Helpers, Listeners, and Controllers."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:166
+msgid ""
+"Classes that connect to the event dispatcher should be suffixed with "
+"``Listener``."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:169
+msgid "Exceptions classes should be stored in an ``Exception`` sub-namespace."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:172
+msgid "Vendors"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:174
+msgid ""
+"A bundle must not embed third-party PHP libraries. It should rely on the "
+"standard Symfony autoloading instead."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:177
+msgid ""
+"A bundle should not embed third-party libraries written in JavaScript, CSS, "
+"or any other language."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:181
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:183
+msgid ""
+"A bundle should come with a test suite written with PHPUnit and stored under"
+" the ``Tests/`` directory. Tests should follow the following principles:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:186
+msgid ""
+"The test suite must be executable with a simple ``phpunit`` command run from"
+" a sample application;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:188
+msgid ""
+"The functional tests should only be used to test the response output and "
+"some profiling information if you have some;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:190
+msgid "The tests should cover at least 95% of the code base."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:193
+msgid ""
+"A test suite must not contain ``AllTests.php`` scripts, but must rely on the"
+" existence of a ``phpunit.xml.dist`` file."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:197
+msgid "Documentation"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:199
+msgid "All classes and functions must come with full PHPDoc."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:201
+msgid ""
+"Extensive documentation should also be provided in the "
+":doc:`reStructuredText </contributing/documentation/format>` format, under "
+"the ``Resources/doc/`` directory; the ``Resources/doc/index.rst`` file is "
+"the only mandatory file and must be the entry point for the documentation."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:207
+msgid "Installation Instructions"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:209
+msgid ""
+"In order to ease the installation of third-party bundles, consider using the"
+" following standardized instructions in your ``README.md`` file."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:259
+msgid ""
+"This template assumes that your bundle is in its ``1.x`` version. If not, "
+"change the ``\"~1\"`` installation version accordingly (``\"~2\"``, "
+"``\"~3\"``, etc.)"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:262
+msgid ""
+"Optionally, you can add more installation steps (*Step 3*, *Step 4*, etc.) "
+"to explain other required installation tasks, such as registering routes or "
+"dumping assets."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:267
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:269
+msgid ""
+"If the bundle provides routes, they must be prefixed with the bundle alias. "
+"For an AcmeBlogBundle for instance, all routes must be prefixed with "
+"``acme_blog_``."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:276
+msgid ""
+"If a bundle provides templates, they must use Twig. A bundle must not "
+"provide a main layout, except if it provides a full working application."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:280
+msgid "Translation Files"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:282
+msgid ""
+"If a bundle provides message translations, they must be defined in the XLIFF"
+" format; the domain should be named after the bundle name "
+"(``bundle.hello``)."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:285
+msgid "A bundle must not override existing messages from another bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:290
+msgid ""
+"To provide more flexibility, a bundle can provide configurable settings by "
+"using the Symfony built-in mechanisms."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:293
+msgid ""
+"For simple configuration settings, rely on the default ``parameters`` entry "
+"of the Symfony configuration. Symfony parameters are simple key/value pairs;"
+" a value being any valid PHP value. Each parameter name should start with "
+"the bundle alias, though this is just a best-practice suggestion. The rest "
+"of the parameter name will use a period (``.``) to separate different parts "
+"(e.g. ``acme_hello.email.from``)."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:300
+msgid "The end user can provide values in any configuration file:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:328
+msgid ""
+"Retrieve the configuration parameters in your code from the container::"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:332
+msgid ""
+"Even if this mechanism is simple enough, you are highly encouraged to use "
+"the semantic configuration described in the cookbook."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:337
+msgid ""
+"If you are defining services, they should also be prefixed with the bundle "
+"alias."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:341
+msgid "Custom Validation Constraints"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:343
+msgid ""
+"Starting with Symfony 2.5, a new Validation API was introduced. In fact, "
+"there are 3 modes, which the user can configure in their project:"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:346
+msgid "2.4: the original 2.4 and earlier validation API;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:347
+msgid "2.5: the new 2.5 and later validation API;"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:348
+msgid ""
+"2.5-BC: the new 2.5 API with a backwards-compatible layer so that the 2.4 "
+"API still works. This is only available in PHP 5.3.9+."
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:351
+msgid ""
+"As a bundle author, you'll want to support *both* API's, since some users "
+"may still be using the 2.4 API. Specifically, if your bundle adds a "
+"violation directly to the "
+":class:`Symfony\\\\Component\\\\Validator\\\\Context\\\\ExecutionContext` "
+"(e.g. like in a custom validation constraint), you'll need to check for "
+"which API is being used. The following code, would work for *all* users::"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:383
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:385
+msgid ":doc:`/cookbook/bundles/extension`"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:1
+#: ../../cookbook/bundles/best_practices.rst:23
+msgid "Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:1
+msgid "Best practices"
+msgstr ""
+
+#: ../../cookbook/bundles/best_practices.rst:23
+msgid "Naming conventions"
+msgstr ""

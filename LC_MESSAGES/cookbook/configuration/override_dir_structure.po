@@ -1,0 +1,146 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/override_dir_structure.rst:5
+msgid "How to Override Symfony's default Directory Structure"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:7
+msgid ""
+"Symfony automatically ships with a default directory structure. You can "
+"easily override this directory structure to create your own. The default "
+"directory structure is:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:30
+msgid "Override the ``cache`` Directory"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:32
+msgid ""
+"You can override the cache directory by overriding the ``getCacheDir`` "
+"method in the ``AppKernel`` class of you application::"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:48
+msgid ""
+"``$this->rootDir`` is the absolute path to the ``app`` directory and "
+"``$this->environment`` is the current environment (i.e. ``dev``). In this "
+"case you have changed the location of the cache directory to "
+"``app/{environment}/cache``."
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:54
+msgid ""
+"You should keep the ``cache`` directory different for each environment, "
+"otherwise some unexpected behavior may happen. Each environment generates "
+"its own cached config files, and so each needs its own directory to store "
+"those cache files."
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:62
+msgid "Override the ``logs`` Directory"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:64
+msgid ""
+"Overriding the ``logs`` directory is the same as overriding the ``cache`` "
+"directory, the only difference is that you need to override the "
+"``getLogDir`` method::"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:81
+msgid ""
+"Here you have changed the location of the directory to "
+"``app/{environment}/logs``."
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:84
+msgid "Override the ``web`` Directory"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:86
+msgid ""
+"If you need to rename or move your ``web`` directory, the only thing you "
+"need to guarantee is that the path to the ``app`` directory is still correct"
+" in your ``app.php`` and ``app_dev.php`` front controllers. If you simply "
+"renamed the directory, you're fine. But if you moved it in some way, you may"
+" need to modify the paths inside these files::"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:95
+msgid ""
+"You also need to change the ``extra.symfony-web-dir`` option in the "
+"``composer.json`` file:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:110
+msgid ""
+"Some shared hosts have a ``public_html`` web directory root. Renaming your "
+"web directory from ``web`` to ``public_html`` is one way to make your "
+"Symfony project work on your shared host. Another way is to deploy your "
+"application to a directory outside of your web root, delete your "
+"``public_html`` directory, and then replace it with a symbolic link to the "
+"``web`` in your project."
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:119
+msgid ""
+"If you use the AsseticBundle you need to configure this, so it can use the "
+"correct ``web`` directory:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:150
+msgid ""
+"Now you just need to clear the cache and dump the assets again and your "
+"application should work:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:159
+msgid "Override the ``vendor`` Directory"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:161
+msgid ""
+"To override the ``vendor`` directory, you need to introduce changes in the "
+"following files:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:164
+msgid "``app/autoload.php``"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:165
+msgid "``composer.json``"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:167
+msgid "The change in the ``composer.json`` will look like this:"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:180
+msgid ""
+"In ``app/autoload.php``, you need to modify the path leading to the "
+"``vendor/autoload.php`` file::"
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:189
+msgid ""
+"This modification can be of interest if you are working in a virtual "
+"environment and cannot use NFS - for example, if you're running a Symfony "
+"app using Vagrant/VirtualBox in a guest operating system."
+msgstr ""
+
+#: ../../cookbook/configuration/override_dir_structure.rst:1
+msgid "Override Symfony"
+msgstr ""

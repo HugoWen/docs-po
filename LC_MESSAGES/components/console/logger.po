@@ -1,0 +1,83 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/logger.rst:5
+msgid "Using the Logger"
+msgstr ""
+
+#: ../../components/console/logger.rst:7
+msgid ""
+"The Console component comes with a standalone logger complying with the "
+"`PSR-3`_ standard. Depending on the verbosity setting, log messages will be "
+"sent to the "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` "
+"instance passed as a parameter to the constructor."
+msgstr ""
+
+#: ../../components/console/logger.rst:12
+msgid ""
+"The logger does not have any external dependency except ``php-fig/log``. "
+"This is useful for console applications and commands needing a lightweight "
+"PSR-3 compliant logger::"
+msgstr ""
+
+#: ../../components/console/logger.rst:35
+msgid "You can rely on the logger to use this dependency inside a command::"
+msgstr ""
+
+#: ../../components/console/logger.rst:66
+msgid ""
+"The dependency will use the instance of "
+":class:`Symfony\\\\Component\\\\Console\\\\Logger\\\\ConsoleLogger` as "
+"logger. Log messages emitted will be displayed on the console output."
+msgstr ""
+
+#: ../../components/console/logger.rst:71
+msgid "Verbosity"
+msgstr ""
+
+#: ../../components/console/logger.rst:73
+msgid ""
+"Depending on the verbosity level that the command is run, messages may or "
+"may not be sent to the "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` "
+"instance."
+msgstr ""
+
+#: ../../components/console/logger.rst:77
+msgid ""
+"By default, the console logger behaves like the :doc:`Monolog's Console "
+"Handler </cookbook/logging/monolog_console>`. The association between the "
+"log level and the verbosity can be configured through the second parameter "
+"of the :class:`Symfony\\\\Component\\\\Console\\\\ConsoleLogger` "
+"constructor::"
+msgstr ""
+
+#: ../../components/console/logger.rst:91
+msgid "Color"
+msgstr ""
+
+#: ../../components/console/logger.rst:93
+msgid ""
+"The logger outputs the log messages formatted with a color reflecting their "
+"level. This behavior is configurable through the third parameter of the "
+"constructor::"
+msgstr ""
+
+#: ../../components/console/logger.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../components/console/logger.rst:1
+msgid "Logger"
+msgstr ""

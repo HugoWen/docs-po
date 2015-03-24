@@ -1,0 +1,35 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/monolog.rst:5
+msgid "MonologBundle Configuration (\"monolog\")"
+msgstr ""
+
+#: ../../reference/configuration/monolog.rst:8
+msgid "Full Default Configuration"
+msgstr ""
+
+#: ../../reference/configuration/monolog.rst:112
+msgid ""
+"When the profiler is enabled, a handler is added to store the logs' messages"
+" in the profiler. The profiler uses the name \"debug\" so it is reserved and"
+" cannot be used in the configuration."
+msgstr ""
+
+#: ../../reference/configuration/monolog.rst:1
+msgid "Monolog"
+msgstr ""
+
+#: ../../reference/configuration/monolog.rst:1
+msgid "Configuration reference"
+msgstr ""

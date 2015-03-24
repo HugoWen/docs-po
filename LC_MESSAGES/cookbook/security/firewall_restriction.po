@@ -1,0 +1,97 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/firewall_restriction.rst:5
+msgid "How to Restrict Firewalls to a Specific Request"
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:7
+msgid ""
+"When using the Security component, you can create firewalls that match "
+"certain request options. In most cases, matching against the URL is "
+"sufficient, but in special cases you can further restrict the initialization"
+" of a firewall against other options of the request."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:13
+msgid ""
+"You can use any of these restrictions individually or mix them together to "
+"get your desired firewall configuration."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:17
+msgid "Restricting by Pattern"
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:19
+msgid ""
+"This is the default restriction and restricts a firewall to only be "
+"initialized if the request URL matches the configured ``pattern``."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:67
+msgid ""
+"The ``pattern`` is a regular expression. In this example, the firewall will "
+"only be activated if the URL starts (due to the ``^`` regex character) with "
+"``/admin``. If the URL does not match this pattern, the firewall will not be"
+" activated and subsequent firewalls will have the opportunity to be matched "
+"for this request."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:73
+msgid "Restricting by Host"
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:75
+msgid ""
+"If matching against the ``pattern`` only is not enough, the request can also"
+" be matched against ``host``. When the configuration option ``host`` is set,"
+" the firewall will be restricted to only initialize if the host from the "
+"request matches against the configuration."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:124
+msgid ""
+"The ``host`` (like the ``pattern``) is a regular expression. In this "
+"example, the firewall will only be activated if the host is equal exactly "
+"(due to the ``^`` and ``$`` regex characters) to the hostname "
+"``admin.example.com``. If the hostname does not match this pattern, the "
+"firewall will not be activated and subsequent firewalls will have the "
+"opportunity to be matched for this request."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:132
+msgid "Restricting by HTTP Methods"
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:134
+msgid ""
+"The configuration option ``methods`` restricts the initialization of the "
+"firewall to the provided HTTP methods."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:182
+msgid ""
+"In this example, the firewall will only be activated if the HTTP method of "
+"the request is either ``GET`` or ``POST``. If the method is not in the array"
+" of the allowed methods, the firewall will not be activated and subsequent "
+"firewalls will again have the opportunity to be matched for this request."
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/firewall_restriction.rst:1
+msgid "Restrict Security Firewalls to a Request"
+msgstr ""

@@ -1,0 +1,1443 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/dic_tags.rst:2
+msgid "The Dependency Injection Tags"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:4
+msgid ""
+"Dependency Injection Tags are little strings that can be applied to a "
+"service to \"flag\" it to be used in some special way. For example, if you "
+"have a service that you would like to register as a listener to one of "
+"Symfony's core events, you can flag it with the ``kernel.event_listener`` "
+"tag."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:9
+msgid ""
+"You can learn a little bit more about \"tags\" by reading the \":ref:`book-"
+"service-container-tags`\" section of the Service Container chapter."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:12
+msgid ""
+"Below is information about all of the tags available inside Symfony. There "
+"may also be tags in other bundles you use that aren't listed here."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:16
+msgid "Tag Name"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:16
+msgid "Usage"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:18
+msgid "`assetic.asset`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:18
+msgid "Register an asset to the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:19
+msgid "`assetic.factory_worker`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:19
+msgid "Add a factory worker"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:20
+msgid "`assetic.filter`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:20
+msgid "Register a filter"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:21
+msgid "`assetic.formula_loader`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:21
+msgid "Add a formula loader to the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:22
+msgid "`assetic.formula_resource`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:22
+msgid "Adds a resource to the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:23
+msgid "`assetic.templating.php`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:23
+msgid "Remove this service if PHP templating is disabled"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:24
+msgid "`assetic.templating.twig`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:24
+msgid "Remove this service if Twig templating is disabled"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:25
+msgid "`console.command`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:25
+msgid "Add a command"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:26
+msgid "`data_collector`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:26
+msgid "Create a class that collects custom data for the profiler"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:27
+msgid "`doctrine.event_listener`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:27
+msgid "Add a Doctrine event listener"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:28
+msgid "`doctrine.event_subscriber`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:28
+msgid "Add a Doctrine event subscriber"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:29
+msgid "`form.type`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:29
+msgid "Create a custom form field type"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:30
+msgid "`form.type_extension`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:30
+msgid "Create a custom \"form extension\""
+msgstr ""
+
+#: ../../reference/dic_tags.rst:31
+msgid "`form.type_guesser`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:31
+msgid "Add your own logic for \"form type guessing\""
+msgstr ""
+
+#: ../../reference/dic_tags.rst:32
+msgid "`kernel.cache_clearer`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:32
+msgid "Register your service to be called during the cache clearing process"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:33
+msgid "`kernel.cache_warmer`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:33
+msgid "Register your service to be called during the cache warming process"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:34
+msgid "`kernel.event_listener`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:34
+msgid "Listen to different events/hooks in Symfony"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:35
+msgid "`kernel.event_subscriber`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:35
+msgid "To subscribe to a set of different events/hooks in Symfony"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:36
+msgid "`kernel.fragment_renderer`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:36
+msgid "Add new HTTP content rendering strategies"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:37
+msgid "`monolog.logger`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:37
+msgid "Logging with a custom logging channel"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:38
+msgid "`monolog.processor`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:38
+msgid "Add a custom processor for logging"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:39
+msgid "`routing.loader`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:39
+msgid "Register a custom service that loads routes"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:40
+msgid "`routing.expression_language_provider`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:40
+msgid "Register a provider for expression language functions in routing"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:41
+msgid "`security.expression_language_provider`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:41
+msgid "Register a provider for expression language functions in security"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:42
+msgid "`security.voter`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:42
+msgid "Add a custom voter to Symfony's authorization logic"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:43
+msgid "`security.remember_me_aware`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:43
+msgid "To allow remember me authentication"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:44
+msgid "`serializer.encoder`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:44
+msgid "Register a new encoder in the ``serializer`` service"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:45
+msgid "`serializer.normalizer`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:45
+msgid "Register a new normalizer in the ``serializer`` service"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:46
+msgid "`swiftmailer.default.plugin`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:46
+msgid "Register a custom SwiftMailer Plugin"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:47
+msgid "`templating.helper`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:47
+msgid "Make your service available in PHP templates"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:48
+msgid "`translation.loader`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:48
+msgid "Register a custom service that loads translations"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:49
+msgid "`translation.extractor`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:49
+msgid ""
+"Register a custom service that extracts translation messages from a file"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:50
+msgid "`translation.dumper`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:50
+msgid "Register a custom service that dumps translation messages"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:51
+msgid "`twig.extension`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:51
+msgid "Register a custom Twig Extension"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:52
+msgid "`twig.loader`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:52
+msgid "Register a custom service that loads Twig templates"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:53
+msgid "`validator.constraint_validator`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:53
+msgid "Create your own custom validation constraint"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:54
+msgid "`validator.initializer`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:54
+msgid "Register a service that initializes objects before validation"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:58
+msgid "assetic.asset"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:60
+msgid "**Purpose**: Register an asset with the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:63
+msgid "assetic.factory_worker"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:65
+msgid "**Purpose**: Add a factory worker"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:67
+msgid ""
+"A Factory worker is a class implementing "
+"``Assetic\\Factory\\Worker\\WorkerInterface``. Its ``process($asset)`` "
+"method is called for each asset after asset creation. You can modify an "
+"asset or even return a new one."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:71
+msgid "In order to add a new worker, first create a class::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:85
+msgid "And then register it as a tagged service:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:119
+msgid "assetic.filter"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:121
+msgid "**Purpose**: Register a filter"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:123
+msgid ""
+"AsseticBundle uses this tag to register common filters. You can also use "
+"this tag to register your own filters."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:126
+msgid "First, you need to create a filter::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:144
+msgid "Second, define a service:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:177
+msgid "Finally, apply the filter:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:188
+msgid ""
+"You can also apply your filter via the "
+"``assetic.filters.my_filter.apply_to`` config option as it's described here:"
+" :doc:`/cookbook/assetic/apply_to_option`. In order to do that, you must "
+"define your filter service in a separate xml config file and point to this "
+"file's path via the ``assetic.filters.my_filter.resource`` configuration "
+"key."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:195
+msgid "assetic.formula_loader"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:197
+msgid "**Purpose**: Add a formula loader to the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:199
+msgid ""
+"A Formula loader is a class implementing "
+"``Assetic\\\\Factory\\Loader\\\\FormulaLoaderInterface`` interface. This "
+"class is responsible for loading assets from a particular kind of resources "
+"(for instance, twig template). Assetic ships loaders for PHP and Twig "
+"templates."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:204
+msgid "An ``alias`` attribute defines the name of the loader."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:207
+msgid "assetic.formula_resource"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:209
+msgid "**Purpose**: Adds a resource to the current asset manager"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:211
+msgid ""
+"A resource is something formulae can be loaded from. For instance, Twig "
+"templates are resources."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:215
+msgid "assetic.templating.php"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:217
+msgid "**Purpose**: Remove this service if PHP templating is disabled"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:219
+msgid ""
+"The tagged service will be removed from the container if the "
+"``framework.templating.engines`` config section does not contain php."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:223
+msgid "assetic.templating.twig"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:225
+msgid "**Purpose**: Remove this service if Twig templating is disabled"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:227
+msgid ""
+"The tagged service will be removed from the container if "
+"``framework.templating.engines`` config section does not contain ``twig``."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:231
+msgid "console.command"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:233
+msgid "**Purpose**: Add a command to the application"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:235
+msgid ""
+"For details on registering your own commands in the service container, read "
+":ref:`the cookbook article<cookbook-console-dic>`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:239
+msgid "data_collector"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:241
+msgid "**Purpose**: Create a class that collects custom data for the profiler"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:243
+msgid ""
+"For details on creating your own custom data collection, read the cookbook "
+"article: :doc:`/cookbook/profiler/data_collector`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:247
+msgid "doctrine.event_listener"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:249
+msgid "**Purpose**: Add a Doctrine event listener"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:251
+msgid ""
+"For details on creating Doctrine event listeners, read the cookbook article:"
+" :doc:`/cookbook/doctrine/event_listeners_subscribers`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:255
+msgid "doctrine.event_subscriber"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:257
+msgid "**Purpose**: Add a Doctrine event subscriber"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:259
+msgid ""
+"For details on creating Doctrine event subscribers, read the cookbook "
+"article: :doc:`/cookbook/doctrine/event_listeners_subscribers`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:265
+msgid "form.type"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:267
+msgid "**Purpose**: Create a custom form field type"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:269
+msgid ""
+"For details on creating your own custom form type, read the cookbook "
+"article: :doc:`/cookbook/form/create_custom_field_type`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:273
+msgid "form.type_extension"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:275
+msgid "**Purpose**: Create a custom \"form extension\""
+msgstr ""
+
+#: ../../reference/dic_tags.rst:277
+msgid ""
+"Form type extensions are a way for you took \"hook into\" the creation of "
+"any field in your form. For example, the addition of the CSRF token is done "
+"via a form type extension "
+"(:class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Csrf\\\\Type\\\\FormTypeCsrfExtension`)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:281
+msgid ""
+"A form type extension can modify any part of any field in your form. To "
+"create a form type extension, first create a class that implements the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeExtensionInterface` "
+"interface. For simplicity, you'll often extend an "
+":class:`Symfony\\\\Component\\\\Form\\\\AbstractTypeExtension` class instead"
+" of the interface directly::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:299
+msgid ""
+"In order for Symfony to know about your form extension and use it, give it "
+"the ``form.type_extension`` tag:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:336
+msgid ""
+"The ``alias`` key of the tag is the type of field that this extension should"
+" be applied to. For example, to apply the extension to any form/field, use "
+"the \"form\" value."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:343
+msgid "form.type_guesser"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:345
+msgid "**Purpose**: Add your own logic for \"form type guessing\""
+msgstr ""
+
+#: ../../reference/dic_tags.rst:347
+msgid ""
+"This tag allows you to add your own logic to the :ref:`Form Guessing <book-"
+"forms-field-guessing>` process. By default, form guessing is done by "
+"\"guessers\" based on the validation metadata and Doctrine metadata (if "
+"you're using Doctrine) or Propel metadata (if you're using Propel)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:354
+msgid ""
+"For information on how to create your own type guesser, see "
+":doc:`/components/form/type_guesser`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:358
+msgid "kernel.cache_clearer"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:360
+msgid ""
+"**Purpose**: Register your service to be called during the cache clearing "
+"process"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:362
+msgid ""
+"Cache clearing occurs whenever you call ``cache:clear`` command. If your "
+"bundle caches files, you should add custom cache clearer for clearing those "
+"files during the cache clearing process."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:366
+msgid ""
+"In order to register your custom cache clearer, first you must create a "
+"service class::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:383
+msgid "Then register this class and tag it with ``kernel.cache_clearer``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:417
+msgid "kernel.cache_warmer"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:419
+msgid ""
+"**Purpose**: Register your service to be called during the cache warming "
+"process"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:421
+msgid ""
+"Cache warming occurs whenever you run the ``cache:warmup`` or "
+"``cache:clear`` task (unless you pass ``--no-warmup`` to ``cache:clear``). "
+"It is also run when handling the request, if it wasn't done by one of the "
+"commands yet. The purpose is to initialize any cache that will be needed by "
+"the application and prevent the first user from any significant \"cache "
+"hit\" where the cache is generated dynamically."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:428
+msgid ""
+"To register your own cache warmer, first create a service that implements "
+"the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\CacheWarmer\\\\CacheWarmerInterface`"
+" interface::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:449
+msgid ""
+"The ``isOptional`` method should return true if it's possible to use the "
+"application without calling this cache warmer. In Symfony, optional warmers "
+"are always executed by default (you can change this by using the ``--no-"
+"optional-warmers`` option when executing the command)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:454
+msgid ""
+"To register your warmer with Symfony, give it the ``kernel.cache_warmer`` "
+"tag:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:489
+msgid ""
+"The ``priority`` value is optional, and defaults to 0. The higher the "
+"priority, the sooner it gets executed."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:493
+msgid "Core Cache Warmers"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:496
+msgid "Cache Warmer Class Name"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:496 ../../reference/dic_tags.rst:534
+#: ../../reference/dic_tags.rst:553 ../../reference/dic_tags.rst:562
+#: ../../reference/dic_tags.rst:583 ../../reference/dic_tags.rst:594
+msgid "Priority"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:498
+msgid ""
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\CacheWarmer\\\\TemplatePathsCacheWarmer`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:498
+msgid "20"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:500
+msgid ":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\CacheWarmer\\\\RouterCacheWarmer`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:500 ../../reference/dic_tags.rst:502
+#: ../../reference/dic_tags.rst:555 ../../reference/dic_tags.rst:564
+#: ../../reference/dic_tags.rst:566 ../../reference/dic_tags.rst:568
+#: ../../reference/dic_tags.rst:585 ../../reference/dic_tags.rst:596
+msgid "0"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:502
+msgid ":class:`Symfony\\\\Bundle\\\\TwigBundle\\\\CacheWarmer\\\\TemplateCacheCacheWarmer`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:508
+msgid "kernel.event_listener"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:510
+msgid "**Purpose**: To listen to different events/hooks in Symfony"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:512
+msgid ""
+"This tag allows you to hook your own classes into Symfony's process at "
+"different points."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:515
+msgid ""
+"For a full example of this listener, read the "
+":doc:`/cookbook/service_container/event_listener` cookbook entry."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:519
+msgid "Core Event Listener Reference"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:521
+msgid ""
+"When adding your own listeners, it might be useful to know about the other "
+"core Symfony listeners and their priorities."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:526
+msgid ""
+"All listeners listed here may not be listening depending on your "
+"environment, settings and bundles. Additionally, third-party bundles will "
+"bring in additional listeners not listed here."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:531
+msgid "kernel.request"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:534 ../../reference/dic_tags.rst:553
+#: ../../reference/dic_tags.rst:562 ../../reference/dic_tags.rst:583
+#: ../../reference/dic_tags.rst:594
+msgid "Listener Class Name"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:536 ../../reference/dic_tags.rst:570
+#: ../../reference/dic_tags.rst:585
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ProfilerListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:536
+msgid "1024"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:538 ../../reference/dic_tags.rst:572
+msgid ":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\EventListener\\\\TestSessionListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:538
+msgid "192"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:540
+msgid ":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\EventListener\\\\SessionListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:540
+msgid "128"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:542
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\RouterListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:542
+msgid "32"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:544
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\LocaleListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:544
+msgid "16"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:546
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Firewall`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:546
+msgid "8"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:550
+msgid "kernel.controller"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:555
+msgid ":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\DataCollector\\\\RequestDataCollector`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:559
+msgid "kernel.response"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:564
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\EsiListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:566
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ResponseListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:568
+msgid ":class:`Symfony\\\\Bundle\\\\SecurityBundle\\\\EventListener\\\\ResponseListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:570
+msgid "-100"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:572 ../../reference/dic_tags.rst:574
+#: ../../reference/dic_tags.rst:587
+msgid "-128"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:574
+msgid ""
+":class:`Symfony\\\\Bundle\\\\WebProfilerBundle\\\\EventListener\\\\WebDebugToolbarListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:576
+msgid ""
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\StreamedResponseListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:576
+msgid "-1024"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:580
+msgid "kernel.exception"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:587
+msgid ":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ExceptionListener`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:591
+msgid "kernel.terminate"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:596
+msgid "`EmailSenderListener`_"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:602
+msgid "kernel.event_subscriber"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:604
+msgid ""
+"**Purpose**: To subscribe to a set of different events/hooks in Symfony"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:606
+msgid ""
+"To enable a custom subscriber, add it as a regular service in one of your "
+"configuration, and tag it with ``kernel.event_subscriber``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:645
+msgid ""
+"Your service must implement the "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\EventSubscriberInterface`"
+" interface."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:650
+msgid ""
+"If your service is created by a factory, you **MUST** correctly set the "
+"``class`` parameter for this tag to work correctly."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:654
+msgid "kernel.fragment_renderer"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:656
+msgid "**Purpose**: Add a new HTTP content rendering strategy"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:658
+msgid ""
+"To add a new rendering strategy - in addition to the core strategies like "
+"``EsiFragmentRenderer`` - create a class that implements "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Fragment\\\\FragmentRendererInterface`,"
+" register it as a service, then tag it with ``kernel.fragment_renderer``."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:666
+msgid "monolog.logger"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:668
+msgid "**Purpose**: To use a custom logging channel with Monolog"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:670
+msgid ""
+"Monolog allows you to share its handlers between several logging channels. "
+"The logger service uses the channel ``app`` but you can change the channel "
+"when injecting the logger in a service."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:708
+msgid ""
+"If you use MonologBundle 2.4 or higher, you can configure custom channels in"
+" the configuration and retrieve the corresponding logger service from the "
+"service container directly (see :ref:`cookbook-monolog-channels-config`)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:715
+msgid "monolog.processor"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:717
+msgid "**Purpose**: Add a custom processor for logging"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:719
+msgid ""
+"Monolog allows you to add processors in the logger or in the handlers to add"
+" extra data in the records. A processor receives the record as an argument "
+"and must return it after adding some extra data in the ``extra`` attribute "
+"of the record."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:724
+msgid ""
+"The built-in ``IntrospectionProcessor`` can be used to add the file, the "
+"line, the class and the method where the logger was triggered."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:727
+msgid "You can add a processor globally:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:762
+msgid ""
+"If your service is not a callable (using ``__invoke``) you can add the "
+"``method`` attribute in the tag to use a specific method."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:765
+msgid ""
+"You can add also a processor for a specific handler by using the ``handler``"
+" attribute:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:799
+msgid ""
+"You can also add a processor for a specific logging channel by using the "
+"``channel`` attribute. This will register the processor only for the "
+"``security`` logging channel used in the Security component:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:836
+msgid ""
+"You cannot use both the ``handler`` and ``channel`` attributes for the same "
+"tag as handlers are shared between all channels."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:840
+msgid "routing.loader"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:842
+msgid "**Purpose**: Register a custom service that loads routes"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:844
+msgid ""
+"To enable a custom routing loader, add it as a regular service in one of "
+"your configuration, and tag it with ``routing.loader``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:881
+msgid ""
+"For more information, see :doc:`/cookbook/routing/custom_route_loader`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:884
+msgid "routing.expression_language_provider"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:886
+msgid ""
+"The ``routing.expression_language_provider`` tag was introduced in Symfony "
+"2.6."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:890
+msgid ""
+"**Purpose**: Register a provider for expression language functions in "
+"routing"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:892
+msgid ""
+"This tag is used to automatically register :ref:`expression function "
+"providers <components-expression-language-provider>` for the routing "
+"expression component. Using these providers, you can add custom functions to"
+" the routing expression language."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:898
+msgid "security.expression_language_provider"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:900
+msgid ""
+"The ``security.expression_language_provider`` tag was introduced in Symfony "
+"2.6."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:904
+msgid ""
+"**Purpose**: Register a provider for expression language functions in "
+"security"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:906
+msgid ""
+"This tag is used to automatically register :ref:`expression function "
+"providers <components-expression-language-provider>` for the security "
+"expression component. Using these providers, you can add custom functions to"
+" the security expression language."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:912
+msgid "security.remember_me_aware"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:914
+msgid "**Purpose**: To allow remember me authentication"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:916
+msgid ""
+"This tag is used internally to allow remember-me authentication to work. If "
+"you have a custom authentication method where a user can be remember-me "
+"authenticated, then you may need to use this tag."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:920
+msgid ""
+"If your custom authentication factory extends "
+":class:`Symfony\\\\Bundle\\\\SecurityBundle\\\\DependencyInjection\\\\Security\\\\Factory\\\\AbstractFactory`"
+" and your custom authentication listener extends "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Firewall\\\\AbstractAuthenticationListener`,"
+" then your custom authentication listener will automatically have this "
+"tagged applied and it will function automatically."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:928
+msgid "security.voter"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:930
+msgid "**Purpose**: To add a custom voter to Symfony's authorization logic"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:932
+msgid ""
+"When you call ``isGranted`` on Symfony's authorization checker, a system of "
+"\"voters\" is used behind the scenes to determine if the user should have "
+"access. The ``security.voter`` tag allows you to add your own custom voter "
+"to that system."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:936
+msgid ""
+"For more information, read the cookbook article: "
+":doc:`/cookbook/security/voters`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:941
+msgid "serializer.encoder"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:943
+msgid "**Purpose**: Register a new encoder in the ``serializer`` service"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:945
+msgid ""
+"The class that's tagged should implement the "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\EncoderInterface` "
+"and "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\DecoderInterface`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:948 ../../reference/dic_tags.rst:960
+msgid "For more details, see :doc:`/cookbook/serializer`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:953
+msgid "serializer.normalizer"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:955
+msgid "**Purpose**: Register a new normalizer in the Serializer service"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:957
+msgid ""
+"The class that's tagged should implement the "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\NormalizerInterface`"
+" and "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DenormalizerInterface`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:963
+msgid "swiftmailer.default.plugin"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:965
+msgid "**Purpose**: Register a custom SwiftMailer Plugin"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:967
+msgid ""
+"If you're using a custom SwiftMailer plugin (or want to create one), you can"
+" register it with SwiftMailer by creating a service for your plugin and "
+"tagging it with ``swiftmailer.default.plugin`` (it has no options)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:973
+msgid ""
+"``default`` in this tag is the name of the mailer. If you have multiple "
+"mailers configured or have changed the default mailer name for some reason, "
+"you should change it to the name of your mailer in order to use this tag."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:977
+msgid ""
+"A SwiftMailer plugin must implement the ``Swift_Events_EventListener`` "
+"interface. For more information on plugins, see `SwiftMailer's Plugin "
+"Documentation`_."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:980
+msgid ""
+"Several SwiftMailer plugins are core to Symfony and can be activated via "
+"different configuration. For details, see "
+":doc:`/reference/configuration/swiftmailer`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:984
+msgid "templating.helper"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:986
+msgid "**Purpose**: Make your service available in PHP templates"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:988
+msgid ""
+"To enable a custom template helper, add it as a regular service in one of "
+"your configuration, tag it with ``templating.helper`` and define an "
+"``alias`` attribute (the helper will be accessible via this alias in the "
+"templates):"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1030
+msgid "translation.loader"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1032
+msgid "**Purpose**: To register a custom service that loads translations"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1034
+msgid ""
+"By default, translations are loaded from the filesystem in a variety of "
+"different formats (YAML, XLIFF, PHP, etc)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1039
+msgid ""
+"Learn how to :ref:`load custom formats <components-translation-custom-"
+"loader>` in the components section."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1042
+msgid ""
+"Now, register your loader as a service and tag it with "
+"``translation.loader``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1078
+msgid ""
+"The ``alias`` option is required and very important: it defines the file "
+"\"suffix\" that will be used for the resource files that use this loader. "
+"For example, suppose you have some custom ``bin`` format that you need to "
+"load. If you have a ``bin`` file that contains French translations for the "
+"``messages`` domain, then you might have a file "
+"``app/Resources/translations/messages.fr.bin``."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1084
+msgid ""
+"When Symfony tries to load the ``bin`` file, it passes the path to your "
+"custom loader as the ``$resource`` argument. You can then perform any logic "
+"you need on that file in order to load your translations."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1088
+msgid ""
+"If you're loading translations from a database, you'll still need a resource"
+" file, but it might either be blank or contain a little bit of information "
+"about loading those resources from the database. The file is key to trigger "
+"the ``load`` method on your custom loader."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1094
+msgid "translation.extractor"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1096
+msgid ""
+"**Purpose**: To register a custom service that extracts messages from a file"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1098
+msgid ""
+"When executing the ``translation:update`` command, it uses extractors to "
+"extract translation messages from a file. By default, the Symfony framework "
+"has a :class:`Symfony\\\\Bridge\\\\Twig\\\\Translation\\\\TwigExtractor` and"
+" a "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Translation\\\\PhpExtractor`,"
+" which help to find and extract translation keys from Twig templates and PHP"
+" files."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1104
+msgid ""
+"You can create your own extractor by creating a class that implements "
+":class:`Symfony\\\\Component\\\\Translation\\\\Extractor\\\\ExtractorInterface`"
+" and tagging the service with ``translation.extractor``. The tag has one "
+"required option: ``alias``, which defines the name of the extractor::"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1172
+msgid "translation.dumper"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1174
+msgid ""
+"**Purpose**: To register a custom service that dumps messages to a file"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1176
+msgid ""
+"After an `Extractor <translation.extractor>`_ has extracted all messages "
+"from the templates, the dumpers are executed to dump the messages to a "
+"translation file in a specific format."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1180
+msgid "Symfony already comes with many dumpers:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1182
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\CsvFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1183
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\IcuResFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1184
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\IniFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1185
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\MoFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1186
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\PoFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1187
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\QtFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1188
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\XliffFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1189
+msgid ":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\YamlFileDumper`"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1191
+msgid ""
+"You can create your own dumper by extending "
+":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\FileDumper` or "
+"implementing "
+":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\DumperInterface` "
+"and tagging the service with ``translation.dumper``. The tag has one option:"
+" ``alias`` This is the name that's used to determine which dumper should be "
+"used."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1234
+msgid ""
+"Learn how to :ref:`dump to custom formats <components-translation-custom-"
+"dumper>` in the components section."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1240
+msgid "twig.extension"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1242
+msgid "**Purpose**: To register a custom Twig Extension"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1244
+msgid ""
+"To enable a Twig extension, add it as a regular service in one of your "
+"configuration, and tag it with ``twig.extension``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1281
+msgid ""
+"For information on how to create the actual Twig Extension class, see "
+"`Twig's documentation`_ on the topic or read the cookbook article: "
+":doc:`/cookbook/templating/twig_extension`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1285
+msgid ""
+"Before writing your own extensions, have a look at the `Twig official "
+"extension repository`_ which already includes several useful extensions. For"
+" example ``Intl`` and its ``localizeddate`` filter that formats a date "
+"according to user's locale. These official Twig extensions also have to be "
+"added as regular services:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1323
+msgid "twig.loader"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1325
+msgid "**Purpose**: Register a custom service that loads Twig templates"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1327
+msgid ""
+"By default, Symfony uses only one `Twig Loader`_ - "
+":class:`Symfony\\\\Bundle\\\\TwigBundle\\\\Loader\\\\FilesystemLoader`. If "
+"you need to load Twig templates from another resource, you can create a "
+"service for the new loader and tag it with ``twig.loader``:"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1368
+msgid ""
+"The ``priority`` value is optional and defaults to ``0``. The higher "
+"priority loaders are tried first."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1372
+msgid "validator.constraint_validator"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1374
+msgid "**Purpose**: Create your own custom validation constraint"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1376
+msgid ""
+"This tag allows you to create and register your own custom validation "
+"constraint. For more information, read the cookbook article: "
+":doc:`/cookbook/validation/custom_constraint`."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1380
+msgid "validator.initializer"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1382
+msgid ""
+"**Purpose**: Register a service that initializes objects before validation"
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1384
+msgid ""
+"This tag provides a very uncommon piece of functionality that allows you to "
+"perform some sort of action on an object right before it's validated. For "
+"example, it's used by Doctrine to query for all of the lazily-loaded data on"
+" an object before it's validated. Without this, some data on a Doctrine "
+"entity would appear to be \"missing\" when validated, even though this is "
+"not really the case."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1391
+msgid ""
+"If you do need to use this tag, just make a new class that implements the "
+":class:`Symfony\\\\Component\\\\Validator\\\\ObjectInitializerInterface` "
+"interface. Then, tag it with the ``validator.initializer`` tag (it has no "
+"options)."
+msgstr ""
+
+#: ../../reference/dic_tags.rst:1395
+msgid ""
+"For an example, see the ``EntityInitializer`` class inside the Doctrine "
+"Bridge."
+msgstr ""

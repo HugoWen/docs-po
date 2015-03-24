@@ -1,0 +1,123 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/stopwatch.rst:6
+msgid "The Stopwatch Component"
+msgstr ""
+
+#: ../../components/stopwatch.rst:8
+msgid "The Stopwatch component provides a way to profile code."
+msgstr ""
+
+#: ../../components/stopwatch.rst:11
+msgid "Installation"
+msgstr ""
+
+#: ../../components/stopwatch.rst:13
+msgid "You can install the component in two different ways:"
+msgstr ""
+
+#: ../../components/stopwatch.rst:15
+msgid ""
+":doc:`Install it via Composer</components/using_components>` "
+"(``symfony/stopwatch`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/stopwatch.rst:16
+msgid ""
+"Use the official Git repository (https://github.com/symfony/Stopwatch)."
+msgstr ""
+
+#: ../../components/stopwatch.rst:19
+msgid "Usage"
+msgstr ""
+
+#: ../../components/stopwatch.rst:21
+msgid ""
+"The Stopwatch component provides an easy and consistent way to measure "
+"execution time of certain parts of code so that you don't constantly have to"
+" parse microtime by yourself. Instead, use the simple "
+":class:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch` class::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:34
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Stopwatch\\\\StopwatchEvent` object can "
+"be retrieved from the  "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::start`, "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::stop`, "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::lap` and "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::getEvent` methods. "
+"The latter should be used when you need to retrieve the duration of an event"
+" while it is still running."
+msgstr ""
+
+#: ../../components/stopwatch.rst:42
+msgid "You can also provide a category name to an event::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:46
+msgid ""
+"You can consider categories as a way of tagging events. For example, the "
+"Symfony Profiler tool uses categories to nicely color-code different events."
+msgstr ""
+
+#: ../../components/stopwatch.rst:50
+msgid "Periods"
+msgstr ""
+
+#: ../../components/stopwatch.rst:52
+msgid ""
+"As you know from the real world, all stopwatches come with two buttons: one "
+"to start and stop the stopwatch, and another to measure the lap time. This "
+"is exactly what the "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::lap` method does::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:67
+msgid ""
+"Lap information is stored as \"periods\" within the event. To get lap "
+"information call::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:72
+msgid ""
+"In addition to periods, you can get other useful information from the event "
+"object. For example::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:84
+msgid "Sections"
+msgstr ""
+
+#: ../../components/stopwatch.rst:86
+msgid ""
+"Sections are a way to logically split the timeline into groups. You can see "
+"how Symfony uses sections to nicely visualize the framework lifecycle in the"
+" Symfony Profiler tool. Here is a basic usage example using sections::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:98
+msgid ""
+"You can reopen a closed section by calling the "
+":method:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch::openSection` method"
+" and specifying the id of the section to be reopened::"
+msgstr ""
+
+#: ../../components/stopwatch.rst:1 ../../components/stopwatch.rst:1
+msgid "Stopwatch"
+msgstr ""
+
+#: ../../components/stopwatch.rst:1
+msgid "Components"
+msgstr ""

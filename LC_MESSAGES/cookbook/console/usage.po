@@ -1,0 +1,83 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/console/usage.rst:5
+msgid "How to Use the Console"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:7
+msgid ""
+"The :doc:`/components/console/usage` page of the components documentation "
+"looks at the global console options. When you use the console as part of the"
+" full stack framework, some additional global options are available as well."
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:11
+msgid ""
+"By default, console commands run in the ``dev`` environment and you may want"
+" to change this for some commands. For example, you may want to run some "
+"commands in the ``prod`` environment for performance reasons. Also, the "
+"result of some commands will be different depending on the environment. For "
+"example, the ``cache:clear`` command will clear and warm the cache for the "
+"specified environment only. To clear and warm the ``prod`` cache you need to"
+" run:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:22
+msgid "or the equivalent:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:28
+msgid ""
+"In addition to changing the environment, you can also choose to disable "
+"debug mode. This can be useful where you want to run commands in the ``dev``"
+" environment but avoid the performance hit of collecting debug data:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:36
+msgid ""
+"There is an interactive shell which allows you to enter commands without "
+"having to specify ``php app/console`` each time, which is useful if you need"
+" to run several commands. To enter the shell run:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:45
+msgid "You can now just run commands with the command name:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:51
+msgid ""
+"When using the shell you can choose to run each command in a separate "
+"process:"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:58
+msgid ""
+"When you do this, the output will not be colorized and interactivity is not "
+"supported so you will need to pass all command params explicitly."
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:63
+msgid ""
+"Unless you are using isolated processes, clearing the cache in the shell "
+"will not have an effect on subsequent commands you run. This is because the "
+"original cached files are still being used."
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../cookbook/console/usage.rst:1
+msgid "Usage"
+msgstr ""

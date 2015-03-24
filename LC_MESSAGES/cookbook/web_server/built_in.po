@@ -1,0 +1,146 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/web_server/built_in.rst:5
+msgid "How to Use PHP's built-in Web Server"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:7
+msgid ""
+"The ability to run the server as a background process was introduced in "
+"Symfony 2.6."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:11
+msgid ""
+"Since PHP 5.4 the CLI SAPI comes with a `built-in web server`_. It can be "
+"used to run your PHP applications locally during development, for testing or"
+" for application demonstrations. This way, you don't have to bother "
+"configuring a full-featured web server such as :doc:`Apache or Nginx "
+"</cookbook/configuration/web_server_configuration>`."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:19
+msgid ""
+"The built-in web server is meant to be run in a controlled environment. It "
+"is not designed to be used on public networks."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:23
+msgid "Starting the Web Server"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:25
+msgid ""
+"Running a Symfony application using PHP's built-in web server is as easy as "
+"executing the ``server:start`` command:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:32
+msgid ""
+"This starts the web server at ``localhost:8000`` in the background that "
+"serves your Symfony application."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:35
+msgid ""
+"By default, the web server listens on port 8000 on the loopback device. You "
+"can change the socket passing an IP address and a port as a command-line "
+"argument:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:44
+msgid ""
+"You can use the ``server:status`` command to check if a web server is "
+"listening on a certain socket:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:53
+msgid ""
+"The first command shows if your Symfony application will be server through "
+"``localhost:8000``, the second one does the same for ``192.168.0.1:8080``."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:58
+msgid ""
+"Before Symfony 2.6, the ``server:run`` command was used to start the built-"
+"in web server. This command is still available and behaves slightly "
+"different. Instead of starting the server in the background, it will block "
+"the current terminal until you terminate it (this is usually done by "
+"pressing Ctrl and C)."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:0
+msgid "Using the built-in Web Server from inside a Virtual Machine"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:66
+msgid ""
+"If you want to use the built-in web server from inside a virtual machine and"
+" then load the site from a browser on your host machine, you'll need to "
+"listen on the ``0.0.0.0:8000`` address (i.e. on all IP addresses that are "
+"assigned to the virtual machine):"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:77
+msgid ""
+"You should **NEVER** listen to all interfaces on a computer that is directly"
+" accessible from the Internet. The built-in web server is not designed to be"
+" used on public networks."
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:82
+msgid "Command Options"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:84
+msgid ""
+"The built-in web server expects a \"router\" script (read about the "
+"\"router\" script on `php.net`_) as an argument. Symfony already passes such"
+" a router script when the command is executed in the ``prod`` or in the "
+"``dev`` environment. Use the ``--router`` option in any other environment or"
+" to use another router script:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:94
+msgid ""
+"If your application's document root differs from the standard directory "
+"layout, you have to pass the correct location using the ``--docroot`` "
+"option:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:102
+msgid "Stopping the Server"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:104
+msgid ""
+"When you are finished, you can simply stop the web server using the "
+"``server:stop`` command:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:111
+msgid ""
+"Like with the start command, if you omit the socket information, Symfony "
+"will stop the web server bound to ``localhost:8000``. Just pass the socket "
+"information when the web server listens to another IP address or to another "
+"port:"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:1
+msgid "Web Server"
+msgstr ""
+
+#: ../../cookbook/web_server/built_in.rst:1
+msgid "Built-in Web Server"
+msgstr ""

@@ -1,0 +1,185 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/documentation/translations.rst:2
+msgid "Translations"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:4
+msgid ""
+"The Symfony documentation is written in English and many people are involved"
+" in the translation process."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:9
+msgid ""
+"Symfony Project officially discourages from starting new translations for "
+"the documentation. As a matter of fact, there is `an ongoing discussion`_ in"
+" the community about the benefits and drawbacks of community driven "
+"translations."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:14
+msgid "Contributing"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:16
+msgid ""
+"First, become familiar with the :doc:`markup language "
+"</contributing/documentation/format>` used by the documentation."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:19
+msgid ""
+"Then, subscribe to the `Symfony docs mailing-list`_, as collaboration "
+"happens there."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:22
+msgid ""
+"Finally, find the *master* repository for the language you want to "
+"contribute for. Here is the list of the official *master* repositories:"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:25
+msgid "*English*:  https://github.com/symfony/symfony-docs"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:26
+msgid "*French*:   https://github.com/symfony-fr/symfony-docs-fr"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:27
+msgid "*Italian*:  https://github.com/garak/symfony-docs-it"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:28
+msgid "*Japanese*: https://github.com/symfony-japan/symfony-docs-ja"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:29
+msgid ""
+"*Portuguese (Brazilian)*:  https://github.com/andreia/symfony-docs-pt-BR"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:33
+msgid ""
+"If you want to contribute translations for a new language, read the "
+":ref:`dedicated section <translations-adding-a-new-language>`."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:37
+msgid "Joining the Translation Team"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:39
+msgid ""
+"If you want to help translating some documents for your language or fix some"
+" bugs, consider joining us; it's a very easy process:"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:42
+msgid "Introduce yourself on the `Symfony docs mailing-list`_;"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:43
+msgid "*(optional)* Ask which documents you can work on;"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:44
+msgid ""
+"Fork the *master* repository for your language (click the \"Fork\" button on"
+" the GitHub page);"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:46
+msgid "Translate some documents;"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:47
+msgid ""
+"Ask for a pull request (click on the \"Pull Request\" from your page on "
+"GitHub);"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:49
+msgid ""
+"The team manager accepts your modifications and merges them into the master "
+"repository;"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:51
+msgid ""
+"The documentation website is updated every other night from the master "
+"repository."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:57
+msgid "Adding a new Language"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:59
+msgid ""
+"This section gives some guidelines for starting the translation of the "
+"Symfony documentation for a new language."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:62
+msgid ""
+"As starting a translation is a lot of work, talk about your plan on the "
+"`Symfony docs mailing-list`_ and try to find motivated people willing to "
+"help."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:65
+msgid ""
+"When the team is ready, nominate a team manager; they will be responsible "
+"for the *master* repository."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:68
+msgid "Create the repository and copy the *English* documents."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:70
+msgid "The team can now start the translation process."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:72
+msgid ""
+"When the team is confident that the repository is in a consistent and stable"
+" state (everything is translated, or non-translated documents have been "
+"removed from the toctrees -- files named ``index.rst`` and ``map.rst.inc``),"
+" the team manager can ask that the repository is added to the list of "
+"official *master* repositories by sending an email to Fabien (fabien at "
+"symfony.com)."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:79
+msgid "Maintenance"
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:81
+msgid ""
+"Translation does not end when everything is translated. The documentation is"
+" a moving target (new documents are added, bugs are fixed, paragraphs are "
+"reorganized, ...). The translation team need to closely follow the English "
+"repository and apply changes to the translated documents as soon as "
+"possible."
+msgstr ""
+
+#: ../../contributing/documentation/translations.rst:88
+msgid ""
+"Non maintained languages are removed from the official list of repositories "
+"as obsolete documentation is dangerous."
+msgstr ""

@@ -1,0 +1,117 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/web-assets.rst:2
+msgid "Web Assets"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:4
+msgid ""
+"Web assets are things like CSS, JavaScript and image files that make the "
+"frontend of your site look and work great. Symfony developers have "
+"traditionally stored these assets in the ``Resources/public/`` directory of "
+"each bundle."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:0 ../../best_practices/web-assets.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:10
+msgid "Store your assets in the ``web/`` directory."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:12
+msgid ""
+"Scattering your web assets across tens of different bundles makes it more "
+"difficult to manage them. Your designers' lives will be much easier if all "
+"the application assets are in one location."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:16
+msgid ""
+"Templates also benefit from centralizing your assets, because the links are "
+"much more concise:"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:31
+msgid ""
+"Keep in mind that ``web/`` is a public directory and that anything stored "
+"here will be publicly accessible. For that reason, you should put your "
+"compiled web assets here, but not their source files (e.g. SASS files)."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:36
+msgid "Using Assetic"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:38
+msgid ""
+"These days, you probably can't simply create static CSS and JavaScript files"
+" and include them in your template. Instead, you'll probably want to combine"
+" and minify these to improve client-side performance. You may also want to "
+"use LESS or Sass (for example), which means you'll need some way to process "
+"these into CSS files."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:44
+msgid ""
+"A lot of tools exist to solve these problems, including pure-frontend (non-"
+"PHP) tools like GruntJS."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:49
+msgid ""
+"Use Assetic to compile, combine and minimize web assets, unless you're "
+"comfortable with frontend tools like GruntJS."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:52
+msgid ""
+":doc:`Assetic </cookbook/assetic/asset_management>` is an asset manager "
+"capable of compiling assets developed with a lot of different frontend "
+"technologies like LESS, Sass and CoffeeScript. Combining all your assets "
+"with Assetic is a matter of wrapping all the assets with a single Twig tag:"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:77
+msgid "Frontend-Based Applications"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:79
+msgid ""
+"Recently, frontend technologies like AngularJS have become pretty popular "
+"for developing frontend web applications that talk to an API."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:82
+msgid ""
+"If you are developing an application like this, you should use the tools "
+"that are recommended by the technology, such as Bower and GruntJS. You "
+"should develop your frontend application separately from your Symfony "
+"backend (even separating the repositories if you want)."
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:88
+msgid "Learn More about Assetic"
+msgstr ""
+
+#: ../../best_practices/web-assets.rst:90
+msgid ""
+"Assetic can also minimize CSS and JavaScript assets :doc:`using "
+"UglifyCSS/UglifyJS </cookbook/assetic/uglifyjs>` to speed up your websites. "
+"You can even :doc:`compress images </cookbook/assetic/jpeg_optimize>` with "
+"Assetic to reduce their size before serving them to the user. Check out the "
+"`official Assetic documentation`_ to learn more about all the available "
+"features."
+msgstr ""

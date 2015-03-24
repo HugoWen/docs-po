@@ -1,0 +1,113 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:2
+msgid ""
+"How to Configure Symfony to Work behind a Load Balancer or a Reverse Proxy"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:4
+msgid ""
+"When you deploy your application, you may be behind a load balancer (e.g. an"
+" AWS Elastic Load Balancer) or a reverse proxy (e.g. Varnish for "
+":doc:`caching</book/http_cache>`)."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:8
+msgid ""
+"For the most part, this doesn't cause any problems with Symfony. But, when a"
+" request passes through a proxy, certain request information is sent using "
+"special ``X-Forwarded-*`` headers. For example, instead of reading the "
+"``REMOTE_ADDR`` header (which will now be the IP address of your reverse "
+"proxy), the user's true IP will be stored in an ``X-Forwarded-For`` header."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:14
+msgid ""
+"If you don't configure Symfony to look for these headers, you'll get "
+"incorrect information about the client's IP address, whether or not the "
+"client is connecting via HTTPS, the client's port and the hostname being "
+"requested."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:19
+msgid "Solution: trusted_proxies"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:21
+msgid ""
+"This is no problem, but you *do* need to tell Symfony that this is happening"
+" and which reverse proxy IP addresses will be doing this type of thing:"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:55
+msgid ""
+"In this example, you're saying that your reverse proxy (or proxies) has the "
+"IP address ``192.0.0.1`` or matches the range of IP addresses that use the "
+"CIDR notation ``10.0.0.0/8``. For more details, see the "
+":ref:`framework.trusted_proxies <reference-framework-trusted-proxies>` "
+"option."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:60
+msgid ""
+"That's it! Symfony will now look for the correct ``X-Forwarded-*`` headers "
+"to get information like the client's IP address, host, port and whether or "
+"not the request is using HTTPS."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:65
+msgid "But what if the IP of my Reverse Proxy Changes Constantly!"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:67
+msgid ""
+"Some reverse proxies (like Amazon's Elastic Load Balancers) don't have a "
+"static IP address or even a range that you can target with the CIDR "
+"notation. In this case, you'll need to - *very carefully* - trust *all* "
+"proxies."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:71
+msgid ""
+"Configure your web server(s) to *not* respond to traffic from *any* clients "
+"other than your load balancers. For AWS, this can be done with `security "
+"groups`_."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:74
+msgid ""
+"Once you've guaranteed that traffic will only come from your trusted reverse"
+" proxies, configure Symfony to *always* trust incoming request. This is done"
+" inside of your front controller::"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:86
+msgid ""
+"That's it! It's critical that you prevent traffic from all non-trusted "
+"sources. If you allow outside traffic, they could \"spoof\" their true IP "
+"address and other information."
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:91
+msgid "My Reverse Proxy Uses Non-Standard (not X-Forwarded) Headers"
+msgstr ""
+
+#: ../../cookbook/request/load_balancer_reverse_proxy.rst:93
+msgid ""
+"Most reverse proxies store information on specific ``X-Forwarded-*`` "
+"headers. But if your reverse proxy uses non-standard header names, you can "
+"configure these (see "
+"\":doc:`/components/http_foundation/trusting_proxies`\"). The code for doing"
+" this will need to live in your front controller (e.g. ``web/app.php``)."
+msgstr ""

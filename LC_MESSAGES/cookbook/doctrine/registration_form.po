@@ -1,0 +1,178 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/registration_form.rst:6
+msgid "How to Implement a simple Registration Form"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:8
+msgid ""
+"Some forms have extra fields whose values don't need to be stored in the "
+"database. For example, you may want to create a registration form with some "
+"extra fields (like a \"terms accepted\" checkbox field) and embed the form "
+"that actually stores the account information."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:14
+msgid "The simple User Model"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:16
+msgid "You have a simple ``User`` entity mapped to the database::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:78
+msgid ""
+"This ``User`` entity contains three fields and two of them (``email`` and "
+"``plainPassword``) should display on the form. The email property must be "
+"unique in the database, this is enforced by adding this validation at the "
+"top of the class."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:85
+msgid ""
+"If you want to integrate this User within the security system, you need to "
+"implement the :ref:`UserInterface <book-security-user-entity>` of the "
+"Security component."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:0
+msgid "Why the 4096 Password Limit?"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:93
+msgid ""
+"Notice that the ``plainPassword`` field has a max length of 4096 characters."
+" For security purposes (`CVE-2013-5750`_), Symfony limits the plain password"
+" length to 4096 characters when encoding it. Adding this constraint makes "
+"sure that your form will give a validation error if anyone tries a super-"
+"long password."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:99
+msgid ""
+"You'll need to add this constraint anywhere in your application where your "
+"user submits a plaintext password (e.g. change password form). The only "
+"place where you don't need to worry about this is your login form, since "
+"Symfony's Security component handles this for you."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:105
+msgid "Create a Form for the Model"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:107
+msgid "Next, create the form for the ``User`` model::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:141
+msgid ""
+"There are just two fields: ``email`` and ``plainPassword`` (repeated to "
+"confirm the entered password). The ``data_class`` option tells the form the "
+"name of the underlying data class (i.e. your ``User`` entity)."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:147
+msgid ""
+"To explore more things about the Form component, read :doc:`/book/forms`."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:150
+msgid "Embedding the User Form into a Registration Form"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:152
+msgid ""
+"The form that you'll use for the registration page is not the same as the "
+"form used to simply modify the ``User`` (i.e. ``UserType``). The "
+"registration form will contain further fields like \"accept the terms\", "
+"whose value won't be stored in the database."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:157
+msgid "Start by creating a simple class which represents the \"registration\"::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:201
+msgid "Next, create the form for this ``Registration`` model::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:228
+msgid ""
+"You don't need to use a special method for embedding the ``UserType`` form. "
+"A form is a field, too - so you can add this like any other field, with the "
+"expectation that the ``Registration.user`` property will hold an instance of"
+" the ``User`` class."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:234
+msgid "Handling the Form Submission"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:236
+msgid ""
+"Next, you need a controller to handle the form. Start by creating a simple "
+"controller for displaying the registration form::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:263
+msgid "And its template:"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:270
+msgid ""
+"Next, create the controller which handles the form submission. This performs"
+" the validation and saves the data into the database::"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:300
+msgid "Add new Routes"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:302
+msgid ""
+"Next, update your routes. If you're placing your routes inside your bundle "
+"(as shown here), don't forget to make sure that the routing file is being "
+":ref:`imported <routing-include-external-resources>`."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:353
+msgid "Update your Database Schema"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:355
+msgid ""
+"Of course, since you've added a ``User`` entity during this tutorial, make "
+"sure that your database schema has been updated properly:"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:362
+msgid ""
+"That's it! Your form now validates, and allows you to save the ``User`` "
+"object to the database. The extra ``terms`` checkbox on the ``Registration``"
+" model class is used during validation, but not actually used afterwards "
+"when saving the User to the database."
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:1
+#: ../../cookbook/doctrine/registration_form.rst:1
+msgid "Simple Registration Form"
+msgstr ""
+
+#: ../../cookbook/doctrine/registration_form.rst:1
+msgid "Form"
+msgstr ""

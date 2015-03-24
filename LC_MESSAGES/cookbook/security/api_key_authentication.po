@@ -1,0 +1,358 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/api_key_authentication.rst:5
+msgid "How to Authenticate Users with API Keys"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:7
+msgid ""
+"Nowadays, it's quite usual to authenticate the user via an API key (when "
+"developing a web service for instance). The API key is provided for every "
+"request and is passed as a query string parameter or via an HTTP header."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:12
+msgid "The API Key Authenticator"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:14
+msgid ""
+"Authenticating a user based on the Request information should be done via a "
+"pre-authentication mechanism. The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\SimplePreAuthenticatorInterface`"
+" allows you to implement such a scheme really easily."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:18
+msgid ""
+"Your exact situation may differ, but in this example, a token is read from "
+"an ``apikey`` query parameter, the proper username is loaded from that value"
+" and then a User object is created::"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:91
+msgid ""
+"Once you've :ref:`configured <cookbook-security-api-key-config>` everything,"
+" you'll be able to authenticate by adding an apikey parameter to the query "
+"string, like "
+"``http://example.com/admin/foo?apikey=37b51d194a7513e45b56f6524f2d51f2``."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:95
+msgid ""
+"The authentication process has several steps, and your implementation will "
+"probably differ:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:99
+msgid "1. createToken"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:101
+msgid ""
+"Early in the request cycle, Symfony calls ``createToken()``. Your job here "
+"is to create a token object that contains all of the information from the "
+"request that you need to authenticate the user (e.g. the ``apikey`` query "
+"parameter). If that information is missing, throwing a "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\BadCredentialsException`"
+" will cause authentication to fail. You might want to return ``null`` "
+"instead to just skip the authentication, so Symfony can fallback to another "
+"authentication method, if any."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:111
+msgid "2. supportsToken"
+msgstr ""
+
+#: ../../cookbook/security/_supportsToken.rst.inc:1
+msgid ""
+"After Symfony calls ``createToken()``, it will then call ``supportsToken()``"
+" on your class (and any other authentication listeners) to figure out who "
+"should handle the token. This is just a way to allow several authentication "
+"mechanisms to be used for the same firewall (that way, you can for instance "
+"first try to authenticate the user via a certificate or an API key and fall "
+"back to a form login)."
+msgstr ""
+
+#: ../../cookbook/security/_supportsToken.rst.inc:8
+msgid ""
+"Mostly, you just need to make sure that this method returns ``true`` for a "
+"token that has been created by ``createToken()``. Your logic should probably"
+" look exactly like this example."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:116
+msgid "3. authenticateToken"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:118
+msgid ""
+"If ``supportsToken()`` returns ``true``, Symfony will now call "
+"``authenticateToken()``. One key part is the ``$userProvider``, which is an "
+"external class that helps you load information about the user. You'll learn "
+"more about this next."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:122
+msgid ""
+"In this specific example, the following things happen in "
+"``authenticateToken()``:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:124
+msgid ""
+"First, you use the ``$userProvider`` to somehow look up the ``$username`` "
+"that corresponds to the ``$apiKey``;"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:126
+msgid ""
+"Second, you use the ``$userProvider`` again to load or create a ``User`` "
+"object for the ``$username``;"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:128
+msgid ""
+"Finally, you create an *authenticated token* (i.e. a token with at least one"
+" role) that has the proper roles and the User object attached to it."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:131
+msgid ""
+"The goal is ultimately to use the ``$apiKey`` to find or create a ``User`` "
+"object. *How* you do this (e.g. query a database) and the exact class for "
+"your ``User`` object may vary. Those differences will be most obvious in "
+"your user provider."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:137
+msgid "The User Provider"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:139
+msgid ""
+"The ``$userProvider`` can be any user provider (see "
+":doc:`/cookbook/security/custom_provider`). In this example, the ``$apiKey``"
+" is used to somehow find the username for the user. This work is done in a "
+"``getUsernameForApiKey()`` method, which is created entirely custom for this"
+" use-case (i.e. this isn't a method that's used by Symfony's core user "
+"provider system)."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:145
+msgid "The ``$userProvider`` might look something like this::"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:192
+msgid "Now register your user provider as service:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:229
+msgid ""
+"Read the dedicated article to learn :doc:`how to create a custom user "
+"provider </cookbook/security/custom_provider>`."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:232
+msgid ""
+"The logic inside ``getUsernameForApiKey()`` is up to you. You may somehow "
+"transform the API key (e.g. ``37b51d``) into a username (e.g. ``jondoe``) by"
+" looking up some information in a \"token\" database table."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:236
+msgid ""
+"The same is true for ``loadUserByUsername()``. In this example, Symfony's "
+"core :class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\User` class"
+" is simply created. This makes sense if you don't need to store any extra "
+"information on your User object (e.g. ``firstName``). But if you do, you may"
+" instead have your *own* user class which you create and populate here by "
+"querying a database. This would allow you to have custom data on the "
+"``User`` object."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:243
+msgid ""
+"Finally, just make sure that ``supportsClass()`` returns ``true`` for User "
+"objects with the same class as whatever user you return in "
+"``loadUserByUsername()``. If your authentication is stateless like in this "
+"example (i.e. you expect the user to send the API key with every request and"
+" so you don't save the login to the session), then you can simply throw the "
+"``UnsupportedUserException`` exception in ``refreshUser()``."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:252
+msgid ""
+"If you *do* want to store authentication data in the session so that the key"
+" doesn't need to be sent on every request, see :ref:`cookbook-security-api-"
+"key-session`."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:256
+msgid "Handling Authentication Failure"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:258
+msgid ""
+"In order for your ``ApiKeyAuthentication`` to correctly display a 403 http "
+"status when either bad credentials or authentication fails you will need to "
+"implement the "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Authentication\\\\AuthenticationFailureHandlerInterface`"
+" on your Authenticator. This will provide a method "
+"``onAuthenticationFailure`` which you can use to create an error "
+"``Response``."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:288
+msgid "Configuration"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:290
+msgid ""
+"Once you have your ``ApiKeyAuthentication`` all setup, you need to register "
+"it as a service and use it in your security configuration (e.g. "
+"``security.yml``). First, register it as a service. This assumes that you "
+"have already setup your custom user provider as a service called "
+"``your_api_key_user_provider`` (see "
+":doc:`/cookbook/security/custom_provider`)."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:340
+msgid ""
+"Now, activate it in the ``firewalls`` section of your security configuration"
+" using the ``simple_preauth`` key:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:408
+msgid ""
+"That's it! Now, your ``ApiKeyAuthentication`` should be called at the "
+"beginning of each request and your authentication process will take place."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:411
+msgid ""
+"The ``stateless`` configuration parameter prevents Symfony from trying to "
+"store the authentication information in the session, which isn't necessary "
+"since the client will send the ``apikey`` on each request. If you *do* need "
+"to store authentication in the session, keep reading!"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:419
+msgid "Storing Authentication in the Session"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:421
+msgid ""
+"So far, this entry has described a situation where some sort of "
+"authentication token is sent on every request. But in some situations (like "
+"an OAuth flow), the token may be sent on only *one* request. In this case, "
+"you will want to authenticate the user and store that authentication in the "
+"session so that the user is automatically logged in for every subsequent "
+"request."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:427
+msgid ""
+"To make this work, first remove the ``stateless`` key from your firewall "
+"configuration or set it to ``false``:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:494
+msgid ""
+"Even though the token is being stored in the session, the credentials - in "
+"this case the API key (i.e. ``$token->getCredentials()``) - are not stored "
+"in the session for security reasons. To take advantage of the session, "
+"update ``ApiKeyAuthenticator`` to see if the stored token has a valid User "
+"object that can be used::"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:539
+msgid "Storing authentication information in the session works like this:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:541
+msgid ""
+"At the end of each request, Symfony serializes the token object (returned "
+"from ``authenticateToken()``), which also serializes the ``User`` object "
+"(since it's set on a property on the token);"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:544
+msgid ""
+"On the next request the token is deserialized and the deserialized ``User`` "
+"object is passed to the ``refreshUser()`` function of the user provider."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:547
+msgid ""
+"The second step is the important one: Symfony calls ``refreshUser()`` and "
+"passes you the user object that was serialized in the session. If your users"
+" are stored in the database, then you may want to re-query for a fresh "
+"version of the user to make sure it's not out-of-date. But regardless of "
+"your requirements, ``refreshUser()`` should now return the User object::"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:577
+msgid ""
+"You'll also want to make sure that your ``User`` object is being serialized "
+"correctly. If your ``User`` object has private properties, PHP can't "
+"serialize those. In this case, you may get back a User object that has a "
+"``null`` value for each property. For an example, see "
+":doc:`/cookbook/security/entity_provider`."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:583
+msgid "Only Authenticating for Certain URLs"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:585
+msgid ""
+"This entry has assumed that you want to look for the ``apikey`` "
+"authentication on *every* request. But in some situations (like an OAuth "
+"flow), you only really need to look for authentication information once the "
+"user has reached a certain URL (e.g. the redirect URL in OAuth)."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:590
+msgid ""
+"Fortunately, handling this situation is easy: just check to see what the "
+"current URL is before creating the token in ``createToken()``::"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:624
+msgid ""
+"This uses the handy "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\HttpUtils` class to "
+"check if the current URL matches the URL you're looking for. In this case, "
+"the URL (``/login/check``) has been hardcoded in the class, but you could "
+"also inject it as the third constructor argument."
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:629
+msgid ""
+"Next, just update your service configuration to inject the "
+"``security.http_utils`` service:"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:680
+msgid "That's it! Have fun!"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/api_key_authentication.rst:1
+msgid "Custom Request Authenticator"
+msgstr ""

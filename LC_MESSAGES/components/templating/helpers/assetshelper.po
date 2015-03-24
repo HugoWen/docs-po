@@ -1,0 +1,153 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/templating/helpers/assetshelper.rst:5
+#: ../../components/templating/helpers/assetshelper.rst:1
+msgid "Assets Helper"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:7
+msgid ""
+"The assets helper's main purpose is to make your application more portable "
+"by generating asset paths:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:16
+msgid ""
+"The assets helper can then be configured to render paths to a CDN or modify "
+"the paths in case your assets live in a sub-directory of your host (e.g. "
+"``http://example.com/app``)."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:20
+msgid "Configure Paths"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:22
+msgid ""
+"By default, the assets helper will prefix all paths with a slash. You can "
+"configure this by passing a base assets path as the first argument of the "
+"constructor::"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:31
+msgid ""
+"Now, if you use the helper, everything will be prefixed with ``/foo/bar``:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:41
+msgid "Absolute Urls"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:43
+msgid ""
+"You can also specify a URL to use in the second parameter of the "
+"constructor::"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:48
+msgid "Now URLs are rendered like ``http://cdn.example.com/images/logo.png``."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:50
+msgid ""
+"You can also use the third argument of the helper to force an absolute URL:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:61
+msgid ""
+"If you already set a URL in the constructor, using the third argument of "
+"``getUrl`` will not affect the generated URL."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:65
+msgid "Versioning"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:67
+msgid ""
+"To avoid using the cached resource after updating the old resource, you can "
+"use versions which you bump every time you release a new project. The "
+"version can be specified in the third argument::"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:74
+msgid ""
+"Now, every URL is suffixed with ``?328rad75``. If you want to have a "
+"different format, you can specify the new format in fourth argument. It's a "
+"string that is used in :phpfunction:`sprintf`. The first argument is the "
+"path and the second is the version. For instance, ``%s?v=%s`` will be "
+"rendered as ``/images/logo.png?v=328rad75``."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:80
+msgid ""
+"You can also generate a versioned URL on an asset-by-asset basis using the "
+"fourth argument of the helper:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:91
+msgid "Multiple Packages"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:93
+msgid ""
+"Asset path generation is handled internally by packages. The component "
+"provides 2 packages by default:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:96
+msgid ":class:`Symfony\\\\Component\\\\Templating\\\\Asset\\\\PathPackage`"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:97
+msgid ":class:`Symfony\\\\Component\\\\Templating\\\\Asset\\\\UrlPackage`"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:99
+msgid "You can also use multiple packages::"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:109
+msgid ""
+"This will setup the assets helper with 3 packages: the default package which"
+" defaults to ``/`` (set by the constructor), the images package which "
+"prefixes it with ``/images/`` and the scripts package which prefixes it with"
+" ``/scripts/``."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:114
+msgid ""
+"If you want to set another default package, you can use "
+":method:`Symfony\\\\Component\\\\Templating\\\\Helper\\\\AssetsHelper::setDefaultPackage`."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:117
+msgid ""
+"You can specify which package you want to use in the second argument of "
+":method:`Symfony\\\\Component\\\\Templating\\\\Helper\\\\AssetsHelper::getUrl`:"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:128
+msgid "Custom Packages"
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:130
+msgid ""
+"You can create your own package by extending "
+":class:`Symfony\\\\Component\\\\Templating\\\\Asset\\\\Package`."
+msgstr ""
+
+#: ../../components/templating/helpers/assetshelper.rst:1
+msgid "Templating Helpers"
+msgstr ""

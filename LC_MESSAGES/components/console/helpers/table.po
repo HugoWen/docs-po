@@ -1,0 +1,109 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/table.rst:5
+#: ../../components/console/helpers/table.rst:1
+msgid "Table"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:7
+msgid ""
+"When building a console application it may be useful to display tabular "
+"data:"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:20
+msgid ""
+"To display a table, use "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table`, set the "
+"headers, set the rows and then render the table::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:37
+msgid ""
+"You can add a table separator anywhere in the output by passing an instance "
+"of :class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableSeparator` as a"
+" row::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:62
+msgid ""
+"The table style can be changed to any built-in styles via "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::setStyle`::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:72
+msgid "This code results in:"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:82
+msgid "You can also set the style to ``borderless``::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:87
+msgid "which outputs:"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:100
+msgid "If the built-in styles do not fit your need, define your own::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:117
+msgid "Here is a full list of things you can customize:"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:119
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setPaddingChar`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:120
+msgid ""
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setHorizontalBorderChar`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:121
+msgid ""
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setVerticalBorderChar`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:122
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCrossingChar`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:123
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCellHeaderFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:124
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCellRowFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:125
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setBorderFormat`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:126
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setPadType`"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:130
+msgid "You can also register a style globally::"
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:138
+msgid "This method can also be used to override a built-in style."
+msgstr ""
+
+#: ../../components/console/helpers/table.rst:1
+msgid "Console Helpers"
+msgstr ""

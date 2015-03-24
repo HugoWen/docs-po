@@ -1,0 +1,1081 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/page_creation.rst:7
+msgid "Creating Pages in Symfony"
+msgstr ""
+
+#: ../../book/page_creation.rst:9
+msgid "Creating a new page in Symfony is a simple two-step process:"
+msgstr ""
+
+#: ../../book/page_creation.rst:11
+msgid ""
+"*Create a route*: A route defines the URL (e.g. ``/about``) to your page and"
+" specifies a controller (which is a PHP function) that Symfony should "
+"execute when the URL of an incoming request matches the route path;"
+msgstr ""
+
+#: ../../book/page_creation.rst:15
+msgid ""
+"*Create a controller*: A controller is a PHP function that takes the "
+"incoming request and transforms it into the Symfony ``Response`` object "
+"that's returned to the user."
+msgstr ""
+
+#: ../../book/page_creation.rst:19
+msgid ""
+"This simple approach is beautiful because it matches the way that the Web "
+"works. Every interaction on the Web is initiated by an HTTP request. The job"
+" of your application is simply to interpret the request and return the "
+"appropriate HTTP response."
+msgstr ""
+
+#: ../../book/page_creation.rst:24
+msgid ""
+"Symfony follows this philosophy and provides you with tools and conventions "
+"to keep your application organized as it grows in users and complexity."
+msgstr ""
+
+#: ../../book/page_creation.rst:33 ../../book/page_creation.rst:27
+msgid "Environments & Front Controllers"
+msgstr ""
+
+#: ../../book/page_creation.rst:35
+msgid ""
+"Every Symfony application runs within an :term:`environment`. An environment"
+" is a specific set of configuration and loaded bundles, represented by a "
+"string. The same application can be run with different configurations by "
+"running the application in different environments. Symfony comes with three "
+"environments defined — ``dev``, ``test`` and ``prod`` — but you can create "
+"your own as well."
+msgstr ""
+
+#: ../../book/page_creation.rst:41
+msgid ""
+"Environments are useful by allowing a single application to have a dev "
+"environment built for debugging and a production environment optimized for "
+"speed. You might also load specific bundles based on the selected "
+"environment. For example, Symfony comes with the WebProfilerBundle "
+"(described below), enabled only in the ``dev`` and ``test`` environments."
+msgstr ""
+
+#: ../../book/page_creation.rst:47
+msgid ""
+"Symfony comes with two web-accessible front controllers: ``app_dev.php`` "
+"provides the ``dev`` environment, and ``app.php`` provides the ``prod`` "
+"environment. All web accesses to Symfony normally go through one of these "
+"front controllers. (The ``test`` environment is normally only used when "
+"running unit tests, and so doesn't have a dedicated front controller. The "
+"console tool also provides a front controller that can be used with any "
+"environment.)"
+msgstr ""
+
+#: ../../book/page_creation.rst:54
+msgid ""
+"When the front controller initializes the kernel, it provides two "
+"parameters: the environment, and also whether the kernel should run in debug"
+" mode. To make your application respond faster, Symfony maintains a cache "
+"under the ``app/cache/`` directory. When debug mode is enabled (such as "
+"``app_dev.php`` does by default), this cache is flushed automatically "
+"whenever you make changes to any code or configuration. When running in "
+"debug mode, Symfony runs slower, but your changes are reflected without "
+"having to manually clear the cache."
+msgstr ""
+
+#: ../../book/page_creation.rst:67
+msgid "The \"Random Number\" Page"
+msgstr ""
+
+#: ../../book/page_creation.rst:69
+msgid ""
+"In this chapter, you'll develop an application that can generate random "
+"numbers. When you're finished, the user will be able to get a random number "
+"between ``1`` and the upper limit set by the URL:"
+msgstr ""
+
+#: ../../book/page_creation.rst:77
+msgid ""
+"Actually, you'll be able to replace ``100`` with any other number to "
+"generate numbers up to that upper limit. To create the page, follow the "
+"simple two-step process."
+msgstr ""
+
+#: ../../book/page_creation.rst:83
+msgid ""
+"The tutorial assumes that you've already downloaded Symfony and configured "
+"your webserver. The above URL assumes that ``localhost`` points to the "
+"``web`` directory of your new Symfony project. For detailed information on "
+"this process, see the documentation on the web server you are using. Here "
+"are some relevant documentation pages for the web server you might be using:"
+msgstr ""
+
+#: ../../book/page_creation.rst:89
+msgid ""
+"For Apache HTTP Server, refer to `Apache's DirectoryIndex documentation`_"
+msgstr ""
+
+#: ../../book/page_creation.rst:90
+msgid "For Nginx, refer to `Nginx HttpCoreModule location documentation`_"
+msgstr ""
+
+#: ../../book/page_creation.rst:93
+msgid "Before you begin: Create the Bundle"
+msgstr ""
+
+#: ../../book/page_creation.rst:95
+msgid ""
+"Before you begin, you'll need to create a *bundle*. In Symfony, a "
+":term:`bundle` is like a plugin, except that all the code in your "
+"application will live inside a bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:99
+msgid ""
+"A bundle is nothing more than a directory that houses everything related to "
+"a specific feature, including PHP classes, configuration, and even "
+"stylesheets and JavaScript files (see :ref:`page-creation-bundles`)."
+msgstr ""
+
+#: ../../book/page_creation.rst:103
+msgid ""
+"Depending on the way you installed Symfony, you may already have a bundle "
+"called AcmeDemoBundle. Browse the ``src/`` directory of your project and "
+"check if there is a ``DemoBundle/`` directory inside an ``Acme/`` directory."
+" If those directories already exist, skip the rest of this section and go "
+"directly to create the route."
+msgstr ""
+
+#: ../../book/page_creation.rst:109
+msgid ""
+"To create a bundle called AcmeDemoBundle (a play bundle that you'll build in"
+" this chapter), run the following command and follow the on-screen "
+"instructions (use all the default options):"
+msgstr ""
+
+#: ../../book/page_creation.rst:117
+msgid ""
+"Behind the scenes, a directory is created for the bundle at "
+"``src/Acme/DemoBundle``. A line is also automatically added to the "
+"``app/AppKernel.php`` file so that the bundle is registered with the "
+"kernel::"
+msgstr ""
+
+#: ../../book/page_creation.rst:133
+msgid ""
+"Now that you have a bundle setup, you can begin building your application "
+"inside the bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:137
+msgid "Step 1: Create the Route"
+msgstr ""
+
+#: ../../book/page_creation.rst:139
+msgid ""
+"By default, the routing configuration file in a Symfony application is "
+"located at ``app/config/routing.yml``. Like all configuration in Symfony, "
+"you can also choose to use XML or PHP out of the box to configure routes."
+msgstr ""
+
+#: ../../book/page_creation.rst:143
+msgid ""
+"If you look at the main routing file, you'll see that Symfony already added "
+"an entry when you generated the AcmeDemoBundle:"
+msgstr ""
+
+#: ../../book/page_creation.rst:182
+msgid ""
+"This entry is pretty basic: it tells Symfony to load routing configuration "
+"from the ``Resources/config/routing.yml`` (``routing.xml`` or "
+"``routing.php`` in the XML and PHP code example respectively) file that "
+"lives inside the AcmeDemoBundle. This means that you place routing "
+"configuration directly in ``app/config/routing.yml`` or organize your routes"
+" throughout your application, and import them from here."
+msgstr ""
+
+#: ../../book/page_creation.rst:191
+msgid ""
+"You are not limited to load routing configurations that are of the same "
+"format. For example, you could also load a YAML file in an XML configuration"
+" and vice versa."
+msgstr ""
+
+#: ../../book/page_creation.rst:195
+msgid ""
+"Now that the ``routing.yml`` file from the bundle is being imported, add the"
+" new route that defines the URL of the page that you're about to create:"
+msgstr ""
+
+#: ../../book/page_creation.rst:234
+msgid ""
+"The routing consists of two basic pieces: the ``path``, which is the URL "
+"that this route will match, and a ``defaults`` array, which specifies the "
+"controller that should be executed. The placeholder syntax in the path "
+"(``{limit}``) is a wildcard. It means that ``/random/10``, ``/random/327`` "
+"or any other similar URL will match this route. The ``{limit}`` placeholder "
+"parameter will also be passed to the controller so that you can use its "
+"value to generate the proper random number."
+msgstr ""
+
+#: ../../book/page_creation.rst:244
+msgid ""
+"The routing system has many more great features for creating flexible and "
+"powerful URL structures in your application. For more details, see the "
+"chapter all about :doc:`Routing </book/routing>`."
+msgstr ""
+
+#: ../../book/page_creation.rst:249
+msgid "Step 2: Create the Controller"
+msgstr ""
+
+#: ../../book/page_creation.rst:251
+msgid ""
+"When a URL such as ``/random/10`` is handled by the application, the "
+"``random`` route is matched and the ``AcmeDemoBundle:Random:index`` "
+"controller is executed by the framework. The second step of the page-"
+"creation process is to create that controller."
+msgstr ""
+
+#: ../../book/page_creation.rst:256
+msgid ""
+"The controller - ``AcmeDemoBundle:Random:index`` is the *logical* name of "
+"the controller, and it maps to the ``indexAction`` method of a PHP class "
+"called ``Acme\\DemoBundle\\Controller\\RandomController``. Start by creating"
+" this file inside your AcmeDemoBundle::"
+msgstr ""
+
+#: ../../book/page_creation.rst:268
+msgid ""
+"In reality, the controller is nothing more than a PHP method that you create"
+" and Symfony executes. This is where your code uses information from the "
+"request to build and prepare the resource being requested. Except in some "
+"advanced cases, the end product of a controller is always the same: a "
+"Symfony ``Response`` object."
+msgstr ""
+
+#: ../../book/page_creation.rst:274
+msgid ""
+"Create the ``indexAction`` method that Symfony will execute when the "
+"``random`` route is matched::"
+msgstr ""
+
+#: ../../book/page_creation.rst:292
+msgid ""
+"The controller is simple: it creates a new ``Response`` object, whose first "
+"argument is the content that should be used in the response (a small HTML "
+"page in this example)."
+msgstr ""
+
+#: ../../book/page_creation.rst:296
+msgid ""
+"Congratulations! After creating only a route and a controller, you already "
+"have a fully-functional page! If you've setup everything correctly, your "
+"application should generate a random number for you:"
+msgstr ""
+
+#: ../../book/page_creation.rst:308
+msgid ""
+"You can also view your app in the \"prod\" :ref:`environment <environments-"
+"summary>` by visiting:"
+msgstr ""
+
+#: ../../book/page_creation.rst:315
+msgid ""
+"If you get an error, it's likely because you need to clear your cache by "
+"running:"
+msgstr ""
+
+#: ../../book/page_creation.rst:322
+msgid ""
+"An optional, but common, third step in the process is to create a template."
+msgstr ""
+
+#: ../../book/page_creation.rst:326
+msgid ""
+"Controllers are the main entry point for your code and a key ingredient when"
+" creating pages. Much more information can be found in the :doc:`Controller "
+"Chapter </book/controller>`."
+msgstr ""
+
+#: ../../book/page_creation.rst:331
+msgid "Optional Step 3: Create the Template"
+msgstr ""
+
+#: ../../book/page_creation.rst:333
+msgid ""
+"Templates allow you to move all the presentation code (e.g. HTML) into a "
+"separate file and reuse different portions of the page layout. Instead of "
+"writing the HTML inside the controller, render a template instead:"
+msgstr ""
+
+#: ../../book/page_creation.rst:366
+msgid ""
+"In order to use the "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::render`"
+" method, your controller must extend the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller` "
+"class, which adds shortcuts for tasks that are common inside controllers. "
+"This is done in the above example by adding the ``use`` statement on line 4 "
+"and then extending ``Controller`` on line 6."
+msgstr ""
+
+#: ../../book/page_creation.rst:373
+msgid ""
+"The ``render()`` method creates a ``Response`` object filled with the "
+"content of the given, rendered template. Like any other controller, you will"
+" ultimately return that ``Response`` object."
+msgstr ""
+
+#: ../../book/page_creation.rst:377
+msgid ""
+"Notice that there are two different examples for rendering the template. By "
+"default, Symfony supports two different templating languages: classic PHP "
+"templates and the succinct but powerful `Twig`_ templates. Don't be alarmed "
+"- you're free to choose either or even both in the same project."
+msgstr ""
+
+#: ../../book/page_creation.rst:382
+msgid ""
+"The controller renders the ``AcmeDemoBundle:Random:index.html.twig`` "
+"template, which uses the following naming convention:"
+msgstr ""
+
+#: ../../book/page_creation.rst:385
+msgid "**BundleName**:**ControllerName**:**TemplateName**"
+msgstr ""
+
+#: ../../book/page_creation.rst:387
+msgid ""
+"This is the *logical* name of the template, which is mapped to a physical "
+"location using the following convention."
+msgstr ""
+
+#: ../../book/page_creation.rst:390
+msgid ""
+"**/path/to/BundleName**/Resources/views/**ControllerName**/**TemplateName**"
+msgstr ""
+
+#: ../../book/page_creation.rst:392
+msgid ""
+"In this case, AcmeDemoBundle is the bundle name, ``Random`` is the "
+"controller, and ``index.html.twig`` the template:"
+msgstr ""
+
+#: ../../book/page_creation.rst:414
+msgid "Step through the Twig template line-by-line:"
+msgstr ""
+
+#: ../../book/page_creation.rst:416
+msgid ""
+"*line 2*: The ``extends`` token defines a parent template. The template "
+"explicitly defines a layout file inside of which it will be placed."
+msgstr ""
+
+#: ../../book/page_creation.rst:419
+msgid ""
+"*line 4*: The ``block`` token says that everything inside should be placed "
+"inside a block called ``body``. As you'll see, it's the responsibility of "
+"the parent template (``base.html.twig``) to ultimately render the block "
+"called ``body``."
+msgstr ""
+
+#: ../../book/page_creation.rst:424
+msgid ""
+"The parent template, ``::base.html.twig``, is missing both the "
+"**BundleName** and **ControllerName** portions of its name (hence the double"
+" colon (``::``) at the beginning). This means that the template lives "
+"outside of the bundle and in the ``app`` directory:"
+msgstr ""
+
+#: ../../book/page_creation.rst:466
+msgid ""
+"The base template file defines the HTML layout and renders the ``body`` "
+"block that you defined in the ``index.html.twig`` template. It also renders "
+"a ``title`` block, which you could choose to define in the "
+"``index.html.twig`` template. Since you did not define the ``title`` block "
+"in the child template, it defaults to \"Welcome!\"."
+msgstr ""
+
+#: ../../book/page_creation.rst:472
+msgid ""
+"Templates are a powerful way to render and organize the content for your "
+"page. A template can render anything, from HTML markup, to CSS code, or "
+"anything else that the controller may need to return."
+msgstr ""
+
+#: ../../book/page_creation.rst:476
+msgid ""
+"In the lifecycle of handling a request, the templating engine is simply an "
+"optional tool. Recall that the goal of each controller is to return a "
+"``Response`` object. Templates are a powerful, but optional, tool for "
+"creating the content for that ``Response`` object."
+msgstr ""
+
+#: ../../book/page_creation.rst:485
+msgid "The Directory Structure"
+msgstr ""
+
+#: ../../book/page_creation.rst:487
+msgid ""
+"After just a few short sections, you already understand the philosophy "
+"behind creating and rendering pages in Symfony. You've also already begun to"
+" see how Symfony projects are structured and organized. By the end of this "
+"section, you'll know where to find and put different types of files and why."
+msgstr ""
+
+#: ../../book/page_creation.rst:492
+msgid ""
+"Though entirely flexible, by default, each Symfony :term:`application` has "
+"the same basic and recommended directory structure:"
+msgstr ""
+
+#: ../../book/page_creation.rst:496
+msgid "``app/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:496
+msgid "This directory contains the application configuration."
+msgstr ""
+
+#: ../../book/page_creation.rst:499
+msgid "``src/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:499
+msgid "All the project PHP code is stored under this directory."
+msgstr ""
+
+#: ../../book/page_creation.rst:502
+msgid "``vendor/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:502
+msgid "Any vendor libraries are placed here by convention."
+msgstr ""
+
+#: ../../book/page_creation.rst:505
+msgid "``web/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:505
+msgid ""
+"This is the web root directory and contains any publicly accessible files."
+msgstr ""
+
+#: ../../book/page_creation.rst:509
+msgid ""
+"You can easily override the default directory structure. See "
+":doc:`/cookbook/configuration/override_dir_structure` for more information."
+msgstr ""
+
+#: ../../book/page_creation.rst:516
+msgid "The Web Directory"
+msgstr ""
+
+#: ../../book/page_creation.rst:518
+msgid ""
+"The web root directory is the home of all public and static files including "
+"images, stylesheets, and JavaScript files. It is also where each "
+":term:`front controller` lives::"
+msgstr ""
+
+#: ../../book/page_creation.rst:532
+msgid ""
+"The front controller file (``app.php`` in this example) is the actual PHP "
+"file that's executed when using a Symfony application and its job is to use "
+"a Kernel class, ``AppKernel``, to bootstrap the application."
+msgstr ""
+
+#: ../../book/page_creation.rst:538
+msgid ""
+"Having a front controller means different and more flexible URLs than are "
+"used in a typical flat PHP application. When using a front controller, URLs "
+"are formatted in the following way:"
+msgstr ""
+
+#: ../../book/page_creation.rst:546
+msgid ""
+"The front controller, ``app.php``, is executed and the \"internal:\" URL "
+"``/random/10`` is routed internally using the routing configuration. By "
+"using Apache ``mod_rewrite`` rules, you can force the ``app.php`` file to be"
+" executed without needing to specify it in the URL:"
+msgstr ""
+
+#: ../../book/page_creation.rst:555
+msgid ""
+"Though front controllers are essential in handling every request, you'll "
+"rarely need to modify or even think about them. They'll be mentioned again "
+"briefly in the `Environments`_ section."
+msgstr ""
+
+#: ../../book/page_creation.rst:560
+msgid "The Application (``app``) Directory"
+msgstr ""
+
+#: ../../book/page_creation.rst:562
+msgid ""
+"As you saw in the front controller, the ``AppKernel`` class is the main "
+"entry point of the application and is responsible for all configuration. As "
+"such, it is stored in the ``app/`` directory."
+msgstr ""
+
+#: ../../book/page_creation.rst:566
+msgid ""
+"This class must implement two methods that define everything that Symfony "
+"needs to know about your application. You don't even need to worry about "
+"these methods when starting - Symfony fills them in for you with sensible "
+"defaults."
+msgstr ""
+
+#: ../../book/page_creation.rst:573
+msgid "``registerBundles()``"
+msgstr ""
+
+#: ../../book/page_creation.rst:572
+msgid ""
+"Returns an array of all bundles needed to run the application (see :ref"
+":`page-creation-bundles`)."
+msgstr ""
+
+#: ../../book/page_creation.rst:577
+msgid "``registerContainerConfiguration()``"
+msgstr ""
+
+#: ../../book/page_creation.rst:576
+msgid ""
+"Loads the main application configuration resource file (see the `Application"
+" Configuration`_ section)."
+msgstr ""
+
+#: ../../book/page_creation.rst:579
+msgid ""
+"In day-to-day development, you'll mostly use the ``app/`` directory to "
+"modify configuration and routing files in the ``app/config/`` directory (see"
+" `Application Configuration`_). It also contains the application cache "
+"directory (``app/cache``), a log directory (``app/logs``) and a directory "
+"for application-level resource files, such as templates (``app/Resources``)."
+" You'll learn more about each of these directories in later chapters."
+msgstr ""
+
+#: ../../book/page_creation.rst:0
+msgid "Autoloading"
+msgstr ""
+
+#: ../../book/page_creation.rst:590
+msgid ""
+"When Symfony is loading, a special file - ``vendor/autoload.php`` - is "
+"included. This file is created by Composer and will autoload all application"
+" files living in the ``src/`` folder as well as all third-party libraries "
+"mentioned in the ``composer.json`` file."
+msgstr ""
+
+#: ../../book/page_creation.rst:595
+msgid ""
+"Because of the autoloader, you never need to worry about using ``include`` "
+"or ``require`` statements. Instead, Composer uses the namespace of a class "
+"to determine its location and automatically includes the file on your behalf"
+" the instant you need a class."
+msgstr ""
+
+#: ../../book/page_creation.rst:600
+msgid ""
+"The autoloader is already configured to look in the ``src/`` directory for "
+"any of your PHP classes. For autoloading to work, the class name and path to"
+" the file have to follow the same pattern:"
+msgstr ""
+
+#: ../../book/page_creation.rst:612
+msgid "The Source (``src``) Directory"
+msgstr ""
+
+#: ../../book/page_creation.rst:614
+msgid ""
+"Put simply, the ``src/`` directory contains all the actual code (PHP code, "
+"templates, configuration files, stylesheets, etc) that drives *your* "
+"application. When developing, the vast majority of your work will be done "
+"inside one or more bundles that you create in this directory."
+msgstr ""
+
+#: ../../book/page_creation.rst:619
+msgid "But what exactly is a :term:`bundle`?"
+msgstr ""
+
+#: ../../book/page_creation.rst:624
+msgid "The Bundle System"
+msgstr ""
+
+#: ../../book/page_creation.rst:626
+msgid ""
+"A bundle is similar to a plugin in other software, but even better. The key "
+"difference is that *everything* is a bundle in Symfony, including both the "
+"core framework functionality and the code written for your application. "
+"Bundles are first-class citizens in Symfony. This gives you the flexibility "
+"to use pre-built features packaged in `third-party bundles`_ or to "
+"distribute your own bundles. It makes it easy to pick and choose which "
+"features to enable in your application and to optimize them the way you "
+"want."
+msgstr ""
+
+#: ../../book/page_creation.rst:636
+msgid ""
+"While you'll learn the basics here, an entire cookbook entry is devoted to "
+"the organization and best practices of :doc:`bundles "
+"</cookbook/bundles/best_practices>`."
+msgstr ""
+
+#: ../../book/page_creation.rst:639
+msgid ""
+"A bundle is simply a structured set of files within a directory that "
+"implement a single feature. You might create a BlogBundle, a ForumBundle or "
+"a bundle for user management (many of these exist already as open source "
+"bundles). Each directory contains everything related to that feature, "
+"including PHP files, templates, stylesheets, JavaScripts, tests and anything"
+" else. Every aspect of a feature exists in a bundle and every feature lives "
+"in a bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:647
+msgid ""
+"An application is made up of bundles as defined in the ``registerBundles()``"
+" method of the ``AppKernel`` class::"
+msgstr ""
+
+#: ../../book/page_creation.rst:674
+msgid ""
+"With the ``registerBundles()`` method, you have total control over which "
+"bundles are used by your application (including the core Symfony bundles)."
+msgstr ""
+
+#: ../../book/page_creation.rst:679
+msgid ""
+"A bundle can live *anywhere* as long as it can be autoloaded (via the "
+"autoloader configured at ``app/autoload.php``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:683
+msgid "Creating a Bundle"
+msgstr ""
+
+#: ../../book/page_creation.rst:685
+msgid ""
+"The Symfony Standard Edition comes with a handy task that creates a fully-"
+"functional bundle for you. Of course, creating a bundle by hand is pretty "
+"easy as well."
+msgstr ""
+
+#: ../../book/page_creation.rst:688
+msgid ""
+"To show you how simple the bundle system is, create a new bundle called "
+"AcmeTestBundle and enable it."
+msgstr ""
+
+#: ../../book/page_creation.rst:693
+msgid ""
+"The ``Acme`` portion is just a dummy name that should be replaced by some "
+"\"vendor\" name that represents you or your organization (e.g. ABCTestBundle"
+" for some company named ``ABC``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:697
+msgid ""
+"Start by creating a ``src/Acme/TestBundle/`` directory and adding a new file"
+" called ``AcmeTestBundle.php``::"
+msgstr ""
+
+#: ../../book/page_creation.rst:711
+msgid ""
+"The name AcmeTestBundle follows the standard :ref:`Bundle naming conventions"
+" <bundles-naming-conventions>`. You could also choose to shorten the name of"
+" the bundle to simply TestBundle by naming this class TestBundle (and naming"
+" the file ``TestBundle.php``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:716
+msgid ""
+"This empty class is the only piece you need to create the new bundle. Though"
+" commonly empty, this class is powerful and can be used to customize the "
+"behavior of the bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:720
+msgid ""
+"Now that you've created the bundle, enable it via the ``AppKernel`` class::"
+msgstr ""
+
+#: ../../book/page_creation.rst:735
+msgid ""
+"And while it doesn't do anything yet, AcmeTestBundle is now ready to be "
+"used."
+msgstr ""
+
+#: ../../book/page_creation.rst:737
+msgid ""
+"And as easy as this is, Symfony also provides a command-line interface for "
+"generating a basic bundle skeleton:"
+msgstr ""
+
+#: ../../book/page_creation.rst:744
+msgid ""
+"The bundle skeleton generates with a basic controller, template and routing "
+"resource that can be customized. You'll learn more about Symfony's command-"
+"line tools later."
+msgstr ""
+
+#: ../../book/page_creation.rst:750
+msgid ""
+"Whenever creating a new bundle or using a third-party bundle, always make "
+"sure the bundle has been enabled in ``registerBundles()``. When using the "
+"``generate:bundle`` command, this is done for you."
+msgstr ""
+
+#: ../../book/page_creation.rst:755
+msgid "Bundle Directory Structure"
+msgstr ""
+
+#: ../../book/page_creation.rst:757
+msgid ""
+"The directory structure of a bundle is simple and flexible. By default, the "
+"bundle system follows a set of conventions that help to keep code consistent"
+" between all Symfony bundles. Take a look at AcmeDemoBundle, as it contains "
+"some of the most common elements of a bundle:"
+msgstr ""
+
+#: ../../book/page_creation.rst:763
+msgid "``Controller/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:763
+msgid ""
+"Contains the controllers of the bundle (e.g. ``RandomController.php``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:768
+msgid "``DependencyInjection/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:766
+msgid ""
+"Holds certain dependency injection extension classes, which may import "
+"service configuration, register compiler passes or more (this directory is "
+"not necessary)."
+msgstr ""
+
+#: ../../book/page_creation.rst:771
+msgid "``Resources/config/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:771
+msgid ""
+"Houses configuration, including routing configuration (e.g. "
+"``routing.yml``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:774
+msgid "``Resources/views/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:774
+msgid ""
+"Holds templates organized by controller name (e.g. "
+"``Hello/index.html.twig``)."
+msgstr ""
+
+#: ../../book/page_creation.rst:779
+msgid "``Resources/public/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:777
+msgid ""
+"Contains web assets (images, stylesheets, etc) and is copied or symbolically"
+" linked into the project ``web/`` directory via the ``assets:install`` "
+"console command."
+msgstr ""
+
+#: ../../book/page_creation.rst:782
+msgid "``Tests/``"
+msgstr ""
+
+#: ../../book/page_creation.rst:782
+msgid "Holds all tests for the bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:784
+msgid ""
+"A bundle can be as small or large as the feature it implements. It contains "
+"only the files you need and nothing else."
+msgstr ""
+
+#: ../../book/page_creation.rst:787
+msgid ""
+"As you move through the book, you'll learn how to persist objects to a "
+"database, create and validate forms, create translations for your "
+"application, write tests and much more. Each of these has their own place "
+"and role within the bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:793
+msgid "Application Configuration"
+msgstr ""
+
+#: ../../book/page_creation.rst:795
+msgid ""
+"An application consists of a collection of bundles representing all the "
+"features and capabilities of your application. Each bundle can be customized"
+" via configuration files written in YAML, XML or PHP. By default, the main "
+"configuration file lives in the ``app/config/`` directory and is called "
+"either ``config.yml``, ``config.xml`` or ``config.php`` depending on which "
+"format you prefer:"
+msgstr ""
+
+#: ../../book/page_creation.rst:878
+msgid ""
+"You'll learn exactly how to load each file/format in the next section "
+"`Environments`_."
+msgstr ""
+
+#: ../../book/page_creation.rst:881
+msgid ""
+"Each top-level entry like ``framework`` or ``twig`` defines the "
+"configuration for a particular bundle. For example, the ``framework`` key "
+"defines the configuration for the core Symfony FrameworkBundle and includes "
+"configuration for the routing, templating, and other core systems."
+msgstr ""
+
+#: ../../book/page_creation.rst:886
+msgid ""
+"For now, don't worry about the specific configuration options in each "
+"section. The configuration file ships with sensible defaults. As you read "
+"more and explore each part of Symfony, you'll learn about the specific "
+"configuration options of each feature."
+msgstr ""
+
+#: ../../book/page_creation.rst:0
+msgid "Configuration Formats"
+msgstr ""
+
+#: ../../book/page_creation.rst:893
+msgid ""
+"Throughout the chapters, all configuration examples will be shown in all "
+"three formats (YAML, XML and PHP). Each has its own advantages and "
+"disadvantages. The choice of which to use is up to you:"
+msgstr ""
+
+#: ../../book/page_creation.rst:897
+msgid ""
+"*YAML*: Simple, clean and readable (learn more about YAML in "
+"\":doc:`/components/yaml/yaml_format`\");"
+msgstr ""
+
+#: ../../book/page_creation.rst:900
+msgid ""
+"*XML*: More powerful than YAML at times and supports IDE autocompletion;"
+msgstr ""
+
+#: ../../book/page_creation.rst:902
+msgid ""
+"*PHP*: Very powerful but less readable than standard configuration formats."
+msgstr ""
+
+#: ../../book/page_creation.rst:905
+msgid "Default Configuration Dump"
+msgstr ""
+
+#: ../../book/page_creation.rst:907
+msgid ""
+"You can dump the default configuration for a bundle in YAML to the console "
+"using the ``config:dump-reference`` command. Here is an example of dumping "
+"the default FrameworkBundle configuration:"
+msgstr ""
+
+#: ../../book/page_creation.rst:915
+msgid "The extension alias (configuration key) can also be used:"
+msgstr ""
+
+#: ../../book/page_creation.rst:923
+msgid ""
+"See the cookbook article: :doc:`/cookbook/bundles/extension` for information"
+" on adding configuration for your own bundle."
+msgstr ""
+
+#: ../../book/page_creation.rst:932 ../../book/page_creation.rst:926
+#: ../../book/page_creation.rst:984
+msgid "Environments"
+msgstr ""
+
+#: ../../book/page_creation.rst:934
+msgid ""
+"An application can run in various environments. The different environments "
+"share the same PHP code (apart from the front controller), but use different"
+" configuration. For instance, a ``dev`` environment will log warnings and "
+"errors, while a ``prod`` environment will only log errors. Some files are "
+"rebuilt on each request in the ``dev`` environment (for the developer's "
+"convenience), but cached in the ``prod`` environment. All environments live "
+"together on the same machine and execute the same application."
+msgstr ""
+
+#: ../../book/page_creation.rst:942
+msgid ""
+"A Symfony project generally begins with three environments (``dev``, "
+"``test`` and ``prod``), though creating new environments is easy. You can "
+"view your application in different environments simply by changing the front"
+" controller in your browser. To see the application in the ``dev`` "
+"environment, access the application via the development front controller:"
+msgstr ""
+
+#: ../../book/page_creation.rst:952
+msgid ""
+"If you'd like to see how your application will behave in the production "
+"environment, call the ``prod`` front controller instead:"
+msgstr ""
+
+#: ../../book/page_creation.rst:959
+msgid ""
+"Since the ``prod`` environment is optimized for speed; the configuration, "
+"routing and Twig templates are compiled into flat PHP classes and cached. "
+"When viewing changes in the ``prod`` environment, you'll need to clear these"
+" cached files and allow them to rebuild:"
+msgstr ""
+
+#: ../../book/page_creation.rst:970
+msgid ""
+"If you open the ``web/app.php`` file, you'll find that it's configured "
+"explicitly to use the ``prod`` environment::"
+msgstr ""
+
+#: ../../book/page_creation.rst:975
+msgid ""
+"You can create a new front controller for a new environment by copying this "
+"file and changing ``prod`` to some other value."
+msgstr ""
+
+#: ../../book/page_creation.rst:980
+msgid ""
+"The ``test`` environment is used when running automated tests and cannot be "
+"accessed directly through the browser. See the :doc:`testing chapter "
+"</book/testing>` for more details."
+msgstr ""
+
+#: ../../book/page_creation.rst:988
+msgid "Environment Configuration"
+msgstr ""
+
+#: ../../book/page_creation.rst:990
+msgid ""
+"The ``AppKernel`` class is responsible for actually loading the "
+"configuration file of your choice::"
+msgstr ""
+
+#: ../../book/page_creation.rst:1001
+msgid ""
+"You already know that the ``.yml`` extension can be changed to ``.xml`` or "
+"``.php`` if you prefer to use either XML or PHP to write your configuration."
+" Notice also that each environment loads its own configuration file. "
+"Consider the configuration file for the ``dev`` environment."
+msgstr ""
+
+#: ../../book/page_creation.rst:1058
+msgid ""
+"The ``imports`` key is similar to a PHP ``include`` statement and guarantees"
+" that the main configuration file (``config.yml``) is loaded first. The rest"
+" of the file tweaks the default configuration for increased logging and "
+"other settings conducive to a development environment."
+msgstr ""
+
+#: ../../book/page_creation.rst:1063
+msgid ""
+"Both the ``prod`` and ``test`` environments follow the same model: each "
+"environment imports the base configuration file and then modifies its "
+"configuration values to fit the needs of the specific environment. This is "
+"just a convention, but one that allows you to reuse most of your "
+"configuration and customize just pieces of it between environments."
+msgstr ""
+
+#: ../../book/page_creation.rst:1070
+msgid "Summary"
+msgstr ""
+
+#: ../../book/page_creation.rst:1072
+msgid ""
+"Congratulations! You've now seen every fundamental aspect of Symfony and "
+"have hopefully discovered how easy and flexible it can be. And while there "
+"are *a lot* of features still to come, be sure to keep the following basic "
+"points in mind:"
+msgstr ""
+
+#: ../../book/page_creation.rst:1077
+msgid ""
+"Creating a page is a three-step process involving a **route**, a "
+"**controller** and (optionally) a **template**;"
+msgstr ""
+
+#: ../../book/page_creation.rst:1080
+msgid ""
+"Each project contains just a few main directories: ``web/`` (web assets and "
+"the front controllers), ``app/`` (configuration), ``src/`` (your bundles), "
+"and ``vendor/`` (third-party code) (there's also a ``bin/`` directory that's"
+" used to help updated vendor libraries);"
+msgstr ""
+
+#: ../../book/page_creation.rst:1085
+msgid ""
+"Each feature in Symfony (including the Symfony framework core) is organized "
+"into a *bundle*, which is a structured set of files for that feature;"
+msgstr ""
+
+#: ../../book/page_creation.rst:1088
+msgid ""
+"The **configuration** for each bundle lives in the ``Resources/config`` "
+"directory of the bundle and can be specified in YAML, XML or PHP;"
+msgstr ""
+
+#: ../../book/page_creation.rst:1091
+msgid ""
+"The global **application configuration** lives in the ``app/config`` "
+"directory;"
+msgstr ""
+
+#: ../../book/page_creation.rst:1094
+msgid ""
+"Each **environment** is accessible via a different front controller (e.g. "
+"``app.php`` and ``app_dev.php``) and loads a different configuration file."
+msgstr ""
+
+#: ../../book/page_creation.rst:1097
+msgid ""
+"From here, each chapter will introduce you to more and more powerful tools "
+"and advanced concepts. The more you know about Symfony, the more you'll "
+"appreciate the flexibility of its architecture and the power it gives you to"
+" rapidly develop applications."
+msgstr ""
+
+#: ../../book/page_creation.rst:1 ../../book/page_creation.rst:27
+#: ../../book/page_creation.rst:63
+msgid "Page creation"
+msgstr ""
+
+#: ../../book/page_creation.rst:63
+msgid "Example"
+msgstr ""
+
+#: ../../book/page_creation.rst:481
+msgid "Directory Structure"
+msgstr ""
+
+#: ../../book/page_creation.rst:926
+msgid "Introduction"
+msgstr ""
+
+#: ../../book/page_creation.rst:984
+msgid "Configuration"
+msgstr ""

@@ -1,0 +1,42 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/single_command_tool.rst:5
+msgid "Building a single Command Application"
+msgstr ""
+
+#: ../../components/console/single_command_tool.rst:7
+msgid ""
+"When building a command line tool, you may not need to provide several "
+"commands. In such case, having to pass the command name each time is "
+"tedious. Fortunately, it is possible to remove this need by extending the "
+"application::"
+msgstr ""
+
+#: ../../components/console/single_command_tool.rst:61
+msgid ""
+"When calling your console script, the command ``MyCommand`` will then always"
+" be used, without having to pass its name."
+msgstr ""
+
+#: ../../components/console/single_command_tool.rst:64
+msgid "You can also simplify how you execute the application::"
+msgstr ""
+
+#: ../../components/console/single_command_tool.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../components/console/single_command_tool.rst:1
+msgid "Single command application"
+msgstr ""

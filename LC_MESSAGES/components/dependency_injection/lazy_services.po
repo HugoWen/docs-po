@@ -1,0 +1,124 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/lazy_services.rst:5
+#: ../../components/dependency_injection/lazy_services.rst:1
+msgid "Lazy Services"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:7
+msgid "Lazy services were introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:11
+msgid "Why lazy Services?"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:13
+msgid ""
+"In some cases, you may want to inject a service that is a bit heavy to "
+"instantiate, but is not always used inside your object. For example, imagine"
+" you have a ``NewsletterManager`` and you inject a ``mailer`` service into "
+"it. Only a few methods on your ``NewsletterManager`` actually use the "
+"``mailer``, but even when you don't need it, a ``mailer`` service is always "
+"instantiated in order to construct your ``NewsletterManager``."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:20
+msgid ""
+"Configuring lazy services is one answer to this. With a lazy service, a "
+"\"proxy\" of the ``mailer`` service is actually injected. It looks and acts "
+"just like the ``mailer``, except that the ``mailer`` isn't actually "
+"instantiated until you interact with the proxy in some way."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:26
+msgid "Installation"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:28
+msgid ""
+"In order to use the lazy service instantiation, you will first need to "
+"install the `ProxyManager bridge`_:"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:37
+msgid ""
+"If you're using the full-stack framework, the proxy manager bridge is "
+"already included but the actual proxy manager needs to be included. So, run:"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:44
+msgid ""
+"Afterwards compile your container and check to make sure that you get a "
+"proxy for your lazy services."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:48
+msgid "Configuration"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:50
+msgid "You can mark the service as ``lazy`` by manipulating its definition:"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:81
+msgid "You can then require the service from the container::"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:85
+msgid ""
+"At this point the retrieved ``$service`` should be a virtual `proxy`_ with "
+"the same signature of the class representing the service. You can also "
+"inject the service just like normal into other services. The object that's "
+"actually injected will be the proxy."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:90
+msgid ""
+"To check if your proxy works you can simply check the interface of the "
+"received object."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:97
+msgid ""
+"If the class implements the ``ProxyManager\\Proxy\\LazyLoadingInterface`` "
+"your lazy loaded services are working."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:102
+msgid ""
+"If you don't install the `ProxyManager bridge`_, the container will just "
+"skip over the ``lazy`` flag and simply instantiate the service as it would "
+"normally do."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:106
+msgid ""
+"The proxy gets initialized and the actual service is instantiated as soon as"
+" you interact in any way with this object."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:110
+msgid "Additional Resources"
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:112
+msgid ""
+"You can read more about how proxies are instantiated, generated and "
+"initialized in the `documentation of ProxyManager`_."
+msgstr ""
+
+#: ../../components/dependency_injection/lazy_services.rst:1
+msgid "Dependency Injection"
+msgstr ""

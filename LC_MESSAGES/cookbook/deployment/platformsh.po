@@ -1,0 +1,162 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/deployment/platformsh.rst:5
+#: ../../cookbook/deployment/platformsh.rst:1
+msgid "Deploying to Platform.sh"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:7
+msgid ""
+"This step-by-step cookbook describes how to deploy a Symfony web application"
+" to `Platform.sh`_. You can read more about using Symfony with Platform.sh "
+"on the official `Platform.sh documentation`_."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:12
+msgid "Deploy an Existing Site"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:14
+msgid ""
+"In this guide, it is assumed your codebase is already versioned with Git."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:17
+msgid "Get a Project on Platform.sh"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:19
+msgid ""
+"You need to subscribe to a `Platform.sh project`_. Choose the development "
+"plan and go through the checkout process. Once your project is ready, give "
+"it a name and choose: **Import an existing site**."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:24
+msgid "Prepare Your Application"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:26
+msgid ""
+"To deploy your Symfony application on Platform.sh, you simply need to add a "
+"``.platform.app.yaml`` at the root of your Git repository which will tell "
+"Platform.sh how to deploy your application (read more about `Platform.sh "
+"configuration files`_)."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:74
+msgid ""
+"For best practices, you should also add a ``.platform`` folder at the root "
+"of your Git repository which contains the following files:"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:91
+msgid ""
+"An example of these configurations can be found on `GitHub`_. The list of "
+"`available services <configure-services>`_ can be found on the Platform.sh "
+"documentation."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:95
+msgid "Configure Database Access"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:97
+msgid ""
+"Platform.sh overrides your database specific configuration via importing the"
+" following file::"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:126
+msgid "Make sure this file is listed in your *imports*:"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:135
+msgid "Deploy your Application"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:137
+msgid ""
+"Now you need to add a remote to Platform.sh in your Git repository (copy the"
+" command that you see on the Platform.sh web UI):"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:144
+msgid "``PROJECT-ID``"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:145
+msgid "Unique identifier of your project. Something like ``kjh43kbobssae``"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:147
+msgid "``CLUSTER``"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:147
+msgid ""
+"Server location where your project is deployed. It can be ``eu`` or ``us``"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:149
+msgid "Commit the Platform.sh specific files created in the previous section:"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:157
+msgid "Push your code base to the newly added remote:"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:163
+msgid ""
+"That's it! Your application is being deployed on Platform.sh and you'll soon"
+" be able to access it in your browser."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:166
+msgid ""
+"Every code change that you do from now on will be pushed to Git in order to "
+"redeploy your environment on Platform.sh."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:169
+msgid ""
+"More information about `migrating your database and files <migrate-existing-"
+"site>`_ can be found on the Platform.sh documentation."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:173
+msgid "Deploy a new Site"
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:175
+msgid ""
+"You can start a new `Platform.sh project`_. Choose the development plan and "
+"go through the checkout process."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:178
+msgid ""
+"Once your project is ready, give it a name and choose: **Create a new "
+"site**. Choose the *Symfony* stack and a starting point such as *Standard*."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:181
+msgid ""
+"That's it! Your Symfony application will be bootstrapped and deployed. "
+"You'll soon be able to see it in your browser."
+msgstr ""
+
+#: ../../cookbook/deployment/platformsh.rst:1
+msgid "Deployment"
+msgstr ""

@@ -1,0 +1,46 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/force_https.rst:5
+msgid "How to Force HTTPS or HTTP for different URLs"
+msgstr ""
+
+#: ../../cookbook/security/force_https.rst:7
+msgid ""
+"You can force areas of your site to use the HTTPS protocol in the security "
+"config. This is done through the ``access_control`` rules using the "
+"``requires_channel`` option. For example, if you want to force all URLs "
+"starting with ``/secure`` to use HTTPS then you could use the following "
+"configuration:"
+msgstr ""
+
+#: ../../cookbook/security/force_https.rst:35
+msgid ""
+"The login form itself needs to allow anonymous access, otherwise users will "
+"be unable to authenticate. To force it to use HTTPS you can still use "
+"``access_control`` rules by using the ``IS_AUTHENTICATED_ANONYMOUSLY`` role:"
+msgstr ""
+
+#: ../../cookbook/security/force_https.rst:65
+msgid ""
+"It is also possible to specify using HTTPS in the routing configuration, see"
+" :doc:`/cookbook/routing/scheme` for more details."
+msgstr ""
+
+#: ../../cookbook/security/force_https.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/force_https.rst:1
+msgid "Force HTTPS"
+msgstr ""

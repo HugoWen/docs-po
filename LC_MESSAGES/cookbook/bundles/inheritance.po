@@ -1,0 +1,119 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/bundles/inheritance.rst:5
+msgid "How to Use Bundle Inheritance to Override Parts of a Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:7
+msgid ""
+"When working with third-party bundles, you'll probably come across a "
+"situation where you want to override a file in that third-party bundle with "
+"a file in one of your own bundles. Symfony gives you a very convenient way "
+"to override things like controllers, templates, and other files in a "
+"bundle's ``Resources/`` directory."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:13
+msgid ""
+"For example, suppose that you're installing the `FOSUserBundle`_, but you "
+"want to override its base ``layout.html.twig`` template, as well as one of "
+"its controllers. Suppose also that you have your own AcmeUserBundle where "
+"you want the overridden files to live. Start by registering the "
+"FOSUserBundle as the \"parent\" of your bundle::"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:32
+msgid ""
+"By making this simple change, you can now override several parts of the "
+"FOSUserBundle simply by creating a file with the same name."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:37
+msgid ""
+"Despite the method name, there is no parent/child relationship between the "
+"bundles, it is just a way to extend and override an existing bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:41
+msgid "Overriding Controllers"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:43
+msgid ""
+"Suppose you want to add some functionality to the ``registerAction`` of a "
+"``RegistrationController`` that lives inside FOSUserBundle. To do so, just "
+"create your own ``RegistrationController.php`` file, override the bundle's "
+"original method, and change its functionality::"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:66
+msgid ""
+"Depending on how severely you need to change the behavior, you might call "
+"``parent::registerAction()`` or completely replace its logic with your own."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:72
+msgid ""
+"Overriding controllers in this way only works if the bundle refers to the "
+"controller using the standard ``FOSUserBundle:Registration:register`` syntax"
+" in routes and templates. This is the best practice."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:77
+msgid "Overriding Resources: Templates, Routing, etc"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:79
+msgid ""
+"Most resources can also be overridden, simply by creating a file in the same"
+" location as your parent bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:82
+msgid ""
+"For example, it's very common to need to override the FOSUserBundle's "
+"``layout.html.twig`` template so that it uses your application's base "
+"layout. Since the file lives at ``Resources/views/layout.html.twig`` in the "
+"FOSUserBundle, you can create your own file in the same location of "
+"AcmeUserBundle. Symfony will ignore the file that lives inside the "
+"FOSUserBundle entirely, and use your file instead."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:89
+msgid "The same goes for routing files and some other resources."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:93
+msgid ""
+"The overriding of resources only works when you refer to resources with the "
+"``@FOSUserBundle/Resources/config/routing/security.xml`` method. If you "
+"refer to resources without using the @BundleName shortcut, they can't be "
+"overridden in this way."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:100
+msgid ""
+"Translation and validation files do not work in the same way as described "
+"above. Read \":ref:`override-translations`\" if you want to learn how to "
+"override translations and see \":ref:`override-validation`\" for tricks to "
+"override the validation."
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:1
+msgid "Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/inheritance.rst:1
+msgid "Inheritance"
+msgstr ""

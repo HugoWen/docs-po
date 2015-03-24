@@ -1,0 +1,152 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/bundles/remove.rst:5
+msgid "How to Remove the AcmeDemoBundle"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:7
+msgid ""
+"The Symfony Standard Edition comes with a complete demo that lives inside a "
+"bundle called AcmeDemoBundle. It is a great boilerplate to refer to while "
+"starting a project, but you'll probably want to eventually remove it."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:13
+msgid ""
+"This article uses the AcmeDemoBundle as an example, but you can use these "
+"steps to remove any bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:17
+msgid "1. Unregister the Bundle in the ``AppKernel``"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:19
+msgid ""
+"To disconnect the bundle from the framework, you should remove the bundle "
+"from the ``AppKernel::registerBundles()`` method. The bundle is normally "
+"found in the ``$bundles`` array but the AcmeDemoBundle is only registered in"
+" the development environment and you can find it inside the if statement "
+"below::"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:42
+msgid "2. Remove Bundle Configuration"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:44
+msgid ""
+"Now that Symfony doesn't know about the bundle, you need to remove any "
+"configuration and routing configuration inside the ``app/config`` directory "
+"that refers to the bundle."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:49
+msgid "2.1 Remove Bundle Routing"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:51
+msgid ""
+"The routing for the AcmeDemoBundle can be found in "
+"``app/config/routing_dev.yml``. Remove the ``_acme_demo`` entry at the "
+"bottom of this file."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:55
+msgid "2.2 Remove Bundle Configuration"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:57
+msgid ""
+"Some bundles contain configuration in one of the ``app/config/config*.yml`` "
+"files. Be sure to remove the related configuration from these files. You can"
+" quickly spot bundle configuration by looking for a ``acme_demo`` (or "
+"whatever the name of the bundle is, e.g. ``fos_user`` for the FOSUserBundle)"
+" string in the configuration files."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:63
+msgid ""
+"The AcmeDemoBundle doesn't have configuration. However, the bundle is used "
+"in the configuration for the ``app/config/security.yml`` file. You can use "
+"it as a boilerplate for your own security, but you **can** also remove "
+"everything: it doesn't matter to Symfony if you remove it or not."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:69
+msgid "3. Remove the Bundle from the Filesystem"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:71
+msgid ""
+"Now you have removed every reference to the bundle in your application, you "
+"should remove the bundle from the filesystem. The bundle is located in the "
+"``src/Acme/DemoBundle`` directory. You should remove this directory and you "
+"can remove the ``Acme`` directory as well."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:78
+msgid ""
+"If you don't know the location of a bundle, you can use the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Bundle\\\\BundleInterface::getPath`"
+" method to get the path of the bundle::"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:85
+msgid "3.1 Remove Bundle Assets"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:87
+msgid ""
+"Remove the assets of the bundle in the web/ directory (e.g. "
+"``web/bundles/acmedemo`` for the AcmeDemoBundle)."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:91
+msgid "4. Remove Integration in other Bundles"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:95
+msgid ""
+"This doesn't apply to the AcmeDemoBundle - no other bundles depend on it, so"
+" you can skip this step."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:98
+msgid ""
+"Some bundles rely on other bundles, if you remove one of the two, the other "
+"will probably not work. Be sure that no other bundles, third party or self-"
+"made, rely on the bundle you are about to remove."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:104
+msgid ""
+"If one bundle relies on another, in most cases it means that it uses some "
+"services from the bundle. Searching for the bundle alias string may help you"
+" spot them (e.g. ``acme_demo`` for bundles depending on AcmeDemoBundle)."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:110
+msgid ""
+"If a third party bundle relies on another bundle, you can find that bundle "
+"mentioned in the ``composer.json`` file included in the bundle directory."
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:1
+msgid "Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/remove.rst:1
+msgid "Removing AcmeDemoBundle"
+msgstr ""

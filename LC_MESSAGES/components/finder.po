@@ -1,0 +1,355 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/finder.rst:6
+msgid "The Finder Component"
+msgstr ""
+
+#: ../../components/finder.rst:8
+msgid ""
+"The Finder component finds files and directories via an intuitive fluent "
+"interface."
+msgstr ""
+
+#: ../../components/finder.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../components/finder.rst:14
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/finder.rst:16
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/finder`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/finder.rst:17
+msgid "Use the official Git repository (https://github.com/symfony/Finder)."
+msgstr ""
+
+#: ../../components/finder.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../components/finder.rst:22
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Finder\\\\Finder` class finds files "
+"and/or directories::"
+msgstr ""
+
+#: ../../components/finder.rst:41
+msgid ""
+"The ``$file`` is an instance of "
+":class:`Symfony\\\\Component\\\\Finder\\\\SplFileInfo` which extends "
+":phpclass:`SplFileInfo` to provide methods to work with relative paths."
+msgstr ""
+
+#: ../../components/finder.rst:45
+msgid ""
+"The above code prints the names of all the files in the current directory "
+"recursively. The Finder class uses a fluent interface, so all methods return"
+" the Finder instance."
+msgstr ""
+
+#: ../../components/finder.rst:51
+msgid ""
+"A Finder instance is a PHP :phpclass:`Iterator`. So, instead of iterating "
+"over the Finder with ``foreach``, you can also convert it to an array with "
+"the :phpfunction:`iterator_to_array` method, or get the number of items with"
+" :phpfunction:`iterator_count`."
+msgstr ""
+
+#: ../../components/finder.rst:58
+msgid ""
+"When searching through multiple locations passed to the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::in` method, a separate "
+"iterator is created internally for every location. This means we have "
+"multiple result sets aggregated into one. Since "
+":phpfunction:`iterator_to_array` uses keys of result sets by default, when "
+"converting to an array, some keys might be duplicated and their values "
+"overwritten. This can be avoided by passing ``false`` as a second parameter "
+"to :phpfunction:`iterator_to_array`."
+msgstr ""
+
+#: ../../components/finder.rst:68
+msgid "Criteria"
+msgstr ""
+
+#: ../../components/finder.rst:70
+msgid "There are lots of ways to filter and sort your results."
+msgstr ""
+
+#: ../../components/finder.rst:73
+msgid "Location"
+msgstr ""
+
+#: ../../components/finder.rst:75
+msgid ""
+"The location is the only mandatory criteria. It tells the finder which "
+"directory to use for the search::"
+msgstr ""
+
+#: ../../components/finder.rst:80
+msgid ""
+"Search in several locations by chaining calls to "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::in`::"
+msgstr ""
+
+#: ../../components/finder.rst:85
+msgid ""
+"Use wildcard characters to search in the directories matching a pattern::"
+msgstr ""
+
+#: ../../components/finder.rst:89
+msgid "Each pattern has to resolve to at least one directory path."
+msgstr ""
+
+#: ../../components/finder.rst:91
+msgid ""
+"Exclude directories from matching with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::exclude` method::"
+msgstr ""
+
+#: ../../components/finder.rst:96
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Finder\\\\Finder::ignoreUnreadableDirs`"
+" method was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/finder.rst:100
+msgid ""
+"It's also possible to ignore directories that you don't have permission to "
+"read::"
+msgstr ""
+
+#: ../../components/finder.rst:104
+msgid ""
+"As the Finder uses PHP iterators, you can pass any URL with a supported "
+"`protocol`_::"
+msgstr ""
+
+#: ../../components/finder.rst:109
+msgid "And it also works with user-defined streams::"
+msgstr ""
+
+#: ../../components/finder.rst:126
+msgid ""
+"Read the `Streams`_ documentation to learn how to create your own streams."
+msgstr ""
+
+#: ../../components/finder.rst:129
+msgid "Files or Directories"
+msgstr ""
+
+#: ../../components/finder.rst:131
+msgid ""
+"By default, the Finder returns files and directories; but the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::files` and "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::directories` methods "
+"control that::"
+msgstr ""
+
+#: ../../components/finder.rst:139
+msgid "If you want to follow links, use the ``followLinks()`` method::"
+msgstr ""
+
+#: ../../components/finder.rst:143
+msgid ""
+"By default, the iterator ignores popular VCS files. This can be changed with"
+" the ``ignoreVCS()`` method::"
+msgstr ""
+
+#: ../../components/finder.rst:149
+msgid "Sorting"
+msgstr ""
+
+#: ../../components/finder.rst:151
+msgid "Sort the result by name or by type (directories first, then files)::"
+msgstr ""
+
+#: ../../components/finder.rst:159
+msgid ""
+"Notice that the ``sort*`` methods need to get all matching elements to do "
+"their jobs. For large iterators, it is slow."
+msgstr ""
+
+#: ../../components/finder.rst:162
+msgid ""
+"You can also define your own sorting algorithm with ``sort()`` method::"
+msgstr ""
+
+#: ../../components/finder.rst:172
+msgid "File Name"
+msgstr ""
+
+#: ../../components/finder.rst:174
+msgid ""
+"Restrict files by name with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::name` method::"
+msgstr ""
+
+#: ../../components/finder.rst:179
+msgid "The ``name()`` method accepts globs, strings, or regexes::"
+msgstr ""
+
+#: ../../components/finder.rst:183
+msgid "The ``notName()`` method excludes files matching a pattern::"
+msgstr ""
+
+#: ../../components/finder.rst:188
+msgid "File Contents"
+msgstr ""
+
+#: ../../components/finder.rst:190
+msgid ""
+"Restrict files by contents with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::contains` method::"
+msgstr ""
+
+#: ../../components/finder.rst:195
+msgid "The ``contains()`` method accepts strings or regexes::"
+msgstr ""
+
+#: ../../components/finder.rst:199
+msgid "The ``notContains()`` method excludes files containing given pattern::"
+msgstr ""
+
+#: ../../components/finder.rst:204
+msgid "Path"
+msgstr ""
+
+#: ../../components/finder.rst:206
+msgid ""
+"Restrict files and directories by path with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::path` method::"
+msgstr ""
+
+#: ../../components/finder.rst:211
+msgid ""
+"On all platforms slash (i.e. ``/``) should be used as the directory "
+"separator."
+msgstr ""
+
+#: ../../components/finder.rst:213
+msgid "The ``path()`` method accepts a string or a regular expression::"
+msgstr ""
+
+#: ../../components/finder.rst:218
+msgid ""
+"Internally, strings are converted into regular expressions by escaping "
+"slashes and adding delimiters:"
+msgstr ""
+
+#: ../../components/finder.rst:226
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Finder\\\\Finder::notPath` method "
+"excludes files by path::"
+msgstr ""
+
+#: ../../components/finder.rst:231
+msgid "File Size"
+msgstr ""
+
+#: ../../components/finder.rst:233
+msgid ""
+"Restrict files by size with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::size` method::"
+msgstr ""
+
+#: ../../components/finder.rst:238
+msgid "Restrict by a size range by chaining calls::"
+msgstr ""
+
+#: ../../components/finder.rst:242
+msgid ""
+"The comparison operator can be any of the following: ``>``, ``>=``, ``<``, "
+"``<=``, ``==``, ``!=``."
+msgstr ""
+
+#: ../../components/finder.rst:245
+msgid ""
+"The target value may use magnitudes of kilobytes (``k``, ``ki``), megabytes "
+"(``m``, ``mi``), or gigabytes (``g``, ``gi``). Those suffixed with an ``i`` "
+"use the appropriate ``2**n`` version in accordance with the `IEC standard`_."
+msgstr ""
+
+#: ../../components/finder.rst:250
+msgid "File Date"
+msgstr ""
+
+#: ../../components/finder.rst:252
+msgid ""
+"Restrict files by last modified dates with the "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::date` method::"
+msgstr ""
+
+#: ../../components/finder.rst:257
+msgid ""
+"The comparison operator can be any of the following: ``>``, ``>=``, ``<``, "
+"``<=``, ``==``. You can also use ``since`` or ``after`` as an alias for "
+"``>``, and ``until`` or ``before`` as an alias for ``<``."
+msgstr ""
+
+#: ../../components/finder.rst:261
+msgid ""
+"The target value can be any date supported by the `strtotime`_ function."
+msgstr ""
+
+#: ../../components/finder.rst:264
+msgid "Directory Depth"
+msgstr ""
+
+#: ../../components/finder.rst:266
+msgid ""
+"By default, the Finder recursively traverse directories. Restrict the depth "
+"of traversing with "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::depth`::"
+msgstr ""
+
+#: ../../components/finder.rst:273
+msgid "Custom Filtering"
+msgstr ""
+
+#: ../../components/finder.rst:275
+msgid ""
+"To restrict the matching file with your own strategy, use "
+":method:`Symfony\\\\Component\\\\Finder\\\\Finder::filter`::"
+msgstr ""
+
+#: ../../components/finder.rst:287
+msgid ""
+"The ``filter()`` method takes a Closure as an argument. For each matching "
+"file, it is called with the file as a "
+":class:`Symfony\\\\Component\\\\Finder\\\\SplFileInfo` instance. The file is"
+" excluded from the result set if the Closure returns ``false``."
+msgstr ""
+
+#: ../../components/finder.rst:293
+msgid "Reading Contents of Returned Files"
+msgstr ""
+
+#: ../../components/finder.rst:295
+msgid ""
+"The contents of returned files can be read with "
+":method:`Symfony\\\\Component\\\\Finder\\\\SplFileInfo::getContents`::"
+msgstr ""
+
+#: ../../components/finder.rst:1 ../../components/finder.rst:1
+msgid "Finder"
+msgstr ""
+
+#: ../../components/finder.rst:1
+msgid "Components"
+msgstr ""

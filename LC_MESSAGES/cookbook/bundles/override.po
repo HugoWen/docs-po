@@ -1,0 +1,195 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/bundles/override.rst:5
+msgid "How to Override any Part of a Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:7
+msgid ""
+"This document is a quick reference for how to override different parts of "
+"third-party bundles."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:11
+msgid "Templates"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:13
+msgid "For information on overriding templates, see"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:15
+msgid ":ref:`overriding-bundle-templates`."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:16
+msgid ":doc:`/cookbook/bundles/inheritance`"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:19
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:21
+msgid ""
+"Routing is never automatically imported in Symfony. If you want to include "
+"the routes from any bundle, then they must be manually imported from "
+"somewhere in your application (e.g. ``app/config/routing.yml``)."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:25
+msgid ""
+"The easiest way to \"override\" a bundle's routing is to never import it at "
+"all. Instead of importing a third-party bundle's routing, simply copy that "
+"routing file into your application, modify it, and import it instead."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:30
+msgid "Controllers"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:32
+msgid ""
+"Assuming the third-party bundle involved uses non-service controllers (which"
+" is almost always the case), you can easily override controllers via bundle "
+"inheritance. For more information, see :doc:`/cookbook/bundles/inheritance`."
+" If the controller is a service, see the next section on how to override it."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:38
+msgid "Services & Configuration"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:40
+msgid ""
+"In order to override/extend a service, there are two options. First, you can"
+" set the parameter holding the service's class name to your own class by "
+"setting it in ``app/config/config.yml``. This of course is only possible if "
+"the class name is defined as a parameter in the service config of the bundle"
+" containing the service. For example, to override the class used for "
+"Symfony's ``translator`` service, you would override the "
+"``translator.class`` parameter. Knowing exactly which parameter to override "
+"may take some research. For the translator, the parameter is defined and "
+"used in the ``Resources/config/translation.xml`` file in the core "
+"FrameworkBundle:"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:70
+msgid ""
+"Secondly, if the class is not available as a parameter, you want to make "
+"sure the class is always overridden when your bundle is used or if you need "
+"to modify something beyond just the class name, you should use a compiler "
+"pass::"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:89
+msgid ""
+"In this example you fetch the service definition of the original service, "
+"and set its class name to your own class."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:92
+msgid ""
+"See :doc:`/cookbook/service_container/compiler_passes` for information on "
+"how to use compiler passes. If you want to do something beyond just "
+"overriding the class - like adding a method call - you can only use the "
+"compiler pass method."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:97
+msgid "Entities & Entity Mapping"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:99
+msgid ""
+"Due to the way Doctrine works, it is not possible to override entity mapping"
+" of a bundle. However, if a bundle provides a mapped superclass (such as the"
+" ``User`` entity in the FOSUserBundle) one can override attributes and "
+"associations. Learn more about this feature and its limitations in `the "
+"Doctrine documentation`_."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:106
+msgid "Forms"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:108
+msgid ""
+"In order to override a form type, it has to be registered as a service "
+"(meaning it is tagged as ``form.type``). You can then override it as you "
+"would override any service as explained in `Services & Configuration`_. "
+"This, of course, will only work if the type is referred to by its alias "
+"rather than being instantiated, e.g.::"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:116
+msgid "rather than::"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:123
+msgid "Validation Metadata"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:125
+msgid ""
+"Symfony loads all validation configuration files from every bundle and "
+"combines them into one validation metadata tree. This means you are able to "
+"add new constraints to a property, but you cannot override them."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:129
+msgid ""
+"To override this, the 3rd party bundle needs to have configuration for "
+":ref:`validation groups <book-validation-validation-groups>`. For instance, "
+"the FOSUserBundle has this configuration. To create your own validation, add"
+" the constraints to a new validation group:"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:177
+msgid ""
+"Now, update the FOSUserBundle configuration, so it uses your validation "
+"groups instead of the original ones."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:183
+msgid "Translations"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:185
+msgid ""
+"Translations are not related to bundles, but to domains. That means that you"
+" can override the translations from any translation file, as long as it is "
+"in :ref:`the correct domain <using-message-domains>`."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:191
+msgid ""
+"The last translation file always wins. That means that you need to make sure"
+" that the bundle containing *your* translations is loaded after any bundle "
+"whose translations you're overriding. This is done in ``AppKernel``."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:195
+msgid ""
+"The file that always wins is the one that is placed in "
+"``app/Resources/translations``, as those files are always loaded last."
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:1
+msgid "Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/override.rst:1
+msgid "Inheritance"
+msgstr ""

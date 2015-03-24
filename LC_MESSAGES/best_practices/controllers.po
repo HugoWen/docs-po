@@ -1,0 +1,194 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/controllers.rst:2
+msgid "Controllers"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:4
+msgid ""
+"Symfony follows the philosophy of *\"thin controllers and fat models\"*. "
+"This means that controllers should hold just the thin layer of *glue-code* "
+"needed to coordinate the different parts of the application."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:8
+msgid ""
+"As a rule of thumb, you should follow the 5-10-20 rule, where controllers "
+"should only define 5 variables or less, contain 10 actions or less and "
+"include 20 lines of code or less in each action. This isn't an exact "
+"science, but it should help you realize when code should be refactored out "
+"of the controller and into a service."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:0
+#: ../../best_practices/controllers.rst:0
+#: ../../best_practices/controllers.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:16
+msgid ""
+"Make your controller extend the FrameworkBundle base controller and use "
+"annotations to configure routing, caching and security whenever possible."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:19
+msgid ""
+"Coupling the controllers to the underlying framework allows you to leverage "
+"all of its features and increases your productivity."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:22
+msgid ""
+"And since your controllers should be thin and contain nothing more than a "
+"few lines of *glue-code*, spending hours trying to decouple them from your "
+"framework doesn't benefit you in the long run. The amount of time *wasted* "
+"isn't worth the benefit."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:27
+msgid ""
+"In addition, using annotations for routing, caching and security simplifies "
+"configuration. You don't need to browse tens of files created with different"
+" formats (YAML, XML, PHP): all the configuration is just where you need it "
+"and it only uses one format."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:32
+msgid ""
+"Overall, this means you should aggressively decouple your business logic "
+"from the framework while, at the same time, aggressively coupling your "
+"controllers and routing *to* the framework in order to get the most out of "
+"it."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:37
+msgid "Routing Configuration"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:39
+msgid ""
+"To load routes defined as annotations in your controllers, add the following"
+" configuration to the main routing configuration file:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:49
+msgid ""
+"This configuration will load annotations from any controller stored inside "
+"the ``src/AppBundle/Controller/`` directory and even from its "
+"subdirectories. So if your application defines lots of controllers, it's "
+"perfectly ok to reorganize them into subdirectories:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:72
+msgid "Template Configuration"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:76
+msgid ""
+"Don't use the ``@Template()`` annotation to configure the template used by "
+"the controller."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:79
+msgid ""
+"The ``@Template`` annotation is useful, but also involves some magic. We "
+"don't think its benefit is worth the magic, and so recommend against using "
+"it."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:83
+msgid ""
+"Most of the time, ``@Template`` is used without any parameters, which makes "
+"it more difficult to know which template is being rendered. It also makes it"
+" less obvious to beginners that a controller should always return a Response"
+" object (unless you're using a view layer)."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:89
+msgid "How the Controller Looks"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:91
+msgid ""
+"Considering all this, here is an example of how the controller should look "
+"for the homepage of our app:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:121
+msgid "Using the ParamConverter"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:123
+msgid ""
+"If you're using Doctrine, then you can *optionally* use the "
+"`ParamConverter`_ to automatically query for an entity and pass it as an "
+"argument to your controller."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:128
+msgid ""
+"Use the ParamConverter trick to automatically query for Doctrine entities "
+"when it's simple and convenient."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:131
+msgid "For example:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:151
+msgid ""
+"Normally, you'd expect a ``$id`` argument to ``showAction``. Instead, by "
+"creating a new argument (``$post``) and type-hinting it with the ``Post`` "
+"class (which is a Doctrine entity), the ParamConverter automatically queries"
+" for an object whose ``$id`` property matches the ``{id}`` value. It will "
+"also show a 404 page if no ``Post`` can be found."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:158
+msgid "When Things Get More Advanced"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:160
+msgid ""
+"This works without any configuration because the wildcard name ``{id}`` "
+"matches the name of the property on the entity. If this isn't true, or if "
+"you have even more complex logic, the easiest thing to do is just query for "
+"the entity manually. In our application, we have this situation in "
+"``CommentController``:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:183
+msgid ""
+"You can also use the ``@ParamConverter`` configuration, which is infinitely "
+"flexible:"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:202
+msgid ""
+"The point is this: the ParamConverter shortcut is great for simple "
+"situations. But you shouldn't forget that querying for entities directly is "
+"still very easy."
+msgstr ""
+
+#: ../../best_practices/controllers.rst:207
+msgid "Pre and Post Hooks"
+msgstr ""
+
+#: ../../best_practices/controllers.rst:209
+msgid ""
+"If you need to execute some code before or after the execution of your "
+"controllers, you can use the EventDispatcher component to :doc:`set up "
+"before and after filters </cookbook/event_dispatcher/before_after_filters>`."
+msgstr ""

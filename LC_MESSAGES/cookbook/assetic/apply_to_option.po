@@ -1,0 +1,100 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/assetic/apply_to_option.rst:5
+msgid "How to Apply an Assetic Filter to a specific File Extension"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:7
+msgid ""
+"Assetic filters can be applied to individual files, groups of files or even,"
+" as you'll see here, files that have a specific extension. To show you how "
+"to handle each option, suppose that you want to use Assetic's CoffeeScript "
+"filter, which compiles CoffeeScript files into JavaScript."
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:12
+msgid ""
+"The main configuration is just the paths to ``coffee``, ``node`` and "
+"``node_modules``. An example configuration might look like this:"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:53
+msgid "Filter a single File"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:55
+msgid ""
+"You can now serve up a single CoffeeScript file as JavaScript from within "
+"your templates:"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:75
+msgid ""
+"This is all that's needed to compile this CoffeeScript file and serve it as "
+"the compiled JavaScript."
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:79
+msgid "Filter multiple Files"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:81
+msgid ""
+"You can also combine multiple CoffeeScript files into a single output file:"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:105
+msgid ""
+"Both files will now be served up as a single file compiled into regular "
+"JavaScript."
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:110
+msgid "Filtering Based on a File Extension"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:112
+msgid ""
+"One of the great advantages of using Assetic is reducing the number of asset"
+" files to lower HTTP requests. In order to make full use of this, it would "
+"be good to combine *all* your JavaScript and CoffeeScript files together "
+"since they will ultimately all be served as JavaScript. Unfortunately just "
+"adding the JavaScript files to the files to be combined as above will not "
+"work as the regular JavaScript files will not survive the CoffeeScript "
+"compilation."
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:119
+msgid ""
+"This problem can be avoided by using the ``apply_to`` option, which allows "
+"you to specify which filter should always be applied to particular file "
+"extensions. In this case you can specify that the ``coffee`` filter is "
+"applied to all ``.coffee`` files:"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:163
+msgid ""
+"With this option, you no longer need to specify the ``coffee`` filter in the"
+" template. You can also list regular JavaScript files, all of which will be "
+"combined and rendered as a single JavaScript file (with only the ``.coffee``"
+" files being run through the CoffeeScript filter):"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:1
+msgid "Assetic"
+msgstr ""
+
+#: ../../cookbook/assetic/apply_to_option.rst:1
+msgid "Apply filters"
+msgstr ""

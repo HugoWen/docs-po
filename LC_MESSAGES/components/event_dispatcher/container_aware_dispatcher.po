@@ -1,0 +1,108 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:5
+msgid "The Container Aware Event Dispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:8
+msgid "Introduction"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:10
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\ContainerAwareEventDispatcher`"
+" is a special EventDispatcher implementation which is coupled to the service"
+" container that is part of :doc:`the DependencyInjection component "
+"</components/dependency_injection/introduction>`. It allows services to be "
+"specified as event listeners making the EventDispatcher extremely powerful."
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:16
+msgid ""
+"Services are lazy loaded meaning the services attached as listeners will "
+"only be created if an event is dispatched that requires those listeners."
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:20
+msgid "Setup"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:22
+msgid ""
+"Setup is straightforward by injecting a "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\ContainerInterface` "
+"into the "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\ContainerAwareEventDispatcher`::"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:32
+msgid "Adding Listeners"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:34
+msgid ""
+"The *Container Aware EventDispatcher* can either load specified services "
+"directly, or services that implement "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\EventSubscriberInterface`."
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:37
+msgid ""
+"The following examples assume the service container has been loaded with any"
+" services that are mentioned."
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:42
+msgid "Services must be marked as public in the container."
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:45
+msgid "Adding Services"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:47
+msgid ""
+"To connect existing service definitions, use the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\ContainerAwareEventDispatcher::addListenerService`"
+" method where the ``$callback`` is an array of ``array($serviceId, "
+"$methodName)``::"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:54
+msgid "Adding Subscriber Services"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:56
+msgid ""
+"``EventSubscribers`` can be added using the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\ContainerAwareEventDispatcher::addSubscriberService`"
+" method where the first argument is the service ID of the subscriber "
+"service, and the second argument is the service's class name (which must "
+"implement "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\EventSubscriberInterface`)"
+" as follows::"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:67
+msgid "The ``EventSubscriberInterface`` will be exactly as you would expect::"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:1
+msgid "EventDispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/container_aware_dispatcher.rst:1
+msgid "Service container aware"
+msgstr ""

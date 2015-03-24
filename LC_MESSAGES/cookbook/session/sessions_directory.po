@@ -1,0 +1,64 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/session/sessions_directory.rst:5
+msgid "Configuring the Directory where Session Files are Saved"
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:7
+msgid ""
+"By default, the Symfony Standard Edition uses the global ``php.ini`` values "
+"for ``session.save_handler`` and ``session.save_path`` to determine where to"
+" store session data. This is because of the following configuration:"
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:49
+msgid ""
+"With this configuration, changing *where* your session metadata is stored is"
+" entirely up to your ``php.ini`` configuration."
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:52
+msgid ""
+"However, if you have the following configuration, Symfony will store the "
+"session data in files in the cache directory "
+"``%kernel.cache_dir%/sessions``. This means that when you clear the cache, "
+"any current sessions will also be deleted:"
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:88
+msgid ""
+"Using a different directory to save session data is one method to ensure "
+"that your current sessions aren't lost when you clear Symfony's cache."
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:93
+msgid ""
+"Using a different session save handler is an excellent (yet more complex) "
+"method of session management available within Symfony. See "
+":doc:`/components/http_foundation/session_configuration` for a discussion of"
+" session save handlers. There is also an entry in the cookbook about storing"
+" sessions in the :doc:`database "
+"</cookbook/configuration/pdo_session_storage>`."
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:99
+msgid ""
+"To change the directory in which Symfony saves session data, you only need "
+"change the framework configuration. In this example, you will change the "
+"session directory to ``app/sessions``:"
+msgstr ""
+
+#: ../../cookbook/session/sessions_directory.rst:1
+msgid "Sessions, sessions directory"
+msgstr ""

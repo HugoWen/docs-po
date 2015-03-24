@@ -1,0 +1,142 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:5
+msgid "How to Provide Model Classes for several Doctrine Implementations"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:7
+msgid ""
+"When building a bundle that could be used not only with Doctrine ORM but "
+"also the CouchDB ODM, MongoDB ODM or PHPCR ODM, you should still only write "
+"one model class. The Doctrine bundles provide a compiler pass to register "
+"the mappings for your model classes."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:14
+msgid ""
+"For non-reusable bundles, the easiest option is to put your model classes in"
+" the default locations: ``Entity`` for the Doctrine ORM or ``Document`` for "
+"one of the ODMs. For reusable bundles, rather than duplicate model classes "
+"just to get the auto-mapping, use the compiler pass."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:19
+msgid ""
+"The base mapping compiler pass was introduced in Symfony 2.3. The Doctrine "
+"bundles support it from DoctrineBundle >= 1.2.1, MongoDBBundle >= 3.0.0, "
+"PHPCRBundle >= 1.0.0 and the (unversioned) CouchDBBundle supports the "
+"compiler pass since the `CouchDB Mapping Compiler Pass pull request`_ was "
+"merged."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:26
+msgid ""
+"Support for defining namespace aliases was introduced in Symfony 2.6. It is "
+"safe to define the aliases with older versions of Symfony as the aliases are"
+" the last argument to ``createXmlMappingDriver`` and are ignored by PHP if "
+"that argument doesn't exist."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:32
+msgid ""
+"In your bundle class, write the following code to register the compiler "
+"pass. This one is written for the CmfRoutingBundle, so parts of it will need"
+" to be adapted for your case::"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:99
+msgid ""
+"Note the :phpfunction:`class_exists` check. This is crucial, as you do not "
+"want your bundle to have a hard dependency on all Doctrine bundles but let "
+"the user decide which to use."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:103
+msgid ""
+"The compiler pass provides factory methods for all drivers provided by "
+"Doctrine: Annotations, XML, Yaml, PHP and StaticPHP. The arguments are:"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:106
+msgid "A map/hash of absolute directory path to namespace;"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:107
+msgid ""
+"An array of container parameters that your bundle uses to specify the name "
+"of the Doctrine manager that it is using. In the example above, the "
+"CmfRoutingBundle stores the manager name that's being used under the "
+"``cmf_routing.model_manager_name`` parameter. The compiler pass will append "
+"the parameter Doctrine is using to specify the name of the default manager. "
+"The first parameter found is used and the mappings are registered with that "
+"manager;"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:113
+msgid ""
+"An optional container parameter name that will be used by the compiler pass "
+"to determine if this Doctrine type is used at all. This is relevant if your "
+"user has more than one type of Doctrine bundle installed, but your bundle is"
+" only used with one type of Doctrine;"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:117
+msgid ""
+"A map/hash of aliases to namespace. This should be the same convention used "
+"by Doctrine auto-mapping. In the example above, this allows the user to call"
+" ``$om->getRepository('CmfRoutingBundle:Route')``."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:123
+msgid ""
+"The factory method is using the ``SymfonyFileLocator`` of Doctrine, meaning "
+"it will only see XML and YML mapping files if they do not contain the full "
+"namespace as the filename. This is by design: the ``SymfonyFileLocator`` "
+"simplifies things by assuming the files are just the \"short\" version of "
+"the class as their filename (e.g. ``BlogPost.orm.xml``)"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:129
+msgid ""
+"If you also need to map a base class, you can register a compiler pass with "
+"the ``DefaultFileLocator`` like this. This code is taken from the "
+"``DoctrineOrmMappingsPass`` and adapted to use the ``DefaultFileLocator`` "
+"instead of the ``SymfonyFileLocator``::"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:148
+msgid ""
+"Note that you do not need to provide a namespace alias unless your users are"
+" expected to ask Doctrine for the base classes."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:151
+msgid ""
+"Now place your mapping file into ``/Resources/config/doctrine-base`` with "
+"the fully qualified class name, separated by ``.`` instead of ``\\``, for "
+"example ``Other.Namespace.Model.Name.orm.xml``. You may not mix the two as "
+"otherwise the ``SymfonyFileLocator`` will get confused."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:156
+msgid "Adjust accordingly for the other Doctrine implementations."
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/mapping_model_classes.rst:1
+msgid "Mapping Model classes"
+msgstr ""

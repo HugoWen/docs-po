@@ -1,0 +1,173 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/form/unit_testing.rst:5
+msgid "How to Unit Test your Forms"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:7
+msgid ""
+"The Form component consists of 3 core objects: a form type (implementing "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeInterface`), the "
+":class:`Symfony\\\\Component\\\\Form\\\\Form` and the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormView`."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:12
+msgid ""
+"The only class that is usually manipulated by programmers is the form type "
+"class which serves as a form blueprint. It is used to generate the ``Form`` "
+"and the ``FormView``. You could test it directly by mocking its interactions"
+" with the factory but it would be complex. It is better to pass it to "
+"FormFactory like it is done in a real application. It is simple to bootstrap"
+" and you can trust the Symfony components enough to use them as a testing "
+"base."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:19
+msgid ""
+"There is already a class that you can benefit from for simple FormTypes "
+"testing: :class:`Symfony\\\\Component\\\\Form\\\\Test\\\\TypeTestCase`. It "
+"is used to test the core types and you can use it to test your types too."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:23
+msgid ""
+"The ``TypeTestCase`` has moved to the ``Symfony\\Component\\Form\\Test`` "
+"namespace in 2.3. Previously, the class was located in "
+"``Symfony\\Component\\Form\\Tests\\Extension\\Core\\Type``."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:30
+msgid ""
+"Depending on the way you installed your Symfony or Symfony Form component "
+"the tests may not be downloaded. Use the ``--prefer-source`` option with "
+"Composer if this is the case."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:35
+msgid "The Basics"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:37
+msgid ""
+"The simplest ``TypeTestCase`` implementation looks like the following::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:75
+msgid "So, what does it test? Here comes a detailed explanation."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:77
+msgid ""
+"First you verify if the ``FormType`` compiles. This includes basic class "
+"inheritance, the ``buildForm`` function and options resolution. This should "
+"be the first test you write::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:84
+msgid ""
+"This test checks that none of your data transformers used by the form "
+"failed. The "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isSynchronized` "
+"method is only set to ``false`` if a data transformer throws an exception::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:93
+msgid ""
+"Don't test the validation: it is applied by a listener that is not active in"
+" the test case and it relies on validation configuration. Instead, unit test"
+" your custom constraints directly."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:97
+msgid ""
+"Next, verify the submission and mapping of the form. The test below checks "
+"if all the fields are correctly specified::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:102
+msgid ""
+"Finally, check the creation of the ``FormView``. You should check if all "
+"widgets you want to display are available in the children property::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:113
+msgid "Adding a Type your Form Depends on"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:115
+msgid ""
+"Your form may depend on other types that are defined as services. It might "
+"look like this::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:123
+msgid ""
+"To create your form correctly, you need to make the type available to the "
+"form factory in your test. The easiest way is to register it manually before"
+" creating the parent form using the ``PreloadedExtension`` class::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:156
+msgid ""
+"Make sure the child type you add is well tested. Otherwise you may be "
+"getting errors that are not related to the form you are currently testing "
+"but to its children."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:161
+msgid "Adding custom Extensions"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:163
+msgid ""
+"It often happens that you use some options that are added by :doc:`form "
+"extensions </cookbook/form/create_form_type_extension>`. One of the cases "
+"may be the ``ValidatorExtension`` with its ``invalid_message`` option. The "
+"``TypeTestCase`` loads only the core form extension so an \"Invalid option\""
+" exception will be raised if you try to use it for testing a class that "
+"depends on other extensions. You need add those extensions to the factory "
+"object::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:214
+msgid "Testing against different Sets of Data"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:216
+msgid ""
+"If you are not familiar yet with PHPUnit's `data providers`_, this might be "
+"a good opportunity to use them::"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:259
+msgid ""
+"The code above will run your test three times with 3 different sets of data."
+" This allows for decoupling the test fixtures from the tests and easily "
+"testing against multiple sets of data."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:263
+msgid ""
+"You can also pass another argument, such as a boolean if the form has to be "
+"synchronized with the given set of data or not etc."
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:1
+msgid "Form"
+msgstr ""
+
+#: ../../cookbook/form/unit_testing.rst:1
+msgid "Form testing"
+msgstr ""

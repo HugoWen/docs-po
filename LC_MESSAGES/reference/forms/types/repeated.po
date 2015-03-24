@@ -1,0 +1,427 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/forms/types/repeated.rst:5
+msgid "repeated Field Type"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:7
+msgid ""
+"This is a special field \"group\", that creates two identical fields whose "
+"values must match (or a validation error is thrown). The most common use is "
+"when you need the user to repeat their password or email to verify accuracy."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:13
+msgid "Rendered as"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:13
+msgid "input ``text`` field by default, but see `type`_ option"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:15
+msgid "Options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:15
+msgid "`first_name`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:16
+msgid "`first_options`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:17
+msgid "`options`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:18
+msgid "`second_name`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:19
+msgid "`second_options`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:20
+msgid "`type`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:22
+#: ../../reference/forms/types/repeated.rst:174
+msgid "Overridden Options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:22
+msgid "`error_bubbling`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:25
+msgid "Inherited options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:25
+msgid "`data`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:26
+msgid "`error_mapping`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:27
+msgid "`invalid_message`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:28
+msgid "`invalid_message_parameters`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:29
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:31
+msgid "Parent type"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:31
+msgid ":doc:`form </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:33
+msgid "Class"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:33
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\RepeatedType`"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:37
+msgid "Example Usage"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:50
+msgid ""
+"Upon a successful form submit, the value entered into both of the "
+"\"password\" fields becomes the data of the ``password`` key. In other "
+"words, even though two fields are actually rendered, the end data from the "
+"form is just the single value (usually a string) that you need."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:55
+msgid ""
+"The most important option is ``type``, which can be any field type and "
+"determines the actual type of the two underlying fields. The ``options`` "
+"option is passed to each of those individual fields, meaning - in this "
+"example - any option supported by the ``password`` type can be passed in "
+"this array."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:61
+msgid "Rendering"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:63
+msgid ""
+"The repeated field type is actually two underlying fields, which you can "
+"render all at once, or individually. To render all at once, use something "
+"like:"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:77
+msgid "To render each field individually, use something like this:"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:94
+msgid ""
+"The names ``first`` and ``second`` are the default names for the two sub-"
+"fields. However, these names can be controlled via the `first_name`_ and "
+"`second_name`_ options. If you've set these options, then use those values "
+"instead of ``first`` and ``second`` when rendering."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:100
+msgid "Validation"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:102
+msgid ""
+"One of the key features of the ``repeated`` field is internal validation "
+"(you don't need to do anything to set this up) that forces the two fields to"
+" have a matching value. If the two fields don't match, an error will be "
+"shown to the user."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:107
+msgid ""
+"The ``invalid_message`` is used to customize the error that will be "
+"displayed when the two fields do not match each other."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:111
+msgid "Field Options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:114
+msgid "first_name"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:116
+msgid "**type**: ``string`` **default**: ``first``"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:118
+msgid ""
+"This is the actual field name to be used for the first field. This is mostly"
+" meaningless, however, as the actual data entered into both of the fields "
+"will be available under the key assigned to the ``repeated`` field itself "
+"(e.g. ``password``). However, if you don't specify a label, this field name "
+"is used to \"guess\" the label for you."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:125
+msgid "first_options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:127
+#: ../../reference/forms/types/repeated.rst:141
+#: ../../reference/forms/types/repeated.rst:159
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:4
+msgid "**type**: ``array`` **default**: ``array()``"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:129
+msgid ""
+"Additional options (will be merged into `options` above) that should be "
+"passed *only* to the first field. This is especially useful for customizing "
+"the label::"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:139
+msgid "options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:143
+msgid ""
+"This options array will be passed to each of the two underlying fields. In "
+"other words, these are the options that customize the individual field "
+"types. For example, if the ``type`` option is set to ``password``, this "
+"array might contain the options ``always_empty`` or ``required`` - both "
+"options that are supported by the ``password`` field type."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:150
+msgid "second_name"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:152
+msgid "**type**: ``string`` **default**: ``second``"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:154
+msgid "The same as ``first_name``, but for the second field."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:157
+msgid "second_options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:161
+msgid ""
+"Additional options (will be merged into `options` above) that should be "
+"passed *only* to the second field. This is especially useful for customizing"
+" the label (see `first_options`_)."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:166
+msgid "type"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:168
+msgid "**type**: ``string`` **default**: ``text``"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:170
+msgid ""
+"The two underlying fields will be of this field type. For example, passing a"
+" type of ``password`` will render two password fields."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:177
+msgid "error_bubbling"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:179
+msgid "**default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:182
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:184
+msgid ""
+"These options inherit from the :doc:`form </reference/forms/types/form>` "
+"type:"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:2
+msgid "data"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying object "
+"(if there is one)"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain object (if an object is bound to"
+" the form). If you want to override the initial value for the form or just "
+"an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:17
+msgid ""
+"The default values for form fields are taken directly from the underlying "
+"data structure (e.g. an entity or an array). The ``data`` option overrides "
+"this default value."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:2
+msgid "error_mapping"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:4
+msgid "**type**: ``array`` **default**: ``empty``"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:6
+msgid "This option allows you to modify the target of a validation error."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:8
+msgid ""
+"Imagine you have a custom method named ``matchingCityAndZipCode`` that "
+"validates whether the city and zip code match. Unfortunately, there is no "
+"\"matchingCityAndZipCode\" field in your form, so all that Symfony can do is"
+" display the error on top of the form."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:13
+msgid ""
+"With customized error mapping, you can do better: map the error to the city "
+"field so that it displays above it::"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:25
+msgid "Here are the rules for the left and the right side of the mapping:"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:27
+msgid "The left side contains property paths;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:28
+msgid ""
+"If the violation is generated on a property or method of a class, its path "
+"is simply ``propertyName``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:30
+msgid ""
+"If the violation is generated on an entry of an ``array`` or ``ArrayAccess``"
+" object, the property path is ``[indexName]``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:32
+msgid ""
+"You can construct nested property paths by concatenating them, separating "
+"properties by dots. For example: ``addresses[work].matchingCityAndZipCode``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:34
+msgid ""
+"The left side of the error mapping also accepts a dot ``.``, which refers to"
+" the field itself. That means that any error added to the field is added to "
+"the given nested field instead;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:37
+msgid "The right side contains simply the names of fields in the form."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:2
+msgid "invalid_message"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:4
+msgid "**type**: ``string`` **default**: ``This value is not valid``"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:6
+msgid ""
+"This is the validation error message that's used if the data entered into "
+"this field doesn't make sense (i.e. fails validation)."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:9
+msgid ""
+"This might happen, for example, if the user enters a nonsense string into a "
+":doc:`time</reference/forms/types/time>` field that cannot be converted into"
+" a real time or if the user enters a string (e.g. ``apple``) into a number "
+"field."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message.rst.inc:14
+msgid ""
+"Normal (business logic) validation (such as when setting a minimum length "
+"for a field) should be set using validation messages with your validation "
+"rules (:ref:`reference<book-validation-constraint-configuration>`)."
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:2
+msgid "invalid_message_parameters"
+msgstr ""
+
+#: ../../reference/forms/types/options/invalid_message_parameters.rst.inc:6
+msgid ""
+"When setting the ``invalid_message`` option, you may need to include some "
+"variables in the string. This can be done by adding placeholders to that "
+"option and including the variables in this option::"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:2
+msgid "mapped"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the object, "
+"you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:1
+msgid "Forms"
+msgstr ""
+
+#: ../../reference/forms/types/repeated.rst:1
+msgid "Fields; repeated"
+msgstr ""

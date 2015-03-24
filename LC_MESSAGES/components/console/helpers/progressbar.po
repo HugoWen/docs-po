@@ -1,0 +1,339 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/progressbar.rst:5
+#: ../../components/console/helpers/progressbar.rst:1
+msgid "Progress Bar"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:7
+msgid ""
+"When executing longer-running commands, it may be helpful to show progress "
+"information, which updates as your command runs:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:12
+msgid ""
+"To display progress details, use the "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar`, pass it a"
+" total number of units, and advance the progress as the command executes::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:38
+msgid ""
+"Instead of advancing the bar by a number of steps (with the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::advance` "
+"method), you can also set the current progress by calling the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::setProgress`"
+" method."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:43
+msgid ""
+"The ``setProgress()`` method was called ``setCurrent()`` prior to Symfony "
+"2.6."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:48
+msgid ""
+"Prior to version 2.6, the progress bar only works if your platform supports "
+"ANSI codes; on other platforms, no output is generated."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:51
+msgid ""
+"If your platform doesn't support ANSI codes, updates to the progress bar are"
+" added as new lines. To prevent the output from being flooded, adjust the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::setRedrawFrequency`"
+" accordingly. By default, when using a ``max``, the redraw frequency is set "
+"to *10%* of your ``max``."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:59
+msgid ""
+"If you don't know the number of steps in advance, just omit the steps "
+"argument when creating the "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar` instance::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:65
+msgid "The progress will then be displayed as a throbber:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:79
+msgid ""
+"Whenever your task is finished, don't forget to call "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::finish` "
+"to ensure that the progress bar display is refreshed with a 100% completion."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:85
+msgid ""
+"If you want to output something while the progress bar is running, call "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::clear` "
+"first. After you're done, call "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::display` "
+"to show the progress bar again."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:92
+msgid "Customizing the Progress Bar"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:95
+msgid "Built-in Formats"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:97
+msgid ""
+"By default, the information rendered on a progress bar depends on the "
+"current level of verbosity of the ``OutputInterface`` instance:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:124
+msgid ""
+"If you call a command with the quiet flag (``-q``), the progress bar won't "
+"be displayed."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:127
+msgid ""
+"Instead of relying on the verbosity mode of the current command, you can "
+"also force a format via ``setFormat()``::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:132
+msgid "The built-in formats are the following:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:134
+msgid "``normal``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:135
+msgid "``verbose``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:136
+msgid "``very_verbose``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:137
+msgid "``debug``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:139
+msgid ""
+"If you don't set the number of steps for your progress bar, use the "
+"``_nomax`` variants:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:142
+msgid "``normal_nomax``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:143
+msgid "``verbose_nomax``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:144
+msgid "``very_verbose_nomax``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:145
+msgid "``debug_nomax``"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:148
+msgid "Custom Formats"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:150
+msgid "Instead of using the built-in formats, you can also set your own::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:154
+msgid "This sets the format to only display the progress bar itself:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:162
+msgid ""
+"A progress bar format is a string that contains specific placeholders (a "
+"name enclosed with the ``%`` character); the placeholders are replaced based"
+" on the current progress of the bar. Here is a list of the built-in "
+"placeholders:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:166
+msgid "``current``: The current step;"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:167
+msgid "``max``: The maximum number of steps (or 0 if no max is defined);"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:168
+msgid "``bar``: The bar itself;"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:169
+msgid ""
+"``percent``: The percentage of completion (not available if no max is "
+"defined);"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:170
+msgid "``elapsed``: The time elapsed since the start of the progress bar;"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:171
+msgid ""
+"``remaining``: The remaining time to complete the task (not available if no "
+"max is defined);"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:172
+msgid ""
+"``estimated``: The estimated time to complete the task (not available if no "
+"max is defined);"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:173
+msgid "``memory``: The current memory usage;"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:174
+msgid "``message``: The current message attached to the progress bar."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:176
+msgid ""
+"For instance, here is how you could set the format to be the same as the "
+"``debug`` one::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:181
+msgid ""
+"Notice the ``:6s`` part added to some placeholders? That's how you can tweak"
+" the appearance of the bar (formatting and alignment). The part after the "
+"colon (``:``) is used to set the ``sprintf`` format of the string."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:185
+msgid ""
+"The ``message`` placeholder is a bit special as you must set the value "
+"yourself::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:199
+msgid ""
+"Instead of setting the format for a given instance of a progress bar, you "
+"can also define global formats::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:207
+msgid ""
+"This code defines a new ``minimal`` format that you can then use for your "
+"progress bars:"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:218
+msgid ""
+"It is almost always better to redefine built-in formats instead of creating "
+"new ones as that allows the display to automatically vary based on the "
+"verbosity flag of the command."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:222
+msgid ""
+"When defining a new style that contains placeholders that are only available"
+" when the maximum number of steps is known, you should create a ``_nomax`` "
+"variant::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:232
+msgid ""
+"When displaying the progress bar, the format will automatically be set to "
+"``minimal_nomax`` if the bar does not have a maximum number of steps like in"
+" the example above."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:238
+msgid ""
+"A format can contain any valid ANSI codes and can also use the Symfony-"
+"specific way to set colors::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:248
+msgid ""
+"A format can span more than one line; that's very useful when you want to "
+"display more contextual information alongside the progress bar (see the "
+"example at the beginning of this article)."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:253
+msgid "Bar Settings"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:255
+msgid ""
+"Amongst the placeholders, ``bar`` is a bit special as all the characters "
+"used to display it can be customized::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:272
+msgid ""
+"For performance reasons, be careful if you set the total number of steps to "
+"a high number. For example, if you're iterating over a large number of "
+"items, consider setting the redraw frequency to a higher value by calling "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressBar::setRedrawFrequency`,"
+" so it updates on only some iterations::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:292
+msgid "Custom Placeholders"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:294
+msgid ""
+"If you want to display some information that depends on the progress bar "
+"display that are not available in the list of built-in placeholders, you can"
+" create your own. Let's see how you can create a ``remaining_steps`` "
+"placeholder that displays the number of remaining steps::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:306
+msgid ""
+"The ``getProgress()`` method was called ``getStep()`` prior to Symfony 2.6."
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:310
+msgid "Custom Messages"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:312
+msgid ""
+"The ``%message%`` placeholder allows you to specify a custom message to be "
+"displayed with the progress bar. But if you need more than one, just define "
+"your own::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:330
+msgid ""
+"For the ``filename`` to be part of the progress bar, just add the "
+"``%filename%`` placeholder in your format::"
+msgstr ""
+
+#: ../../components/console/helpers/progressbar.rst:1
+msgid "Console Helpers"
+msgstr ""

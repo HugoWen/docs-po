@@ -1,0 +1,95 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/validation/severity.rst:6
+msgid "How to Handle Different Error Levels"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:8
+msgid ""
+"Sometimes, you may want to display constraint validation error messages "
+"differently based on some rules. For example, you have a registration form "
+"for new users where they enter some personal information and choose their "
+"authentication credentials. They would have to choose a username and a "
+"secure password, but providing bank account information would be optional. "
+"Nonetheless, you want to make sure that these optional fields, if entered, "
+"are still valid, but display their errors differently."
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:16
+msgid "The process to achieve this behavior consists of two steps:"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:18
+msgid "Apply different error levels to the validation constraints;"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:19
+msgid "Customize your error messages depending on the configured error level."
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:22
+msgid "1. Assigning the Error Level"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:24
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:27
+msgid ""
+"Use the ``payload`` option to configure the error level for each constraint:"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:132
+msgid "2. Customize the Error Message Template"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:134
+msgid ""
+"The ``getConstraint()`` method in the ``ConstraintViolation`` class was "
+"introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:138
+msgid ""
+"When validation of the ``User`` object fails, you can retrieve the "
+"constraint that caused a particular failure using the "
+":method:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolation::getConstraint`"
+" method. Each constraint exposes the attached payload as a public property::"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:149
+msgid ""
+"For example, you can leverage this to customize the ``form_errors`` block so"
+" that the severity is added as an additional HTML class:"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:169
+msgid ""
+"For more information on customizing form rendering, see "
+":doc:`/cookbook/form/form_customization`."
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:1
+#: ../../cookbook/validation/severity.rst:1
+msgid "Validation"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:1
+msgid "Error Levels"
+msgstr ""
+
+#: ../../cookbook/validation/severity.rst:1
+msgid "Payload"
+msgstr ""

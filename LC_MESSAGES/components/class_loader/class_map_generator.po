@@ -1,0 +1,154 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/class_loader/class_map_generator.rst:6
+msgid "The Class Map Generator"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:8
+msgid ""
+"Loading a class usually is an easy task given the `PSR-0`_ and `PSR-4`_ "
+"standards. Thanks to the Symfony ClassLoader component or the autoloading "
+"mechanism provided by Composer, you don't have to map your class names to "
+"actual PHP files manually. Nowadays, PHP libraries usually come with "
+"autoloading support through Composer."
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:13
+msgid ""
+"But from time to time you may have to use a third-party library that comes "
+"without any autoloading support and therefore forces you to load each class "
+"manually. For example, imagine a library with the following directory "
+"structure:"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:29
+msgid "These files contain the following classes:"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:32
+msgid "File"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:32
+msgid "Class Name"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:34
+msgid "``library/bar/baz/Boo.php``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:34
+msgid "``Acme\\Bar\\Baz``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:35
+msgid "``library/bar/Foo.php``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:35
+msgid "``Acme\\Bar``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:36
+msgid "``library/foo/bar/Foo.php``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:36
+msgid "``Acme\\Foo\\Bar``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:37
+msgid "``library/foo/Bar.php``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:37
+msgid "``Acme\\Foo``"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:40
+msgid ""
+"To make your life easier, the ClassLoader component comes with a "
+":class:`Symfony\\\\Component\\\\ClassLoader\\\\ClassMapGenerator` class that"
+" makes it possible to create a map of class names to files."
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:45
+msgid "Generating a Class Map"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:47
+msgid ""
+"To generate the class map, simply pass the root directory of your class "
+"files to the "
+":method:`Symfony\\\\Component\\\\ClassLoader\\\\ClassMapGenerator::createMap`"
+" method::"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:55
+msgid ""
+"Given the files and class from the table above, you should see an output "
+"like this:"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:69
+msgid "Dumping the Class Map"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:71
+msgid ""
+"Writing the class map to the console output is not really sufficient when it"
+" comes to autoloading. Luckily, the ``ClassMapGenerator`` provides the "
+":method:`Symfony\\\\Component\\\\ClassLoader\\\\ClassMapGenerator::dump` "
+"method to save the generated class map to the filesystem::"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:80
+msgid ""
+"This call to ``dump()`` generates the class map and writes it to the "
+"``class_map.php`` file in the same directory with the following contents::"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:90
+msgid ""
+"Instead of loading each file manually, you'll only have to register the "
+"generated class map with, for example, the "
+":class:`Symfony\\\\Component\\\\ClassLoader\\\\MapClassLoader`::"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:108
+msgid ""
+"The example assumes that you already have autoloading working (e.g. through "
+"`Composer`_ or one of the other class loaders from the ClassLoader "
+"component."
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:112
+msgid ""
+"Besides dumping the class map for one directory, you can also pass an array "
+"of directories for which to generate the class map (the result actually is "
+"the same as in the example above)::"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:1
+msgid "Autoloading"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:1
+#: ../../components/class_loader/class_map_generator.rst:1
+msgid "Class Map Generator"
+msgstr ""
+
+#: ../../components/class_loader/class_map_generator.rst:1
+msgid "ClassLoader"
+msgstr ""

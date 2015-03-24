@@ -1,0 +1,372 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/acl_advanced.rst:5
+msgid "How to Use advanced ACL Concepts"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:7
+msgid ""
+"The aim of this chapter is to give a more in-depth view of the ACL system, "
+"and also explain some of the design decisions behind it."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:11
+msgid "Design Concepts"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:13
+msgid ""
+"Symfony's object instance security capabilities are based on the concept of "
+"an Access Control List. Every domain object **instance** has its own ACL. "
+"The ACL instance holds a detailed list of Access Control Entries (ACEs) "
+"which are used to make access decisions. Symfony's ACL system focuses on two"
+" main objectives:"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:19
+msgid ""
+"providing a way to efficiently retrieve a large amount of ACLs/ACEs for your"
+" domain objects, and to modify them;"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:21
+msgid ""
+"providing a way to easily make decisions of whether a person is allowed to "
+"perform an action on a domain object or not."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:24
+msgid ""
+"As indicated by the first point, one of the main capabilities of Symfony's "
+"ACL system is a high-performance way of retrieving ACLs/ACEs. This is "
+"extremely important since each ACL might have several ACEs, and inherit from"
+" another ACL in a tree-like fashion. Therefore, no ORM is leveraged, instead"
+" the default implementation interacts with your connection directly using "
+"Doctrine's DBAL."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:32
+msgid "Object Identities"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:34
+msgid ""
+"The ACL system is completely decoupled from your domain objects. They don't "
+"even have to be stored in the same database, or on the same server. In order"
+" to achieve this decoupling, in the ACL system your objects are represented "
+"through object identity objects. Every time you want to retrieve the ACL for"
+" a domain object, the ACL system will first create an object identity from "
+"your domain object, and then pass this object identity to the ACL provider "
+"for further processing."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:43
+msgid "Security Identities"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:45
+msgid ""
+"This is analog to the object identity, but represents a user, or a role in "
+"your application. Each role, or user has its own security identity."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:49
+msgid "Database Table Structure"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:51
+msgid ""
+"The default implementation uses five database tables as listed below. The "
+"tables are ordered from least rows to most rows in a typical application:"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:54
+msgid ""
+"*acl_security_identities*: This table records all security identities (SID) "
+"which hold ACEs. The default implementation ships with two security "
+"identities: "
+":class:`Symfony\\\\Component\\\\Security\\\\Acl\\\\Domain\\\\RoleSecurityIdentity`"
+" and "
+":class:`Symfony\\\\Component\\\\Security\\\\Acl\\\\Domain\\\\UserSecurityIdentity`."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:59
+msgid ""
+"*acl_classes*: This table maps class names to a unique ID which can be "
+"referenced from other tables."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:61
+msgid ""
+"*acl_object_identities*: Each row in this table represents a single domain "
+"object instance."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:63
+msgid ""
+"*acl_object_identity_ancestors*: This table allows all the ancestors of an "
+"ACL to be determined in a very efficient way."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:65
+msgid ""
+"*acl_entries*: This table contains all ACEs. This is typically the table "
+"with the most rows. It can contain tens of millions without significantly "
+"impacting performance."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:72
+msgid "Scope of Access Control Entries"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:74
+msgid ""
+"Access control entries can have different scopes in which they apply. In "
+"Symfony, there are basically two different scopes:"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:77
+msgid "Class-Scope: These entries apply to all objects with the same class."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:78
+msgid ""
+"Object-Scope: This was the scope solely used in the previous chapter, and it"
+" only applies to one specific object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:81
+msgid ""
+"Sometimes, you will find the need to apply an ACE only to a specific field "
+"of the object. Suppose you want the ID only to be viewable by an "
+"administrator, but not by your customer service. To solve this common "
+"problem, two more sub-scopes have been added:"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:86
+msgid ""
+"Class-Field-Scope: These entries apply to all objects with the same class, "
+"but only to a specific field of the objects."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:88
+msgid ""
+"Object-Field-Scope: These entries apply to a specific object, and only to a "
+"specific field of that object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:92
+msgid "Pre-Authorization Decisions"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:94
+msgid ""
+"For pre-authorization decisions, that is decisions made before any secure "
+"method (or secure action) is invoked, the proven AccessDecisionManager "
+"service is used. The AccessDecisionManager is also used for reaching "
+"authorization decisions based on roles. Just like roles, the ACL system adds"
+" several new attributes which may be used to check for different "
+"permissions."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:101
+msgid "Built-in Permission Map"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:104
+msgid "Attribute"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:104
+msgid "Intended Meaning"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:104
+msgid "Integer Bitmasks"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:106
+msgid "VIEW"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:106
+msgid "Whether someone is allowed to view the domain object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:106
+msgid "VIEW, EDIT, OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:109
+msgid "EDIT"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:109
+msgid "Whether someone is allowed to make changes to the domain object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:109
+msgid "EDIT, OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:113
+msgid "CREATE"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:113
+msgid "Whether someone is allowed to create the domain object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:113
+msgid "CREATE, OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:117
+msgid "DELETE"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:117
+msgid "Whether someone is allowed to delete the domain object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:117
+msgid "DELETE, OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:121
+msgid "UNDELETE"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:121
+msgid ""
+"Whether someone is allowed to restore a previously deleted domain object."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:121
+msgid "UNDELETE, OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:125
+msgid "OPERATOR"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:125
+msgid "Whether someone is allowed to perform all of the above actions."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:125
+msgid "OPERATOR, MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:129
+msgid "MASTER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:129
+msgid ""
+"Whether someone is allowed to perform all of the above actions, and in "
+"addition is allowed to grant any of the above permissions to others."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:129
+msgid "MASTER, or OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:136
+#: ../../cookbook/security/acl_advanced.rst:136
+msgid "OWNER"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:136
+msgid ""
+"Whether someone owns the domain object. An owner can perform any of the "
+"above actions *and* grant master and owner permissions."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:144
+msgid "Permission Attributes vs. Permission Bitmasks"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:146
+msgid ""
+"Attributes are used by the AccessDecisionManager, just like roles. Often, "
+"these attributes represent in fact an aggregate of integer bitmasks. Integer"
+" bitmasks on the other hand, are used by the ACL system internally to "
+"efficiently store your users' permissions in the database, and perform "
+"access checks using extremely fast bitmask operations."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:153
+msgid "Extensibility"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:155
+msgid ""
+"The above permission map is by no means static, and theoretically could be "
+"completely replaced at will. However, it should cover most problems you "
+"encounter, and for interoperability with other bundles, you are encouraged "
+"to stick to the meaning envisaged for them."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:161
+msgid "Post Authorization Decisions"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:163
+msgid ""
+"Post authorization decisions are made after a secure method has been "
+"invoked, and typically involve the domain object which is returned by such a"
+" method. After invocation providers also allow to modify, or filter the "
+"domain object before it is returned."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:168
+msgid ""
+"Due to current limitations of the PHP language, there are no post-"
+"authorization capabilities build into the core Security component. However, "
+"there is an experimental JMSSecurityExtraBundle_ which adds these "
+"capabilities. See its documentation for further information on how this is "
+"accomplished."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:175
+msgid "Process for Reaching Authorization Decisions"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:177
+msgid ""
+"The ACL class provides two methods for determining whether a security "
+"identity has the required bitmasks, ``isGranted`` and ``isFieldGranted``. "
+"When the ACL receives an authorization request through one of these methods,"
+" it delegates this request to an implementation of "
+":class:`Symfony\\\\Component\\\\Security\\\\Acl\\\\Domain\\\\PermissionGrantingStrategy`."
+" This allows you to replace the way access decisions are reached without "
+"actually modifying the ACL class itself."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:185
+msgid ""
+"The ``PermissionGrantingStrategy`` first checks all your object-scope ACEs. "
+"If none is applicable, the class-scope ACEs will be checked. If none is "
+"applicable, then the process will be repeated with the ACEs of the parent "
+"ACL. If no parent ACL exists, an exception will be thrown."
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/acl_advanced.rst:1
+msgid "Advanced ACL concepts"
+msgstr ""

@@ -1,0 +1,114 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/debug/introduction.rst:6
+msgid "The Debug Component"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:8
+msgid "The Debug component provides tools to ease debugging PHP code."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:10
+msgid ""
+"The Debug component was introduced in Symfony 2.3. Previously, the classes "
+"were located in the HttpKernel component."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:17
+msgid "You can install the component in many different ways:"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:19
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/debug`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:20
+msgid "Use the official Git repository (https://github.com/symfony/Debug)."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:23
+msgid "Usage"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:25
+msgid ""
+"The Debug component provides several tools to help you debug PHP code. "
+"Enabling them all is as easy as it can get::"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:32
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Debug\\\\Debug::enable` method "
+"registers an error handler, an exception handler and :doc:`a special class "
+"loader </components/debug/class_loader>`."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:36
+msgid ""
+"Read the following sections for more information about the different "
+"available tools."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:41
+msgid ""
+"You should never enable the debug tools in a production environment as they "
+"might disclose sensitive information to the user."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:45
+msgid "Enabling the Error Handler"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:47
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Debug\\\\ErrorHandler` class catches PHP"
+" errors and converts them to exceptions (of class :phpclass:`ErrorException`"
+" or "
+":class:`Symfony\\\\Component\\\\Debug\\\\Exception\\\\FatalErrorException` "
+"for PHP fatal errors)::"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:57
+msgid "Enabling the Exception Handler"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:59
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Debug\\\\ExceptionHandler` class catches"
+" uncaught PHP exceptions and converts them to a nice PHP response. It is "
+"useful in debug mode to replace the default PHP/XDebug output with something"
+" prettier and more useful::"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:70
+msgid ""
+"If the :doc:`HttpFoundation component "
+"</components/http_foundation/introduction>` is available, the handler uses a"
+" Symfony Response object; if not, it falls back to a regular PHP response."
+msgstr ""
+
+#: ../../components/debug/introduction.rst:1
+#: ../../components/debug/introduction.rst:1
+msgid "Debug"
+msgstr ""
+
+#: ../../components/debug/introduction.rst:1
+msgid "Components"
+msgstr ""

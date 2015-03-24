@@ -1,0 +1,55 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/class_loader/map_class_loader.rst:5
+#: ../../components/class_loader/map_class_loader.rst:1
+msgid "MapClassLoader"
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:7
+msgid ""
+"The :class:`Symfony\\\\Component\\\\ClassLoader\\\\MapClassLoader` allows "
+"you to autoload files via a static map from classes to files. This is useful"
+" if you use third-party libraries which don't follow the `PSR-0`_ standards "
+"and so can't use the :doc:`PSR-0 class loader "
+"</components/class_loader/class_loader>`."
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:12
+msgid ""
+"The ``MapClassLoader`` can be used along with the :doc:`PSR-0 class loader "
+"</components/class_loader/class_loader>` by configuring and calling the "
+"``register()`` method on both."
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:17
+msgid ""
+"The default behavior is to append the ``MapClassLoader`` on the autoload "
+"stack. If you want to use it as the first autoloader, pass ``true`` when "
+"calling the ``register()`` method. Your class loader will then be prepended "
+"on the autoload stack."
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:23
+msgid "Usage"
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:25
+msgid ""
+"Using it is as easy as passing your mapping to its constructor when creating"
+" an instance of the ``MapClassLoader`` class::"
+msgstr ""
+
+#: ../../components/class_loader/map_class_loader.rst:1
+msgid "ClassLoader"
+msgstr ""

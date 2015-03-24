@@ -1,0 +1,385 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/swiftmailer.rst:5
+msgid "SwiftmailerBundle Configuration (\"swiftmailer\")"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:7
+msgid ""
+"This reference document is a work in progress. It should be accurate, but "
+"all options are not yet fully covered. For a full list of the default "
+"configuration options, see `Full Default Configuration`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:11
+msgid ""
+"The ``swiftmailer`` key configures Symfony's integration with Swift Mailer, "
+"which is responsible for creating and delivering email messages."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:14
+msgid ""
+"The following section lists all options that are available to configure a "
+"mailer. It is also possible to configure several mailers (see `Using "
+"Multiple Mailers`_)."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:18
+msgid "Configuration"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:20
+msgid "`transport`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:21
+msgid "`username`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:22
+msgid "`password`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:23
+msgid "`host`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:24
+msgid "`port`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:25
+msgid "`encryption`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:26
+msgid "`auth_mode`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:28
+msgid "`spool`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:28
+msgid "`type`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:29
+msgid "`path`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:30
+msgid "`sender_address`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:32
+msgid "`antiflood`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:32
+msgid "`threshold`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:33
+msgid "`sleep`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:34
+msgid "`delivery_address`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:35
+msgid "`delivery_whitelist`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:36
+msgid "`disable_delivery`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:37
+msgid "`logging`_"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:40
+msgid "transport"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:42
+msgid "**type**: ``string`` **default**: ``smtp``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:44
+msgid "The exact transport method to use to deliver emails. Valid values are:"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:46
+msgid "smtp"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:47
+msgid "gmail (see :doc:`/cookbook/email/gmail`)"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:48
+msgid "mail"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:49
+msgid "sendmail"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:50
+msgid "null (same as setting `disable_delivery`_ to ``true``)"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:53
+msgid "username"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:55
+#: ../../reference/configuration/swiftmailer.rst:62
+#: ../../reference/configuration/swiftmailer.rst:84
+#: ../../reference/configuration/swiftmailer.rst:92
+#: ../../reference/configuration/swiftmailer.rst:122
+#: ../../reference/configuration/swiftmailer.rst:150
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:57
+msgid "The username when using ``smtp`` as the transport."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:60
+msgid "password"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:64
+msgid "The password when using ``smtp`` as the transport."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:67
+msgid "host"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:69
+msgid "**type**: ``string`` **default**: ``localhost``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:71
+msgid "The host to connect to when using ``smtp`` as the transport."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:74
+msgid "port"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:76
+msgid ""
+"**type**: ``string`` **default**: 25 or 465 (depending on `encryption`_)"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:78
+msgid ""
+"The port when using ``smtp`` as the transport. This defaults to 465 if "
+"encryption is ``ssl`` and 25 otherwise."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:82
+msgid "encryption"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:86
+msgid ""
+"The encryption mode to use when using ``smtp`` as the transport. Valid "
+"values are ``tls``, ``ssl``, or ``null`` (indicating no encryption)."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:90
+msgid "auth_mode"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:94
+msgid ""
+"The authentication mode to use when using ``smtp`` as the transport. Valid "
+"values are ``plain``, ``login``, ``cram-md5``, or ``null``."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:98
+msgid "spool"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:100
+msgid "For details on email spooling, see :doc:`/cookbook/email/spool`."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:103
+msgid "type"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:105
+msgid "**type**: ``string`` **default**: ``file``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:107
+msgid ""
+"The method used to store spooled messages. Valid values are ``memory`` and "
+"``file``. A custom spool should be possible by creating a service called "
+"``swiftmailer.spool.myspool`` and setting this value to ``myspool``."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:112
+msgid "path"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:114
+msgid ""
+"**type**: ``string`` **default**: ``%kernel.cache_dir%/swiftmailer/spool``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:116
+msgid ""
+"When using the ``file`` spool, this is the path where the spooled messages "
+"will be stored."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:120
+msgid "sender_address"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:124
+msgid ""
+"If set, all messages will be delivered with this address as the \"return "
+"path\" address, which is where bounced messages should go. This is handled "
+"internally by Swift Mailer's ``Swift_Plugins_ImpersonatePlugin`` class."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:129
+msgid "antiflood"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:132
+msgid "threshold"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:134
+msgid "**type**: ``integer`` **default**: ``99``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:136
+msgid ""
+"Used with ``Swift_Plugins_AntiFloodPlugin``. This is the number of emails to"
+" send before restarting the transport."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:140
+msgid "sleep"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:142
+msgid "**type**: ``integer`` **default**: ``0``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:144
+msgid ""
+"Used with ``Swift_Plugins_AntiFloodPlugin``. This is the number of seconds "
+"to sleep for during a transport restart."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:148
+msgid "delivery_address"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:152
+msgid ""
+"If set, all email messages will be sent to this address instead of being "
+"sent to their actual recipients. This is often useful when developing. For "
+"example, by setting this in the ``config_dev.yml`` file, you can guarantee "
+"that all emails sent during development go to a single account."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:157
+msgid ""
+"This uses ``Swift_Plugins_RedirectingPlugin``. Original recipients are "
+"available on the ``X-Swift-To``, ``X-Swift-Cc`` and ``X-Swift-Bcc`` headers."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:161
+msgid "delivery_whitelist"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:163
+msgid "**type**: ``array``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:165
+msgid ""
+"Used in combination with ``delivery_address``. If set, emails matching any "
+"of these patterns will be delivered like normal, instead of being sent to "
+"``delivery_address``. For details, see :ref:`the cookbook entry. <sending-"
+"to-a-specified-address-but-with-exceptions>`"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:170
+msgid "disable_delivery"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:172
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:174
+msgid ""
+"If true, the ``transport`` will automatically be set to ``null``, and no "
+"emails will actually be delivered."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:178
+msgid "logging"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:180
+msgid "**type**: ``Boolean`` **default**: ``%kernel.debug%``"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:182
+msgid ""
+"If true, Symfony's data collector will be activated for Swift Mailer and the"
+" information will be available in the profiler."
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:186
+msgid "Full default Configuration"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:244
+msgid "Using multiple Mailers"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:246
+msgid ""
+"You can configure multiple mailers by grouping them under the ``mailers`` "
+"key (the default mailer is identified by the ``default_mailer`` option):"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:292
+msgid "Each mailer is registered as a service::"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:1
+msgid "Configuration reference"
+msgstr ""
+
+#: ../../reference/configuration/swiftmailer.rst:1
+msgid "Swift Mailer"
+msgstr ""

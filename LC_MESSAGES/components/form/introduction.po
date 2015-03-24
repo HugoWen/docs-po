@@ -1,0 +1,581 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/form/introduction.rst:6
+msgid "The Form Component"
+msgstr ""
+
+#: ../../components/form/introduction.rst:8
+msgid ""
+"The Form component allows you to easily create, process and reuse HTML "
+"forms."
+msgstr ""
+
+#: ../../components/form/introduction.rst:11
+msgid ""
+"The Form component is a tool to help you solve the problem of allowing end-"
+"users to interact with the data and modify the data in your application. And"
+" though traditionally this has been through HTML forms, the component "
+"focuses on processing data to and from your client and application, whether "
+"that data be from a normal form post or from an API."
+msgstr ""
+
+#: ../../components/form/introduction.rst:18
+msgid "Installation"
+msgstr ""
+
+#: ../../components/form/introduction.rst:20
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:22
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/form`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/form/introduction.rst:23
+msgid "Use the official Git repository (https://github.com/symfony/Form)."
+msgstr ""
+
+#: ../../components/form/introduction.rst:26
+msgid "Configuration"
+msgstr ""
+
+#: ../../components/form/introduction.rst:30
+msgid ""
+"If you are working with the full-stack Symfony framework, the Form component"
+" is already configured for you. In this case, skip to :ref:`component-form-"
+"intro-create-simple-form`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:33
+msgid ""
+"In Symfony, forms are represented by objects and these objects are built by "
+"using a *form factory*. Building a form factory is simple::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:40
+msgid ""
+"This factory can already be used to create basic forms, but it is lacking "
+"support for very important features:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:43
+msgid "**Request Handling:** Support for request handling and file uploads;"
+msgstr ""
+
+#: ../../components/form/introduction.rst:44
+msgid ""
+"**CSRF Protection:** Support for protection against Cross-Site-Request-"
+"Forgery (CSRF) attacks;"
+msgstr ""
+
+#: ../../components/form/introduction.rst:46
+msgid ""
+"**Templating:** Integration with a templating layer that allows you to reuse"
+" HTML fragments when rendering a form;"
+msgstr ""
+
+#: ../../components/form/introduction.rst:48
+msgid ""
+"**Translation:** Support for translating error messages, field labels and "
+"other strings;"
+msgstr ""
+
+#: ../../components/form/introduction.rst:50
+msgid ""
+"**Validation:** Integration with a validation library to generate error "
+"messages for submitted data."
+msgstr ""
+
+#: ../../components/form/introduction.rst:53
+msgid ""
+"The Symfony Form component relies on other libraries to solve these "
+"problems. Most of the time you will use Twig and the Symfony "
+":doc:`HttpFoundation </components/http_foundation/introduction>`, "
+"Translation and Validator components, but you can replace any of these with "
+"a different library of your choice."
+msgstr ""
+
+#: ../../components/form/introduction.rst:59
+msgid ""
+"The following sections explain how to plug these libraries into the form "
+"factory."
+msgstr ""
+
+#: ../../components/form/introduction.rst:64
+msgid ""
+"For a working example, see https://github.com/bschussek/standalone-forms"
+msgstr ""
+
+#: ../../components/form/introduction.rst:67
+msgid "Request Handling"
+msgstr ""
+
+#: ../../components/form/introduction.rst:69
+msgid "The ``handleRequest()`` method was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/form/introduction.rst:72
+msgid ""
+"To process form data, you'll need to call the "
+":method:`Symfony\\\\Component\\\\Form\\\\Form::handleRequest` method::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:77
+msgid ""
+"Behind the scenes, this uses a "
+":class:`Symfony\\\\Component\\\\Form\\\\NativeRequestHandler` object to read"
+" data off of the correct PHP superglobals (i.e. ``$_POST`` or ``$_GET``) "
+"based on the HTTP method configured on the form (POST is default)."
+msgstr ""
+
+#: ../../components/form/introduction.rst:83
+msgid ""
+"If you need more control over exactly when your form is submitted or which "
+"data is passed to it, you can use the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` for this. "
+"Read more about it :ref:`in the cookbook <cookbook-form-call-submit-"
+"directly>`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:0
+msgid "Integration with the HttpFoundation Component"
+msgstr ""
+
+#: ../../components/form/introduction.rst:89
+msgid ""
+"If you use the HttpFoundation component, then you should add the "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\HttpFoundation\\\\HttpFoundationExtension`"
+" to your form factory::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:100
+msgid ""
+"Now, when you process a form, you can pass the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` object to "
+":method:`Symfony\\\\Component\\\\Form\\\\Form::handleRequest`::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:107
+msgid ""
+"For more information about the HttpFoundation component or how to install "
+"it, see :doc:`/components/http_foundation/introduction`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:111
+msgid "CSRF Protection"
+msgstr ""
+
+#: ../../components/form/introduction.rst:113
+msgid ""
+"Protection against CSRF attacks is built into the Form component, but you "
+"need to explicitly enable it or replace it with a custom solution. The "
+"following snippet adds CSRF protection to the form factory::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:135
+msgid ""
+"To secure your application against CSRF attacks, you need to define a CSRF "
+"secret. Generate a random string with at least 32 characters, insert it in "
+"the above snippet and make sure that nobody except your web server can "
+"access the secret."
+msgstr ""
+
+#: ../../components/form/introduction.rst:140
+msgid ""
+"Internally, this extension will automatically add a hidden field to every "
+"form (called ``__token`` by default) whose value is automatically generated "
+"and validated when binding the form."
+msgstr ""
+
+#: ../../components/form/introduction.rst:146
+msgid ""
+"If you're not using the HttpFoundation component, you can use "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Csrf\\\\CsrfProvider\\\\DefaultCsrfProvider`"
+" instead, which relies on PHP's native session handling::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:155
+msgid "Twig Templating"
+msgstr ""
+
+#: ../../components/form/introduction.rst:157
+msgid ""
+"If you're using the Form component to process HTML forms, you'll need a way "
+"to easily render your form as HTML form fields (complete with field values, "
+"errors, and labels). If you use `Twig`_ as your template engine, the Form "
+"component offers a rich integration."
+msgstr ""
+
+#: ../../components/form/introduction.rst:162
+msgid ""
+"To use the integration, you'll need the ``TwigBridge``, which provides "
+"integration between Twig and several Symfony components. If you're using "
+"Composer, you could install the latest 2.3 version by adding the following "
+"``require`` line to your ``composer.json`` file:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:175
+msgid ""
+"The TwigBridge integration provides you with several :doc:`Twig Functions "
+"</reference/forms/twig_reference>` that help you render the HTML widget, "
+"label and error for each field (as well as a few other things). To configure"
+" the integration, you'll need to bootstrap or access Twig and add the "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Extension\\\\FormExtension`::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:213
+msgid ""
+"The exact details of your `Twig Configuration`_ will vary, but the goal is "
+"always to add the "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Extension\\\\FormExtension` to Twig, "
+"which gives you access to the Twig functions for rendering forms. To do "
+"this, you first need to create a "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Form\\\\TwigRendererEngine`, where you "
+"define your :ref:`form themes <cookbook-form-customization-form-themes>` "
+"(i.e. resources/files that define form HTML markup)."
+msgstr ""
+
+#: ../../components/form/introduction.rst:220
+msgid ""
+"For general details on rendering forms, see "
+":doc:`/cookbook/form/form_customization`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:224
+msgid ""
+"If you use the Twig integration, read \":ref:`component-form-intro-install-"
+"translation`\" below for details on the needed translation filters."
+msgstr ""
+
+#: ../../components/form/introduction.rst:230
+msgid "Translation"
+msgstr ""
+
+#: ../../components/form/introduction.rst:232
+msgid ""
+"If you're using the Twig integration with one of the default form theme "
+"files (e.g. ``form_div_layout.html.twig``), there are 2 Twig filters "
+"(``trans`` and ``transChoice``) that are used for translating form labels, "
+"errors, option text and other strings."
+msgstr ""
+
+#: ../../components/form/introduction.rst:237
+msgid ""
+"To add these Twig filters, you can either use the built-in "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Extension\\\\TranslationExtension` that"
+" integrates with Symfony's Translation component, or add the 2 Twig filters "
+"yourself, via your own Twig extension."
+msgstr ""
+
+#: ../../components/form/introduction.rst:242
+msgid ""
+"To use the built-in integration, be sure that your project has Symfony's "
+"Translation and :doc:`Config </components/config/introduction>` components "
+"installed. If you're using Composer, you could get the latest 2.3 version of"
+" each of these by adding the following to your ``composer.json`` file:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:256
+msgid ""
+"Next, add the "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Extension\\\\TranslationExtension` to "
+"your ``Twig_Environment`` instance::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:281
+msgid ""
+"Depending on how your translations are being loaded, you can now add string "
+"keys, such as field labels, and their translations to your translation "
+"files."
+msgstr ""
+
+#: ../../components/form/introduction.rst:284
+msgid "For more details on translations, see :doc:`/book/translation`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:287
+msgid "Validation"
+msgstr ""
+
+#: ../../components/form/introduction.rst:289
+msgid ""
+"The Form component comes with tight (but optional) integration with "
+"Symfony's Validator component. If you're using a different solution for "
+"validation, no problem! Simply take the submitted/bound data of your form "
+"(which is an array or object) and pass it through your own validation "
+"system."
+msgstr ""
+
+#: ../../components/form/introduction.rst:294
+msgid ""
+"To use the integration with Symfony's Validator component, first make sure "
+"it's installed in your application. If you're using Composer and want to "
+"install the latest 2.3 version, add this to your ``composer.json``:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:306
+msgid ""
+"If you're not familiar with Symfony's Validator component, read more about "
+"it: :doc:`/book/validation`. The Form component comes with a "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Validator\\\\ValidatorExtension`"
+" class, which automatically applies validation to your data on bind. These "
+"errors are then mapped to the correct field and rendered."
+msgstr ""
+
+#: ../../components/form/introduction.rst:312
+msgid ""
+"Your integration with the Validation component will look something like "
+"this::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:345
+msgid ""
+"To learn more, skip down to the :ref:`component-form-intro-validation` "
+"section."
+msgstr ""
+
+#: ../../components/form/introduction.rst:348
+msgid "Accessing the Form Factory"
+msgstr ""
+
+#: ../../components/form/introduction.rst:350
+msgid ""
+"Your application only needs one form factory, and that one factory object "
+"should be used to create any and all form objects in your application. This "
+"means that you should create it in some central, bootstrap part of your "
+"application and then access it whenever you need to build a form."
+msgstr ""
+
+#: ../../components/form/introduction.rst:357
+msgid ""
+"In this document, the form factory is always a local variable called "
+"``$formFactory``. The point here is that you will probably need to create "
+"this object in some more \"global\" way so you can access it from anywhere."
+msgstr ""
+
+#: ../../components/form/introduction.rst:361
+msgid ""
+"Exactly how you gain access to your one form factory is up to you. If you're"
+" using a :term:`Service Container`, then you should add the form factory to "
+"your container and grab it out whenever you need to. If your application "
+"uses global or static variables (not usually a good idea), then you can "
+"store the object on some static class or do something similar."
+msgstr ""
+
+#: ../../components/form/introduction.rst:367
+msgid ""
+"Regardless of how you architect your application, just remember that you "
+"should only have one form factory and that you'll need to be able to access "
+"it throughout your application."
+msgstr ""
+
+#: ../../components/form/introduction.rst:374
+msgid "Creating a simple Form"
+msgstr ""
+
+#: ../../components/form/introduction.rst:378
+msgid ""
+"If you're using the Symfony framework, then the form factory is available "
+"automatically as a service called ``form.factory``. Also, the default base "
+"controller class has a "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller::createFormBuilder`"
+" method, which is a shortcut to fetch the form factory and call "
+"``createBuilder`` on it."
+msgstr ""
+
+#: ../../components/form/introduction.rst:384
+msgid ""
+"Creating a form is done via a "
+":class:`Symfony\\\\Component\\\\Form\\\\FormBuilder` object, where you build"
+" and configure different fields. The form builder is created from the form "
+"factory."
+msgstr ""
+
+#: ../../components/form/introduction.rst:426
+msgid ""
+"As you can see, creating a form is like writing a recipe: you call ``add`` "
+"for each new field you want to create. The first argument to ``add`` is the "
+"name of your field, and the second is the field \"type\". The Form component"
+" comes with a lot of :doc:`built-in types </reference/forms/types>`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:431
+msgid ""
+"Now that you've built your form, learn how to :ref:`render <component-form-"
+"intro-rendering-form>` it and :ref:`process the form submission <component-"
+"form-intro-handling-submission>`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:435
+msgid "Setting default Values"
+msgstr ""
+
+#: ../../components/form/introduction.rst:437
+msgid ""
+"If you need your form to load with some default values (or you're building "
+"an \"edit\" form), simply pass in the default data when creating your form "
+"builder:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:467
+msgid ""
+"In this example, the default data is an array. Later, when you use the "
+":ref:`data_class <book-forms-data-class>` option to bind data directly to "
+"objects, your default data will be an instance of that object."
+msgstr ""
+
+#: ../../components/form/introduction.rst:474
+msgid "Rendering the Form"
+msgstr ""
+
+#: ../../components/form/introduction.rst:476
+msgid ""
+"Now that the form has been created, the next step is to render it. This is "
+"done by passing a special form \"view\" object to your template (notice the "
+"``$form->createView()`` in the controller above) and using a set of form "
+"helper functions:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:492
+msgid ""
+"That's it! By printing ``form_widget(form)``, each field in the form is "
+"rendered, along with a label and error message (if there is one). As easy as"
+" this is, it's not very flexible (yet). Usually, you'll want to render each "
+"form field individually so you can control how the form looks. You'll learn "
+"how to do that in the \":ref:`form-rendering-template`\" section."
+msgstr ""
+
+#: ../../components/form/introduction.rst:499
+msgid "Changing a Form's Method and Action"
+msgstr ""
+
+#: ../../components/form/introduction.rst:501
+msgid ""
+"The ability to configure the form method and action was introduced in "
+"Symfony 2.3."
+msgstr ""
+
+#: ../../components/form/introduction.rst:505
+msgid ""
+"By default, a form is submitted to the same URI that rendered the form with "
+"an HTTP POST request. This behavior can be changed using the :ref:`form-"
+"option-action` and :ref:`form-option-method` options (the ``method`` option "
+"is also used by ``handleRequest()`` to determine whether a form has been "
+"submitted):"
+msgstr ""
+
+#: ../../components/form/introduction.rst:538
+msgid "Handling Form Submissions"
+msgstr ""
+
+#: ../../components/form/introduction.rst:540
+msgid ""
+"To handle form submissions, use the "
+":method:`Symfony\\\\Component\\\\Form\\\\Form::handleRequest` method:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:596
+msgid ""
+"This defines a common form \"workflow\", which contains 3 different "
+"possibilities:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:598
+msgid ""
+"On the initial GET request (i.e. when the user \"surfs\" to your page), "
+"build your form and render it;"
+msgstr ""
+
+#: ../../components/form/introduction.rst:601
+msgid ""
+"If the request is a POST, process the submitted data (via "
+"``handleRequest()``). Then:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:604
+msgid ""
+"if the form is invalid, re-render the form (which will now contain errors);"
+msgstr ""
+
+#: ../../components/form/introduction.rst:605
+msgid "if the form is valid, perform some action and redirect."
+msgstr ""
+
+#: ../../components/form/introduction.rst:607
+msgid ""
+"Luckily, you don't need to decide whether or not a form has been submitted. "
+"Just pass the current request to the ``handleRequest()`` method. Then, the "
+"Form component will do all the necessary work for you."
+msgstr ""
+
+#: ../../components/form/introduction.rst:614
+msgid "Form Validation"
+msgstr ""
+
+#: ../../components/form/introduction.rst:616
+msgid ""
+"The easiest way to add validation to your form is via the ``constraints`` "
+"option when building each field:"
+msgstr ""
+
+#: ../../components/form/introduction.rst:655
+msgid ""
+"When the form is bound, these validation constraints will be applied "
+"automatically and the errors will display next to the fields on error."
+msgstr ""
+
+#: ../../components/form/introduction.rst:660
+msgid ""
+"For a list of all of the built-in validation constraints, see "
+":doc:`/reference/constraints`."
+msgstr ""
+
+#: ../../components/form/introduction.rst:664
+msgid "Accessing Form Errors"
+msgstr ""
+
+#: ../../components/form/introduction.rst:666
+msgid ""
+"You can use the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::getErrors` method to"
+" access the list of errors. It returns a "
+":class:`Symfony\\\\Component\\\\Form\\\\FormErrorIterator` instance::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:691
+msgid ""
+"In older Symfony versions, ``getErrors()`` returned an array. To use the "
+"errors the same way in Symfony 2.5 or newer, you have to pass them to PHP's "
+":phpfunction:`iterator_to_array` function::"
+msgstr ""
+
+#: ../../components/form/introduction.rst:697
+msgid ""
+"This is useful, for example, if you want to use PHP's ``array_`` function on"
+" the form errors."
+msgstr ""
+
+#: ../../components/form/introduction.rst:1
+msgid "Forms"
+msgstr ""
+
+#: ../../components/form/introduction.rst:1
+msgid "Components"
+msgstr ""
+
+#: ../../components/form/introduction.rst:1
+msgid "Form"
+msgstr ""

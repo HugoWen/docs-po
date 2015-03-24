@@ -1,0 +1,152 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/forms/types/button.rst:5
+msgid "button Field Type"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:7
+msgid "The ``button`` type was introduced in Symfony 2.3"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:10
+msgid "A simple, non-responsive button."
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:13
+msgid "Rendered as"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:13
+msgid "``button`` tag"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:15
+msgid "Inherited options"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:15
+msgid "`attr`_"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:16
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:17
+msgid "`label`_"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:18
+msgid "`translation_domain`_"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:20
+msgid "Parent type"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:20
+msgid "none"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:22
+msgid "Class"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:22
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\ButtonType`"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:26
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:28
+msgid ""
+"The following options are defined in the "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\BaseType`"
+" class. The ``BaseType`` class is the parent class for both the ``button`` "
+"type and the :doc:`form type </reference/forms/types/form>`, but it is not "
+"part of the form type tree (i.e. it can not be used as a form type on its "
+"own)."
+msgstr ""
+
+#: ../../reference/forms/types/options/button_attr.rst.inc:2
+msgid "attr"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_attr.rst.inc:4
+msgid "**type**: array **default**: Empty array"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to the HTML representation of the "
+"button, you can use ``attr`` option. It's an associative array with HTML "
+"attribute as a key. This can be useful when you need to set a custom class "
+"for the button::"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_disabled.rst.inc:2
+msgid "disabled"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_disabled.rst.inc:6
+msgid ""
+"If you don't want a user to be able to click a button, you can set the "
+"disabled option to true. It will not be possible to submit the form with "
+"this button, not even when bypassing the browser and sending a request "
+"manually, for example with cURL."
+msgstr ""
+
+#: ../../reference/forms/types/options/button_label.rst.inc:2
+msgid "label"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field "
+"name"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_label.rst.inc:6
+msgid ""
+"Sets the label that will be displayed on the button. The label can also be "
+"directly set inside the template:"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_translation_domain.rst.inc:2
+msgid "translation_domain"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_translation_domain.rst.inc:4
+msgid "**type**: ``string`` **default**: ``messages``"
+msgstr ""
+
+#: ../../reference/forms/types/options/button_translation_domain.rst.inc:6
+msgid ""
+"This is the translation domain that will be used for any labels or options "
+"that are rendered for this button."
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:1
+msgid "Forms"
+msgstr ""
+
+#: ../../reference/forms/types/button.rst:1
+msgid "Fields; button"
+msgstr ""

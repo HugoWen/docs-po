@@ -1,0 +1,64 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:5
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:1
+msgid "Using Parameters within a Dependency Injection Class"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:7
+msgid ""
+"You have seen how to use configuration parameters within :ref:`Symfony "
+"service containers <book-service-container-parameters>`. There are special "
+"cases such as when you want, for instance, to use the ``%kernel.debug%`` "
+"parameter to make the services in your bundle enter debug mode. For this "
+"case there is more work to do in order to make the system understand the "
+"parameter value. By default your parameter ``%kernel.debug%`` will be "
+"treated as a simple string. Consider this example with the AcmeDemoBundle::"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:28
+msgid "Now, examine the results to see this closely:"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:93
+msgid ""
+"In order to support this use case, the ``Configuration`` class has to be "
+"injected with this parameter via the extension as follows::"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:128
+msgid ""
+"And set it in the constructor of ``Configuration`` via the ``Extension`` "
+"class::"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:0
+msgid "Setting the Default in the Extension"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:149
+msgid ""
+"There are some instances of ``%kernel.debug%`` usage within a "
+"``Configurator`` class in TwigBundle and AsseticBundle, however this is "
+"because the default parameter value is set by the Extension class. For "
+"example in AsseticBundle, you can find::"
+msgstr ""
+
+#: ../../cookbook/configuration/using_parameters_in_dic.rst:156
+msgid ""
+"The string ``%kernel.debug%`` passed here as an argument handles the "
+"interpreting job to the container which in turn does the evaluation. Both "
+"ways accomplish similar goals. AsseticBundle will not use ``%kernel.debug%``"
+" but rather the new ``%assetic.debug%`` parameter."
+msgstr ""

@@ -1,0 +1,204 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/advanced.rst:5
+msgid "Advanced Container Configuration"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:8
+msgid "Marking Services as public / private"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:10
+msgid ""
+"When defining services, you'll usually want to be able to access these "
+"definitions within your application code. These services are called "
+"``public``. For example, the ``doctrine`` service registered with the "
+"container when using the DoctrineBundle is a public service. This means that"
+" you can fetch it from the container using the ``get()`` method::"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:18
+msgid ""
+"In some cases, a service *only* exists to be injected into another service "
+"and is *not* intended to be fetched directly from the container as shown "
+"above."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:24
+msgid ""
+"In these cases, to get a minor performance boost, you can set the service to"
+" be *not* public (i.e. private):"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:56
+msgid ""
+"What makes private services special is that, if they are only injected once,"
+" they are converted from services to inlined instantiations (e.g. ``new "
+"PrivateThing()``). This increases the container's performance."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:60
+msgid ""
+"Now that the service is private, you *should not* fetch the service directly"
+" from the container::"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:65
+msgid ""
+"This *may or may not work*, depending on if the service could be inlined. "
+"Simply said: A service can be marked as private if you do not want to access"
+" it directly from your code."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:69
+msgid ""
+"However, if a service has been marked as private, you can still alias it "
+"(see below) to access this service (via the alias)."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:74
+msgid "Services are by default public."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:77
+msgid "Synthetic Services"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:79
+msgid ""
+"Synthetic services are services that are injected into the container instead"
+" of being created by the container."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:82
+msgid ""
+"For example, if you're using the :doc:`HttpKernel "
+"</components/http_kernel/introduction>` component with the "
+"DependencyInjection component, then the ``request`` service is injected in "
+"the :method:`ContainerAwareHttpKernel::handle() "
+"<Symfony\\\\Component\\\\HttpKernel\\\\DependencyInjection\\\\ContainerAwareHttpKernel::handle>`"
+" method when entering the request :doc:`scope "
+"</cookbook/service_container/scopes>`. The class does not exist when there "
+"is no request, so it can't be included in the container configuration. Also,"
+" the service should be different for every subrequest in the application."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:91
+msgid "To create a synthetic service, set ``synthetic`` to ``true``:"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:121
+msgid ""
+"As you see, only the ``synthetic`` option is set. All other options are only"
+" used to configure how a service is created by the container. As the service"
+" isn't created by the container, these options are omitted."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:125
+msgid ""
+"Now, you can inject the class by using :method:`Container::set "
+"<Symfony\\\\Component\\\\DependencyInjection\\\\Container::set>`::"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:132
+msgid "Aliasing"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:134
+msgid ""
+"You may sometimes want to use shortcuts to access some services. You can do "
+"so by aliasing them and, furthermore, you can even alias non-public "
+"services."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:170
+msgid ""
+"This means that when using the container directly, you can access the "
+"``foo`` service by asking for the ``bar`` service like this::"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:177
+msgid "In YAML, you can also use a shortcut to alias a service:"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:188
+msgid "Requiring Files"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:190
+msgid ""
+"There might be use cases when you need to include another file just before "
+"the service itself gets loaded. To do so, you can use the ``file`` "
+"directive."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:224
+msgid ""
+"Notice that Symfony will internally call the PHP statement ``require_once``,"
+" which means that your file will be included only once per request."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:228
+msgid "Decorating Services"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:230
+msgid "When overriding an existing definition, the old service is lost:"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:240
+msgid ""
+"Most of the time, that's exactly what you want to do. But sometimes, you "
+"might want to decorate the old one instead. In this case, the old service "
+"should be kept around to be able to reference it in the new one. This "
+"configuration replaces ``foo`` with a new one, but keeps a reference of the "
+"old one  as ``bar.inner``:"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:271
+msgid ""
+"Here is what's going on here: the ``setDecoratedService()`` method tells the"
+" container that the ``bar`` service should replace the ``foo`` service, "
+"renaming ``foo`` to ``bar.inner``. By convention, the old ``foo`` service is"
+" going to be renamed ``bar.inner``, so you can inject it into your new "
+"service."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:278
+msgid ""
+"The generated inner id is based on the id of the decorator service (``bar`` "
+"here), not of the decorated service (``foo`` here).  This is mandatory to "
+"allow several decorators on the same service (they need to have different "
+"generated inner ids)."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:283
+msgid ""
+"Most of the time, the decorator should be declared private, as you will not "
+"need to retrieve it as ``bar`` from the container. The visibility of the "
+"decorated ``foo`` service (which is an alias for ``bar``) will still be the "
+"same as the original ``foo`` visibility."
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:288
+msgid "You can change the inner service name if you want to:"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/advanced.rst:1
+msgid "Advanced configuration"
+msgstr ""

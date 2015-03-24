@@ -1,0 +1,169 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/upgrading.rst:2
+msgid "How to Upgrade Your Symfony Project"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:4
+msgid ""
+"So a new Symfony release has come out and you want to upgrade, great! "
+"Fortunately, because Symfony protects backwards-compatibility very closely, "
+"this *should* be quite easy."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:8
+msgid "There are two types of upgrades, and both are a little different:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:10
+msgid ":ref:`upgrading-patch-version`"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:11
+msgid ":ref:`upgrading-minor-version`"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:16
+msgid "Upgrading a Patch Version (e.g. 2.6.0 to 2.6.1)"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:18
+msgid ""
+"If you're upgrading and only the patch version (the last number) is "
+"changing, then it's *really* easy:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:25
+msgid ""
+"That's it! You should not encounter any backwards-compatibility breaks or "
+"need to change anything else in your code. That's because when you started "
+"your project, your ``composer.json`` included Symfony using a constraint "
+"like ``2.6.*``, where only the *last* version number will change when you "
+"update."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:31 ../../cookbook/upgrading.rst:87
+msgid ""
+"You may also want to upgrade the rest of your libraries. If you've done a "
+"good job with your `version constraints`_ in ``composer.json``, you can do "
+"this safely by running:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:39 ../../cookbook/upgrading.rst:95
+msgid ""
+"But beware. If you have some bad `version constraints`_ in your "
+"``composer.json``, (e.g. ``dev-master``), then this could upgrade some non-"
+"Symfony libraries to new versions that contain backwards-compatibility "
+"breaking changes."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:46
+msgid "Upgrading a Minor Version (e.g. 2.5.3 to 2.6.1)"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:48
+msgid ""
+"If you're upgrading a minor version (where the middle number changes), then "
+"you should also *not* encounter significant backwards compatibility changes."
+" For details, see our :doc:`/contributing/code/bc`."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:52
+msgid ""
+"However, some backwards-compatibility breaks *are* possible, and you'll "
+"learn in a second how to prepare for them."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:55
+msgid "There are two steps to upgrading:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:57
+msgid ""
+":ref:`upgrade-minor-symfony-composer`; :ref:`upgrade-minor-symfony-code`"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:63
+msgid "1) Update the Symfony Library via Composer"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:65
+msgid ""
+"First, you need to update Symfony by modifying your ``composer.json`` file "
+"to use the new version:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:81
+msgid "Next, use Composer to download new versions of the libraries:"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:102
+msgid "2) Updating Your Code to Work with the new Version"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:104
+msgid ""
+"In theory, you should be done! However, you *may* need to make a few changes"
+" to your code to get everything working. Additionally, some features you're "
+"using might still work, but might now be deprecated. That's actually ok, but"
+" if you know about these deprecations, you can start to fix them over time."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:110
+msgid ""
+"Every version of Symfony comes with an UPGRADE file that describes these "
+"changes. Below are links to the file for each version, which you'll need to "
+"read to see if you need any code changes."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:116
+msgid ""
+"Don't see the version here that you're upgrading to? Just find the "
+"UPGRADE-X.X.md file for the appropriate version on the `Symfony "
+"Repository`_."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:120
+msgid "Upgrading to Symfony 2.6"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:122
+msgid ""
+"First, of course, update your ``composer.json`` file with the ``2.6`` "
+"version of Symfony as described above in :ref:`upgrade-minor-symfony-"
+"composer`."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:125
+msgid ""
+"Next, check the `UPGRADE-2.6`_ document for details about any code changes "
+"that you might need to make in your project."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:129
+msgid "Upgrading to Symfony 2.5"
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:131
+msgid ""
+"First, of course, update your ``composer.json`` file with the ``2.5`` "
+"version of Symfony as described above in :ref:`upgrade-minor-symfony-"
+"composer`."
+msgstr ""
+
+#: ../../cookbook/upgrading.rst:134
+msgid ""
+"Next, check the `UPGRADE-2.5`_ document for details about any code changes "
+"that you might need to make in your project."
+msgstr ""

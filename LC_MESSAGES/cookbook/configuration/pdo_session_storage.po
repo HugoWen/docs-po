@@ -1,0 +1,188 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:5
+msgid "How to Use PdoSessionHandler to Store Sessions in the Database"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:9
+msgid ""
+"There was a backwards-compatibility break in Symfony 2.6: the database "
+"schema changed slightly. See :ref:`Symfony 2.6 Changes <pdo-session-"
+"handle-26-changes>` for details."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:13
+msgid ""
+"The default Symfony session storage writes the session information to "
+"file(s). Most medium to large websites use a database to store the session "
+"values instead of files, because databases are easier to use and scale in a "
+"multi-webserver environment."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:18
+msgid ""
+"Symfony has a built-in solution for database session storage called "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\Handler\\\\PdoSessionHandler`."
+" To use it, you just need to change some parameters in ``config.yml`` (or "
+"the configuration format of your choice):"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:79
+msgid "Configuring the Table and Column Names"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:81
+msgid ""
+"This will expect a ``sessions`` table with a number of different columns. "
+"The table name, and all of the column names, can be configured by passing a "
+"second array argument to ``PdoSessionHandler``:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:126
+msgid ""
+"The ``db_lifetime_col`` was introduced in Symfony 2.6. Prior to 2.6, this "
+"column did not exist."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:130
+msgid "The following things can be configured:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:132
+msgid ""
+"``db_table``: (default ``sessions``) The name of the session table in your "
+"database;"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:134
+msgid ""
+"``db_id_col``: (default ``sess_id``) The name of the id column in your "
+"session table (VARCHAR(128));"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:136
+msgid ""
+"``db_data_col``: (default ``sess_data``) The name of the value column in "
+"your session table (BLOB);"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:138
+msgid ""
+"``db_time_col``: (default ``sess_time``) The name of the time column in your"
+" session table (INTEGER);"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:140
+msgid ""
+"``db_lifetime_col``: (default ``sess_lifetime``) The name of the lifetime "
+"column in your session table (INTEGER)."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:144
+msgid "Sharing your Database Connection Information"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:146
+msgid ""
+"With the given configuration, the database connection settings are defined "
+"for the session storage connection only. This is OK when you use a separate "
+"database for the session data."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:150
+msgid ""
+"But if you'd like to store the session data in the same database as the rest"
+" of your project's data, you can use the connection settings from the "
+"``parameters.yml`` file by referencing the database-related parameters "
+"defined there:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:184
+msgid "Example SQL Statements"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:0
+msgid "Schema Changes needed when Upgrading to Symfony 2.6"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:190
+msgid ""
+"If you use the ``PdoSessionHandler`` prior to Symfony 2.6 and upgrade, "
+"you'll need to make a few changes to your session table:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:193
+msgid ""
+"A new session lifetime (``sess_lifetime`` by default) integer column needs "
+"to be added;"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:195
+msgid ""
+"The data column (``sess_data`` by default) needs to be changed to a BLOB "
+"type."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:198
+msgid "Check the SQL statements below for more details."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:200
+msgid ""
+"To keep the old (2.5 and earlier) functionality, change your class name to "
+"use ``LegacyPdoSessionHandler`` instead of ``PdoSessionHandler`` (the legacy"
+" class was added in Symfony 2.6.2)."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:205
+msgid "MySQL"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:207
+msgid ""
+"The SQL statement for creating the needed database table might look like the"
+" following (MySQL):"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:221
+msgid ""
+"A ``BLOB`` column type can only store up to 64 kb. If the data stored in a "
+"user's session exceeds this, an exception may be thrown or their session "
+"will be silently reset. Consider using a ``MEDIUMBLOB`` if you need more "
+"space."
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:227
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:229
+msgid "For PostgreSQL, the statement should look like this:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:241
+msgid "Microsoft SQL Server"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:243
+msgid "For MSSQL, the statement might look like the following:"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:1
+msgid "Session"
+msgstr ""
+
+#: ../../cookbook/configuration/pdo_session_storage.rst:1
+msgid "Database Storage"
+msgstr ""

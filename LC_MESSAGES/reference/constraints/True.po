@@ -1,0 +1,128 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/True.rst:2
+msgid "True"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:4
+msgid ""
+"Validates that a value is ``true``. Specifically, this checks to see if the "
+"value is exactly ``true``, exactly the integer ``1``, or exactly the string "
+"\"``1``\"."
+msgstr ""
+
+#: ../../reference/constraints/True.rst:8
+msgid "Also see :doc:`False <False>`."
+msgstr ""
+
+#: ../../reference/constraints/True.rst:11
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:11
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:13
+#: ../../reference/constraints/True.rst:127
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:13
+msgid "`message`_"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:16
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\True`"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:18
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\TrueValidator`"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:22
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:24
+msgid ""
+"This constraint can be applied to properties (e.g. a ``termsAccepted`` "
+"property on a registration model) or to a \"getter\" method. It's most "
+"powerful in the latter case, where you can assert that a method returns a "
+"true value. For example, suppose you have the following method:"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:44
+msgid "Then you can constrain this method with ``True``."
+msgstr ""
+
+#: ../../reference/constraints/True.rst:119
+msgid "If the ``isTokenValid()`` returns false, the validation will fail."
+msgstr ""
+
+#: ../../reference/constraints/True.rst:123
+msgid ""
+"When using YAML, be sure to surround ``True`` with quotes (``'True'``) or "
+"else YAML will convert this into a ``true`` Boolean value."
+msgstr ""
+
+#: ../../reference/constraints/True.rst:130
+msgid "message"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:132
+msgid "**type**: ``string`` **default**: ``This value should be true.``"
+msgstr ""
+
+#: ../../reference/constraints/True.rst:134
+msgid "This message is shown if the underlying data is not true."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:2
+msgid "payload"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:6
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:9
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator component, "
+"but its processing is completely up to."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:13
+msgid ""
+"For example, you may want to used :doc:`several error levels "
+"</cookbook/validation/severity>` to present failed constraint differently in"
+" the front-end depending on the severity of the error."
+msgstr ""

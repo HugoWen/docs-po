@@ -1,0 +1,77 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/console.rst:6
+msgid "Console Commands"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:8
+msgid ""
+"The Doctrine2 ORM integration offers several console commands under the "
+"``doctrine`` namespace. To view the command list you can use the ``list`` "
+"command:"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:16
+msgid ""
+"A list of available commands will print out. You can find out more "
+"information about any of these commands (or any Symfony command) by running "
+"the ``help`` command. For example, to get details about the "
+"``doctrine:database:create`` task, run:"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:25
+msgid "Some notable or interesting tasks include:"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:27
+msgid ""
+"``doctrine:ensure-production-settings`` - checks to see if the current "
+"environment is configured efficiently for production. This should always be "
+"run in the ``prod`` environment:"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:35
+msgid ""
+"``doctrine:mapping:import`` - allows Doctrine to introspect an existing "
+"database and create mapping information. For more information, see "
+":doc:`/cookbook/doctrine/reverse_engineering`."
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:39
+msgid ""
+"``doctrine:mapping:info`` - tells you all of the entities that Doctrine is "
+"aware of and whether or not there are any basic errors with the mapping."
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:42
+msgid ""
+"``doctrine:query:dql`` and ``doctrine:query:sql`` - allow you to execute DQL"
+" or SQL queries directly from the command line."
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:1
+msgid "ORM console commands"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:1
+msgid "CLI"
+msgstr ""
+
+#: ../../cookbook/doctrine/console.rst:1
+msgid "Doctrine ORM"
+msgstr ""

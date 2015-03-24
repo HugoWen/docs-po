@@ -1,0 +1,96 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/index.rst:2
+msgid "Contributing"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:1
+msgid "**Code**"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:3
+msgid ":doc:`Bugs </contributing/code/bugs>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:4
+msgid ":doc:`Patches </contributing/code/patches>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:5
+msgid ":doc:`The Core Team </contributing/code/core_team>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:6
+msgid ":doc:`Security </contributing/code/security>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:7
+msgid ":doc:`Tests </contributing/code/tests>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:8
+msgid ":doc:`Backwards Compatibility </contributing/code/bc>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:9
+msgid ":doc:`Coding Standards</contributing/code/standards>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:10
+msgid ":doc:`Code Conventions</contributing/code/conventions>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:11
+msgid ":doc:`Git</contributing/code/git>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:12
+msgid ":doc:`License </contributing/code/license>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:14
+msgid "**Documentation**"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:16
+msgid ":doc:`Overview </contributing/documentation/overview>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:17
+msgid ":doc:`Format </contributing/documentation/format>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:18
+msgid ":doc:`Documentation Standards </contributing/documentation/standards>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:19
+msgid ":doc:`Translations </contributing/documentation/translations>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:20
+msgid ":doc:`License </contributing/documentation/license>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:22
+msgid "**Community**"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:24
+msgid ":doc:`Release Process </contributing/community/releases>`"
+msgstr ""
+
+#: ../../contributing/map.rst.inc:25
+msgid ":doc:`Other Resources </contributing/community/other>`"
+msgstr ""

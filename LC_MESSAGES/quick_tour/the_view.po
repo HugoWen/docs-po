@@ -1,0 +1,271 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../quick_tour/the_view.rst:2
+msgid "The View"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:4
+msgid ""
+"After reading the first part of this tutorial, you have decided that Symfony"
+" was worth another 10 minutes. In this second part, you will learn more "
+"about `Twig`_, the fast, flexible, and secure template engine for PHP "
+"applications. Twig makes your templates more readable and concise; it also "
+"makes them more friendly for web designers."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:11
+msgid "Getting familiar with Twig"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:13
+msgid ""
+"The official `Twig documentation`_ is the best resource to learn everything "
+"about this template engine. This section just gives you a quick overview of "
+"its main concepts."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:17
+msgid ""
+"A Twig template is a text file that can generate any type of content (HTML, "
+"CSS, JavaScript, XML, CSV, LaTeX, etc.) Twig elements are separated from the"
+" rest of the template contents using any of these delimiters:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:22
+msgid "``{{ ... }}``"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:22
+msgid ""
+"Prints the content of a variable or the result of evaluating an expression;"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:26
+msgid "``{% ... %}``"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:25
+msgid ""
+"Controls the logic of the template; it is used for example to execute "
+"``for`` loops and ``if`` statements."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:30
+msgid "``{# ... #}``"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:29
+msgid ""
+"Allows including comments inside templates. Contrary to HTML comments, they "
+"aren't included in the rendered template."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:32
+msgid ""
+"Below is a minimal template that illustrates a few basics, using two "
+"variables ``page_title`` and ``navigation``, which would be passed into the "
+"template:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:53
+msgid ""
+"To render a template in Symfony, use the ``render`` method from within a "
+"controller. If the template needs variables to generate its contents, pass "
+"them as an array using the second optional argument::"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:61
+msgid ""
+"Variables passed to a template can be strings, arrays or even objects. Twig "
+"abstracts the difference between them and lets you access \"attributes\" of "
+"a variable with the dot (``.``) notation. The following code listing shows "
+"how to display the content of a variable passed by the controller depending "
+"on its type:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:89
+msgid "Decorating Templates"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:91
+msgid ""
+"More often than not, templates in a project share common elements, like the "
+"well-known header and footer. Twig solves this problem elegantly with a "
+"concept called \"template inheritance\". This feature allows you to build a "
+"base template that contains all the common elements of your site and defines"
+" \"blocks\" of contents that child templates can override."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:97
+msgid ""
+"The ``index.html.twig`` template uses the ``extends`` tag to indicate that "
+"it inherits from the ``base.html.twig`` template:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:109
+msgid ""
+"Open the ``app/Resources/views/base.html.twig`` file that corresponds to the"
+" ``base.html.twig`` template and you'll find the following Twig code:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:129
+msgid ""
+"The ``{% block %}`` tags tell the template engine that a child template may "
+"override those portions of the template. In this example, the "
+"``index.html.twig`` template overrides the ``body`` block, but not the "
+"``title`` block, which will display the default content defined in the "
+"``base.html.twig`` template."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:135
+msgid "Using Tags, Filters, and Functions"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:137
+msgid ""
+"One of the best features of Twig is its extensibility via tags, filters, and"
+" functions. Take a look at the following sample template that uses filters "
+"extensively to modify the information before displaying it to the user:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:151
+msgid ""
+"Don't forget to check out the official `Twig documentation`_ to learn "
+"everything about filters, functions and tags."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:155
+msgid "Including other Templates"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:157
+msgid ""
+"The best way to share a snippet of code between several templates is to "
+"create a new template fragment that can then be included from other "
+"templates."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:160
+msgid ""
+"Imagine that we want to display ads on some pages of our application. First,"
+" create a ``banner.html.twig`` template:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:170
+msgid ""
+"To display this ad on any page, include the ``banner.html.twig`` template "
+"using the ``include()`` function:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:185
+msgid "Embedding other Controllers"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:187
+msgid ""
+"And what if you want to embed the result of another controller in a "
+"template? That's very useful when working with Ajax, or when the embedded "
+"template needs some variable not available in the main template."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:191
+msgid ""
+"Suppose you've created a ``topArticlesAction`` controller method to display "
+"the most popular articles of your website. If you want to \"render\" the "
+"result of that method (usually some HTML content) inside the ``index`` "
+"template, use the ``render()`` function:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:201
+msgid ""
+"Here, the ``render()`` and ``controller()`` functions use the special "
+"``AppBundle:Default:topArticles`` syntax to refer to the "
+"``topArticlesAction`` action of the ``Default`` controller (the "
+"``AppBundle`` part will be explained later)::"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:223
+msgid "Creating Links between Pages"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:225
+msgid ""
+"Creating links between pages is a must for web applications. Instead of "
+"hardcoding URLs in templates, the ``path`` function knows how to generate "
+"URLs based on the routing configuration. That way, all your URLs can be "
+"easily updated by just changing the configuration:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:234
+msgid ""
+"The ``path`` function takes the route name as the first argument and you can"
+" optionally pass an array of route parameters as the second argument."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:239
+msgid ""
+"The ``url`` function is very similar to the ``path`` function, but generates"
+" *absolute* URLs, which is very handy when rendering emails and RSS files: "
+"``<a href=\"{{ url('homepage') }}\">Visit our website</a>``."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:244
+msgid "Including Assets: Images, JavaScripts and Stylesheets"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:246
+msgid ""
+"What would the Internet be without images, JavaScripts, and stylesheets? "
+"Symfony provides the ``asset`` function to deal with them easily:"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:255
+msgid ""
+"The ``asset()`` function looks for the web assets inside the ``web/`` "
+"directory. If you store them in another directory, read :doc:`this article "
+"</cookbook/assetic/asset_management>` to learn how to manage web assets."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:259
+msgid ""
+"Using the ``asset`` function, your application is more portable. The reason "
+"is that you can move the application root directory anywhere under your web "
+"root directory without changing anything in your template's code."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:264
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:266
+msgid ""
+"Twig is simple yet powerful. Thanks to layouts, blocks, templates and action"
+" inclusions, it is very easy to organize your templates in a logical and "
+"extensible way."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:270
+msgid ""
+"You have only been working with Symfony for about 20 minutes, but you can "
+"already do pretty amazing stuff with it. That's the power of Symfony. "
+"Learning the basics is easy, and you will soon learn that this simplicity is"
+" hidden under a very flexible architecture."
+msgstr ""
+
+#: ../../quick_tour/the_view.rst:275
+msgid ""
+"But I'm getting ahead of myself. First, you need to learn more about the "
+"controller and that's exactly the topic of the :doc:`next part of this "
+"tutorial <the_controller>`. Ready for another 10 minutes with Symfony?"
+msgstr ""

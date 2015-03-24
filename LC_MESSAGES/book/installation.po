@@ -1,0 +1,468 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/installation.rst:5
+msgid "Installing and Configuring Symfony"
+msgstr ""
+
+#: ../../book/installation.rst:7
+msgid ""
+"The goal of this chapter is to get you up and running with a working "
+"application built on top of Symfony. In order to simplify the process of "
+"creating new applications, Symfony provides an installer that must be "
+"installed before creating the first application."
+msgstr ""
+
+#: ../../book/installation.rst:13
+msgid "Installing the Symfony Installer"
+msgstr ""
+
+#: ../../book/installation.rst:15
+msgid ""
+"Using the Symfony Installer is the only recommended way to create new "
+"Symfony applications. This installer is a PHP application that has to be "
+"installed only once and then it can create any number of Symfony "
+"applications."
+msgstr ""
+
+#: ../../book/installation.rst:21
+msgid ""
+"The installer requires PHP 5.4 or higher. If you still use the legacy PHP "
+"5.3 version, you cannot use the Symfony Installer. Read the :ref:`book-"
+"creating-applications-without-the-installer` section to learn how to "
+"proceed."
+msgstr ""
+
+#: ../../book/installation.rst:26
+msgid ""
+"Depending on your operating system, the installer must be installed in "
+"different ways."
+msgstr ""
+
+#: ../../book/installation.rst:30
+msgid "Linux and Mac OS X Systems"
+msgstr ""
+
+#: ../../book/installation.rst:32
+msgid "Open your command console and execute the following three commands:"
+msgstr ""
+
+#: ../../book/installation.rst:40
+msgid ""
+"This will create a global ``symfony`` command in your system that will be "
+"used to create new Symfony applications."
+msgstr ""
+
+#: ../../book/installation.rst:44
+msgid "Windows Systems"
+msgstr ""
+
+#: ../../book/installation.rst:46
+msgid "Open your command console and execute the following command:"
+msgstr ""
+
+#: ../../book/installation.rst:52
+msgid ""
+"Then, move the downloaded ``symfony.phar`` file to your projects directory "
+"and execute it as follows:"
+msgstr ""
+
+#: ../../book/installation.rst:61
+msgid "Creating the Symfony Application"
+msgstr ""
+
+#: ../../book/installation.rst:63
+msgid ""
+"Once the Symfony Installer is ready, create your first Symfony application "
+"with the ``new`` command:"
+msgstr ""
+
+#: ../../book/installation.rst:75
+msgid ""
+"This command creates a new directory called ``my_project_name`` that "
+"contains a fresh new project based on the most recent stable Symfony version"
+" available. In addition, the installer checks if your system meets the "
+"technical requirements to execute Symfony applications. If not, you'll see "
+"the list of changes needed to meet those requirements."
+msgstr ""
+
+#: ../../book/installation.rst:83
+msgid ""
+"For security reasons, all Symfony versions are digitally signed before "
+"distributing them. If you want to verify the integrity of any Symfony "
+"version, follow the steps `explained in this post`_."
+msgstr ""
+
+#: ../../book/installation.rst:88
+msgid "Basing your Project on a Specific Symfony Version"
+msgstr ""
+
+#: ../../book/installation.rst:90
+msgid ""
+"If your project needs to be based on a specific Symfony version, pass the "
+"version number as the second argument of the ``new`` command:"
+msgstr ""
+
+#: ../../book/installation.rst:101
+msgid ""
+"If you want your project to be based on the latest :ref:`Symfony LTS version"
+" <releases-lts>`, pass ``lts`` as the second argument of the ``new`` "
+"command:"
+msgstr ""
+
+#: ../../book/installation.rst:112
+msgid ""
+"Read the :doc:`Symfony Release process </contributing/community/releases>` "
+"to better understand why there are several Symfony versions and which one to"
+" use for your projects."
+msgstr ""
+
+#: ../../book/installation.rst:119
+msgid "Creating Symfony Applications without the Installer"
+msgstr ""
+
+#: ../../book/installation.rst:121
+msgid ""
+"If you still use PHP 5.3, or if you can't execute the installer for any "
+"reason, you can create Symfony applications using the alternative "
+"installation method based on `Composer`_."
+msgstr ""
+
+#: ../../book/installation.rst:125
+msgid ""
+"Composer is the dependency manager used by modern PHP applications and it "
+"can also be used to create new applications based on the Symfony framework. "
+"If you don't have installed it globally, start by reading the next section."
+msgstr ""
+
+#: ../../book/installation.rst:130
+msgid "Installing Composer Globally"
+msgstr ""
+
+#: ../../book/installation.rst:132
+msgid "Start with :doc:`installing Composer globally </cookbook/composer>`."
+msgstr ""
+
+#: ../../book/installation.rst:135
+msgid "Creating a Symfony Application with Composer"
+msgstr ""
+
+#: ../../book/installation.rst:137
+msgid ""
+"Once Composer is installed on your computer, execute the ``create-project`` "
+"command to create a new Symfony application based on its latest stable "
+"version:"
+msgstr ""
+
+#: ../../book/installation.rst:144
+msgid ""
+"If you need to base your application on a specific Symfony version, provide "
+"that version as the second argument of the ``create-project`` command:"
+msgstr ""
+
+#: ../../book/installation.rst:153
+msgid ""
+"If your Internet connection is slow, you may think that Composer is not "
+"doing anything. If that's your case, add the ``-vvv`` flag to the previous "
+"command to display a detailed output of everything that Composer is doing."
+msgstr ""
+
+#: ../../book/installation.rst:158
+msgid "Running the Symfony Application"
+msgstr ""
+
+#: ../../book/installation.rst:160
+msgid ""
+"Symfony leverages the internal web server provided by PHP to run "
+"applications while developing them. Therefore, running a Symfony application"
+" is a matter of browsing the project directory and executing this command:"
+msgstr ""
+
+#: ../../book/installation.rst:169
+msgid ""
+"Then, open your browser and access the ``http://localhost:8000`` URL to see "
+"the Welcome page of Symfony:"
+msgstr ""
+
+#: ../../book/installation.rst:176
+msgid ""
+"Instead of the Welcome Page, you may see a blank page or an error page. This"
+" is caused by a directory permission misconfiguration. There are several "
+"possible solutions depending on your operating system. All of them are "
+"explained in the :ref:`Setting up Permissions <book-installation-"
+"permissions>` section."
+msgstr ""
+
+#: ../../book/installation.rst:184
+msgid ""
+"PHP's internal web server is available in PHP 5.4 or higher versions. If you"
+" still use the legacy PHP 5.3 version, you'll have to configure a *virtual "
+"host* in your web server."
+msgstr ""
+
+#: ../../book/installation.rst:188
+msgid ""
+"The ``server:run`` command is only suitable while developing the "
+"application. In order to run Symfony applications on production servers, "
+"you'll have to configure your `Apache`_ or `Nginx`_ web server as explained "
+"in :doc:`/cookbook/configuration/web_server_configuration`."
+msgstr ""
+
+#: ../../book/installation.rst:193
+msgid ""
+"When you are finished working on your Symfony application, you can stop the "
+"server with the ``server:stop`` command:"
+msgstr ""
+
+#: ../../book/installation.rst:201
+msgid "Checking Symfony Application Configuration and Setup"
+msgstr ""
+
+#: ../../book/installation.rst:203
+msgid ""
+"Symfony applications come with a visual server configuration tester to show "
+"if your environment is ready to use Symfony. Access the following URL to "
+"check your configuration:"
+msgstr ""
+
+#: ../../book/installation.rst:211
+msgid "If there are any issues, correct them now before moving on."
+msgstr ""
+
+#: ../../book/installation.rst:0
+msgid "Setting up Permissions"
+msgstr ""
+
+#: ../../book/installation.rst:217
+msgid ""
+"One common issue when installing Symfony is that the ``app/cache`` and "
+"``app/logs`` directories must be writable both by the web server and the "
+"command line user. On a UNIX system, if your web server user is different "
+"from your command line user, you can try one of the following solutions."
+msgstr ""
+
+#: ../../book/installation.rst:222
+msgid "**1. Use the same user for the CLI and the web server**"
+msgstr ""
+
+#: ../../book/installation.rst:224
+msgid ""
+"In development environments, it is a common practice to use the same UNIX "
+"user for the CLI and the web server because it avoids any of these "
+"permissions issues when setting up new projects. This can be done by editing"
+" your web server configuration (e.g. commonly httpd.conf or apache2.conf for"
+" Apache) and setting its user to be the same as your CLI user (e.g. for "
+"Apache, update the ``User`` and ``Group`` values)."
+msgstr ""
+
+#: ../../book/installation.rst:231
+msgid "**2. Using ACL on a system that supports chmod +a**"
+msgstr ""
+
+#: ../../book/installation.rst:233
+msgid ""
+"Many systems allow you to use the ``chmod +a`` command. Try this first, and "
+"if you get an error - try the next method. This uses a command to try to "
+"determine your web server user and set it as ``HTTPDUSER``:"
+msgstr ""
+
+#: ../../book/installation.rst:247
+msgid "**3. Using ACL on a system that does not support chmod +a**"
+msgstr ""
+
+#: ../../book/installation.rst:249
+msgid ""
+"Some systems don't support ``chmod +a``, but do support another utility "
+"called ``setfacl``. You may need to `enable ACL support`_ on your partition "
+"and install setfacl before using it (as is the case with Ubuntu). This uses "
+"a command to try to determine your web server user and set it as "
+"``HTTPDUSER``:"
+msgstr ""
+
+#: ../../book/installation.rst:261
+msgid "If this doesn't work, try adding ``-n`` option."
+msgstr ""
+
+#: ../../book/installation.rst:263
+msgid "**4. Without using ACL**"
+msgstr ""
+
+#: ../../book/installation.rst:265
+msgid ""
+"If none of the previous methods work for you, change the umask so that the "
+"cache and log directories will be group-writable or world-writable "
+"(depending if the web server user and the command line user are in the same "
+"group or not). To achieve this, put the following line at the beginning of "
+"the ``app/console``, ``web/app.php`` and ``web/app_dev.php`` files::"
+msgstr ""
+
+#: ../../book/installation.rst:277
+msgid ""
+"Note that using the ACL is recommended when you have access to them on your "
+"server because changing the umask is not thread-safe."
+msgstr ""
+
+#: ../../book/installation.rst:283
+msgid "Updating Symfony Applications"
+msgstr ""
+
+#: ../../book/installation.rst:285
+msgid ""
+"At this point, you've created a fully-functional Symfony application in "
+"which you'll start to develop your own project. A Symfony application "
+"depends on a number of external libraries. These are downloaded into the "
+"``vendor/`` directory and they are managed exclusively by Composer."
+msgstr ""
+
+#: ../../book/installation.rst:290
+msgid ""
+"Updating those third-party libraries frequently is a good practice to "
+"prevent bugs and security vulnerabilities. Execute the ``update`` Composer "
+"command to update them all at once:"
+msgstr ""
+
+#: ../../book/installation.rst:299
+msgid ""
+"Depending on the complexity of your project, this update process can take up"
+" to several minutes to complete."
+msgstr ""
+
+#: ../../book/installation.rst:304
+msgid ""
+"Symfony provides a command to check whether your project's dependencies "
+"contain any know security vulnerability:"
+msgstr ""
+
+#: ../../book/installation.rst:311
+msgid ""
+"A good security practice is to execute this command regularly to be able to "
+"update or replace compromised dependencies as soon as possible."
+msgstr ""
+
+#: ../../book/installation.rst:317
+msgid "Installing a Symfony Distribution"
+msgstr ""
+
+#: ../../book/installation.rst:319
+msgid ""
+"Symfony project packages \"distributions\", which are fully-functional "
+"applications that include the Symfony core libraries, a selection of useful "
+"bundles, a sensible directory structure and some default configuration. In "
+"fact, when you created a Symfony application in the previous sections, you "
+"actually downloaded the default distribution provided by Symfony, which is "
+"called *Symfony Standard Edition*."
+msgstr ""
+
+#: ../../book/installation.rst:325
+msgid ""
+"The *Symfony Standard Edition* is by far the most popular distribution and "
+"it's also the best choice for developers starting with Symfony. However, the"
+" Symfony Community has published other popular distributions that you may "
+"use in your applications:"
+msgstr ""
+
+#: ../../book/installation.rst:330
+msgid ""
+"The `Symfony CMF Standard Edition`_ is the best distribution to get started "
+"with the `Symfony CMF`_ project, which is a project that makes it easier for"
+" developers to add CMS functionality to applications built with the Symfony "
+"framework."
+msgstr ""
+
+#: ../../book/installation.rst:334
+msgid ""
+"The `Symfony REST Edition`_ shows how to build an application that provides "
+"a RESTful API using the FOSRestBundle and several other related bundles."
+msgstr ""
+
+#: ../../book/installation.rst:338
+msgid "Using Source Control"
+msgstr ""
+
+#: ../../book/installation.rst:340
+msgid ""
+"If you're using a version control system like `Git`_, you can safely commit "
+"all your project's code. The reason is that Symfony applications already "
+"contain a ``.gitignore`` file specially prepared for Symfony."
+msgstr ""
+
+#: ../../book/installation.rst:344
+msgid ""
+"For specific instructions on how best to set up your project to be stored in"
+" Git, see :doc:`/cookbook/workflow/new_project_git`."
+msgstr ""
+
+#: ../../book/installation.rst:348
+msgid "Checking out a versioned Symfony Application"
+msgstr ""
+
+#: ../../book/installation.rst:350
+msgid ""
+"When using Composer to manage application's dependencies, it's recommended "
+"to ignore the entire ``vendor/`` directory before committing its code to the"
+" repository. This means that when checking out a Symfony application from a "
+"Git repository, there will be no ``vendor/`` directory and the application "
+"won't work out-of-the-box."
+msgstr ""
+
+#: ../../book/installation.rst:356
+msgid ""
+"In order to make it work, check out the Symfony application and then execute"
+" the ``install`` Composer command to download and install all the "
+"dependencies required by the application:"
+msgstr ""
+
+#: ../../book/installation.rst:365
+msgid ""
+"How does Composer know which specific dependencies to install? Because when "
+"a Symfony application is committed to a repository, the ``composer.json`` "
+"and ``composer.lock`` files are also committed. These files tell Composer "
+"which dependencies (and which specific versions) to install for the "
+"application."
+msgstr ""
+
+#: ../../book/installation.rst:371
+msgid "Beginning Development"
+msgstr ""
+
+#: ../../book/installation.rst:373
+msgid ""
+"Now that you have a fully-functional Symfony application, you can begin "
+"development! Your distribution may contain some sample code - check the "
+"``README.md`` file included with the distribution (open it as a text file) "
+"to learn about what sample code was included with your distribution."
+msgstr ""
+
+#: ../../book/installation.rst:378
+msgid ""
+"If you're new to Symfony, check out \":doc:`page_creation`\", where you'll "
+"learn how to create pages, change configuration, and do everything else "
+"you'll need in your new application."
+msgstr ""
+
+#: ../../book/installation.rst:382
+msgid ""
+"Be sure to also check out the :doc:`Cookbook </cookbook/index>`, which "
+"contains a wide variety of articles about solving specific problems with "
+"Symfony."
+msgstr ""
+
+#: ../../book/installation.rst:387
+msgid ""
+"If you want to remove the sample code from your distribution, take a look at"
+" this cookbook article: \":doc:`/cookbook/bundles/remove`\""
+msgstr ""
+
+#: ../../book/installation.rst:1
+msgid "Installation"
+msgstr ""

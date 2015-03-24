@@ -1,0 +1,293 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/security.rst:5
+msgid "SecurityBundle Configuration (\"security\")"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:7
+msgid ""
+"The security system is one of the most powerful parts of Symfony, and can "
+"largely be controlled via its configuration."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:11
+msgid "Full default Configuration"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:13
+msgid ""
+"The following is the full default configuration for the security system. "
+"Each part will be explained in the next section."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:16
+msgid ""
+"Support for restricting security firewalls to specific http methods was "
+"introduced in Symfony 2.5."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:252
+msgid "Form Login Configuration"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:254
+msgid ""
+"When using the ``form_login`` authentication listener beneath a firewall, "
+"there are several common options for configuring the \"form login\" "
+"experience."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:257
+msgid "For even more details, see :doc:`/cookbook/security/form_login`."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:260
+msgid "The Login Form and Process"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:263
+msgid "login_path"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:265
+msgid "**type**: ``string`` **default**: ``/login``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:267
+msgid ""
+"This is the route or path that the user will be redirected to (unless "
+"``use_forward`` is set to ``true``) when they try to access a protected "
+"resource but isn't fully authenticated."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:271
+msgid ""
+"This path **must** be accessible by a normal, un-authenticated user, else "
+"you may create a redirect loop. For details, see \":ref:`Avoid Common "
+"Pitfalls <book-security-common-pitfalls>`\"."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:276
+msgid "check_path"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:278
+msgid "**type**: ``string`` **default**: ``/login_check``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:280
+msgid ""
+"This is the route or path that your login form must submit to. The firewall "
+"will intercept any requests (``POST`` requests only, by default) to this URL"
+" and process the submitted login credentials."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:284
+msgid ""
+"Be sure that this URL is covered by your main firewall (i.e. don't create a "
+"separate firewall just for ``check_path`` URL)."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:288
+msgid "use_forward"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:290
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:292
+msgid ""
+"If you'd like the user to be forwarded to the login form instead of being "
+"redirected, set this option to ``true``."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:296
+msgid "username_parameter"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:298
+msgid "**type**: ``string`` **default**: ``_username``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:300
+msgid ""
+"This is the field name that you should give to the username field of your "
+"login form. When you submit the form to ``check_path``, the security system "
+"will look for a POST parameter with this name."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:305
+msgid "password_parameter"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:307
+msgid "**type**: ``string`` **default**: ``_password``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:309
+msgid ""
+"This is the field name that you should give to the password field of your "
+"login form. When you submit the form to ``check_path``, the security system "
+"will look for a POST parameter with this name."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:314
+msgid "post_only"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:316
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:318
+msgid ""
+"By default, you must submit your login form to the ``check_path`` URL as a "
+"POST request. By setting this option to ``false``, you can send a GET "
+"request to the ``check_path`` URL."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:323
+msgid "Redirecting after Login"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:325
+msgid ""
+"``always_use_default_target_path`` (type: ``Boolean``, default: ``false``)"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:326
+msgid "``default_target_path`` (type: ``string``, default: ``/``)"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:327
+msgid ""
+"``target_path_parameter`` (type: ``string``, default: ``_target_path``)"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:328
+msgid "``use_referer`` (type: ``Boolean``, default: ``false``)"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:333
+msgid "Using the PBKDF2 Encoder: Security and Speed"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:335
+msgid ""
+"The `PBKDF2`_ encoder provides a high level of Cryptographic security, as "
+"recommended by the National Institute of Standards and Technology (NIST)."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:338
+msgid ""
+"You can see an example of the ``pbkdf2`` encoder in the YAML block on this "
+"page."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:340
+msgid ""
+"But using PBKDF2 also warrants a warning: using it (with a high number of "
+"iterations) slows down the process. Thus, PBKDF2 should be used with caution"
+" and care."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:344
+msgid ""
+"A good configuration lies around at least 1000 iterations and sha512 for the"
+" hash algorithm."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:350
+msgid "Using the BCrypt Password Encoder"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:354
+msgid ""
+"To use this encoder, you either need to use PHP Version 5.5 or install the "
+"`ircmaxell/password-compat`_ library via Composer."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:395
+msgid ""
+"The ``cost`` can be in the range of ``4-31`` and determines how long a "
+"password will be encoded. Each increment of ``cost`` *doubles* the time it "
+"takes to encode a password."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:399
+msgid ""
+"If you don't provide the ``cost`` option, the default cost of ``13`` is "
+"used."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:403
+msgid ""
+"You can change the cost at any time — even if you already have some "
+"passwords encoded using a different cost. New passwords will be encoded "
+"using the new cost, while the already encoded ones will be validated using a"
+" cost that was used back when they were encoded."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:408
+msgid ""
+"A salt for each new password is generated automatically and need not be "
+"persisted. Since an encoded password contains the salt used to encode it, "
+"persisting the encoded password alone is enough."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:414
+msgid ""
+"All the encoded passwords are ``60`` characters long, so make sure to "
+"allocate enough space for them to be persisted."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:420
+msgid "Firewall Context"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:422
+msgid ""
+"Most applications will only need one :ref:`firewall <book-security-"
+"firewalls>`. But if your application *does* use multiple firewalls, you'll "
+"notice that if you're authenticated in one firewall, you're not "
+"automatically authenticated in another. In other words, the systems don't "
+"share a common \"context\": each firewall acts like a separate security "
+"system."
+msgstr ""
+
+#: ../../reference/configuration/security.rst:428
+msgid ""
+"However, each firewall has an optional ``context`` key (which defaults to "
+"the name of the firewall), which is used when storing and retrieving "
+"security data to and from the session. If this key were set to the same "
+"value across multiple firewalls, the \"context\" could actually be shared:"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:478
+msgid "HTTP-Digest Authentication"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:480
+msgid ""
+"To use HTTP-Digest authentication you need to provide a realm and a key:"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../reference/configuration/security.rst:1
+msgid "Configuration reference"
+msgstr ""

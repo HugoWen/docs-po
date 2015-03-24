@@ -1,0 +1,63 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/slash_in_parameter.rst:5
+msgid "How to Allow a \"/\" Character in a Route Parameter"
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:7
+msgid ""
+"Sometimes, you need to compose URLs with parameters that can contain a slash"
+" ``/``. For example, take the classic ``/hello/{username}`` route. By "
+"default, ``/hello/Fabien`` will match this route but not "
+"``/hello/Fabien/Kris``. This is because Symfony uses this character as "
+"separator between route parts."
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:12
+msgid ""
+"This guide covers how you can modify a route so that ``/hello/Fabien/Kris`` "
+"matches the ``/hello/{username}`` route, where ``{username}`` equals "
+"``Fabien/Kris``."
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:16
+msgid "Configure the Route"
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:18
+msgid ""
+"By default, the Symfony Routing component requires that the parameters match"
+" the following regex path: ``[^/]+``. This means that all characters are "
+"allowed except ``/``."
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:22
+msgid ""
+"You must explicitly allow ``/`` to be part of your parameter by specifying a"
+" more permissive regex path."
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:78
+msgid ""
+"That's it! Now, the ``{username}`` parameter can contain the ``/`` "
+"character."
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/slash_in_parameter.rst:1
+msgid "Allow / in route parameter"
+msgstr ""

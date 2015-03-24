@@ -1,0 +1,89 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/spool.rst:5
+msgid "How to Spool Emails"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:7
+msgid ""
+"When you are using the SwiftmailerBundle to send an email from a Symfony "
+"application, it will default to sending the email immediately. You may, "
+"however, want to avoid the performance hit of the communication between "
+"Swift Mailer and the email transport, which could cause the user to wait for"
+" the next page to load while the email is sending. This can be avoided by "
+"choosing to \"spool\" the emails instead of sending them directly. This "
+"means that Swift Mailer does not attempt to send the email but instead saves"
+" the message to somewhere such as a file. Another process can then read from"
+" the spool and take care of sending the emails in the spool. Currently only "
+"spooling to file or memory is supported by Swift Mailer."
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:19
+msgid "Spool Using Memory"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:21
+msgid ""
+"When you use spooling to store the emails to memory, they will get sent "
+"right before the kernel terminates. This means the email only gets sent if "
+"the whole request got executed without any unhandled Exception or any "
+"errors. To configure swiftmailer with the memory option, use the following "
+"configuration:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:58
+msgid "Spool Using a File"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:60
+msgid ""
+"In order to use the spool with a file, use the following configuration:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:103
+msgid ""
+"If you want to store the spool somewhere with your project directory, "
+"remember that you can use the ``%kernel.root_dir%`` parameter to reference "
+"the project's root:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:111
+msgid ""
+"Now, when your app sends an email, it will not actually be sent but instead "
+"added to the spool. Sending the messages from the spool is done separately. "
+"There is a console command to send the messages in the spool:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:119
+msgid "It has an option to limit the number of messages to be sent:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:125
+msgid "You can also set the time limit in seconds:"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:131
+msgid ""
+"Of course you will not want to run this manually in reality. Instead, the "
+"console command should be triggered by a cron job or scheduled task and run "
+"at a regular interval."
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:1
+msgid "Emails"
+msgstr ""
+
+#: ../../cookbook/email/spool.rst:1
+msgid "Spooling"
+msgstr ""

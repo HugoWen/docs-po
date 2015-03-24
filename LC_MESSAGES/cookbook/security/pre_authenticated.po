@@ -1,0 +1,114 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/pre_authenticated.rst:5
+msgid "Using pre Authenticated Security Firewalls"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:7
+msgid ""
+"A lot of authentication modules are already provided by some web servers, "
+"including Apache. These modules generally set some environment variables "
+"that can be used to determine which user is accessing your application. Out "
+"of the box, Symfony supports most authentication mechanisms. These requests "
+"are called *pre authenticated* requests because the user is already "
+"authenticated when reaching your application."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:15
+msgid "X.509 Client Certificate Authentication"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:17
+msgid ""
+"When using client certificates, your webserver is doing all the "
+"authentication process itself. With Apache, for example, you would use the "
+"``SSLVerifyClient Require`` directive."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:21
+msgid ""
+"Enable the x509 authentication for a particular firewall in the security "
+"configuration:"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:63
+msgid ""
+"By default, the firewall provides the ``SSL_CLIENT_S_DN_Email`` variable to "
+"the user provider, and sets the ``SSL_CLIENT_S_DN`` as credentials in the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\PreAuthenticatedToken`."
+" You can override these by setting the ``user`` and the ``credentials`` keys"
+" in the x509 firewall configuration respectively."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:73
+msgid ""
+"An authentication provider will only inform the user provider of the "
+"username that made the request. You will need to create (or use) a \"user "
+"provider\" that is referenced by the ``provider`` configuration parameter "
+"(``your_user_provider`` in the configuration example). This provider will "
+"turn the username into a User object of your choice. For more information on"
+" creating or configuring a user provider, see:"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:80
+msgid ":doc:`/cookbook/security/custom_provider`"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:81
+msgid ":doc:`/cookbook/security/entity_provider`"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:84
+msgid "REMOTE_USER Based Authentication"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:86
+msgid "REMOTE_USER pre authenticated firewall was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:89
+msgid ""
+"A lot of authentication modules, like ``auth_kerb`` for Apache provide the "
+"username using the ``REMOTE_USER`` environment variable. This variable can "
+"be trusted by the application since the authentication happened before the "
+"request reached it."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:93
+msgid ""
+"To configure Symfony using the ``REMOTE_USER`` environment variable, simply "
+"enable the corresponding firewall in your security configuration:"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:136
+msgid ""
+"The firewall will then provide the ``REMOTE_USER`` environment variable to "
+"your user provider. You can change the variable name used by setting the "
+"``user`` key in the ``remote_user`` firewall configuration."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:142
+msgid ""
+"Just like for X509 authentication, you will need to configure a \"user "
+"provider\". See :ref:`the note previous note <cookbook-security-pre-"
+"authenticated-user-provider-note>` for more information."
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/pre_authenticated.rst:1
+msgid "Pre authenticated providers"
+msgstr ""

@@ -1,0 +1,284 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/yaml/yaml_format.rst:5
+msgid "The YAML Format"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:7
+msgid ""
+"According to the official `YAML`_ website, YAML is \"a human friendly data "
+"serialization standard for all programming languages\"."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:10
+msgid ""
+"Even if the YAML format can describe complex nested data structure, this "
+"chapter only describes the minimum set of features needed to use YAML as a "
+"configuration file format."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:14
+msgid ""
+"YAML is a simple language that describes data. As PHP, it has a syntax for "
+"simple types like strings, booleans, floats, or integers. But unlike PHP, it"
+" makes a difference between arrays (sequences) and hashes (mappings)."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:19
+msgid "Scalars"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:21
+msgid "The syntax for scalars is similar to the PHP syntax."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:24
+msgid "Strings"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:26
+msgid ""
+"Strings in YAML can be wrapped both in single and double quotes. In some "
+"cases, they can also be unquoted:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:37
+msgid ""
+"Quoted styles are useful when a string starts or end with one or more "
+"relevant spaces, because unquoted strings are trimmed on both end when "
+"parsing their contents. Quotes are required when the string contains special"
+" or reserved characters."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:41
+msgid ""
+"When using single-quoted strings, any single quote ``'`` inside its contents"
+" must be doubled to escape it:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:48
+msgid ""
+"Strings containing any of the following characters must be quoted. Although "
+"you can use double quotes, for these characters it is more convenient to use"
+" single quotes, which avoids having to escape any backslash ``\\``:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:52
+msgid ""
+"``:``, ``{``, ``}``, ``[``, ``]``, ``,``, ``&``, ``*``, ``#``, ``?``, ``|``,"
+" ``-``, ``<``, ``>``, ``=``, ``!``, ``%``, ``@``, ``\\```"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:55
+msgid ""
+"The double-quoted style provides a way to express arbitrary strings, by "
+"using ``\\`` to escape characters and sequences. For instance, it is very "
+"useful when you need to embed a ``\\n`` or a Unicode character in a string."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:63
+msgid ""
+"If the string contains any of the following control characters, it must be "
+"escaped with double quotes:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:66
+msgid ""
+"``\\0``, ``\\x01``, ``\\x02``, ``\\x03``, ``\\x04``, ``\\x05``, ``\\x06``, "
+"``\\a``, ``\\b``, ``\\t``, ``\\n``, ``\\v``, ``\\f``, ``\\r``, ``\\x0e``, "
+"``\\x0f``, ``\\x10``, ``\\x11``, ``\\x12``, ``\\x13``, ``\\x14``, ``\\x15``,"
+" ``\\x16``, ``\\x17``, ``\\x18``, ``\\x19``, ``\\x1a``, ``\\e``, ``\\x1c``, "
+"``\\x1d``, ``\\x1e``, ``\\x1f``, ``\\N``, ``\\_``, ``\\L``, ``\\P``"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:72
+msgid ""
+"Finally, there are other cases when the strings must be quoted, no matter if"
+" you're using single or double quotes:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:75
+msgid ""
+"When the string is ``true`` or ``false`` (otherwise, it would be treated as "
+"a boolean value);"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:77
+msgid ""
+"When the string is ``null`` or ``~`` (otherwise, it would be considered as a"
+" ``null`` value);"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:79
+msgid ""
+"When the string looks like a number, such as integers (e.g. ``2``, ``14``, "
+"etc.), floats (e.g. ``2.6``, ``14.9``) and exponential numbers (e.g. "
+"``12e7``, etc.) (otherwise, it would be treated as a numeric value);"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:82
+msgid ""
+"When the string looks like a date (e.g. ``2014-12-31``) (otherwise it would "
+"be automatically converted into a Unix timestamp)."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:85
+msgid ""
+"When a string contains line breaks, you can use the literal style, indicated"
+" by the pipe (``|``), to indicate that the string will span several lines. "
+"In literals, newlines are preserved:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:95
+msgid ""
+"Alternatively, strings can be written with the folded style, denoted by "
+"``>``, where each line break is replaced by a space:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:108
+msgid ""
+"Notice the two spaces before each line in the previous examples. They won't "
+"appear in the resulting PHP strings."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:112
+msgid "Numbers"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:145
+msgid "Nulls"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:147
+msgid "Nulls in YAML can be expressed with ``null`` or ``~``."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:150
+msgid "Booleans"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:152
+msgid "Booleans in YAML are expressed with ``true`` and ``false``."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:155
+msgid "Dates"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:157
+msgid "YAML uses the ISO-8601 standard to express dates:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:169
+msgid "Collections"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:171
+msgid ""
+"A YAML file is rarely used to describe a simple scalar. Most of the time, it"
+" describes a collection. A collection can be a sequence or a mapping of "
+"elements. Both sequences and mappings are converted to PHP arrays."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:175
+msgid "Sequences use a dash followed by a space:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:183
+msgid "The previous YAML file is equivalent to the following PHP code:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:189
+msgid ""
+"Mappings use a colon followed by a space (``:`` ) to mark each key/value "
+"pair:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:197
+msgid "which is equivalent to this PHP code:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:205
+msgid "In a mapping, a key can be any valid scalar."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:207
+msgid "The number of spaces between the colon and the value does not matter:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:215
+msgid ""
+"YAML uses indentation with one or more spaces to describe nested "
+"collections:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:226
+msgid "The following YAML is equivalent to the following PHP code:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:241
+msgid ""
+"There is one important thing you need to remember when using indentation in "
+"a YAML file: *Indentation must be done with one or more spaces, but never "
+"with tabulations*."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:245
+msgid "You can nest sequences and mappings as you like:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:256
+msgid ""
+"YAML can also use flow styles for collections, using explicit indicators "
+"rather than indentation to denote scope."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:259
+msgid ""
+"A sequence can be written as a comma separated list within square brackets "
+"(``[]``):"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:266
+msgid ""
+"A mapping can be written as a comma separated list of key/values within "
+"curly braces (``{}``):"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:273
+msgid "You can mix and match styles to achieve a better readability:"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:286
+msgid "Comments"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:288
+msgid ""
+"Comments can be added in YAML by prefixing them with a hash mark (``#``):"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:298
+msgid ""
+"Comments are simply ignored by the YAML parser and do not need to be "
+"indented according to the current level of nesting in a collection."
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:1
+msgid "Yaml"
+msgstr ""
+
+#: ../../components/yaml/yaml_format.rst:1
+msgid "YAML Format"
+msgstr ""

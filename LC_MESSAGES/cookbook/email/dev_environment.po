@@ -1,0 +1,142 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/dev_environment.rst:5
+msgid "How to Work with Emails during Development"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:7
+msgid ""
+"When developing an application which sends email, you will often not want to"
+" actually send the email to the specified recipient during development. If "
+"you are using the SwiftmailerBundle with Symfony, you can easily achieve "
+"this through configuration settings without having to make any changes to "
+"your application's code at all. There are two main choices when it comes to "
+"handling email during development: (a) disabling the sending of email "
+"altogether or (b) sending all email to a specific address (with optional "
+"exceptions)."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:17
+msgid "Disabling Sending"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:19
+msgid ""
+"You can disable sending email by setting the ``disable_delivery`` option to "
+"``true``. This is the default in the ``test`` environment in the Standard "
+"distribution. If you do this in the ``test`` specific config then email will"
+" not be sent when you run tests, but will continue to be sent in the "
+"``prod`` and ``dev`` environments:"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:52
+msgid ""
+"If you'd also like to disable deliver in the ``dev`` environment, simply add"
+" this same configuration to the ``config_dev.yml`` file."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:56
+msgid "Sending to a Specified Address"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:58
+msgid ""
+"You can also choose to have all email sent to a specific address, instead of"
+" the address actually specified when sending the message. This can be done "
+"via the ``delivery_address`` option:"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:88
+msgid "Now, suppose you're sending an email to ``recipient@example.com``."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:110
+msgid ""
+"In the ``dev`` environment, the email will instead be sent to "
+"``dev@example.com``. Swift Mailer will add an extra header to the email, ``X"
+"-Swift-To``, containing the replaced address, so you can still see who it "
+"would have been sent to."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:116
+msgid ""
+"In addition to the ``to`` addresses, this will also stop the email being "
+"sent to any ``CC`` and ``BCC`` addresses set for it. Swift Mailer will add "
+"additional headers to the email with the overridden addresses in them. These"
+" are ``X-Swift-Cc`` and ``X-Swift-Bcc`` for the ``CC`` and ``BCC`` addresses"
+" respectively."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:125
+msgid "Sending to a Specified Address but with Exceptions"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:127
+msgid ""
+"Suppose you want to have all email redirected to a specific address, (like "
+"in the above scenario to ``dev@example.com``). But then you may want email "
+"sent to some specific email addresses to go through after all, and not be "
+"redirected (even if it is in the dev environment). This can be done by "
+"adding the ``delivery_whitelist`` option:"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:181
+msgid ""
+"In the above example all email messages will be redirected to "
+"``dev@example.com``, except messages sent to the ``admin@mydomain.com`` "
+"address or to any email address belonging to the domain "
+"``specialdomain.com``, which will be delivered as normal."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:186
+msgid "Viewing from the Web Debug Toolbar"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:188
+msgid ""
+"You can view any email sent during a single response when you are in the "
+"``dev`` environment using the Web Debug Toolbar. The email icon in the "
+"toolbar will show how many emails were sent. If you click it, a report will "
+"open showing the details of the sent emails."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:193
+msgid ""
+"If you're sending an email and then immediately redirecting to another page,"
+" the web debug toolbar will not display an email icon or a report on the "
+"next page."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:197
+msgid ""
+"Instead, you can set the ``intercept_redirects`` option to ``true`` in the "
+"``config_dev.yml`` file, which will cause the redirect to stop and allow you"
+" to open the report with details of the sent emails."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:232
+msgid ""
+"Alternatively, you can open the profiler after the redirect and search by "
+"the submit URL used on the previous request (e.g. ``/contact/handle``). The "
+"profiler's search feature allows you to load the profiler information for "
+"any past requests."
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:1
+msgid "Emails"
+msgstr ""
+
+#: ../../cookbook/email/dev_environment.rst:1
+msgid "In development"
+msgstr ""

@@ -1,0 +1,70 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/class_loader/psr4_class_loader.rst:5
+msgid "The PSR-4 Class Loader"
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:7
+msgid ""
+"Libraries that follow the `PSR-4`_ standard can be loaded with the "
+"``Psr4ClassLoader``."
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:11
+msgid ""
+"If you manage your dependencies via Composer, you get a PSR-4 compatible "
+"autoloader out of the box. Use this loader in environments where Composer is"
+" not available."
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:17
+msgid "All Symfony components follow PSR-4."
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:22
+msgid ""
+"The following example demonstrates how you can use the "
+":class:`Symfony\\\\Component\\\\ClassLoader\\\\Psr4ClassLoader` autoloader "
+"to use Symfony's Yaml component. Imagine, you downloaded both the "
+"ClassLoader and Yaml component as ZIP packages and unpacked them to a "
+"``libs`` directory. The directory structure will look like this:"
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:40
+msgid ""
+"In ``demo.php`` you are going to parse the ``config.yml`` file. To do that, "
+"you first need to configure the ``Psr4ClassLoader``:"
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:56
+msgid ""
+"First of all, the class loader is loaded manually using a ``require`` "
+"statement, since there is no autoload mechanism yet. With the "
+":method:`Symfony\\\\Component\\\\ClassLoader\\\\Psr4ClassLoader::addPrefix` "
+"call, you tell the class loader where to look for classes with the "
+"``Symfony\\Component\\Yaml\\`` namespace prefix. After registering the "
+"autoloader, the Yaml component is ready to be used."
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:1
+msgid "ClassLoader"
+msgstr ""
+
+#: ../../components/class_loader/psr4_class_loader.rst:1
+msgid "PSR-4 Class Loader"
+msgstr ""

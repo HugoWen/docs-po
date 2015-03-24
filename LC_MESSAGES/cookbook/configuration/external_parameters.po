@@ -1,0 +1,126 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/external_parameters.rst:5
+msgid "How to Set external Parameters in the Service Container"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:7
+msgid ""
+"In the chapter :doc:`/cookbook/configuration/environments`, you learned how "
+"to manage your application configuration. At times, it may benefit your "
+"application to store certain credentials outside of your project code. "
+"Database configuration is one such example. The flexibility of the Symfony "
+"service container allows you to easily do this."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:14
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:16
+msgid ""
+"Symfony will grab any environment variable prefixed with ``SYMFONY__`` and "
+"set it as a parameter in the service container. Some transformations are "
+"applied to the resulting parameter name:"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:20
+msgid "``SYMFONY__`` prefix is removed;"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:21
+msgid "Parameter name is lowercased;"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:22
+msgid ""
+"Double underscores are replaced with a period, as a period is not a valid "
+"character in an environment variable name."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:25
+msgid ""
+"For example, if you're using Apache, environment variables can be set using "
+"the following ``VirtualHost`` configuration:"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:45
+msgid ""
+"The example above is for an Apache configuration, using the `SetEnv`_ "
+"directive. However, this will work for any web server which supports the "
+"setting of environment variables."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:49
+msgid ""
+"Also, in order for your console to work (which does not use Apache), you "
+"must export these as shell variables. On a Unix system, you can run the "
+"following:"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:58
+msgid ""
+"Now that you have declared an environment variable, it will be present in "
+"the PHP ``$_SERVER`` global variable. Symfony then automatically sets all "
+"``$_SERVER`` variables prefixed with ``SYMFONY__`` as parameters in the "
+"service container."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:63
+msgid "You can now reference these parameters wherever you need them."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:102
+msgid "Constants"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:104
+msgid ""
+"The container also has support for setting PHP constants as parameters. See "
+":ref:`component-di-parameters-constants` for more details."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:108
+msgid "Miscellaneous Configuration"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:110
+msgid ""
+"The ``imports`` directive can be used to pull in parameters stored "
+"elsewhere. Importing a PHP file gives you the flexibility to add whatever is"
+" needed in the container. The following imports a file named "
+"``parameters.php``."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:136
+msgid ""
+"A resource file can be one of many types. PHP, XML, YAML, INI, and closure "
+"resources are all supported by the ``imports`` directive."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:139
+msgid ""
+"In ``parameters.php``, tell the service container the parameters that you "
+"wish to set. This is useful when important configuration is in a non-"
+"standard format. The example below includes a Drupal database configuration "
+"in the Symfony service container."
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:1
+msgid "Environments"
+msgstr ""
+
+#: ../../cookbook/configuration/external_parameters.rst:1
+msgid "External parameters"
+msgstr ""

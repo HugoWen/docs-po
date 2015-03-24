@@ -1,0 +1,82 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/cache/form_csrf_caching.rst:5
+msgid "Caching Pages that Contain CSRF Protected Forms"
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:7
+msgid ""
+"CSRF tokens are meant to be different for every user. This is why you need "
+"to be cautious if you try to cache pages with forms including them."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:10
+msgid ""
+"For more information about how CSRF protection works in Symfony, please "
+"check :ref:`CSRF Protection <forms-csrf>`."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:14
+msgid "Why Caching Pages with a CSRF token is Problematic"
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:16
+msgid ""
+"Typically, each user is assigned a unique CSRF token, which is stored in the"
+" session for validation. This means that if you *do* cache a page with a "
+"form containing a CSRF token, you'll cache the CSRF token of the *first* "
+"user only. When a user submits the form, the token won't match the token "
+"stored in the session and all users (except for the first) will fail CSRF "
+"validation when submitting the form."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:23
+msgid ""
+"In fact, many reverse proxies (like Varnish) will refuse to cache a page "
+"with a CSRF token. This is because a cookie is sent in order to preserve the"
+" PHP session open and Varnish's default behaviour is to not cache HTTP "
+"requests with cookies."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:29
+msgid "How to Cache Most of the Page and still be able to Use CSRF Protection"
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:31
+msgid ""
+"To cache a page that contains a CSRF token, you can use more advanced "
+"caching techniques like :ref:`ESI fragments <edge-side-includes>`, where you"
+" cache the full page and embedding the form inside an ESI tag with no cache "
+"at all."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:35
+msgid ""
+"Another option would be to load the form via an uncached AJAX request, but "
+"cache the rest of the HTML response."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:38
+msgid ""
+"Or you can even load just the CSRF token with an AJAX request and replace "
+"the form field value with it."
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:1
+msgid "Cache"
+msgstr ""
+
+#: ../../cookbook/cache/form_csrf_caching.rst:1
+msgid "CSRF; Forms"
+msgstr ""

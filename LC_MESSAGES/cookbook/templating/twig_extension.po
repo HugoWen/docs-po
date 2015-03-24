@@ -1,0 +1,110 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/templating/twig_extension.rst:5
+msgid "How to Write a custom Twig Extension"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:7
+msgid ""
+"The main motivation for writing an extension is to move often used code into"
+" a reusable class like adding support for internationalization. An extension"
+" can define tags, filters, tests, operators, global variables, functions, "
+"and node visitors."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:12
+msgid ""
+"Creating an extension also makes for a better separation of code that is "
+"executed at compilation time and code needed at runtime. As such, it makes "
+"your code faster."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:18
+msgid ""
+"Before writing your own extensions, have a look at the `Twig official "
+"extension repository`_."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:22
+msgid "Create the Extension Class"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:26
+msgid ""
+"This cookbook describes how to write a custom Twig extension as of Twig "
+"1.12. If you are using an older version, please read `Twig extensions "
+"documentation legacy`_."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:30
+msgid ""
+"To get your custom functionality you must first create a Twig Extension "
+"class. As an example you'll create a price filter to format a given number "
+"into price::"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:61
+msgid ""
+"Along with custom filters, you can also add custom `functions` and register "
+"`global variables`."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:65
+msgid "Register an Extension as a Service"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:67
+msgid ""
+"Now you must let the Service Container know about your newly created Twig "
+"Extension:"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:104
+msgid ""
+"Keep in mind that Twig Extensions are not lazily loaded. This means that "
+"there's a higher chance that you'll get a "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Exception\\\\ServiceCircularReferenceException`"
+" or a "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Exception\\\\ScopeWideningInjectionException`"
+" if any services (or your Twig Extension in this case) are dependent on the "
+"request service. For more information take a look at "
+":doc:`/cookbook/service_container/scopes`."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:113
+msgid "Using the custom Extension"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:115
+msgid ""
+"Using your newly created Twig Extension is no different than any other:"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:122
+msgid "Passing other arguments to your filter:"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:130
+msgid "Learning further"
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:132
+msgid ""
+"For a more in-depth look into Twig Extensions, please take a look at the "
+"`Twig extensions documentation`_."
+msgstr ""
+
+#: ../../cookbook/templating/twig_extension.rst:1
+msgid "Twig extensions"
+msgstr ""

@@ -1,0 +1,84 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/logging/monolog_console.rst:5
+msgid "How to Configure Monolog to Display Console Messages"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:7
+msgid ""
+"It is possible to use the console to print messages for certain "
+":ref:`verbosity levels <verbosity-levels>` using the "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` "
+"instance that is passed when a command gets executed."
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:13
+msgid ""
+"Alternatively, you can use the :doc:`standalone PSR-3 logger "
+"</components/console/logger>` provided with the console component."
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:17
+msgid ""
+"When a lot of logging has to happen, it's cumbersome to print information "
+"depending on the verbosity settings (``-v``, ``-vv``, ``-vvv``) because the "
+"calls need to be wrapped in conditions. The code quickly gets verbose or "
+"dirty. For example::"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:36
+msgid ""
+"Instead of using these semantic methods to test for each of the verbosity "
+"levels, the `MonologBridge`_ provides a `ConsoleHandler`_ that listens to "
+"console events and writes log messages to the console output depending on "
+"the current log level and the console verbosity."
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:41
+msgid "The example above could then be rewritten as::"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:55
+msgid ""
+"Depending on the verbosity level that the command is run in and the user's "
+"configuration (see below), these messages may or may not be displayed to the"
+" console. If they are displayed, they are timestamped and colored "
+"appropriately. Additionally, error logs are written to the error output "
+"(php://stderr). There is no need to conditionally handle the verbosity "
+"settings anymore."
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:61
+msgid ""
+"The Monolog console handler is enabled in the Monolog configuration. This is"
+" the default in Symfony Standard Edition 2.4 too."
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:97
+msgid ""
+"With the ``verbosity_levels`` option you can adapt the mapping between "
+"verbosity and log level. In the given example it will also show notices in "
+"normal verbosity mode (instead of warnings only). Additionally, it will only"
+" use messages logged with the custom ``my_channel`` channel and it changes "
+"the display style via a custom formatter (see the :doc:`MonologBundle "
+"reference </reference/configuration/monolog>` for more information):"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:1
+msgid "Logging"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_console.rst:1
+msgid "Console messages"
+msgstr ""

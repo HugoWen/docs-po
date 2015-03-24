@@ -1,0 +1,55 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/session/proxy_examples.rst:5
+msgid "Session Proxy Examples"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:7
+msgid ""
+"The session proxy mechanism has a variety of uses and this example "
+"demonstrates two common uses. Rather than injecting the session handler as "
+"normal, a handler is injected into the proxy and registered with the session"
+" storage driver::"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:18
+msgid ""
+"Below, you'll learn two real examples that can be used for ``YourProxy``: "
+"encryption of session data and readonly guest sessions."
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:22
+msgid "Encryption of Session Data"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:24
+msgid ""
+"If you wanted to encrypt the session data, you could use the proxy to "
+"encrypt and decrypt the session as required::"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:56
+msgid "Readonly Guest Sessions"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:58
+msgid ""
+"There are some applications where a session is required for guest users, but"
+" where there is no particular need to persist the session. In this case you "
+"can intercept the session before it is written::"
+msgstr ""
+
+#: ../../cookbook/session/proxy_examples.rst:1
+msgid "Sessions, Session Proxy, Proxy"
+msgstr ""

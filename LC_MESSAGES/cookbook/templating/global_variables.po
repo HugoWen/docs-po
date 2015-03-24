@@ -1,0 +1,89 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/templating/global_variables.rst:5
+msgid "How to Inject Variables into all Templates (i.e. global Variables)"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:7
+msgid ""
+"Sometimes you want a variable to be accessible to all the templates you use."
+" This is possible inside your ``app/config/config.yml`` file:"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:38
+msgid "Now, the variable ``ga_tracking`` is available in all Twig templates:"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:44
+msgid "It's that easy!"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:47
+msgid "Using Service Container Parameters"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:49
+msgid ""
+"You can also take advantage of the built-in :ref:`book-service-container-"
+"parameters` system, which lets you isolate or reuse the value:"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:83
+msgid "The same variable is available exactly as before."
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:86
+msgid "Referencing Services"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:88
+msgid ""
+"Instead of using static values, you can also set the value to a service. "
+"Whenever the global variable is accessed in the template, the service will "
+"be requested from the service container and you get access to that object."
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:94
+msgid ""
+"The service is not loaded lazily. In other words, as soon as Twig is loaded,"
+" your service is instantiated, even if you never use that global variable."
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:98
+msgid ""
+"To define a service as a global Twig variable, prefix the string with ``@``."
+" This should feel familiar, as it's the same syntax you use in service "
+"configuration."
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:130
+msgid "Using a Twig Extension"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:132
+msgid ""
+"If the global variable you want to set is more complicated - say an object -"
+" then you won't be able to use the above method. Instead, you'll need to "
+"create a :ref:`Twig Extension <reference-dic-tags-twig-extension>` and "
+"return the global variable as one of the entries in the ``getGlobals`` "
+"method."
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:1
+msgid "Templating"
+msgstr ""
+
+#: ../../cookbook/templating/global_variables.rst:1
+msgid "Global variables"
+msgstr ""

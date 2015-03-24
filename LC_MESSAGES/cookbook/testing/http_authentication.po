@@ -1,0 +1,43 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/http_authentication.rst:5
+msgid "How to Simulate HTTP Authentication in a Functional Test"
+msgstr ""
+
+#: ../../cookbook/testing/http_authentication.rst:7
+msgid ""
+"If your application needs HTTP authentication, pass the username and "
+"password as server variables to ``createClient()``::"
+msgstr ""
+
+#: ../../cookbook/testing/http_authentication.rst:15
+msgid "You can also override it on a per request basis::"
+msgstr ""
+
+#: ../../cookbook/testing/http_authentication.rst:22
+msgid ""
+"When your application is using a ``form_login``, you can simplify your tests"
+" by allowing your test configuration to make use of HTTP authentication. "
+"This way you can use the above to authenticate in tests, but still have your"
+" users log in via the normal ``form_login``. The trick is to include the "
+"``http_basic`` key in your firewall, along with the ``form_login`` key:"
+msgstr ""
+
+#: ../../cookbook/testing/http_authentication.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/http_authentication.rst:1
+msgid "HTTP authentication"
+msgstr ""

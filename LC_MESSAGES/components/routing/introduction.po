@@ -1,0 +1,353 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/routing/introduction.rst:6
+msgid "The Routing Component"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:8
+msgid ""
+"The Routing component maps an HTTP request to a set of configuration "
+"variables."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:14
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:16
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/routing`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:17
+msgid "Use the official Git repository (https://github.com/symfony/Routing)."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:22
+msgid "In order to set up a basic routing system you need three parts:"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:24
+msgid ""
+"A :class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection`, which "
+"contains the route definitions (instances of the class "
+":class:`Symfony\\\\Component\\\\Routing\\\\Route`)"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:25
+msgid ""
+"A :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext`, which has "
+"information about the request"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:26
+msgid ""
+"A :class:`Symfony\\\\Component\\\\Routing\\\\Matcher\\\\UrlMatcher`, which "
+"performs the mapping of the request to a single route"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:28
+msgid ""
+"Here is a quick example. Notice that this assumes that you've already "
+"configured your autoloader to load the Routing component::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:49
+msgid ""
+"Be careful when using ``$_SERVER['REQUEST_URI']``, as it may include any "
+"query parameters on the URL, which will cause problems with route matching. "
+"An easy way to solve this is to use the HttpFoundation component as "
+"explained :ref:`below <components-routing-http-foundation>`."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:54
+msgid ""
+"You can add as many routes as you like to a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection`."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:57
+msgid ""
+"The :method:`RouteCollection::add() "
+"<Symfony\\\\Component\\\\Routing\\\\RouteCollection::add>` method takes two "
+"arguments. The first is the name of the route. The second is a "
+":class:`Symfony\\\\Component\\\\Routing\\\\Route` object, which expects a "
+"URL path and some array of custom variables in its constructor. This array "
+"of custom variables can be *anything* that's significant to your "
+"application, and is returned when that route is matched."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:64
+msgid ""
+"If no matching route can be found a "
+":class:`Symfony\\\\Component\\\\Routing\\\\Exception\\\\ResourceNotFoundException`"
+" will be thrown."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:67
+msgid ""
+"In addition to your array of custom variables, a ``_route`` key is added, "
+"which holds the name of the matched route."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:71
+msgid "Defining Routes"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:73
+msgid "A full route definition can contain up to seven parts:"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:75
+msgid ""
+"The URL path route. This is matched against the URL passed to the "
+"`RequestContext`, and can contain named wildcard placeholders (e.g. "
+"``{placeholders}``) to match dynamic parts in the URL."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:79
+msgid ""
+"An array of default values. This contains an array of arbitrary values that "
+"will be returned when the request matches the route."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:82
+msgid ""
+"An array of requirements. These define constraints for the values of the "
+"placeholders as regular expressions."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:85
+msgid ""
+"An array of options. These contain internal settings for the route and are "
+"the least commonly needed."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:88
+msgid ""
+"A host. This is matched against the host of the request. See "
+":doc:`/components/routing/hostname_pattern` for more details."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:91
+msgid ""
+"An array of schemes. These enforce a certain HTTP scheme (``http``, "
+"``https``)."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:93
+msgid ""
+"An array of methods. These enforce a certain HTTP request method (``HEAD``, "
+"``GET``, ``POST``, ...)."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:96
+msgid "Take the following route, which combines several of these ideas::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:121
+msgid ""
+"In this case, the route is matched by ``/archive/2012-01``, because the "
+"``{month}`` wildcard matches the regular expression wildcard given. However,"
+" ``/archive/foo`` does *not* match, because \"foo\" fails the month "
+"wildcard."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:127
+msgid ""
+"If you want to match all URLs which start with a certain path and end in an "
+"arbitrary suffix you can use the following route definition::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:137
+msgid "Using Prefixes"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:139
+msgid ""
+"You can add routes or other instances of "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection` to *another* "
+"collection. This way you can build a tree of routes. Additionally you can "
+"define a prefix and default values for the parameters, requirements, "
+"options, schemes and the host to all routes of a subtree using methods "
+"provided by the ``RouteCollection`` class::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:162
+msgid "Set the Request Parameters"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:164
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext` provides "
+"information about the current request. You can define all parameters of an "
+"HTTP request with this class via its constructor::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:181
+msgid ""
+"Normally you can pass the values from the ``$_SERVER`` variable to populate "
+"the :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext`. But If you "
+"use the :doc:`HttpFoundation </components/http_foundation/index>` component,"
+" you can use its :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` "
+"class to feed the :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext`"
+" in a shortcut::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:193
+msgid "Generate a URL"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:195
+msgid ""
+"While the :class:`Symfony\\\\Component\\\\Routing\\\\Matcher\\\\UrlMatcher` "
+"tries to find a route that fits the given request you can also build a URL "
+"from a certain route::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:215
+msgid ""
+"If you have defined a scheme, an absolute URL is generated if the scheme of "
+"the current :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext` does "
+"not match the requirement."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:220
+msgid "Load Routes from a File"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:222
+msgid ""
+"You've already seen how you can easily add routes to a collection right "
+"inside PHP. But you can also load routes from a number of different files."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:225
+msgid ""
+"The Routing component comes with a number of loader classes, each giving you"
+" the ability to load a collection of route definitions from an external file"
+" of some format. Each loader expects a "
+":class:`Symfony\\\\Component\\\\Config\\\\FileLocator` instance as the "
+"constructor argument. You can use the "
+":class:`Symfony\\\\Component\\\\Config\\\\FileLocator` to define an array of"
+" paths in which the loader will look for the requested files. If the file is"
+" found, the loader returns a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection`."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:233
+msgid ""
+"If you're using the ``YamlFileLoader``, then route definitions look like "
+"this:"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:246
+msgid ""
+"To load this file, you can use the following code. This assumes that your "
+"``routes.yml`` file is in the same directory as the below code::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:257
+msgid ""
+"Besides :class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\YamlFileLoader`"
+" there are two other loaders that work the same way:"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:260
+msgid ":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\XmlFileLoader`"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:261
+msgid ":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\PhpFileLoader`"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:263
+msgid ""
+"If you use the "
+":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\PhpFileLoader` you have"
+" to provide the name of a PHP file which returns a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection`::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:280
+msgid "Routes as Closures"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:282
+msgid ""
+"There is also the "
+":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\ClosureLoader`, which "
+"calls a closure and uses the result as a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection`::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:295
+msgid "Routes as Annotations"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:297
+msgid ""
+"Last but not least there are "
+":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\AnnotationDirectoryLoader`"
+" and "
+":class:`Symfony\\\\Component\\\\Routing\\\\Loader\\\\AnnotationFileLoader` "
+"to load route definitions from class annotations. The specific details are "
+"left out here."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:304
+msgid "The all-in-one Router"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:306
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Routing\\\\Router` class is an all-in-"
+"one package to quickly use the Routing component. The constructor expects a "
+"loader instance, a path to the main route definition and some other "
+"settings::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:318
+msgid ""
+"With the ``cache_dir`` option you can enable route caching (if you provide a"
+" path) or disable caching (if it's set to ``null``). The caching is done "
+"automatically in the background if you want to use it. A basic example of "
+"the :class:`Symfony\\\\Component\\\\Routing\\\\Router` class would look "
+"like::"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:336
+msgid ""
+"If you use caching, the Routing component will compile new classes which are"
+" saved in the ``cache_dir``. This means your script must have write "
+"permissions for that location."
+msgstr ""
+
+#: ../../components/routing/introduction.rst:1
+#: ../../components/routing/introduction.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../components/routing/introduction.rst:1
+msgid "Components"
+msgstr ""

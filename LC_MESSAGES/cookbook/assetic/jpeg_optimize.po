@@ -1,0 +1,92 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:5
+msgid "How to Use Assetic for Image Optimization with Twig Functions"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:7
+msgid ""
+"Amongst its many filters, Assetic has four filters which can be used for on-"
+"the-fly image optimization. This allows you to get the benefits of smaller "
+"file sizes without having to use an image editor to process each image. The "
+"results are cached and can be dumped for production so there is no "
+"performance hit for your end users."
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:14
+msgid "Using Jpegoptim"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:16
+msgid ""
+"`Jpegoptim`_ is a utility for optimizing JPEG files. To use it with Assetic,"
+" make sure to have it already installed on your system and then, configure "
+"its location using the ``bin`` option of the ``jpegoptim`` filter:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:50
+msgid "It can now be used from a template:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:71
+msgid "Removing all EXIF Data"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:73
+msgid ""
+"By default, the ``jpegoptim`` filter removes some of the meta information "
+"stored in the image. To remove all EXIF data and comments, set the "
+"``strip_all`` option to ``true``:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:111
+msgid "Lowering Maximum Quality"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:113
+msgid ""
+"By default, the ``jpegoptim`` filter doesn't alter the quality level of the "
+"JPEG image. Use the ``max`` option to configure the maximum quality setting "
+"(in a scale of ``0`` to ``100``). The reduction in the image file size will "
+"of course be at the expense of its quality:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:152
+msgid "Shorter Syntax: Twig Function"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:154
+msgid ""
+"If you're using Twig, it's possible to achieve all of this with a shorter "
+"syntax by enabling and using a special Twig function. Start by adding the "
+"following configuration:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:199
+msgid "The Twig template can now be changed to the following:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:205
+msgid ""
+"You can also specify the output directory for images in the Assetic "
+"configuration file:"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:1
+msgid "Assetic"
+msgstr ""
+
+#: ../../cookbook/assetic/jpeg_optimize.rst:1
+msgid "Image optimization"
+msgstr ""

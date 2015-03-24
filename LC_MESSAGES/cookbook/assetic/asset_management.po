@@ -1,0 +1,417 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/assetic/asset_management.rst:5
+msgid "How to Use Assetic for Asset Management"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:7
+msgid ""
+"Assetic combines two major ideas: :ref:`assets <cookbook-assetic-assets>` "
+"and :ref:`filters <cookbook-assetic-filters>`. The assets are files such as "
+"CSS, JavaScript and image files. The filters are things that can be applied "
+"to these files before they are served to the browser. This allows a "
+"separation between the asset files stored in the application and the files "
+"actually presented to the user."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:14
+msgid ""
+"Without Assetic, you just serve the files that are stored in the application"
+" directly:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:27
+msgid ""
+"But *with* Assetic, you can manipulate these assets however you want (or "
+"load them from anywhere) before serving them. This means you can:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:30
+msgid "Minify and combine all of your CSS and JS files"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:32
+msgid ""
+"Run all (or just some) of your CSS or JS files through some sort of "
+"compiler, such as LESS, SASS or CoffeeScript"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:35
+msgid "Run image optimizations on your images"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:40
+msgid "Assets"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:42
+msgid ""
+"Using Assetic provides many advantages over directly serving the files. The "
+"files do not need to be stored where they are served from and can be drawn "
+"from various sources such as from within a bundle."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:46
+msgid ""
+"You can use Assetic to process :ref:`CSS stylesheets <cookbook-assetic-"
+"including-css>`, :ref:`JavaScript files <cookbook-assetic-including-"
+"javascript>` and :ref:`images <cookbook-assetic-including-image>`. The "
+"philosophy behind adding either is basically the same, but with a slightly "
+"different syntax."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:54
+msgid "Including JavaScript Files"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:56
+msgid ""
+"To include JavaScript files, use the ``javascripts`` tag in any template:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:76
+msgid ""
+"If your application templates use the default block names from the Symfony "
+"Standard Edition, the ``javascripts`` tag will most commonly live in the "
+"``javascripts`` block:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:92
+msgid ""
+"You can also include CSS Stylesheets: see :ref:`cookbook-assetic-including-"
+"css`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:94
+msgid ""
+"In this example, all of the files in the ``Resources/public/js/`` directory "
+"of the AppBundle will be loaded and served from a different location. The "
+"actual rendered tag might simply look like:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:102
+msgid ""
+"This is a key point: once you let Assetic handle your assets, the files are "
+"served from a different location. This *will* cause problems with CSS files "
+"that reference images by their relative path. See :ref:`cookbook-assetic-"
+"cssrewrite`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:109
+msgid "Including CSS Stylesheets"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:111
+msgid ""
+"To bring in CSS stylesheets, you can use the same technique explained above,"
+" except with the ``stylesheets`` tag:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:133
+msgid ""
+"If your application templates use the default block names from the Symfony "
+"Standard Edition, the ``stylesheets`` tag will most commonly live in the "
+"``stylesheets`` block:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:147
+msgid ""
+"But because Assetic changes the paths to your assets, this *will* break any "
+"background images (or other paths) that uses relative paths, unless you use "
+"the :ref:`cssrewrite <cookbook-assetic-cssrewrite>` filter."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:153
+msgid ""
+"Notice that in the original example that included JavaScript files, you "
+"referred to the files using a path like "
+"``@AppBundle/Resources/public/file.js``, but that in this example, you "
+"referred to the CSS files using their actual, publicly-accessible path: "
+"``bundles/app/css``. You can use either, except that there is a known issue "
+"that causes the ``cssrewrite`` filter to fail when using the ``@AppBundle`` "
+"syntax for CSS Stylesheets."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:163
+msgid "Including Images"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:165
+msgid "To include an image you can use the ``image`` tag."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:183
+msgid ""
+"You can also use Assetic for image optimization. More information in "
+":doc:`/cookbook/assetic/jpeg_optimize`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:189
+msgid "Fixing CSS Paths with the ``cssrewrite`` Filter"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:191
+msgid ""
+"Since Assetic generates new URLs for your assets, any relative paths inside "
+"your CSS files will break. To fix this, make sure to use the ``cssrewrite`` "
+"filter with your ``stylesheets`` tag. This parses your CSS files and "
+"corrects the paths internally to reflect the new location."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:196
+msgid "You can see an example in the previous section."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:200
+msgid ""
+"When using the ``cssrewrite`` filter, don't refer to your CSS files using "
+"the ``@AppBundle`` syntax. See the note in the above section for details."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:204
+msgid "Combining Assets"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:206
+msgid ""
+"One feature of Assetic is that it will combine many files into one. This "
+"helps to reduce the number of HTTP requests, which is great for frontend "
+"performance. It also allows you to maintain the files more easily by "
+"splitting them into manageable parts. This can help with re-usability as you"
+" can easily split project-specific files from those which can be used in "
+"other applications, but still serve them as a single file:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:236
+msgid ""
+"In the ``dev`` environment, each file is still served individually, so that "
+"you can debug problems more easily. However, in the ``prod`` environment (or"
+" more specifically, when the ``debug`` flag is ``false``), this will be "
+"rendered as a single ``script`` tag, which contains the contents of all of "
+"the JavaScript files."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:244
+msgid ""
+"If you're new to Assetic and try to use your application in the ``prod`` "
+"environment (by using the ``app.php`` controller), you'll likely see that "
+"all of your CSS and JS breaks. Don't worry! This is on purpose. For details "
+"on using Assetic in the ``prod`` environment, see :ref:`cookbook-assetic-"
+"dumping`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:249
+msgid ""
+"And combining files doesn't only apply to *your* files. You can also use "
+"Assetic to combine third party assets, such as jQuery, with your own into a "
+"single file:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:274
+msgid "Using Named Assets"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:276
+msgid ""
+"AsseticBundle configuration directives allow you to define named asset sets."
+" You can do so by defining the input files, filters and output files in your"
+" configuration under the ``assetic`` section. Read more in the :doc:`assetic"
+" config reference </reference/configuration/assetic>`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:322
+msgid ""
+"After you have defined the named assets, you can reference them in your "
+"templates with the ``@named_asset`` notation:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:349
+msgid "Filters"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:351
+msgid ""
+"Once they're managed by Assetic, you can apply filters to your assets before"
+" they are served. This includes filters that compress the output of your "
+"assets for smaller file sizes (and better frontend optimization). Other "
+"filters can compile JavaScript file from CoffeeScript files and process SASS"
+" into CSS. In fact, Assetic has a long list of available filters."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:357
+msgid ""
+"Many of the filters do not do the work directly, but use existing third-"
+"party libraries to do the heavy-lifting. This means that you'll often need "
+"to install a third-party library to use a filter. The great advantage of "
+"using Assetic to invoke these libraries (as opposed to using them directly) "
+"is that instead of having to run them manually after you work on the files, "
+"Assetic will take care of this for you and remove this step altogether from "
+"your development and deployment processes."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:365
+msgid ""
+"To use a filter, you first need to specify it in the Assetic configuration. "
+"Adding a filter here doesn't mean it's being used - it just means that it's "
+"available to use (you'll use the filter below)."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:369
+msgid ""
+"For example to use the UglifyJS JavaScript minifier the following "
+"configuration should be defined:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:402
+msgid ""
+"Now, to actually *use* the filter on a group of JavaScript files, add it "
+"into your template:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:422
+msgid ""
+"A more detailed guide about configuring and using Assetic filters as well as"
+" details of Assetic's debug mode can be found in "
+":doc:`/cookbook/assetic/uglifyjs`."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:426
+msgid "Controlling the URL Used"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:428
+msgid ""
+"If you wish to, you can control the URLs that Assetic produces. This is done"
+" from the template and is relative to the public document root:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:451
+msgid ""
+"Symfony also contains a method for cache *busting*, where the final URL "
+"generated by Assetic contains a query parameter that can be incremented via "
+"configuration on each deployment. For more information, see the :ref:`ref-"
+"framework-assets-version` configuration option."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:459
+msgid "Dumping Asset Files"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:461
+msgid ""
+"In the ``dev`` environment, Assetic generates paths to CSS and JavaScript "
+"files that don't physically exist on your computer. But they render "
+"nonetheless because an internal Symfony controller opens the files and "
+"serves back the content (after running any filters)."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:466
+msgid ""
+"This kind of dynamic serving of processed assets is great because it means "
+"that you can immediately see the new state of any asset files you change. "
+"It's also bad, because it can be quite slow. If you're using a lot of "
+"filters, it might be downright frustrating."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:471
+msgid ""
+"Fortunately, Assetic provides a way to dump your assets to real files, "
+"instead of being generated dynamically."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:475
+msgid "Dumping Asset Files in the ``prod`` Environment"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:477
+msgid ""
+"In the ``prod`` environment, your JS and CSS files are represented by a "
+"single tag each. In other words, instead of seeing each JavaScript file "
+"you're including in your source, you'll likely just see something like this:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:485
+msgid ""
+"Moreover, that file does **not** actually exist, nor is it dynamically "
+"rendered by Symfony (as the asset files are in the ``dev`` environment). "
+"This is on purpose - letting Symfony generate these files dynamically in a "
+"production environment is just too slow."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:492
+msgid ""
+"Instead, each time you use your application in the ``prod`` environment (and"
+" therefore, each time you deploy), you should run the following command:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:499
+msgid ""
+"This will physically generate and write each file that you need (e.g. "
+"``/js/abcd123.js``). If you update any of your assets, you'll need to run "
+"this again to regenerate the file."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:504
+msgid "Dumping Asset Files in the ``dev`` Environment"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:506
+msgid ""
+"By default, each asset path generated in the ``dev`` environment is handled "
+"dynamically by Symfony. This has no disadvantage (you can see your changes "
+"immediately), except that assets can load noticeably slow. If you feel like "
+"your assets are loading too slowly, follow this guide."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:511
+msgid ""
+"First, tell Symfony to stop trying to process these files dynamically. Make "
+"the following change in your ``config_dev.yml`` file:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:534
+msgid ""
+"Next, since Symfony is no longer generating these assets for you, you'll "
+"need to dump them manually. To do so, run the following command:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:541
+msgid ""
+"This physically writes all of the asset files you need for your ``dev`` "
+"environment. The big disadvantage is that you need to run this each time you"
+" update an asset. Fortunately, by using the ``assetic:watch`` command, "
+"assets will be regenerated automatically *as they change*:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:550
+msgid ""
+"The ``assetic:watch`` command was introduced in AsseticBundle 2.4. In prior "
+"versions, you had to use the ``--watch`` option of the ``assetic:dump`` "
+"command for the same behavior."
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:554
+msgid ""
+"Since running this command in the ``dev`` environment may generate a bunch "
+"of files, it's usually a good idea to point your generated asset files to "
+"some isolated directory (e.g. ``/js/compiled``), to keep things organized:"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:1
+msgid "Assetic"
+msgstr ""
+
+#: ../../cookbook/assetic/asset_management.rst:1
+msgid "Introduction"
+msgstr ""

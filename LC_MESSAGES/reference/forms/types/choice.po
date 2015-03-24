@@ -1,0 +1,809 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/forms/types/choice.rst:5
+msgid "choice Field Type"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:7
+msgid ""
+"A multi-purpose field used to allow the user to \"choose\" one or more "
+"options. It can be rendered as a ``select`` tag, radio buttons, or "
+"checkboxes."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:10
+msgid ""
+"To use this field, you must specify *either* the ``choice_list`` or "
+"``choices`` option."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:14
+msgid "Rendered as"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:14
+msgid "can be various tags (see below)"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:16
+msgid "Options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:16
+msgid "`choices`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:17
+msgid "`choice_list`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:18
+msgid "`placeholder`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:19
+msgid "`expanded`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:20
+msgid "`multiple`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:21
+msgid "`preferred_choices`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:23
+msgid "Overridden options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:23
+msgid "`compound`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:24
+msgid "`empty_data`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:25
+msgid "`error_bubbling`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:27
+msgid "Inherited options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:27
+msgid "`by_reference`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:28
+msgid "`data`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:29
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:30
+msgid "`error_mapping`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:31
+msgid "`inherit_data`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:32
+msgid "`label`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:33
+msgid "`label_attr`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:34
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:35
+msgid "`read_only`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:36
+msgid "`required`_"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:38
+msgid "Parent type"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:38
+msgid ":doc:`form </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:40
+msgid "Class"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:40
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\ChoiceType`"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:44
+msgid "Example Usage"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:46
+msgid ""
+"The easiest way to use this field is to specify the choices directly via the"
+" ``choices`` option. The key of the array becomes the value that's actually "
+"set on your underlying object (e.g. ``m``), while the value is what the user"
+" sees on the form (e.g. ``Male``)."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:58
+msgid ""
+"By setting ``multiple`` to true, you can allow the user to choose multiple "
+"values. The widget will be rendered as a multiple ``select`` tag or a series"
+" of checkboxes depending on the ``expanded`` option:"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:73
+msgid ""
+"You can also use the ``choice_list`` option, which takes an object that can "
+"specify the choices for your widget."
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:2
+msgid "Select Tag, Checkboxes or Radio Buttons"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:4
+msgid ""
+"This field may be rendered as one of several different HTML fields, "
+"depending on the ``expanded`` and ``multiple`` options:"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:8
+msgid "Element Type"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:8
+msgid "Expanded"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:8
+msgid "Multiple"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:10
+msgid "select tag"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:10
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:10
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:11
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:12
+msgid "``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:11
+msgid "select tag (with ``multiple`` attribute)"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:11
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:12
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:13
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:13
+msgid "``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:12
+msgid "radio buttons"
+msgstr ""
+
+#: ../../reference/forms/types/options/select_how_rendered.rst.inc:13
+msgid "checkboxes"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:81
+msgid "Field Options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:84
+#: ../../reference/forms/types/choice.rst:202
+msgid "choices"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:86
+#: ../../reference/forms/types/options/preferred_choices.rst.inc:4
+#: ../../reference/forms/types/options/label_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``array()``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:88
+msgid ""
+"This is the most basic way to specify the choices that should be used by "
+"this field. The ``choices`` option is an array, where the array key is the "
+"item value and the array value is the item's label::"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:98
+msgid ""
+"When the values to choose from are not integers or strings (but e.g. floats "
+"or booleans), you should use the `choice_list`_ option instead. With this "
+"option you are able to keep the original data format which is important to "
+"ensure that the user input is validated properly and useless database "
+"updates caused by a data type mismatch are avoided."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:105
+msgid "choice_list"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:107
+msgid ""
+"**type**: "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\ChoiceList\\\\ChoiceListInterface`"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:109
+msgid ""
+"This is one way of specifying the options to be used for this field. The "
+"``choice_list`` option must be an instance of the ``ChoiceListInterface``. "
+"For more advanced cases, a custom class that implements the interface can be"
+" created to supply the choices."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:114
+msgid ""
+"With this option you can also allow float values to be selected as data."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:2
+#: ../../reference/forms/types/choice.rst:207
+msgid "placeholder"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:4
+msgid ""
+"The ``placeholder`` option was introduced in Symfony 2.6 in favor of "
+"``empty_value``, which is available prior to 2.6."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:8
+msgid ""
+"Since Symfony 2.3, empty values are also supported if the ``expanded`` "
+"option is set to true."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:12
+msgid "**type**: ``string`` or ``Boolean``"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:14
+msgid ""
+"This option determines whether or not a special \"empty\" option (e.g. "
+"\"Choose an option\") will appear at the top of a select widget. This option"
+" only applies if the ``multiple`` option is set to false."
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:18
+msgid "Add an empty value with \"Choose an option\" as the text::"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:24
+msgid "Guarantee that no \"empty\" value option is displayed::"
+msgstr ""
+
+#: ../../reference/forms/types/options/placeholder.rst.inc:30
+msgid ""
+"If you leave the ``placeholder`` option unset, then a blank (with no text) "
+"option will automatically be added if and only if the ``required`` option is"
+" false::"
+msgstr ""
+
+#: ../../reference/forms/types/options/expanded.rst.inc:2
+#: ../../reference/forms/types/choice.rst:197
+msgid "expanded"
+msgstr ""
+
+#: ../../reference/forms/types/options/expanded.rst.inc:4
+#: ../../reference/forms/types/options/multiple.rst.inc:4
+#: ../../reference/forms/types/options/read_only.rst.inc:4
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/expanded.rst.inc:6
+msgid ""
+"If set to true, radio buttons or checkboxes will be rendered (depending on "
+"the ``multiple`` value). If false, a select element will be rendered."
+msgstr ""
+
+#: ../../reference/forms/types/options/multiple.rst.inc:2
+#: ../../reference/forms/types/choice.rst:195
+msgid "multiple"
+msgstr ""
+
+#: ../../reference/forms/types/options/multiple.rst.inc:6
+msgid ""
+"If true, the user will be able to select multiple options (as opposed to "
+"choosing just one option). Depending on the value of the ``expanded`` "
+"option, this will render either a select tag or checkboxes if true and a "
+"select tag or radio buttons if false. The returned value will be an array."
+msgstr ""
+
+#: ../../reference/forms/types/options/preferred_choices.rst.inc:2
+#: ../../reference/forms/types/choice.rst:199
+msgid "preferred_choices"
+msgstr ""
+
+#: ../../reference/forms/types/options/preferred_choices.rst.inc:6
+msgid ""
+"If this option is specified, then a sub-set of all of the options will be "
+"moved to the top of the select menu. The following would move the \"Baz\" "
+"option to the top, with a visual separator between it and the rest of the "
+"options::"
+msgstr ""
+
+#: ../../reference/forms/types/options/preferred_choices.rst.inc:15
+msgid ""
+"Note that preferred choices are only meaningful when rendering as a "
+"``select`` element (i.e. ``expanded`` is false). The preferred choices and "
+"normal choices are separated visually by a set of dotted lines (i.e. "
+"``-------------------``). This can be customized when rendering the field:"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:134
+msgid "Overridden Options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:137
+msgid "compound"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:139
+msgid "**type**: ``boolean`` **default**: same value as ``expanded`` option"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:141
+msgid ""
+"This option specifies if a form is compound. The value is by default "
+"overridden by the value of the ``expanded`` option."
+msgstr ""
+
+#: ../../reference/forms/types/options/empty_data.rst.inc:2
+msgid "empty_data"
+msgstr ""
+
+#: ../../reference/forms/types/options/empty_data.rst.inc:4
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:147
+msgid ""
+"The actual default value of this option depends on other field options:"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:149
+msgid ""
+"If ``multiple`` is ``false`` and ``expanded`` is ``false``, then ``''`` "
+"(empty string);"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:151
+msgid "Otherwise ``array()`` (empty array)."
+msgstr ""
+
+#: ../../reference/forms/types/options/empty_data.rst.inc:3
+msgid ""
+"This option determines what value the field will return when the submitted "
+"value is empty."
+msgstr ""
+
+#: ../../reference/forms/types/options/empty_data.rst.inc:6
+msgid ""
+"But you can customize this to your needs. For example, if you want the "
+"``gender`` choice field to be explicitly set to ``null`` when no value is "
+"selected, you can do it like this:"
+msgstr ""
+
+#: ../../reference/forms/types/options/empty_data.rst.inc:24
+msgid ""
+"If you want to set the ``empty_data`` option for your entire form class, see"
+" the cookbook article :doc:`/cookbook/form/use_empty_data`."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:157
+msgid "error_bubbling"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:159
+#: ../../reference/forms/types/options/inherit_data.rst.inc:8
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:161
+msgid ""
+"Set that error on this field must be attached to the field instead of the "
+"parent field (the form in most cases)."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:165
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:167
+msgid ""
+"These options inherit from the :doc:`form </reference/forms/types/form>` "
+"type:"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:2
+msgid "by_reference"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:4
+#: ../../reference/forms/types/options/required.rst.inc:4
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:6
+msgid ""
+"In most cases, if you have a ``name`` field, then you expect ``setName()`` "
+"to be called on the underlying object. In some cases, however, ``setName()``"
+" may *not* be called. Setting ``by_reference`` ensures that the setter is "
+"called in all cases."
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:11
+msgid "To explain this further, here's a simple example::"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:22
+msgid ""
+"If ``by_reference`` is true, the following takes place behind the scenes "
+"when you call ``submit()`` (or ``handleRequest()``) on the form::"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:29
+msgid ""
+"Notice that ``setAuthor()`` is not called. The author is modified by "
+"reference."
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:31
+msgid "If you set ``by_reference`` to false, submitting looks like this::"
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:39
+msgid ""
+"So, all that ``by_reference=false`` really does is force the framework to "
+"call the setter on the parent object."
+msgstr ""
+
+#: ../../reference/forms/types/options/by_reference.rst.inc:42
+msgid ""
+"Similarly, if you're using the "
+":doc:`collection</reference/forms/types/collection>` form type where your "
+"underlying collection data is an object (like with Doctrine's "
+"``ArrayCollection``), then ``by_reference`` must be set to ``false`` if you "
+"need the adder and remover (e.g. ``addAuthor()`` and ``removeAuthor()``) to "
+"be called."
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:2
+msgid "data"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying object "
+"(if there is one)"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain object (if an object is bound to"
+" the form). If you want to override the initial value for the form or just "
+"an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../reference/forms/types/options/data.rst.inc:17
+msgid ""
+"The default values for form fields are taken directly from the underlying "
+"data structure (e.g. an entity or an array). The ``data`` option overrides "
+"this default value."
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:2
+msgid "disabled"
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:2
+msgid "error_mapping"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:4
+msgid "**type**: ``array`` **default**: ``empty``"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:6
+msgid "This option allows you to modify the target of a validation error."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:8
+msgid ""
+"Imagine you have a custom method named ``matchingCityAndZipCode`` that "
+"validates whether the city and zip code match. Unfortunately, there is no "
+"\"matchingCityAndZipCode\" field in your form, so all that Symfony can do is"
+" display the error on top of the form."
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:13
+msgid ""
+"With customized error mapping, you can do better: map the error to the city "
+"field so that it displays above it::"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:25
+msgid "Here are the rules for the left and the right side of the mapping:"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:27
+msgid "The left side contains property paths;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:28
+msgid ""
+"If the violation is generated on a property or method of a class, its path "
+"is simply ``propertyName``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:30
+msgid ""
+"If the violation is generated on an entry of an ``array`` or ``ArrayAccess``"
+" object, the property path is ``[indexName]``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:32
+msgid ""
+"You can construct nested property paths by concatenating them, separating "
+"properties by dots. For example: ``addresses[work].matchingCityAndZipCode``;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:34
+msgid ""
+"The left side of the error mapping also accepts a dot ``.``, which refers to"
+" the field itself. That means that any error added to the field is added to "
+"the given nested field instead;"
+msgstr ""
+
+#: ../../reference/forms/types/options/error_mapping.rst.inc:37
+msgid "The right side contains simply the names of fields in the form."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:2
+msgid "inherit_data"
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:4
+msgid ""
+"The ``inherit_data`` option was introduced in Symfony 2.3. Before, it was "
+"known as ``virtual``."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:10
+msgid ""
+"This option determines if the form will inherit data from its parent form. "
+"This can be useful if you have a set of fields that are duplicated across "
+"multiple forms. See :doc:`/cookbook/form/inherit_data_option`."
+msgstr ""
+
+#: ../../reference/forms/types/options/inherit_data.rst.inc:16
+msgid ""
+"When a field has the ``inherit_data`` option set, it uses the data of the "
+"parent form as is. This means that :doc:`Data Transformers "
+"</cookbook/form/data_transformers>` won't be applied to that field."
+msgstr ""
+
+#: ../../reference/forms/types/options/label.rst.inc:2
+msgid "label"
+msgstr ""
+
+#: ../../reference/forms/types/options/label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field "
+"name"
+msgstr ""
+
+#: ../../reference/forms/types/options/label.rst.inc:6
+msgid ""
+"Sets the label that will be used when rendering the field. Setting to false "
+"will suppress the label. The label can also be directly set inside the "
+"template:"
+msgstr ""
+
+#: ../../reference/forms/types/options/label_attr.rst.inc:2
+msgid "label_attr"
+msgstr ""
+
+#: ../../reference/forms/types/options/label_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the ``<label>`` element, which will be used "
+"when rendering the label for the field. It's an associative array with HTML "
+"attribute as a key. This attributes can also be directly set inside the "
+"template:"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:2
+msgid "mapped"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the object, "
+"you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../reference/forms/types/options/read_only.rst.inc:2
+msgid "read_only"
+msgstr ""
+
+#: ../../reference/forms/types/options/read_only.rst.inc:6
+msgid ""
+"If this option is true, the field will be rendered with the ``readonly`` "
+"attribute so that the field is not editable."
+msgstr ""
+
+#: ../../reference/forms/types/options/required.rst.inc:2
+msgid "required"
+msgstr ""
+
+#: ../../reference/forms/types/options/required.rst.inc:6
+msgid ""
+"If true, an `HTML5 required attribute`_ will be rendered. The corresponding "
+"``label`` will also render with a ``required`` class."
+msgstr ""
+
+#: ../../reference/forms/types/options/required.rst.inc:9
+msgid ""
+"This is superficial and independent from validation. At best, if you let "
+"Symfony guess your field type, then the value of this option will be guessed"
+" from your validation information."
+msgstr ""
+
+#: ../../reference/forms/types/options/required.rst.inc:15
+msgid ""
+"The required option also affects how empty data for each field is handled. "
+"For more details, see the `empty_data`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:190
+msgid "Field Variables"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:193
+msgid "Variable"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:193
+msgid "Type"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:193
+msgid "Usage"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:195
+#: ../../reference/forms/types/choice.rst:197
+#: ../../reference/forms/types/choice.rst:213
+msgid "``Boolean``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:195
+msgid "The value of the `multiple`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:197
+msgid "The value of the `expanded`_ option."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:199
+#: ../../reference/forms/types/choice.rst:202
+msgid "``array``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:199
+msgid ""
+"A nested array containing the ``ChoiceView`` objects of choices which should"
+" be presented to the user with priority."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:202
+msgid ""
+"A nested array containing the ``ChoiceView`` objects of the remaining "
+"choices."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:205
+msgid "separator"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:205
+msgid "``string``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:205
+msgid "The separator to use between choice groups."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:207
+msgid "``mixed``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:207
+msgid "The empty value if not already in the list, otherwise ``null``."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:210
+msgid "is_selected"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:210
+msgid "``callable``"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:210
+msgid ""
+"A callable which takes a ``ChoiceView`` and the selected value(s) and "
+"returns whether the choice is in the selected value(s)."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:213
+msgid "placeholder_in_choices"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:213
+msgid "Whether the empty value is in the choice list."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:218
+msgid ""
+"It's significantly faster to use the :ref:`form-twig-selectedchoice` test "
+"instead when using Twig."
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:1
+msgid "Forms"
+msgstr ""
+
+#: ../../reference/forms/types/choice.rst:1
+msgid "Fields; choice"
+msgstr ""

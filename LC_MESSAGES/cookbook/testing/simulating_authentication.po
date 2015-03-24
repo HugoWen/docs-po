@@ -1,0 +1,47 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/simulating_authentication.rst:5
+msgid "How to Simulate Authentication with a Token in a Functional Test"
+msgstr ""
+
+#: ../../cookbook/testing/simulating_authentication.rst:7
+msgid ""
+"Authenticating requests in functional tests might slow down the suite. It "
+"could become an issue especially when ``form_login`` is used, since it "
+"requires additional requests to fill in and submit the form."
+msgstr ""
+
+#: ../../cookbook/testing/simulating_authentication.rst:11
+msgid ""
+"One of the solutions is to configure your firewall to use ``http_basic`` in "
+"the test environment as explained in "
+":doc:`/cookbook/testing/http_authentication`. Another way would be to create"
+" a token yourself and store it in a session. While doing this, you have to "
+"make sure that an appropriate cookie is sent with a request. The following "
+"example demonstrates this technique::"
+msgstr ""
+
+#: ../../cookbook/testing/simulating_authentication.rst:60
+msgid ""
+"The technique described in :doc:`/cookbook/testing/http_authentication` is "
+"cleaner and therefore the preferred way."
+msgstr ""
+
+#: ../../cookbook/testing/simulating_authentication.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/simulating_authentication.rst:1
+msgid "Simulating authentication"
+msgstr ""

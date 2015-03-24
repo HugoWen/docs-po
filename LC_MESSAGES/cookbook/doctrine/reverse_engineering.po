@@ -1,0 +1,136 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:5
+msgid "How to Generate Entities from an Existing Database"
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:7
+msgid ""
+"When starting work on a brand new project that uses a database, two "
+"different situations comes naturally. In most cases, the database model is "
+"designed and built from scratch. Sometimes, however, you'll start with an "
+"existing and probably unchangeable database model. Fortunately, Doctrine "
+"comes with a bunch of tools to help generate model classes from your "
+"existing database."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:15
+msgid ""
+"As the `Doctrine tools documentation`_ says, reverse engineering is a one-"
+"time process to get started on a project. Doctrine is able to convert "
+"approximately 70-80% of the necessary mapping information based on fields, "
+"indexes and foreign key constraints. Doctrine can't discover inverse "
+"associations, inheritance types, entities with foreign keys as primary keys "
+"or semantical operations on associations such as cascade or lifecycle "
+"events. Some additional work on the generated entities will be necessary "
+"afterwards to design each to fit your domain model specificities."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:24
+msgid ""
+"This tutorial assumes you're using a simple blog application with the "
+"following two tables: ``blog_post`` and ``blog_comment``. A comment record "
+"is linked to a post record thanks to a foreign key constraint."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:49
+msgid ""
+"Before diving into the recipe, be sure your database connection parameters "
+"are correctly setup in the ``app/config/parameters.yml`` file (or wherever "
+"your database configuration is kept) and that you have initialized a bundle "
+"that will host your future entity class. In this tutorial it's assumed that "
+"an AcmeBlogBundle exists and is located under the ``src/Acme/BlogBundle`` "
+"folder."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:55
+msgid ""
+"The first step towards building entity classes from an existing database is "
+"to ask Doctrine to introspect the database and generate the corresponding "
+"metadata files. Metadata files describe the entity class to generate based "
+"on table fields."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:64
+msgid ""
+"This command line tool asks Doctrine to introspect the database and generate"
+" the XML metadata files under the "
+"``src/Acme/BlogBundle/Resources/config/doctrine`` folder of your bundle. "
+"This generates two files: ``BlogPost.orm.xml`` and ``BlogComment.orm.xml``."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:71
+msgid ""
+"It's also possible to generate the metadata files in YAML format by changing"
+" the last argument to ``yml``."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:74
+msgid "The generated ``BlogPost.orm.xml`` metadata file looks as follows:"
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:90
+msgid ""
+"Once the metadata files are generated, you can ask Doctrine to build related"
+" entity classes by executing the following two commands."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:98
+msgid ""
+"The first command generates entity classes with annotation mappings. But if "
+"you want to use YAML or XML mapping instead of annotations, you should "
+"execute the second command only."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:104
+msgid ""
+"If you want to use annotations, you can safely delete the XML (or YAML) "
+"files after running these two commands."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:107
+msgid ""
+"For example, the newly created ``BlogComment`` entity class looks as "
+"follow::"
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:161
+msgid ""
+"As you can see, Doctrine converts all table fields to pure private and "
+"annotated class properties. The most impressive thing is that it also "
+"discovered the relationship with the ``BlogPost`` entity class based on the "
+"foreign key constraint. Consequently, you can find a private ``$post`` "
+"property mapped with a ``BlogPost`` entity in the ``BlogComment`` entity "
+"class."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:169
+msgid ""
+"If you want to have a one-to-many relationship, you will need to add it "
+"manually into the entity or to the generated XML or YAML files. Add a "
+"section on the specific entities for one-to-many defining the ``inversedBy``"
+" and the ``mappedBy`` pieces."
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:174
+msgid "The generated entities are now ready to be used. Have fun!"
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/reverse_engineering.rst:1
+msgid "Generating entities from existing database"
+msgstr ""

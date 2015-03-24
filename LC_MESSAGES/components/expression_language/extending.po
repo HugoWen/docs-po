@@ -1,0 +1,115 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/expression_language/extending.rst:5
+msgid "Extending the ExpressionLanguage"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:7
+msgid ""
+"The ExpressionLanguage can be extended by adding custom functions. For "
+"instance, in the Symfony Framework, the security has custom functions to "
+"check the user's role."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:13
+msgid ""
+"If you want to learn how to use functions in an expression, read \":ref"
+":`component-expression-functions`\"."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:17
+msgid "Registering Functions"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:19
+msgid ""
+"Functions are registered on each specific ``ExpressionLanguage`` instance. "
+"That means the functions can be used in any expression executed by that "
+"instance."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:23
+msgid ""
+"To register a function, use "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::register`."
+" This method has 3 arguments:"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:27
+msgid "**name** - The name of the function in an expression;"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:28
+msgid ""
+"**compiler** - A function executed when compiling an expression using the "
+"function;"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:30
+msgid "**evaluator** - A function executed when the expression is evaluated."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:49
+msgid ""
+"This will print ``hello``. Both the **compiler** and **evaluator** are "
+"passed an ``arguments`` variable as their first argument, which is equal to "
+"the second argument to ``evaluate()`` or ``compile()`` (e.g. the \"values\" "
+"when evaluating or the \"names\" if compiling)."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:57
+msgid "Using Expression Providers"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:59
+msgid "Expression providers were introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:62
+msgid ""
+"When you use the ``ExpressionLanguage`` class in your library, you often "
+"want to add custom functions. To do so, you can create a new expression "
+"provider by creating a class that implements "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionFunctionProviderInterface`."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:67
+msgid ""
+"This interface requires one method: "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionFunctionProviderInterface::getFunctions`,"
+" which returns an array of expression functions (instances of "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionFunction`) "
+"to register."
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:96
+msgid ""
+"You can register providers using "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::registerProvider`"
+" or by using the second argument of the constructor::"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:113
+msgid ""
+"It is recommended to create your own ``ExpressionLanguage`` class in your "
+"library. Now you can add the extension by overriding the constructor::"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:1
+msgid "Extending"
+msgstr ""
+
+#: ../../components/expression_language/extending.rst:1
+msgid "ExpressionLanguage"
+msgstr ""

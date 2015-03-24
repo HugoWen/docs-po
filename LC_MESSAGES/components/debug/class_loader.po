@@ -1,0 +1,43 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/debug/class_loader.rst:6
+msgid "Debugging a Class Loader"
+msgstr ""
+
+#: ../../components/debug/class_loader.rst:8
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Debug\\\\DebugClassLoader` attempts to "
+"throw more helpful exceptions when a class isn't found by the registered "
+"autoloaders. All autoloaders that implement a ``findFile()`` method are "
+"replaced with a ``DebugClassLoader`` wrapper."
+msgstr ""
+
+#: ../../components/debug/class_loader.rst:13
+msgid ""
+"Using the ``DebugClassLoader`` is as easy as calling its static "
+":method:`Symfony\\\\Component\\\\Debug\\\\DebugClassLoader::enable` method::"
+msgstr ""
+
+#: ../../components/debug/class_loader.rst:1
+msgid "Class Loader"
+msgstr ""
+
+#: ../../components/debug/class_loader.rst:1
+#: ../../components/debug/class_loader.rst:1
+msgid "DebugClassLoader"
+msgstr ""
+
+#: ../../components/debug/class_loader.rst:1
+msgid "Debug"
+msgstr ""

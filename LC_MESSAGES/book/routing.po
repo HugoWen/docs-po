@@ -1,0 +1,1064 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/routing.rst:5 ../../book/routing.rst:1 ../../book/routing.rst:24
+#: ../../book/routing.rst:114 ../../book/routing.rst:149
+#: ../../book/routing.rst:270 ../../book/routing.rst:543
+#: ../../book/routing.rst:806 ../../book/routing.rst:999
+#: ../../book/routing.rst:999 ../../book/routing.rst:1135
+#: ../../book/routing.rst:1230 ../../book/routing.rst:1381
+#: ../../book/routing.rst:1431 ../../book/routing.rst:1511
+#: ../../book/routing.rst:1549
+msgid "Routing"
+msgstr ""
+
+#: ../../book/routing.rst:7
+msgid ""
+"Beautiful URLs are an absolute must for any serious web application. This "
+"means leaving behind ugly URLs like ``index.php?article_id=57`` in favor of "
+"something like ``/read/intro-to-symfony``."
+msgstr ""
+
+#: ../../book/routing.rst:11
+msgid ""
+"Having flexibility is even more important. What if you need to change the "
+"URL of a page from ``/blog`` to ``/news``? How many links should you need to"
+" hunt down and update to make the change? If you're using Symfony's router, "
+"the change is simple."
+msgstr ""
+
+#: ../../book/routing.rst:16
+msgid ""
+"The Symfony router lets you define creative URLs that you map to different "
+"areas of your application. By the end of this chapter, you'll be able to:"
+msgstr ""
+
+#: ../../book/routing.rst:19
+msgid "Create complex routes that map to controllers"
+msgstr ""
+
+#: ../../book/routing.rst:20
+msgid "Generate URLs inside templates and controllers"
+msgstr ""
+
+#: ../../book/routing.rst:21
+msgid "Load routing resources from bundles (or anywhere else)"
+msgstr ""
+
+#: ../../book/routing.rst:22
+msgid "Debug your routes"
+msgstr ""
+
+#: ../../book/routing.rst:28
+msgid "Routing in Action"
+msgstr ""
+
+#: ../../book/routing.rst:30
+msgid ""
+"A *route* is a map from a URL path to a controller. For example, suppose you"
+" want to match any URL like ``/blog/my-post`` or ``/blog/all-about-symfony``"
+" and send it to a controller that can look up and render that blog entry. "
+"The route is simple:"
+msgstr ""
+
+#: ../../book/routing.rst:90
+msgid ""
+"The path defined by the ``blog_show`` route acts like ``/blog/*`` where the "
+"wildcard is given the name ``slug``. For the URL ``/blog/my-blog-post``, the"
+" ``slug`` variable gets a value of ``my-blog-post``, which is available for "
+"you to use in your controller (keep reading). The ``blog_show`` is the "
+"internal name of the route, which doesn't have any meaning yet and just "
+"needs to be unique. Later, you'll use it to generate URLs."
+msgstr ""
+
+#: ../../book/routing.rst:97
+msgid ""
+"If you don't want to use annotations, because you don't like them or because"
+" you don't want to depend on the SensioFrameworkExtraBundle, you can also "
+"use Yaml, XML or PHP. In these formats, the ``_controller`` parameter is a "
+"special key that tells Symfony which controller should be executed when a "
+"URL matches this route. The ``_controller`` string is called the "
+":ref:`logical name <controller-string-syntax>`. It follows a pattern that "
+"points to a specific PHP class and method, in this case the "
+"``AppBundle\\Controller\\BlogController::showAction`` method."
+msgstr ""
+
+#: ../../book/routing.rst:106
+msgid ""
+"Congratulations! You've just created your first route and connected it to a "
+"controller. Now, when you visit ``/blog/my-post``, the ``showAction`` "
+"controller will be executed and the ``$slug`` variable will be equal to "
+"``my-post``."
+msgstr ""
+
+#: ../../book/routing.rst:110
+msgid ""
+"This is the goal of the Symfony router: to map the URL of a request to a "
+"controller. Along the way, you'll learn all sorts of tricks that make "
+"mapping even the most complex URLs easy."
+msgstr ""
+
+#: ../../book/routing.rst:118
+msgid "Routing: Under the Hood"
+msgstr ""
+
+#: ../../book/routing.rst:120
+msgid ""
+"When a request is made to your application, it contains an address to the "
+"exact \"resource\" that the client is requesting. This address is called the"
+" URL, (or URI), and could be ``/contact``, ``/blog/read-me``, or anything "
+"else. Take the following HTTP request for example:"
+msgstr ""
+
+#: ../../book/routing.rst:129
+msgid ""
+"The goal of the Symfony routing system is to parse this URL and determine "
+"which controller should be executed. The whole process looks like this:"
+msgstr ""
+
+#: ../../book/routing.rst:132
+msgid ""
+"The request is handled by the Symfony front controller (e.g. ``app.php``);"
+msgstr ""
+
+#: ../../book/routing.rst:134
+msgid "The Symfony core (i.e. Kernel) asks the router to inspect the request;"
+msgstr ""
+
+#: ../../book/routing.rst:136
+msgid ""
+"The router matches the incoming URL to a specific route and returns "
+"information about the route, including the controller that should be "
+"executed;"
+msgstr ""
+
+#: ../../book/routing.rst:139
+msgid ""
+"The Symfony Kernel executes the controller, which ultimately returns a "
+"``Response`` object."
+msgstr ""
+
+#: ../../book/routing.rst:146
+msgid ""
+"The routing layer is a tool that translates the incoming URL into a specific"
+" controller to execute."
+msgstr ""
+
+#: ../../book/routing.rst:153
+msgid "Creating Routes"
+msgstr ""
+
+#: ../../book/routing.rst:155
+msgid ""
+"Symfony loads all the routes for your application from a single routing "
+"configuration file. The file is usually ``app/config/routing.yml``, but can "
+"be configured to be anything (including an XML or PHP file) via the "
+"application configuration file:"
+msgstr ""
+
+#: ../../book/routing.rst:199
+msgid ""
+"Even though all routes are loaded from a single file, it's common practice "
+"to include additional routing resources. To do so, just point out in the "
+"main routing configuration file which external files should be included. See"
+" the :ref:`routing-include-external-resources` section for more information."
+msgstr ""
+
+#: ../../book/routing.rst:206
+msgid "Basic Route Configuration"
+msgstr ""
+
+#: ../../book/routing.rst:208
+msgid ""
+"Defining a route is easy, and a typical application will have lots of "
+"routes. A basic route consists of just two parts: the ``path`` to match and "
+"a ``defaults`` array:"
+msgstr ""
+
+#: ../../book/routing.rst:265
+msgid ""
+"This route matches the homepage (``/``) and maps it to the "
+"``AppBundle:Main:homepage`` controller. The ``_controller`` string is "
+"translated by Symfony into an actual PHP function and executed. That process"
+" will be explained shortly in the :ref:`controller-string-syntax` section."
+msgstr ""
+
+#: ../../book/routing.rst:274
+msgid "Routing with Placeholders"
+msgstr ""
+
+#: ../../book/routing.rst:276
+msgid ""
+"Of course the routing system supports much more interesting routes. Many "
+"routes will contain one or more named \"wildcard\" placeholders:"
+msgstr ""
+
+#: ../../book/routing.rst:331
+msgid ""
+"The path will match anything that looks like ``/blog/*``. Even better, the "
+"value matching the ``{slug}`` placeholder will be available inside your "
+"controller. In other words, if the URL is ``/blog/hello-world``, a ``$slug``"
+" variable, with a value of ``hello-world``, will be available in the "
+"controller. This can be used, for example, to load the blog post matching "
+"that string."
+msgstr ""
+
+#: ../../book/routing.rst:337
+msgid ""
+"The path will *not*, however, match simply ``/blog``. That's because, by "
+"default, all placeholders are required. This can be changed by adding a "
+"placeholder value to the ``defaults`` array."
+msgstr ""
+
+#: ../../book/routing.rst:342
+msgid "Required and Optional Placeholders"
+msgstr ""
+
+#: ../../book/routing.rst:344
+msgid ""
+"To make things more exciting, add a new route that displays a list of all "
+"the available blog posts for this imaginary blog application:"
+msgstr ""
+
+#: ../../book/routing.rst:401
+msgid ""
+"So far, this route is as simple as possible - it contains no placeholders "
+"and will only match the exact URL ``/blog``. But what if you need this route"
+" to support pagination, where ``/blog/2`` displays the second page of blog "
+"entries? Update the route to have a new ``{page}`` placeholder:"
+msgstr ""
+
+#: ../../book/routing.rst:456
+msgid ""
+"Like the ``{slug}`` placeholder before, the value matching ``{page}`` will "
+"be available inside your controller. Its value can be used to determine "
+"which set of blog posts to display for the given page."
+msgstr ""
+
+#: ../../book/routing.rst:460
+msgid ""
+"But hold on! Since placeholders are required by default, this route will no "
+"longer match on simply ``/blog``. Instead, to see page 1 of the blog, you'd "
+"need to use the URL ``/blog/1``! Since that's no way for a rich web app to "
+"behave, modify the route to make the ``{page}`` parameter optional. This is "
+"done by including it in the ``defaults`` collection:"
+msgstr ""
+
+#: ../../book/routing.rst:518
+msgid ""
+"By adding ``page`` to the ``defaults`` key, the ``{page}`` placeholder is no"
+" longer required. The URL ``/blog`` will match this route and the value of "
+"the ``page`` parameter will be set to ``1``. The URL ``/blog/2`` will also "
+"match, giving the ``page`` parameter a value of ``2``. Perfect."
+msgstr ""
+
+#: ../../book/routing.rst:524 ../../book/routing.rst:633
+#: ../../book/routing.rst:714
+msgid "URL"
+msgstr ""
+
+#: ../../book/routing.rst:524 ../../book/routing.rst:633
+#: ../../book/routing.rst:714
+msgid "Route"
+msgstr ""
+
+#: ../../book/routing.rst:524 ../../book/routing.rst:633
+#: ../../book/routing.rst:714 ../../book/routing.rst:798
+msgid "Parameters"
+msgstr ""
+
+#: ../../book/routing.rst:526
+msgid "``/blog``"
+msgstr ""
+
+#: ../../book/routing.rst:526 ../../book/routing.rst:527
+#: ../../book/routing.rst:528 ../../book/routing.rst:635
+#: ../../book/routing.rst:636 ../../book/routing.rst:716
+msgid "``blog``"
+msgstr ""
+
+#: ../../book/routing.rst:526 ../../book/routing.rst:527
+msgid "``{page}`` = ``1``"
+msgstr ""
+
+#: ../../book/routing.rst:527
+msgid "``/blog/1``"
+msgstr ""
+
+#: ../../book/routing.rst:528 ../../book/routing.rst:635
+#: ../../book/routing.rst:716
+msgid "``/blog/2``"
+msgstr ""
+
+#: ../../book/routing.rst:528 ../../book/routing.rst:635
+#: ../../book/routing.rst:716
+msgid "``{page}`` = ``2``"
+msgstr ""
+
+#: ../../book/routing.rst:533
+msgid ""
+"Of course, you can have more than one optional placeholder (e.g. "
+"``/blog/{slug}/{page}``), but everything after an optional placeholder must "
+"be optional. For example, ``/{page}/blog`` is a valid path, but ``page`` "
+"will always be required (i.e. simply ``/blog`` will not match this route)."
+msgstr ""
+
+#: ../../book/routing.rst:540
+msgid ""
+"Routes with optional parameters at the end will not match on requests with a"
+" trailing slash (i.e. ``/blog/`` will not match, ``/blog`` will match)."
+msgstr ""
+
+#: ../../book/routing.rst:547
+msgid "Adding Requirements"
+msgstr ""
+
+#: ../../book/routing.rst:549
+msgid "Take a quick look at the routes that have been created so far:"
+msgstr ""
+
+#: ../../book/routing.rst:625
+msgid ""
+"Can you spot the problem? Notice that both routes have patterns that match "
+"URLs that look like ``/blog/*``. The Symfony router will always choose the "
+"**first** matching route it finds. In other words, the ``blog_show`` route "
+"will *never* be matched. Instead, a URL like ``/blog/my-blog-post`` will "
+"match the first route (``blog``) and return a nonsense value of ``my-blog-"
+"post`` to the ``{page}`` parameter."
+msgstr ""
+
+#: ../../book/routing.rst:636 ../../book/routing.rst:717
+msgid "``/blog/my-blog-post``"
+msgstr ""
+
+#: ../../book/routing.rst:636
+msgid "``{page}`` = ``\"my-blog-post\"``"
+msgstr ""
+
+#: ../../book/routing.rst:639
+msgid ""
+"The answer to the problem is to add route *requirements* or route "
+"*conditions* (see :ref:`book-routing-conditions`). The routes in this "
+"example would work perfectly if the ``/blog/{page}`` path *only* matched "
+"URLs where the ``{page}`` portion is an integer. Fortunately, regular "
+"expression requirements can easily be added for each parameter. For example:"
+msgstr ""
+
+#: ../../book/routing.rst:704
+msgid ""
+"The ``\\d+`` requirement is a regular expression that says that the value of"
+" the ``{page}`` parameter must be a digit (i.e. a number). The ``blog`` "
+"route will still match on a URL like ``/blog/2`` (because 2 is a number), "
+"but it will no longer match a URL like ``/blog/my-blog-post`` (because ``my-"
+"blog-post`` is *not* a number)."
+msgstr ""
+
+#: ../../book/routing.rst:710
+msgid ""
+"As a result, a URL like ``/blog/my-blog-post`` will now properly match the "
+"``blog_show`` route."
+msgstr ""
+
+#: ../../book/routing.rst:717 ../../book/routing.rst:718
+msgid "``blog_show``"
+msgstr ""
+
+#: ../../book/routing.rst:717
+msgid "``{slug}`` = ``my-blog-post``"
+msgstr ""
+
+#: ../../book/routing.rst:718
+msgid "``/blog/2-my-blog-post``"
+msgstr ""
+
+#: ../../book/routing.rst:718
+msgid "``{slug}`` = ``2-my-blog-post``"
+msgstr ""
+
+#: ../../book/routing.rst:0
+msgid "Earlier Routes always Win"
+msgstr ""
+
+#: ../../book/routing.rst:723
+msgid ""
+"What this all means is that the order of the routes is very important. If "
+"the ``blog_show`` route were placed above the ``blog`` route, the URL "
+"``/blog/2`` would match ``blog_show`` instead of ``blog`` since the "
+"``{slug}`` parameter of ``blog_show`` has no requirements. By using proper "
+"ordering and clever requirements, you can accomplish just about anything."
+msgstr ""
+
+#: ../../book/routing.rst:729
+msgid ""
+"Since the parameter requirements are regular expressions, the complexity and"
+" flexibility of each requirement is entirely up to you. Suppose the homepage"
+" of your application is available in two different languages, based on the "
+"URL:"
+msgstr ""
+
+#: ../../book/routing.rst:794
+msgid ""
+"For incoming requests, the ``{_locale}`` portion of the URL is matched "
+"against the regular expression ``(en|fr)``."
+msgstr ""
+
+#: ../../book/routing.rst:798
+msgid "Path"
+msgstr ""
+
+#: ../../book/routing.rst:800
+msgid "``/``"
+msgstr ""
+
+#: ../../book/routing.rst:800 ../../book/routing.rst:801
+msgid "``{_locale}`` = ``\"en\"``"
+msgstr ""
+
+#: ../../book/routing.rst:801
+msgid "``/en``"
+msgstr ""
+
+#: ../../book/routing.rst:802
+msgid "``/fr``"
+msgstr ""
+
+#: ../../book/routing.rst:802
+msgid "``{_locale}`` = ``\"fr\"``"
+msgstr ""
+
+#: ../../book/routing.rst:803
+msgid "``/es``"
+msgstr ""
+
+#: ../../book/routing.rst:803
+msgid "*won't match this route*"
+msgstr ""
+
+#: ../../book/routing.rst:810
+msgid "Adding HTTP Method Requirements"
+msgstr ""
+
+#: ../../book/routing.rst:812
+msgid ""
+"In addition to the URL, you can also match on the *method* of the incoming "
+"request (i.e. GET, HEAD, POST, PUT, DELETE). Suppose you have a contact form"
+" with two controllers - one for displaying the form (on a GET request) and "
+"one for processing the form when it's submitted (on a POST request). This "
+"can be accomplished with the following route configuration:"
+msgstr ""
+
+#: ../../book/routing.rst:897
+msgid ""
+"Despite the fact that these two routes have identical paths (``/contact``), "
+"the first route will match only GET requests and the second route will match"
+" only POST requests. This means that you can display the form and submit the"
+" form via the same URL, while using distinct controllers for the two "
+"actions."
+msgstr ""
+
+#: ../../book/routing.rst:904
+msgid ""
+"If no ``methods`` are specified, the route will match on *all* methods."
+msgstr ""
+
+#: ../../book/routing.rst:907
+msgid "Adding a Host Requirement"
+msgstr ""
+
+#: ../../book/routing.rst:909
+msgid ""
+"You can also match on the HTTP *host* of the incoming request. For more "
+"information, see :doc:`/components/routing/hostname_pattern` in the Routing "
+"component documentation."
+msgstr ""
+
+#: ../../book/routing.rst:916
+msgid "Completely Customized Route Matching with Conditions"
+msgstr ""
+
+#: ../../book/routing.rst:918
+msgid ""
+"As you've seen, a route can be made to match only certain routing wildcards "
+"(via regular expressions), HTTP methods, or host names. But the routing "
+"system can be extended to have an almost infinite flexibility using "
+"``conditions``:"
+msgstr ""
+
+#: ../../book/routing.rst:965
+msgid ""
+"The ``condition`` is an expression, and you can learn more about its syntax "
+"here: :doc:`/components/expression_language/syntax`. With this, the route "
+"won't match unless the HTTP method is either GET or HEAD *and* if the "
+"``User-Agent`` header matches ``firefox``."
+msgstr ""
+
+#: ../../book/routing.rst:970
+msgid ""
+"You can do any complex logic you need in the expression by leveraging two "
+"variables that are passed into the expression:"
+msgstr ""
+
+#: ../../book/routing.rst:974
+msgid "``context``"
+msgstr ""
+
+#: ../../book/routing.rst:974
+msgid ""
+"An instance of :class:`Symfony\\\\Component\\\\Routing\\\\RequestContext`, "
+"which holds the most fundamental information about the route being matched."
+msgstr ""
+
+#: ../../book/routing.rst:978
+msgid "``request``"
+msgstr ""
+
+#: ../../book/routing.rst:977
+msgid ""
+"The Symfony :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` "
+"object (see :ref:`component-http-foundation-request`)."
+msgstr ""
+
+#: ../../book/routing.rst:982
+msgid "Conditions are *not* taken into account when generating a URL."
+msgstr ""
+
+#: ../../book/routing.rst:0
+msgid "Expressions are Compiled to PHP"
+msgstr ""
+
+#: ../../book/routing.rst:986
+msgid ""
+"Behind the scenes, expressions are compiled down to raw PHP. Our example "
+"would generate the following PHP in the cache directory::"
+msgstr ""
+
+#: ../../book/routing.rst:996
+msgid ""
+"Because of this, using the ``condition`` key causes no extra overhead beyond"
+" the time it takes for the underlying PHP to execute."
+msgstr ""
+
+#: ../../book/routing.rst:1006
+msgid "Advanced Routing Example"
+msgstr ""
+
+#: ../../book/routing.rst:1008
+msgid ""
+"At this point, you have everything you need to create a powerful routing "
+"structure in Symfony. The following is an example of just how flexible the "
+"routing system can be:"
+msgstr ""
+
+#: ../../book/routing.rst:1090
+msgid ""
+"As you've seen, this route will only match if the ``{_locale}`` portion of "
+"the URL is either ``en`` or ``fr`` and if the ``{year}`` is a number. This "
+"route also shows how you can use a dot between placeholders instead of a "
+"slash. URLs matching this route might look like:"
+msgstr ""
+
+#: ../../book/routing.rst:1095
+msgid "``/articles/en/2010/my-post``"
+msgstr ""
+
+#: ../../book/routing.rst:1096
+msgid "``/articles/fr/2010/my-post.rss``"
+msgstr ""
+
+#: ../../book/routing.rst:1097
+msgid "``/articles/en/2013/my-latest-post.html``"
+msgstr ""
+
+#: ../../book/routing.rst:0
+msgid "The Special ``_format`` Routing Parameter"
+msgstr ""
+
+#: ../../book/routing.rst:1103
+msgid ""
+"This example also highlights the special ``_format`` routing parameter. When"
+" using this parameter, the matched value becomes the \"request format\" of "
+"the ``Request`` object. Ultimately, the request format is used for such "
+"things as setting the ``Content-Type`` of the response (e.g. a ``json`` "
+"request format translates into a ``Content-Type`` of ``application/json``). "
+"It can also be used in the controller to render a different template for "
+"each value of ``_format``. The ``_format`` parameter is a very powerful way "
+"to render the same content in different formats."
+msgstr ""
+
+#: ../../book/routing.rst:1114
+msgid ""
+"Sometimes you want to make certain parts of your routes globally "
+"configurable. Symfony provides you with a way to do this by leveraging "
+"service container parameters. Read more about this in "
+"\":doc:`/cookbook/routing/service_container_parameters`\"."
+msgstr ""
+
+#: ../../book/routing.rst:1119
+msgid "Special Routing Parameters"
+msgstr ""
+
+#: ../../book/routing.rst:1121
+msgid ""
+"As you've seen, each routing parameter or default value is eventually "
+"available as an argument in the controller method. Additionally, there are "
+"three parameters that are special: each adds a unique piece of functionality"
+" inside your application:"
+msgstr ""
+
+#: ../../book/routing.rst:1127
+msgid "``_controller``"
+msgstr ""
+
+#: ../../book/routing.rst:1126
+msgid ""
+"As you've seen, this parameter is used to determine which controller is "
+"executed when the route is matched."
+msgstr ""
+
+#: ../../book/routing.rst:1130
+msgid "``_format``"
+msgstr ""
+
+#: ../../book/routing.rst:1130
+msgid ""
+"Used to set the request format (:ref:`read more <book-routing-format-"
+"param>`)."
+msgstr ""
+
+#: ../../book/routing.rst:1133
+msgid "``_locale``"
+msgstr ""
+
+#: ../../book/routing.rst:1133
+msgid ""
+"Used to set the locale on the request (:ref:`read more <book-translation-"
+"locale-url>`)."
+msgstr ""
+
+#: ../../book/routing.rst:1142
+msgid "Controller Naming Pattern"
+msgstr ""
+
+#: ../../book/routing.rst:1144
+msgid ""
+"Every route must have a ``_controller`` parameter, which dictates which "
+"controller should be executed when that route is matched. This parameter "
+"uses a simple string pattern called the *logical controller name*, which "
+"Symfony maps to a specific PHP method and class. The pattern has three "
+"parts, each separated by a colon:"
+msgstr ""
+
+#: ../../book/routing.rst:1150
+msgid "**bundle**:**controller**:**action**"
+msgstr ""
+
+#: ../../book/routing.rst:1152
+msgid "For example, a ``_controller`` value of ``AppBundle:Blog:show`` means:"
+msgstr ""
+
+#: ../../book/routing.rst:1155
+msgid "Bundle"
+msgstr ""
+
+#: ../../book/routing.rst:1155
+msgid "Controller Class"
+msgstr ""
+
+#: ../../book/routing.rst:1155
+msgid "Method Name"
+msgstr ""
+
+#: ../../book/routing.rst:1157
+msgid "AppBundle"
+msgstr ""
+
+#: ../../book/routing.rst:1157
+msgid "``BlogController``"
+msgstr ""
+
+#: ../../book/routing.rst:1157
+msgid "``showAction``"
+msgstr ""
+
+#: ../../book/routing.rst:1160
+msgid "The controller might look like this::"
+msgstr ""
+
+#: ../../book/routing.rst:1175
+msgid ""
+"Notice that Symfony adds the string ``Controller`` to the class name "
+"(``Blog`` => ``BlogController``) and ``Action`` to the method name (``show``"
+" => ``showAction``)."
+msgstr ""
+
+#: ../../book/routing.rst:1178
+msgid ""
+"You could also refer to this controller using its fully-qualified class name"
+" and method: ``AppBundle\\Controller\\BlogController::showAction``. But if "
+"you follow some simple conventions, the logical name is more concise and "
+"allows more flexibility."
+msgstr ""
+
+#: ../../book/routing.rst:1185
+msgid ""
+"In addition to using the logical name or the fully-qualified class name, "
+"Symfony supports a third way of referring to a controller. This method uses "
+"just one colon separator (e.g. ``service_name:indexAction``) and refers to "
+"the controller as a service (see :doc:`/cookbook/controller/service`)."
+msgstr ""
+
+#: ../../book/routing.rst:1191
+msgid "Route Parameters and Controller Arguments"
+msgstr ""
+
+#: ../../book/routing.rst:1193
+msgid ""
+"The route parameters (e.g. ``{slug}``) are especially important because each"
+" is made available as an argument to the controller method::"
+msgstr ""
+
+#: ../../book/routing.rst:1201
+msgid ""
+"In reality, the entire ``defaults`` collection is merged with the parameter "
+"values to form a single array. Each key of that array is available as an "
+"argument on the controller."
+msgstr ""
+
+#: ../../book/routing.rst:1205
+msgid ""
+"In other words, for each argument of your controller method, Symfony looks "
+"for a route parameter of that name and assigns its value to that argument. "
+"In the advanced example above, any combination (in any order) of the "
+"following variables could be used as arguments to the ``showAction()`` "
+"method:"
+msgstr ""
+
+#: ../../book/routing.rst:1210
+msgid "``$_locale``"
+msgstr ""
+
+#: ../../book/routing.rst:1211
+msgid "``$year``"
+msgstr ""
+
+#: ../../book/routing.rst:1212
+msgid "``$title``"
+msgstr ""
+
+#: ../../book/routing.rst:1213
+msgid "``$_format``"
+msgstr ""
+
+#: ../../book/routing.rst:1214
+msgid "``$_controller``"
+msgstr ""
+
+#: ../../book/routing.rst:1215
+msgid "``$_route``"
+msgstr ""
+
+#: ../../book/routing.rst:1217
+msgid ""
+"Since the placeholders and ``defaults`` collection are merged together, even"
+" the ``$_controller`` variable is available. For a more detailed discussion,"
+" see :ref:`route-parameters-controller-arguments`."
+msgstr ""
+
+#: ../../book/routing.rst:1223
+msgid ""
+"The special ``$_route`` variable is set to the name of the route that was "
+"matched."
+msgstr ""
+
+#: ../../book/routing.rst:1226
+msgid ""
+"You can even add extra information to your route definition and access it "
+"within your controller. For more information on this topic, see "
+":doc:`/cookbook/routing/extra_information`."
+msgstr ""
+
+#: ../../book/routing.rst:1236
+msgid "Including External Routing Resources"
+msgstr ""
+
+#: ../../book/routing.rst:1238
+msgid ""
+"All routes are loaded via a single configuration file - usually "
+"``app/config/routing.yml`` (see `Creating Routes`_ above). However, if you "
+"use routing annotations, you'll need to point the router to the controllers "
+"with the annotations. This can be done by \"importing\" directories into the"
+" routing configuration:"
+msgstr ""
+
+#: ../../book/routing.rst:1282
+msgid ""
+"When importing resources from YAML, the key (e.g. ``app``) is meaningless. "
+"Just be sure that it's unique so no other lines override it."
+msgstr ""
+
+#: ../../book/routing.rst:1285
+msgid ""
+"The ``resource`` key loads the given routing resource. In this example the "
+"resource is a directory, where the ``@AppBundle`` shortcut syntax resolves "
+"to the full path of the AppBundle. When pointing to a directory, all files "
+"in that directory are parsed and put into the routing."
+msgstr ""
+
+#: ../../book/routing.rst:1292
+msgid ""
+"You can also include other routing configuration files, this is often used "
+"to import the routing of third party bundles:"
+msgstr ""
+
+#: ../../book/routing.rst:1328
+msgid "Prefixing Imported Routes"
+msgstr ""
+
+#: ../../book/routing.rst:1330
+msgid ""
+"You can also choose to provide a \"prefix\" for the imported routes. For "
+"example, suppose you want to prefix all routes in the AppBundle with "
+"``/site`` (e.g. ``/site/blog/{slug}`` instead of ``/blog/{slug}``):"
+msgstr ""
+
+#: ../../book/routing.rst:1372
+msgid ""
+"The path of each route being loaded from the new routing resource will now "
+"be prefixed with the string ``/site``."
+msgstr ""
+
+#: ../../book/routing.rst:1376
+msgid "Adding a Host Requirement to Imported Routes"
+msgstr ""
+
+#: ../../book/routing.rst:1378
+msgid ""
+"You can set the host regex on imported routes. For more information, see "
+":ref:`component-routing-host-imported`."
+msgstr ""
+
+#: ../../book/routing.rst:1385
+msgid "Visualizing & Debugging Routes"
+msgstr ""
+
+#: ../../book/routing.rst:1387
+msgid ""
+"While adding and customizing routes, it's helpful to be able to visualize "
+"and get detailed information about your routes. A great way to see every "
+"route in your application is via the ``debug:router`` console command. "
+"Execute the command by running the following from the root of your project."
+msgstr ""
+
+#: ../../book/routing.rst:1396
+msgid "Prior to Symfony 2.6, this command was called ``router:debug``."
+msgstr ""
+
+#: ../../book/routing.rst:1399
+msgid ""
+"This command will print a helpful list of *all* the configured routes in "
+"your application:"
+msgstr ""
+
+#: ../../book/routing.rst:1411
+msgid ""
+"You can also get very specific information on a single route by including "
+"the route name after the command:"
+msgstr ""
+
+#: ../../book/routing.rst:1418
+msgid ""
+"Likewise, if you want to test whether a URL matches a given route, you can "
+"use the ``router:match`` console command:"
+msgstr ""
+
+#: ../../book/routing.rst:1425
+msgid "This command will print which route the URL matches."
+msgstr ""
+
+#: ../../book/routing.rst:1435 ../../book/routing.rst:1431
+msgid "Generating URLs"
+msgstr ""
+
+#: ../../book/routing.rst:1437
+msgid ""
+"The routing system should also be used to generate URLs. In reality, routing"
+" is a bidirectional system: mapping the URL to a controller+parameters and a"
+" route+parameters back to a URL. The "
+":method:`Symfony\\\\Component\\\\Routing\\\\Router::match` and "
+":method:`Symfony\\\\Component\\\\Routing\\\\Router::generate` methods form "
+"this bidirectional system. Take the ``blog_show`` example route from "
+"earlier::"
+msgstr ""
+
+#: ../../book/routing.rst:1455
+msgid ""
+"To generate a URL, you need to specify the name of the route (e.g. "
+"``blog_show``) and any wildcards (e.g. ``slug = my-blog-post``) used in the "
+"path for that route. With this information, any URL can easily be "
+"generated::"
+msgstr ""
+
+#: ../../book/routing.rst:1474
+msgid ""
+"In controllers that don't extend Symfony's base "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller`, "
+"you can use the ``router`` service's "
+":method:`Symfony\\\\Component\\\\Routing\\\\Router::generate` method::"
+msgstr ""
+
+#: ../../book/routing.rst:1494
+msgid ""
+"In an upcoming section, you'll learn how to generate URLs from inside "
+"templates."
+msgstr ""
+
+#: ../../book/routing.rst:1498
+msgid ""
+"If the frontend of your application uses Ajax requests, you might want to be"
+" able to generate URLs in JavaScript based on your routing configuration. By"
+" using the `FOSJsRoutingBundle`_, you can do exactly that:"
+msgstr ""
+
+#: ../../book/routing.rst:1509
+msgid "For more information, see the documentation for that bundle."
+msgstr ""
+
+#: ../../book/routing.rst:1515
+msgid "Generating URLs with Query Strings"
+msgstr ""
+
+#: ../../book/routing.rst:1517
+msgid ""
+"The ``generate`` method takes an array of wildcard values to generate the "
+"URI. But if you pass extra ones, they will be added to the URI as a query "
+"string::"
+msgstr ""
+
+#: ../../book/routing.rst:1527
+msgid "Generating URLs from a Template"
+msgstr ""
+
+#: ../../book/routing.rst:1529
+msgid ""
+"The most common place to generate a URL is from within a template when "
+"linking between pages in your application. This is done just as before, but "
+"using a template helper function:"
+msgstr ""
+
+#: ../../book/routing.rst:1553
+msgid "Generating Absolute URLs"
+msgstr ""
+
+#: ../../book/routing.rst:1555
+msgid ""
+"By default, the router will generate relative URLs (e.g. ``/blog``). From a "
+"controller, simply pass ``true`` to the third argument of the "
+"``generateUrl()`` method::"
+msgstr ""
+
+#: ../../book/routing.rst:1562
+msgid ""
+"From a template, in Twig, simply use the ``url()`` function (which generates"
+" an absolute URL) rather than the ``path()`` function (which generates a "
+"relative URL). In PHP, pass ``true`` to ``generate()``:"
+msgstr ""
+
+#: ../../book/routing.rst:1584
+msgid ""
+"The host that's used when generating an absolute URL is automatically "
+"detected using the current ``Request`` object. When generating absolute URLs"
+" from outside the web context (for instance in a console command) this "
+"doesn't work. See :doc:`/cookbook/console/sending_emails` to learn how to "
+"solve this problem."
+msgstr ""
+
+#: ../../book/routing.rst:1591
+msgid "Summary"
+msgstr ""
+
+#: ../../book/routing.rst:1593
+msgid ""
+"Routing is a system for mapping the URL of incoming requests to the "
+"controller function that should be called to process the request. It both "
+"allows you to specify beautiful URLs and keeps the functionality of your "
+"application decoupled from those URLs. Routing is a bidirectional mechanism,"
+" meaning that it should also be used to generate URLs."
+msgstr ""
+
+#: ../../book/routing.rst:1600
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/routing.rst:1602
+msgid ":doc:`/cookbook/routing/scheme`"
+msgstr ""
+
+#: ../../book/routing.rst:24
+msgid "Basics"
+msgstr ""
+
+#: ../../book/routing.rst:114
+msgid "Under the hood"
+msgstr ""
+
+#: ../../book/routing.rst:149
+msgid "Creating routes"
+msgstr ""
+
+#: ../../book/routing.rst:270
+msgid "Placeholders"
+msgstr ""
+
+#: ../../book/routing.rst:543
+msgid "Requirements"
+msgstr ""
+
+#: ../../book/routing.rst:806
+msgid "Method requirement"
+msgstr ""
+
+#: ../../book/routing.rst:999
+msgid "Advanced example"
+msgstr ""
+
+#: ../../book/routing.rst:999
+msgid "_format parameter"
+msgstr ""
+
+#: ../../book/routing.rst:1135
+msgid "Controllers"
+msgstr ""
+
+#: ../../book/routing.rst:1135
+msgid "Controller"
+msgstr ""
+
+#: ../../book/routing.rst:1135
+msgid "String naming format"
+msgstr ""
+
+#: ../../book/routing.rst:1230
+msgid "Importing routing resources"
+msgstr ""
+
+#: ../../book/routing.rst:1381
+msgid "Debugging"
+msgstr ""
+
+#: ../../book/routing.rst:1511
+msgid "Generating URLs in a template"
+msgstr ""
+
+#: ../../book/routing.rst:1549
+msgid "Absolute URLs"
+msgstr ""

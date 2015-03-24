@@ -1,0 +1,39 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:7
+msgid "How to Configure Monolog to Exclude 404 Errors from the Log"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:9
+msgid ""
+"Sometimes your logs become flooded with unwanted 404 HTTP errors, for "
+"example, when an attacker scans your app for some well-known application "
+"paths (e.g. `/phpmyadmin`). When using a ``fingers_crossed`` handler, you "
+"can exclude logging these 404 errors based on a regular expression in the "
+"MonologBundle configuration:"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:1
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:1
+msgid "Logging"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:1
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:1
+msgid "Exclude 404 Errors"
+msgstr ""
+
+#: ../../cookbook/logging/monolog_regex_based_excludes.rst:1
+msgid "Monolog"
+msgstr ""

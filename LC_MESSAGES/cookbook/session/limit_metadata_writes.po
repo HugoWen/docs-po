@@ -1,0 +1,65 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/session/limit_metadata_writes.rst:5
+msgid "Limit Session Metadata Writes"
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:7
+msgid ""
+"The default behavior of PHP session is to persist the session regardless of "
+"whether the session data has changed or not. In Symfony, each time the "
+"session is accessed, metadata is recorded (session created/last used) which "
+"can be used to determine session age and idle time."
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:12
+msgid ""
+"If for performance reasons you wish to limit the frequency at which the "
+"session persists, this feature can adjust the granularity of the metadata "
+"updates and persist the session less often while still maintaining "
+"relatively accurate metadata. If other session data is changed, the session "
+"will always persist."
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:17
+msgid ""
+"You can tell Symfony not to update the metadata \"session last updated\" "
+"time until a certain amount of time has passed, by setting "
+"``framework.session.metadata_update_threshold`` to a value in seconds "
+"greater than zero:"
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:55
+msgid ""
+"PHP default's behavior is to save the session whether it has been changed or"
+" not. When using ``framework.session.metadata_update_threshold`` Symfony "
+"will wrap the session handler (configured at "
+"``framework.session.handler_id``) into the WriteCheckSessionHandler. This "
+"will prevent any session write if the session was not modified."
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:63
+msgid ""
+"Be aware that if the session is not written at every request, it may be "
+"garbage collected sooner than usual. This means that your users may be "
+"logged out sooner than expected."
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:1
+msgid "Limit Metadata Writes"
+msgstr ""
+
+#: ../../cookbook/session/limit_metadata_writes.rst:1
+msgid "Session"
+msgstr ""

@@ -1,0 +1,251 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/property_access/introduction.rst:6
+msgid "The PropertyAccess Component"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:8
+msgid ""
+"The PropertyAccess component provides function to read and write from/to an "
+"object or array using a simple string notation."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:14
+msgid "You can install the component in two different ways:"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:16
+msgid ""
+":doc:`Install it via Composer</components/using_components>` (``symfony"
+"/property-access`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:17
+msgid ""
+"Use the official Git repository (https://github.com/symfony/PropertyAccess)."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:22
+msgid ""
+"The entry point of this component is the "
+":method:`PropertyAccess::createPropertyAccessor<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccess::createPropertyAccessor>`"
+" factory. This factory will create a new instance of the "
+":class:`Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor` class "
+"with the default configuration::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:32
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccess::createPropertyAccessor`"
+" method was introduced in Symfony 2.3. Previously, it was called "
+"``getPropertyAccessor()``."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:37
+msgid "Reading from Arrays"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:39
+msgid ""
+"You can read an array with the "
+":method:`PropertyAccessor::getValue<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::getValue>`"
+" method. This is done using the index notation that is used in PHP::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:51
+msgid ""
+"As you can see, the method will return ``null`` if the index does not "
+"exists."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:53
+msgid "You can also use multi dimensional arrays::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:69
+msgid "Reading from Objects"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:71
+msgid ""
+"The ``getValue`` method is a very robust method, and you can see all of its "
+"features when working with objects."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:75
+msgid "Accessing public Properties"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:77
+msgid "To read from properties, use the \"dot\" notation::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:93
+msgid ""
+"Accessing public properties is the last option used by ``PropertyAccessor``."
+" It tries to access the value using the below methods first before using the"
+" property directly. For example, if you have a public property that has a "
+"getter method, it will use the getter."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:99
+msgid "Using Getters"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:101
+msgid ""
+"The ``getValue`` method also supports reading using getters. The method will"
+" be created using common naming conventions for getters. It camelizes the "
+"property name (``first_name`` becomes ``FirstName``) and prefixes it with "
+"``get``. So the actual method becomes ``getFirstName``::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:122
+msgid "Using Hassers/Issers"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:124
+msgid ""
+"And it doesn't even stop there. If there is no getter found, the accessor "
+"will look for an isser or hasser. This method is created using the same way "
+"as getters, this means that you can do something like this::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:154
+msgid "This will produce: ``He is an author``"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:157
+msgid "Magic ``__get()`` Method"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:159
+msgid "The ``getValue`` method can also use the magic ``__get`` method::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:181
+msgid "Magic ``__call()`` Method"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:183
+msgid ""
+"At last, ``getValue`` can use the magic ``__call`` method, but you need to "
+"enable this feature by using "
+":class:`Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessorBuilder`::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:216
+msgid "The use of magic ``__call()`` method was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:221
+msgid ""
+"The ``__call`` feature is disabled by default, you can enable it by calling "
+":method:`PropertyAccessorBuilder::enableMagicCallEnabled<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessorBuilder::enableMagicCallEnabled>`"
+" see `Enable other Features`_."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:226
+msgid "Writing to Arrays"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:228
+msgid ""
+"The ``PropertyAccessor`` class can do more than just read an array, it can "
+"also write to an array. This can be achieved using the "
+":method:`PropertyAccessor::setValue<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::setValue>`"
+" method::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:243
+msgid "Writing to Objects"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:245
+msgid ""
+"The ``setValue`` method has the same features as the ``getValue`` method. "
+"You can use setters, the magic ``__set`` method or properties to set "
+"values::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:278
+msgid ""
+"You can also use ``__call`` to set values but you need to enable the "
+"feature, see `Enable other Features`_."
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:315
+msgid "Checking Property Paths"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:317
+msgid ""
+"When you want to check whether "
+":method:`PropertyAccessor::getValue<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::getValue>`"
+" can safely be called without actually calling that method, you can use "
+":method:`PropertyAccessor::isReadable<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::isReadable>`"
+" instead::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:329
+msgid ""
+"The same is possible for "
+":method:`PropertyAccessor::setValue<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::setValue>`:"
+" Call the "
+":method:`PropertyAccessor::isWritable<Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor::isWritable>`"
+" method to find out whether a property path can be updated::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:341
+msgid "Mixing Objects and Arrays"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:343
+msgid "You can also mix objects and arrays::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:374
+msgid "Enable other Features"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:376
+msgid ""
+"The :class:`Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessor` can "
+"be configured to enable extra features. To do that you could use the "
+":class:`Symfony\\\\Component\\\\PropertyAccess\\\\PropertyAccessorBuilder`::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:400
+msgid ""
+"Or you can pass parameters directly to the constructor (not the recommended "
+"way)::"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:1
+#: ../../components/property_access/introduction.rst:1
+msgid "PropertyAccess"
+msgstr ""
+
+#: ../../components/property_access/introduction.rst:1
+msgid "Components"
+msgstr ""

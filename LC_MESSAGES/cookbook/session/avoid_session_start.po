@@ -1,0 +1,44 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/session/avoid_session_start.rst:5
+msgid "Avoid Starting Sessions for Anonymous Users"
+msgstr ""
+
+#: ../../cookbook/session/avoid_session_start.rst:7
+msgid ""
+"Sessions are automatically started whenever you read, write or even check "
+"for the existence of data in the session. This means that if you need to "
+"avoid creating a session cookie for some users, it can be difficult: you "
+"must *completely* avoid accessing the session."
+msgstr ""
+
+#: ../../cookbook/session/avoid_session_start.rst:12
+msgid ""
+"For example, one common problem in this situation involves checking for "
+"flash messages, which are stored in the session. The following code would "
+"guarantee that a session is *always* started:"
+msgstr ""
+
+#: ../../cookbook/session/avoid_session_start.rst:24
+msgid ""
+"Even if the user is not logged in and even if you haven't created any flash "
+"messages, just calling the ``get()`` (or even ``has()``) method of the "
+"``flashbag`` will start a session. This may hurt your application "
+"performance because all users will receive a session cookie. To avoid this "
+"behavior, add a check before trying to access the flash messages:"
+msgstr ""
+
+#: ../../cookbook/session/avoid_session_start.rst:1
+msgid "Sessions, cookies"
+msgstr ""

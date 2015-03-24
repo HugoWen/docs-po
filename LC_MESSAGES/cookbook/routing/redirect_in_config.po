@@ -1,0 +1,80 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/redirect_in_config.rst:5
+msgid "How to Configure a Redirect without a custom Controller"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:7
+msgid ""
+"Sometimes, a URL needs to redirect to another URL. You can do that by "
+"creating a new controller action whose only task is to redirect, but using "
+"the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\RedirectController`"
+" of the FrameworkBundle is even easier."
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:12
+msgid ""
+"You can redirect to a specific path (e.g. ``/about``) or to a specific route"
+" using its name (e.g. ``homepage``)."
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:16
+msgid "Redirecting Using a Path"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:18
+msgid ""
+"Assume there is no default controller for the ``/`` path of your application"
+" and you want to redirect these requests to ``/app``. You will need to use "
+"the "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\RedirectController::urlRedirect`"
+" action to redirect to this new url:"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:89
+msgid ""
+"In this example, you configured a route for the ``/`` path and let the "
+"``RedirectController`` redirect it to ``/app``. The ``permanent`` switch "
+"tells the action to issue a ``301`` HTTP status code instead of the default "
+"``302`` HTTP status code."
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:95
+msgid "Redirecting Using a Route"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:97
+msgid ""
+"Assume you are migrating your website from WordPress to Symfony, you want to"
+" redirect ``/wp-admin`` to the route ``sonata_admin_dashboard``. You don't "
+"know the path, only the route name. This can be achieved using the "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\RedirectController::redirect`"
+" action:"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:158
+msgid ""
+"Because you are redirecting to a route instead of a path, the required "
+"option is called ``route`` in the ``redirect`` action, instead of ``path`` "
+"in the ``urlRedirect`` action."
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/redirect_in_config.rst:1
+msgid "Redirect using Framework:RedirectController"
+msgstr ""

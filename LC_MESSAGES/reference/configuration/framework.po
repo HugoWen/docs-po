@@ -1,0 +1,1012 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/framework.rst:5
+msgid "FrameworkBundle Configuration (\"framework\")"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:7
+msgid ""
+"This reference document is a work in progress. It should be accurate, but "
+"all options are not yet fully covered."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:10
+msgid ""
+"The FrameworkBundle contains most of the \"base\" framework functionality "
+"and can be configured under the ``framework`` key in your application "
+"configuration. This includes settings related to sessions, translation, "
+"forms, validation, routing and more."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:16
+msgid "Configuration"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:18
+msgid "`secret`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:19
+msgid "`http_method_override`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:20
+msgid "`ide`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:21
+msgid "`test`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:22
+msgid "`default_locale`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:23
+msgid "`trusted_proxies`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:25
+msgid "`csrf_protection`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:25
+#: ../../reference/configuration/framework.rst:242
+#: ../../reference/configuration/framework.rst:260
+#: ../../reference/configuration/framework.rst:412
+#: ../../reference/configuration/framework.rst:555
+#: ../../reference/configuration/framework.rst:592
+#: ../../reference/configuration/framework.rst:657
+msgid "enabled"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:26
+msgid "field_name (deprecated)"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:30
+msgid "`form`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:28
+msgid ":ref:`enabled <form-enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:30
+#: ../../reference/configuration/framework.rst:255
+msgid "csrf_protection"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:30
+msgid ":ref:`enabled <csrf-protection-enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:31
+msgid "`field_name`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:41
+msgid "`session`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:33
+msgid "`name`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:34
+msgid "`cookie_lifetime`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:35
+msgid "`cookie_path`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:36
+msgid "`cookie_domain`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:37
+msgid "`cookie_secure`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:38
+msgid "`cookie_httponly`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:39
+msgid "`gc_divisor`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:40
+msgid "`gc_probability`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:41
+msgid "`gc_maxlifetime`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:42
+msgid "`save_path`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:43
+msgid "`serializer`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:44
+msgid ":ref:`enabled<serializer.enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:47
+msgid "`templating`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:46
+msgid "`assets_base_urls`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:47
+msgid "`assets_version`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:48
+msgid "`assets_version_format`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:50
+msgid "`profiler`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:50
+msgid "`collect`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:51
+msgid ":ref:`enabled <profiler.enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:54
+msgid "`translator`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:53
+msgid ":ref:`enabled <translator.enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:54
+msgid "`fallbacks`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:55
+msgid "`logging`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:57
+msgid "`property_accessor`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:57
+msgid "`magic_call`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:58
+msgid "`throw_exception_on_invalid_index`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:65
+msgid "`validation`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:60
+msgid ":ref:`enabled <validation-enabled>`"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:61
+msgid "`cache`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:62
+msgid "`enable_annotations`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:63
+msgid "`translation_domain`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:64
+msgid "`strict_email`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:65
+msgid "`api`_"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:68
+msgid "secret"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:70
+msgid "**type**: ``string`` **required**"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:72
+msgid ""
+"This is a string that should be unique to your application. In practice, "
+"it's used for generating the CSRF tokens, but it could be used in any other "
+"context where having a unique string is useful. It becomes the service "
+"container parameter named ``kernel.secret``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:80
+msgid "http_method_override"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:82
+msgid "The ``http_method_override`` option was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:85
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:87
+msgid ""
+"This determines whether the ``_method`` request parameter is used as the "
+"intended HTTP method on POST requests. If enabled, the "
+":method:`Request::enableHttpMethodParameterOverride "
+"<Symfony\\\\Component\\\\HttpFoundation\\\\Request::enableHttpMethodParameterOverride>`"
+" method gets called automatically. It becomes the service container "
+"parameter named ``kernel.http_method_override``. For more information, see "
+":doc:`/cookbook/routing/method_parameters`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:96
+msgid ""
+"If you're using the :ref:`AppCache Reverse Proxy <symfony2-reverse-proxy>` "
+"with this option, the kernel will ignore the ``_method`` parameter, which "
+"could lead to errors."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:100
+msgid ""
+"To fix this, invoke the ``enableHttpMethodParameterOverride()`` method "
+"before creating the ``Request`` object::"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:113
+msgid "ide"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:115
+#: ../../reference/configuration/framework.rst:285
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:117
+msgid ""
+"If you're using an IDE like TextMate or Mac Vim, then Symfony can turn all "
+"of the file paths in an exception message into a link, which will open that "
+"file in your IDE."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:121
+msgid ""
+"Symfony contains preconfigured urls for some popular IDEs, you can set them "
+"using the following keys:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:124
+msgid "``textmate``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:125
+msgid "``macvim``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:126
+msgid "``emacs``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:127
+msgid "``sublime``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:129
+msgid ""
+"The ``emacs`` and ``sublime`` editors were introduced in Symfony 2.3.14."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:132
+msgid ""
+"You can also specify a custom url string. If you do this, all percentage "
+"signs (``%``) must be doubled to escape that character. For example, if you "
+"have installed `PhpStormOpener`_ and use PHPstorm, you will do something "
+"like:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:164
+msgid ""
+"Of course, since every developer uses a different IDE, it's better to set "
+"this on a system level. This can be done by setting the "
+"``xdebug.file_link_format`` in the ``php.ini`` configuration to the url "
+"string. If this configuration value is set, then the ``ide`` option will be "
+"ignored."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:172
+msgid "test"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:174
+msgid "**type**: ``Boolean``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:176
+msgid ""
+"If this configuration parameter is present (and not ``false``), then the "
+"services related to testing your application (e.g. ``test.client``) are "
+"loaded. This setting should be present in your ``test`` environment (usually"
+" via ``app/config/config_test.yml``). For more information, see "
+":doc:`/book/testing`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:184
+msgid "default_locale"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:186
+msgid "**type**: ``string`` **default**: ``en``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:188
+msgid ""
+"The default locale is used if no ``_locale`` routing parameter has been set."
+" It becomes the service container parameter named ``kernel.default_locale`` "
+"and it is also available with the :method:`Request::getDefaultLocale "
+"<Symfony\\\\Component\\\\HttpFoundation\\\\Request::getDefaultLocale>` "
+"method."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:195
+msgid "trusted_proxies"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:197
+msgid "**type**: ``array``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:199
+msgid ""
+"Configures the IP addresses that should be trusted as proxies. For more "
+"details, see :doc:`/cookbook/request/load_balancer_reverse_proxy`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:202
+msgid ""
+"CIDR notation support was introduced in Symfony 2.3, so you can whitelist "
+"whole subnets (e.g. ``10.0.0.0/8``, ``fc00::/7``)."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:237
+msgid "form"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:244
+#: ../../reference/configuration/framework.rst:414
+#: ../../reference/configuration/framework.rst:562
+#: ../../reference/configuration/framework.rst:594
+#: ../../reference/configuration/framework.rst:637
+#: ../../reference/configuration/framework.rst:646
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:246
+msgid "Whether or not to enable support for the Form component."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:248
+msgid ""
+"If you don't use forms, setting this to ``false`` may increase your "
+"application's performance because less services will be loaded into the "
+"container."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:251
+msgid ""
+"If this is activated, the :ref:`validation system <validation-enabled>` is "
+"also enabled automatically."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:262
+msgid ""
+"**type**: ``boolean`` **default**: ``true`` if form support is enabled, "
+"``false`` otherwise"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:265
+msgid ""
+"This option can be used to disable CSRF protection on *all* forms. But you "
+"can also :ref:`disable CSRF protection on individual forms <form-disable-"
+"csrf>`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:268
+msgid ""
+"If you're using forms, but want to avoid starting your session (e.g. using "
+"forms in an API-only website), ``csrf_protection`` will need to be set to "
+"``false``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:273
+msgid "field_name"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:275
+msgid "**type**: ``string`` **default**: ``\"_token\"``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:277
+msgid ""
+"The name of the hidden field used to render the :ref:`CSRF token <forms-"
+"csrf>`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:280
+msgid "session"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:283
+msgid "name"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:287
+msgid ""
+"This specifies the name of the session cookie. By default it will use the "
+"cookie name which is defined in the ``php.ini`` with the ``session.name`` "
+"directive."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:291
+msgid "cookie_lifetime"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:293
+msgid "**type**: ``integer`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:295
+msgid ""
+"This determines the lifetime of the session - in seconds. It will use "
+"``null`` by default, which means ``session.cookie_lifetime`` value from "
+"``php.ini`` will be used. Setting this value to ``0`` means the cookie is "
+"valid for the length of the browser session."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:301
+msgid "cookie_path"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:303
+msgid "**type**: ``string`` **default**: ``/``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:305
+msgid ""
+"This determines the path to set in the session cookie. By default it will "
+"use ``/``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:308
+msgid "cookie_domain"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:310
+msgid "**type**: ``string`` **default**: ``''``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:312
+msgid ""
+"This determines the domain to set in the session cookie. By default it's "
+"blank, meaning the host name of the server which generated the cookie "
+"according to the cookie specification."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:317
+msgid "cookie_secure"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:319
+#: ../../reference/configuration/framework.rst:326
+#: ../../reference/configuration/framework.rst:675
+#: ../../reference/configuration/framework.rst:693
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:321
+msgid ""
+"This determines whether cookies should only be sent over secure connections."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:324
+msgid "cookie_httponly"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:328
+msgid ""
+"This determines whether cookies should only be accessible through the HTTP "
+"protocol. This means that the cookie won't be accessible by scripting "
+"languages, such as JavaScript. This setting can effectively help to reduce "
+"identity theft through XSS attacks."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:334
+msgid "gc_probability"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:336
+msgid "**type**: ``integer`` **default**: ``1``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:338
+msgid ""
+"This defines the probability that the garbage collector (GC) process is "
+"started on every session initialization. The probability is calculated by "
+"using ``gc_probability`` / ``gc_divisor``, e.g. 1/100 means there is a 1% "
+"chance that the GC process will start on each request."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:344
+msgid "gc_divisor"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:346
+msgid "**type**: ``integer`` **default**: ``100``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:348
+msgid "See `gc_probability`_."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:351
+msgid "gc_maxlifetime"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:353
+msgid "**type**: ``integer`` **default**: ``1440``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:355
+msgid ""
+"This determines the number of seconds after which data will be seen as "
+"\"garbage\" and potentially cleaned up. Garbage collection may occur during "
+"session start and depends on `gc_divisor`_ and `gc_probability`_."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:360
+msgid "save_path"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:362
+msgid "**type**: ``string`` **default**: ``%kernel.cache.dir%/sessions``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:364
+msgid ""
+"This determines the argument to be passed to the save handler. If you choose"
+" the default file handler, this is the path where the session files are "
+"created. For more information, see "
+":doc:`/cookbook/session/sessions_directory`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:368
+msgid ""
+"You can also set this value to the ``save_path`` of your ``php.ini`` by "
+"setting the value to ``null``:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:407
+msgid "serializer"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:416
+msgid ""
+"Whether to enable the ``serializer`` service or not in the service "
+"container."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:418
+msgid "For more details, see :doc:`/cookbook/serializer`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:421
+msgid "templating"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:424
+msgid "assets_base_urls"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:426
+msgid "**default**: ``{ http: [], ssl: [] }``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:428
+msgid ""
+"This option allows you to define base URLs to be used for assets referenced "
+"from ``http`` and ``ssl`` (``https``) pages. A string value may be provided "
+"in lieu of a single-element array. If multiple base URLs are provided, "
+"Symfony will select one from the collection each time it generates an "
+"asset's path."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:433
+msgid ""
+"For your convenience, ``assets_base_urls`` can be set directly with a string"
+" or array of strings, which will be automatically organized into collections"
+" of base URLs for ``http`` and ``https`` requests. If a URL starts with "
+"``https://`` or is `protocol-relative`_ (i.e. starts with `//`) it will be "
+"added to both collections. URLs starting with ``http://`` will only be added"
+" to the ``http`` collection."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:443
+msgid "assets_version"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:445
+#: ../../reference/configuration/framework.rst:667
+#: ../../reference/configuration/framework.rst:705
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:447
+msgid ""
+"This option is used to *bust* the cache on assets by globally adding a query"
+" parameter to all rendered asset paths (e.g. ``/images/logo.png?v2``). This "
+"applies only to assets rendered via the Twig ``asset`` function (or PHP "
+"equivalent) as well as assets rendered with Assetic."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:452
+msgid "For example, suppose you have the following:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:464
+msgid ""
+"By default, this will render a path to your image such as "
+"``/images/logo.png``. Now, activate the ``assets_version`` option:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:503
+msgid ""
+"Now, the same asset will be rendered as ``/images/logo.png?v2`` If you use "
+"this feature, you **must** manually increment the ``assets_version`` value "
+"before each deployment so that the query parameters change."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:507
+msgid ""
+"It's also possible to set the version value on an asset-by-asset basis "
+"(instead of using the global version - e.g. ``v2`` - set here). See "
+":ref:`Versioning by Asset <book-templating-version-by-asset>` for details."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:511
+msgid ""
+"You can also control how the query string works via the "
+"`assets_version_format`_ option."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:515
+msgid "assets_version_format"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:517
+msgid "**type**: ``string`` **default**: ``%%s?%%s``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:519
+msgid ""
+"This specifies a :phpfunction:`sprintf` pattern that will be used with the "
+"`assets_version`_ option to construct an asset's path. By default, the "
+"pattern adds the asset's version as a query string. For example, if "
+"``assets_version_format`` is set to ``%%s?version=%%s`` and "
+"``assets_version`` is set to ``5``, the asset's path would be "
+"``/images/logo.png?version=5``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:527
+msgid ""
+"All percentage signs (``%``) in the format string must be doubled to escape "
+"the character. Without escaping, values might inadvertently be interpreted "
+"as :ref:`book-service-container-parameters`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:533
+msgid ""
+"Some CDN's do not support cache-busting via query strings, so injecting the "
+"version into the actual file path is necessary. Thankfully, "
+"``assets_version_format`` is not limited to producing versioned query "
+"strings."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:537
+msgid ""
+"The pattern receives the asset's original path and version as its first and "
+"second parameters, respectively. Since the asset's path is one parameter, "
+"you cannot modify it in-place (e.g. ``/images/logo-v5.png``); however, you "
+"can prefix the asset's path using a pattern of ``version-%%2$s/%%1$s``, "
+"which would result in the path ``version-5/images/logo.png``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:543
+msgid ""
+"URL rewrite rules could then be used to disregard the version prefix before "
+"serving the asset. Alternatively, you could copy assets to the appropriate "
+"version path as part of your deployment process and forgot any URL "
+"rewriting. The latter option is useful if you would like older asset "
+"versions to remain accessible at their original URL."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:550
+msgid "profiler"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:557
+msgid ""
+"The ``enabled`` option was introduced in Symfony 2.2. Prior to Symfony 2.2, "
+"the profiler could only be disabled by omitting the ``framework.profiler`` "
+"configuration entirely."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:564
+msgid ""
+"The profiler can be enabled by setting this key to ``true``. When you are "
+"using the Symfony Standard Edition, the profiler is enabled in the ``dev`` "
+"and ``test`` environments."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:569
+msgid "collect"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:571
+msgid ""
+"The ``collect`` option was introduced in Symfony 2.3. Previously, when "
+"``profiler.enabled`` was ``false``, the profiler *was* actually enabled, but"
+" the collectors were disabled. Now, the profiler and the collectors can be "
+"controlled independently."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:577
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:579
+msgid ""
+"This option configures the way the profiler behaves when it is enabled. If "
+"set to ``true``, the profiler collects data for all requests. If you want to"
+" only collect information on-demand, you can set the ``collect`` flag to "
+"``false`` and activate the data collectors by hand::"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:587
+msgid "translator"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:596
+msgid ""
+"Whether or not to enable the ``translator`` service in the service "
+"container."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:601
+msgid "fallbacks"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:603
+msgid "**type**: ``string|array`` **default**: ``array('en')``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:605
+msgid ""
+"The ``fallbacks`` option was introduced in Symfony 2.3.25. Prior to Symfony "
+"2.3.25, it was called ``fallback`` and only allowed one fallback language "
+"defined as a string. Please note that you can still use the old ``fallback``"
+" option if you want define only one fallback."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:612
+msgid ""
+"This option is used when the translation key for the current locale wasn't "
+"found."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:614
+msgid "For more details, see :doc:`/book/translation`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:619
+msgid "logging"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:621
+msgid "The ``logging`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:624
+msgid ""
+"**default**: ``true`` when the debug mode is enabled, ``false`` otherwise."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:626
+msgid ""
+"When ``true``, a log entry is made whenever the translator cannot find a "
+"translation for a given key. The logs are made to the ``translation`` "
+"channel and at the ``debug`` for level for keys where there is a translation"
+" in the fallback locale and the ``warning`` level if there is no translation"
+" to use at all."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:632
+msgid "property_accessor"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:635
+msgid "magic_call"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:639
+msgid ""
+"When enabled, the ``property_accessor`` service uses PHP's :ref:`magic "
+"__call() method <components-property-access-magic-call>` when its "
+"``getValue()`` method is called."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:644
+msgid "throw_exception_on_invalid_index"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:648
+msgid ""
+"When enabled, the ``property_accessor`` service throws an exception when you"
+" try to access an invalid index of an array."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:652
+msgid "validation"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:659
+msgid ""
+"**type**: ``boolean`` **default**: ``true`` if :ref:`form support is enabled"
+" <form-enabled>`, ``false`` otherwise"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:662
+msgid "Whether or not to enable validation support."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:665
+msgid "cache"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:669
+msgid ""
+"The service that is used to persist class metadata in a cache. The service "
+"has to implement the "
+":class:`Symfony\\\\Component\\\\Validator\\\\Mapping\\\\Cache\\\\CacheInterface`."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:673
+msgid "enable_annotations"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:677
+msgid ""
+"If this option is enabled, validation constraints can be defined using "
+"annotations."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:680
+msgid "translation_domain"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:682
+msgid "**type**: ``string`` **default**: ``validators``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:684
+msgid ""
+"The translation domain that is used when translating validation constraint "
+"error messages."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:688
+msgid "strict_email"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:690
+msgid "The ``strict_email`` option was introduced in Symfony 2.5."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:695
+msgid ""
+"If this option is enabled, the `egulias/email-validator`_ library will be "
+"used by the :doc:`/reference/constraints/Email` constraint validator. "
+"Otherwise, the validator uses a simple regular expression to validate email "
+"addresses."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:700
+msgid "api"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:702
+msgid "The ``api`` option was introduced in Symfony 2.5."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:707
+msgid ""
+"Starting with Symfony 2.5, the Validator component introduced a new "
+"validation API. The ``api`` option is used to switch between the different "
+"implementations:"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:711
+msgid "``2.4``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:711
+msgid "Use the vaidation API that is compatible with older Symfony versions."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:714
+msgid "``2.5``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:714
+msgid "Use the validation API introduced in Symfony 2.5."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:720
+msgid "``2.5-bc`` or ``auto``"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:717
+msgid ""
+"If you omit a value or set the ``api`` option to ``2.5-bc`` or ``auto``, "
+"Symfony will use an API implementation that is compatible with both the "
+"legacy implementation and the ``2.5`` implementation. You have to use PHP "
+"5.3.9 or higher to be able to use this implementation."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:722
+msgid ""
+"To capture these logs in the ``prod`` environment, configure a :doc:`channel"
+" handler </cookbook/logging/channels_handlers>` in ``config_prod.yml`` for "
+"the ``translation`` channel and set its ``level`` to ``debug``."
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:727
+msgid "Full default Configuration"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:1
+msgid "Configuration reference"
+msgstr ""
+
+#: ../../reference/configuration/framework.rst:1
+msgid "Framework"
+msgstr ""

@@ -1,0 +1,77 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/code/bugs.rst:2
+msgid "Reporting a Bug"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:4
+msgid ""
+"Whenever you find a bug in Symfony, we kindly ask you to report it. It helps"
+" us make a better Symfony."
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:9
+msgid ""
+"If you think you've found a security issue, please use the special "
+":doc:`procedure <security>` instead."
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:12
+msgid "Before submitting a bug:"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:14
+msgid ""
+"Double-check the official :doc:`documentation </index>` to see if you're not"
+" misusing the framework;"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:17
+msgid ""
+"Ask for assistance on the `users mailing-list`_, the `forum`_, or on the "
+"#symfony `IRC channel`_ if you're not sure if your issue is really a bug."
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:20
+msgid ""
+"If your problem definitely looks like a bug, report it using the official "
+"bug `tracker`_ and follow some basic rules:"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:23
+msgid "Use the title field to clearly describe the issue;"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:25
+msgid ""
+"Describe the steps needed to reproduce the bug with short code examples "
+"(providing a unit test that illustrates the bug is best);"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:28
+msgid ""
+"If the bug you experienced affects more than one layer, providing a simple "
+"failing unit test may not be sufficient. In this case, please fork the "
+"`Symfony Standard Edition`_ and reproduce your issue on a new branch;"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:32
+msgid ""
+"Give as much detail as possible about your environment (OS, PHP version, "
+"Symfony version, enabled extensions, ...);"
+msgstr ""
+
+#: ../../contributing/code/bugs.rst:35
+msgid "*(optional)* Attach a :doc:`patch <patches>`."
+msgstr ""

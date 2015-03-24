@@ -1,0 +1,98 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/apache_router.rst:5
+msgid "How to Use the Apache Router"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:7
+msgid ""
+"Symfony, while fast out of the box, also provides various ways to increase "
+"that speed with a little bit of tweaking. One of these ways is by letting "
+"Apache handle routes directly, rather than using Symfony for this task."
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:12
+msgid ""
+"Apache router was deprecated in Symfony 2.5 and will be removed in Symfony "
+"3.0. Since the PHP implementation of the Router was improved, performance "
+"gains were no longer significant (while it's very hard to replicate the same"
+" behavior)."
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:18
+msgid "Change Router Configuration Parameters"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:20
+msgid ""
+"To dump Apache routes you must first tweak some configuration parameters to "
+"tell Symfony to use the ``ApacheUrlMatcher`` instead of the default one:"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:53
+msgid ""
+"Note that "
+":class:`Symfony\\\\Component\\\\Routing\\\\Matcher\\\\ApacheUrlMatcher` "
+"extends :class:`Symfony\\\\Component\\\\Routing\\\\Matcher\\\\UrlMatcher` so"
+" even if you don't regenerate the mod_rewrite rules, everything will work "
+"(because at the end of ``ApacheUrlMatcher::match()`` a call to "
+"``parent::match()`` is done)."
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:60
+msgid "Generating mod_rewrite Rules"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:62
+msgid ""
+"To test that it's working, create a very basic route for the AppBundle:"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:87
+msgid "Now generate the mod_rewrite rules:"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:93
+msgid "Which should roughly output the following:"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:105
+msgid ""
+"You can now rewrite ``web/.htaccess`` to use the new rules, so with this "
+"example it should look like this:"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:124
+msgid ""
+"The procedure above should be done each time you add/change a route if you "
+"want to take full advantage of this setup."
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:126
+msgid "That's it! You're now all set to use Apache routes."
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:130
+msgid "Additional Tweaks"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:132
+msgid ""
+"To save a little bit of processing time, change occurrences of ``Request`` "
+"to ``ApacheRequest`` in ``web/app.php``::"
+msgstr ""
+
+#: ../../cookbook/configuration/apache_router.rst:1
+msgid "Apache Router"
+msgstr ""

@@ -1,0 +1,72 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/service_container_parameters.rst:5
+msgid "How to Use Service Container Parameters in your Routes"
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:7
+msgid ""
+"Sometimes you may find it useful to make some parts of your routes globally "
+"configurable. For instance, if you build an internationalized site, you'll "
+"probably start with one or two locales. Surely you'll add a requirement to "
+"your routes to prevent a user from matching a locale other than the locales "
+"you support."
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:13
+msgid ""
+"You *could* hardcode your ``_locale`` requirement in all your routes, but a "
+"better solution is to use a configurable service container parameter right "
+"inside your routing configuration:"
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:57
+msgid ""
+"You can now control and set the  ``app.locales`` parameter somewhere in your"
+" container:"
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:80
+msgid ""
+"You can also use a parameter to define your route path (or part of your "
+"path):"
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:120
+msgid ""
+"Just like in normal service container configuration files, if you actually "
+"need a ``%`` in your route, you can escape the percent sign by doubling it, "
+"e.g. ``/score-50%%``, which would resolve to ``/score-50%``."
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:124
+msgid ""
+"However, as the ``%`` characters included in any URL are automatically "
+"encoded, the resulting URL of this example would be ``/score-50%25`` "
+"(``%25`` is the result of encoding the ``%`` character)."
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:130
+msgid ""
+"For parameter handling within a Dependency Injection class see "
+":doc:`/cookbook/configuration/using_parameters_in_dic`."
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/service_container_parameters.rst:1
+msgid "Service Container Parameters"
+msgstr ""

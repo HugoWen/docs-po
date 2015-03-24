@@ -1,0 +1,60 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/index.rst:2
+msgid "Official Symfony Best Practices"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:1
+msgid ":doc:`/best_practices/introduction`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:2
+msgid ":doc:`/best_practices/creating-the-project`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:3
+msgid ":doc:`/best_practices/configuration`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:4
+msgid ":doc:`/best_practices/business-logic`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:5
+msgid ":doc:`/best_practices/controllers`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:6
+msgid ":doc:`/best_practices/templates`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:7
+msgid ":doc:`/best_practices/forms`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:8
+msgid ":doc:`/best_practices/i18n`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:9
+msgid ":doc:`/best_practices/security`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:10
+msgid ":doc:`/best_practices/web-assets`"
+msgstr ""
+
+#: ../../best_practices/map.rst.inc:11
+msgid ":doc:`/best_practices/tests`"
+msgstr ""

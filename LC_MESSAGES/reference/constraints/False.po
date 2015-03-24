@@ -1,0 +1,126 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/False.rst:2
+msgid "False"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:4
+msgid ""
+"Validates that a value is ``false``. Specifically, this checks to see if the"
+" value is exactly ``false``, exactly the integer ``0``, or exactly the "
+"string \"``0``\"."
+msgstr ""
+
+#: ../../reference/constraints/False.rst:8
+msgid "Also see :doc:`True <True>`."
+msgstr ""
+
+#: ../../reference/constraints/False.rst:11
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:11
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:13
+#: ../../reference/constraints/False.rst:111
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:13
+msgid "`message`_"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:16
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\False`"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:18
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\FalseValidator`"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:22
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:24
+msgid ""
+"The ``False`` constraint can be applied to a property or a \"getter\" "
+"method, but is most commonly useful in the latter case. For example, suppose"
+" that you want to guarantee that some ``state`` property is *not* in a "
+"dynamic ``invalidStates`` array. First, you'd create a \"getter\" method::"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:38
+msgid ""
+"In this case, the underlying object is only valid if the ``isStateInvalid`` "
+"method returns **false**:"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:107
+msgid ""
+"When using YAML, be sure to surround ``False`` with quotes (``'False'``) or "
+"else YAML will convert this into a ``false`` Boolean value."
+msgstr ""
+
+#: ../../reference/constraints/False.rst:114
+msgid "message"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:116
+msgid "**type**: ``string`` **default**: ``This value should be false.``"
+msgstr ""
+
+#: ../../reference/constraints/False.rst:118
+msgid "This message is shown if the underlying data is not false."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:2
+msgid "payload"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:6
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:9
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator component, "
+"but its processing is completely up to."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:13
+msgid ""
+"For example, you may want to used :doc:`several error levels "
+"</cookbook/validation/severity>` to present failed constraint differently in"
+" the front-end depending on the severity of the error."
+msgstr ""

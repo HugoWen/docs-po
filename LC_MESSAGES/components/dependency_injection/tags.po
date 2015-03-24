@@ -1,0 +1,147 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/tags.rst:5
+msgid "Working with Tagged Services"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:7
+msgid ""
+"Tags are a generic string (along with some options) that can be applied to "
+"any service. By themselves, tags don't actually alter the functionality of "
+"your services in any way. But if you choose to, you can ask a container "
+"builder for a list of all services that were tagged with some specific tag. "
+"This is useful in compiler passes where you can find these services and use "
+"or modify them in some specific way."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:14
+msgid ""
+"For example, if you are using Swift Mailer you might imagine that you want "
+"to implement a \"transport chain\", which is a collection of classes "
+"implementing ``\\Swift_Transport``. Using the chain, you'll want Swift "
+"Mailer to try several ways of transporting the message until one succeeds."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:19
+msgid "To begin with, define the ``TransportChain`` class::"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:36
+msgid "Then, define the chain as a service:"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:65
+msgid "Define Services with a custom Tag"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:67
+msgid ""
+"Now you might want several of the ``\\Swift_Transport`` classes to be "
+"instantiated and added to the chain automatically using the "
+"``addTransport()`` method. For example you may add the following transports "
+"as services:"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:118
+msgid ""
+"Notice that each was given a tag named ``acme_mailer.transport``. This is "
+"the custom tag that you'll use in your compiler pass. The compiler pass is "
+"what makes this tag \"mean\" something."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:123
+msgid "Create a ``CompilerPass``"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:125
+msgid ""
+"Your compiler pass can now ask the container for any services with the "
+"custom tag::"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:156
+msgid ""
+"The ``process()`` method checks for the existence of the "
+"``acme_mailer.transport_chain`` service, then looks for all services tagged "
+"``acme_mailer.transport``. It adds to the definition of the "
+"``acme_mailer.transport_chain`` service a call to ``addTransport()`` for "
+"each \"acme_mailer.transport\" service it has found. The first argument of "
+"each of these calls will be the mailer transport service itself."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:164
+msgid "Register the Pass with the Container"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:166
+msgid ""
+"You also need to register the pass with the container, it will then be run "
+"when the container is compiled::"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:176
+msgid ""
+"Compiler passes are registered differently if you are using the full stack "
+"framework. See :doc:`/cookbook/service_container/compiler_passes` for more "
+"details."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:181
+msgid "Adding additional Attributes on Tags"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:183
+msgid ""
+"Sometimes you need additional information about each service that's tagged "
+"with your tag. For example, you might want to add an alias to each member of"
+" the transport chain."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:186
+msgid "To begin with, change the ``TransportChain`` class::"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:210
+msgid ""
+"As you can see, when ``addTransport`` is called, it takes not only a "
+"``Swift_Transport`` object, but also a string alias for that transport. So, "
+"how can you allow each tagged transport service to also supply an alias?"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:214
+msgid "To answer this, change the service declaration:"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:263
+msgid ""
+"Notice that you've added a generic ``alias`` key to the tag. To actually use"
+" this, update the compiler::"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:296
+msgid ""
+"The double loop may be confusing. This is because a service can have more "
+"than one tag. You tag a service twice or more with the "
+"``acme_mailer.transport`` tag. The second foreach loop iterates over the "
+"``acme_mailer.transport`` tags set for the current service and gives you the"
+" attributes."
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/tags.rst:1
+msgid "Tags"
+msgstr ""

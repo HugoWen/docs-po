@@ -1,0 +1,105 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/console/commands_as_services.rst:5
+msgid "How to Define Commands as Services"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:7
+msgid ""
+"By default, Symfony will take a look in the ``Command`` directory of each "
+"bundle and automatically register your commands. If a command extends the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Command\\\\ContainerAwareCommand`,"
+" Symfony will even inject the container. While making life easier, this has "
+"some limitations:"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:13
+msgid "Your command must live in the ``Command`` directory;"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:14
+msgid ""
+"There's no way to conditionally register your service based on the "
+"environment or availability of some dependencies;"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:16
+msgid ""
+"You can't access the container in the ``configure()`` method (because "
+"``setContainer`` hasn't been called yet);"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:18
+msgid ""
+"You can't use the same class to create many commands (i.e. each with "
+"different configuration)."
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:21
+msgid ""
+"To solve these problems, you can register your command as a service and tag "
+"it with ``console.command``:"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:60
+msgid "Using Dependencies and Parameters to Set Default Values for Options"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:62
+msgid ""
+"Imagine you want to provide a default value for the ``name`` option. You "
+"could pass one of the following as the 5th argument of ``addOption()``:"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:65
+msgid "a hardcoded string;"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:66
+msgid "a container parameter (e.g. something from parameters.yml);"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:67
+msgid "a value computed by a service (e.g. a repository)."
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:69
+msgid ""
+"By extending ``ContainerAwareCommand``, only the first is possible, because "
+"you can't access the container inside the ``configure()`` method. Instead, "
+"inject any parameter or service you need into the constructor. For example, "
+"suppose you have some ``NameRepository`` service that you'll use to get your"
+" default value::"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:113
+msgid ""
+"Now, just update the arguments of your service configuration like normal to "
+"inject the ``NameRepository``. Great, you now have a dynamic default value!"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:118
+msgid ""
+"Be careful not to actually do any work in ``configure`` (e.g. make database "
+"queries), as your code will be run, even if you're using the console to "
+"execute a different command."
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../cookbook/console/commands_as_services.rst:1
+msgid "Commands as Services"
+msgstr ""

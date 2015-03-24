@@ -1,0 +1,86 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/translation/custom_formats.rst:5
+#: ../../components/translation/custom_formats.rst:1
+msgid "Adding Custom Format Support"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:7
+msgid ""
+"Sometimes, you need to deal with custom formats for translation files. The "
+"Translation component is flexible enough to support this. Just create a "
+"loader (to load translations) and, optionally, a dumper (to dump "
+"translations)."
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:11
+msgid ""
+"Imagine that you have a custom format where translation messages are defined"
+" using one line for each translation and parentheses to wrap the key and the"
+" message. A translation file would look like this:"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:24
+msgid "Creating a Custom Loader"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:26
+msgid ""
+"To define a custom loader that is able to read these kinds of files, you "
+"must create a new class that implements the "
+":class:`Symfony\\\\Component\\\\Translation\\\\Loader\\\\LoaderInterface`. "
+"The "
+":method:`Symfony\\\\Component\\\\Translation\\\\Loader\\\\LoaderInterface::load`"
+" method will get a filename and parse it into an array. Then, it will create"
+" the catalog that will be returned::"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:57
+msgid "Once created, it can be used as any other loader::"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:68
+msgid "It will print *\"accueil\"*."
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:73
+msgid "Creating a Custom Dumper"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:75
+msgid ""
+"It is also possible to create a custom dumper for your format, which is "
+"useful when using the extraction commands. To do so, a new class "
+"implementing the "
+":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\DumperInterface` "
+"must be created. To write the dump contents into a file, extending the "
+":class:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\FileDumper` class "
+"will save a few lines::"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:105
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\FileDumper::format`"
+" method creates the output string, that will be used by the "
+":method:`Symfony\\\\Component\\\\Translation\\\\Dumper\\\\FileDumper::dump` "
+"method of the FileDumper class to create the file. The dumper can be used "
+"like any other built-in dumper. In the following example, the translation "
+"messages defined in the YAML file are dumped into a text file with the "
+"custom format::"
+msgstr ""
+
+#: ../../components/translation/custom_formats.rst:1
+msgid "Translation"
+msgstr ""

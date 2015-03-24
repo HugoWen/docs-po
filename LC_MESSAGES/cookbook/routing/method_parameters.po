@@ -1,0 +1,60 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/method_parameters.rst:5
+msgid "How to Use HTTP Methods beyond GET and POST in Routes"
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:7
+msgid ""
+"The HTTP method of a request is one of the requirements that can be checked "
+"when seeing if it matches a route. This is introduced in the routing chapter"
+" of the book \":doc:`/book/routing`\" with examples using GET and POST. You "
+"can also use other HTTP verbs in this way. For example, if you have a blog "
+"post entry then you could use the same URL path to show it, make changes to "
+"it and delete it by matching on GET, PUT and DELETE."
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:75
+msgid "Faking the Method with ``_method``"
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:79
+msgid ""
+"The ``_method`` functionality shown here is disabled by default in Symfony "
+"2.2 and enabled by default in Symfony 2.3. To control it in Symfony 2.2, you"
+" must call :method:`Request::enableHttpMethodParameterOverride "
+"<Symfony\\\\Component\\\\HttpFoundation\\\\Request::enableHttpMethodParameterOverride>`"
+" before you handle the request (e.g. in your front controller). In Symfony "
+"2.3, use the :ref:`configuration-framework-http_method_override` option."
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:85
+msgid ""
+"Unfortunately, life isn't quite this simple, since most browsers do not "
+"support sending PUT and DELETE requests. Fortunately, Symfony provides you "
+"with a simple way of working around this limitation. By including a "
+"``_method`` parameter in the query string or parameters of an HTTP request, "
+"Symfony will use this as the method when matching routes. Forms "
+"automatically include a hidden field for this parameter if their submission "
+"method is not GET or POST. See :ref:`the related chapter in the forms "
+"documentation<book-forms-changing-action-and-method>` for more information."
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/method_parameters.rst:1
+msgid "methods"
+msgstr ""

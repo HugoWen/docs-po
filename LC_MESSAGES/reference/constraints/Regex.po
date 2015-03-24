@@ -1,0 +1,191 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/Regex.rst:2
+msgid "Regex"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:4
+msgid "Validates that a value matches a regular expression."
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:7
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:7
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:9
+#: ../../reference/constraints/Regex.rst:165
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:9
+msgid "`pattern`_"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:10
+msgid "`htmlPattern`_"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:11
+msgid "`match`_"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:12
+msgid "`message`_"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:13
+msgid "`payload`_"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Regex`"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:17
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\RegexValidator`"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:21
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:23
+msgid ""
+"Suppose you have a ``description`` field and you want to verify that it "
+"begins with a valid word character. The regular expression to test for this "
+"would be ``/^\\w+/``, indicating that you're looking for at least one or "
+"more word characters at the beginning of your string:"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:88
+msgid ""
+"Alternatively, you can set the `match`_ option to ``false`` in order to "
+"assert that a given string does *not* match. In the following example, "
+"you'll assert that the ``firstName`` field does not contain any numbers and "
+"give it a custom message:"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:168
+msgid "pattern"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:170
+msgid ""
+"**type**: ``string`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:172
+msgid ""
+"This required option is the regular expression pattern that the input will "
+"be matched against. By default, this validator will fail if the input string"
+" does *not* match this regular expression (via the :phpfunction:`preg_match`"
+" PHP function). However, if `match`_ is set to false, then validation will "
+"fail if the input string *does* match this pattern."
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:179
+msgid "htmlPattern"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:181
+msgid "**type**: ``string|Boolean`` **default**: null"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:183
+msgid ""
+"This option specifies the pattern to use in the HTML5 ``pattern`` attribute."
+" You usually don't need to specify this option because by default, the "
+"constraint will convert the pattern given in the `pattern`_ option into an "
+"HTML5 compatible pattern. This means that the delimiters are removed (e.g. "
+"``/[a-z]+/`` becomes ``[a-z]+``)."
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:188
+msgid ""
+"However, there are some other incompatibilities between both patterns which "
+"cannot be fixed by the constraint. For instance, the HTML5 ``pattern`` "
+"attribute does not support flags. If you have a pattern like ``/[a-z]+/i``, "
+"you need to specify the HTML5 compatible pattern in the ``htmlPattern`` "
+"option:"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:260
+msgid "Setting ``htmlPattern`` to false will disable client side validation."
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:263
+msgid "match"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:265
+msgid "**type**: ``Boolean`` default: ``true``"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:267
+msgid ""
+"If ``true`` (or not set), this validator will pass if the given string "
+"matches the given `pattern`_ regular expression. However, when this option "
+"is set to ``false``, the opposite will occur: validation will pass only if "
+"the given string does **not** match the `pattern`_ regular expression."
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:273
+msgid "message"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:275
+msgid "**type**: ``string`` **default**: ``This value is not valid.``"
+msgstr ""
+
+#: ../../reference/constraints/Regex.rst:277
+msgid "This is the message that will be shown if this validator fails."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:2
+msgid "payload"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:6
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:9
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator component, "
+"but its processing is completely up to."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:13
+msgid ""
+"For example, you may want to used :doc:`several error levels "
+"</cookbook/validation/severity>` to present failed constraint differently in"
+" the front-end depending on the severity of the error."
+msgstr ""

@@ -1,0 +1,416 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dom_crawler.rst:6
+msgid "The DomCrawler Component"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:8
+msgid ""
+"The DomCrawler component eases DOM navigation for HTML and XML documents."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:12
+msgid ""
+"While possible, the DomCrawler component is not designed for manipulation of"
+" the DOM or re-dumping HTML/XML."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:16
+msgid "Installation"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:18
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:20
+msgid ""
+":doc:`Install it via Composer </components/using_components>` (``symfony"
+"/dom-crawler`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:21
+msgid ""
+"Use the official Git repository (https://github.com/symfony/DomCrawler)."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:24
+msgid "Usage"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:26
+msgid ""
+"The :class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` class provides "
+"methods to query and manipulate HTML and XML documents."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:29
+msgid ""
+"An instance of the Crawler represents a set (:phpclass:`SplObjectStorage`) "
+"of :phpclass:`DOMElement` objects, which are basically nodes that you can "
+"traverse easily::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:51
+msgid ""
+"Specialized :class:`Symfony\\\\Component\\\\DomCrawler\\\\Link` and "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Form` classes are useful for "
+"interacting with html links and forms as you traverse through the HTML tree."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:57
+msgid ""
+"The DomCrawler will attempt to automatically fix your HTML to match the "
+"official specification. For example, if you nest a ``<p>`` tag inside "
+"another ``<p>`` tag, it will be moved to be a sibling of the parent tag. "
+"This is expected and is part of the HTML5 spec. But if you're getting "
+"unexpected behavior, this could be a cause. And while the DomCrawler isn't "
+"meant to dump content, you can see the \"fixed\" version of your HTML by "
+":ref:`dumping it <component-dom-crawler-dumping>`."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:66
+msgid "Node Filtering"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:68
+msgid "Using XPath expressions is really easy::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:74
+msgid ""
+"``DOMXPath::query`` is used internally to actually perform an XPath query."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:76
+msgid ""
+"Filtering is even easier if you have the CssSelector component installed. "
+"This allows you to use jQuery-like selectors to traverse::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:81
+msgid "Anonymous function can be used to filter with more complex criteria::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:93
+msgid "To remove a node the anonymous function must return false."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:97
+msgid ""
+"All filter methods return a new "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` instance with "
+"filtered content."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:100
+msgid ""
+"Both the "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::filterXPath` and "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::filter` methods work"
+" with XML namespaces, which can be either automatically discovered or "
+"registered explicitly."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:105
+msgid "Consider the XML below:"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:124
+msgid ""
+"This can be filtered with the  ``Crawler`` without needing to register "
+"namespace aliases both with "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::filterXPath`::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:129
+msgid "and :method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::filter`::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:138
+msgid ""
+"The default namespace is registered with a prefix \"default\". It can be "
+"changed with the "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::setDefaultNamespacePrefix`"
+" method."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:143
+msgid ""
+"The default namespace is removed when loading the content if it's the only "
+"namespace in the document. It's done to simplify the xpath queries."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:146
+msgid ""
+"Namespaces can be explicitly registered with the "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::registerNamespace` "
+"method::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:154
+msgid ""
+"To query XML with a CSS selector, the HTML extension needs to be disabled "
+"with :method:`CssSelector::disableHtmlExtension "
+"<Symfony\\\\Component\\\\CssSelector\\\\CssSelector::disableHtmlExtension>` "
+"to avoid converting the selector to lowercase."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:159
+msgid "Node Traversing"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:161
+msgid "Access node by its position on the list::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:165
+msgid "Get the first or last node of the current selection::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:170
+msgid "Get the nodes of the same level as the current selection::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:174
+msgid "Get the same level nodes after or before the current selection::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:179
+msgid "Get all the child or parent nodes::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:186
+msgid ""
+"All the traversal methods return a new "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` instance."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:190
+msgid "Accessing Node Values"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:192
+msgid ""
+"The :method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::nodeName` method"
+" was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:196
+msgid ""
+"Access the node name (HTML tag name) of the first node of the current "
+"selection (eg. \"p\" or \"div\")::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:201
+msgid "Access the value of the first node of the current selection::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:205
+msgid ""
+"Access the attribute value of the first node of the current selection::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:209
+msgid "Extract attribute and/or node values from the list of nodes::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:218
+msgid "Special attribute ``_text`` represents a node value."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:220
+msgid "Call an anonymous function on each node of the list::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:229
+msgid ""
+"As seen here, in Symfony 2.3, the ``each`` and ``reduce`` Closure functions "
+"are passed a ``Crawler`` as the first argument. Previously, that argument "
+"was a :phpclass:`DOMNode`."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:234
+msgid ""
+"The anonymous function receives the node (as a Crawler) and the position as "
+"arguments. The result is an array of values returned by the anonymous "
+"function calls."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:238
+msgid "Adding the Content"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:240
+msgid "The crawler supports multiple ways of adding the content::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:255
+msgid ""
+"When dealing with character sets other than ISO-8859-1, always add HTML "
+"content using the "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::addHTMLContent` "
+"method where you can specify the second parameter to be your target "
+"character set."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:260
+msgid ""
+"As the Crawler's implementation is based on the DOM extension, it is also "
+"able to interact with native :phpclass:`DOMDocument`, "
+":phpclass:`DOMNodeList` and :phpclass:`DOMNode` objects:"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:0
+msgid "Manipulating and Dumping a ``Crawler``"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:281
+msgid ""
+"These methods on the ``Crawler`` are intended to initially populate your "
+"``Crawler`` and aren't intended to be used to further manipulate a DOM "
+"(though this is possible). However, since the ``Crawler`` is a set of "
+":phpclass:`DOMElement` objects, you can use any method or property available"
+" on :phpclass:`DOMElement`, :phpclass:`DOMNode` or :phpclass:`DOMDocument`. "
+"For example, you could get the HTML of a ``Crawler`` with something like "
+"this::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:295
+msgid ""
+"Or you can get the HTML of the first node using "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler::html`::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:300
+msgid "The ``html`` method is new in Symfony 2.3."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:303
+msgid "Links"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:305
+msgid ""
+"To find a link by name (or a clickable image by its ``alt`` attribute), use "
+"the ``selectLink`` method on an existing crawler. This returns a Crawler "
+"instance with just the selected link(s). Calling ``link()`` gives you a "
+"special :class:`Symfony\\\\Component\\\\DomCrawler\\\\Link` object::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:316
+msgid ""
+"The :class:`Symfony\\\\Component\\\\DomCrawler\\\\Link` object has several "
+"useful methods to get more information about the selected link itself::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:324
+msgid ""
+"The ``getUri()`` is especially useful as it cleans the ``href`` value and "
+"transforms it into how it should really be processed. For example, for a "
+"link with ``href=\"#foo\"``, this would return the full URI of the current "
+"page suffixed with ``#foo``. The return from ``getUri()`` is always a full "
+"URI that you can act on."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:331
+msgid "Forms"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:333
+msgid ""
+"Special treatment is also given to forms. A ``selectButton()`` method is "
+"available on the Crawler which returns another Crawler that matches a button"
+" (``input[type=submit]``, ``input[type=image]``, or a ``button``) with the "
+"given text. This method is especially useful because you can use it to "
+"return a :class:`Symfony\\\\Component\\\\DomCrawler\\\\Form` object that "
+"represents the form that the button lives in::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:347
+msgid ""
+"The :class:`Symfony\\\\Component\\\\DomCrawler\\\\Form` object has lots of "
+"very useful methods for working with forms::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:354
+msgid ""
+"The :method:`Symfony\\\\Component\\\\DomCrawler\\\\Form::getUri` method does"
+" more than just return the ``action`` attribute of the form. If the form "
+"method is GET, then it mimics the browser's behavior and returns the "
+"``action`` attribute followed by a query string of all of the form's values."
+msgstr ""
+
+#: ../../components/dom_crawler.rst:359
+msgid "You can virtually set and get values on the form::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:374
+msgid "To work with multi-dimensional fields::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:382
+msgid "Pass an array of values::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:393
+msgid ""
+"This is great, but it gets better! The ``Form`` object allows you to "
+"interact with your form like a browser, selecting radio values, ticking "
+"checkboxes, and uploading files::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:413
+msgid "Using the Form Data"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:415
+msgid ""
+"What's the point of doing all of this? If you're testing internally, you can"
+" grab the information off of your form as if it had just been submitted by "
+"using the PHP values::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:422
+msgid ""
+"If you're using an external HTTP client, you can use the form to grab all of"
+" the information you need to create a POST request for the form::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:432
+msgid ""
+"One great example of an integrated system that uses all of this is "
+"`Goutte`_. Goutte understands the Symfony Crawler object and can use it to "
+"submit forms directly::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:453
+msgid "Selecting Invalid Choice Values"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:455
+msgid ""
+"By default, choice fields (select, radio) have internal validation activated"
+" to prevent you from setting invalid values. If you want to be able to set "
+"invalid values, you can use the  ``disableValidation()`` method on either "
+"the whole form or specific field(s)::"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:1 ../../components/dom_crawler.rst:1
+msgid "DomCrawler"
+msgstr ""
+
+#: ../../components/dom_crawler.rst:1
+msgid "Components"
+msgstr ""

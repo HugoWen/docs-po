@@ -1,0 +1,94 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/form/direct_submit.rst:5
+msgid "How to Use the submit() Function to Handle Form Submissions"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:7
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"method was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:11
+msgid ""
+"With the ``handleRequest()`` method, it is really easy to handle form "
+"submissions::"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:38
+msgid ""
+"To see more about this method, read :ref:`book-form-handling-form-"
+"submissions`."
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:43
+msgid "Calling Form::submit() manually"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:45
+msgid "Before Symfony 2.3, the ``submit()`` method was known as ``bind()``."
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:48
+msgid ""
+"In some cases, you want better control over when exactly your form is "
+"submitted and what data is passed to it. Instead of using the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"method, pass the submitted data directly to "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit`::"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:80
+msgid ""
+"Forms consisting of nested fields expect an array in "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit`. You can "
+"also submit individual fields by calling "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` directly on "
+"the field::"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:90
+msgid "Passing a Request to Form::submit() (Deprecated)"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:92
+msgid "Before Symfony 2.3, the ``submit`` method was known as ``bind``."
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:95
+msgid ""
+"Before Symfony 2.3, the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` method "
+"accepted a :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` object"
+" as a convenient shortcut to the previous example::"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:123
+msgid ""
+"Passing the :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` "
+"directly to :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` "
+"still works, but is deprecated and will be removed in Symfony 3.0. You "
+"should use the method "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"instead."
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:1
+msgid "Form"
+msgstr ""
+
+#: ../../cookbook/form/direct_submit.rst:1
+msgid "Form::submit()"
+msgstr ""

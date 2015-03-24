@@ -1,0 +1,123 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:7
+msgid "How to Register Event Listeners and Subscribers"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:9
+msgid ""
+"Doctrine packages a rich event system that fires events when almost anything"
+" happens inside the system. For you, this means that you can create "
+"arbitrary :doc:`services </book/service_container>` and tell Doctrine to "
+"notify those objects whenever a certain action (e.g. ``prePersist``) happens"
+" within Doctrine. This could be useful, for example, to create an "
+"independent search index whenever an object in your database is saved."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:16
+msgid ""
+"Doctrine defines two types of objects that can listen to Doctrine events: "
+"listeners and subscribers. Both are very similar, but listeners are a bit "
+"more straightforward. For more, see `The Event System`_ on Doctrine's "
+"website."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:20
+msgid ""
+"The Doctrine website also explains all existing events that can be listened "
+"to."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:23
+msgid "Configuring the Listener/Subscriber"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:25
+msgid ""
+"To register a service to act as an event listener or subscriber you just "
+"have to :ref:`tag <book-service-container-tags>` it with the appropriate "
+"name. Depending on your use-case, you can hook a listener into every DBAL "
+"connection and ORM entity manager or just into one specific DBAL connection "
+"and all the entity managers that use this connection."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:121
+msgid "Creating the Listener Class"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:123
+msgid ""
+"In the previous example, a service ``my.listener`` was configured as a "
+"Doctrine listener on the event ``postPersist``. The class behind that "
+"service must have a ``postPersist`` method, which will be called when the "
+"event is dispatched::"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:147
+msgid ""
+"In each event, you have access to a ``LifecycleEventArgs`` object, which "
+"gives you access to both the entity object of the event and the entity "
+"manager itself."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:151
+msgid ""
+"One important thing to notice is that a listener will be listening for *all*"
+" entities in your application. So, if you're interested in only handling a "
+"specific type of entity (e.g. a ``Product`` entity but not a ``BlogPost`` "
+"entity), you should check for the entity's class type in your method (as "
+"shown above)."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:159
+msgid ""
+"In Doctrine 2.4, a feature called Entity Listeners was introduced. It is a "
+"lifecycle listener class used for an entity. You can read about it in `the "
+"Doctrine Documentation`_."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:164
+msgid "Creating the Subscriber Class"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:166
+msgid ""
+"A Doctrine event subscriber must implement the "
+"``Doctrine\\Common\\EventSubscriber`` interface and have an event method for"
+" each event it subscribes to::"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:211
+msgid ""
+"Doctrine event subscribers can not return a flexible array of methods to "
+"call for the events like the :ref:`Symfony event subscriber "
+"<event_dispatcher-using-event-subscribers>` can. Doctrine event subscribers "
+"must return a simple array of the event names they subscribe to. Doctrine "
+"will then expect methods on the subscriber with the same name as each "
+"subscribed event, just as when using an event listener."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:217
+msgid ""
+"For a full reference, see chapter `The Event System`_ in the Doctrine "
+"documentation."
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/event_listeners_subscribers.rst:1
+msgid "Event listeners and subscribers"
+msgstr ""

@@ -1,0 +1,265 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/security.rst:2
+msgid "Security"
+msgstr ""
+
+#: ../../best_practices/security.rst:5
+msgid "Authentication and Firewalls (i.e. Getting the User's Credentials)"
+msgstr ""
+
+#: ../../best_practices/security.rst:7
+msgid ""
+"You can configure Symfony to authenticate your users using any method you "
+"want and to load user information from any source. This is a complex topic, "
+"but the :doc:`Security Cookbook Section </cookbook/security/index>` has a "
+"lot of information about this."
+msgstr ""
+
+#: ../../best_practices/security.rst:12
+msgid ""
+"Regardless of your needs, authentication is configured in ``security.yml``, "
+"primarily under the ``firewalls`` key."
+msgstr ""
+
+#: ../../best_practices/security.rst:0 ../../best_practices/security.rst:0
+#: ../../best_practices/security.rst:0 ../../best_practices/security.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/security.rst:17
+msgid ""
+"Unless you have two legitimately different authentication systems and users "
+"(e.g. form login for the main site and a token system for your API only), we"
+" recommend having only *one* firewall entry with the ``anonymous`` key "
+"enabled."
+msgstr ""
+
+#: ../../best_practices/security.rst:22
+msgid ""
+"Most applications only have one authentication system and one set of users. "
+"For this reason, you only need *one* firewall entry. There are exceptions of"
+" course, especially if you have separated web and API sections on your site."
+" But the point is to keep things simple."
+msgstr ""
+
+#: ../../best_practices/security.rst:27
+msgid ""
+"Additionally, you should use the ``anonymous`` key under your firewall. If "
+"you need to require users to be logged in for different sections of your "
+"site (or maybe nearly *all* sections), use the ``access_control`` area."
+msgstr ""
+
+#: ../../best_practices/security.rst:33
+msgid "Use the ``bcrypt`` encoder for encoding your users' passwords."
+msgstr ""
+
+#: ../../best_practices/security.rst:35
+msgid ""
+"If your users have a password, then we recommend encoding it using the "
+"``bcrypt`` encoder, instead of the traditional SHA-512 hashing encoder. The "
+"main advantages of ``bcrypt`` are the inclusion of a *salt* value to protect"
+" against rainbow table attacks, and its adaptive nature, which allows to "
+"make it slower to remain resistant to brute-force search attacks."
+msgstr ""
+
+#: ../../best_practices/security.rst:41
+msgid ""
+"With this in mind, here is the authentication setup from our application, "
+"which uses a login form to load users from the database:"
+msgstr ""
+
+#: ../../best_practices/security.rst:71
+msgid ""
+"The source code for our project contains comments that explain each part."
+msgstr ""
+
+#: ../../best_practices/security.rst:74
+msgid "Authorization (i.e. Denying Access)"
+msgstr ""
+
+#: ../../best_practices/security.rst:76
+msgid ""
+"Symfony gives you several ways to enforce authorization, including the "
+"``access_control`` configuration in :doc:`security.yml "
+"</reference/configuration/security>`, the :ref:`@Security annotation <best-"
+"practices-security-annotation>` and using :ref:`isGranted <best-practices-"
+"directly-isGranted>` on the ``security.authorization_checker`` service "
+"directly."
+msgstr ""
+
+#: ../../best_practices/security.rst:84
+msgid "For protecting broad URL patterns, use ``access_control``;"
+msgstr ""
+
+#: ../../best_practices/security.rst:85
+msgid "Whenever possible, use the ``@Security`` annotation;"
+msgstr ""
+
+#: ../../best_practices/security.rst:86
+msgid ""
+"Check security directly on the ``security.authorization_checker`` service "
+"whenever you have a more complex situation."
+msgstr ""
+
+#: ../../best_practices/security.rst:89
+msgid ""
+"There are also different ways to centralize your authorization logic, like "
+"with a custom security voter or with ACL."
+msgstr ""
+
+#: ../../best_practices/security.rst:94
+msgid "For fine-grained restrictions, define a custom security voter;"
+msgstr ""
+
+#: ../../best_practices/security.rst:95
+msgid ""
+"For restricting access to *any* object by *any* user via an admin interface,"
+" use the Symfony ACL."
+msgstr ""
+
+#: ../../best_practices/security.rst:101
+msgid "The @Security Annotation"
+msgstr ""
+
+#: ../../best_practices/security.rst:103
+msgid ""
+"For controlling access on a controller-by-controller basis, use the "
+"``@Security`` annotation whenever possible. It's easy to read and is placed "
+"consistently above each action."
+msgstr ""
+
+#: ../../best_practices/security.rst:107
+msgid ""
+"In our application, you need the ``ROLE_ADMIN`` in order to create a new "
+"post. Using ``@Security``, this looks like:"
+msgstr ""
+
+#: ../../best_practices/security.rst:128
+msgid "Using Expressions for Complex Security Restrictions"
+msgstr ""
+
+#: ../../best_practices/security.rst:130
+msgid ""
+"If your security logic is a little bit more complex, you can use an "
+"`expression`_ inside ``@Security``. In the following example, a user can "
+"only access the controller if their email matches the value returned by the "
+"``getAuthorEmail`` method on the ``Post`` object:"
+msgstr ""
+
+#: ../../best_practices/security.rst:150
+msgid ""
+"Notice that this requires the use of the `ParamConverter`_, which "
+"automatically queries for the ``Post`` object and puts it on the ``$post`` "
+"argument. This is what makes it possible to use the ``post`` variable in the"
+" expression."
+msgstr ""
+
+#: ../../best_practices/security.rst:154
+msgid ""
+"This has one major drawback: an expression in an annotation cannot easily be"
+" reused in other parts of the application. Imagine that you want to add a "
+"link in a template that will only be seen by authors. Right now you'll need "
+"to repeat the expression code using Twig syntax:"
+msgstr ""
+
+#: ../../best_practices/security.rst:165
+msgid ""
+"The easiest solution - if your logic is simple enough - is to add a new "
+"method to the ``Post`` entity that checks if a given user is its author:"
+msgstr ""
+
+#: ../../best_practices/security.rst:188
+msgid ""
+"Now you can reuse this method both in the template and in the security "
+"expression:"
+msgstr ""
+
+#: ../../best_practices/security.rst:215
+msgid "Checking Permissions without @Security"
+msgstr ""
+
+#: ../../best_practices/security.rst:217
+msgid ""
+"The above example with ``@Security`` only works because we're using the "
+":ref:`ParamConverter <best-practices-paramconverter>`, which gives the "
+"expression access to the a ``post`` variable. If you don't use this, or have"
+" some other more advanced use-case, you can always do the same security "
+"check in PHP:"
+msgstr ""
+
+#: ../../best_practices/security.rst:244
+msgid "Security Voters"
+msgstr ""
+
+#: ../../best_practices/security.rst:246
+msgid ""
+"If your security logic is complex and can't be centralized into a method "
+"like ``isAuthor()``, you should leverage custom voters. These are an order "
+"of magnitude easier than :doc:`ACLs </cookbook/security/acl>` and will give "
+"you the flexibility you need in almost all cases."
+msgstr ""
+
+#: ../../best_practices/security.rst:251
+msgid ""
+"First, create a voter class. The following example shows a voter that "
+"implements the same ``getAuthorEmail`` logic you used above:"
+msgstr ""
+
+#: ../../best_practices/security.rst:295
+msgid "To enable the security voter in the application, define a new service:"
+msgstr ""
+
+#: ../../best_practices/security.rst:308
+msgid "Now, you can use the voter with the ``@Security`` annotation:"
+msgstr ""
+
+#: ../../best_practices/security.rst:321
+msgid ""
+"You can also use this directly with the ``security.authorization_checker`` "
+"service or via the even easier shortcut in a controller:"
+msgstr ""
+
+#: ../../best_practices/security.rst:343
+msgid "Learn More"
+msgstr ""
+
+#: ../../best_practices/security.rst:345
+msgid ""
+"The `FOSUserBundle`_, developed by the Symfony community, adds support for a"
+" database-backed user system in Symfony. It also handles common tasks like "
+"user registration and forgotten password functionality."
+msgstr ""
+
+#: ../../best_practices/security.rst:349
+msgid ""
+"Enable the :doc:`Remember Me feature </cookbook/security/remember_me>` to "
+"allow your users to stay logged in for a long period of time."
+msgstr ""
+
+#: ../../best_practices/security.rst:352
+msgid ""
+"When providing customer support, sometimes it's necessary to access the "
+"application as some *other* user so that you can reproduce the problem. "
+"Symfony provides the ability to :doc:`impersonate users "
+"</cookbook/security/impersonating_user>`."
+msgstr ""
+
+#: ../../best_practices/security.rst:356
+msgid ""
+"If your company uses a user login method not supported by Symfony, you can "
+"develop :doc:`your own user provider </cookbook/security/custom_provider>` "
+"and :doc:`your own authentication provider "
+"</cookbook/security/custom_authentication_provider>`."
+msgstr ""

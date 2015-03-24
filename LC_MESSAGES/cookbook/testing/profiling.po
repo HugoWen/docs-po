@@ -1,0 +1,83 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/profiling.rst:5
+msgid "How to Use the Profiler in a Functional Test"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:7
+msgid ""
+"It's highly recommended that a functional test only tests the Response. But "
+"if you write functional tests that monitor your production servers, you "
+"might want to write tests on the profiling data as it gives you a great way "
+"to check various things and enforce some metrics."
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:12
+msgid ""
+"The Symfony :ref:`Profiler <internals-profiler>` gathers a lot of data for "
+"each request. Use this data to check the number of database calls, the time "
+"spent in the framework, etc. But before writing assertions, enable the "
+"profiler and check that the profiler is indeed available (it is enabled by "
+"default in the ``test`` environment)::"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:49
+msgid ""
+"If a test fails because of profiling data (too many DB queries for "
+"instance), you might want to use the Web Profiler to analyze the request "
+"after the tests finish. It's easy to achieve if you embed the token in the "
+"error message::"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:64
+msgid ""
+"The profiler store can be different depending on the environment (especially"
+" if you use the SQLite store, which is the default configured one)."
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:70
+msgid ""
+"The profiler information is available even if you insulate the client or if "
+"you use an HTTP layer for your tests."
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:75
+msgid ""
+"Read the API for built-in :doc:`data collectors "
+"</cookbook/profiler/data_collector>` to learn more about their interfaces."
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:79
+msgid "Speeding up Tests by not Collecting Profiler Data"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:81
+msgid ""
+"To avoid collecting data in each test you can set the ``collect`` parameter "
+"to false:"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:125
+msgid ""
+"In this way only tests that call ``$client->enableProfiler()`` will collect "
+"data."
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/profiling.rst:1
+msgid "Profiling"
+msgstr ""

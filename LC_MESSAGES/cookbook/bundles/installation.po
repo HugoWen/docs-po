@@ -1,0 +1,132 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/bundles/installation.rst:5
+msgid "How to Install 3rd Party Bundles"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:7
+msgid ""
+"Most bundles provide their own installation instructions. However, the basic"
+" steps for installing a bundle are the same:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:10
+msgid "`A) Add Composer Dependencies`_"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:11
+msgid "`B) Enable the Bundle`_"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:12
+msgid "`C) Configure the Bundle`_"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:15
+msgid "A) Add Composer Dependencies"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:17
+msgid ""
+"Dependencies are managed with Composer, so if Composer is new to you, learn "
+"some basics in `their documentation`_. This has 2 steps:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:21
+msgid "1) Find out the Name of the Bundle on Packagist"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:23
+msgid ""
+"The README for a bundle (e.g. `FOSUserBundle`_) usually tells you its name "
+"(e.g. ``friendsofsymfony/user-bundle``). If it doesn't, you can search for "
+"the library on the `Packagist.org`_ site."
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:29
+msgid ""
+"Looking for bundles? Try searching at `KnpBundles.com`_: the unofficial "
+"archive of Symfony Bundles."
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:33
+msgid "2) Install the Bundle via Composer"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:35
+msgid "Now that you know the package name, you can install it via Composer:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:41
+msgid ""
+"This will choose the best version for your project, add it to "
+"``composer.json`` and download the library into the ``vendor/`` directory. "
+"If you need a specific version, add a ``:`` and the version right after the "
+"library name (see `composer require`_)."
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:47
+msgid "B) Enable the Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:49
+msgid ""
+"At this point, the bundle is installed in your Symfony project (in "
+"``vendor/friendsofsymfony/``) and the autoloader recognizes its classes. The"
+" only thing you need to do now is register the bundle in ``AppKernel``::"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:72
+msgid "C) Configure the Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:74
+msgid ""
+"It's pretty common for a bundle to need some additional setup or "
+"configuration in ``app/config/config.yml``. The bundle's documentation will "
+"tell you about the configuration, but you can also get a reference of the "
+"bundle's config via the ``config:dump-reference`` command."
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:79
+msgid ""
+"For instance, in order to look the reference of the ``assetic`` config you "
+"can use this:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:86
+msgid "or this:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:92
+msgid "The output will look like this:"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:109
+msgid "Other Setup"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:111
+msgid ""
+"At this point, check the ``README`` file of your brand new bundle to see "
+"what to do next. Have fun!"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:1
+msgid "Bundle"
+msgstr ""
+
+#: ../../cookbook/bundles/installation.rst:1
+msgid "Installation"
+msgstr ""

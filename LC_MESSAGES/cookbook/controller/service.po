@@ -1,0 +1,256 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/controller/service.rst:5
+msgid "How to Define Controllers as Services"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:7
+msgid ""
+"In the book, you've learned how easily a controller can be used when it "
+"extends the base "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller` "
+"class. While this works fine, controllers can also be specified as services."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:14
+msgid ""
+"Specifying a controller as a service takes a little bit more work. The "
+"primary advantage is that the entire controller or any services passed to "
+"the controller can be modified via the service container configuration. This"
+" is especially useful when developing an open-source bundle or any bundle "
+"that will be used in many different projects."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:20
+msgid ""
+"A second advantage is that your controllers are more \"sandboxed\". By "
+"looking at the constructor arguments, it's easy to see what types of things "
+"this controller may or may not do. And because each dependency needs to be "
+"injected manually, it's more obvious (i.e. if you have many constructor "
+"arguments) when your controller is becoming too big. The recommendation from"
+" the :doc:`best practices </best_practices/controllers>` is also valid for "
+"controllers defined as services: Avoid putting your business logic into the "
+"controllers. Instead, inject services that do the bulk of the work."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:29
+msgid ""
+"So, even if you don't specify your controllers as services, you'll likely "
+"see this done in some open-source Symfony bundles. It's also important to "
+"understand the pros and cons of both approaches."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:34
+msgid "Defining the Controller as a Service"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:36
+msgid ""
+"A controller can be defined as a service in the same way as any other class."
+" For example, if you have the following simple controller::"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:52
+msgid "Then you can define it as a service as follows:"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:80
+msgid "Referring to the Service"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:82
+msgid ""
+"To refer to a controller that's defined as a service, use the single colon "
+"(:) notation. For example, to forward to the ``indexAction()`` method of the"
+" service defined above with the id ``app.hello_controller``::"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:90
+msgid ""
+"You cannot drop the ``Action`` part of the method name when using this "
+"syntax."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:93
+msgid ""
+"You can also route to the service by using the same notation when defining "
+"the route ``_controller`` value:"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:121
+msgid ""
+"You can also use annotations to configure routing using a controller defined"
+" as a service. See the `FrameworkExtraBundle documentation`_ for details."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:125
+msgid ""
+"If your controller service implements the ``__invoke`` method, you can "
+"simply refer to the service id (``app.hello_controller``)."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:130
+msgid "Alternatives to base Controller Methods"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:132
+msgid ""
+"When using a controller defined as a service, it will most likely not extend"
+" the base ``Controller`` class. Instead of relying on its shortcut methods, "
+"you'll interact directly with the services that you need. Fortunately, this "
+"is usually pretty easy and the base `Controller class source code`_ is a "
+"great source on how to perform many common tasks."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:138
+msgid ""
+"For example, if you want to render a template instead of creating the "
+"``Response`` object directly, then your code would look like this if you "
+"were extending Symfony's base controller::"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:158
+msgid ""
+"If you look at the source code for the ``render`` function in Symfony's "
+"`base Controller class`_, you'll see that this method actually uses the "
+"``templating`` service::"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:167
+msgid ""
+"In a controller that's defined as a service, you can instead inject the "
+"``templating`` service and use it directly::"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:194
+msgid ""
+"The service definition also needs modifying to specify the constructor "
+"argument:"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:227
+msgid ""
+"Rather than fetching the ``templating`` service from the container, you can "
+"inject *only* the exact service(s) that you need directly into the "
+"controller."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:232
+msgid ""
+"This does not mean that you cannot extend these controllers from your own "
+"base controller. The move away from the standard base controller is because "
+"its helper methods rely on having the container available which is not the "
+"case for controllers that are defined as services. It may be a good idea to "
+"extract common code into a service that's injected rather than place that "
+"code into a base controller that you extend. Both approaches are valid, "
+"exactly how you want to organize your reusable code is up to you."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:242
+msgid "Base Controller Methods and Their Service Replacements"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:244
+msgid ""
+"This list explains how to replace the convenience methods of the base "
+"controller:"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:250
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::createForm`"
+" (service: ``form.factory``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:255
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::createFormBuilder`"
+" (service: ``form.factory``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:260
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::createNotFoundException`"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:265
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::forward`"
+" (service: ``http_kernel``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:270
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::generateUrl`"
+" (service: ``router``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:272
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::getDoctrine`"
+" (service: ``doctrine``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:274
+msgid "*Simply inject doctrine instead of fetching it from the container*"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:283
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::getUser`"
+" (service: ``security.token_storage``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:288
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::isGranted`"
+" (service: ``security.authorization_checker``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:295
+msgid ":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::redirect`"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:300
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::render`"
+" (service: ``templating``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:305
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::renderView`"
+" (service: ``templating``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:317
+msgid ""
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::stream`"
+" (service: ``templating``)"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:321
+msgid ""
+"``getRequest`` has been deprecated. Instead, have an argument to your "
+"controller action method called ``Request $request``. The order of the "
+"parameters is not important, but the typehint must be provided."
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:1
+msgid "Controller"
+msgstr ""
+
+#: ../../cookbook/controller/service.rst:1
+msgid "As Services"
+msgstr ""

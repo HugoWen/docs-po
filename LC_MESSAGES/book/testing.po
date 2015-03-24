@@ -1,0 +1,812 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/testing.rst:5
+msgid "Testing"
+msgstr ""
+
+#: ../../book/testing.rst:7
+msgid ""
+"Whenever you write a new line of code, you also potentially add new bugs. To"
+" build better and more reliable applications, you should test your code "
+"using both functional and unit tests."
+msgstr ""
+
+#: ../../book/testing.rst:12
+msgid "The PHPUnit Testing Framework"
+msgstr ""
+
+#: ../../book/testing.rst:14
+msgid ""
+"Symfony integrates with an independent library - called PHPUnit - to give "
+"you a rich testing framework. This chapter won't cover PHPUnit itself, but "
+"it has its own excellent `documentation`_."
+msgstr ""
+
+#: ../../book/testing.rst:20
+msgid ""
+"It's recommended to use the latest stable PHPUnit version (you will have to "
+"use version 4.2 or higher to test the Symfony core code itself)."
+msgstr ""
+
+#: ../../book/testing.rst:23
+msgid ""
+"Each test - whether it's a unit test or a functional test - is a PHP class "
+"that should live in the ``Tests/`` subdirectory of your bundles. If you "
+"follow this rule, then you can run all of your application's tests with the "
+"following command:"
+msgstr ""
+
+#: ../../book/testing.rst:33
+msgid ""
+"The ``-c`` option tells PHPUnit to look in the ``app/`` directory for a "
+"configuration file. If you're curious about the PHPUnit options, check out "
+"the ``app/phpunit.xml.dist`` file."
+msgstr ""
+
+#: ../../book/testing.rst:39
+msgid ""
+"Code coverage can be generated with the ``--coverage-*`` options, see the "
+"help information that is shown when using ``--help`` for more information."
+msgstr ""
+
+#: ../../book/testing.rst:46
+msgid "Unit Tests"
+msgstr ""
+
+#: ../../book/testing.rst:48
+msgid ""
+"A unit test is a test against a single PHP class, also called a *unit*. If "
+"you want to test the overall behavior of your application, see the section "
+"about `Functional Tests`_."
+msgstr ""
+
+#: ../../book/testing.rst:52
+msgid ""
+"Writing Symfony unit tests is no different from writing standard PHPUnit "
+"unit tests. Suppose, for example, that you have an *incredibly* simple class"
+" called ``Calculator`` in the ``Util/`` directory of the app bundle::"
+msgstr ""
+
+#: ../../book/testing.rst:67
+msgid ""
+"To test this, create a ``CalculatorTest`` file in the ``Tests/Util`` "
+"directory of your bundle::"
+msgstr ""
+
+#: ../../book/testing.rst:89
+msgid ""
+"By convention, the ``Tests/`` sub-directory should replicate the directory "
+"of your bundle for unit tests. So, if you're testing a class in your "
+"bundle's ``Util/`` directory, put the test in the ``Tests/Util/`` directory."
+msgstr ""
+
+#: ../../book/testing.rst:94
+msgid ""
+"Just like in your real application - autoloading is automatically enabled "
+"via the ``bootstrap.php.cache`` file (as configured by default in the "
+"``app/phpunit.xml.dist`` file)."
+msgstr ""
+
+#: ../../book/testing.rst:98
+msgid "Running tests for a given file or directory is also very easy:"
+msgstr ""
+
+#: ../../book/testing.rst:118
+msgid "Functional Tests"
+msgstr ""
+
+#: ../../book/testing.rst:120
+msgid ""
+"Functional tests check the integration of the different layers of an "
+"application (from the routing to the views). They are no different from unit"
+" tests as far as PHPUnit is concerned, but they have a very specific "
+"workflow:"
+msgstr ""
+
+#: ../../book/testing.rst:124
+msgid "Make a request;"
+msgstr ""
+
+#: ../../book/testing.rst:125 ../../book/testing.rst:127
+msgid "Test the response;"
+msgstr ""
+
+#: ../../book/testing.rst:126
+msgid "Click on a link or submit a form;"
+msgstr ""
+
+#: ../../book/testing.rst:128
+msgid "Rinse and repeat."
+msgstr ""
+
+#: ../../book/testing.rst:131
+msgid "Your First Functional Test"
+msgstr ""
+
+#: ../../book/testing.rst:133
+msgid ""
+"Functional tests are simple PHP files that typically live in the "
+"``Tests/Controller`` directory of your bundle. If you want to test the pages"
+" handled by your ``PostController`` class, start by creating a new "
+"``PostControllerTest.php`` file that extends a special ``WebTestCase`` "
+"class."
+msgstr ""
+
+#: ../../book/testing.rst:138
+msgid "As an example, a test could look like this::"
+msgstr ""
+
+#: ../../book/testing.rst:162
+msgid ""
+"To run your functional tests, the ``WebTestCase`` class bootstraps the "
+"kernel of your application. In most cases, this happens automatically. "
+"However, if your kernel is in a non-standard directory, you'll need to "
+"modify your ``phpunit.xml.dist`` file to set the ``KERNEL_DIR`` environment "
+"variable to the directory of your kernel:"
+msgstr ""
+
+#: ../../book/testing.rst:178
+msgid ""
+"The ``createClient()`` method returns a client, which is like a browser that"
+" you'll use to crawl your site::"
+msgstr ""
+
+#: ../../book/testing.rst:183
+msgid ""
+"The ``request()`` method (read :ref:`more about the request method <book-"
+"testing-request-method-sidebar>`) returns a "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` object which can be "
+"used to select elements in the response, click on links and submit forms."
+msgstr ""
+
+#: ../../book/testing.rst:190
+msgid ""
+"The ``Crawler`` only works when the response is an XML or an HTML document. "
+"To get the raw content response, call "
+"``$client->getResponse()->getContent()``."
+msgstr ""
+
+#: ../../book/testing.rst:193
+msgid ""
+"Click on a link by first selecting it with the crawler using either an XPath"
+" expression or a CSS selector, then use the client to click on it. For "
+"example::"
+msgstr ""
+
+#: ../../book/testing.rst:204
+msgid ""
+"Submitting a form is very similar: select a form button, optionally override"
+" some form values and submit the corresponding form::"
+msgstr ""
+
+#: ../../book/testing.rst:218
+msgid ""
+"The form can also handle uploads and contains methods to fill in different "
+"types of form fields (e.g. ``select()`` and ``tick()``). For details, see "
+"the `Forms`_ section below."
+msgstr ""
+
+#: ../../book/testing.rst:222
+msgid ""
+"Now that you can easily navigate through an application, use assertions to "
+"test that it actually does what you expect it to. Use the Crawler to make "
+"assertions on the DOM::"
+msgstr ""
+
+#: ../../book/testing.rst:229
+msgid ""
+"Or test against the response content directly if you just want to assert "
+"that the content contains some text or in case that the response is not an "
+"XML/HTML document::"
+msgstr ""
+
+#: ../../book/testing.rst:0
+msgid "Useful Assertions"
+msgstr ""
+
+#: ../../book/testing.rst:243
+msgid ""
+"To get you started faster, here is a list of the most common and useful test"
+" assertions::"
+msgstr ""
+
+#: ../../book/testing.rst:290
+msgid "Support for HTTP status code constants was introduced in Symfony 2.4."
+msgstr ""
+
+#: ../../book/testing.rst:297
+msgid "Working with the Test Client"
+msgstr ""
+
+#: ../../book/testing.rst:299
+msgid ""
+"The test client simulates an HTTP client like a browser and makes requests "
+"into your Symfony application::"
+msgstr ""
+
+#: ../../book/testing.rst:304
+msgid ""
+"The ``request()`` method takes the HTTP method and a URL as arguments and "
+"returns a ``Crawler`` instance."
+msgstr ""
+
+#: ../../book/testing.rst:309
+msgid ""
+"Hardcoding the request URLs is a best practice for functional tests. If the "
+"test generates URLs using the Symfony router, it won't detect any change "
+"made to the application URLs which may impact the end users."
+msgstr ""
+
+#: ../../book/testing.rst:0
+msgid "More about the ``request()`` Method:"
+msgstr ""
+
+#: ../../book/testing.rst:317
+msgid "The full signature of the ``request()`` method is::"
+msgstr ""
+
+#: ../../book/testing.rst:329
+msgid ""
+"The ``server`` array is the raw values that you'd expect to normally find in"
+" the PHP `$_SERVER`_ superglobal. For example, to set the ``Content-Type``, "
+"``Referer`` and ``X-Requested-With`` HTTP headers, you'd pass the following "
+"(mind the ``HTTP_`` prefix for non standard headers)::"
+msgstr ""
+
+#: ../../book/testing.rst:346
+msgid ""
+"Use the crawler to find DOM elements in the response. These elements can "
+"then be used to click on links and submit forms::"
+msgstr ""
+
+#: ../../book/testing.rst:355
+msgid ""
+"The ``click()`` and ``submit()`` methods both return a ``Crawler`` object. "
+"These methods are the best way to browse your application as it takes care "
+"of a lot of things for you, like detecting the HTTP method from a form and "
+"giving you a nice API for uploading files."
+msgstr ""
+
+#: ../../book/testing.rst:362
+msgid ""
+"You will learn more about the ``Link`` and ``Form`` objects in the "
+":ref:`Crawler <book-testing-crawler>` section below."
+msgstr ""
+
+#: ../../book/testing.rst:365
+msgid ""
+"The ``request`` method can also be used to simulate form submissions "
+"directly or perform more complex requests. Some useful examples::"
+msgstr ""
+
+#: ../../book/testing.rst:406
+msgid ""
+"Last but not least, you can force each request to be executed in its own PHP"
+" process to avoid any side-effects when working with several clients in the "
+"same script::"
+msgstr ""
+
+#: ../../book/testing.rst:413
+msgid "Browsing"
+msgstr ""
+
+#: ../../book/testing.rst:415
+msgid ""
+"The Client supports many operations that can be done in a real browser::"
+msgstr ""
+
+#: ../../book/testing.rst:425
+msgid "Accessing Internal Objects"
+msgstr ""
+
+#: ../../book/testing.rst:427
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\BrowserKit\\\\Client::getInternalRequest` "
+"and "
+":method:`Symfony\\\\Component\\\\BrowserKit\\\\Client::getInternalResponse` "
+"methods were introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../book/testing.rst:432
+msgid ""
+"If you use the client to test your application, you might want to access the"
+" client's internal objects::"
+msgstr ""
+
+#: ../../book/testing.rst:438
+msgid "You can also get the objects related to the latest request::"
+msgstr ""
+
+#: ../../book/testing.rst:454
+msgid ""
+"If your requests are not insulated, you can also access the ``Container`` "
+"and the ``Kernel``::"
+msgstr ""
+
+#: ../../book/testing.rst:461
+msgid "Accessing the Container"
+msgstr ""
+
+#: ../../book/testing.rst:463
+msgid ""
+"It's highly recommended that a functional test only tests the Response. But "
+"under certain very rare circumstances, you might want to access some "
+"internal objects to write assertions. In such cases, you can access the "
+"dependency injection container::"
+msgstr ""
+
+#: ../../book/testing.rst:470
+msgid ""
+"Be warned that this does not work if you insulate the client or if you use "
+"an HTTP layer. For a list of services available in your application, use the"
+" ``debug:container`` console task."
+msgstr ""
+
+#: ../../book/testing.rst:474
+msgid "Prior to Symfony 2.6, this command was called ``container:debug``."
+msgstr ""
+
+#: ../../book/testing.rst:479
+msgid ""
+"If the information you need to check is available from the profiler, use it "
+"instead."
+msgstr ""
+
+#: ../../book/testing.rst:483
+msgid "Accessing the Profiler Data"
+msgstr ""
+
+#: ../../book/testing.rst:485
+msgid ""
+"On each request, you can enable the Symfony profiler to collect data about "
+"the internal handling of that request. For example, the profiler could be "
+"used to verify that a given page executes less than a certain number of "
+"database queries when loading."
+msgstr ""
+
+#: ../../book/testing.rst:490
+msgid "To get the Profiler for the last request, do the following::"
+msgstr ""
+
+#: ../../book/testing.rst:500
+msgid ""
+"For specific details on using the profiler inside a test, see the "
+":doc:`/cookbook/testing/profiling` cookbook entry."
+msgstr ""
+
+#: ../../book/testing.rst:504
+msgid "Redirecting"
+msgstr ""
+
+#: ../../book/testing.rst:506
+msgid ""
+"When a request returns a redirect response, the client does not follow it "
+"automatically. You can examine the response and force a redirection "
+"afterwards with the ``followRedirect()`` method::"
+msgstr ""
+
+#: ../../book/testing.rst:512
+msgid ""
+"If you want the client to automatically follow all redirects, you can force "
+"him with the ``followRedirects()`` method::"
+msgstr ""
+
+#: ../../book/testing.rst:517
+msgid ""
+"If you pass ``false`` to the ``followRedirects()`` method, the redirects "
+"will no longer be followed::"
+msgstr ""
+
+#: ../../book/testing.rst:528
+msgid "The Crawler"
+msgstr ""
+
+#: ../../book/testing.rst:530
+msgid ""
+"A Crawler instance is returned each time you make a request with the Client."
+" It allows you to traverse HTML documents, select nodes, find links and "
+"forms."
+msgstr ""
+
+#: ../../book/testing.rst:534
+msgid "Traversing"
+msgstr ""
+
+#: ../../book/testing.rst:536
+msgid ""
+"Like jQuery, the Crawler has methods to traverse the DOM of an HTML/XML "
+"document. For example, the following finds all ``input[type=submit]`` "
+"elements, selects the last one on the page, and then selects its immediate "
+"parent element::"
+msgstr ""
+
+#: ../../book/testing.rst:546
+msgid "Many other methods are also available:"
+msgstr ""
+
+#: ../../book/testing.rst:548
+msgid "``filter('h1.title')``"
+msgstr ""
+
+#: ../../book/testing.rst:549
+msgid "Nodes that match the CSS selector."
+msgstr ""
+
+#: ../../book/testing.rst:550
+msgid "``filterXpath('h1')``"
+msgstr ""
+
+#: ../../book/testing.rst:551
+msgid "Nodes that match the XPath expression."
+msgstr ""
+
+#: ../../book/testing.rst:552
+msgid "``eq(1)``"
+msgstr ""
+
+#: ../../book/testing.rst:553
+msgid "Node for the specified index."
+msgstr ""
+
+#: ../../book/testing.rst:554
+msgid "``first()``"
+msgstr ""
+
+#: ../../book/testing.rst:555
+msgid "First node."
+msgstr ""
+
+#: ../../book/testing.rst:556
+msgid "``last()``"
+msgstr ""
+
+#: ../../book/testing.rst:557
+msgid "Last node."
+msgstr ""
+
+#: ../../book/testing.rst:558
+msgid "``siblings()``"
+msgstr ""
+
+#: ../../book/testing.rst:559
+msgid "Siblings."
+msgstr ""
+
+#: ../../book/testing.rst:560
+msgid "``nextAll()``"
+msgstr ""
+
+#: ../../book/testing.rst:561
+msgid "All following siblings."
+msgstr ""
+
+#: ../../book/testing.rst:562
+msgid "``previousAll()``"
+msgstr ""
+
+#: ../../book/testing.rst:563
+msgid "All preceding siblings."
+msgstr ""
+
+#: ../../book/testing.rst:564
+msgid "``parents()``"
+msgstr ""
+
+#: ../../book/testing.rst:565
+msgid "Returns the parent nodes."
+msgstr ""
+
+#: ../../book/testing.rst:566
+msgid "``children()``"
+msgstr ""
+
+#: ../../book/testing.rst:567
+msgid "Returns children nodes."
+msgstr ""
+
+#: ../../book/testing.rst:569
+msgid "``reduce($lambda)``"
+msgstr ""
+
+#: ../../book/testing.rst:569
+msgid "Nodes for which the callable does not return false."
+msgstr ""
+
+#: ../../book/testing.rst:571
+msgid ""
+"Since each of these methods returns a new ``Crawler`` instance, you can "
+"narrow down your node selection by chaining the method calls::"
+msgstr ""
+
+#: ../../book/testing.rst:586
+msgid ""
+"Use the ``count()`` function to get the number of nodes stored in a Crawler:"
+" ``count($crawler)``"
+msgstr ""
+
+#: ../../book/testing.rst:590
+msgid "Extracting Information"
+msgstr ""
+
+#: ../../book/testing.rst:592
+msgid "The Crawler can extract information from the nodes::"
+msgstr ""
+
+#: ../../book/testing.rst:612
+msgid "Links"
+msgstr ""
+
+#: ../../book/testing.rst:614
+msgid ""
+"To select links, you can use the traversing methods above or the convenient "
+"``selectLink()`` shortcut::"
+msgstr ""
+
+#: ../../book/testing.rst:619
+msgid ""
+"This selects all links that contain the given text, or clickable images for "
+"which the ``alt`` attribute contains the given text. Like the other "
+"filtering methods, this returns another ``Crawler`` object."
+msgstr ""
+
+#: ../../book/testing.rst:623
+msgid ""
+"Once you've selected a link, you have access to a special ``Link`` object, "
+"which has helpful methods specific to links (such as ``getMethod()`` and "
+"``getUri()``). To click on the link, use the Client's ``click()`` method and"
+" pass it a ``Link`` object::"
+msgstr ""
+
+#: ../../book/testing.rst:633
+msgid "Forms"
+msgstr ""
+
+#: ../../book/testing.rst:635
+msgid ""
+"Forms can be selected using their buttons, which can be selected with the "
+"``selectButton()`` method, just like links::"
+msgstr ""
+
+#: ../../book/testing.rst:642
+msgid ""
+"Notice that you select form buttons and not forms as a form can have several"
+" buttons; if you use the traversing API, keep in mind that you must look for"
+" a button."
+msgstr ""
+
+#: ../../book/testing.rst:646
+msgid ""
+"The ``selectButton()`` method can select ``button`` tags and submit "
+"``input`` tags. It uses several parts of the buttons to find them:"
+msgstr ""
+
+#: ../../book/testing.rst:649
+msgid "The ``value`` attribute value;"
+msgstr ""
+
+#: ../../book/testing.rst:650
+msgid "The ``id`` or ``alt`` attribute value for images;"
+msgstr ""
+
+#: ../../book/testing.rst:651
+msgid "The ``id`` or ``name`` attribute value for ``button`` tags."
+msgstr ""
+
+#: ../../book/testing.rst:653
+msgid ""
+"Once you have a Crawler representing a button, call the ``form()`` method to"
+" get a ``Form`` instance for the form wrapping the button node::"
+msgstr ""
+
+#: ../../book/testing.rst:658
+msgid ""
+"When calling the ``form()`` method, you can also pass an array of field "
+"values that overrides the default ones::"
+msgstr ""
+
+#: ../../book/testing.rst:666
+msgid ""
+"And if you want to simulate a specific HTTP method for the form, pass it as "
+"a second argument::"
+msgstr ""
+
+#: ../../book/testing.rst:671
+msgid "The Client can submit ``Form`` instances::"
+msgstr ""
+
+#: ../../book/testing.rst:675
+msgid ""
+"The field values can also be passed as a second argument of the ``submit()``"
+" method::"
+msgstr ""
+
+#: ../../book/testing.rst:683
+msgid ""
+"For more complex situations, use the ``Form`` instance as an array to set "
+"the value of each field individually::"
+msgstr ""
+
+#: ../../book/testing.rst:690
+msgid ""
+"There is also a nice API to manipulate the values of the fields according to"
+" their type::"
+msgstr ""
+
+#: ../../book/testing.rst:704
+msgid ""
+"If you purposefully want to select \"invalid\" select/radio values, see :ref"
+":`components-dom-crawler-invalid`."
+msgstr ""
+
+#: ../../book/testing.rst:709
+msgid ""
+"You can get the values that will be submitted by calling the ``getValues()``"
+" method on the ``Form`` object. The uploaded files are available in a "
+"separate array returned by ``getFiles()``. The ``getPhpValues()`` and "
+"``getPhpFiles()`` methods also return the submitted values, but in the PHP "
+"format (it converts the keys with square brackets notation - e.g. "
+"``my_form[subject]`` - to PHP arrays)."
+msgstr ""
+
+#: ../../book/testing.rst:720
+msgid "Testing Configuration"
+msgstr ""
+
+#: ../../book/testing.rst:722
+msgid ""
+"The Client used by functional tests creates a Kernel that runs in a special "
+"``test`` environment. Since Symfony loads the ``app/config/config_test.yml``"
+" in the ``test`` environment, you can tweak any of your application's "
+"settings specifically for testing."
+msgstr ""
+
+#: ../../book/testing.rst:727
+msgid ""
+"For example, by default, the Swift Mailer is configured to *not* actually "
+"deliver emails in the ``test`` environment. You can see this under the "
+"``swiftmailer`` configuration option:"
+msgstr ""
+
+#: ../../book/testing.rst:766
+msgid ""
+"You can also use a different environment entirely, or override the default "
+"debug mode (``true``) by passing each as options to the ``createClient()`` "
+"method::"
+msgstr ""
+
+#: ../../book/testing.rst:775
+msgid ""
+"If your application behaves according to some HTTP headers, pass them as the"
+" second argument of ``createClient()``::"
+msgstr ""
+
+#: ../../book/testing.rst:783
+msgid "You can also override HTTP headers on a per request basis::"
+msgstr ""
+
+#: ../../book/testing.rst:792
+msgid ""
+"The test client is available as a service in the container in the ``test`` "
+"environment (or wherever the :ref:`framework.test <reference-framework-"
+"test>` option is enabled). This means you can override the service entirely "
+"if you need to."
+msgstr ""
+
+#: ../../book/testing.rst:801
+msgid "PHPUnit Configuration"
+msgstr ""
+
+#: ../../book/testing.rst:803
+msgid ""
+"Each application has its own PHPUnit configuration, stored in the "
+"``app/phpunit.xml.dist`` file. You can edit this file to change the defaults"
+" or create an ``app/phpunit.xml`` file to set up a configuration for your "
+"local machine only."
+msgstr ""
+
+#: ../../book/testing.rst:810
+msgid ""
+"Store the ``app/phpunit.xml.dist`` file in your code repository and ignore "
+"the ``app/phpunit.xml`` file."
+msgstr ""
+
+#: ../../book/testing.rst:813
+msgid ""
+"By default, only the tests from your own custom bundles stored in the "
+"standard directories ``src/*/*Bundle/Tests``, "
+"``src/*/Bundle/*Bundle/Tests``, ``src/*Bundle/Tests`` are run by the "
+"``phpunit`` command, as configured in the ``app/phpunit.xml.dist`` file:"
+msgstr ""
+
+#: ../../book/testing.rst:833
+msgid ""
+"But you can easily add more directories. For instance, the following "
+"configuration adds tests from a custom ``lib/tests`` directory:"
+msgstr ""
+
+#: ../../book/testing.rst:850
+msgid ""
+"To include other directories in the code coverage, also edit the "
+"``<filter>`` section:"
+msgstr ""
+
+#: ../../book/testing.rst:872
+msgid "Learn more"
+msgstr ""
+
+#: ../../book/testing.rst:874
+msgid ""
+"The :doc:`chapter about tests in the Symfony Framework Best Practices "
+"</best_practices/tests>`"
+msgstr ""
+
+#: ../../book/testing.rst:875
+msgid ":doc:`/components/dom_crawler`"
+msgstr ""
+
+#: ../../book/testing.rst:876
+msgid ":doc:`/components/css_selector`"
+msgstr ""
+
+#: ../../book/testing.rst:877
+msgid ":doc:`/cookbook/testing/http_authentication`"
+msgstr ""
+
+#: ../../book/testing.rst:878
+msgid ":doc:`/cookbook/testing/insulating_clients`"
+msgstr ""
+
+#: ../../book/testing.rst:879
+msgid ":doc:`/cookbook/testing/profiling`"
+msgstr ""
+
+#: ../../book/testing.rst:880
+msgid ":doc:`/cookbook/testing/bootstrap`"
+msgstr ""
+
+#: ../../book/testing.rst:1 ../../book/testing.rst:42
+#: ../../book/testing.rst:114 ../../book/testing.rst:238
+#: ../../book/testing.rst:293 ../../book/testing.rst:522
+#: ../../book/testing.rst:716
+msgid "Tests"
+msgstr ""
+
+#: ../../book/testing.rst:42
+msgid "Unit tests"
+msgstr ""
+
+#: ../../book/testing.rst:114
+msgid "Functional tests"
+msgstr ""
+
+#: ../../book/testing.rst:238
+msgid "Assertions"
+msgstr ""
+
+#: ../../book/testing.rst:293
+msgid "Client"
+msgstr ""
+
+#: ../../book/testing.rst:522
+msgid "Crawler"
+msgstr ""
+
+#: ../../book/testing.rst:716 ../../book/testing.rst:797
+msgid "Configuration"
+msgstr ""
+
+#: ../../book/testing.rst:797
+msgid "PHPUnit"
+msgstr ""

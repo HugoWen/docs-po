@@ -1,0 +1,1814 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/forms.rst:5 ../../book/forms.rst:1 ../../book/forms.rst:19
+#: ../../book/forms.rst:66 ../../book/forms.rst:132 ../../book/forms.rst:205
+#: ../../book/forms.rst:289 ../../book/forms.rst:325 ../../book/forms.rst:458
+#: ../../book/forms.rst:493 ../../book/forms.rst:519 ../../book/forms.rst:594
+#: ../../book/forms.rst:632 ../../book/forms.rst:648 ../../book/forms.rst:701
+#: ../../book/forms.rst:738 ../../book/forms.rst:776 ../../book/forms.rst:839
+#: ../../book/forms.rst:966 ../../book/forms.rst:1029
+#: ../../book/forms.rst:1228 ../../book/forms.rst:1262
+#: ../../book/forms.rst:1419 ../../book/forms.rst:1419
+#: ../../book/forms.rst:1515 ../../book/forms.rst:1568
+#: ../../book/forms.rst:1595 ../../book/forms.rst:1741
+#: ../../book/forms.rst:1809
+msgid "Forms"
+msgstr ""
+
+#: ../../book/forms.rst:7
+msgid ""
+"Dealing with HTML forms is one of the most common - and challenging - tasks "
+"for a web developer. Symfony integrates a Form component that makes dealing "
+"with forms easy. In this chapter, you'll build a complex form from the "
+"ground up, learning the most important features of the form library along "
+"the way."
+msgstr ""
+
+#: ../../book/forms.rst:14
+msgid ""
+"The Symfony Form component is a standalone library that can be used outside "
+"of Symfony projects. For more information, see the :doc:`Form component "
+"documentation </components/form/introduction>` on GitHub."
+msgstr ""
+
+#: ../../book/forms.rst:23
+msgid "Creating a Simple Form"
+msgstr ""
+
+#: ../../book/forms.rst:25
+msgid ""
+"Suppose you're building a simple todo list application that will need to "
+"display \"tasks\". Because your users will need to edit and create tasks, "
+"you're going to need to build a form. But before you begin, first focus on "
+"the generic ``Task`` class that represents and stores the data for a single "
+"task::"
+msgstr ""
+
+#: ../../book/forms.rst:59
+msgid ""
+"This class is a \"plain-old-PHP-object\" because, so far, it has nothing to "
+"do with Symfony or any other library. It's quite simply a normal PHP object "
+"that directly solves a problem inside *your* application (i.e. the need to "
+"represent a task in your application). Of course, by the end of this "
+"chapter, you'll be able to submit data to a ``Task`` instance (via an HTML "
+"form), validate its data, and persist it to the database."
+msgstr ""
+
+#: ../../book/forms.rst:70
+msgid "Building the Form"
+msgstr ""
+
+#: ../../book/forms.rst:72
+msgid ""
+"Now that you've created a ``Task`` class, the next step is to create and "
+"render the actual HTML form. In Symfony, this is done by building a form "
+"object and then rendering it in a template. For now, this can all be done "
+"from inside a controller::"
+msgstr ""
+
+#: ../../book/forms.rst:107
+msgid ""
+"This example shows you how to build your form directly in the controller. "
+"Later, in the \":ref:`book-form-creating-form-classes`\" section, you'll "
+"learn how to build your form in a standalone class, which is recommended as "
+"your form becomes reusable."
+msgstr ""
+
+#: ../../book/forms.rst:112
+msgid ""
+"Creating a form requires relatively little code because Symfony form objects"
+" are built with a \"form builder\". The form builder's purpose is to allow "
+"you to write simple form \"recipes\", and have it do all the heavy-lifting "
+"of actually building the form."
+msgstr ""
+
+#: ../../book/forms.rst:117
+msgid ""
+"In this example, you've added two fields to your form - ``task`` and "
+"``dueDate`` - corresponding to the ``task`` and ``dueDate`` properties of "
+"the ``Task`` class. You've also assigned each a \"type\" (e.g. ``text``, "
+"``date``), which, among other things, determines which HTML form tag(s) is "
+"rendered for that field."
+msgstr ""
+
+#: ../../book/forms.rst:122
+msgid ""
+"Finally, you added a submit button with a custom label for submitting the "
+"form to the server."
+msgstr ""
+
+#: ../../book/forms.rst:125
+msgid ""
+"Support for submit buttons was introduced in Symfony 2.3. Before that, you "
+"had to add buttons to the form's HTML manually."
+msgstr ""
+
+#: ../../book/forms.rst:129
+msgid ""
+"Symfony comes with many built-in types that will be discussed shortly (see "
+":ref:`book-forms-type-reference`)."
+msgstr ""
+
+#: ../../book/forms.rst:136
+msgid "Rendering the Form"
+msgstr ""
+
+#: ../../book/forms.rst:138
+msgid ""
+"Now that the form has been created, the next step is to render it. This is "
+"done by passing a special form \"view\" object to your template (notice the "
+"``$form->createView()`` in the controller above) and using a set of form "
+"helper functions:"
+msgstr ""
+
+#: ../../book/forms.rst:164
+msgid ""
+"This example assumes that you submit the form in a \"POST\" request and to "
+"the same URL that it was displayed in. You will learn later how to change "
+"the request method and the target URL of the form."
+msgstr ""
+
+#: ../../book/forms.rst:168
+msgid "That's it! Just three lines are needed to render the complete form:"
+msgstr ""
+
+#: ../../book/forms.rst:172
+msgid "``form_start(form)``"
+msgstr ""
+
+#: ../../book/forms.rst:171
+msgid ""
+"Renders the start tag of the form, including the correct enctype attribute "
+"when using file uploads."
+msgstr ""
+
+#: ../../book/forms.rst:176
+msgid "``form_widget(form)``"
+msgstr ""
+
+#: ../../book/forms.rst:175
+msgid ""
+"Renders all the fields, which includes the field element itself, a label and"
+" any validation error messages for the field."
+msgstr ""
+
+#: ../../book/forms.rst:182
+msgid "``form_end(form)``"
+msgstr ""
+
+#: ../../book/forms.rst:179
+msgid ""
+"Renders the end tag of the form and any fields that have not yet been "
+"rendered, in case you rendered each field yourself. This is useful for "
+"rendering hidden fields and taking advantage of the automatic :ref:`CSRF "
+"Protection <forms-csrf>`."
+msgstr ""
+
+#: ../../book/forms.rst:186
+msgid ""
+"As easy as this is, it's not very flexible (yet). Usually, you'll want to "
+"render each form field individually so you can control how the form looks. "
+"You'll learn how to do that in the \":ref:`form-rendering-template`\" "
+"section."
+msgstr ""
+
+#: ../../book/forms.rst:190
+msgid ""
+"Before moving on, notice how the rendered ``task`` input field has the value"
+" of the ``task`` property from the ``$task`` object (i.e. \"Write a blog "
+"post\"). This is the first job of a form: to take data from an object and "
+"translate it into a format that's suitable for being rendered in an HTML "
+"form."
+msgstr ""
+
+#: ../../book/forms.rst:197
+msgid ""
+"The form system is smart enough to access the value of the protected "
+"``task`` property via the ``getTask()`` and ``setTask()`` methods on the "
+"``Task`` class. Unless a property is public, it *must* have a \"getter\" and"
+" \"setter\" method so that the Form component can get and put data onto the "
+"property. For a Boolean property, you can use an \"isser\" or \"hasser\" "
+"method (e.g. ``isPublished()`` or ``hasReminder()``) instead of a getter "
+"(e.g. ``getPublished()`` or ``getReminder()``)."
+msgstr ""
+
+#: ../../book/forms.rst:211
+msgid "Handling Form Submissions"
+msgstr ""
+
+#: ../../book/forms.rst:213
+msgid ""
+"The second job of a form is to translate user-submitted data back to the "
+"properties of an object. To make this happen, the submitted data from the "
+"user must be written into the form. Add the following functionality to your "
+"controller::"
+msgstr ""
+
+#: ../../book/forms.rst:243
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"method was introduced in Symfony 2.3. Previously, the ``$request`` was "
+"passed to the ``submit`` method - a strategy which is deprecated and will be"
+" removed in Symfony 3.0. For details on that method, see :ref:`cookbook-"
+"form-submit-request`."
+msgstr ""
+
+#: ../../book/forms.rst:249
+msgid ""
+"This controller follows a common pattern for handling forms, and has three "
+"possible paths:"
+msgstr ""
+
+#: ../../book/forms.rst:252
+msgid ""
+"When initially loading the page in a browser, the form is simply created and"
+" rendered. "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"recognizes that the form was not submitted and does nothing. "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` returns "
+"``false`` if the form was not submitted."
+msgstr ""
+
+#: ../../book/forms.rst:258
+msgid ""
+"When the user submits the form, "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"recognizes this and immediately writes the submitted data back into the "
+"``task`` and ``dueDate`` properties of the ``$task`` object. Then this "
+"object is validated. If it is invalid (validation is covered in the next "
+"section), :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` "
+"returns ``false`` again, so the form is rendered together with all "
+"validation errors;"
+msgstr ""
+
+#: ../../book/forms.rst:267
+msgid ""
+"You can use the method "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isSubmitted` to "
+"check whether a form was submitted, regardless of whether or not the "
+"submitted data is actually valid."
+msgstr ""
+
+#: ../../book/forms.rst:271
+msgid ""
+"When the user submits the form with valid data, the submitted data is again "
+"written into the form, but this time "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` returns "
+"``true``. Now you have the opportunity to perform some actions using the "
+"``$task`` object (e.g. persisting it to the database) before redirecting the"
+" user to some other page (e.g. a \"thank you\" or \"success\" page)."
+msgstr ""
+
+#: ../../book/forms.rst:279
+msgid ""
+"Redirecting a user after a successful form submission prevents the user from"
+" being able to hit the \"Refresh\" button of their browser and re-post the "
+"data."
+msgstr ""
+
+#: ../../book/forms.rst:285
+msgid ""
+"If you need more control over exactly when your form is submitted or which "
+"data is passed to it, you can use the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` for this. "
+"Read more about it :ref:`in the cookbook <cookbook-form-call-submit-"
+"directly>`."
+msgstr ""
+
+#: ../../book/forms.rst:295
+msgid "Submitting Forms with Multiple Buttons"
+msgstr ""
+
+#: ../../book/forms.rst:297 ../../book/forms.rst:600
+msgid "Support for buttons in forms was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../book/forms.rst:300
+msgid ""
+"When your form contains more than one submit button, you will want to check "
+"which of the buttons was clicked to adapt the program flow in your "
+"controller. To do this, add a second button with the caption \"Save and "
+"add\" to your form::"
+msgstr ""
+
+#: ../../book/forms.rst:311
+msgid ""
+"In your controller, use the button's "
+":method:`Symfony\\\\Component\\\\Form\\\\ClickableInterface::isClicked` "
+"method for querying if the \"Save and add\" button was clicked::"
+msgstr ""
+
+#: ../../book/forms.rst:331
+msgid "Form Validation"
+msgstr ""
+
+#: ../../book/forms.rst:333
+msgid ""
+"In the previous section, you learned how a form can be submitted with valid "
+"or invalid data. In Symfony, validation is applied to the underlying object "
+"(e.g. ``Task``). In other words, the question isn't whether the \"form\" is "
+"valid, but whether or not the ``$task`` object is valid after the form has "
+"applied the submitted data to it. Calling ``$form->isValid()`` is a shortcut"
+" that asks the ``$task`` object whether or not it has valid data."
+msgstr ""
+
+#: ../../book/forms.rst:340
+msgid ""
+"Validation is done by adding a set of rules (called constraints) to a class."
+" To see this in action, add validation constraints so that the ``task`` "
+"field cannot be empty and the ``dueDate`` field cannot be empty and must be "
+"a valid \\DateTime object."
+msgstr ""
+
+#: ../../book/forms.rst:420
+msgid ""
+"That's it! If you re-submit the form with invalid data, you'll see the "
+"corresponding errors printed out with the form."
+msgstr ""
+
+#: ../../book/forms.rst:0
+msgid "HTML5 Validation"
+msgstr ""
+
+#: ../../book/forms.rst:427
+msgid ""
+"As of HTML5, many browsers can natively enforce certain validation "
+"constraints on the client side. The most common validation is activated by "
+"rendering a ``required`` attribute on fields that are required. For browsers"
+" that support HTML5, this will result in a native browser message being "
+"displayed if the user tries to submit the form with that field blank."
+msgstr ""
+
+#: ../../book/forms.rst:433
+msgid ""
+"Generated forms take full advantage of this new feature by adding sensible "
+"HTML attributes that trigger the validation. The client-side validation, "
+"however, can be disabled by adding the ``novalidate`` attribute to the "
+"``form`` tag or ``formnovalidate`` to the submit tag. This is especially "
+"useful when you want to test your server-side validation constraints, but "
+"are being prevented by your browser from, for example, submitting blank "
+"fields."
+msgstr ""
+
+#: ../../book/forms.rst:455
+msgid ""
+"Validation is a very powerful feature of Symfony and has its own "
+":doc:`dedicated chapter </book/validation>`."
+msgstr ""
+
+#: ../../book/forms.rst:464
+msgid "Validation Groups"
+msgstr ""
+
+#: ../../book/forms.rst:466
+msgid ""
+"If your object takes advantage of :ref:`validation groups <book-validation-"
+"validation-groups>`, you'll need to specify which validation group(s) your "
+"form should use::"
+msgstr ""
+
+#: ../../book/forms.rst:473
+msgid ""
+"The ``configureOptions()`` method was introduced in Symfony 2.7. Previously,"
+" the method was called ``setDefaultOptions()``."
+msgstr ""
+
+#: ../../book/forms.rst:477
+msgid ""
+"If you're creating :ref:`form classes <book-form-creating-form-classes>` (a "
+"good practice), then you'll need to add the following to the "
+"``configureOptions()`` method::"
+msgstr ""
+
+#: ../../book/forms.rst:490
+msgid ""
+"In both of these cases, *only* the ``registration`` validation group will be"
+" used to validate the underlying object."
+msgstr ""
+
+#: ../../book/forms.rst:497
+msgid "Disabling Validation"
+msgstr ""
+
+#: ../../book/forms.rst:499
+msgid ""
+"The ability to set ``validation_groups`` to false was introduced in Symfony "
+"2.3."
+msgstr ""
+
+#: ../../book/forms.rst:502
+msgid ""
+"Sometimes it is useful to suppress the validation of a form altogether. For "
+"these cases you can set the ``validation_groups`` option to ``false``::"
+msgstr ""
+
+#: ../../book/forms.rst:514
+msgid ""
+"Note that when you do that, the form will still run basic integrity checks, "
+"for example whether an uploaded file was too large or whether non-existing "
+"fields were submitted. If you want to suppress validation, you can use the "
+":ref:`POST_SUBMIT event <cookbook-dynamic-form-modification-suppressing-"
+"form-validation>`."
+msgstr ""
+
+#: ../../book/forms.rst:525
+msgid "Groups based on the Submitted Data"
+msgstr ""
+
+#: ../../book/forms.rst:527
+msgid ""
+"If you need some advanced logic to determine the validation groups (e.g. "
+"based on submitted data), you can set the ``validation_groups`` option to an"
+" array callback::"
+msgstr ""
+
+#: ../../book/forms.rst:544
+msgid ""
+"This will call the static method ``determineValidationGroups()`` on the "
+"``Client`` class after the form is submitted, but before validation is "
+"executed. The Form object is passed as an argument to that method (see next "
+"example). You can also define whole logic inline by using a ``Closure``::"
+msgstr ""
+
+#: ../../book/forms.rst:568
+msgid ""
+"Using the ``validation_groups`` option overrides the default validation "
+"group which is being used. If you want to validate the default constraints "
+"of the entity as well you have to adjust the option as follows::"
+msgstr ""
+
+#: ../../book/forms.rst:591
+msgid ""
+"You can find more information about how the validation groups and the "
+"default constraints work in the book section about :ref:`validation groups "
+"<book-validation-validation-groups>`."
+msgstr ""
+
+#: ../../book/forms.rst:598
+msgid "Groups based on the Clicked Button"
+msgstr ""
+
+#: ../../book/forms.rst:603
+msgid ""
+"When your form contains multiple submit buttons, you can change the "
+"validation group depending on which button is used to submit the form. For "
+"example, consider a form in a wizard that lets you advance to the next step "
+"or go back to the previous step. Also assume that when returning to the "
+"previous step, the data of the form should be saved, but not validated."
+msgstr ""
+
+#: ../../book/forms.rst:609
+msgid "First, we need to add the two buttons to the form::"
+msgstr ""
+
+#: ../../book/forms.rst:617
+msgid ""
+"Then, we configure the button for returning to the previous step to run "
+"specific validation groups. In this example, we want it to suppress "
+"validation, so we set its ``validation_groups`` option to false::"
+msgstr ""
+
+#: ../../book/forms.rst:628
+msgid ""
+"Now the form will skip your validation constraints. It will still validate "
+"basic integrity constraints, such as checking whether an uploaded file was "
+"too large or whether you tried to submit text in a number field."
+msgstr ""
+
+#: ../../book/forms.rst:638
+msgid "Built-in Field Types"
+msgstr ""
+
+#: ../../book/forms.rst:640
+msgid ""
+"Symfony comes standard with a large group of field types that cover all of "
+"the common form fields and data types you'll encounter:"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:2
+msgid "Text Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:4
+msgid ":doc:`text </reference/forms/types/text>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:5
+msgid ":doc:`textarea </reference/forms/types/textarea>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:6
+msgid ":doc:`email </reference/forms/types/email>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:7
+msgid ":doc:`integer </reference/forms/types/integer>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:8
+msgid ":doc:`money </reference/forms/types/money>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:9
+msgid ":doc:`number </reference/forms/types/number>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:10
+msgid ":doc:`password </reference/forms/types/password>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:11
+msgid ":doc:`percent </reference/forms/types/percent>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:12
+msgid ":doc:`search </reference/forms/types/search>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:13
+msgid ":doc:`url </reference/forms/types/url>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:16
+msgid "Choice Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:18
+msgid ":doc:`choice </reference/forms/types/choice>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:19
+msgid ":doc:`entity </reference/forms/types/entity>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:20
+msgid ":doc:`country </reference/forms/types/country>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:21
+msgid ":doc:`language </reference/forms/types/language>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:22
+msgid ":doc:`locale </reference/forms/types/locale>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:23
+msgid ":doc:`timezone </reference/forms/types/timezone>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:24
+msgid ":doc:`currency </reference/forms/types/currency>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:27
+msgid "Date and Time Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:29
+msgid ":doc:`date </reference/forms/types/date>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:30
+msgid ":doc:`datetime </reference/forms/types/datetime>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:31
+msgid ":doc:`time </reference/forms/types/time>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:32
+msgid ":doc:`birthday </reference/forms/types/birthday>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:35
+msgid "Other Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:37
+msgid ":doc:`checkbox </reference/forms/types/checkbox>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:38
+msgid ":doc:`file </reference/forms/types/file>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:39
+msgid ":doc:`radio </reference/forms/types/radio>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:42
+msgid "Field Groups"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:44
+msgid ":doc:`collection </reference/forms/types/collection>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:45
+msgid ":doc:`repeated </reference/forms/types/repeated>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:48
+msgid "Hidden Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:50
+msgid ":doc:`hidden </reference/forms/types/hidden>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:53
+msgid "Buttons"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:55
+msgid ":doc:`button</reference/forms/types/button>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:56
+msgid ":doc:`reset</reference/forms/types/reset>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:57
+msgid ":doc:`submit</reference/forms/types/submit>`"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:60
+msgid "Base Fields"
+msgstr ""
+
+#: ../../reference/forms/types/map.rst.inc:62
+msgid ":doc:`form </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../book/forms.rst:645
+msgid ""
+"You can also create your own custom field types. This topic is covered in "
+"the \":doc:`/cookbook/form/create_custom_field_type`\" article of the "
+"cookbook."
+msgstr ""
+
+#: ../../book/forms.rst:652
+msgid "Field Type Options"
+msgstr ""
+
+#: ../../book/forms.rst:654
+msgid ""
+"Each field type has a number of options that can be used to configure it. "
+"For example, the ``dueDate`` field is currently being rendered as 3 select "
+"boxes. However, the :doc:`date field </reference/forms/types/date>` can be "
+"configured to be rendered as a single text box (where the user would enter "
+"the date as a string in the box)::"
+msgstr ""
+
+#: ../../book/forms.rst:665
+msgid ""
+"Each field type has a number of different options that can be passed to it. "
+"Many of these are specific to the field type and details can be found in the"
+" documentation for each type."
+msgstr ""
+
+#: ../../book/forms.rst:0
+msgid "The ``required`` Option"
+msgstr ""
+
+#: ../../book/forms.rst:671
+msgid ""
+"The most common option is the ``required`` option, which can be applied to "
+"any field. By default, the ``required`` option is set to ``true``, meaning "
+"that HTML5-ready browsers will apply client-side validation if the field is "
+"left blank. If you don't want this behavior, either set the ``required`` "
+"option on your field to ``false`` or :ref:`disable HTML5 validation <book-"
+"forms-html5-validation-disable>`."
+msgstr ""
+
+#: ../../book/forms.rst:678
+msgid ""
+"Also note that setting the ``required`` option to ``true`` will **not** "
+"result in server-side validation to be applied. In other words, if a user "
+"submits a blank value for the field (either with an old browser or web "
+"service, for example), it will be accepted as a valid value unless you use "
+"Symfony's ``NotBlank`` or ``NotNull`` validation constraint."
+msgstr ""
+
+#: ../../book/forms.rst:684
+msgid ""
+"In other words, the ``required`` option is \"nice\", but true server-side "
+"validation should *always* be used."
+msgstr ""
+
+#: ../../book/forms.rst:0
+msgid "The ``label`` Option"
+msgstr ""
+
+#: ../../book/forms.rst:689
+msgid ""
+"The label for the form field can be set using the ``label`` option, which "
+"can be applied to any field::"
+msgstr ""
+
+#: ../../book/forms.rst:697
+msgid ""
+"The label for a field can also be set in the template rendering the form, "
+"see below. If you don't need a label associated to your input, you can "
+"disable it by setting its value to ``false``."
+msgstr ""
+
+#: ../../book/forms.rst:707
+msgid "Field Type Guessing"
+msgstr ""
+
+#: ../../book/forms.rst:709
+msgid ""
+"Now that you've added validation metadata to the ``Task`` class, Symfony "
+"already knows a bit about your fields. If you allow it, Symfony can "
+"\"guess\" the type of your field and set it up for you. In this example, "
+"Symfony can guess from the validation rules that both the ``task`` field is "
+"a normal ``text`` field and the ``dueDate`` field is a ``date`` field::"
+msgstr ""
+
+#: ../../book/forms.rst:726
+msgid ""
+"The \"guessing\" is activated when you omit the second argument to the "
+"``add()`` method (or if you pass ``null`` to it). If you pass an options "
+"array as the third argument (done for ``dueDate`` above), these options are "
+"applied to the guessed field."
+msgstr ""
+
+#: ../../book/forms.rst:733
+msgid ""
+"If your form uses a specific validation group, the field type guesser will "
+"still consider *all* validation constraints when guessing your field types "
+"(including constraints that are not part of the validation group(s) being "
+"used)."
+msgstr ""
+
+#: ../../book/forms.rst:742
+msgid "Field Type Options Guessing"
+msgstr ""
+
+#: ../../book/forms.rst:744
+msgid ""
+"In addition to guessing the \"type\" for a field, Symfony can also try to "
+"guess the correct values of a number of field options."
+msgstr ""
+
+#: ../../book/forms.rst:749
+msgid ""
+"When these options are set, the field will be rendered with special HTML "
+"attributes that provide for HTML5 client-side validation. However, it "
+"doesn't generate the equivalent server-side constraints (e.g. "
+"``Assert\\Length``). And though you'll need to manually add your server-side"
+" validation, these field type options can then be guessed from that "
+"information."
+msgstr ""
+
+#: ../../book/forms.rst:759
+msgid "``required``"
+msgstr ""
+
+#: ../../book/forms.rst:756
+msgid ""
+"The ``required`` option can be guessed based on the validation rules (i.e. "
+"is the field ``NotBlank`` or ``NotNull``) or the Doctrine metadata (i.e. is "
+"the field ``nullable``). This is very useful, as your client-side validation"
+" will automatically match your validation rules."
+msgstr ""
+
+#: ../../book/forms.rst:764
+msgid "``max_length``"
+msgstr ""
+
+#: ../../book/forms.rst:762
+msgid ""
+"If the field is some sort of text field, then the ``max_length`` option can "
+"be guessed from the validation constraints (if ``Length`` or ``Range`` is "
+"used) or from the Doctrine metadata (via the field's length)."
+msgstr ""
+
+#: ../../book/forms.rst:768
+msgid ""
+"These field options are *only* guessed if you're using Symfony to guess the "
+"field type (i.e. omit or pass ``null`` as the second argument to ``add()``)."
+msgstr ""
+
+#: ../../book/forms.rst:771
+msgid ""
+"If you'd like to change one of the guessed values, you can override it by "
+"passing the option in the options field array::"
+msgstr ""
+
+#: ../../book/forms.rst:782
+msgid "Rendering a Form in a Template"
+msgstr ""
+
+#: ../../book/forms.rst:784
+msgid ""
+"So far, you've seen how an entire form can be rendered with just one line of"
+" code. Of course, you'll usually need much more flexibility when rendering:"
+msgstr ""
+
+#: ../../book/forms.rst:809
+msgid ""
+"You already know the ``form_start()`` and ``form_end()`` functions, but what"
+" do the other functions do?"
+msgstr ""
+
+#: ../../book/forms.rst:814
+msgid "``form_errors(form)``"
+msgstr ""
+
+#: ../../book/forms.rst:813
+msgid ""
+"Renders any errors global to the whole form (field-specific errors are "
+"displayed next to each field)."
+msgstr ""
+
+#: ../../book/forms.rst:818
+msgid "``form_row(form.dueDate)``"
+msgstr ""
+
+#: ../../book/forms.rst:817
+msgid ""
+"Renders the label, any errors, and the HTML form widget for the given field "
+"(e.g. ``dueDate``) inside, by default, a ``div`` element."
+msgstr ""
+
+#: ../../book/forms.rst:820
+msgid ""
+"The majority of the work is done by the ``form_row`` helper, which renders "
+"the label, errors and HTML form widget of each field inside a ``div`` tag by"
+" default. In the :ref:`form-theming` section, you'll learn how the "
+"``form_row`` output can be customized on many different levels."
+msgstr ""
+
+#: ../../book/forms.rst:827
+msgid "You can access the current data of your form via ``form.vars.value``:"
+msgstr ""
+
+#: ../../book/forms.rst:843
+msgid "Rendering each Field by Hand"
+msgstr ""
+
+#: ../../book/forms.rst:845
+msgid ""
+"The ``form_row`` helper is great because you can very quickly render each "
+"field of your form (and the markup used for the \"row\" can be customized as"
+" well). But since life isn't always so simple, you can also render each "
+"field entirely by hand. The end-product of the following is the same as when"
+" you used the ``form_row`` helper:"
+msgstr ""
+
+#: ../../book/forms.rst:900
+msgid ""
+"If the auto-generated label for a field isn't quite right, you can "
+"explicitly specify it:"
+msgstr ""
+
+#: ../../book/forms.rst:913
+msgid ""
+"Some field types have additional rendering options that can be passed to the"
+" widget. These options are documented with each type, but one common options"
+" is ``attr``, which allows you to modify attributes on the form element. The"
+" following would add the ``task_field`` class to the rendered input text "
+"field:"
+msgstr ""
+
+#: ../../book/forms.rst:931
+msgid ""
+"If you need to render form fields \"by hand\" then you can access individual"
+" values for fields such as the ``id``, ``name`` and ``label``. For example "
+"to get the ``id``:"
+msgstr ""
+
+#: ../../book/forms.rst:945
+msgid ""
+"To get the value used for the form field's name attribute you need to use "
+"the ``full_name`` value:"
+msgstr ""
+
+#: ../../book/forms.rst:959
+msgid "Twig Template Function Reference"
+msgstr ""
+
+#: ../../book/forms.rst:961
+msgid ""
+"If you're using Twig, a full reference of the form rendering functions is "
+"available in the :doc:`reference manual </reference/forms/twig_reference>`. "
+"Read this to know everything about the helpers available and the options "
+"that can be used with each."
+msgstr ""
+
+#: ../../book/forms.rst:972
+msgid "Changing the Action and Method of a Form"
+msgstr ""
+
+#: ../../book/forms.rst:974
+msgid ""
+"So far, the ``form_start()`` helper has been used to render the form's start"
+" tag and we assumed that each form is submitted to the same URL in a POST "
+"request. Sometimes you want to change these parameters. You can do so in a "
+"few different ways. If you build your form in the controller, you can use "
+"``setAction()`` and ``setMethod()``::"
+msgstr ""
+
+#: ../../book/forms.rst:990
+msgid ""
+"This example assumes that you've created a route called ``target_route`` "
+"that points to the controller that processes the form."
+msgstr ""
+
+#: ../../book/forms.rst:993
+msgid ""
+"In :ref:`book-form-creating-form-classes` you will learn how to move the "
+"form building code into separate classes. When using an external form class "
+"in the controller, you can pass the action and method as form options::"
+msgstr ""
+
+#: ../../book/forms.rst:1002
+msgid ""
+"Finally, you can override the action and method in the template by passing "
+"them to the ``form()`` or the ``form_start()`` helper:"
+msgstr ""
+
+#: ../../book/forms.rst:1022
+msgid ""
+"If the form's method is not GET or POST, but PUT, PATCH or DELETE, Symfony "
+"will insert a hidden field with the name ``_method`` that stores this "
+"method. The form will be submitted in a normal POST request, but Symfony's "
+"router is capable of detecting the ``_method`` parameter and will interpret "
+"it as a PUT, PATCH or DELETE request. Read the cookbook chapter "
+"\":doc:`/cookbook/routing/method_parameters`\" for more information."
+msgstr ""
+
+#: ../../book/forms.rst:1035
+msgid "Creating Form Classes"
+msgstr ""
+
+#: ../../book/forms.rst:1037
+msgid ""
+"As you've seen, a form can be created and used directly in a controller. "
+"However, a better practice is to build the form in a separate, standalone "
+"PHP class, which can then be reused anywhere in your application. Create a "
+"new class that will house the logic for building the task form::"
+msgstr ""
+
+#: ../../book/forms.rst:1066
+msgid ""
+"The ``getName()`` method returns the identifier of this form \"type\". These"
+" identifiers must be unique in the application. Unless you want to override "
+"a built-in type, they should be different from the default Symfony types and"
+" from any type defined by a third-party bundle installed in your "
+"application. Consider prefixing your types with ``app_`` to avoid identifier"
+" collisions."
+msgstr ""
+
+#: ../../book/forms.rst:1072
+msgid ""
+"This new class contains all the directions needed to create the task form. "
+"It can be used to quickly build a form object in the controller::"
+msgstr ""
+
+#: ../../book/forms.rst:1088
+msgid ""
+"Placing the form logic into its own class means that the form can be easily "
+"reused elsewhere in your project. This is the best way to create forms, but "
+"the choice is ultimately up to you."
+msgstr ""
+
+#: ../../book/forms.rst:0
+msgid "Setting the ``data_class``"
+msgstr ""
+
+#: ../../book/forms.rst:1096
+msgid ""
+"Every form needs to know the name of the class that holds the underlying "
+"data (e.g. ``AppBundle\\Entity\\Task``). Usually, this is just guessed based"
+" off of the object passed to the second argument to ``createForm`` (i.e. "
+"``$task``). Later, when you begin embedding forms, this will no longer be "
+"sufficient. So, while not always necessary, it's generally a good idea to "
+"explicitly specify the ``data_class`` option by adding the following to your"
+" form type class::"
+msgstr ""
+
+#: ../../book/forms.rst:1115
+msgid ""
+"When mapping forms to objects, all fields are mapped. Any fields on the form"
+" that do not exist on the mapped object will cause an exception to be "
+"thrown."
+msgstr ""
+
+#: ../../book/forms.rst:1119
+msgid ""
+"In cases where you need extra fields in the form (for example: a \"do you "
+"agree with these terms\" checkbox) that will not be mapped to the underlying"
+" object, you need to set the ``mapped`` option to ``false``::"
+msgstr ""
+
+#: ../../book/forms.rst:1133
+msgid ""
+"Additionally, if there are any fields on the form that aren't included in "
+"the submitted data, those fields will be explicitly set to ``null``."
+msgstr ""
+
+#: ../../book/forms.rst:1136
+msgid "The field data can be accessed in a controller with::"
+msgstr ""
+
+#: ../../book/forms.rst:1140
+msgid ""
+"In addition, the data of an unmapped field can also be modified directly::"
+msgstr ""
+
+#: ../../book/forms.rst:1145
+msgid "Defining your Forms as Services"
+msgstr ""
+
+#: ../../book/forms.rst:1147
+msgid ""
+"Defining your form type as a service is a good practice and makes it really "
+"easy to use in your application."
+msgstr ""
+
+#: ../../book/forms.rst:1152
+msgid ""
+"Services and the service container will be handled :doc:`later on in this "
+"book </book/service_container>`. Things will be more clear after reading "
+"that chapter."
+msgstr ""
+
+#: ../../book/forms.rst:1198
+msgid "That's it! Now you can use your form type directly in a controller::"
+msgstr ""
+
+#: ../../book/forms.rst:1211
+msgid "or even use from within the form type of another form::"
+msgstr ""
+
+#: ../../book/forms.rst:1226
+msgid "Read :ref:`form-cookbook-form-field-service` for more information."
+msgstr ""
+
+#: ../../book/forms.rst:1232
+msgid "Forms and Doctrine"
+msgstr ""
+
+#: ../../book/forms.rst:1234
+msgid ""
+"The goal of a form is to translate data from an object (e.g. ``Task``) to an"
+" HTML form and then translate user-submitted data back to the original "
+"object. As such, the topic of persisting the ``Task`` object to the database"
+" is entirely unrelated to the topic of forms. But, if you've configured the "
+"``Task`` class to be persisted via Doctrine (i.e. you've added :ref:`mapping"
+" metadata <book-doctrine-adding-mapping>` for it), then persisting it after "
+"a form submission can be done when the form is valid::"
+msgstr ""
+
+#: ../../book/forms.rst:1250
+msgid ""
+"If, for some reason, you don't have access to your original ``$task`` "
+"object, you can fetch it from the form::"
+msgstr ""
+
+#: ../../book/forms.rst:1255
+msgid ""
+"For more information, see the :doc:`Doctrine ORM chapter </book/doctrine>`."
+msgstr ""
+
+#: ../../book/forms.rst:1257
+msgid ""
+"The key thing to understand is that when the form is submitted, the "
+"submitted data is transferred to the underlying object immediately. If you "
+"want to persist that data, you simply need to persist the object itself "
+"(which already contains the submitted data)."
+msgstr ""
+
+#: ../../book/forms.rst:1266
+msgid "Embedded Forms"
+msgstr ""
+
+#: ../../book/forms.rst:1268
+msgid ""
+"Often, you'll want to build a form that will include fields from many "
+"different objects. For example, a registration form may contain data "
+"belonging to a ``User`` object as well as many ``Address`` objects. "
+"Fortunately, this is easy and natural with the Form component."
+msgstr ""
+
+#: ../../book/forms.rst:1276
+msgid "Embedding a Single Object"
+msgstr ""
+
+#: ../../book/forms.rst:1278
+msgid ""
+"Suppose that each ``Task`` belongs to a simple ``Category`` object. Start, "
+"of course, by creating the ``Category`` object::"
+msgstr ""
+
+#: ../../book/forms.rst:1294
+msgid "Next, add a new ``category`` property to the ``Task`` class::"
+msgstr ""
+
+#: ../../book/forms.rst:1323
+msgid ""
+"The ``Valid`` Constraint has been added to the property ``category``. This "
+"cascades the validation to the corresponding entity. If you omit this "
+"constraint the child entity would not be validated."
+msgstr ""
+
+#: ../../book/forms.rst:1327
+msgid ""
+"Now that your application has been updated to reflect the new requirements, "
+"create a form class so that a ``Category`` object can be modified by the "
+"user::"
+msgstr ""
+
+#: ../../book/forms.rst:1357
+msgid ""
+"The end goal is to allow the ``Category`` of a ``Task`` to be modified right"
+" inside the task form itself. To accomplish this, add a ``category`` field "
+"to the ``TaskType`` object whose type is an instance of the new "
+"``CategoryType`` class:"
+msgstr ""
+
+#: ../../book/forms.rst:1373
+msgid ""
+"The fields from ``CategoryType`` can now be rendered alongside those from "
+"the ``TaskType`` class."
+msgstr ""
+
+#: ../../book/forms.rst:1376
+msgid ""
+"Render the ``Category`` fields in the same way as the original ``Task`` "
+"fields:"
+msgstr ""
+
+#: ../../book/forms.rst:1402
+msgid ""
+"When the user submits the form, the submitted data for the ``Category`` "
+"fields are used to construct an instance of ``Category``, which is then set "
+"on the ``category`` field of the ``Task`` instance."
+msgstr ""
+
+#: ../../book/forms.rst:1406
+msgid ""
+"The ``Category`` instance is accessible naturally via "
+"``$task->getCategory()`` and can be persisted to the database or used "
+"however you need."
+msgstr ""
+
+#: ../../book/forms.rst:1410
+msgid "Embedding a Collection of Forms"
+msgstr ""
+
+#: ../../book/forms.rst:1412
+msgid ""
+"You can also embed a collection of forms into one form (imagine a "
+"``Category`` form with many ``Product`` sub-forms). This is done by using "
+"the ``collection`` field type."
+msgstr ""
+
+#: ../../book/forms.rst:1416
+msgid ""
+"For more information see the \":doc:`/cookbook/form/form_collections`\" "
+"cookbook entry and the :doc:`collection </reference/forms/types/collection>`"
+" field type reference."
+msgstr ""
+
+#: ../../book/forms.rst:1426
+msgid "Form Theming"
+msgstr ""
+
+#: ../../book/forms.rst:1428
+msgid ""
+"Every part of how a form is rendered can be customized. You're free to "
+"change how each form \"row\" renders, change the markup used to render "
+"errors, or even customize how a ``textarea`` tag should be rendered. Nothing"
+" is off-limits, and different customizations can be used in different "
+"places."
+msgstr ""
+
+#: ../../book/forms.rst:1433
+msgid ""
+"Symfony uses templates to render each and every part of a form, such as "
+"``label`` tags, ``input`` tags, error messages and everything else."
+msgstr ""
+
+#: ../../book/forms.rst:1436
+msgid ""
+"In Twig, each form \"fragment\" is represented by a Twig block. To customize"
+" any part of how a form renders, you just need to override the appropriate "
+"block."
+msgstr ""
+
+#: ../../book/forms.rst:1439
+msgid ""
+"In PHP, each form \"fragment\" is rendered via an individual template file. "
+"To customize any part of how a form renders, you just need to override the "
+"existing template by creating a new one."
+msgstr ""
+
+#: ../../book/forms.rst:1443
+msgid ""
+"To understand how this works, customize the ``form_row`` fragment and add a "
+"class attribute to the ``div`` element that surrounds each row. To do this, "
+"create a new template file that will store the new markup:"
+msgstr ""
+
+#: ../../book/forms.rst:1471
+msgid ""
+"The ``form_row`` form fragment is used when rendering most fields via the "
+"``form_row`` function. To tell the Form component to use your new "
+"``form_row`` fragment defined above, add the following to the top of the "
+"template that renders the form:"
+msgstr ""
+
+#: ../../book/forms.rst:1496
+msgid ""
+"The ``form_theme`` tag (in Twig) \"imports\" the fragments defined in the "
+"given template and uses them when rendering the form. In other words, when "
+"the ``form_row`` function is called later in this template, it will use the "
+"``form_row`` block from your custom theme (instead of the default "
+"``form_row`` block that ships with Symfony)."
+msgstr ""
+
+#: ../../book/forms.rst:1502
+msgid ""
+"Your custom theme does not have to override all the blocks. When rendering a"
+" block which is not overridden in your custom theme, the theming engine will"
+" fall back to the global theme (defined at the bundle level)."
+msgstr ""
+
+#: ../../book/forms.rst:1506
+msgid ""
+"If several custom themes are provided they will be searched in the listed "
+"order before falling back to the global theme."
+msgstr ""
+
+#: ../../book/forms.rst:1509
+msgid ""
+"To customize any portion of a form, you just need to override the "
+"appropriate fragment. Knowing exactly which block or file to override is the"
+" subject of the next section."
+msgstr ""
+
+#: ../../book/forms.rst:1513
+msgid ""
+"For a more extensive discussion, see "
+":doc:`/cookbook/form/form_customization`."
+msgstr ""
+
+#: ../../book/forms.rst:1521
+msgid "Form Fragment Naming"
+msgstr ""
+
+#: ../../book/forms.rst:1523
+msgid ""
+"In Symfony, every part of a form that is rendered - HTML form elements, "
+"errors, labels, etc. - is defined in a base theme, which is a collection of "
+"blocks in Twig and a collection of template files in PHP."
+msgstr ""
+
+#: ../../book/forms.rst:1527
+msgid ""
+"In Twig, every block needed is defined in a single template file (e.g. "
+"`form_div_layout.html.twig`_) that lives inside the `Twig Bridge`_. Inside "
+"this file, you can see every block needed to render a form and every default"
+" field type."
+msgstr ""
+
+#: ../../book/forms.rst:1532
+msgid ""
+"In PHP, the fragments are individual template files. By default they are "
+"located in the `Resources/views/Form` directory of the framework bundle "
+"(`view on GitHub`_)."
+msgstr ""
+
+#: ../../book/forms.rst:1535
+msgid ""
+"Each fragment name follows the same basic pattern and is broken up into two "
+"pieces, separated by a single underscore character (``_``). A few examples "
+"are:"
+msgstr ""
+
+#: ../../book/forms.rst:1538
+msgid "``form_row`` - used by ``form_row`` to render most fields;"
+msgstr ""
+
+#: ../../book/forms.rst:1539
+msgid ""
+"``textarea_widget`` - used by ``form_widget`` to render a ``textarea`` field"
+" type;"
+msgstr ""
+
+#: ../../book/forms.rst:1541
+msgid ""
+"``form_errors`` - used by ``form_errors`` to render errors for a field;"
+msgstr ""
+
+#: ../../book/forms.rst:1543
+msgid ""
+"Each fragment follows the same basic pattern: ``type_part``. The ``type`` "
+"portion corresponds to the field *type* being rendered (e.g. ``textarea``, "
+"``checkbox``, ``date``, etc) whereas the ``part`` portion corresponds to "
+"*what* is being rendered (e.g. ``label``, ``widget``, ``errors``, etc). By "
+"default, there are 4 possible *parts* of a form that can be rendered:"
+msgstr ""
+
+#: ../../book/forms.rst:1550
+msgid "``label``"
+msgstr ""
+
+#: ../../book/forms.rst:1550
+msgid "(e.g. ``form_label``)"
+msgstr ""
+
+#: ../../book/forms.rst:1550
+msgid "renders the field's label"
+msgstr ""
+
+#: ../../book/forms.rst:1552
+msgid "``widget``"
+msgstr ""
+
+#: ../../book/forms.rst:1552
+msgid "(e.g. ``form_widget``)"
+msgstr ""
+
+#: ../../book/forms.rst:1552
+msgid "renders the field's HTML representation"
+msgstr ""
+
+#: ../../book/forms.rst:1554
+msgid "``errors``"
+msgstr ""
+
+#: ../../book/forms.rst:1554
+msgid "(e.g. ``form_errors``)"
+msgstr ""
+
+#: ../../book/forms.rst:1554
+msgid "renders the field's errors"
+msgstr ""
+
+#: ../../book/forms.rst:1556
+msgid "``row``"
+msgstr ""
+
+#: ../../book/forms.rst:1556
+msgid "(e.g. ``form_row``)"
+msgstr ""
+
+#: ../../book/forms.rst:1556
+msgid "renders the field's entire row (label, widget & errors)"
+msgstr ""
+
+#: ../../book/forms.rst:1561
+msgid ""
+"There are actually 2 other *parts* - ``rows`` and ``rest`` - but you should "
+"rarely if ever need to worry about overriding them."
+msgstr ""
+
+#: ../../book/forms.rst:1564
+msgid ""
+"By knowing the field type (e.g. ``textarea``) and which part you want to "
+"customize (e.g. ``widget``), you can construct the fragment name that needs "
+"to be overridden (e.g. ``textarea_widget``)."
+msgstr ""
+
+#: ../../book/forms.rst:1572
+msgid "Template Fragment Inheritance"
+msgstr ""
+
+#: ../../book/forms.rst:1574
+msgid ""
+"In some cases, the fragment you want to customize will appear to be missing."
+" For example, there is no ``textarea_errors`` fragment in the default themes"
+" provided with Symfony. So how are the errors for a textarea field rendered?"
+msgstr ""
+
+#: ../../book/forms.rst:1578
+msgid ""
+"The answer is: via the ``form_errors`` fragment. When Symfony renders the "
+"errors for a textarea type, it looks first for a ``textarea_errors`` "
+"fragment before falling back to the ``form_errors`` fragment. Each field "
+"type has a *parent* type (the parent type of ``textarea`` is ``text``, its "
+"parent is ``form``), and Symfony uses the fragment for the parent type if "
+"the base fragment doesn't exist."
+msgstr ""
+
+#: ../../book/forms.rst:1585
+msgid ""
+"So, to override the errors for *only* ``textarea`` fields, copy the "
+"``form_errors`` fragment, rename it to ``textarea_errors`` and customize it."
+" To override the default error rendering for *all* fields, copy and "
+"customize the ``form_errors`` fragment directly."
+msgstr ""
+
+#: ../../book/forms.rst:1592
+msgid ""
+"The \"parent\" type of each field type is available in the :doc:`form type "
+"reference </reference/forms/types>` for each field type."
+msgstr ""
+
+#: ../../book/forms.rst:1599
+msgid "Global Form Theming"
+msgstr ""
+
+#: ../../book/forms.rst:1601
+msgid ""
+"In the above example, you used the ``form_theme`` helper (in Twig) to "
+"\"import\" the custom form fragments into *just* that form. You can also "
+"tell Symfony to import form customizations across your entire project."
+msgstr ""
+
+#: ../../book/forms.rst:1606
+msgid "Twig"
+msgstr ""
+
+#: ../../book/forms.rst:1608
+msgid ""
+"To automatically include the customized blocks from the ``fields.html.twig``"
+" template created earlier in *all* templates, modify your application "
+"configuration file:"
+msgstr ""
+
+#: ../../book/forms.rst:1648
+msgid ""
+"Any blocks inside the ``fields.html.twig`` template are now used globally to"
+" define form output."
+msgstr ""
+
+#: ../../book/forms.rst:0
+msgid "Customizing Form Output all in a Single File with Twig"
+msgstr ""
+
+#: ../../book/forms.rst:1653
+msgid ""
+"In Twig, you can also customize a form block right inside the template where"
+" that customization is needed:"
+msgstr ""
+
+#: ../../book/forms.rst:1674
+msgid ""
+"The ``{% form_theme form _self %}`` tag allows form blocks to be customized "
+"directly inside the template that will use those customizations. Use this "
+"method to quickly make form output customizations that will only ever be "
+"needed in a single template."
+msgstr ""
+
+#: ../../book/forms.rst:1681
+msgid ""
+"This ``{% form_theme form _self %}`` functionality will *only* work if your "
+"template extends another. If your template does not, you must point "
+"``form_theme`` to a separate template."
+msgstr ""
+
+#: ../../book/forms.rst:1686
+msgid "PHP"
+msgstr ""
+
+#: ../../book/forms.rst:1688
+msgid ""
+"To automatically include the customized templates from the "
+"``app/Resources/views/Form`` directory created earlier in *all* templates, "
+"modify your application configuration file:"
+msgstr ""
+
+#: ../../book/forms.rst:1738
+msgid ""
+"Any fragments inside the ``app/Resources/views/Form`` directory are now used"
+" globally to define form output."
+msgstr ""
+
+#: ../../book/forms.rst:1747
+msgid "CSRF Protection"
+msgstr ""
+
+#: ../../book/forms.rst:1749
+msgid ""
+"CSRF - or `Cross-site request forgery`_ - is a method by which a malicious "
+"user attempts to make your legitimate users unknowingly submit data that "
+"they don't intend to submit. Fortunately, CSRF attacks can be prevented by "
+"using a CSRF token inside your forms."
+msgstr ""
+
+#: ../../book/forms.rst:1754
+msgid ""
+"The good news is that, by default, Symfony embeds and validates CSRF tokens "
+"automatically for you. This means that you can take advantage of the CSRF "
+"protection without doing anything. In fact, every form in this chapter has "
+"taken advantage of the CSRF protection!"
+msgstr ""
+
+#: ../../book/forms.rst:1759
+msgid ""
+"CSRF protection works by adding a hidden field to your form - called "
+"``_token`` by default - that contains a value that only you and your user "
+"knows. This ensures that the user - not some other entity - is submitting "
+"the given data. Symfony automatically validates the presence and accuracy of"
+" this token."
+msgstr ""
+
+#: ../../book/forms.rst:1764
+msgid ""
+"The ``_token`` field is a hidden field and will be automatically rendered if"
+" you include the ``form_end()`` function in your template, which ensures "
+"that all un-rendered fields are output."
+msgstr ""
+
+#: ../../book/forms.rst:1768
+msgid ""
+"The CSRF token can be customized on a form-by-form basis. For example::"
+msgstr ""
+
+#: ../../book/forms.rst:1792
+msgid ""
+"To disable CSRF protection, set the ``csrf_protection`` option to false. "
+"Customizations can also be made globally in your project. For more "
+"information, see the :ref:`form configuration reference <reference-"
+"framework-form>` section."
+msgstr ""
+
+#: ../../book/forms.rst:1799
+msgid ""
+"The ``intention`` option is optional but greatly enhances the security of "
+"the generated token by making it different for each form."
+msgstr ""
+
+#: ../../book/forms.rst:1804
+msgid ""
+"CSRF tokens are meant to be different for every user. This is why you need "
+"to be cautious if you try to cache pages with forms including this kind of "
+"protection. For more information, see "
+":doc:`/cookbook/cache/form_csrf_caching`."
+msgstr ""
+
+#: ../../book/forms.rst:1813
+msgid "Using a Form without a Class"
+msgstr ""
+
+#: ../../book/forms.rst:1815
+msgid ""
+"In most cases, a form is tied to an object, and the fields of the form get "
+"and store their data on the properties of that object. This is exactly what "
+"you've seen so far in this chapter with the `Task` class."
+msgstr ""
+
+#: ../../book/forms.rst:1819
+msgid ""
+"But sometimes, you may just want to use a form without a class, and get back"
+" an array of the submitted data. This is actually really easy::"
+msgstr ""
+
+#: ../../book/forms.rst:1846
+msgid ""
+"By default, a form actually assumes that you want to work with arrays of "
+"data, instead of an object. There are exactly two ways that you can change "
+"this behavior and tie the form to an object instead:"
+msgstr ""
+
+#: ../../book/forms.rst:1850
+msgid ""
+"Pass an object when creating the form (as the first argument to "
+"``createFormBuilder`` or the second argument to ``createForm``);"
+msgstr ""
+
+#: ../../book/forms.rst:1853
+msgid "Declare the ``data_class`` option on your form."
+msgstr ""
+
+#: ../../book/forms.rst:1855
+msgid ""
+"If you *don't* do either of these, then the form will return the data as an "
+"array. In this example, since ``$defaultData`` is not an object (and no "
+"``data_class`` option is set), ``$form->getData()`` ultimately returns an "
+"array."
+msgstr ""
+
+#: ../../book/forms.rst:1862
+msgid ""
+"You can also access POST values (in this case \"name\") directly through the"
+" request object, like so::"
+msgstr ""
+
+#: ../../book/forms.rst:1867
+msgid ""
+"Be advised, however, that in most cases using the ``getData()`` method is a "
+"better choice, since it returns the data (usually an object) after it's been"
+" transformed by the form framework."
+msgstr ""
+
+#: ../../book/forms.rst:1872
+msgid "Adding Validation"
+msgstr ""
+
+#: ../../book/forms.rst:1874
+msgid ""
+"The only missing piece is validation. Usually, when you call "
+"``$form->isValid()``, the object is validated by reading the constraints "
+"that you applied to that class. If your form is mapped to an object (i.e. "
+"you're using the ``data_class`` option or passing an object to your form), "
+"this is almost always the approach you want to use. See "
+":doc:`/book/validation` for more details."
+msgstr ""
+
+#: ../../book/forms.rst:1882
+msgid ""
+"But if the form is not mapped to an object and you instead want to retrieve "
+"a simple array of your submitted data, how can you add constraints to the "
+"data of your form?"
+msgstr ""
+
+#: ../../book/forms.rst:1886
+msgid ""
+"The answer is to setup the constraints yourself, and attach them to the "
+"individual fields. The overall approach is covered a bit more in the "
+":ref:`validation chapter <book-validation-raw-values>`, but here's a short "
+"example:"
+msgstr ""
+
+#: ../../book/forms.rst:1909
+msgid ""
+"If you are using validation groups, you need to either reference the "
+"``Default`` group when creating the form, or set the correct group on the "
+"constraint you are adding."
+msgstr ""
+
+#: ../../book/forms.rst:1918
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../book/forms.rst:1920
+msgid ""
+"You now know all of the building blocks necessary to build complex and "
+"functional forms for your application. When building forms, keep in mind "
+"that the first goal of a form is to translate data from an object (``Task``)"
+" to an HTML form so that the user can modify that data. The second goal of a"
+" form is to take the data submitted by the user and to re-apply it to the "
+"object."
+msgstr ""
+
+#: ../../book/forms.rst:1926
+msgid ""
+"There's still much more to learn about the powerful world of forms, such as "
+"how to handle :doc:`file uploads with Doctrine "
+"</cookbook/doctrine/file_uploads>` or how to create a form where a dynamic "
+"number of sub-forms can be added (e.g. a todo list where you can keep adding"
+" more fields via JavaScript before submitting). See the cookbook for these "
+"topics. Also, be sure to lean on the :doc:`field type reference "
+"documentation </reference/forms/types>`, which includes examples of how to "
+"use each field type and its options."
+msgstr ""
+
+#: ../../book/forms.rst:1936
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/forms.rst:1938
+msgid ":doc:`/cookbook/doctrine/file_uploads`"
+msgstr ""
+
+#: ../../book/forms.rst:1939
+msgid ":doc:`File Field Reference </reference/forms/types/file>`"
+msgstr ""
+
+#: ../../book/forms.rst:1940
+msgid ""
+":doc:`Creating Custom Field Types </cookbook/form/create_custom_field_type>`"
+msgstr ""
+
+#: ../../book/forms.rst:1941
+msgid ":doc:`/cookbook/form/form_customization`"
+msgstr ""
+
+#: ../../book/forms.rst:1942
+msgid ":doc:`/cookbook/form/dynamic_form_modification`"
+msgstr ""
+
+#: ../../book/forms.rst:1943
+msgid ":doc:`/cookbook/form/data_transformers`"
+msgstr ""
+
+#: ../../book/forms.rst:1944
+msgid ":doc:`/cookbook/security/csrf_in_login_form`"
+msgstr ""
+
+#: ../../book/forms.rst:1945
+msgid ":doc:`/cookbook/cache/form_csrf_caching`"
+msgstr ""
+
+#: ../../book/forms.rst:19
+msgid "Create a simple form"
+msgstr ""
+
+#: ../../book/forms.rst:66
+msgid "Create a form in a controller"
+msgstr ""
+
+#: ../../book/forms.rst:132
+msgid "Basic template rendering"
+msgstr ""
+
+#: ../../book/forms.rst:205
+msgid "Handling form submissions"
+msgstr ""
+
+#: ../../book/forms.rst:289
+msgid "Multiple Submit Buttons"
+msgstr ""
+
+#: ../../book/forms.rst:325
+msgid "Validation"
+msgstr ""
+
+#: ../../book/forms.rst:458
+msgid "Validation groups"
+msgstr ""
+
+#: ../../book/forms.rst:493
+msgid "Disabling validation"
+msgstr ""
+
+#: ../../book/forms.rst:519
+msgid "Validation groups based on submitted data"
+msgstr ""
+
+#: ../../book/forms.rst:594
+msgid "Validation groups based on clicked button"
+msgstr ""
+
+#: ../../book/forms.rst:632
+msgid "Built-in field types"
+msgstr ""
+
+#: ../../book/forms.rst:648
+msgid "Field type options"
+msgstr ""
+
+#: ../../book/forms.rst:701 ../../book/forms.rst:738
+msgid "Field type guessing"
+msgstr ""
+
+#: ../../book/forms.rst:776
+msgid "Rendering in a template"
+msgstr ""
+
+#: ../../book/forms.rst:839
+msgid "Rendering each field by hand"
+msgstr ""
+
+#: ../../book/forms.rst:966
+msgid "Changing the action and method"
+msgstr ""
+
+#: ../../book/forms.rst:1029
+msgid "Creating form classes"
+msgstr ""
+
+#: ../../book/forms.rst:1228
+msgid "Doctrine"
+msgstr ""
+
+#: ../../book/forms.rst:1262
+msgid "Embedded forms"
+msgstr ""
+
+#: ../../book/forms.rst:1419
+msgid "Theming"
+msgstr ""
+
+#: ../../book/forms.rst:1419
+msgid "Customizing fields"
+msgstr ""
+
+#: ../../book/forms.rst:1515
+msgid "Template fragment naming"
+msgstr ""
+
+#: ../../book/forms.rst:1568
+msgid "Template fragment inheritance"
+msgstr ""
+
+#: ../../book/forms.rst:1595
+msgid "Global Theming"
+msgstr ""
+
+#: ../../book/forms.rst:1741
+msgid "CSRF protection"
+msgstr ""
+
+#: ../../book/forms.rst:1809
+msgid "With no class"
+msgstr ""

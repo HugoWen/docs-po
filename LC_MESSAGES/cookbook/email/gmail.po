@@ -1,0 +1,61 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/gmail.rst:5
+msgid "How to Use Gmail to Send Emails"
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:7
+msgid ""
+"During development, instead of using a regular SMTP server to send emails, "
+"you might find using Gmail easier and more practical. The SwiftmailerBundle "
+"makes it really easy."
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:13
+msgid ""
+"Instead of using your regular Gmail account, it's of course recommended that"
+" you create a special account."
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:16
+msgid ""
+"In the development configuration file, change the ``transport`` setting to "
+"``gmail`` and set the ``username`` and ``password`` to the Google "
+"credentials:"
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:58
+msgid "You're done!"
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:62
+msgid ""
+"If you are using the Symfony Standard Edition, configure the parameters in "
+"``parameters.yml``:"
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:76
+msgid ""
+"The ``gmail`` transport is simply a shortcut that uses the ``smtp`` "
+"transport and sets ``encryption``, ``auth_mode`` and ``host`` to work with "
+"Gmail."
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:1
+msgid "Emails"
+msgstr ""
+
+#: ../../cookbook/email/gmail.rst:1
+msgid "Gmail"
+msgstr ""

@@ -1,0 +1,82 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/serializer.rst:5
+msgid "How to Use the Serializer"
+msgstr ""
+
+#: ../../cookbook/serializer.rst:7
+msgid ""
+"Serializing and deserializing to and from objects and different formats "
+"(e.g. JSON or XML) is a very complex topic. Symfony comes with a "
+":doc:`Serializer Component</components/serializer>`, which gives you some "
+"tools that you can leverage for your solution."
+msgstr ""
+
+#: ../../cookbook/serializer.rst:12
+msgid ""
+"In fact, before you start, get familiar with the serializer, normalizers and"
+" encoders by reading the :doc:`Serializer "
+"Component</components/serializer>`. You should also check out the "
+"`JMSSerializerBundle`_, which expands on the functionality offered by "
+"Symfony's core serializer."
+msgstr ""
+
+#: ../../cookbook/serializer.rst:18
+msgid "Activating the Serializer"
+msgstr ""
+
+#: ../../cookbook/serializer.rst:20
+msgid ""
+"The Serializer has always existed in Symfony, but prior to Symfony 2.3, you "
+"needed to build the ``serializer`` service yourself."
+msgstr ""
+
+#: ../../cookbook/serializer.rst:24
+msgid ""
+"The ``serializer`` service is not available by default. To turn it on, "
+"activate it in your configuration:"
+msgstr ""
+
+#: ../../cookbook/serializer.rst:56
+msgid "Adding Normalizers and Encoders"
+msgstr ""
+
+#: ../../cookbook/serializer.rst:58
+msgid ""
+"Once enabled, the ``serializer`` service will be available in the container "
+"and will be loaded with two :ref:`encoders<component-serializer-encoders>` "
+"(:class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\JsonEncoder` and "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\XmlEncoder`) but no"
+" :ref:`normalizers<component-serializer-normalizers>`, meaning you'll need "
+"to load your own."
+msgstr ""
+
+#: ../../cookbook/serializer.rst:65
+msgid ""
+"You can load normalizers and/or encoders by tagging them as "
+":ref:`serializer.normalizer<reference-dic-tags-serializer-normalizer>` and "
+":ref:`serializer.encoder<reference-dic-tags-serializer-encoder>`. It's also "
+"possible to set the priority of the tag in order to decide the matching "
+"order."
+msgstr ""
+
+#: ../../cookbook/serializer.rst:70
+msgid ""
+"Here is an example on how to load the "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\GetSetMethodNormalizer`:"
+msgstr ""
+
+#: ../../cookbook/serializer.rst:1
+msgid "Serializer"
+msgstr ""

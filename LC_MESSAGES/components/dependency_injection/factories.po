@@ -1,0 +1,85 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/factories.rst:5
+msgid "Using a Factory to Create Services"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:7
+msgid ""
+"The new "
+":method:`Symfony\\\\Component\\\\DependencyInjection\\\\Definition::setFactory`"
+" method was introduced in Symfony 2.6. Refer to older versions for the "
+"syntax for factories prior to 2.6."
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:12
+msgid ""
+"Symfony's Service Container provides a powerful way of controlling the "
+"creation of objects, allowing you to specify arguments passed to the "
+"constructor as well as calling methods and setting parameters. Sometimes, "
+"however, this will not provide you with everything you need to construct "
+"your objects. For this situation, you can use a factory to create the object"
+" and tell the service container to call a method on the factory rather than "
+"directly instantiating the class."
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:20
+msgid ""
+"Suppose you have a factory that configures and returns a new "
+"``NewsletterManager`` object::"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:35
+msgid ""
+"To make the ``NewsletterManager`` object available as a service, you can "
+"configure the service container to use the "
+"``NewsletterFactory::createNewsletterManager()`` factory method:"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:74
+msgid ""
+"When using a factory to create services, the value chosen for the ``class`` "
+"option has no effect on the resulting service. The actual class name only "
+"depends on the object that is returned by the factory. However, the "
+"configured class name may be used by compiler passes and therefore should be"
+" set to a sensible value."
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:80
+msgid ""
+"Now, the method will be called statically. If the factory class itself "
+"should be instantiated and the resulting object's method called, configure "
+"the factory itself as a service. In this case, the method (e.g. get) should "
+"be changed to be non-static."
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:128
+msgid "Passing Arguments to the Factory Method"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:130
+msgid ""
+"If you need to pass arguments to the factory method, you can use the "
+"``arguments`` options inside the service container. For example, suppose the"
+" ``createNewsletterManager`` method in the previous example takes the "
+"``templating`` service as an argument:"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/factories.rst:1
+msgid "Factories"
+msgstr ""

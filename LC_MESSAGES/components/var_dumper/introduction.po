@@ -1,0 +1,221 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/var_dumper/introduction.rst:6
+msgid "The VarDumper Component"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:8
+msgid ""
+"The VarDumper component provides mechanisms for walking through any "
+"arbitrary PHP variable. Built on top, it provides a better ``dump()`` "
+"function that you can use instead of :phpfunction:`var_dump`."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:12
+msgid "The VarDumper component was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:16
+msgid "Installation"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:18
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:20
+msgid ""
+":doc:`Install it via Composer </components/using_components>` (``symfony"
+"/var-dumper`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:21
+msgid ""
+"Use the official Git repository (https://github.com/symfony/var-dumper)."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:26
+msgid "The dump() Function"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:28
+msgid ""
+"The VarDumper component creates a global ``dump()`` function that you can "
+"use instead of e.g. :phpfunction:`var_dump`. By using it, you'll gain:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:31
+msgid ""
+"Per object and resource types specialized view to e.g. filter out Doctrine "
+"internals while dumping a single proxy entity, or get more insight on opened"
+" files with :phpfunction:`stream_get_meta_data`;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:34
+msgid "Configurable output formats: HTML or colored command line output;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:35
+msgid ""
+"Ability to dump internal references, either soft ones (objects or resources)"
+" or hard ones (``=&`` on arrays or objects properties). Repeated occurrences"
+" of the same object/array/resource won't appear again and again anymore. "
+"Moreover, you'll be able to inspect the reference structure of your data;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:40
+msgid "Ability to operate in the context of an output buffering handler."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:42
+msgid "For example::"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:50
+msgid ""
+"By default, the output format and destination are selected based on your "
+"current PHP SAPI:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:53
+msgid ""
+"On the command line (CLI SAPI), the output is written on ``STDOUT``. This "
+"can be surprising to some because this bypasses PHP's output buffering "
+"mechanism;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:56
+msgid "On other SAPIs, dumps are written as HTML in the regular output."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:60
+msgid ""
+"If you want to catch the dump output as a string, please read the `advanced "
+"documentation <advanced>`_ which contains examples of it. You'll also learn "
+"how to change the format or redirect the output to wherever you want."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:67
+msgid ""
+"In order to have the ``dump()`` function always available when running any "
+"PHP code, you can install it globally on your computer:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:70
+msgid "Run ``composer global require symfony/var-dumper``;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:71
+msgid ""
+"Add ``auto_prepend_file = ${HOME}/.composer/vendor/autoload.php`` to your "
+"``php.ini`` file;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:73
+msgid ""
+"From time to time, run ``composer global update`` to have the latest bug "
+"fixes."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:77
+msgid "DebugBundle and Twig Integration"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:79
+msgid ""
+"The ``DebugBundle`` allows greater integration of the component into the "
+"Symfony full stack framework. It is enabled by default in the *dev* and "
+"*test* environment of the standard edition since version 2.6."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:83
+msgid ""
+"Since generating (even debug) output in the controller or in the model of "
+"your application may just break it by e.g. sending HTTP headers or "
+"corrupting your view, the bundle configures the ``dump()`` function so that "
+"variables are dumped in the web debug toolbar."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:88
+msgid ""
+"But if the toolbar can not be displayed because you e.g. called "
+"``die``/``exit`` or a fatal error occurred, then dumps are written on the "
+"regular output."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:91
+msgid ""
+"In a Twig template, two constructs are available for dumping a variable. "
+"Choosing between both is mostly a matter of personal taste, still:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:94
+msgid ""
+"``{% dump foo.bar %}`` is the way to go when the original template output "
+"shall not be modified: variables are not dumped inline, but in the web debug"
+" toolbar;"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:97
+msgid ""
+"on the contrary, ``{{ dump(foo.bar) }}`` dumps inline and thus may or not be"
+" suited to your use case (e.g. you shouldn't use it in an HTML attribute or "
+"a ``<script>`` tag)."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:101
+msgid ""
+"By default for nested variables, dumps are limited to a subset of their "
+"original value. You can configure the limits in terms of:"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:104
+msgid "maximum number of items to dump,"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:105
+msgid "maximum string length before truncation."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:126
+msgid "Dump Examples and Output"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:128
+msgid ""
+"For simple variables, reading the output should be straightforward. Here are"
+" some examples showing first a variable defined in PHP, then its dump "
+"representation::"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:145
+msgid ""
+"The gray arrow is a toggle button for hiding/showing children of nested "
+"structures."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:176
+msgid ""
+"`#14` is the internal object handle. It allows comparing two consecutive "
+"dumps of the same object."
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:1
+#: ../../components/var_dumper/introduction.rst:1
+msgid "VarDumper"
+msgstr ""
+
+#: ../../components/var_dumper/introduction.rst:1
+msgid "Components"
+msgstr ""

@@ -1,0 +1,136 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/console/console_command.rst:5
+msgid "How to Create a Console Command"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:7
+msgid ""
+"The Console page of the Components section "
+"(:doc:`/components/console/introduction`) covers how to create a console "
+"command. This cookbook article covers the differences when creating console "
+"commands within the Symfony framework."
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:12
+msgid "Automatically Registering Commands"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:14
+msgid ""
+"To make the console commands available automatically with Symfony, create a "
+"``Command`` directory inside your bundle and create a PHP file suffixed with"
+" ``Command.php`` for each command that you want to provide. For example, if "
+"you want to extend the AppBundle to greet you from the command line, create "
+"``GreetCommand.php`` and add the following to it::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:67
+msgid "This command will now automatically be available to run:"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:76
+msgid "Register Commands in the Service Container"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:78
+msgid ""
+"Just like controllers, commands can be declared as services. See the "
+":doc:`dedicated cookbook entry </cookbook/console/commands_as_services>` for"
+" details."
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:83
+msgid "Getting Services from the Service Container"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:85
+msgid ""
+"By using "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Command\\\\ContainerAwareCommand`"
+" as the base class for the command (instead of the more basic "
+":class:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command`), you have "
+"access to the service container. In other words, you have access to any "
+"configured service::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:99
+msgid ""
+"However, due to the :doc:`container scopes "
+"</cookbook/service_container/scopes>` this code doesn't work for some "
+"services. For instance, if you try to get the ``request`` service or any "
+"other service related to it, you'll get the following error:"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:107
+msgid ""
+"Consider the following example that uses the ``translator`` service to "
+"translate some contents using a console command::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:123
+msgid ""
+"If you dig into the Translator component classes, you'll see that the "
+"``request`` service is required to get the locale into which the contents "
+"are translated::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:137
+msgid ""
+"Therefore, when using the ``translator`` service inside a command, you'll "
+"get the previous *\"You cannot create a service of an inactive scope\"* "
+"error message. The solution in this case is as easy as setting the locale "
+"value explicitly before translating contents::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:159
+msgid ""
+"However for other services the solution might be more complex. For more "
+"details, see :doc:`/cookbook/service_container/scopes`."
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:163
+msgid "Testing Commands"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:165
+msgid ""
+"When testing commands used as part of the full framework "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Console\\\\Application "
+"<Symfony\\\\Bundle\\\\FrameworkBundle\\\\Console\\\\Application>` should be "
+"used instead of :class:`Symfony\\\\Component\\\\Console\\\\Application "
+"<Symfony\\\\Component\\\\Console\\\\Application>`::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:199
+msgid ""
+"In the specific case above, the ``name`` parameter and the ``--yell`` option"
+" are not mandatory for the command to work, but are shown so you can see how"
+" to customize them when calling the command."
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:203
+msgid ""
+"To be able to use the fully set up service container for your console tests "
+"you can extend your test from "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Test\\\\KernelTestCase`::"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../cookbook/console/console_command.rst:1
+msgid "Create commands"
+msgstr ""

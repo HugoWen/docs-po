@@ -1,0 +1,53 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/named_encoders.rst:5
+msgid "How to Choose the Password Encoder Algorithm Dynamically"
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:7
+msgid ""
+"Usually, the same password encoder is used for all users by configuring it "
+"to apply to all instances of a specific class:"
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:50
+msgid ""
+"Another option is to use a \"named\" encoder and then select which encoder "
+"you want to use dynamically."
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:53
+msgid ""
+"In the previous example, you've set the ``sha512`` algorithm for "
+"``Acme\\UserBundle\\Entity\\User``. This may be secure enough for a regular "
+"user, but what if you want your admins to have a stronger algorithm, for "
+"example ``bcrypt``. This can be done with named encoders:"
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:102
+msgid ""
+"This creates an encoder named ``harsh``. In order for a ``User`` instance to"
+" use it, the class must implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\EncoderAwareInterface`."
+" The interface requires one method - ``getEncoderName`` - which should "
+"return the name of the encoder to use::"
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/named_encoders.rst:1
+msgid "Named Encoders"
+msgstr ""

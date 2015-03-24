@@ -1,0 +1,79 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/class_loader/cache_class_loader.rst:9
+msgid "Cache a Class Loader"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:12
+msgid "Introduction"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:14
+msgid ""
+"Finding the file for a particular class can be an expensive task. Luckily, "
+"the ClassLoader component comes with two classes to cache the mapping from a"
+" class to its containing file. Both the "
+":class:`Symfony\\\\Component\\\\ClassLoader\\\\ApcClassLoader` and the "
+":class:`Symfony\\\\Component\\\\ClassLoader\\\\XcacheClassLoader` wrap "
+"around an object which implements a ``findFile()`` method to find the file "
+"for a class."
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:23
+msgid ""
+"Both the ``ApcClassLoader`` and the ``XcacheClassLoader`` can be used to "
+"cache Composer's `autoloader`_."
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:27
+#: ../../components/class_loader/cache_class_loader.rst:1
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "ApcClassLoader"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:29
+msgid ""
+"``ApcClassLoader`` wraps an existing class loader and caches calls to its "
+"``findFile()`` method using `APC`_::"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:47
+#: ../../components/class_loader/cache_class_loader.rst:1
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "XcacheClassLoader"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:49
+msgid ""
+"``XcacheClassLoader`` uses `XCache`_ to cache a class loader. Registering it"
+" is straightforward::"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "APC"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:1
+#: ../../components/class_loader/cache_class_loader.rst:1
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "ClassLoader"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "Cache"
+msgstr ""
+
+#: ../../components/class_loader/cache_class_loader.rst:1
+msgid "XCache"
+msgstr ""

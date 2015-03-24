@@ -1,0 +1,747 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/form/form_customization.rst:5
+msgid "How to Customize Form Rendering"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:7
+msgid ""
+"Symfony gives you a wide variety of ways to customize how a form is "
+"rendered. In this guide, you'll learn how to customize every possible part "
+"of your form with as little effort as possible whether you use Twig or PHP "
+"as your templating engine."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:13
+msgid "Form Rendering Basics"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:15
+msgid ""
+"Recall that the label, error and HTML widget of a form field can easily be "
+"rendered by using the ``form_row`` Twig function or the ``row`` PHP helper "
+"method:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:29
+msgid "You can also render each of the three parts of the field individually:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:49
+msgid ""
+"In both cases, the form label, errors and HTML widget are rendered by using "
+"a set of markup that ships standard with Symfony. For example, both of the "
+"above templates would render:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:63
+msgid ""
+"To quickly prototype and test a form, you can render the entire form with "
+"just one line:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:84
+msgid ""
+"The remainder of this recipe will explain how every part of the form's "
+"markup can be modified at several different levels. For more information "
+"about form rendering in general, see :ref:`form-rendering-template`."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:91
+msgid "What are Form Themes?"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:93
+msgid ""
+"Symfony uses form fragments - a small piece of a template that renders just "
+"one part of a form - to render each part of a form - field labels, errors, "
+"``input`` text fields, ``select`` tags, etc."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:97
+msgid ""
+"The fragments are defined as blocks in Twig and as template files in PHP."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:99
+msgid ""
+"A *theme* is nothing more than a set of fragments that you want to use when "
+"rendering a form. In other words, if you want to customize one portion of "
+"how a form is rendered, you'll import a *theme* which contains a "
+"customization of the appropriate form fragments."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:104
+msgid ""
+"Symfony comes with four **built-in form themes** that define each and every "
+"fragment needed to render every part of a form:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:107
+msgid ""
+"`form_div_layout.html.twig`_, wraps each form field inside a ``<div>`` "
+"element."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:108
+msgid ""
+"`form_table_layout.html.twig`_, wraps the entire form inside a ``<table>`` "
+"element and each form field inside a ``<tr>`` element."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:110
+msgid ""
+"`bootstrap_3_layout.html.twig`_, wraps each form field inside a ``<div>`` "
+"element with the appropriate CSS classes to apply the default `Bootstrap 3 "
+"CSS framework`_ styles."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:113
+msgid ""
+"`bootstrap_3_horizontal_layout.html.twig`_, it's similar to the previous "
+"theme, but the CSS classes applied are the ones used to display the forms "
+"horizontally (i.e. the label and the widget in the same row)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:117
+msgid ""
+"In the next section you will learn how to customize a theme by overriding "
+"some or all of its fragments."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:120
+msgid ""
+"For example, when the widget of an ``integer`` type field is rendered, an "
+"``input`` ``number`` field is generated"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:133
+msgid "renders:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:139
+msgid ""
+"Internally, Symfony uses the ``integer_widget`` fragment to render the "
+"field. This is because the field type is ``integer`` and you're rendering "
+"its ``widget`` (as opposed to its ``label`` or ``errors``)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:143
+msgid ""
+"In Twig that would default to the block ``integer_widget`` from the "
+"`form_div_layout.html.twig`_ template."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:146
+msgid ""
+"In PHP it would rather be the ``integer_widget.html.php`` file located in "
+"the ``FrameworkBundle/Resources/views/Form`` folder."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:149
+msgid ""
+"The default implementation of the ``integer_widget`` fragment looks like "
+"this:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:166
+msgid ""
+"As you can see, this fragment itself renders another fragment - "
+"``form_widget_simple``:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:187
+msgid ""
+"The point is, the fragments dictate the HTML output of each part of a form. "
+"To customize the form output, you just need to identify and override the "
+"correct fragment. A set of these form fragment customizations is known as a "
+"form \"theme\". When rendering a form, you can choose which form theme(s) "
+"you want to apply."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:192
+msgid ""
+"In Twig a theme is a single template file and the fragments are the blocks "
+"defined in this file."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:195
+msgid ""
+"In PHP a theme is a folder and the fragments are individual template files "
+"in this folder."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:0
+msgid "Knowing which Block to Customize"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:202
+msgid ""
+"In this example, the customized fragment name is ``integer_widget`` because "
+"you want to override the HTML ``widget`` for all ``integer`` field types. If"
+" you need to customize ``textarea`` fields, you would customize "
+"``textarea_widget``."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:206
+msgid ""
+"As you can see, the fragment name is a combination of the field type and "
+"which part of the field is being rendered (e.g. ``widget``, ``label``, "
+"``errors``, ``row``). As such, to customize how errors are rendered for just"
+" input ``text`` fields, you should customize the ``text_errors`` fragment."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:211
+msgid ""
+"More commonly, however, you'll want to customize how errors are displayed "
+"across *all* fields. You can do this by customizing the ``form_errors`` "
+"fragment. This takes advantage of field type inheritance. Specifically, "
+"since the ``text`` type extends from the ``form`` type, the Form component "
+"will first look for the type-specific fragment (e.g. ``text_errors``) before"
+" falling back to its parent fragment name if it doesn't exist (e.g. "
+"``form_errors``)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:218
+msgid "For more information on this topic, see :ref:`form-template-blocks`."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:223
+msgid "Form Theming"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:225
+msgid ""
+"To see the power of form theming, suppose you want to wrap every input "
+"``number`` field with a ``div`` tag. The key to doing this is to customize "
+"the ``integer_widget`` fragment."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:230
+msgid "Form Theming in Twig"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:232
+msgid ""
+"When customizing the form field block in Twig, you have two options on "
+"*where* the customized form block can live:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:236
+msgid "Method"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:236
+msgid "Pros"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:236
+msgid "Cons"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:238
+msgid "Inside the same template as the form"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:238
+msgid "Quick and easy"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:238
+msgid "Can't be reused in other templates"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:240
+msgid "Inside a separate template"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:240
+msgid "Can be reused by many templates"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:240
+msgid "Requires an extra template to be created"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:243
+msgid ""
+"Both methods have the same effect but are better in different situations."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:248
+msgid "Method 1: Inside the same Template as the Form"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:250
+msgid ""
+"The easiest way to customize the ``integer_widget`` block is to customize it"
+" directly in the template that's actually rendering the form."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:272
+msgid ""
+"By using the special ``{% form_theme form _self %}`` tag, Twig looks inside "
+"the same template for any overridden form blocks. Assuming the ``form.age`` "
+"field is an ``integer`` type field, when its widget is rendered, the "
+"customized ``integer_widget`` block will be used."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:277
+msgid ""
+"The disadvantage of this method is that the customized form block can't be "
+"reused when rendering other forms in other templates. In other words, this "
+"method is most useful when making form customizations that are specific to a"
+" single form in your application. If you want to reuse a form customization "
+"across several (or all) forms in your application, read on to the next "
+"section."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:286
+msgid "Method 2: Inside a separate Template"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:288
+msgid ""
+"You can also choose to put the customized ``integer_widget`` form block in a"
+" separate template entirely. The code and end-result are the same, but you "
+"can now re-use the form customization across many templates:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:302
+msgid ""
+"Now that you've created the customized form block, you need to tell Symfony "
+"to use it. Inside the template where you're actually rendering your form, "
+"tell Symfony to use the template via the ``form_theme`` tag:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:314
+msgid ""
+"When the ``form.age`` widget is rendered, Symfony will use the "
+"``integer_widget`` block from the new template and the ``input`` tag will be"
+" wrapped in the ``div`` element specified in the customized block."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:319
+msgid "Multiple Templates"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:321
+msgid ""
+"A form can also be customized by applying several templates. To do this, "
+"pass the name of all the templates as an array using the ``with`` keyword:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:331
+msgid ""
+"The templates can be located at different bundles and they can even be "
+"stored at the global ``app/Resources/views/`` directory."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:335
+msgid "Child Forms"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:337
+msgid "You can also apply a form theme to a specific child of your form:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:343
+msgid ""
+"This is useful when you want to have a custom theme for a nested form that's"
+" different than the one of your main form. Just specify both your themes:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:355
+msgid "Form Theming in PHP"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:357
+msgid ""
+"When using PHP as a templating engine, the only method to customize a "
+"fragment is to create a new template file - this is similar to the second "
+"method used by Twig."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:361
+msgid ""
+"The template file must be named after the fragment. You must create a "
+"``integer_widget.html.php`` file in order to customize the "
+"``integer_widget`` fragment."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:371
+msgid ""
+"Now that you've created the customized form template, you need to tell "
+"Symfony to use it. Inside the template where you're actually rendering your "
+"form, tell Symfony to use the theme via the ``setTheme`` helper method:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:383
+msgid ""
+"When the ``form.age`` widget is rendered, Symfony will use the customized "
+"``integer_widget.html.php`` template and the ``input`` tag will be wrapped "
+"in the ``div`` element."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:387
+msgid ""
+"If you want to apply a theme to a specific child form, pass it to the "
+"``setTheme`` method:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:397
+msgid "Referencing base Form Blocks (Twig specific)"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:399
+msgid ""
+"So far, to override a particular form block, the best method is to copy the "
+"default block from `form_div_layout.html.twig`_, paste it into a different "
+"template, and then customize it. In many cases, you can avoid doing this by "
+"referencing the base block when customizing it."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:404
+msgid ""
+"This is easy to do, but varies slightly depending on if your form block "
+"customizations are in the same template as the form or a separate template."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:408
+msgid "Referencing Blocks from inside the same Template as the Form"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:410
+msgid ""
+"Import the blocks by adding a ``use`` tag in the template where you're "
+"rendering the form:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:417
+msgid ""
+"Now, when the blocks from `form_div_layout.html.twig`_ are imported, the "
+"``integer_widget`` block is called ``base_integer_widget``. This means that "
+"when you redefine the ``integer_widget`` block, you can reference the "
+"default markup via ``base_integer_widget``:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:431
+msgid "Referencing base Blocks from an external Template"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:433
+msgid ""
+"If your form customizations live inside an external template, you can "
+"reference the base block by using the ``parent()`` Twig function:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:449
+msgid ""
+"It is not possible to reference the base block when using PHP as the "
+"templating engine. You have to manually copy the content from the base block"
+" to your new template file."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:456
+msgid "Making Application-wide Customizations"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:458
+msgid ""
+"If you'd like a certain form customization to be global to your application,"
+" you can accomplish this by making the form customizations in an external "
+"template and then importing it inside your application configuration."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:463
+msgid "Twig"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:465
+msgid ""
+"By using the following configuration, any customized form blocks inside the "
+"``AppBundle:Form:fields.html.twig`` template will be used globally when a "
+"form is rendered."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:498
+msgid ""
+"By default, Twig uses a *div* layout when rendering forms. Some people, "
+"however, may prefer to render forms in a *table* layout. Use the "
+"``form_table_layout.html.twig`` resource to use such a layout:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:531
+#: ../../cookbook/form/form_customization.rst:630
+msgid ""
+"If you only want to make the change in one template, add the following line "
+"to your template file rather than adding the template as a resource:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:538
+msgid ""
+"Note that the ``form`` variable in the above code is the form view variable "
+"that you passed to your template."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:542
+msgid "PHP"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:544
+msgid ""
+"By using the following configuration, any customized form fragments inside "
+"the ``src/AppBundle/Resources/views/Form`` folder will be used globally when"
+" a form is rendered."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:588
+msgid ""
+"By default, the PHP engine uses a *div* layout when rendering forms. Some "
+"people, however, may prefer to render forms in a *table* layout. Use the "
+"``FrameworkBundle:FormTable`` resource to use such a layout:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:637
+msgid ""
+"Note that the ``$form`` variable in the above code is the form view variable"
+" that you passed to your template."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:641
+msgid "How to Customize an individual Field"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:643
+msgid ""
+"So far, you've seen the different ways you can customize the widget output "
+"of all text field types. You can also customize individual fields. For "
+"example, suppose you have two ``text`` fields in a ``product`` form - "
+"``name`` and ``description`` - but you only want to customize one of the "
+"fields. This can be accomplished by customizing a fragment whose name is a "
+"combination of the field's ``id`` attribute and which part of the field is "
+"being customized. For example, to customize the ``name`` field only:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:677
+msgid ""
+"Here, the ``_product_name_widget`` fragment defines the template to use for "
+"the field whose *id* is ``product_name`` (and name is ``product[name]``)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:682
+msgid ""
+"The ``product`` portion of the field is the form name, which may be set "
+"manually or generated automatically based on your form type name (e.g. "
+"``ProductType`` equates to ``product``). If you're not sure what your form "
+"name is, just view the source of your generated form."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:687
+msgid ""
+"If you want to change the ``product`` or ``name`` portion of the block name "
+"``_product_name_widget`` you can set the ``block_name`` option in your form "
+"type::"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:702
+msgid "Then the block name will be ``_product_custom_name_widget``."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:704
+msgid ""
+"You can also override the markup for an entire field row using the same "
+"method:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:737
+msgid "Other common Customizations"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:739
+msgid ""
+"So far, this recipe has shown you several different ways to customize a "
+"single piece of how a form is rendered. The key is to customize a specific "
+"fragment that corresponds to the portion of the form you want to control "
+"(see :ref:`naming form blocks <cookbook-form-customization-sidebar>`)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:744
+msgid ""
+"In the next sections, you'll see how you can make several common form "
+"customizations. To apply these customizations, use one of the methods "
+"described in the :ref:`cookbook-form-theming-methods` section."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:749
+msgid "Customizing Error Output"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:752
+msgid ""
+"The Form component only handles *how* the validation errors are rendered, "
+"and not the actual validation error messages. The error messages themselves "
+"are determined by the validation constraints you apply to your objects. For "
+"more information, see the chapter on :doc:`validation </book/validation>`."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:757
+msgid ""
+"There are many different ways to customize how errors are rendered when a "
+"form is submitted with errors. The error messages for a field are rendered "
+"when you use the ``form_errors`` helper:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:771
+msgid "By default, the errors are rendered inside an unordered list:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:779
+msgid ""
+"To override how errors are rendered for *all* fields, simply copy, paste and"
+" customize the ``form_errors`` fragment."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:812
+#: ../../cookbook/form/form_customization.rst:912
+#: ../../cookbook/form/form_customization.rst:970
+#: ../../cookbook/form/form_customization.rst:1051
+msgid ""
+"See :ref:`cookbook-form-theming-methods` for how to apply this "
+"customization."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:814
+msgid ""
+"You can also customize the error output for just one specific field type. To"
+" customize *only* the markup used for these errors, follow the same "
+"directions as above but put the contents in a relative ``_errors`` block (or"
+" file in case of PHP templates). For example: ``text_errors`` (or "
+"``text_errors.html.php``)."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:821
+msgid ""
+"See :ref:`form-template-blocks` to find out which specific block or file you"
+" have to customize."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:824
+msgid ""
+"Certain errors that are more global to your form (i.e. not specific to just "
+"one field) are rendered separately, usually at the top of your form:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:837
+msgid ""
+"To customize *only* the markup used for these errors, follow the same "
+"directions as above, but now check if the ``compound`` variable is set to "
+"``true``. If it is ``true``, it means that what's being currently rendered "
+"is a collection of fields (e.g. a whole form), and not just an individual "
+"field."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:880
+msgid "Customizing the \"Form Row\""
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:882
+msgid ""
+"When you can manage it, the easiest way to render a form field is via the "
+"``form_row`` function, which renders the label, errors and HTML widget of a "
+"field. To customize the markup used for rendering *all* form field rows, "
+"override the ``form_row`` fragment. For example, suppose you want to add a "
+"class to the ``div`` element around each row:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:915
+msgid "Adding a \"Required\" Asterisk to Field Labels"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:917
+msgid ""
+"If you want to denote all of your required fields with a required asterisk "
+"(``*``), you can do this by customizing the ``form_label`` fragment."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:920
+#: ../../cookbook/form/form_customization.rst:988
+msgid ""
+"In Twig, if you're making the form customization inside the same template as"
+" your form, modify the ``use`` tag and add the following:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:935
+#: ../../cookbook/form/form_customization.rst:1003
+msgid ""
+"In Twig, if you're making the form customization inside a separate template,"
+" use the following:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:950
+#: ../../cookbook/form/form_customization.rst:1018
+msgid ""
+"When using PHP as a templating engine you have to copy the content from the "
+"original template:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:0
+msgid "Using CSS only"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:974
+msgid ""
+"By default, ``label`` tags of required fields are rendered with a "
+"``required`` CSS class. Thus, you can also add an asterisk using CSS only:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:984
+msgid "Adding \"help\" Messages"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:986
+msgid ""
+"You can also customize your form widgets to have an optional \"help\" "
+"message."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1037
+msgid "To render a help message below a field, pass in a ``help`` variable:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1054
+msgid "Using Form Variables"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1056
+msgid ""
+"Most of the functions available for rendering different parts of a form "
+"(e.g. the form widget, form label, form errors, etc.) also allow you to make"
+" certain customizations directly. Look at the following example:"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1076
+msgid ""
+"The array passed as the second argument contains form \"variables\". For "
+"more details about this concept in Twig, see :ref:`twig-reference-form-"
+"variables`."
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1
+msgid "Form"
+msgstr ""
+
+#: ../../cookbook/form/form_customization.rst:1
+msgid "Custom form rendering"
+msgstr ""

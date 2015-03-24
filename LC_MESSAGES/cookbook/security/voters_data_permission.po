@@ -1,0 +1,180 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/voters_data_permission.rst:5
+msgid "How to Use Voters to Check User Permissions"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:7
+msgid ""
+"In Symfony, you can check the permission to access data by using the "
+":doc:`ACL module </cookbook/security/acl>`, which is a bit overwhelming for "
+"many applications. A much easier solution is to work with custom voters, "
+"which are like simple conditional statements."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:14
+msgid ""
+"Voters can also be used in other ways, like, for example, blacklisting IP "
+"addresses from the entire application: :doc:`/cookbook/security/voters`."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:19
+msgid ""
+"Take a look at the :doc:`authorization </components/security/authorization>`"
+" chapter for an even deeper understanding on voters."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:24
+msgid "How Symfony Uses Voters"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:26
+msgid ""
+"In order to use voters, you have to understand how Symfony works with them. "
+"All voters are called each time you use the ``isGranted()`` method on "
+"Symfony's authorization checker (i.e. the ``security.authorization_checker``"
+" service). Each one decides if the current user should have access to some "
+"resource."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:31
+msgid ""
+"Ultimately, Symfony uses one of three different approaches on what to do "
+"with the feedback from all voters: affirmative, consensus and unanimous."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:34
+msgid ""
+"For more information take a look at :ref:`the section about access decision "
+"managers <components-security-access-decision-manager>`."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:38
+msgid "The Voter Interface"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:40
+msgid ""
+"A custom voter must implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface`,"
+" which has this structure:"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:10
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsAttribute`"
+" method is used to check if the voter supports the given user attribute "
+"(i.e: a role like ``ROLE_USER``, an ACL ``EDIT``, etc.)."
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:14
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsClass`"
+" method is used to check if the voter supports the class of the object whose"
+" access is being checked."
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:18
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::vote`"
+" method must implement the business logic that verifies whether or not the "
+"user has access. This method must return one of the following values:"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:22
+msgid ""
+"``VoterInterface::ACCESS_GRANTED``: The authorization will be granted by "
+"this voter;"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:23
+msgid ""
+"``VoterInterface::ACCESS_ABSTAIN``: The voter cannot decide if authorization"
+" should be granted;"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:24
+msgid ""
+"``VoterInterface::ACCESS_DENIED``: The authorization will be denied by this "
+"voter."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:46
+msgid ""
+"In this example, the voter will check if the user has access to a specific "
+"object according to your custom conditions (e.g. they must be the owner of "
+"the object). If the condition fails, you'll return "
+"``VoterInterface::ACCESS_DENIED``, otherwise you'll return "
+"``VoterInterface::ACCESS_GRANTED``. In case the responsibility for this "
+"decision does not belong to this voter, it will return "
+"``VoterInterface::ACCESS_ABSTAIN``."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:54
+msgid "Creating the custom Voter"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:56
+msgid ""
+"The goal is to create a voter that checks if a user has access to view or "
+"edit a particular object. Here's an example implementation:"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:145
+msgid ""
+"That's it! The voter is done. The next step is to inject the voter into the "
+"security layer."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:149
+msgid "Declaring the Voter as a Service"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:151
+msgid ""
+"To inject the voter into the security layer, you must declare it as a "
+"service and tag it with ``security.voter``:"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:194
+msgid "How to Use the Voter in a Controller"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:196
+msgid ""
+"The registered voter will then always be asked as soon as the method "
+"``isGranted()`` from the authorization checker is called."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:224
+msgid ""
+"The ``security.authorization_checker`` service was introduced in Symfony "
+"2.6. Prior to Symfony 2.6, you had to use the ``isGranted()`` method of the "
+"``security.context`` service."
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:228
+msgid "It's that easy!"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/voters_data_permission.rst:1
+msgid "Data Permission Voters"
+msgstr ""

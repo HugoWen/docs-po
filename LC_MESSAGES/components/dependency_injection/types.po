@@ -1,0 +1,172 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/types.rst:5
+msgid "Types of Injection"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:7
+msgid ""
+"Making a class's dependencies explicit and requiring that they be injected "
+"into it is a good way of making a class more reusable, testable and "
+"decoupled from others."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:11
+msgid ""
+"There are several ways that the dependencies can be injected. Each injection"
+" point has advantages and disadvantages to consider, as well as different "
+"ways of working with them when using the service container."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:16
+msgid "Constructor Injection"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:18
+msgid ""
+"The most common way to inject dependencies is via a class's constructor. To "
+"do this you need to add an argument to the constructor signature to accept "
+"the dependency::"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:34
+msgid ""
+"You can specify what service you would like to inject into this in the "
+"service container configuration:"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:79
+msgid ""
+"Type hinting the injected object means that you can be sure that a suitable "
+"dependency has been injected. By type-hinting, you'll get a clear error "
+"immediately if an unsuitable dependency is injected. By type hinting using "
+"an interface rather than a class you can make the choice of dependency more "
+"flexible. And assuming you only use methods defined in the interface, you "
+"can gain that flexibility and still safely use the object."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:86
+msgid "There are several advantages to using constructor injection:"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:88
+msgid ""
+"If the dependency is a requirement and the class cannot work without it then"
+" injecting it via the constructor ensures it is present when the class is "
+"used as the class cannot be constructed without it."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:92
+msgid ""
+"The constructor is only ever called once when the object is created, so you "
+"can be sure that the dependency will not change during the object's "
+"lifetime."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:95
+msgid ""
+"These advantages do mean that constructor injection is not suitable for "
+"working with optional dependencies. It is also more difficult to use in "
+"combination with class hierarchies: if a class uses constructor injection "
+"then extending it and overriding the constructor becomes problematic."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:101
+msgid "Setter Injection"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:103
+msgid ""
+"Another possible injection point into a class is by adding a setter method "
+"that accepts the dependency::"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:160
+msgid "This time the advantages are:"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:162
+msgid ""
+"Setter injection works well with optional dependencies. If you do not need "
+"the dependency, then just do not call the setter."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:165
+msgid ""
+"You can call the setter multiple times. This is particularly useful if the "
+"method adds the dependency to a collection. You can then have a variable "
+"number of dependencies."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:169
+msgid "The disadvantages of setter injection are:"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:171
+msgid ""
+"The setter can be called more than just at the time of construction so you "
+"cannot be sure the dependency is not replaced during the lifetime of the "
+"object (except by explicitly writing the setter method to check if it has "
+"already been called)."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:176
+msgid ""
+"You cannot be sure the setter will be called and so you need to add checks "
+"that any required dependencies are injected."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:180
+msgid "Property Injection"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:182
+msgid ""
+"Another possibility is just setting public fields of the class directly::"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:231
+msgid ""
+"There are mainly only disadvantages to using property injection, it is "
+"similar to setter injection but with these additional important problems:"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:234
+msgid ""
+"You cannot control when the dependency is set at all, it can be changed at "
+"any point in the object's lifetime."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:237
+msgid ""
+"You cannot use type hinting so you cannot be sure what dependency is "
+"injected except by writing into the class code to explicitly test the class "
+"instance before using it."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:241
+msgid ""
+"But, it is useful to know that this can be done with the service container, "
+"especially if you are working with code that is out of your control, such as"
+" in a third party library, which uses public properties for its "
+"dependencies."
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/types.rst:1
+msgid "Injection types"
+msgstr ""

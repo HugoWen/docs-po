@@ -1,0 +1,48 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/doctrine.rst:5
+msgid "How to Test Doctrine Repositories"
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:7
+msgid ""
+"Unit testing Doctrine repositories in a Symfony project is not recommended. "
+"When you're dealing with a repository, you're really dealing with something "
+"that's meant to be tested against a real database connection."
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:11
+msgid ""
+"Fortunately, you can easily test your queries against a real database, as "
+"described below."
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:17
+msgid "Functional Testing"
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:19
+msgid ""
+"If you need to actually execute a query, you will need to boot the kernel to"
+" get a valid connection. In this case, you'll extend the ``KernelTestCase``,"
+" which makes all of this quite easy::"
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/doctrine.rst:1
+msgid "Doctrine"
+msgstr ""

@@ -1,0 +1,115 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/filesystem/lock_handler.rst:2
+msgid "LockHandler"
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:4
+msgid "The lock handler feature was introduced in Symfony 2.6"
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:8
+msgid "What is a Lock?"
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:10
+msgid ""
+"File locking is a mechanism that restricts access to a computer file by "
+"allowing only one user or process access at any specific time. This "
+"mechanism was introduced a few decades ago for mainframes, but continues "
+"being useful for modern applications."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:15
+msgid "Symfony provides a LockHelper to help you use locks in your project."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:18
+msgid "Usage"
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:22
+msgid ""
+"The lock handler only works if you're using just one server. If you have "
+"several hosts, you must not use this helper."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:25
+msgid ""
+"A lock can be used, for example, to allow only one instance of a command to "
+"run."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:38
+msgid ""
+"The first argument of the constructor is a string that it will use as part "
+"of the name of the file used to create the lock on the local filesystem. A "
+"best practice for Symfony commands is to use the command name, such as "
+"``acme:my-command``. ``LockHandler`` sanitizes the contents of the string "
+"before creating the file, so you can pass any value for this argument."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:46
+msgid ""
+"The ``.lock`` extension is optional, but it's a common practice to include "
+"it. This will make it easier to find lock files on the filesystem. Moreover,"
+" to avoid name collisions, ``LockHandler`` also appends a hash to the name "
+"of the lock file."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:51
+msgid ""
+"By default, the lock will be created in the temporary directory, but you can"
+" optionally select the directory where locks are created by passing it as "
+"the second argument of the constructor."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:55
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Filesystem\\\\LockHandler::lock` method"
+" tries to acquire the lock. If the lock is acquired, the method returns "
+"``true``, ``false`` otherwise. If the ``lock`` method is called several "
+"times on the same instance it will always return ``true`` if the lock was "
+"acquired on the first call."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:61
+msgid ""
+"You can pass an optional blocking argument as the first argument to the "
+"``lock()`` method, which defaults to ``false``. If this is set to ``true``, "
+"your PHP code will wait indefinitely until the lock is released by another "
+"process."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:67
+msgid ""
+"Be aware of the fact that the resource lock is automatically released as "
+"soon as PHP applies the garbage-collection process to the ``LockHandler`` "
+"object. This means that if you refactor the first example shown in this "
+"article as follows::"
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:80
+msgid ""
+"Now the code won't work as expected because PHP's garbage collection "
+"mechanism removes the reference to the ``LockHandler`` object and thus, the "
+"lock is released just after it's been created."
+msgstr ""
+
+#: ../../components/filesystem/lock_handler.rst:84
+msgid ""
+"Another alternative way to release the lock explicitly when needed is to use"
+" the :method:`Symfony\\\\Component\\\\Filesystem\\\\LockHandler::release` "
+"method."
+msgstr ""

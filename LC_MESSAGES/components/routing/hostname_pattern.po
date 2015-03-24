@@ -1,0 +1,88 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/routing/hostname_pattern.rst:5
+msgid "How to Match a Route Based on the Host"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:7
+msgid "You can also match on the HTTP *host* of the incoming request."
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:55
+msgid ""
+"Both routes match the same path ``/``, however the first one will match only"
+" if the host is ``m.example.com``."
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:59
+msgid "Using Placeholders"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:61
+msgid ""
+"The host option uses the same syntax as the path matching system. This means"
+" you can use placeholders in your hostname:"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:110
+msgid ""
+"You can also set requirements and default options for these placeholders. "
+"For instance, if you want to match both ``m.example.com`` and "
+"``mobile.example.com``, you use this:"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:171
+msgid ""
+"You can also use service parameters if you do not want to hardcode the "
+"hostname:"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:230
+msgid ""
+"Make sure you also include a default option for the ``domain`` placeholder, "
+"otherwise you need to include a domain value each time you generate a URL "
+"using the route."
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:237
+msgid "Using Host Matching of Imported Routes"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:239
+msgid "You can also set the host option on imported routes:"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:268
+msgid ""
+"The host ``hello.example.com`` will be set on each route loaded from the new"
+" routing resource."
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:272
+msgid "Testing your Controllers"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:274
+msgid ""
+"You need to set the Host HTTP header on your request objects if you want to "
+"get past url matching in your functional tests."
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../components/routing/hostname_pattern.rst:1
+msgid "Matching on Hostname"
+msgstr ""

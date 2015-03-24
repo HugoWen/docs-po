@@ -1,0 +1,94 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/class_loader/introduction.rst:5
+msgid "The ClassLoader Component"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:7
+msgid ""
+"The ClassLoader component provides tools to autoload your classes and cache "
+"their locations for performance."
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:11
+msgid "Usage"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:13
+msgid ""
+"Whenever you reference a class that has not been required or included yet, "
+"PHP uses the `autoloading mechanism`_ to delegate the loading of a file "
+"defining the class. Symfony provides three autoloaders, which are able to "
+"load your classes:"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:17
+msgid ""
+":doc:`/components/class_loader/class_loader`: loads classes that follow the "
+"`PSR-0` class naming standard;"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:20
+msgid ""
+":doc:`/components/class_loader/psr4_class_loader`: loads classes that follow"
+" the `PSR-4` class naming standard;"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:23
+msgid ""
+":doc:`/components/class_loader/map_class_loader`: loads classes using a "
+"static map from class name to file path."
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:26
+msgid ""
+"Additionally, the Symfony ClassLoader component ships with a set of wrapper "
+"classes which can be used to add additional functionality on top of existing"
+" autoloaders:"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:30
+msgid ":doc:`/components/class_loader/cache_class_loader`"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:31
+msgid ":doc:`/components/class_loader/debug_class_loader`"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:34
+msgid "Installation"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:36
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:38
+msgid ""
+":doc:`Install it via Composer </components/using_components>` (``symfony"
+"/class-loader`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:40
+msgid ""
+"Use the official Git repository (https://github.com/symfony/ClassLoader)."
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:1
+msgid "Components"
+msgstr ""
+
+#: ../../components/class_loader/introduction.rst:1
+msgid "ClassLoader"
+msgstr ""

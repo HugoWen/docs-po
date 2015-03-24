@@ -1,0 +1,522 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/community/releases.rst:2
+msgid "The Release Process"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:4
+msgid ""
+"This document explains the Symfony release process (Symfony being the code "
+"hosted on the main ``symfony/symfony`` `Git repository`_)."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:7
+msgid ""
+"Symfony manages its releases through a *time-based model*; a new Symfony "
+"minor version comes out every *six months*: one in *May* and one in "
+"*November*."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:12
+msgid "The meaning of \"minor\" comes from the `Semantic Versioning`_ strategy."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:14
+msgid ""
+"Each minor version sticks to the same very well-defined process where we "
+"start with a development period, followed by a maintenance period."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:19
+msgid ""
+"This release process has been adopted as of Symfony 2.2, and all the "
+"\"rules\" explained in this document must be strictly followed as of Symfony"
+" 2.4."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:26
+msgid "Development"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:28
+msgid ""
+"The full development period lasts six months and is divided into two phases:"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:30
+msgid ""
+"*Development*: *Four months* to add new features and to enhance existing "
+"ones;"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:33
+msgid ""
+"*Stabilisation*: *Two months* to fix bugs, prepare the release, and wait for"
+" the whole Symfony ecosystem (third-party libraries, bundles, and projects "
+"using Symfony) to catch up."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:37
+msgid ""
+"During the development phase, any new feature can be reverted if it won't be"
+" finished in time or if it won't be stable enough to be included in the "
+"current final release."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:44
+msgid "Maintenance"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:46
+msgid ""
+"Each Symfony minor version is maintained for a fixed period of time, "
+"depending on the type of the release. We have two maintenance periods:"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:49
+msgid ""
+"*Bug fixes and security fixes*: During this period, all issues can be fixed."
+" The end of this period is referenced as being the *end of maintenance* of a"
+" release."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:53
+msgid ""
+"*Security fixes only*: During this period, only security related issues can "
+"be fixed. The end of this period is referenced as being the *end of life* of"
+" a release."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:58
+msgid "Standard Versions"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:60
+msgid ""
+"A standard minor version is maintained for an *eight month* period for bug "
+"fixes, and for a *fourteen month* period for security issue fixes."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:66
+msgid "Long Term Support Versions"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:68
+msgid ""
+"Every two years, a new Long Term Support Version (aka LTS version) is "
+"published. Each LTS version is supported for a *three year* period for bug "
+"fixes, and for a *four year* period for security issue fixes."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:74
+msgid ""
+"Paid support after the three year support provided by the community can also"
+" be bought from `SensioLabs`_."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:78
+msgid "Schedule"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:80
+msgid ""
+"Below is the schedule for the first few versions that use this release "
+"model:"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:85
+msgid "**Yellow** represents the Development phase"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:86
+msgid "**Blue** represents the Stabilisation phase"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:87
+msgid "**Green** represents the Maintenance period"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:89
+msgid "This results in very predictable dates and maintenance periods:"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:92
+msgid "Version"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:92
+msgid "Feature Freeze"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:92
+msgid "Release"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:92
+msgid "End of Maintenance"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:92
+msgid "End of Life"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:94
+msgid "2.0"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:94
+msgid "05/2011"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:94
+msgid "07/2011"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:94
+msgid "03/2013 (20 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:94
+#: ../../contributing/community/releases.rst:98
+msgid "09/2013"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:95
+msgid "2.1"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:95
+msgid "07/2012"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:95
+msgid "09/2012"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:95
+msgid "05/2013 (9 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:95
+#: ../../contributing/community/releases.rst:98
+msgid "11/2013"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:96
+msgid "2.2"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:96
+msgid "01/2013"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:96
+#: ../../contributing/community/releases.rst:97
+msgid "03/2013"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:96
+msgid "11/2013 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:96
+#: ../../contributing/community/releases.rst:99
+msgid "05/2014"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:97
+msgid "**2.3**"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:97
+msgid "05/2013"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:97
+msgid "05/2016 (36 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:97
+#: ../../contributing/community/releases.rst:105
+msgid "05/2017"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:98
+msgid "2.4"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:98
+msgid "09/2014 (10 months [1]_)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:98
+msgid "01/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:99
+msgid "2.5"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:99
+msgid "03/2014"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:99
+msgid "01/2015 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:99
+msgid "07/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:100
+msgid "2.6"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:100
+msgid "09/2014"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:100
+msgid "11/2014"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:100
+msgid "07/2015 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:100
+msgid "01/2016"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:101
+msgid "**2.7**"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:101
+msgid "03/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:101
+msgid "05/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:101
+msgid "05/2018 (36 months [2]_)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:101
+msgid "05/2019"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:102
+msgid "3.0"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:102
+msgid "09/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:102
+msgid "11/2015"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:102
+msgid "07/2016 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:102
+msgid "01/2017"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:103
+msgid "3.1"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:103
+msgid "03/2016"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:103
+msgid "05/2016"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:103
+msgid "01/2017 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:103
+msgid "07/2017"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:104
+msgid "3.2"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:104
+msgid "09/2016"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:104
+msgid "11/2016"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:104
+msgid "07/2017 (8 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:104
+msgid "01/2018"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:105
+msgid "**3.3**"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:105
+msgid "03/2017"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:105
+msgid "05/2020 (36 months)"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:105
+msgid "05/2021"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:106
+#: ../../contributing/community/releases.rst:106
+#: ../../contributing/community/releases.rst:106
+#: ../../contributing/community/releases.rst:106
+#: ../../contributing/community/releases.rst:106
+msgid "..."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:109
+msgid "Symfony 2.4 maintenance has been `extended to September 2014`_."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:110
+msgid "Symfony 2.7 is the last version of the Symfony 2.x branch."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:114
+msgid ""
+"If you want to learn more about the timeline of any given Symfony version, "
+"use the online `timeline calculator`_. You can also get all data as a JSON "
+"string via a URL like `http://symfony.com/roadmap.json?version=2.x`."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:120
+msgid ""
+"Whenever an important event related to Symfony versions happens (a version "
+"reaches end of maintenance or a new patch version is released for instance),"
+" you can automatically receive an email notification if you subscribed on "
+"the `roadmap notification`_ page."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:126
+msgid "Backwards Compatibility"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:128
+msgid ""
+"Our :doc:`Backwards Compatibility Promise </contributing/code/bc>` is very "
+"strict and allows developers to upgrade with confidence from one minor "
+"version of Symfony to the next one."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:132
+msgid ""
+"Whenever keeping backward compatibility is not possible, the feature, the "
+"enhancement or the bug fix will be scheduled for the next major version."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:137
+msgid ""
+"The work on a new major version of Symfony starts whenever enough major "
+"features breaking backward compatibility are waiting on the todo-list."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:141
+msgid "Deprecations"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:143
+msgid ""
+"When a feature implementation cannot be replaced with a better one without "
+"breaking backward compatibility, there is still the possibility to deprecate"
+" the old implementation and add a new preferred one along side. Read the "
+":ref:`conventions <contributing-code-conventions-deprecations>` document to "
+"learn more about how deprecations are handled in Symfony."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:150
+msgid "Rationale"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:152
+msgid ""
+"This release process was adopted to give more *predictability* and "
+"*transparency*. It was discussed based on the following goals:"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:155
+msgid ""
+"Shorten the release cycle (allow developers to benefit from the new features"
+" faster);"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:157
+msgid ""
+"Give more visibility to the developers using the framework and Open-Source "
+"projects using Symfony;"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:159
+msgid ""
+"Improve the experience of Symfony core contributors: everyone knows when a "
+"feature might be available in Symfony;"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:161
+msgid ""
+"Coordinate the Symfony timeline with popular PHP projects that work well "
+"with Symfony and with projects using Symfony;"
+msgstr ""
+
+#: ../../contributing/community/releases.rst:163
+msgid ""
+"Give time to the Symfony ecosystem to catch up with the new versions (bundle"
+" authors, documentation writers, translators, ...)."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:166
+msgid ""
+"The six month period was chosen as two releases fit in a year. It also "
+"allows for plenty of time to work on new features and it allows for non-"
+"ready features to be postponed to the next version without having to wait "
+"too long for the next cycle."
+msgstr ""
+
+#: ../../contributing/community/releases.rst:171
+msgid ""
+"The dual maintenance mode was adopted to make every Symfony user happy. Fast"
+" movers, who want to work with the latest and the greatest, use the standard"
+" version: a new version is published every six months, and there is a two "
+"months period to upgrade. Companies wanting more stability use the LTS "
+"versions: a new version is published every two years and there is a year to "
+"upgrade."
+msgstr ""

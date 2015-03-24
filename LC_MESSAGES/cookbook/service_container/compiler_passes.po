@@ -1,0 +1,51 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/service_container/compiler_passes.rst:6
+msgid "How to Work with Compiler Passes in Bundles"
+msgstr ""
+
+#: ../../cookbook/service_container/compiler_passes.rst:8
+msgid ""
+"Compiler passes give you an opportunity to manipulate other service "
+"definitions that have been registered with the service container. You can "
+"read about how to create them in the components section "
+"\":doc:`/components/dependency_injection/compilation`\". To register a "
+"compiler pass from a bundle you need to add it to the build method of the "
+"bundle definition class::"
+msgstr ""
+
+#: ../../cookbook/service_container/compiler_passes.rst:32
+msgid ""
+"One of the most common use-cases of compiler passes is to work with tagged "
+"services (read more about tags in the components section  "
+"\":doc:`/components/dependency_injection/tags`\"). If you are using custom "
+"tags in a bundle then by convention, tag names consist of the name of the "
+"bundle (lowercase, underscores as separators), followed by a dot, and "
+"finally the \"real\" name. For example, if you want to introduce some sort "
+"of \"transport\" tag in your AcmeMailerBundle, you should call it "
+"``acme_mailer.transport``."
+msgstr ""
+
+#: ../../cookbook/service_container/compiler_passes.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../cookbook/service_container/compiler_passes.rst:1
+#: ../../cookbook/service_container/compiler_passes.rst:1
+msgid "Compiler passes"
+msgstr ""
+
+#: ../../cookbook/service_container/compiler_passes.rst:1
+msgid "Service Container"
+msgstr ""

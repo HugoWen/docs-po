@@ -1,0 +1,150 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/kernel.rst:5
+msgid "Configuring in the Kernel (e.g. AppKernel)"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:7
+msgid ""
+"Some configuration can be done on the kernel class itself (usually called "
+"``app/AppKernel.php``). You can do this by overriding specific methods in "
+"the parent :class:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel` class."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:12
+msgid "Configuration"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:14
+msgid "`Charset`_"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:15
+msgid "`Kernel Name`_"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:16
+msgid "`Root Directory`_"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:17
+msgid "`Cache Directory`_"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:18
+msgid "`Log Directory`_"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:21
+msgid "Charset"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:23
+msgid "**type**: ``string`` **default**: ``UTF-8``"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:25
+msgid ""
+"This returns the charset that is used in the application. To change it, "
+"override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getCharset` method "
+"and return another charset, for instance::"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:41
+msgid "Kernel Name"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:43
+msgid ""
+"**type**: ``string`` **default**: ``app`` (i.e. the directory name holding "
+"the kernel class)"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:46
+msgid ""
+"To change this setting, override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getName` method. "
+"Alternatively, move your kernel into a different directory. For example, if "
+"you moved the kernel into a ``foo`` directory (instead of ``app``), the "
+"kernel name will be ``foo``."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:51
+msgid ""
+"The name of the kernel isn't usually directly important - it's used in the "
+"generation of cache files. If you have an application with multiple kernels,"
+" the easiest way to make each have a unique name is to duplicate the ``app``"
+" directory and rename it to something else (e.g. ``foo``)."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:57
+msgid "Root Directory"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:59
+msgid "**type**: ``string`` **default**: the directory of ``AppKernel``"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:61
+msgid ""
+"This returns the root directory of your kernel. If you use the Symfony "
+"Standard edition, the root directory refers to the ``app`` directory."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:64
+msgid ""
+"To change this setting, override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getRootDir` method::"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:81
+msgid "Cache Directory"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:83
+msgid ""
+"**type**: ``string`` **default**: "
+"``$this->rootDir/cache/$this->environment``"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:85
+msgid ""
+"This returns the path to the cache directory. To change it, override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getCacheDir` method. "
+"Read \":ref:`override-cache-dir`\" for more information."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:90
+msgid "Log Directory"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:92
+msgid "**type**: ``string`` **default**: ``$this->rootDir/logs``"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:94
+msgid ""
+"This returns the path to the log directory. To change it, override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getLogDir` method. "
+"Read \":ref:`override-logs-dir`\" for more information."
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:1
+msgid "Configuration reference"
+msgstr ""
+
+#: ../../reference/configuration/kernel.rst:1
+msgid "Kernel class"
+msgstr ""

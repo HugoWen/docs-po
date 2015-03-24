@@ -1,0 +1,180 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/templates.rst:2
+msgid "Templates"
+msgstr ""
+
+#: ../../best_practices/templates.rst:4
+msgid ""
+"When PHP was created 20 years ago, developers loved its simplicity and how "
+"well it blended HTML and dynamic code. But as time passed, other template "
+"languages - like `Twig`_ - were created to make templating even better."
+msgstr ""
+
+#: ../../best_practices/templates.rst:0 ../../best_practices/templates.rst:0
+#: ../../best_practices/templates.rst:0 ../../best_practices/templates.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/templates.rst:10
+msgid "Use Twig templating format for your templates."
+msgstr ""
+
+#: ../../best_practices/templates.rst:12
+msgid ""
+"Generally speaking, PHP templates are much more verbose than Twig templates "
+"because they lack native support for lots of modern features needed by "
+"templates, like inheritance, automatic escaping and named arguments for "
+"filters and functions."
+msgstr ""
+
+#: ../../best_practices/templates.rst:17
+msgid ""
+"Twig is the default templating format in Symfony and has the largest "
+"community support of all non-PHP template engines (it's used in high profile"
+" projects such as Drupal 8)."
+msgstr ""
+
+#: ../../best_practices/templates.rst:21
+msgid ""
+"In addition, Twig is the only template format with guaranteed support in "
+"Symfony 3.0. As a matter of fact, PHP may be removed from the officially "
+"supported template engines."
+msgstr ""
+
+#: ../../best_practices/templates.rst:26
+msgid "Template Locations"
+msgstr ""
+
+#: ../../best_practices/templates.rst:30
+msgid ""
+"Store all your application's templates in ``app/Resources/views/`` "
+"directory."
+msgstr ""
+
+#: ../../best_practices/templates.rst:32
+msgid ""
+"Traditionally, Symfony developers stored the application templates in the "
+"``Resources/views/`` directory of each bundle. Then they used the logical "
+"name to refer to them (e.g. ``AcmeDemoBundle:Default:index.html.twig``)."
+msgstr ""
+
+#: ../../best_practices/templates.rst:36
+msgid ""
+"But for the templates used in your application, it's much more convenient to"
+" store them in the ``app/Resources/views/`` directory. For starters, this "
+"drastically simplifies their logical names:"
+msgstr ""
+
+#: ../../best_practices/templates.rst:41
+msgid "Templates Stored inside Bundles"
+msgstr ""
+
+#: ../../best_practices/templates.rst:41
+msgid "Templates Stored in ``app/``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:43
+msgid "``AcmeDemoBundle:Default:index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:43
+msgid "``default/index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:44
+msgid "``::layout.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:44
+msgid "``layout.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:45
+msgid "``AcmeDemoBundle::index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:45
+msgid "``index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:46
+msgid "``AcmeDemoBundle:Default:subdir/index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:46 ../../best_practices/templates.rst:47
+msgid "``default/subdir/index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:47
+msgid "``AcmeDemoBundle:Default/subdir:index.html.twig``"
+msgstr ""
+
+#: ../../best_practices/templates.rst:50
+msgid ""
+"Another advantage is that centralizing your templates simplifies the work of"
+" your designers. They don't need to look for templates in lots of "
+"directories scattered through lots of bundles."
+msgstr ""
+
+#: ../../best_practices/templates.rst:56
+msgid "Use lowercased snake_case for directory and template names."
+msgstr ""
+
+#: ../../best_practices/templates.rst:59
+msgid "Twig Extensions"
+msgstr ""
+
+#: ../../best_practices/templates.rst:63
+msgid ""
+"Define your Twig extensions in the ``AppBundle/Twig/`` directory and "
+"configure them using the ``app/config/services.yml`` file."
+msgstr ""
+
+#: ../../best_practices/templates.rst:66
+msgid ""
+"Our application needs a custom ``md2html`` Twig filter so that we can "
+"transform the Markdown contents of each post into HTML."
+msgstr ""
+
+#: ../../best_practices/templates.rst:69
+msgid ""
+"To do this, first, install the excellent `Parsedown`_ Markdown parser as a "
+"new dependency of the project:"
+msgstr ""
+
+#: ../../best_practices/templates.rst:76
+msgid ""
+"Then, create a new ``Markdown`` service that will be used later by the Twig "
+"extension. The service definition only requires the path to the class:"
+msgstr ""
+
+#: ../../best_practices/templates.rst:87
+msgid ""
+"And the ``Markdown`` class just needs to define one single method to "
+"transform Markdown content into HTML::"
+msgstr ""
+
+#: ../../best_practices/templates.rst:109
+msgid ""
+"Next, create a new Twig extension and define a new filter called ``md2html``"
+" using the ``Twig_SimpleFilter`` class. Inject the newly defined "
+"``markdown`` service in the constructor of the Twig extension:"
+msgstr ""
+
+#: ../../best_practices/templates.rst:150
+msgid ""
+"Lastly define a new service to enable this Twig extension in the app (the "
+"service name is irrelevant because you never use it in your own code):"
+msgstr ""

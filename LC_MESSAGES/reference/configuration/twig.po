@@ -1,0 +1,57 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/configuration/twig.rst:5
+msgid "TwigBundle Configuration (\"twig\")"
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:94
+msgid ""
+"The ``twig.form`` (``<twig:form />`` tag for xml) configuration key has been"
+" deprecated and will be removed in 3.0. Instead, use the "
+"``twig.form_themes`` option."
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:99
+msgid "Configuration"
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:104
+msgid "exception_controller"
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:106
+msgid ""
+"**type**: ``string`` **default**: ``twig.controller.exception:showAction``"
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:108
+msgid ""
+"This is the controller that is activated after an exception is thrown "
+"anywhere in your application. The default controller "
+"(:class:`Symfony\\\\Bundle\\\\TwigBundle\\\\Controller\\\\ExceptionController`)"
+" is what's responsible for rendering specific templates under different "
+"error conditions (see :doc:`/cookbook/controller/error_pages`). Modifying "
+"this option is advanced. If you need to customize an error page you should "
+"use the previous link. If you need to perform some behavior on an exception,"
+" you should add a listener to the ``kernel.exception`` event (see :ref:`dic-"
+"tags-kernel-event-listener`)."
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:1
+msgid "Twig"
+msgstr ""
+
+#: ../../reference/configuration/twig.rst:1
+msgid "Configuration reference"
+msgstr ""

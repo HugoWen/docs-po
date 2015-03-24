@@ -1,0 +1,264 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/templating/introduction.rst:6
+msgid "The Templating Component"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:8
+msgid ""
+"The Templating component provides all the tools needed to build any kind of "
+"template system."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:11
+msgid ""
+"It provides an infrastructure to load template files and optionally monitor "
+"them for changes. It also provides a concrete template engine implementation"
+" using PHP with additional tools for escaping and separating templates into "
+"blocks and layouts."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:17
+msgid "Installation"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:19
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:21
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/templating`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:22
+msgid ""
+"Use the official Git repository (https://github.com/symfony/Templating)."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:25
+msgid "Usage"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:27
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Templating\\\\PhpEngine` class is the "
+"entry point of the component. It needs a template name parser "
+"(:class:`Symfony\\\\Component\\\\Templating\\\\TemplateNameParserInterface`)"
+" to convert a template name to a template reference "
+"(:class:`Symfony\\\\Component\\\\Templating\\\\TemplateReferenceInterface`)."
+" It also needs a template loader "
+"(:class:`Symfony\\\\Component\\\\Templating\\\\Loader\\\\LoaderInterface`) "
+"which uses the template reference to actually find and load the template::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:50
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Templating\\\\PhpEngine::render` method"
+" parses the ``views/hello.php`` file and returns the output text. The second"
+" argument of ``render`` is an array of variables to use in the template. In "
+"this example, the result will be ``Hello, Fabien!``."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:57
+msgid ""
+"Templates will be cached in the memory of the engine. This means that if you"
+" render the same template multiple times in the same request, the template "
+"will only be loaded once from the file system."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:62
+msgid "The ``$view`` Variable"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:64
+msgid ""
+"In all templates parsed by the ``PhpEngine``, you get access to a mysterious"
+" variable called ``$view``. That variable holds the current ``PhpEngine`` "
+"instance. That means you get access to a bunch of methods that make your "
+"life easier."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:70
+msgid "Including Templates"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:72
+msgid ""
+"The best way to share a snippet of template code is to create a template "
+"that can then be included by other templates. As the ``$view`` variable is "
+"an instance of ``PhpEngine``, you can use the ``render`` method (which was "
+"used to render the template originally) inside the template to render "
+"another template::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:83
+msgid "Global Variables"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:85
+msgid ""
+"Sometimes, you need to set a variable which is available in all templates "
+"rendered by an engine (like the ``$app`` variable when using the Symfony "
+"framework). These variables can be set by using the "
+":method:`Symfony\\\\Component\\\\Templating\\\\PhpEngine::addGlobal` method "
+"and they can be accessed in the template as normal variables::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:93
+msgid "In a template:"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:101
+msgid ""
+"The global variables cannot be called ``this`` or ``view``, since they are "
+"already used by the PHP engine."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:106
+msgid ""
+"The global variables can be overridden by a local variable in the template "
+"with the same name."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:110
+msgid "Output Escaping"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:112
+msgid ""
+"When you render variables, you should probably escape them so that HTML or "
+"JavaScript code isn't written out to your page. This will prevent things "
+"like XSS attacks. To do this, use the "
+":method:`Symfony\\\\Component\\\\Templating\\\\PhpEngine::escape` method::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:119
+msgid ""
+"By default, the ``escape()`` method assumes that the variable is outputted "
+"within an HTML context. The second argument lets you change the context. For"
+" example, to output something inside JavaScript, use the ``js`` context::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:125
+msgid ""
+"The component comes with an HTML and JS escaper. You can register your own "
+"escaper using the "
+":method:`Symfony\\\\Component\\\\Templating\\\\PhpEngine::setEscaper` "
+"method::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:136
+msgid "Helpers"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:138
+msgid ""
+"The Templating component can be easily extended via helpers. Helpers are PHP"
+" objects that provide features useful in a template context. The component "
+"has 2 built-in helpers:"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:142
+msgid ":doc:`/components/templating/helpers/assetshelper`"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:143
+msgid ":doc:`/components/templating/helpers/slotshelper`"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:145
+msgid ""
+"Before you can use these helpers, you need to register them using "
+":method:`Symfony\\\\Component\\\\Templating\\\\PhpEngine::set`::"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:154
+msgid "Custom Helpers"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:156
+msgid ""
+"You can create your own helpers by creating a class which implements "
+":class:`Symfony\\\\Component\\\\Templating\\\\Helper\\\\HelperInterface`. "
+"However, most of the time you'll extend "
+":class:`Symfony\\\\Component\\\\Templating\\\\Helper\\\\Helper`."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:161
+msgid ""
+"The ``Helper`` has one required method: "
+":method:`Symfony\\\\Component\\\\Templating\\\\Helper\\\\HelperInterface::getName`."
+" This is the name that is used to get the helper from the ``$view`` object."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:166
+msgid "Creating a Custom Engine"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:168
+msgid ""
+"Besides providing a PHP templating engine, you can also create your own "
+"engine using the Templating component. To do that, create a new class which "
+"implements the "
+":class:`Symfony\\\\Component\\\\Templating\\\\EngineInterface`. This "
+"requires 3 method:"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:173
+msgid ""
+":method:`render($name, array $parameters = array()) "
+"<Symfony\\\\Component\\\\Templating\\\\EngineInterface::render>` - Renders a"
+" template"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:175
+msgid ""
+":method:`exists($name) "
+"<Symfony\\\\Component\\\\Templating\\\\EngineInterface::exists>` - Checks if"
+" the template exists"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:177
+msgid ""
+":method:`supports($name) "
+"<Symfony\\\\Component\\\\Templating\\\\EngineInterface::supports>` - Checks "
+"if the given template can be handled by this engine."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:181
+msgid "Using Multiple Engines"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:183
+msgid ""
+"It is possible to use multiple engines at the same time using the "
+":class:`Symfony\\\\Component\\\\Templating\\\\DelegatingEngine` class. This "
+"class takes a list of engines and acts just like a normal templating engine."
+" The only difference is that it delegates the calls to one of the other "
+"engines. To choose which one to use for the template, the "
+":method:`EngineInterface::supports() "
+"<Symfony\\\\Component\\\\Templating\\\\EngineInterface::supports>` method is"
+" used."
+msgstr ""
+
+#: ../../components/templating/introduction.rst:1
+#: ../../components/templating/introduction.rst:1
+msgid "Templating"
+msgstr ""
+
+#: ../../components/templating/introduction.rst:1
+msgid "Components"
+msgstr ""

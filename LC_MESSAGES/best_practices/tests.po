@@ -1,0 +1,134 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/tests.rst:2
+msgid "Tests"
+msgstr ""
+
+#: ../../best_practices/tests.rst:4
+msgid ""
+"Roughly speaking, there are two types of test. Unit testing allows you to "
+"test the input and output of specific functions. Functional testing allows "
+"you to command a \"browser\" where you browse to pages on your site, click "
+"links, fill out forms and assert that you see certain things on the page."
+msgstr ""
+
+#: ../../best_practices/tests.rst:10
+msgid "Unit Tests"
+msgstr ""
+
+#: ../../best_practices/tests.rst:12
+msgid ""
+"Unit tests are used to test your \"business logic\", which should live in "
+"classes that are independent of Symfony. For that reason, Symfony doesn't "
+"really have an opinion on what tools you use for unit testing. However, the "
+"most popular tools are `PhpUnit`_ and `PhpSpec`_."
+msgstr ""
+
+#: ../../best_practices/tests.rst:18
+msgid "Functional Tests"
+msgstr ""
+
+#: ../../best_practices/tests.rst:20
+msgid ""
+"Creating really good functional tests can be tough so some developers skip "
+"these completely. Don't skip the functional tests! By defining some *simple*"
+" functional tests, you can quickly spot any big errors before you deploy "
+"them:"
+msgstr ""
+
+#: ../../best_practices/tests.rst:0 ../../best_practices/tests.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/tests.rst:26
+msgid ""
+"Define a functional test that at least checks if your application pages are "
+"successfully loading."
+msgstr ""
+
+#: ../../best_practices/tests.rst:29
+msgid "A functional test can be as easy as this:"
+msgstr ""
+
+#: ../../best_practices/tests.rst:64
+msgid ""
+"This code checks that all the given URLs load successfully, which means that"
+" their HTTP response status code is between ``200`` and ``299``. This may "
+"not look that useful, but given how little effort this took, it's worth "
+"having it in your application."
+msgstr ""
+
+#: ../../best_practices/tests.rst:69
+msgid ""
+"In computer software, this kind of test is called `smoke testing`_ and "
+"consists of *\"preliminary testing to reveal simple failures severe enough "
+"to reject a prospective software release\"*."
+msgstr ""
+
+#: ../../best_practices/tests.rst:74
+msgid "Hardcode URLs in a Functional Test"
+msgstr ""
+
+#: ../../best_practices/tests.rst:76
+msgid ""
+"Some of you may be asking why the previous functional test doesn't use the "
+"URL generator service:"
+msgstr ""
+
+#: ../../best_practices/tests.rst:81
+msgid ""
+"Hardcode the URLs used in the functional tests instead of using the URL "
+"generator."
+msgstr ""
+
+#: ../../best_practices/tests.rst:84
+msgid ""
+"Consider the following functional test that uses the ``router`` service to "
+"generate the URL of the tested page:"
+msgstr ""
+
+#: ../../best_practices/tests.rst:98
+msgid ""
+"This will work, but it has one *huge* drawback. If a developer mistakenly "
+"changes the path of the ``blog_archives`` route, the test will still pass, "
+"but the original (old) URL won't work! This means that any bookmarks for "
+"that URL will be broken and you'll lose any search engine page ranking."
+msgstr ""
+
+#: ../../best_practices/tests.rst:104
+msgid "Testing JavaScript Functionality"
+msgstr ""
+
+#: ../../best_practices/tests.rst:106
+msgid ""
+"The built-in functional testing client is great, but it can't be used to "
+"test any JavaScript behavior on your pages. If you need to test this, "
+"consider using the `Mink`_ library from within PHPUnit."
+msgstr ""
+
+#: ../../best_practices/tests.rst:110
+msgid ""
+"Of course, if you have a heavy JavaScript frontend, you should consider "
+"using pure JavaScript-based testing tools."
+msgstr ""
+
+#: ../../best_practices/tests.rst:114
+msgid "Learn More about Functional Tests"
+msgstr ""
+
+#: ../../best_practices/tests.rst:116
+msgid ""
+"Consider using `Faker`_ and `Alice`_ libraries to generate real-looking data"
+" for your test fixtures."
+msgstr ""

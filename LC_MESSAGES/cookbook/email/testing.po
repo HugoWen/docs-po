@@ -1,0 +1,53 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/testing.rst:5
+msgid "How to Test that an Email is Sent in a functional Test"
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:7
+msgid ""
+"Sending e-mails with Symfony is pretty straightforward thanks to the "
+"SwiftmailerBundle, which leverages the power of the `Swift Mailer`_ library."
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:10
+msgid ""
+"To functionally test that an email was sent, and even assert the email "
+"subject, content or any other headers, you can use :ref:`the Symfony "
+"Profiler <internals-profiler>`."
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:13
+msgid "Start with an easy controller action that sends an e-mail::"
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:31
+msgid ""
+"Don't forget to enable the profiler as explained in "
+":doc:`/cookbook/testing/profiling`."
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:33
+msgid ""
+"In your functional test, use the ``swiftmailer`` collector on the profiler "
+"to get information about the messages send on the previous request::"
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:1
+msgid "Emails"
+msgstr ""
+
+#: ../../cookbook/email/testing.rst:1
+msgid "Testing"
+msgstr ""

@@ -1,0 +1,178 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/Uuid.rst:2
+msgid "Uuid"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:4
+msgid ""
+"Validates that a value is a valid `Universally unique identifier (UUID)`_ "
+"per `RFC 4122`_. By default, this will validate the format according to the "
+"RFC's guidelines, but this can be relaxed to accept non-standard UUIDs that "
+"other systems (like PostgreSQL) accept. UUID versions can also be restricted"
+" using a whitelist."
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:10
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:10
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:12
+#: ../../reference/constraints/Uuid.rst:83
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:12
+msgid "`message`_"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:13
+msgid "`strict`_"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:14
+msgid "`versions`_"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:15
+msgid "`payload`_"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:17
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Uuid`"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:19
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:19
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\UuidValidator`"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:23
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:86
+msgid "message"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:88
+msgid "**type**: ``string`` **default**: ``This is not a valid UUID.``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:90
+msgid "This message is shown if the string is not a valid UUID."
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:93
+msgid "strict"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:95
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:97
+msgid ""
+"If this option is set to ``true`` the constraint will check if the UUID is "
+"formatted per the RFC's input format rules: "
+"``216fff40-98d9-11e3-a5e2-0800200c9a66``. Setting this to ``false`` will "
+"allow alternate input formats like:"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:101
+msgid "``216f-ff40-98d9-11e3-a5e2-0800-200c-9a66``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:102
+msgid "``{216fff40-98d9-11e3-a5e2-0800200c9a66}``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:103
+msgid "``216fff4098d911e3a5e20800200c9a66``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:106
+msgid "versions"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:108
+msgid "**type**: ``int[]`` **default**: ``[1,2,3,4,5]``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:110
+msgid ""
+"This option can be used to only allow specific `UUID versions`_.  Valid "
+"versions are 1 - 5. The following PHP constants can also be used:"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:113
+msgid "``Uuid::V1_MAC``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:114
+msgid "``Uuid::V2_DCE``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:115
+msgid "``Uuid::V3_MD5``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:116
+msgid "``Uuid::V4_RANDOM``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:117
+msgid "``Uuid::V5_SHA1``"
+msgstr ""
+
+#: ../../reference/constraints/Uuid.rst:119
+msgid "All five versions are allowed by default."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:2
+msgid "payload"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:6
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:9
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator component, "
+"but its processing is completely up to."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:13
+msgid ""
+"For example, you may want to used :doc:`several error levels "
+"</cookbook/validation/severity>` to present failed constraint differently in"
+" the front-end depending on the severity of the error."
+msgstr ""

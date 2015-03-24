@@ -1,0 +1,157 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/email.rst:5
+msgid "How to Send an Email"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:7
+msgid ""
+"Sending emails is a classic task for any web application and one that has "
+"special complications and potential pitfalls. Instead of recreating the "
+"wheel, one solution to send emails is to use the SwiftmailerBundle, which "
+"leverages the power of the `Swift Mailer`_ library. This bundle comes with "
+"the Symfony Standard Edition."
+msgstr ""
+
+#: ../../cookbook/email/email.rst:16
+msgid "Configuration"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:18
+msgid "To use Swift Mailer, you'll need to configure it for your mail server."
+msgstr ""
+
+#: ../../cookbook/email/email.rst:22
+msgid ""
+"Instead of setting up/using your own mail server, you may want to use a "
+"hosted mail provider such as `Mandrill`_, `SendGrid`_, `Amazon SES`_ or "
+"others. These give you an SMTP server, username and password (sometimes "
+"called keys) that can be used with the Swift Mailer configuration."
+msgstr ""
+
+#: ../../cookbook/email/email.rst:27
+msgid ""
+"In a standard Symfony installation, some ``swiftmailer`` configuration is "
+"already included:"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:66
+msgid ""
+"These values (e.g. ``%mailer_transport%``), are reading from the parameters "
+"that are set in the :ref:`parameters.yml <config-parameters.yml>` file. You "
+"can modify the values in that file, or set the values directly here."
+msgstr ""
+
+#: ../../cookbook/email/email.rst:70
+msgid "The following configuration attributes are available:"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:72
+msgid "``transport``         (``smtp``, ``mail``, ``sendmail``, or ``gmail``)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:73
+msgid "``username``"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:74
+msgid "``password``"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:75
+msgid "``host``"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:76
+msgid "``port``"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:77
+msgid "``encryption``        (``tls``, or ``ssl``)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:78
+msgid "``auth_mode``         (``plain``, ``login``, or ``cram-md5``)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:79
+msgid "``spool``"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:81
+msgid ""
+"``type`` (how to queue the messages, ``file`` or ``memory`` is supported, "
+"see :doc:`/cookbook/email/spool`)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:82
+msgid "``path`` (where to store the messages)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:83
+msgid "``delivery_address``  (an email address where to send ALL emails)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:84
+msgid "``disable_delivery``  (set to true to disable delivery completely)"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:87
+msgid "Sending Emails"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:89
+msgid ""
+"The Swift Mailer library works by creating, configuring and then sending "
+"``Swift_Message`` objects. The \"mailer\" is responsible for the actual "
+"delivery of the message and is accessible via the ``mailer`` service. "
+"Overall, sending an email is pretty straightforward::"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:125
+msgid ""
+"To keep things decoupled, the email body has been stored in a template and "
+"rendered with the ``renderView()`` method. The ``registration.html.twig`` "
+"template might look something like this:"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:142
+msgid ""
+"The ``$message`` object supports many more options, such as including "
+"attachments, adding HTML content, and much more. Fortunately, Swift Mailer "
+"covers the topic of `Creating Messages`_ in great detail in its "
+"documentation."
+msgstr ""
+
+#: ../../cookbook/email/email.rst:148
+msgid ""
+"Several other cookbook articles are available related to sending emails in "
+"Symfony:"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:151
+msgid ":doc:`gmail`"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:152
+msgid ":doc:`dev_environment`"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:153
+msgid ":doc:`spool`"
+msgstr ""
+
+#: ../../cookbook/email/email.rst:1
+msgid "Emails"
+msgstr ""

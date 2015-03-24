@@ -1,0 +1,165 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/parameters.rst:5
+msgid "Introduction to Parameters"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:7
+msgid ""
+"You can define parameters in the service container which can then be used "
+"directly or as part of service definitions. This can help to separate out "
+"values that you will want to change more regularly."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:12
+msgid "Getting and Setting Container Parameters"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:14
+msgid ""
+"Working with container parameters is straightforward using the container's "
+"accessor methods for parameters. You can check if a parameter has been "
+"defined in the container with::"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:20
+msgid "You can retrieve a parameter set in the container with::"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:24
+msgid "and set a parameter in the container with::"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:30
+msgid ""
+"The used ``.`` notation is just a :ref:`Symfony convention <service-naming-"
+"conventions>` to make parameters easier to read. Parameters are just flat "
+"key-value elements, they can't be organized into a nested array"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:37
+msgid ""
+"You can only set a parameter before the container is compiled. To learn more"
+" about compiling the container see "
+":doc:`/components/dependency_injection/compilation`."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:42
+msgid "Parameters in Configuration Files"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:44
+msgid ""
+"You can also use the ``parameters`` section of a config file to set "
+"parameters:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:69
+msgid ""
+"As well as retrieving the parameter values directly from the container you "
+"can use them in the config files. You can refer to parameters elsewhere by "
+"surrounding them with percent (``%``) signs, e.g. ``%mailer.transport%``. "
+"One use for this is to inject the values into your services. This allows you"
+" to configure different versions of services between applications or "
+"multiple services based on the same class but configured differently within "
+"a single application. You could inject the choice of mail transport into the"
+" ``Mailer`` class directly. But declaring it as a parameter makes it easier "
+"to change rather than being tied up and hidden with the service definition:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:121
+msgid ""
+"The values between ``parameter`` tags in XML configuration files are not "
+"trimmed."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:124
+msgid ""
+"This means that the following configuration sample will have the value ``\\n"
+"    sendmail\\n``:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:133
+msgid ""
+"In some cases (for constants or class names), this could throw errors. In "
+"order to prevent this, you must always inline your parameters as follow:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:140
+msgid ""
+"If you were using this elsewhere as well, then you would only need to change"
+" the parameter value in one place if needed."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:145
+msgid ""
+"The percent sign inside a parameter or argument, as part of the string, must"
+" be escaped with another percent sign:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:165
+msgid "Array Parameters"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:167
+msgid ""
+"Parameters do not need to be flat strings, they can also contain array "
+"values. For the XML format, you need to use the ``type=\"collection\"`` "
+"attribute for all parameters that are arrays."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:225
+msgid "Constants as Parameters"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:227
+msgid ""
+"The container also has support for setting PHP constants as parameters. To "
+"take advantage of this feature, map the name of your constant to a parameter"
+" key, and define the type as ``constant``."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:253
+msgid ""
+"This does not work for YAML configurations. If you're using YAML, you can "
+"import an XML file to take advantage of this functionality:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:262
+msgid "PHP Keywords in XML"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:264
+msgid ""
+"By default, ``true``, ``false`` and ``null`` in XML are converted to the PHP"
+" keywords (respectively ``true``, ``false`` and ``null``):"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:277
+msgid "To disable this behavior, use the ``string`` type:"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:291
+msgid ""
+"This is not available for YAML and PHP, because they already have built-in "
+"support for the PHP keywords."
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/parameters.rst:1
+msgid "Parameters"
+msgstr ""

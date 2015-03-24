@@ -1,0 +1,124 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/assetic/yuicompressor.rst:5
+msgid "How to Minify JavaScripts and Stylesheets with YUI Compressor"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:9
+msgid ""
+"The YUI Compressor is `no longer maintained by Yahoo`_. That's why you are "
+"**strongly advised to avoid using YUI utilities** unless strictly necessary."
+" Read :doc:`/cookbook/assetic/uglifyjs` for a modern and up-to-date "
+"alternative."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:13
+msgid ""
+"Yahoo! provides an excellent utility for minifying JavaScripts and "
+"stylesheets so they travel over the wire faster, the `YUI Compressor`_. "
+"Thanks to Assetic, you can take advantage of this tool very easily."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:18
+msgid "Download the YUI Compressor JAR"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:20
+msgid ""
+"The YUI Compressor is written in Java and distributed as a JAR. `Download "
+"the JAR`_ from the Yahoo! site and save it to "
+"``app/Resources/java/yuicompressor.jar``."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:24
+msgid "Configure the YUI Filters"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:26
+msgid ""
+"Now you need to configure two Assetic filters in your application, one for "
+"minifying JavaScripts with the YUI Compressor and one for minifying "
+"stylesheets:"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:72
+msgid ""
+"Windows users need to remember to update config to proper Java location. In "
+"Windows7 x64 bit by default it's ``C:\\Program Files "
+"(x86)\\Java\\jre6\\bin\\java.exe``."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:75
+msgid ""
+"You now have access to two new Assetic filters in your application: "
+"``yui_css`` and ``yui_js``. These will use the YUI Compressor to minify "
+"stylesheets and JavaScripts, respectively."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:80
+msgid "Minify your Assets"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:82
+msgid ""
+"You have YUI Compressor configured now, but nothing is going to happen until"
+" you apply one of these filters to an asset. Since your assets are a part of"
+" the view layer, this work is done in your templates:"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:105
+msgid ""
+"The above example assumes that you have a bundle called AppBundle and your "
+"JavaScript files are in the ``Resources/public/js`` directory under your "
+"bundle. This isn't important however - you can include your JavaScript files"
+" no matter where they are."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:110
+msgid ""
+"With the addition of the ``yui_js`` filter to the asset tags above, you "
+"should now see minified JavaScripts coming over the wire much faster. The "
+"same process can be repeated to minify your stylesheets."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:132
+msgid "Disable Minification in Debug Mode"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:134
+msgid ""
+"Minified JavaScripts and Stylesheets are very difficult to read, let alone "
+"debug. Because of this, Assetic lets you disable a certain filter when your "
+"application is in debug mode. You can do this by prefixing the filter name "
+"in your template with a question mark: ``?``. This tells Assetic to only "
+"apply this filter when debug mode is off."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:159
+msgid ""
+"Instead of adding the filter to the asset tags, you can also globally enable"
+" it by adding the ``apply_to`` attribute to the filter configuration, for "
+"example in the ``yui_js`` filter ``apply_to: \"\\.js$\"``. To only have the "
+"filter applied in production, add this to the ``config_prod`` file rather "
+"than the common config file. For details on applying filters by file "
+"extension, see :ref:`cookbook-assetic-apply-to`."
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:1
+msgid "Assetic"
+msgstr ""
+
+#: ../../cookbook/assetic/yuicompressor.rst:1
+msgid "YUI Compressor"
+msgstr ""

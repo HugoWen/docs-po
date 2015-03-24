@@ -1,0 +1,67 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/index.rst:5
+msgid "The Console Helpers"
+msgstr ""
+
+#: ../../components/console/helpers/index.rst:20
+msgid ""
+"The Console component comes with some useful helpers. These helpers contain "
+"function to ease some common tasks."
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:1
+msgid ":doc:`/components/console/helpers/dialoghelper` (deprecated as of 2.5)"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:2
+msgid ":doc:`/components/console/helpers/formatterhelper`"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:3
+msgid ":doc:`/components/console/helpers/processhelper`"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:4
+msgid ":doc:`/components/console/helpers/progressbar`"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:5
+msgid ""
+":doc:`/components/console/helpers/progresshelper` (deprecated as of 2.5)"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:6
+msgid ":doc:`/components/console/helpers/questionhelper`"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:7
+msgid ":doc:`/components/console/helpers/table`"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:8
+msgid ":doc:`/components/console/helpers/tablehelper` (deprecated as of 2.5)"
+msgstr ""
+
+#: ../../components/console/helpers/map.rst.inc:9
+msgid ":doc:`/components/console/helpers/debug_formatter` (new in 2.6)"
+msgstr ""
+
+#: ../../components/console/helpers/index.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../components/console/helpers/index.rst:1
+msgid "Console Helpers"
+msgstr ""

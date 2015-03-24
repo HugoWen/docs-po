@@ -1,0 +1,179 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/definitions.rst:5
+msgid "Working with Container Service Definitions"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:8
+msgid "Getting and Setting Service Definitions"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:10
+msgid ""
+"There are some helpful methods for working with the service definitions."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:12
+msgid "To find out if there is a definition for a service id::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:16
+msgid ""
+"This is useful if you only want to do something if a particular definition "
+"exists."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:18
+msgid "You can retrieve a definition with::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:22
+msgid "or::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:26
+msgid ""
+"which unlike ``getDefinition()`` also resolves aliases so if the "
+"``$serviceId`` argument is an alias you will get the underlying definition."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:29
+msgid ""
+"The service definitions themselves are objects so if you retrieve a "
+"definition with these methods and make changes to it these will be reflected"
+" in the container. If, however, you are creating a new definition then you "
+"can add it to the container using::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:37
+msgid "Working with a Definition"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:40
+msgid "Creating a new Definition"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:42
+msgid ""
+"If you need to create a new definition rather than manipulate one retrieved "
+"from the container then the definition class is "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Definition`."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:46
+msgid "Class"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:48
+msgid ""
+"First up is the class of a definition, this is the class of the object "
+"returned when the service is requested from the container."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:51
+msgid "To find out what class is set for a definition::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:55
+msgid "and to set a different class::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:60
+msgid "Constructor Arguments"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:62
+msgid ""
+"To get an array of the constructor arguments for a definition you can use::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:66
+msgid "or to get a single argument by its position::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:71
+msgid "You can add a new argument to the end of the arguments array using::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:75
+msgid ""
+"The argument can be a string, an array, a service parameter by using "
+"``%parameter_name%`` or a service id by using::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:84
+msgid ""
+"In a similar way you can replace an already set argument by index using::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:88
+msgid ""
+"You can also replace all the arguments (or set some if there are none) with "
+"an array of arguments::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:94
+msgid "Method Calls"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:96
+msgid ""
+"If the service you are working with uses setter injection then you can "
+"manipulate any method calls in the definitions as well."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:99
+msgid "You can get an array of all the method calls with::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:103
+msgid "Add a method call with::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:107
+msgid ""
+"Where ``$method`` is the method name and ``$arguments`` is an array of the "
+"arguments to call the method with. The arguments can be strings, arrays, "
+"parameters or service ids as with the constructor arguments."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:111
+msgid ""
+"You can also replace any existing method calls with an array of new ones "
+"with::"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:117
+msgid ""
+"There are more examples of specific ways of working with definitions in the "
+"PHP code blocks of the configuration examples on pages such as "
+":doc:`/components/dependency_injection/factories` and "
+":doc:`/components/dependency_injection/parentservices`."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:124
+msgid ""
+"The methods here that change service definitions can only be used before the"
+" container is compiled. Once the container is compiled you cannot manipulate"
+" service definitions further. To learn more about compiling the container "
+"see :doc:`/components/dependency_injection/compilation`."
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/definitions.rst:1
+msgid "Service definitions"
+msgstr ""

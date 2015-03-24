@@ -1,0 +1,58 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/request/mime_type.rst:5
+msgid "How to Register a new Request Format and Mime Type"
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:7
+msgid ""
+"Every ``Request`` has a \"format\" (e.g. ``html``, ``json``), which is used "
+"to determine what type of content to return in the ``Response``. In fact, "
+"the request format, accessible via "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getRequestFormat`,"
+" is used to set the MIME type of the ``Content-Type`` header on the "
+"``Response`` object. Internally, Symfony contains a map of the most common "
+"formats (e.g. ``html``, ``json``) and their associated MIME types (e.g. "
+"``text/html``, ``application/json``). Of course, additional format-MIME type"
+" entries can easily be added. This document will show how you can add the "
+"``jsonp`` format and corresponding MIME type."
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:19
+msgid "Configure your New Format"
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:21
+msgid ""
+"The FrameworkBundle registers a subscriber that will add formats to incoming"
+" requests."
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:23
+msgid "All you have to do is to configure the ``jsonp`` format:"
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:70
+msgid ""
+"You can also associate multiple mime types to a format, but please note that"
+" the preferred one must be the first as it will be used as the content type:"
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:1
+msgid "Request"
+msgstr ""
+
+#: ../../cookbook/request/mime_type.rst:1
+msgid "Add a request format and mime type"
+msgstr ""

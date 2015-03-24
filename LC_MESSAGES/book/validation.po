@@ -1,0 +1,799 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/validation.rst:5 ../../book/validation.rst:1
+#: ../../book/validation.rst:15 ../../book/validation.rst:106
+#: ../../book/validation.rst:203 ../../book/validation.rst:249
+#: ../../book/validation.rst:292 ../../book/validation.rst:320
+#: ../../book/validation.rst:504 ../../book/validation.rst:516
+#: ../../book/validation.rst:597 ../../book/validation.rst:891
+msgid "Validation"
+msgstr ""
+
+#: ../../book/validation.rst:7
+msgid ""
+"Validation is a very common task in web applications. Data entered in forms "
+"needs to be validated. Data also needs to be validated before it is written "
+"into a database or passed to a web service."
+msgstr ""
+
+#: ../../book/validation.rst:11
+msgid ""
+"Symfony ships with a `Validator`_ component that makes this task easy and "
+"transparent. This component is based on the `JSR303 Bean Validation "
+"specification`_."
+msgstr ""
+
+#: ../../book/validation.rst:19
+msgid "The Basics of Validation"
+msgstr ""
+
+#: ../../book/validation.rst:21
+msgid ""
+"The best way to understand validation is to see it in action. To start, "
+"suppose you've created a plain-old-PHP object that you need to use somewhere"
+" in your application::"
+msgstr ""
+
+#: ../../book/validation.rst:33
+msgid ""
+"So far, this is just an ordinary class that serves some purpose inside your "
+"application. The goal of validation is to tell you if the data of an object "
+"is valid. For this to work, you'll configure a list of rules (called "
+":ref:`constraints <validation-constraints>`) that the object must follow in "
+"order to be valid. These rules can be specified via a number of different "
+"formats (YAML, XML, annotations, or PHP)."
+msgstr ""
+
+#: ../../book/validation.rst:40
+msgid ""
+"For example, to guarantee that the ``$name`` property is not empty, add the "
+"following:"
+msgstr ""
+
+#: ../../book/validation.rst:103
+msgid ""
+"Protected and private properties can also be validated, as well as "
+"\"getter\" methods (see :ref:`validator-constraint-targets`)."
+msgstr ""
+
+#: ../../book/validation.rst:110
+msgid "Using the ``validator`` Service"
+msgstr ""
+
+#: ../../book/validation.rst:112
+msgid ""
+"Next, to actually validate an ``Author`` object, use the ``validate`` method"
+" on the ``validator`` service (class "
+":class:`Symfony\\\\Component\\\\Validator\\\\Validator`). The job of the "
+"``validator`` is easy: to read the constraints (i.e. rules) of a class and "
+"verify if the data on the object satisfies those constraints. If validation "
+"fails, a non-empty list of errors (class "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolationList`) is "
+"returned. Take this simple example from inside a controller::"
+msgstr ""
+
+#: ../../book/validation.rst:148
+msgid ""
+"If the ``$name`` property is empty, you will see the following error "
+"message:"
+msgstr ""
+
+#: ../../book/validation.rst:156
+msgid ""
+"If you insert a value into the ``name`` property, the happy success message "
+"will appear."
+msgstr ""
+
+#: ../../book/validation.rst:161
+msgid ""
+"Most of the time, you won't interact directly with the ``validator`` service"
+" or need to worry about printing out the errors. Most of the time, you'll "
+"use validation indirectly when handling submitted form data. For more "
+"information, see the :ref:`book-validation-forms`."
+msgstr ""
+
+#: ../../book/validation.rst:166
+msgid "You could also pass the collection of errors into a template::"
+msgstr ""
+
+#: ../../book/validation.rst:174
+msgid ""
+"Inside the template, you can output the list of errors exactly as needed:"
+msgstr ""
+
+#: ../../book/validation.rst:200
+msgid ""
+"Each validation error (called a \"constraint violation\"), is represented by"
+" a :class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolation` object."
+msgstr ""
+
+#: ../../book/validation.rst:209
+msgid "Validation and Forms"
+msgstr ""
+
+#: ../../book/validation.rst:211
+msgid ""
+"The ``validator`` service can be used at any time to validate any object. In"
+" reality, however, you'll usually work with the ``validator`` indirectly "
+"when working with forms. Symfony's form library uses the ``validator`` "
+"service internally to validate the underlying object after values have been "
+"submitted. The constraint violations on the object are converted into "
+"``FieldError`` objects that can easily be displayed with your form. The "
+"typical form submission workflow looks like the following from inside a "
+"controller::"
+msgstr ""
+
+#: ../../book/validation.rst:245
+msgid ""
+"This example uses an ``AuthorType`` form class, which is not shown here."
+msgstr ""
+
+#: ../../book/validation.rst:247
+msgid "For more information, see the :doc:`Forms </book/forms>` chapter."
+msgstr ""
+
+#: ../../book/validation.rst:255 ../../book/validation.rst:249
+msgid "Configuration"
+msgstr ""
+
+#: ../../book/validation.rst:257
+msgid ""
+"The Symfony validator is enabled by default, but you must explicitly enable "
+"annotations if you're using the annotation method to specify your "
+"constraints:"
+msgstr ""
+
+#: ../../book/validation.rst:298 ../../book/validation.rst:292
+msgid "Constraints"
+msgstr ""
+
+#: ../../book/validation.rst:300
+msgid ""
+"The ``validator`` is designed to validate objects against *constraints* "
+"(i.e. rules). In order to validate an object, simply map one or more "
+"constraints to its class and then pass it to the ``validator`` service."
+msgstr ""
+
+#: ../../book/validation.rst:304
+msgid ""
+"Behind the scenes, a constraint is simply a PHP object that makes an "
+"assertive statement. In real life, a constraint could be: \"The cake must "
+"not be burned\". In Symfony, constraints are similar: they are assertions "
+"that a condition is true. Given a value, a constraint will tell you if that "
+"value adheres to the rules of the constraint."
+msgstr ""
+
+#: ../../book/validation.rst:311
+msgid "Supported Constraints"
+msgstr ""
+
+#: ../../book/validation.rst:313
+msgid "Symfony packages many of the most commonly-needed constraints:"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:2
+msgid "Basic Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:4
+msgid ""
+"These are the basic constraints: use them to assert very basic things about "
+"the value of properties or the return value of methods on your object."
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:7
+msgid ":doc:`NotBlank </reference/constraints/NotBlank>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:8
+msgid ":doc:`Blank </reference/constraints/Blank>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:9
+msgid ":doc:`NotNull </reference/constraints/NotNull>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:10
+msgid ":doc:`Null </reference/constraints/Null>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:11
+msgid ":doc:`True </reference/constraints/True>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:12
+msgid ":doc:`False </reference/constraints/False>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:13
+msgid ":doc:`Type </reference/constraints/Type>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:16
+msgid "String Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:18
+msgid ":doc:`Email </reference/constraints/Email>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:19
+msgid ":doc:`Length </reference/constraints/Length>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:20
+msgid ":doc:`Url </reference/constraints/Url>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:21
+msgid ":doc:`Regex </reference/constraints/Regex>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:22
+msgid ":doc:`Ip </reference/constraints/Ip>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:23
+msgid ":doc:`Uuid</reference/constraints/Uuid>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:26
+msgid "Number Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:28
+msgid ":doc:`Range </reference/constraints/Range>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:31
+msgid "Comparison Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:33
+msgid ":doc:`EqualTo </reference/constraints/EqualTo>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:34
+msgid ":doc:`NotEqualTo </reference/constraints/NotEqualTo>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:35
+msgid ":doc:`IdenticalTo </reference/constraints/IdenticalTo>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:36
+msgid ":doc:`NotIdenticalTo </reference/constraints/NotIdenticalTo>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:37
+msgid ":doc:`LessThan </reference/constraints/LessThan>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:38
+msgid ":doc:`LessThanOrEqual </reference/constraints/LessThanOrEqual>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:39
+msgid ":doc:`GreaterThan </reference/constraints/GreaterThan>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:40
+msgid ":doc:`GreaterThanOrEqual </reference/constraints/GreaterThanOrEqual>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:43
+msgid "Date Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:45
+msgid ":doc:`Date </reference/constraints/Date>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:46
+msgid ":doc:`DateTime </reference/constraints/DateTime>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:47
+msgid ":doc:`Time </reference/constraints/Time>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:50
+msgid "Collection Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:52
+msgid ":doc:`Choice </reference/constraints/Choice>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:53
+msgid ":doc:`Collection </reference/constraints/Collection>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:54
+msgid ":doc:`Count </reference/constraints/Count>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:55
+msgid ":doc:`UniqueEntity </reference/constraints/UniqueEntity>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:56
+msgid ":doc:`Language </reference/constraints/Language>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:57
+msgid ":doc:`Locale </reference/constraints/Locale>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:58
+msgid ":doc:`Country </reference/constraints/Country>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:61
+msgid "File Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:63
+msgid ":doc:`File </reference/constraints/File>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:64
+msgid ":doc:`Image </reference/constraints/Image>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:67
+msgid "Financial and other Number Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:69
+msgid ":doc:`CardScheme </reference/constraints/CardScheme>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:70
+msgid ":doc:`Currency </reference/constraints/Currency>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:71
+msgid ":doc:`Luhn </reference/constraints/Luhn>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:72
+msgid ":doc:`Iban </reference/constraints/Iban>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:73
+msgid ":doc:`Isbn </reference/constraints/Isbn>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:74
+msgid ":doc:`Issn </reference/constraints/Issn>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:77
+msgid "Other Constraints"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:79
+msgid ":doc:`Callback </reference/constraints/Callback>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:80
+msgid ":doc:`Expression </reference/constraints/Expression>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:81
+msgid ":doc:`All </reference/constraints/All>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:82
+msgid ":doc:`UserPassword </reference/constraints/UserPassword>`"
+msgstr ""
+
+#: ../../reference/constraints/map.rst.inc:83
+msgid ":doc:`Valid </reference/constraints/Valid>`"
+msgstr ""
+
+#: ../../book/validation.rst:317
+msgid ""
+"You can also create your own custom constraints. This topic is covered in "
+"the \":doc:`/cookbook/validation/custom_constraint`\" article of the "
+"cookbook."
+msgstr ""
+
+#: ../../book/validation.rst:326
+msgid "Constraint Configuration"
+msgstr ""
+
+#: ../../book/validation.rst:328
+msgid ""
+"Some constraints, like :doc:`NotBlank </reference/constraints/NotBlank>`, "
+"are simple whereas others, like the :doc:`Choice "
+"</reference/constraints/Choice>` constraint, have several configuration "
+"options available. Suppose that the ``Author`` class has another property "
+"called ``gender`` that can be set to either \"male\" or \"female\":"
+msgstr ""
+
+#: ../../book/validation.rst:415
+msgid ""
+"The options of a constraint can always be passed in as an array. Some "
+"constraints, however, also allow you to pass the value of one, "
+"\"*default*\", option in place of the array. In the case of the ``Choice`` "
+"constraint, the ``choices`` options can be specified in this way."
+msgstr ""
+
+#: ../../book/validation.rst:491
+msgid ""
+"This is purely meant to make the configuration of the most common option of "
+"a constraint shorter and quicker."
+msgstr ""
+
+#: ../../book/validation.rst:494
+msgid ""
+"If you're ever unsure of how to specify an option, either check the API "
+"documentation for the constraint or play it safe by always passing in an "
+"array of options (the first method shown above)."
+msgstr ""
+
+#: ../../book/validation.rst:499
+msgid "Translation Constraint Messages"
+msgstr ""
+
+#: ../../book/validation.rst:501
+msgid ""
+"For information on translating the constraint messages, see :ref:`book-"
+"translation-constraint-messages`."
+msgstr ""
+
+#: ../../book/validation.rst:510
+msgid "Constraint Targets"
+msgstr ""
+
+#: ../../book/validation.rst:512
+msgid ""
+"Constraints can be applied to a class property (e.g. ``name``) or a public "
+"getter method (e.g. ``getFullName``). The first is the most common and easy "
+"to use, but the second allows you to specify more complex validation rules."
+msgstr ""
+
+#: ../../book/validation.rst:522
+msgid "Properties"
+msgstr ""
+
+#: ../../book/validation.rst:524
+msgid ""
+"Validating class properties is the most basic validation technique. Symfony "
+"allows you to validate private, protected or public properties. The next "
+"listing shows you how to configure the ``$firstName`` property of an "
+"``Author`` class to have at least 3 characters."
+msgstr ""
+
+#: ../../book/validation.rst:601
+msgid "Getters"
+msgstr ""
+
+#: ../../book/validation.rst:603
+msgid ""
+"Constraints can also be applied to the return value of a method. Symfony "
+"allows you to add a constraint to any public method whose name starts with "
+"\"get\", \"is\" or \"has\". In this guide, these types of methods are "
+"referred to as \"getters\"."
+msgstr ""
+
+#: ../../book/validation.rst:608
+msgid ""
+"The benefit of this technique is that it allows you to validate your object "
+"dynamically. For example, suppose you want to make sure that a password "
+"field doesn't match the first name of the user (for security reasons). You "
+"can do this by creating an ``isPasswordLegal`` method, and then asserting "
+"that this method must return ``true``:"
+msgstr ""
+
+#: ../../book/validation.rst:677
+msgid ""
+"Now, create the ``isPasswordLegal()`` method and include the logic you "
+"need::"
+msgstr ""
+
+#: ../../book/validation.rst:686
+msgid ""
+"The keen-eyed among you will have noticed that the prefix of the getter "
+"(\"get\", \"is\" or \"has\") is omitted in the mapping. This allows you to "
+"move the constraint to a property with the same name later (or vice versa) "
+"without changing your validation logic."
+msgstr ""
+
+#: ../../book/validation.rst:694
+msgid "Classes"
+msgstr ""
+
+#: ../../book/validation.rst:696
+msgid ""
+"Some constraints apply to the entire class being validated. For example, the"
+" :doc:`Callback </reference/constraints/Callback>` constraint is a generic "
+"constraint that's applied to the class itself. When that class is validated,"
+" methods specified by that constraint are simply executed so that each can "
+"provide more custom validation."
+msgstr ""
+
+#: ../../book/validation.rst:705
+msgid "Validation Groups"
+msgstr ""
+
+#: ../../book/validation.rst:707
+msgid ""
+"So far, you've been able to add constraints to a class and ask whether or "
+"not that class passes all the defined constraints. In some cases, however, "
+"you'll need to validate an object against only *some* constraints on that "
+"class. To do this, you can organize each constraint into one or more "
+"\"validation groups\", and then apply validation against just one group of "
+"constraints."
+msgstr ""
+
+#: ../../book/validation.rst:714
+msgid ""
+"For example, suppose you have a ``User`` class, which is used both when a "
+"user registers and when a user updates their contact information later:"
+msgstr ""
+
+#: ../../book/validation.rst:832
+msgid "With this configuration, there are three validation groups:"
+msgstr ""
+
+#: ../../book/validation.rst:836
+msgid "``Default``"
+msgstr ""
+
+#: ../../book/validation.rst:835
+msgid ""
+"Contains the constraints in the current class and all referenced classes "
+"that belong to no other group."
+msgstr ""
+
+#: ../../book/validation.rst:841
+msgid "``User``"
+msgstr ""
+
+#: ../../book/validation.rst:839
+msgid ""
+"Equivalent to all constraints of the ``User`` object in the ``Default`` "
+"group. This is always the name of the class. The difference between this and"
+" ``Default`` is explained below."
+msgstr ""
+
+#: ../../book/validation.rst:844
+msgid "``registration``"
+msgstr ""
+
+#: ../../book/validation.rst:844
+msgid ""
+"Contains the constraints on the ``email`` and ``password`` fields only."
+msgstr ""
+
+#: ../../book/validation.rst:846
+msgid ""
+"Constraints in the ``Default`` group of a class are the constraints that "
+"have either no explicit group configured or that are configured to a group "
+"equal to the class name or the string ``Default``."
+msgstr ""
+
+#: ../../book/validation.rst:852
+msgid ""
+"When validating *just* the User object, there is no difference between the "
+"``Default`` group and the ``User`` group. But, there is a difference if "
+"``User`` has embedded objects. For example, imagine ``User`` has an "
+"``address`` property that contains some ``Address`` object and that you've "
+"added the :doc:`/reference/constraints/Valid` constraint to this property so"
+" that it's validated when you validate the ``User`` object."
+msgstr ""
+
+#: ../../book/validation.rst:859
+msgid ""
+"If you validate ``User`` using the ``Default`` group, then any constraints "
+"on the ``Address`` class that are in the ``Default`` group *will* be used. "
+"But, if you validate ``User`` using the ``User`` validation group, then only"
+" constraints on the ``Address`` class with the ``User`` group will be "
+"validated."
+msgstr ""
+
+#: ../../book/validation.rst:865
+msgid ""
+"In other words, the ``Default`` group and the class name group (e.g. "
+"``User``) are identical, except when the class is embedded in another object"
+" that's actually the one being validated."
+msgstr ""
+
+#: ../../book/validation.rst:869
+msgid ""
+"If you have inheritance (e.g. ``User extends BaseUser``) and you validate "
+"with the class name of the subclass (i.e. ``User``), then all constraints in"
+" the ``User`` and ``BaseUser`` will be validated. However, if you validate "
+"using the base class (i.e. ``BaseUser``), then only the default constraints "
+"in the ``BaseUser`` class will be validated."
+msgstr ""
+
+#: ../../book/validation.rst:875
+msgid ""
+"To tell the validator to use a specific group, pass one or more group names "
+"as the third argument to the ``validate()`` method::"
+msgstr ""
+
+#: ../../book/validation.rst:884
+msgid ""
+"If no groups are specified, all constraints that belong to the group "
+"``Default`` will be applied."
+msgstr ""
+
+#: ../../book/validation.rst:887
+msgid ""
+"Of course, you'll usually work with validation indirectly through the form "
+"library. For information on how to use validation groups inside forms, see "
+":ref:`book-forms-validation-groups`."
+msgstr ""
+
+#: ../../book/validation.rst:897
+msgid "Group Sequence"
+msgstr ""
+
+#: ../../book/validation.rst:899
+msgid ""
+"In some cases, you want to validate your groups by steps. To do this, you "
+"can use the ``GroupSequence`` feature. In this case, an object defines a "
+"group sequence, which determines the order groups should be validated."
+msgstr ""
+
+#: ../../book/validation.rst:903
+msgid ""
+"For example, suppose you have a ``User`` class and want to validate that the"
+" username and the password are different only if all other validation passes"
+" (in order to avoid multiple error messages)."
+msgstr ""
+
+#: ../../book/validation.rst:1016
+msgid ""
+"In this example, it will first validate all constraints in the group "
+"``User`` (which is the same as the ``Default`` group). Only if all "
+"constraints in that group are valid, the second group, ``Strict``, will be "
+"validated."
+msgstr ""
+
+#: ../../book/validation.rst:1022
+msgid ""
+"As you have already seen in the previous section, the ``Default`` group and "
+"the group containing the class name (e.g. ``User``) were identical. However,"
+" when using Group Sequences, they are no longer identical. The ``Default`` "
+"group will now reference the group sequence, instead of all constraints that"
+" do not belong to any group."
+msgstr ""
+
+#: ../../book/validation.rst:1028
+msgid ""
+"This means that you have to use the ``{ClassName}`` (e.g. ``User``) group "
+"when specifying a group sequence. When using ``Default``, you get an "
+"infinite recursion (as the ``Default`` group references the group sequence, "
+"which will contain the ``Default`` group which references the same group "
+"sequence, ...)."
+msgstr ""
+
+#: ../../book/validation.rst:1035
+msgid "Group Sequence Providers"
+msgstr ""
+
+#: ../../book/validation.rst:1037
+msgid ""
+"Imagine a ``User`` entity which can be a normal user or a premium user. When"
+" it's a premium user, some extra constraints should be added to the user "
+"entity (e.g. the credit card details). To dynamically determine which groups"
+" should be activated, you can create a Group Sequence Provider. First, "
+"create the entity and a new constraint group called ``Premium``:"
+msgstr ""
+
+#: ../../book/validation.rst:1135
+msgid ""
+"Now, change the ``User`` class to implement "
+":class:`Symfony\\\\Component\\\\Validator\\\\GroupSequenceProviderInterface`"
+" and add the "
+":method:`Symfony\\\\Component\\\\Validator\\\\GroupSequenceProviderInterface::getGroupSequence`,"
+" method, which should return an array of groups to use::"
+msgstr ""
+
+#: ../../book/validation.rst:1163
+msgid ""
+"At last, you have to notify the Validator component that your ``User`` class"
+" provides a sequence of groups to be validated:"
+msgstr ""
+
+#: ../../book/validation.rst:1226
+msgid "Validating Values and Arrays"
+msgstr ""
+
+#: ../../book/validation.rst:1228
+msgid ""
+"So far, you've seen how you can validate entire objects. But sometimes, you "
+"just want to validate a simple value - like to verify that a string is a "
+"valid email address. This is actually pretty easy to do. From inside a "
+"controller, it looks like this::"
+msgstr ""
+
+#: ../../book/validation.rst:1270
+msgid ""
+"By calling ``validate`` on the validator, you can pass in a raw value and "
+"the constraint object that you want to validate that value against. A full "
+"list of the available constraints - as well as the full class name for each "
+"constraint - is available in the :doc:`constraints reference "
+"</reference/constraints>` section."
+msgstr ""
+
+#: ../../book/validation.rst:1276
+msgid ""
+"The ``validate`` method returns a "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolationList` "
+"object, which acts just like an array of errors. Each error in the "
+"collection is a "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolation` object, "
+"which holds the error message on its ``getMessage`` method."
+msgstr ""
+
+#: ../../book/validation.rst:1282
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../book/validation.rst:1284
+msgid ""
+"The Symfony ``validator`` is a powerful tool that can be leveraged to "
+"guarantee that the data of any object is \"valid\". The power behind "
+"validation lies in \"constraints\", which are rules that you can apply to "
+"properties or getter methods of your object. And while you'll most commonly "
+"use the validation framework indirectly when using forms, remember that it "
+"can be used anywhere to validate any object."
+msgstr ""
+
+#: ../../book/validation.rst:1292
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/validation.rst:1294
+msgid ":doc:`/cookbook/validation/custom_constraint`"
+msgstr ""
+
+#: ../../book/validation.rst:15
+msgid "The basics"
+msgstr ""
+
+#: ../../book/validation.rst:106
+msgid "Using the validator"
+msgstr ""
+
+#: ../../book/validation.rst:203
+msgid "Validation with forms"
+msgstr ""
+
+#: ../../book/validation.rst:320
+msgid "Constraints configuration"
+msgstr ""
+
+#: ../../book/validation.rst:504
+msgid "Constraint targets"
+msgstr ""
+
+#: ../../book/validation.rst:516
+msgid "Property constraints"
+msgstr ""
+
+#: ../../book/validation.rst:597
+msgid "Getter constraints"
+msgstr ""
+
+#: ../../book/validation.rst:891
+msgid "Validating raw values"
+msgstr ""

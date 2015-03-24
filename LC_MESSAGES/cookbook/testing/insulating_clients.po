@@ -1,0 +1,49 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/insulating_clients.rst:5
+msgid "How to Test the Interaction of several Clients"
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:7
+msgid ""
+"If you need to simulate an interaction between different clients (think of a"
+" chat for instance), create several clients::"
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:21
+msgid ""
+"This works except when your code maintains a global state or if it depends "
+"on a third-party library that has some kind of global state. In such a case,"
+" you can insulate your clients::"
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:39
+msgid ""
+"Insulated clients transparently execute their requests in a dedicated and "
+"clean PHP process, thus avoiding any side-effects."
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:44
+msgid ""
+"As an insulated client is slower, you can keep one client in the main "
+"process, and insulate the other ones."
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/insulating_clients.rst:1
+msgid "Insulating clients"
+msgstr ""

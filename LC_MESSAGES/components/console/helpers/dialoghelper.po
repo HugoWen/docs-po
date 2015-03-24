@@ -1,0 +1,247 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/dialoghelper.rst:5
+#: ../../components/console/helpers/dialoghelper.rst:1
+msgid "Dialog Helper"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:9
+msgid ""
+"The Dialog Helper was deprecated in Symfony 2.5 and will be removed in "
+"Symfony 3.0. You should now use the :doc:`Question Helper "
+"</components/console/helpers/questionhelper>` instead, which is simpler to "
+"use."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:14
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DialogHelper` "
+"provides functions to ask the user for more information. It is included in "
+"the default helper set, which you can get by calling "
+":method:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command::getHelperSet`::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:21
+msgid ""
+"All the methods inside the Dialog Helper have an "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` as the"
+" first argument, the question as the second argument and the default value "
+"as the last argument."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:27
+msgid "Asking the User for Confirmation"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:29
+msgid ""
+"Suppose you want to confirm an action before actually executing it. Add the "
+"following to your command::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:41
+msgid ""
+"In this case, the user will be asked \"Continue with this action?\", and "
+"will return ``true`` if the user answers with ``y`` or ``false`` if the user"
+" answers with ``n``. The third argument to "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DialogHelper::askConfirmation`"
+" is the default value to return if the user doesn't enter any input. Any "
+"other input will ask the same question again."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:49
+msgid "Asking the User for Information"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:51
+msgid ""
+"You can also ask question with more than a simple yes/no answer. For "
+"instance, if you want to know a bundle name, you can add this to your "
+"command::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:61
+msgid ""
+"The user will be asked \"Please enter the name of the bundle\". They can "
+"type some name which will be returned by the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DialogHelper::ask` "
+"method. If they leave it empty, the default value (AcmeDemoBundle here) is "
+"returned."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:67
+msgid "Autocompletion"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:69
+msgid ""
+"You can also specify an array of potential answers for a given question. "
+"These will be autocompleted as the user types::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:82
+msgid "Hiding the User's Response"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:84
+msgid ""
+"You can also ask a question and hide the response. This is particularly "
+"convenient for passwords::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:96
+msgid ""
+"When you ask for a hidden response, Symfony will use either a binary, change"
+" stty mode or use another trick to hide the response. If none is available, "
+"it will fallback and allow the response to be visible unless you pass "
+"``false`` as the third argument like in the example above. In this case, a "
+"RuntimeException would be thrown."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:103
+msgid "Validating the Answer"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:105
+msgid ""
+"You can even validate the answer. For instance, in the last example you "
+"asked for the bundle name. Following the Symfony naming conventions, it "
+"should be suffixed with ``Bundle``. You can validate that by using the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DialogHelper::askAndValidate`"
+" method::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:128
+msgid "This methods has 2 new arguments, the full signature is::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:139
+msgid ""
+"The ``$validator`` is a callback which handles the validation. It should "
+"throw an exception if there is something wrong. The exception message is "
+"displayed in the console, so it is a good practice to put some useful "
+"information in it. The callback function should also return the value of the"
+" user's input if the validation was successful."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:144
+msgid ""
+"You can set the max number of times to ask in the ``$attempts`` argument. If"
+" you reach this max number it will use the default value. Using ``false`` "
+"means the amount of attempts is infinite. The user will be asked as long as "
+"they provide an invalid answer and will only be able to proceed if their "
+"input is valid."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:151
+msgid "Validating a Hidden Response"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:153
+msgid "You can also ask and validate a hidden response::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:173
+msgid ""
+"If you want to allow the response to be visible if it cannot be hidden for "
+"some reason, pass true as the fifth argument."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:177
+msgid "Let the User Choose from a List of Answers"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:179
+msgid ""
+"If you have a predefined set of answers the user can choose from, you could "
+"use the ``ask`` method described above or, to make sure the user provided a "
+"correct answer, the ``askAndValidate`` method. Both have the disadvantage "
+"that you need to handle incorrect values yourself."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:184
+msgid ""
+"Instead, you can use the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DialogHelper::select` "
+"method, which makes sure that the user can only enter a valid string from a "
+"predefined list::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:202
+msgid ""
+"The option which should be selected by default is provided with the fourth "
+"argument. The default is ``null``, which means that no option is the default"
+" one."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:205
+msgid ""
+"If the user enters an invalid string, an error message is shown and the user"
+" is asked to provide the answer another time, until they enter a valid "
+"string or the maximum attempts is reached (which you can define in the fifth"
+" argument). The default value for the attempts is ``false``, which means "
+"infinite attempts. You can define your own error message in the sixth "
+"argument."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:211
+msgid "Multiselect support was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:215
+msgid "Multiple Choices"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:217
+msgid ""
+"Sometimes, multiple answers can be given. The DialogHelper provides this "
+"feature using comma separated values. This is disabled by default, to enable"
+" this set the seventh argument to ``true``::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:241
+msgid ""
+"Now, when the user enters ``1,2``, the result will be: ``You have just "
+"selected: blue, yellow``."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:245
+msgid "Testing a Command which Expects Input"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:247
+msgid ""
+"If you want to write a unit test for a command which expects some kind of "
+"input from the command line, you need to overwrite the HelperSet used by the"
+" command::"
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:283
+msgid ""
+"By setting the input stream of the ``DialogHelper``, you imitate what the "
+"console would do internally with all user input through the cli. This way "
+"you can test any user interaction (even complex ones) by passing an "
+"appropriate input stream."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:290
+msgid ""
+"You find more information about testing commands in the console component "
+"docs about :ref:`testing console commands <component-console-testing-"
+"commands>`."
+msgstr ""
+
+#: ../../components/console/helpers/dialoghelper.rst:1
+msgid "Console Helpers"
+msgstr ""

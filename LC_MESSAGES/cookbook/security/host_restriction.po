@@ -1,0 +1,23 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/host_restriction.rst:2
+msgid "How to Restrict Firewalls to a Specific Host"
+msgstr ""
+
+#: ../../cookbook/security/host_restriction.rst:4
+msgid ""
+"As of Symfony 2.5, more possibilities to restrict firewalls have been added."
+" You can read everything about all the possibilities (including ``host``) in"
+" \":doc:`/cookbook/security/firewall_restriction`\"."
+msgstr ""

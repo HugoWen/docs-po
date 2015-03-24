@@ -1,0 +1,64 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/security/introduction.rst:5
+msgid "The Security Component"
+msgstr ""
+
+#: ../../components/security/introduction.rst:7
+msgid ""
+"The Security component provides a complete security system for your web "
+"application. It ships with facilities for authenticating using HTTP basic or"
+" digest authentication, interactive form login or X.509 certificate login, "
+"but also allows you to implement your own authentication strategies. "
+"Furthermore, the component provides ways to authorize authenticated users "
+"based on their roles, and it contains an advanced ACL system."
+msgstr ""
+
+#: ../../components/security/introduction.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../components/security/introduction.rst:17
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/security/introduction.rst:19
+msgid ""
+":doc:`Install it via Composer </components/using_components>` "
+"(``symfony/security`` on Packagist_);"
+msgstr ""
+
+#: ../../components/security/introduction.rst:20
+msgid "Use the official Git repository (https://github.com/symfony/Security)."
+msgstr ""
+
+#: ../../components/security/introduction.rst:23
+msgid "Sections"
+msgstr ""
+
+#: ../../components/security/introduction.rst:25
+msgid ":doc:`/components/security/firewall`"
+msgstr ""
+
+#: ../../components/security/introduction.rst:26
+msgid ":doc:`/components/security/authentication`"
+msgstr ""
+
+#: ../../components/security/introduction.rst:27
+msgid ":doc:`/components/security/authorization`"
+msgstr ""
+
+#: ../../components/security/introduction.rst:1
+msgid "Security"
+msgstr ""

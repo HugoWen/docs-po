@@ -1,0 +1,209 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/expression/expressions.rst:5
+msgid "How to use Expressions in Security, Routing, Services, and Validation"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:7
+msgid ""
+"In Symfony 2.4, a powerful :doc:`ExpressionLanguage "
+"</components/expression_language/introduction>` component was added to "
+"Symfony. This allows us to add highly customized logic inside configuration."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:11
+msgid ""
+"The Symfony Framework leverages expressions out of the box in the following "
+"ways:"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:14
+msgid ":ref:`Configuring services <book-services-expressions>`;"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:15
+msgid ":ref:`Route matching conditions <book-routing-conditions>`;"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:16
+msgid ""
+":ref:`Checking security <book-security-expressions>` (explained below) and "
+":ref:`access controls with allow_if <book-security-allow-if>`;"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:18
+msgid ":doc:`Validation </reference/constraints/Expression>`."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:20
+msgid ""
+"For more information about how to create and work with expressions, see "
+":doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:26
+msgid "Security: Complex Access Controls with Expressions"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:28
+msgid ""
+"In addition to a role like ``ROLE_ADMIN``, the ``isGranted`` method also "
+"accepts an :class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\Expression`"
+" object::"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:43
+msgid ""
+"In this example, if the current user has ``ROLE_ADMIN`` or if the current "
+"user object's ``isSuperAdmin()`` method returns ``true``, then access will "
+"be granted (note: your User object may not have an ``isSuperAdmin`` method, "
+"that method is invented for this example)."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:48
+msgid ""
+"This uses an expression and you can learn more about the expression language"
+" syntax, see :doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:53
+msgid "Inside the expression, you have access to a number of variables:"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:55
+msgid "``user``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:56
+msgid "The user object (or the string ``anon`` if you're not authenticated)."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:59
+msgid "``roles``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:58
+msgid ""
+"The array of roles the user has, including from the :ref:`role hierarchy "
+"<security-role-hierarchy>` but not including the ``IS_AUTHENTICATED_*`` "
+"attributes (see the functions below)."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:61
+msgid "``object``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:62
+msgid ""
+"The object (if any) that's passed as the second argument to ``isGranted``."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:63
+msgid "``token``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:64
+msgid "The token object."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:67
+msgid "``trust_resolver``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:66
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\AuthenticationTrustResolverInterface`,"
+" object: you'll probably use the ``is_*`` functions below instead."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:69
+msgid ""
+"Additionally, you have access to a number of functions inside the "
+"expression:"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:72
+msgid "``is_authenticated``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:72
+msgid ""
+"Returns ``true`` if the user is authenticated via \"remember-me\" or "
+"authenticated \"fully\" - i.e. returns true if the user is \"logged in\"."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:74
+msgid "``is_anonymous``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:75
+msgid ""
+"Equal to using ``IS_AUTHENTICATED_ANONYMOUSLY`` with the ``isGranted`` "
+"function."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:76
+msgid "``is_remember_me``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:77
+msgid "Similar, but not equal to ``IS_AUTHENTICATED_REMEMBERED``, see below."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:78
+msgid "``is_fully_authenticated``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:79
+msgid "Similar, but not equal to ``IS_AUTHENTICATED_FULLY``, see below."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:82
+msgid "``has_role``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:81
+msgid ""
+"Checks to see if the user has the given role - equivalent to an expression "
+"like ``'ROLE_ADMIN' in roles``."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:0
+msgid ""
+"``is_remember_me`` is different than checking "
+"``IS_AUTHENTICATED_REMEMBERED``"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:86
+msgid ""
+"The ``is_remember_me`` and ``is_authenticated_fully`` functions are "
+"*similar* to using ``IS_AUTHENTICATED_REMEMBERED`` and "
+"``IS_AUTHENTICATED_FULLY`` with the ``isGranted`` function - but they are "
+"**not** the same. The following shows the difference::"
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:101
+msgid ""
+"Here, ``$access1`` and ``$access2`` will be the same value. Unlike the "
+"behavior of ``IS_AUTHENTICATED_REMEMBERED`` and ``IS_AUTHENTICATED_FULLY``, "
+"the ``is_remember_me`` function *only* returns true if the user is "
+"authenticated via a remember-me cookie and ``is_fully_authenticated`` *only*"
+" returns true if the user has actually logged in during this session (i.e. "
+"is full-fledged)."
+msgstr ""
+
+#: ../../cookbook/expression/expressions.rst:1
+msgid "Expressions in the Framework"
+msgstr ""

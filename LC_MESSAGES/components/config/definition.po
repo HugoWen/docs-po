@@ -1,0 +1,560 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/config/definition.rst:5
+msgid "Defining and Processing Configuration Values"
+msgstr ""
+
+#: ../../components/config/definition.rst:8
+msgid "Validating Configuration Values"
+msgstr ""
+
+#: ../../components/config/definition.rst:10
+msgid ""
+"After loading configuration values from all kinds of resources, the values "
+"and their structure can be validated using the \"Definition\" part of the "
+"Config Component. Configuration values are usually expected to show some "
+"kind of hierarchy. Also, values should be of a certain type, be restricted "
+"in number or be one of a given set of values. For example, the following "
+"configuration (in YAML) shows a clear hierarchy and some validation rules "
+"that should be applied to it (like: \"the value for ``auto_connect`` must be"
+" a boolean value\"):"
+msgstr ""
+
+#: ../../components/config/definition.rst:35
+msgid ""
+"When loading multiple configuration files, it should be possible to merge "
+"and overwrite some values. Other values should not be merged and stay as "
+"they are when first encountered. Also, some keys are only available when "
+"another key has a specific value (in the sample configuration above: the "
+"``memory`` key only makes sense when the ``driver`` is ``sqlite``)."
+msgstr ""
+
+#: ../../components/config/definition.rst:42
+msgid "Defining a Hierarchy of Configuration Values Using the TreeBuilder"
+msgstr ""
+
+#: ../../components/config/definition.rst:44
+msgid ""
+"All the rules concerning configuration values can be defined using the "
+":class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\TreeBuilder`."
+msgstr ""
+
+#: ../../components/config/definition.rst:47
+msgid ""
+"A "
+":class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\TreeBuilder`"
+" instance should be returned from a custom ``Configuration`` class which "
+"implements the "
+":class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\ConfigurationInterface`::"
+msgstr ""
+
+#: ../../components/config/definition.rst:70
+msgid "Adding Node Definitions to the Tree"
+msgstr ""
+
+#: ../../components/config/definition.rst:73
+msgid "Variable Nodes"
+msgstr ""
+
+#: ../../components/config/definition.rst:75
+msgid ""
+"A tree contains node definitions which can be laid out in a semantic way. "
+"This means, using indentation and the fluent notation, it is possible to "
+"reflect the real structure of the configuration values::"
+msgstr ""
+
+#: ../../components/config/definition.rst:90
+msgid ""
+"The root node itself is an array node, and has children, like the boolean "
+"node ``auto_connect`` and the scalar node ``default_connection``. In "
+"general: after defining a node, a call to ``end()`` takes you one step up in"
+" the hierarchy."
+msgstr ""
+
+#: ../../components/config/definition.rst:95
+msgid "Node Type"
+msgstr ""
+
+#: ../../components/config/definition.rst:97
+msgid ""
+"It is possible to validate the type of a provided value by using the "
+"appropriate node definition. Node types are available for:"
+msgstr ""
+
+#: ../../components/config/definition.rst:100
+msgid ""
+"scalar (generic type that includes booleans, strings, integers, floats and "
+"``null``)"
+msgstr ""
+
+#: ../../components/config/definition.rst:101
+msgid "boolean"
+msgstr ""
+
+#: ../../components/config/definition.rst:102
+msgid "integer"
+msgstr ""
+
+#: ../../components/config/definition.rst:103
+msgid "float"
+msgstr ""
+
+#: ../../components/config/definition.rst:104
+msgid "enum (similar to scalar, but it only allows a finite set of values)"
+msgstr ""
+
+#: ../../components/config/definition.rst:105
+msgid "array"
+msgstr ""
+
+#: ../../components/config/definition.rst:106
+msgid "variable (no validation)"
+msgstr ""
+
+#: ../../components/config/definition.rst:108
+msgid ""
+"and are created with ``node($name, $type)`` or their associated shortcut "
+"``xxxxNode($name)`` method."
+msgstr ""
+
+#: ../../components/config/definition.rst:112
+msgid "Numeric Node Constraints"
+msgstr ""
+
+#: ../../components/config/definition.rst:114
+msgid ""
+"Numeric nodes (float and integer) provide two extra constraints - "
+":method:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder::min` and "
+":method:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder::max` - "
+"allowing to validate the value::"
+msgstr ""
+
+#: ../../components/config/definition.rst:134
+msgid "Enum Nodes"
+msgstr ""
+
+#: ../../components/config/definition.rst:136
+msgid ""
+"Enum nodes provide a constraint to match the given input against a set of "
+"values::"
+msgstr ""
+
+#: ../../components/config/definition.rst:147
+msgid ""
+"This will restrict the ``gender`` option to be either ``male`` or "
+"``female``."
+msgstr ""
+
+#: ../../components/config/definition.rst:150
+msgid "Array Nodes"
+msgstr ""
+
+#: ../../components/config/definition.rst:152
+msgid ""
+"It is possible to add a deeper level to the hierarchy, by adding an array "
+"node. The array node itself, may have a pre-defined set of variable nodes::"
+msgstr ""
+
+#: ../../components/config/definition.rst:168
+msgid "Or you may define a prototype for each node inside an array node::"
+msgstr ""
+
+#: ../../components/config/definition.rst:185
+msgid ""
+"A prototype can be used to add a definition which may be repeated many times"
+" inside the current node. According to the prototype definition in the "
+"example above, it is possible to have multiple connection arrays (containing"
+" a ``driver``, ``host``, etc.)."
+msgstr ""
+
+#: ../../components/config/definition.rst:191
+msgid "Array Node Options"
+msgstr ""
+
+#: ../../components/config/definition.rst:193
+msgid ""
+"Before defining the children of an array node, you can provide options like:"
+msgstr ""
+
+#: ../../components/config/definition.rst:195
+msgid "``useAttributeAsKey()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:196
+msgid ""
+"Provide the name of a child node, whose value should be used as the key in "
+"the resulting array."
+msgstr ""
+
+#: ../../components/config/definition.rst:198
+msgid "``requiresAtLeastOneElement()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:198
+msgid ""
+"There should be at least one element in the array (works only when "
+"``isRequired()`` is also called)."
+msgstr ""
+
+#: ../../components/config/definition.rst:201
+msgid "``addDefaultsIfNotSet()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:201
+msgid ""
+"If any child nodes have default values, use them if explicit values haven't "
+"been provided."
+msgstr ""
+
+#: ../../components/config/definition.rst:203
+msgid "An example of this::"
+msgstr ""
+
+#: ../../components/config/definition.rst:220
+msgid "In YAML, the configuration might look like this:"
+msgstr ""
+
+#: ../../components/config/definition.rst:228
+msgid ""
+"In XML, each ``parameters`` node would have a ``name`` attribute (along with"
+" ``value``), which would be removed and used as the key for that element in "
+"the final array. The ``useAttributeAsKey`` is useful for normalizing how "
+"arrays are specified between different formats like XML and YAML."
+msgstr ""
+
+#: ../../components/config/definition.rst:234
+msgid "Default and required Values"
+msgstr ""
+
+#: ../../components/config/definition.rst:236
+msgid ""
+"For all node types, it is possible to define default values and replacement "
+"values in case a node has a certain value:"
+msgstr ""
+
+#: ../../components/config/definition.rst:240
+msgid "``defaultValue()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:241
+msgid "Set a default value"
+msgstr ""
+
+#: ../../components/config/definition.rst:242
+msgid "``isRequired()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:243
+msgid "Must be defined (but may be empty)"
+msgstr ""
+
+#: ../../components/config/definition.rst:244
+msgid "``cannotBeEmpty()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:245
+msgid "May not contain an empty value"
+msgstr ""
+
+#: ../../components/config/definition.rst:246
+msgid "``default*()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:247
+msgid "(``null``, ``true``, ``false``), shortcut for ``defaultValue()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:249
+msgid "``treat*Like()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:249
+msgid ""
+"(``null``, ``true``, ``false``), provide a replacement value in case the "
+"value is ``*.``"
+msgstr ""
+
+#: ../../components/config/definition.rst:285
+msgid "Documenting the Option"
+msgstr ""
+
+#: ../../components/config/definition.rst:287
+msgid ""
+"All options can be documented using the "
+":method:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition::info`"
+" method."
+msgstr ""
+
+#: ../../components/config/definition.rst:291
+msgid ""
+"The info will be printed as a comment when dumping the configuration tree "
+"with the ``config:dump`` command."
+msgstr ""
+
+#: ../../components/config/definition.rst:294
+msgid ""
+"Since Symfony 2.6, the info will also be added to the exception message when"
+" an invalid type is given."
+msgstr ""
+
+#: ../../components/config/definition.rst:299
+msgid "Optional Sections"
+msgstr ""
+
+#: ../../components/config/definition.rst:301
+msgid ""
+"If you have entire sections which are optional and can be enabled/disabled, "
+"you can take advantage of the shortcut "
+":method:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition::canBeEnabled`"
+" and "
+":method:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition::canBeDisabled`"
+" methods::"
+msgstr ""
+
+#: ../../components/config/definition.rst:321
+msgid ""
+"The ``canBeDisabled`` method looks about the same except that the section "
+"would be enabled by default."
+msgstr ""
+
+#: ../../components/config/definition.rst:325
+msgid "Merging Options"
+msgstr ""
+
+#: ../../components/config/definition.rst:327
+msgid ""
+"Extra options concerning the merge process may be provided. For arrays:"
+msgstr ""
+
+#: ../../components/config/definition.rst:331
+msgid "``performNoDeepMerging()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:330
+msgid ""
+"When the value is also defined in a second configuration array, don’t try to"
+" merge an array, but overwrite it entirely"
+msgstr ""
+
+#: ../../components/config/definition.rst:333
+msgid "For all nodes:"
+msgstr ""
+
+#: ../../components/config/definition.rst:336
+msgid "``cannotBeOverwritten()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:336
+msgid ""
+"don’t let other configuration arrays overwrite an existing value for this "
+"node"
+msgstr ""
+
+#: ../../components/config/definition.rst:339
+msgid "Appending Sections"
+msgstr ""
+
+#: ../../components/config/definition.rst:341
+msgid ""
+"If you have a complex configuration to validate then the tree can grow to be"
+" large and you may want to split it up into sections. You can do this by "
+"making a section a separate node and then appending it into the main tree "
+"with ``append()``::"
+msgstr ""
+
+#: ../../components/config/definition.rst:395
+msgid ""
+"This is also useful to help you avoid repeating yourself if you have "
+"sections of the config that are repeated in different places."
+msgstr ""
+
+#: ../../components/config/definition.rst:401
+msgid "Normalization"
+msgstr ""
+
+#: ../../components/config/definition.rst:403
+msgid ""
+"When the config files are processed they are first normalized, then merged "
+"and finally the tree is used to validate the resulting array. The "
+"normalization process is used to remove some of the differences that result "
+"from different configuration formats, mainly the differences between YAML "
+"and XML."
+msgstr ""
+
+#: ../../components/config/definition.rst:408
+msgid ""
+"The separator used in keys is typically ``_`` in YAML and ``-`` in XML. For "
+"example, ``auto_connect`` in YAML and ``auto-connect`` in XML. The "
+"normalization would make both of these ``auto_connect``."
+msgstr ""
+
+#: ../../components/config/definition.rst:414
+msgid ""
+"The target key will not be altered if it's mixed like ``foo-bar_moo`` or if "
+"it already exists."
+msgstr ""
+
+#: ../../components/config/definition.rst:417
+msgid ""
+"Another difference between YAML and XML is in the way arrays of values may "
+"be represented. In YAML you may have:"
+msgstr ""
+
+#: ../../components/config/definition.rst:425
+msgid "and in XML:"
+msgstr ""
+
+#: ../../components/config/definition.rst:434
+msgid ""
+"This difference can be removed in normalization by pluralizing the key used "
+"in XML. You can specify that you want a key to be pluralized in this way "
+"with ``fixXmlConfig()``::"
+msgstr ""
+
+#: ../../components/config/definition.rst:447
+msgid ""
+"If it is an irregular pluralization you can specify the plural to use as a "
+"second argument::"
+msgstr ""
+
+#: ../../components/config/definition.rst:459
+msgid ""
+"As well as fixing this, ``fixXmlConfig`` ensures that single XML elements "
+"are still turned into an array. So you may have:"
+msgstr ""
+
+#: ../../components/config/definition.rst:467
+msgid "and sometimes only:"
+msgstr ""
+
+#: ../../components/config/definition.rst:473
+msgid ""
+"By default ``connection`` would be an array in the first case and a string "
+"in the second making it difficult to validate. You can ensure it is always "
+"an array with ``fixXmlConfig``."
+msgstr ""
+
+#: ../../components/config/definition.rst:477
+msgid ""
+"You can further control the normalization process if you need to. For "
+"example, you may want to allow a string to be set and used as a particular "
+"key or several keys to be set explicitly. So that, if everything apart from "
+"``name`` is optional in this config:"
+msgstr ""
+
+#: ../../components/config/definition.rst:491
+msgid "you can allow the following as well:"
+msgstr ""
+
+#: ../../components/config/definition.rst:497
+msgid ""
+"By changing a string value into an associative array with ``name`` as the "
+"key::"
+msgstr ""
+
+#: ../../components/config/definition.rst:515
+msgid "Validation Rules"
+msgstr ""
+
+#: ../../components/config/definition.rst:517
+msgid ""
+"More advanced validation rules can be provided using the "
+":class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ExprBuilder`."
+" This builder implements a fluent interface for a well-known control "
+"structure. The builder is used for adding advanced validation rules to node "
+"definitions, like::"
+msgstr ""
+
+#: ../../components/config/definition.rst:538
+msgid ""
+"A validation rule always has an \"if\" part. You can specify this part in "
+"the following ways:"
+msgstr ""
+
+#: ../../components/config/definition.rst:541
+msgid "``ifTrue()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:542
+msgid "``ifString()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:543
+msgid "``ifNull()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:544
+msgid "``ifArray()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:545
+msgid "``ifInArray()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:546
+msgid "``ifNotInArray()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:547
+msgid "``always()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:549
+msgid "A validation rule also requires a \"then\" part:"
+msgstr ""
+
+#: ../../components/config/definition.rst:551
+msgid "``then()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:552
+msgid "``thenEmptyArray()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:553
+msgid "``thenInvalid()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:554
+msgid "``thenUnset()``"
+msgstr ""
+
+#: ../../components/config/definition.rst:556
+msgid ""
+"Usually, \"then\" is a closure. Its return value will be used as a new value"
+" for the node, instead of the node's original value."
+msgstr ""
+
+#: ../../components/config/definition.rst:561
+msgid "Processing Configuration Values"
+msgstr ""
+
+#: ../../components/config/definition.rst:563
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Processor` uses "
+"the tree as it was built using the "
+":class:`Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\TreeBuilder`"
+" to process multiple arrays of configuration values that should be merged. "
+"If any value is not of the expected type, is mandatory and yet undefined, or"
+" could not be validated in some other way, an exception will be thrown. "
+"Otherwise the result is a clean array of configuration values::"
+msgstr ""
+
+#: ../../components/config/definition.rst:1
+msgid "Config"
+msgstr ""
+
+#: ../../components/config/definition.rst:1
+msgid "Defining and processing configuration values"
+msgstr ""

@@ -1,0 +1,350 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/deployment/tools.rst:7
+#: ../../cookbook/deployment/tools.rst:39
+msgid "How to Deploy a Symfony Application"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:11
+msgid ""
+"Deploying can be a complex and varied task depending on the setup and the "
+"requirements of your application. This article is not a step-by-step guide, "
+"but is a general list of the most common requirements and ideas for "
+"deployment."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:18
+msgid "Symfony Deployment Basics"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:20
+msgid "The typical steps taken while deploying a Symfony application include:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:22
+msgid "Upload your code to the production server;"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:23
+msgid ""
+"Install your vendor dependencies (typically done via Composer and may be "
+"done before uploading);"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:25
+msgid ""
+"Running database migrations or similar tasks to update any changed data "
+"structures;"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:26
+msgid "Clearing (and optionally, warming up) your cache."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:28
+msgid "A deployment may also include other tasks, such as:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:30
+msgid ""
+"Tagging a particular version of your code as a release in your source "
+"control repository;"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:32
+msgid "Creating a temporary staging area to build your updated setup \"offline\";"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:33
+msgid "Running any tests available to ensure code and/or server stability;"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:34
+msgid ""
+"Removal of any unnecessary files from the ``web/`` directory to keep your "
+"production environment clean;"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:36
+msgid "Clearing of external cache systems (like `Memcached`_ or `Redis`_)."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:41
+msgid ""
+"There are several ways you can deploy a Symfony application. Start with a "
+"few basic deployment strategies and build up from there."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:45
+msgid "Basic File Transfer"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:47
+msgid ""
+"The most basic way of deploying an application is copying the files manually"
+" via ftp/scp (or similar method). This has its disadvantages as you lack "
+"control over the system as the upgrade progresses. This method also requires"
+" you to take some manual steps after transferring the files (see `Common "
+"Post-Deployment Tasks`_)"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:53
+msgid "Using Source Control"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:55
+msgid ""
+"If you're using source control (e.g. Git or SVN), you can simplify by having"
+" your live installation also be a copy of your repository. When you're ready"
+" to upgrade it is as simple as fetching the latest updates from your source "
+"control system."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:60
+msgid ""
+"This makes updating your files *easier*, but you still need to worry about "
+"manually taking other steps (see `Common Post-Deployment Tasks`_)."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:64
+msgid "Using Build Scripts and other Tools"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:66
+msgid ""
+"There are also tools to help ease the pain of deployment. Some of them have "
+"been specifically tailored to the requirements of Symfony."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:71
+msgid "`Capifony`_"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:70
+msgid ""
+"This Ruby-based tool provides a specialized set of tools on top of "
+"`Capistrano`_, tailored specifically to Symfony projects."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:74
+msgid "`sf2debpkg`_"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:74
+msgid "Helps you build a native Debian package for your Symfony project."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:78
+msgid "`Magallanes`_"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:77
+msgid ""
+"This Capistrano-like deployment tool is built in PHP, and may be easier for "
+"PHP developers to extend for their needs."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:82
+msgid "`Fabric`_"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:81
+msgid ""
+"This Python-based library provides a basic suite of operations for executing"
+" local or remote shell commands and uploading/downloading files."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:86
+msgid "Bundles"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:85
+msgid ""
+"There are some `bundles that add deployment features`_ directly into your "
+"Symfony console."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:90
+msgid "Basic scripting"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:89
+msgid ""
+"You can of course use shell, `Ant`_ or any other build tool to script the "
+"deploying of your project."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:98
+msgid "Platform as a Service Providers"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:93
+msgid ""
+"The Symfony Cookbook includes detailed articles for some of the most well-"
+"known Platform as a Service (PaaS) providers:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:96
+msgid ":doc:`Microsoft Azure </cookbook/deployment/azure-website>`"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:97
+msgid ":doc:`Heroku </cookbook/deployment/heroku>`"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:98
+msgid ":doc:`Platform.sh </cookbook/deployment/platformsh>`"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:101
+msgid "Common Post-Deployment Tasks"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:103
+msgid ""
+"After deploying your actual source code, there are a number of common things"
+" you'll need to do:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:107
+msgid "A) Check Requirements"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:109
+msgid "Check if your server meets the requirements by running:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:116
+msgid "B) Configure your ``app/config/parameters.yml`` File"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:118
+msgid ""
+"This file should *not* be deployed, but managed through the automatic "
+"utilities provided by Symfony."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:122
+msgid "C) Install/Update your Vendors"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:124
+msgid ""
+"Your vendors can be updated before transferring your source code (i.e. "
+"update the ``vendor/`` directory, then transfer that with your source code) "
+"or afterwards on the server. Either way, just update your vendors as you "
+"normally do:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:135
+msgid ""
+"The ``--optimize-autoloader`` flag improves Composer's autoloader "
+"performance significantly by building a \"class map\". The ``--no-dev`` flag"
+" ensures that development packages are not installed in the production "
+"environment."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:141
+msgid ""
+"If you get a \"class not found\" error during this step, you may need to run"
+" ``export SYMFONY_ENV=prod`` before running this command so that the ``post-"
+"install-cmd`` scripts run in the ``prod`` environment."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:146
+msgid "D) Clear your Symfony Cache"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:148
+msgid "Make sure you clear (and warm-up) your Symfony cache:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:155
+msgid "E) Dump your Assetic Assets"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:157
+msgid "If you're using Assetic, you'll also want to dump your assets:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:164
+msgid "F) Other Things!"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:166
+msgid ""
+"There may be lots of other things that you need to do, depending on your "
+"setup:"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:169
+msgid "Running any database migrations"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:170
+msgid "Clearing your APC cache"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:171
+msgid ""
+"Running ``assets:install`` (already taken care of in ``composer install``)"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:172
+msgid "Add/edit CRON jobs"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:173
+msgid "Pushing assets to a CDN"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:174
+msgid "..."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:177
+msgid "Application Lifecycle: Continuous Integration, QA, etc"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:179
+msgid ""
+"While this entry covers the technical details of deploying, the full "
+"lifecycle of taking code from development up to production may have a lot "
+"more steps (think deploying to staging, QA (Quality Assurance), running "
+"tests, etc)."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:183
+msgid ""
+"The use of staging, testing, QA, continuous integration, database migrations"
+" and the capability to roll back in case of failure are all strongly "
+"advised. There are simple and more complex tools and one can make the "
+"deployment as easy (or sophisticated) as your environment requires."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:188
+msgid ""
+"Don't forget that deploying your application also involves updating any "
+"dependency (typically via Composer), migrating your database, clearing your "
+"cache and other potential things like pushing assets to a CDN (see `Common "
+"Post-Deployment Tasks`_)."
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:1
+msgid "Deployment"
+msgstr ""
+
+#: ../../cookbook/deployment/tools.rst:1
+msgid "Deployment tools"
+msgstr ""

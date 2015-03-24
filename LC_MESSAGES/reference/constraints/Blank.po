@@ -1,0 +1,109 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/Blank.rst:2
+msgid "Blank"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:4
+msgid ""
+"Validates that a value is blank, defined as equal to a blank string or equal"
+" to ``null``. To force that a value strictly be equal to ``null``, see the "
+":doc:`/reference/constraints/Null` constraint. To force that a value is "
+"*not* blank, see :doc:`/reference/constraints/NotBlank`."
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:10
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:10
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:12
+#: ../../reference/constraints/Blank.rst:83
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:12
+msgid "`message`_"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:13
+msgid "`payload`_"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Blank`"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:17
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\BlankValidator`"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:21
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:23
+msgid ""
+"If, for some reason, you wanted to ensure that the ``firstName`` property of"
+" an ``Author`` class were blank, you could do the following:"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:86
+msgid "message"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:88
+msgid "**type**: ``string`` **default**: ``This value should be blank.``"
+msgstr ""
+
+#: ../../reference/constraints/Blank.rst:90
+msgid "This is the message that will be shown if the value is not blank."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:2
+msgid "payload"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:6
+msgid "The ``payload`` option was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:9
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator component, "
+"but its processing is completely up to."
+msgstr ""
+
+#: ../../reference/constraints/_payload-option.rst.inc:13
+msgid ""
+"For example, you may want to used :doc:`several error levels "
+"</cookbook/validation/severity>` to present failed constraint differently in"
+" the front-end depending on the severity of the error."
+msgstr ""

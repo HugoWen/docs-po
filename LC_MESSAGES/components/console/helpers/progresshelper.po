@@ -1,0 +1,91 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/progresshelper.rst:5
+#: ../../components/console/helpers/progresshelper.rst:1
+msgid "Progress Helper"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:7
+msgid "The ``setCurrent`` method was introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:12
+msgid ""
+"The Progress Helper was deprecated in Symfony 2.5 and will be removed in "
+"Symfony 3.0. You should now use the :doc:`Progress Bar "
+"</components/console/helpers/progressbar>` instead which is more powerful."
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:17
+msgid ""
+"When executing longer-running commands, it may be helpful to show progress "
+"information, which updates as your command runs:"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:22
+msgid ""
+"To display progress details, use the "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper`, pass "
+"it a total number of units, and advance the progress as your command "
+"executes::"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:40
+msgid ""
+"You can also set the current progress by calling the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper::setCurrent`"
+" method."
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:44
+msgid ""
+"If you want to output something while the progress bar is running, call "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper::clear`"
+" first. After you're done, call "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper::display`"
+" to show the progress bar again."
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:50
+msgid ""
+"The appearance of the progress output can be customized as well, with a "
+"number of different levels of verbosity. Each of these displays different "
+"possible items - like percentage completion, a moving progress bar, or "
+"current/total information (e.g. 10/50)::"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:63
+msgid ""
+"You can also control the different characters and the width used for the "
+"progress bar::"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:73
+msgid ""
+"To see other available options, check the API documentation for "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper`."
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:78
+msgid ""
+"For performance reasons, be careful if you set the total number of steps to "
+"a high number. For example, if you're iterating over a large number of "
+"items, consider setting the redraw frequency to a higher value by calling "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProgressHelper::setRedrawFrequency`,"
+" so it updates on only some iterations::"
+msgstr ""
+
+#: ../../components/console/helpers/progresshelper.rst:1
+msgid "Console Helpers"
+msgstr ""

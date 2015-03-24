@@ -1,0 +1,146 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/parentservices.rst:5
+msgid "Managing common Dependencies with parent Services"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:7
+msgid ""
+"As you add more functionality to your application, you may well start to "
+"have related classes that share some of the same dependencies. For example "
+"you may have a Newsletter Manager which uses setter injection to set its "
+"dependencies::"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:29
+msgid "and also a Greeting Card class which shares the same dependencies::"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:49
+msgid "The service config for these classes would look something like this:"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:139
+msgid ""
+"There is a lot of repetition in both the classes and the configuration. This"
+" means that if you changed, for example, the ``Mailer`` of "
+"``EmailFormatter`` classes to be injected via the constructor, you would "
+"need to update the config in two places. Likewise if you needed to make "
+"changes to the setter methods you would need to do this in both classes. The"
+" typical way to deal with the common methods of these related classes would "
+"be to extract them to a super class::"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:164
+msgid ""
+"The ``NewsletterManager`` and ``GreetingCardManager`` can then extend this "
+"super class::"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:172
+msgid "and::"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:179
+msgid ""
+"In a similar fashion, the Symfony service container also supports extending "
+"services in the configuration so you can also reduce the repetition by "
+"specifying a parent for a service."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:263
+msgid ""
+"In this context, having a ``parent`` service implies that the arguments and "
+"method calls of the parent service should be used for the child services. "
+"Specifically, the setter methods defined for the parent service will be "
+"called when the child services are instantiated."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:270
+msgid ""
+"If you remove the ``parent`` config key, the services will still be "
+"instantiated and they will still of course extend the ``MailManager`` class."
+" The difference is that omitting the ``parent`` config key will mean that "
+"the ``calls`` defined on the ``mail_manager`` service will not be executed "
+"when the child services are instantiated."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:278
+msgid ""
+"The ``scope``, ``abstract`` and ``tags`` attributes are always taken from "
+"the child service."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:281
+msgid ""
+"The parent service is abstract as it should not be directly retrieved from "
+"the container or passed into another service. It exists merely as a "
+"\"template\" that other services can use. This is why it can have no "
+"``class`` configured which would cause an exception to be raised for a non-"
+"abstract service."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:288
+msgid ""
+"In order for parent dependencies to resolve, the ``ContainerBuilder`` must "
+"first be compiled. See :doc:`/components/dependency_injection/compilation` "
+"for more details."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:294
+msgid ""
+"In the examples shown, the classes sharing the same configuration also "
+"extend from the same parent class in PHP. This isn't necessary at all. You "
+"can just extract common parts of similar service definitions into a parent "
+"service without also extending a parent class in PHP."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:300
+msgid "Overriding parent Dependencies"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:302
+msgid ""
+"There may be times where you want to override what class is passed in for a "
+"dependency of one child service only. Fortunately, by adding the method call"
+" config for the child service, the dependencies set by the parent class will"
+" be overridden. So if you needed to pass a different dependency just to the "
+"``NewsletterManager`` class, the config would look like this:"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:408
+msgid ""
+"The ``GreetingCardManager`` will receive the same dependencies as before, "
+"but the ``NewsletterManager`` will be passed the ``my_alternative_mailer`` "
+"instead of the ``my_mailer`` service."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:414
+msgid ""
+"You can't override method calls. When you defined new method calls in the "
+"child service, it'll be added to the current set of configured method calls."
+" This means it works perfectly when the setter overrides the current "
+"property, but it doesn't work as expected when the setter appends it to the "
+"existing data (e.g. an ``addFilters()`` method). In those cases, the only "
+"solution is to *not* extend the parent service and configuring the service "
+"just like you did before knowing this feature."
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/parentservices.rst:1
+msgid "Parent services"
+msgstr ""

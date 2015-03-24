@@ -1,0 +1,725 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/index.rst:2
+msgid "The Cookbook"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:1
+msgid ":doc:`/cookbook/assetic/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:3
+msgid ":doc:`/cookbook/assetic/asset_management`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:4
+msgid ":doc:`/cookbook/assetic/uglifyjs`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:5
+msgid ":doc:`/cookbook/assetic/yuicompressor`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:6
+msgid ":doc:`/cookbook/assetic/jpeg_optimize`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:7
+msgid ":doc:`/cookbook/assetic/apply_to_option`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:9
+msgid ":doc:`/cookbook/bundles/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:11
+msgid ":doc:`/cookbook/bundles/installation`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:12
+msgid ":doc:`/cookbook/bundles/best_practices`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:13
+msgid ":doc:`/cookbook/bundles/inheritance`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:14
+msgid ":doc:`/cookbook/bundles/override`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:15
+msgid ":doc:`/cookbook/bundles/remove`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:16
+msgid ":doc:`/cookbook/bundles/extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:17
+msgid ":doc:`/cookbook/bundles/configuration`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:18
+msgid ":doc:`/cookbook/bundles/prepend_extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:20
+msgid ":doc:`/cookbook/cache/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:22
+msgid ":doc:`/cookbook/cache/varnish`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:23
+msgid ":doc:`/cookbook/cache/form_csrf_caching`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:25
+msgid "**Composer**"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:27
+msgid ":doc:`/cookbook/composer`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:29
+msgid ":doc:`/cookbook/configuration/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:31
+msgid ":doc:`/cookbook/configuration/environments`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:32
+msgid ":doc:`/cookbook/configuration/override_dir_structure`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:33
+msgid ":doc:`/cookbook/configuration/using_parameters_in_dic`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:34
+msgid ":doc:`/cookbook/configuration/front_controllers_and_kernel`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:35
+msgid ":doc:`/cookbook/configuration/external_parameters`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:36
+msgid ":doc:`/cookbook/configuration/pdo_session_storage`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:37
+msgid ":doc:`/cookbook/configuration/apache_router`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:38
+msgid ":doc:`/cookbook/configuration/web_server_configuration`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:39
+msgid ":doc:`/cookbook/configuration/configuration_organization`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:41
+msgid ":doc:`/cookbook/console/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:43
+msgid ":doc:`/cookbook/console/console_command`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:44
+msgid ":doc:`/cookbook/console/usage`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:45
+msgid ":doc:`/cookbook/console/sending_emails`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:46
+msgid ":doc:`/cookbook/console/logging`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:47
+msgid ":doc:`/cookbook/console/commands_as_services`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:49
+msgid ":doc:`/cookbook/controller/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:51
+msgid ":doc:`/cookbook/controller/error_pages`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:52
+msgid ":doc:`/cookbook/controller/service`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:54
+msgid "**Debugging**"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:56
+msgid ":doc:`/cookbook/debugging`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:58
+msgid ":doc:`/cookbook/deployment/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:60
+msgid ":doc:`/cookbook/deployment/tools`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:61
+msgid ":doc:`/cookbook/deployment/azure-website`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:62
+msgid ":doc:`/cookbook/deployment/heroku`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:63
+msgid ":doc:`/cookbook/deployment/platformsh`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:65
+msgid ":doc:`/cookbook/doctrine/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:67
+msgid ":doc:`/cookbook/doctrine/file_uploads`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:68
+msgid ":doc:`/cookbook/doctrine/common_extensions`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:69
+msgid ":doc:`/cookbook/doctrine/event_listeners_subscribers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:70
+msgid ":doc:`/cookbook/doctrine/dbal`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:71
+msgid ":doc:`/cookbook/doctrine/reverse_engineering`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:72
+msgid ":doc:`/cookbook/doctrine/multiple_entity_managers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:73
+msgid ":doc:`/cookbook/doctrine/custom_dql_functions`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:74
+msgid ":doc:`/cookbook/doctrine/resolve_target_entity`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:75
+msgid ":doc:`/cookbook/doctrine/mapping_model_classes`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:76
+msgid ":doc:`/cookbook/doctrine/registration_form`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:77
+msgid ":doc:`/cookbook/doctrine/console`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:78 ../../cookbook/map.rst.inc:189
+msgid "(configuration) :doc:`/cookbook/configuration/pdo_session_storage`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:80
+msgid ":doc:`/cookbook/email/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:82
+msgid ":doc:`/cookbook/email/email`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:83
+msgid ":doc:`/cookbook/email/gmail`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:84
+msgid ":doc:`/cookbook/email/cloud`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:85
+msgid ":doc:`/cookbook/email/dev_environment`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:86
+msgid ":doc:`/cookbook/email/spool`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:87
+msgid ":doc:`/cookbook/email/testing`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:89
+msgid ":doc:`/cookbook/event_dispatcher/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:91
+msgid ":doc:`/cookbook/event_dispatcher/before_after_filters`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:92
+msgid ":doc:`/cookbook/event_dispatcher/class_extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:93
+msgid ":doc:`/cookbook/event_dispatcher/method_behavior`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:94
+msgid "(service container) :doc:`/cookbook/service_container/event_listener`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:96
+msgid ":doc:`/cookbook/expression/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:98
+msgid ":doc:`/cookbook/expression/expressions`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:100
+msgid ":doc:`/cookbook/form/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:102
+msgid ":doc:`/cookbook/form/form_customization`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:103
+msgid ":doc:`/cookbook/form/data_transformers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:104
+msgid ":doc:`/cookbook/form/dynamic_form_modification`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:105
+msgid ":doc:`/cookbook/form/form_collections`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:106
+msgid ":doc:`/cookbook/form/create_custom_field_type`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:107
+msgid ":doc:`/cookbook/form/create_form_type_extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:108
+msgid ":doc:`/cookbook/form/inherit_data_option`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:109
+msgid ":doc:`/cookbook/form/unit_testing`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:110
+msgid ":doc:`/cookbook/form/use_empty_data`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:111
+msgid ":doc:`/cookbook/form/direct_submit`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:112
+msgid "(validation) :doc:`/cookbook/validation/custom_constraint`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:113
+msgid "(doctrine) :doc:`/cookbook/doctrine/file_uploads`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:115
+msgid ":doc:`/cookbook/logging/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:117
+msgid ":doc:`/cookbook/logging/monolog`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:118
+msgid ":doc:`/cookbook/logging/monolog_email`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:119
+msgid ":doc:`/cookbook/logging/monolog_console`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:120
+msgid ":doc:`/cookbook/logging/monolog_regex_based_excludes`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:121
+msgid ":doc:`/cookbook/logging/channels_handlers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:123
+msgid ":doc:`/cookbook/profiler/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:125
+msgid ":doc:`/cookbook/profiler/data_collector`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:126
+msgid ":doc:`/cookbook/profiler/matchers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:127
+msgid ":doc:`/cookbook/profiler/storage`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:129
+msgid ":doc:`/cookbook/request/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:131
+msgid ":doc:`/cookbook/request/load_balancer_reverse_proxy`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:132
+msgid ":doc:`/cookbook/request/mime_type`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:133
+msgid "(session) :doc:`/cookbook/session/locale_sticky_session`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:135
+msgid ":doc:`/cookbook/routing/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:137
+msgid ":doc:`/cookbook/routing/scheme`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:138
+msgid ":doc:`/cookbook/routing/slash_in_parameter`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:139
+msgid ":doc:`/cookbook/routing/redirect_in_config`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:140
+msgid ":doc:`/cookbook/routing/method_parameters`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:141
+msgid ":doc:`/cookbook/routing/service_container_parameters`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:142
+msgid ":doc:`/cookbook/routing/custom_route_loader`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:143
+msgid ":doc:`/cookbook/routing/redirect_trailing_slash`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:144
+msgid ":doc:`/cookbook/routing/extra_information`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:146
+msgid ":doc:`/cookbook/security/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:148
+msgid ":doc:`/cookbook/security/form_login_setup`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:149
+msgid ":doc:`/cookbook/security/entity_provider`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:150
+msgid ":doc:`/cookbook/security/remember_me`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:151
+msgid ":doc:`/cookbook/security/impersonating_user`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:152
+msgid ":doc:`/cookbook/security/voters`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:153
+msgid ":doc:`/cookbook/security/voters_data_permission`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:154
+msgid ":doc:`/cookbook/security/acl`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:155
+msgid ":doc:`/cookbook/security/acl_advanced`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:156
+msgid ":doc:`/cookbook/security/force_https`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:157
+msgid ":doc:`/cookbook/security/firewall_restriction`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:158
+msgid ":doc:`/cookbook/security/host_restriction`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:159
+msgid ":doc:`/cookbook/security/form_login`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:160
+msgid ":doc:`/cookbook/security/securing_services`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:161
+msgid ":doc:`/cookbook/security/custom_provider`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:162
+msgid ":doc:`/cookbook/security/custom_password_authenticator`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:163
+msgid ":doc:`/cookbook/security/api_key_authentication`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:164
+msgid ":doc:`/cookbook/security/custom_authentication_provider`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:165
+msgid ":doc:`/cookbook/security/pre_authenticated`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:166
+msgid ":doc:`/cookbook/security/target_path`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:167
+msgid ":doc:`/cookbook/security/csrf_in_login_form`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:168
+msgid ":doc:`/cookbook/security/named_encoders`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:169
+msgid ":doc:`/cookbook/security/access_control`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:170
+msgid ":doc:`/cookbook/security/multiple_user_providers`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:172
+msgid "**Serializer**"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:174
+msgid ":doc:`/cookbook/serializer`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:176
+msgid ":doc:`/cookbook/service_container/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:178
+msgid ":doc:`/cookbook/service_container/event_listener`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:179
+msgid ":doc:`/cookbook/service_container/scopes`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:180
+msgid ":doc:`/cookbook/service_container/compiler_passes`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:182
+msgid ":doc:`/cookbook/session/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:184
+msgid ":doc:`/cookbook/session/proxy_examples`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:185
+msgid ":doc:`/cookbook/session/locale_sticky_session`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:186
+msgid ":doc:`/cookbook/session/sessions_directory`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:187
+msgid ":doc:`/cookbook/session/php_bridge`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:188
+msgid ":doc:`/cookbook/session/limit_metadata_writes`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:190
+msgid ":doc:`/cookbook/session/avoid_session_start`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:192
+msgid "**symfony1**"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:194
+msgid ":doc:`/cookbook/symfony1`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:196
+msgid ":doc:`/cookbook/templating/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:198
+msgid ":doc:`/cookbook/templating/global_variables`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:199
+msgid ":doc:`/cookbook/templating/namespaced_paths`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:200
+msgid ":doc:`/cookbook/templating/PHP`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:201
+msgid ":doc:`/cookbook/templating/twig_extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:202
+msgid ":doc:`/cookbook/templating/render_without_controller`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:204
+msgid ":doc:`/cookbook/testing/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:206
+msgid ":doc:`/cookbook/testing/http_authentication`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:207
+msgid ":doc:`/cookbook/testing/simulating_authentication`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:208
+msgid ":doc:`/cookbook/testing/insulating_clients`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:209
+msgid ":doc:`/cookbook/testing/profiling`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:210
+msgid ":doc:`/cookbook/testing/database`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:211
+msgid ":doc:`/cookbook/testing/doctrine`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:212
+msgid ":doc:`/cookbook/testing/bootstrap`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:213
+msgid "(email) :doc:`/cookbook/email/testing`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:214
+msgid "(form) :doc:`/cookbook/form/unit_testing`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:216
+msgid "**Upgrading**"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:218
+msgid ":doc:`/cookbook/upgrading`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:220
+msgid ":doc:`/cookbook/validation/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:222
+msgid ":doc:`/cookbook/validation/custom_constraint`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:223
+msgid ":doc:`/cookbook/validation/severity`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:225
+msgid ":doc:`/cookbook/web_server/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:227
+msgid ":doc:`/cookbook/web_server/built_in`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:228
+msgid ""
+"(configuration) :doc:`/cookbook/configuration/web_server_configuration`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:230
+msgid ":doc:`/cookbook/web_services/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:232
+msgid ":doc:`/cookbook/web_services/php_soap_extension`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:234
+msgid ":doc:`/cookbook/workflow/index`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:236
+msgid ":doc:`/cookbook/workflow/new_project_git`"
+msgstr ""
+
+#: ../../cookbook/map.rst.inc:237
+msgid ":doc:`/cookbook/workflow/new_project_svn`"
+msgstr ""

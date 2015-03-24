@@ -1,0 +1,189 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/dependency_injection/introduction.rst:6
+msgid "The DependencyInjection Component"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:8
+msgid ""
+"The DependencyInjection component allows you to standardize and centralize "
+"the way objects are constructed in your application."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:11
+msgid ""
+"For an introduction to Dependency Injection and service containers see "
+":doc:`/book/service_container`."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:17
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:19
+msgid ""
+":doc:`Install it via Composer </components/using_components>` (``symfony"
+"/dependency-injection`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:20
+msgid ""
+"Use the official Git repository "
+"(https://github.com/symfony/DependencyInjection)."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:23
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:25
+msgid ""
+"You might have a simple class like the following ``Mailer`` that you want to"
+" make available as a service::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:40
+msgid "You can register this in the container as a service::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:47
+msgid ""
+"An improvement to the class to make it more flexible would be to allow the "
+"container to set the ``transport`` used. If you change the class so this is "
+"passed into the constructor::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:63
+msgid "Then you can set the choice of transport in the container::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:72
+msgid ""
+"This class is now much more flexible as you have separated the choice of "
+"transport out of the implementation and into the container."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:75
+msgid ""
+"Which mail transport you have chosen may be something other services need to"
+" know about. You can avoid having to change it in multiple places by making "
+"it a parameter in the container and then referring to this parameter for the"
+" ``Mailer`` service's constructor argument::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:88
+msgid ""
+"Now that the ``mailer`` service is in the container you can inject it as a "
+"dependency of other classes. If you have a ``NewsletterManager`` class like "
+"this::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:104
+msgid ""
+"Then you can register this as a service as well and pass the ``mailer`` "
+"service into it::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:120
+msgid ""
+"If the ``NewsletterManager`` did not require the ``Mailer`` and injecting it"
+" was only optional then you could use setter injection instead::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:135
+msgid ""
+"You can now choose not to inject a ``Mailer`` into the "
+"``NewsletterManager``. If you do want to though then the container can call "
+"the setter method::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:152
+msgid ""
+"You could then get your ``newsletter_manager`` service from the container "
+"like this::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:164
+msgid "Avoiding your Code Becoming Dependent on the Container"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:166
+msgid ""
+"Whilst you can retrieve services from the container directly it is best to "
+"minimize this. For example, in the ``NewsletterManager`` you injected the "
+"``mailer`` service in rather than asking for it from the container. You "
+"could have injected the container in and retrieved the ``mailer`` service "
+"from it but it would then be tied to this particular container making it "
+"difficult to reuse the class elsewhere."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:173
+msgid ""
+"You will need to get a service from the container at some point but this "
+"should be as few times as possible at the entry point to your application."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:179
+msgid "Setting up the Container with Configuration Files"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:181
+msgid ""
+"As well as setting up the services using PHP as above you can also use "
+"configuration files. This allows you to use XML or YAML to write the "
+"definitions for the services rather than using PHP to define the services as"
+" in the above examples. In anything but the smallest applications it makes "
+"sense to organize the service definitions by moving them into one or more "
+"configuration files. To do this you also need to install :doc:`the Config "
+"component </components/config/introduction>`."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:189
+msgid "Loading an XML config file::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:199
+msgid "Loading a YAML config file::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:211
+msgid ""
+"If you want to load YAML config files then you will also need to install "
+":doc:`the Yaml component </components/yaml/introduction>`."
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:214
+msgid ""
+"If you *do* want to use PHP to create the services then you can move this "
+"into a separate config file and load it in a similar way::"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:225
+msgid ""
+"You can now set up the ``newsletter_manager`` and ``mailer`` services using "
+"config files:"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:1
+#: ../../components/dependency_injection/introduction.rst:1
+msgid "DependencyInjection"
+msgstr ""
+
+#: ../../components/dependency_injection/introduction.rst:1
+msgid "Components"
+msgstr ""

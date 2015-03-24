@@ -1,0 +1,226 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/doctrine/file_uploads.rst:5
+msgid "How to Handle File Uploads with Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:7
+msgid ""
+"Handling file uploads with Doctrine entities is no different than handling "
+"any other file upload. In other words, you're free to move the file in your "
+"controller after handling a form submission. For examples of how to do this,"
+" see the :doc:`file type reference </reference/forms/types/file>` page."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:12
+msgid ""
+"If you choose to, you can also integrate the file upload into your entity "
+"lifecycle (i.e. creation, update and removal). In this case, as your entity "
+"is created, updated, and removed from Doctrine, the file uploading and "
+"removal processing will take place automatically (without needing to do "
+"anything in your controller)."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:18
+msgid ""
+"To make this work, you'll need to take care of a number of details, which "
+"will be covered in this cookbook entry."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:22
+msgid "Basic Setup"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:24
+msgid "First, create a simple Doctrine entity class to work with::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:84
+msgid ""
+"The ``Document`` entity has a name and it is associated with a file. The "
+"``path`` property stores the relative path to the file and is persisted to "
+"the database. The ``getAbsolutePath()`` is a convenience method that returns"
+" the absolute path to the file while the ``getWebPath()`` is a convenience "
+"method that returns the web path, which can be used in a template to link to"
+" the uploaded file."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:93
+msgid ""
+"If you have not done so already, you should probably read the :doc:`file "
+"</reference/forms/types/file>` type documentation first to understand how "
+"the basic upload process works."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:99
+msgid ""
+"If you're using annotations to specify your validation rules (as shown in "
+"this example), be sure that you've enabled validation by annotation (see "
+":ref:`validation configuration <book-validation-configuration>`)."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:103
+msgid ""
+"To handle the actual file upload in the form, use a \"virtual\" ``file`` "
+"field. For example, if you're building your form directly in a controller, "
+"it might look like this::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:119
+msgid ""
+"Next, create this property on your ``Document`` class and add some "
+"validation rules::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:216
+msgid ""
+"As you are using the ``File`` constraint, Symfony will automatically guess "
+"that the form field is a file upload input. That's why you did not have to "
+"set it explicitly when creating the form above (``->add('file')``)."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:220
+msgid "The following controller shows you how to handle the entire process::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:253
+msgid ""
+"The previous controller will automatically persist the ``Document`` entity "
+"with the submitted name, but it will do nothing about the file and the "
+"``path`` property will be blank."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:257
+msgid ""
+"An easy way to handle the file upload is to move it just before the entity "
+"is persisted and then set the ``path`` property accordingly. Start by "
+"calling a new ``upload()`` method on the ``Document`` class, which you'll "
+"create in a moment to handle the file upload::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:273
+msgid ""
+"The ``upload()`` method will take advantage of the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile` "
+"object, which is what's returned after a ``file`` field is submitted::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:301
+msgid "Using Lifecycle Callbacks"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:305
+msgid ""
+"Using lifecycle callbacks is a limited technique that has some drawbacks. If"
+" you want to remove the hardcoded ``__DIR__`` reference inside the "
+"``Document::getUploadRootDir()`` method, the best way is to start using "
+"explicit :doc:`doctrine listeners "
+"</cookbook/doctrine/event_listeners_subscribers>`. There you will be able to"
+" inject kernel parameters such as ``kernel.root_dir`` to be able to build "
+"absolute paths."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:312
+msgid ""
+"Even if this implementation works, it suffers from a major flaw: What if "
+"there is a problem when the entity is persisted? The file would have already"
+" moved to its final location even though the entity's ``path`` property "
+"didn't persist correctly."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:317
+msgid ""
+"To avoid these issues, you should change the implementation so that the "
+"database operation and the moving of the file become atomic: if there is a "
+"problem persisting the entity or if the file cannot be moved, then *nothing*"
+" should happen."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:322
+msgid ""
+"To do this, you need to move the file right as Doctrine persists the entity "
+"to the database. This can be accomplished by hooking into an entity "
+"lifecycle callback::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:334
+msgid ""
+"Next, refactor the ``Document`` class to take advantage of these callbacks::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:416
+msgid ""
+"If changes to your entity are handled by a Doctrine event listener or event "
+"subscriber, the ``preUpdate()`` callback must notify Doctrine about the "
+"changes being done. For full reference on preUpdate event restrictions, see "
+"`preUpdate`_ in the Doctrine Events documentation."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:422
+msgid ""
+"The class now does everything you need: it generates a unique filename "
+"before persisting, moves the file after persisting, and removes the file if "
+"the entity is ever deleted."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:426
+msgid ""
+"Now that the moving of the file is handled atomically by the entity, the "
+"call to ``$document->upload()`` should be removed from the controller::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:440
+msgid ""
+"The ``@ORM\\PrePersist()`` and ``@ORM\\PostPersist()`` event callbacks are "
+"triggered before and after the entity is persisted to the database. On the "
+"other hand, the ``@ORM\\PreUpdate()`` and ``@ORM\\PostUpdate()`` event "
+"callbacks are called when the entity is updated."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:447
+msgid ""
+"The ``PreUpdate`` and ``PostUpdate`` callbacks are only triggered if there "
+"is a change in one of the entity's fields that are persisted. This means "
+"that, by default, if you modify only the ``$file`` property, these events "
+"will not be triggered, as the property itself is not directly persisted via "
+"Doctrine. One solution would be to use an ``updated`` field that's persisted"
+" to Doctrine, and to modify it manually when changing the file."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:455
+msgid "Using the ``id`` as the Filename"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:457
+msgid ""
+"If you want to use the ``id`` as the name of the file, the implementation is"
+" slightly different as you need to save the extension under the ``path`` "
+"property, instead of the actual filename::"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:554
+msgid ""
+"You'll notice in this case that you need to do a little bit more work in "
+"order to remove the file. Before it's removed, you must store the file path "
+"(since it depends on the id). Then, once the object has been fully removed "
+"from the database, you can safely delete the file (in ``PostRemove``)."
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:1
+msgid "Doctrine"
+msgstr ""
+
+#: ../../cookbook/doctrine/file_uploads.rst:1
+msgid "File uploads"
+msgstr ""

@@ -1,0 +1,475 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reference/constraints/Image.rst:2
+msgid "Image"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:4
+msgid ""
+"The Image constraint works exactly like the :doc:`File "
+"</reference/constraints/File>` constraint, except that its `mimeTypes`_ and "
+"`mimeTypesMessage` options are automatically setup to work for image files "
+"specifically."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:8
+msgid ""
+"Additionally it has options so you can validate against the width and height"
+" of the image."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:11
+msgid ""
+"See the :doc:`File </reference/constraints/File>` constraint for the bulk of"
+" the documentation on this constraint."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:15
+msgid "Applies to"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:15
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:17
+#: ../../reference/constraints/Image.rst:227
+msgid "Options"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:17
+msgid "`mimeTypes`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:18
+msgid "`minWidth`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:19
+msgid "`maxWidth`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:20
+msgid "`maxHeight`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:21
+msgid "`minHeight`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:22
+msgid "`maxRatio`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:23
+msgid "`minRatio`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:24
+msgid "`allowSquare`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:25
+msgid "`allowLandscape`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:26
+msgid "`allowPortrait`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:27
+msgid "`mimeTypesMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:28
+msgid "`sizeNotDetectedMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:29
+msgid "`maxWidthMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:30
+msgid "`minWidthMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:31
+msgid "`maxHeightMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:32
+msgid "`minHeightMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:33
+msgid "`maxRatioMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:34
+msgid "`minRatioMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:35
+msgid "`allowSquareMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:36
+msgid "`allowLandscapeMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:37
+msgid "`allowPortraitMessage`_"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:38
+msgid "See :doc:`File </reference/constraints/File>` for inherited options"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:40
+msgid "Class"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:40
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Image`"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:42
+msgid "Validator"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:42
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\ImageValidator`"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:46
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:48
+msgid ""
+"This constraint is most commonly used on a property that will be rendered in"
+" a form as a :doc:`file </reference/forms/types/file>` form type. For "
+"example, suppose you're creating an author form where you can upload a "
+"\"headshot\" image for the author. In your form, the ``headshot`` property "
+"would be a ``file`` type. The ``Author`` class might look as follows::"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:74
+msgid ""
+"To guarantee that the ``headshot`` ``File`` object is a valid image and that"
+" it is between a certain size, add the following:"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:153
+msgid ""
+"The ``headshot`` property is validated to guarantee that it is a real image "
+"and that it is between a certain width and height."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:156
+msgid ""
+"You may also want to guarantee the ``headshot`` image to be square. In this "
+"case you can disable portrait and landscape orientations as shown in the "
+"following code:"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:224
+msgid ""
+"You can mix all the constraint options to create powerful validation rules."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:229
+msgid ""
+"This constraint shares all of its options with the :doc:`File "
+"</reference/constraints/File>` constraint. It does, however, modify two of "
+"the default option values and add several other options."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:234
+msgid "mimeTypes"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:236
+msgid "**type**: ``array`` or ``string`` **default**: ``image/*``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:238
+msgid ""
+"You can find a list of existing image mime types on the `IANA website`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:241
+msgid "mimeTypesMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:243
+msgid "**type**: ``string`` **default**: ``This file is not a valid image.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:246
+msgid "minWidth"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:248
+#: ../../reference/constraints/Image.rst:256
+#: ../../reference/constraints/Image.rst:264
+#: ../../reference/constraints/Image.rst:272
+msgid "**type**: ``integer``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:250
+msgid ""
+"If set, the width of the image file must be greater than or equal to this "
+"value in pixels."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:254
+msgid "maxWidth"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:258
+msgid ""
+"If set, the width of the image file must be less than or equal to this value"
+" in pixels."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:262
+msgid "minHeight"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:266
+msgid ""
+"If set, the height of the image file must be greater than or equal to this "
+"value in pixels."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:270
+msgid "maxHeight"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:274
+msgid ""
+"If set, the height of the image file must be less than or equal to this "
+"value in pixels."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:278
+msgid "maxRatio"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:280
+#: ../../reference/constraints/Image.rst:288
+msgid "**type**: ``float``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:282
+msgid ""
+"If set, the aspect ratio (``width / height``) of the image file must be less"
+" than or equal to this value."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:286
+msgid "minRatio"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:290
+msgid ""
+"If set, the aspect ratio (``width / height``) of the image file must be "
+"greater than or equal to this value."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:294
+msgid "allowSquare"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:296
+#: ../../reference/constraints/Image.rst:305
+#: ../../reference/constraints/Image.rst:312
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:298
+msgid ""
+"If this option is false, the image cannot be a square. If you want to force "
+"a square image, then set leave this option as its default ``true`` value and"
+" set `allowLandscape`_ and `allowPortrait`_ both to ``false``."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:303
+msgid "allowLandscape"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:307
+msgid "If this option is false, the image cannot be landscape oriented."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:310
+msgid "allowPortrait"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:314
+msgid "If this option is false, the image cannot be portrait oriented."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:317
+msgid "sizeNotDetectedMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:319
+msgid ""
+"**type**: ``string`` **default**: ``The size of the image could not be "
+"detected.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:321
+msgid ""
+"If the system is unable to determine the size of the image, this error will "
+"be displayed. This will only occur when at least one of the size constraint "
+"options has been set."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:326
+msgid "maxWidthMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:328
+msgid ""
+"**type**: ``string`` **default**: ``The image width is too big ({{ width "
+"}}px). Allowed maximum width is {{ max_width }}px.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:331
+msgid "The error message if the width of the image exceeds `maxWidth`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:334
+msgid "minWidthMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:336
+msgid ""
+"**type**: ``string`` **default**: ``The image width is too small ({{ width "
+"}}px). Minimum width expected is {{ min_width }}px.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:339
+msgid "The error message if the width of the image is less than `minWidth`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:342
+msgid "maxHeightMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:344
+msgid ""
+"**type**: ``string`` **default**: ``The image height is too big ({{ height "
+"}}px). Allowed maximum height is {{ max_height }}px.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:347
+msgid "The error message if the height of the image exceeds `maxHeight`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:350
+msgid "minHeightMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:352
+msgid ""
+"**type**: ``string`` **default**: ``The image height is too small ({{ height"
+" }}px). Minimum height expected is {{ min_height }}px.``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:355
+msgid ""
+"The error message if the height of the image is less than `minHeight`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:358
+msgid "maxRatioMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:360
+msgid ""
+"**type**: ``string`` **default**: ``The image ratio is too big ({{ ratio "
+"}}). Allowed maximum ratio is {{ max_ratio }}``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:363
+msgid ""
+"The error message if the aspect ratio of the image exceeds `maxRatio`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:366
+msgid "minRatioMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:368
+msgid ""
+"**type**: ``string`` **default**: ``The image ratio is too small ({{ ratio "
+"}}). Minimum ratio expected is {{ min_ratio }}``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:371
+msgid ""
+"The error message if the aspect ratio of the image is less than `minRatio`_."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:374
+msgid "allowSquareMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:376
+msgid ""
+"**type**: ``string`` **default**: ``The image is square ({{ width }}x{{ "
+"height }}px). Square images are not allowed``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:379
+msgid ""
+"The error message if the image is square and you set `allowSquare`_ to "
+"``false``."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:382
+msgid "allowLandscapeMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:384
+msgid ""
+"**type**: ``string`` **default**: ``The image is landscape oriented ({{ "
+"width }}x{{ height }}px). Landscape oriented images are not allowed``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:387
+msgid ""
+"The error message if the image is landscape oriented and you set "
+"`allowLandscape`_ to ``false``."
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:390
+msgid "allowPortraitMessage"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:392
+msgid ""
+"**type**: ``string`` **default**: ``The image is portrait oriented ({{ width"
+" }}x{{ height }}px). Portrait oriented images are not allowed``"
+msgstr ""
+
+#: ../../reference/constraints/Image.rst:395
+msgid ""
+"The error message if the image is portrait oriented and you set "
+"`allowPortrait`_ to ``false``."
+msgstr ""

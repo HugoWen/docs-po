@@ -1,0 +1,216 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/workflow/new_project_git.rst:7
+msgid "How to Create and Store a Symfony Project in Git"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:11
+msgid ""
+"Though this entry is specifically about Git, the same generic principles "
+"will apply if you're storing your project in Subversion."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:14
+msgid ""
+"Once you've read through :doc:`/book/page_creation` and become familiar with"
+" using Symfony, you'll no-doubt be ready to start your own project. In this "
+"cookbook article, you'll learn the best way to start a new Symfony project "
+"that's stored using the `Git`_ source control management system."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:20
+msgid "Initial Project Setup"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:22
+msgid ""
+"To get started, you'll need to download Symfony and get things running. See "
+"the :doc:`/book/installation` chapter for details."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:25
+msgid "Once your project is running, just follow these simple steps:"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:27
+msgid "Initialize your Git repository:"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:33
+msgid "Add all of the initial files to Git:"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:41
+msgid ""
+"As you might have noticed, not all files that were downloaded by Composer in"
+" step 1, have been staged for commit by Git. Certain files and folders, such"
+" as the project's dependencies (which are managed by Composer), "
+"``parameters.yml`` (which contains sensitive information such as database "
+"credentials), log and cache files and dumped assets (which are created "
+"automatically by your project), should not be committed in Git. To help you "
+"prevent committing those files and folders by accident, the Standard "
+"Distribution comes with a file called ``.gitignore``, which contains a list "
+"of files and folders that Git should ignore."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:52
+msgid ""
+"You may also want to create a ``.gitignore`` file that can be used system-"
+"wide. This allows you to exclude files/folders for all your projects that "
+"are created by your IDE or operating system. For details, see `GitHub "
+".gitignore`_."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:56
+msgid "Create an initial commit with your started project:"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:62
+msgid ""
+"At this point, you have a fully-functional Symfony project that's correctly "
+"committed to Git. You can immediately begin development, committing the new "
+"changes to your Git repository."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:66
+msgid ""
+"You can continue to follow along with the :doc:`/book/page_creation` chapter"
+" to learn more about how to configure and develop inside your application."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:71
+msgid ""
+"The Symfony Standard Edition comes with some example functionality. To "
+"remove the sample code, follow the instructions in the "
+"\":doc:`/cookbook/bundles/remove`\" article."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:2
+msgid "Managing Vendor Libraries with ``composer.json``"
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:5
+msgid "How Does it Work?"
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:7
+msgid ""
+"Every Symfony project uses a group of third-party \"vendor\" libraries. One "
+"way or another the goal is to download these files into your ``vendor/`` "
+"directory and, ideally, to give you some sane way to manage the exact "
+"version you need for each."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:12
+msgid ""
+"By default, these libraries are downloaded by running a ``composer install``"
+" \"downloader\" binary. This ``composer`` file is from a library called "
+"`Composer`_ and you can read more about installing it in the "
+":ref:`Installation <installation-updating-vendors>` chapter."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:17
+msgid ""
+"The ``composer`` command reads from the ``composer.json`` file at the root "
+"of your project. This is an JSON-formatted file, which holds a list of each "
+"of the external packages you need, the version to be downloaded and more. "
+"``composer`` also reads from a ``composer.lock`` file, which allows you to "
+"pin each library to an **exact** version. In fact, if a ``composer.lock`` "
+"file exists, the versions inside will override those in ``composer.json``. "
+"To upgrade your libraries to new versions, run ``composer update``."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:27
+msgid ""
+"If you want to add a new package to your application, run the composer "
+"``require`` command:"
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:34
+msgid "To learn more about Composer, see `GetComposer.org`_:"
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:36
+msgid ""
+"It's important to realize that these vendor libraries are *not* actually "
+"part of *your* repository. Instead, they're simply un-tracked files that are"
+" downloaded into the ``vendor/``. But since all the information needed to "
+"download these files is saved in ``composer.json`` and ``composer.lock`` "
+"(which *are* stored in the repository), any other developer can use the "
+"project, run ``composer install``, and download the exact same set of vendor"
+" libraries. This means that you're controlling exactly what each vendor "
+"library looks like, without needing to actually commit them to *your* "
+"repository."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:45
+msgid ""
+"So, whenever a developer uses your project, they should run the ``composer "
+"install`` script to ensure that all of the needed vendor libraries are "
+"downloaded."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:0
+msgid "Upgrading Symfony"
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:50
+msgid ""
+"Since Symfony is just a group of third-party libraries and third-party "
+"libraries are entirely controlled through ``composer.json`` and "
+"``composer.lock``, upgrading Symfony means simply upgrading each of these "
+"files to match their state in the latest Symfony Standard Edition."
+msgstr ""
+
+#: ../../cookbook/workflow/_vendor_deps.rst.inc:55
+msgid ""
+"Of course, if you've added new entries to ``composer.json``, be sure to "
+"replace only the original parts (i.e. be sure not to also delete any of your"
+" custom entries)."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:80
+msgid "Storing your Project on a remote Server"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:82
+msgid ""
+"You now have a fully-functional Symfony project stored in Git. However, in "
+"most cases, you'll also want to store your project on a remote server both "
+"for backup purposes, and so that other developers can collaborate on the "
+"project."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:87
+msgid ""
+"The easiest way to store your project on a remote server is via a web-based "
+"hosting service like `GitHub`_ or `Bitbucket`_. Of course, there are more "
+"services out there, you can start your research with a `comparison of "
+"hosting services`_."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:92
+msgid ""
+"Alternatively, you can store your Git repository on any server by creating a"
+" `barebones repository`_ and then pushing to it. One library that helps "
+"manage this is `Gitolite`_."
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:1
+msgid "Workflow"
+msgstr ""
+
+#: ../../cookbook/workflow/new_project_git.rst:1
+msgid "Git"
+msgstr ""

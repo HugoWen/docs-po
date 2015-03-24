@@ -1,0 +1,176 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/web_server_configuration.rst:5
+msgid "Configuring a Web Server"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:7
+msgid ""
+"The preferred way to develop your Symfony application is to use :doc:`PHP's "
+"internal web server </cookbook/web_server/built_in>`. However, when using an"
+" older PHP version or when running the application in the production "
+"environment, you'll need to use a fully-featured web server. This article "
+"describes several ways to use Symfony with Apache2 or Nginx."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:13
+msgid ""
+"When using Apache2, you can configure PHP as an :ref:`Apache module <web-"
+"server-apache-mod-php>` or with FastCGI using :ref:`PHP FPM <web-server-"
+"apache-fpm>`. FastCGI also is the preferred way to use PHP :ref:`with Nginx "
+"<web-server-nginx>`."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:0
+msgid "The Web Directory"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:20
+msgid ""
+"The web directory is the home of all of your application's public and static"
+" files, including images, stylesheets and JavaScript files. It is also where"
+" the front controllers live. For more details, see the :ref:`the-web-"
+"directory`."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:24
+msgid ""
+"The web directory serves as the document root when configuring your web "
+"server. In the examples below, the ``web/`` directory will be the document "
+"root. This directory is ``/var/www/project/web/``."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:31
+msgid "Apache2 with mod_php/PHP-CGI"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:33
+msgid ""
+"For advanced Apache configuration options, see the official `Apache`_ "
+"documentation. The minimum basics to get your application running under "
+"Apache2 are:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:63
+msgid ""
+"If your system supports the ``APACHE_LOG_DIR`` variable, you may want to use"
+" ``${APACHE_LOG_DIR}/`` instead of ``/var/log/apache2/``."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:68
+msgid ""
+"For performance reasons, you will probably want to set ``AllowOverride "
+"None`` and implement the rewrite rules in the ``web/.htaccess`` into the "
+"``VirtualHost`` config."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:72
+msgid ""
+"If you are using **php-cgi**, Apache does not pass HTTP basic username and "
+"password to PHP by default. To work around this limitation, you should use "
+"the following configuration snippet:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:82
+msgid ""
+"In Apache 2.4, ``Order allow,deny`` has been replaced by ``Require all "
+"granted``, and hence you need to modify your ``Directory`` permission "
+"settings as follows:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:96
+msgid "Apache2 with PHP-FPM"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:98
+msgid ""
+"To make use of PHP5-FPM with Apache, you first have to ensure that you have "
+"the FastCGI process manager ``php-fpm`` binary and Apache's FastCGI module "
+"installed (for example, on a Debian based system you have to install the "
+"``libapache2-mod-fastcgi`` and ``php5-fpm`` packages)."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:103
+msgid ""
+"PHP-FPM uses so-called *pools* to handle incoming FastCGI requests. You can "
+"configure an arbitrary number of pools in the FPM configuration. In a pool "
+"you configure either a TCP socket (IP and port) or a unix domain socket to "
+"listen on. Each pool can also be run under a different UID and GID:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:122
+msgid "Using mod_proxy_fcgi with Apache 2.4"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:124
+msgid ""
+"If you are running Apache 2.4, you can easily use ``mod_proxy_fcgi`` to pass"
+" incoming requests to PHP-FPM. Configure PHP-FPM to listen on a TCP socket "
+"(``mod_proxy`` currently `does not support unix sockets`_), enable "
+"``mod_proxy`` and ``mod_proxy_fcgi`` in your Apache configuration and use "
+"the ``SetHandler`` directive to pass requests for PHP files to PHP FPM:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:171
+msgid "PHP-FPM with Apache 2.2"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:173
+msgid ""
+"On Apache 2.2 or lower, you cannot use ``mod_proxy_fcgi``. You have to use "
+"the `FastCgiExternalServer`_ directive instead. Therefore, your Apache "
+"configuration should look something like this:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:206
+msgid ""
+"If you prefer to use a unix socket, you have to use the ``-socket`` option "
+"instead:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:216
+msgid "Nginx"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:218
+msgid ""
+"For advanced Nginx configuration options, see the official `Nginx`_ "
+"documentation. The minimum basics to get your application running under "
+"Nginx are:"
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:261
+msgid ""
+"Depending on your PHP-FPM config, the ``fastcgi_pass`` can also be "
+"``fastcgi_pass 127.0.0.1:9000``."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:266
+msgid ""
+"This executes **only** ``app.php``, ``app_dev.php`` and ``config.php`` in "
+"the web directory. All other files will be served as text. You **must** also"
+" make sure that if you *do* deploy ``app_dev.php`` or ``config.php`` that "
+"these files are secured and not available to any outside user (the IP "
+"checking code at the top of each file does this by default)."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:272
+msgid ""
+"If you have other PHP files in your web directory that need to be executed, "
+"be sure to include them in the ``location`` block above."
+msgstr ""
+
+#: ../../cookbook/configuration/web_server_configuration.rst:1
+msgid "Web Server"
+msgstr ""

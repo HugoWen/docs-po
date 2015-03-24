@@ -1,0 +1,100 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/email/cloud.rst:5
+msgid "How to Use the Cloud to Send Emails"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:7
+msgid ""
+"Requirements for sending emails from a production system differ from your "
+"development setup as you don't want to be limited in the number of emails, "
+"the sending rate or the sender address. Thus, :doc:`using Gmail "
+"</cookbook/email/gmail>` or similar services is not an option. If setting up"
+" and maintaining your own reliable mail server causes you a headache there's"
+" a simple solution: Leverage the cloud to send your emails."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:15
+msgid ""
+"This cookbook shows how easy it is to integrate `Amazon's Simple Email "
+"Service (SES)`_ into Symfony."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:20
+msgid ""
+"You can use the same technique for other mail services, as most of the time "
+"there is nothing more to it than configuring an SMTP endpoint for Swift "
+"Mailer."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:24
+msgid ""
+"In the Symfony configuration, change the Swift Mailer settings "
+"``transport``, ``host``, ``port`` and ``encryption`` according to the "
+"information provided in the `SES console`_. Create your individual SMTP "
+"credentials in the SES console and complete the configuration with the "
+"provided ``username`` and ``password``:"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:77
+msgid ""
+"The ``port`` and ``encryption`` keys are not present in the Symfony Standard"
+" Edition configuration by default, but you can simply add them as needed."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:80
+msgid "And that's it, you're ready to start sending emails through the cloud!"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:84
+msgid ""
+"If you are using the Symfony Standard Edition, configure the parameters in "
+"``parameters.yml`` and use them in your configuration files. This allows for"
+" different Swift Mailer configurations for each installation of your "
+"application. For instance, use Gmail during development and the cloud in "
+"production."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:104
+msgid "If you intend to use Amazon SES, please note the following:"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:106
+msgid "You have to sign up to `Amazon Web Services (AWS)`_;"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:108
+msgid ""
+"Every sender address used in the ``From`` or ``Return-Path`` (bounce "
+"address) header needs to be confirmed by the owner. You can also confirm an "
+"entire domain;"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:112
+msgid ""
+"Initially you are in a restricted sandbox mode. You need to request "
+"production access before being allowed to send to arbitrary recipients;"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:116
+msgid "SES may be subject to a charge."
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:1
+msgid "Emails"
+msgstr ""
+
+#: ../../cookbook/email/cloud.rst:1
+msgid "Using the cloud"
+msgstr ""

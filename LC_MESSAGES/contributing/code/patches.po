@@ -1,0 +1,501 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/code/patches.rst:2
+msgid "Submitting a Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:4
+msgid ""
+"Patches are the best way to provide a bug fix or to propose enhancements to "
+"Symfony."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:8
+msgid "Step 1: Setup your Environment"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:11
+msgid "Install the Software Stack"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:13
+msgid ""
+"Before working on Symfony, setup a friendly environment with the following "
+"software:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:16
+msgid "Git;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:17
+msgid "PHP version 5.3.3 or above;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:18
+msgid "`PHPUnit`_ 4.2 or above."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:21
+msgid "Configure Git"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:23
+msgid ""
+"Set up your user information with your real name and a working email "
+"address:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:32
+msgid ""
+"If you are new to Git, you are highly recommended to read the excellent and "
+"free `ProGit`_ book."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:37
+msgid ""
+"If your IDE creates configuration files inside the project's directory, you "
+"can use global ``.gitignore`` file (for all projects) or "
+"``.git/info/exclude`` file (per project) to ignore them. See `GitHub's "
+"documentation`_."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:44
+msgid ""
+"Windows users: when installing Git, the installer will ask what to do with "
+"line endings, and suggests replacing all LF with CRLF. This is the wrong "
+"setting if you wish to contribute to Symfony! Selecting the as-is method is "
+"your best choice, as Git will convert your line feeds to the ones in the "
+"repository. If you have already installed Git, you can check the value of "
+"this setting by typing:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:55
+msgid ""
+"This will return either \"false\", \"input\" or \"true\"; \"true\" and "
+"\"false\" being the wrong values. Change it to \"input\" by typing:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:62
+msgid ""
+"Replace --global by --local if you want to set it only for the active "
+"repository"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:66
+msgid "Get the Symfony Source Code"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:68
+msgid "Get the Symfony source code:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:70
+msgid "Create a `GitHub`_ account and sign in;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:72
+msgid "Fork the `Symfony repository`_ (click on the \"Fork\" button);"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:74
+msgid ""
+"After the \"forking action\" has completed, clone your fork locally (this "
+"will create a ``symfony`` directory):"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:81
+msgid "Add the upstream repository as a remote:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:89
+msgid "Check that the current Tests Pass"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:91
+msgid ""
+"Now that Symfony is installed, check that all unit tests pass for your "
+"environment as explained in the dedicated :doc:`document <tests>`."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:95
+msgid "Step 2: Work on your Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:98
+msgid "The License"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:100
+msgid ""
+"Before you start, you must know that all the patches you are going to submit"
+" must be released under the *MIT license*, unless explicitly specified in "
+"your commits."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:105
+msgid "Choose the right Branch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:107
+msgid ""
+"Before working on a patch, you must determine on which branch you need to "
+"work:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:110
+msgid ""
+"``2.3``, if you are fixing a bug for an existing feature (you may have to "
+"choose a higher branch if the feature you are fixing was introduced in a "
+"later version);"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:113
+msgid "``2.7``, if you are adding a new feature which is backward compatible;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:114
+msgid "``master``, if you are adding a new and backward incompatible feature."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:118
+msgid ""
+"All bug fixes merged into maintenance branches are also merged into more "
+"recent branches on a regular basis. For instance, if you submit a patch for "
+"the ``2.3`` branch, the patch will also be applied by the core team on the "
+"``master`` branch."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:124
+msgid "Create a Topic Branch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:126
+msgid ""
+"Each time you want to work on a patch for a bug or on an enhancement, create"
+" a topic branch:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:133
+msgid ""
+"Or, if you want to provide a bugfix for the ``2.3`` branch, first track the "
+"remote ``2.3`` branch locally:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:140
+msgid "Then create a new branch off the ``2.3`` branch to work on the bugfix:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:148
+msgid ""
+"Use a descriptive name for your branch (``ticket_XXX`` where ``XXX`` is the "
+"ticket number is a good convention for bug fixes)."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:151
+msgid ""
+"The above checkout commands automatically switch the code to the newly "
+"created branch (check the branch you are working on with ``git branch``)."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:155
+msgid "Work on your Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:157
+msgid ""
+"Work on the code as much as you want and commit as much as you want; but "
+"keep in mind the following:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:160
+msgid ""
+"Read about the Symfony :doc:`conventions <conventions>` and follow the "
+"coding :doc:`standards <standards>` (use ``git diff --check`` to check for "
+"trailing spaces -- also read the tip below);"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:164
+msgid ""
+"Add unit tests to prove that the bug is fixed or that the new feature "
+"actually works;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:167
+msgid ""
+"Try hard to not break backward compatibility (if you must do so, try to "
+"provide a compatibility layer to support the old way) -- patches that break "
+"backward compatibility have less chance to be merged;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:171
+msgid ""
+"Do atomic and logically separate commits (use the power of ``git rebase`` to"
+" have a clean and logical history);"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:174
+msgid ""
+"Squash irrelevant commits that are just about fixing coding standards or "
+"fixing typos in your own code;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:177
+msgid ""
+"Never fix coding standards in some existing code as it makes the code review"
+" more difficult;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:180
+msgid "Write good commit messages (see the tip below)."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:184
+msgid ""
+"When submitting pull requests, `fabbot`_ checks your code for common typos "
+"and verifies that you are using the PHP coding standards as defined in "
+"`PSR-1`_ and `PSR-2`_."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:188
+msgid ""
+"A status is posted below the pull request description with a summary of any "
+"problems it detects or any Travis CI build failures."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:193
+msgid ""
+"A good commit message is composed of a summary (the first line), optionally "
+"followed by a blank line and a more detailed description. The summary should"
+" start with the Component you are working on in square brackets "
+"(``[DependencyInjection]``, ``[FrameworkBundle]``, ...). Use a verb (``fixed"
+" ...``, ``added ...``, ...) to start the summary and don't add a period at "
+"the end."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:201
+msgid "Prepare your Patch for Submission"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:203
+msgid ""
+"When your patch is not about a bug fix (when you add a new feature or change"
+" an existing one for instance), it must also include the following:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:206
+msgid ""
+"An explanation of the changes in the relevant ``CHANGELOG`` file(s) (the "
+"``[BC BREAK]`` or the ``[DEPRECATION]`` prefix must be used when relevant);"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:209
+msgid ""
+"An explanation on how to upgrade an existing application in the relevant "
+"``UPGRADE`` file(s) if the changes break backward compatibility or if you "
+"deprecate something that will ultimately break backward compatibility."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:214
+msgid "Step 3: Submit your Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:216
+msgid ""
+"Whenever you feel that your patch is ready for submission, follow the "
+"following steps."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:220
+msgid "Rebase your Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:222
+msgid ""
+"Before submitting your patch, update your branch (needed if it takes you a "
+"while to finish your changes):"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:235
+msgid ""
+"Replace ``master`` with the branch you selected previously (e.g. ``2.3``) if"
+" you are working on a bugfix"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:238
+msgid ""
+"When doing the ``rebase`` command, you might have to fix merge conflicts. "
+"``git status`` will show you the *unmerged* files. Resolve all the "
+"conflicts, then continue the rebase:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:247
+msgid "Check that all tests still pass and push your branch remotely:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:254
+msgid "Make a Pull Request"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:256
+msgid ""
+"You can now make a pull request on the ``symfony/symfony`` GitHub "
+"repository."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:260
+msgid ""
+"Take care to point your pull request towards ``symfony:2.3`` if you want the"
+" core team to pull a bugfix based on the ``2.3`` branch."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:263
+msgid ""
+"To ease the core team work, always include the modified components in your "
+"pull request message, like in:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:271
+msgid ""
+"The pull request description must include the following checklist at the top"
+" to ensure that contributions may be reviewed without needless feedback "
+"loops and that your contributions can be included into Symfony as quickly as"
+" possible:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:289
+msgid "An example submission could now look as follows:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:304
+msgid ""
+"The whole table must be included (do **not** remove lines that you think are"
+" not relevant). For simple typos, minor changes in the PHPDocs, or changes "
+"in translation files, use the shorter version of the check-list:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:315
+msgid "Some answers to the questions trigger some more requirements:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:317
+msgid ""
+"If you answer yes to \"Bug fix?\", check if the bug is already listed in the"
+" Symfony issues and reference it/them in \"Fixed tickets\";"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:320
+msgid ""
+"If you answer yes to \"New feature?\", you must submit a pull request to the"
+" documentation and reference it under the \"Doc PR\" section;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:323
+msgid ""
+"If you answer yes to \"BC breaks?\", the patch must contain updates to the "
+"relevant ``CHANGELOG`` and ``UPGRADE`` files;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:326
+msgid ""
+"If you answer yes to \"Deprecations?\", the patch must contain updates to "
+"the relevant ``CHANGELOG`` and ``UPGRADE`` files;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:329
+msgid ""
+"If you answer no to \"Tests pass\", you must add an item to a todo-list with"
+" the actions that must be done to fix the tests;"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:332
+msgid ""
+"If the \"license\" is not MIT, just don't submit the pull request as it "
+"won't be accepted anyway."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:335
+msgid ""
+"If some of the previous requirements are not met, create a todo-list and add"
+" relevant items:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:344
+msgid ""
+"If the code is not finished yet because you don't have time to finish it or "
+"because you want early feedback on your work, add an item to todo-list:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:352
+msgid ""
+"As long as you have items in the todo-list, please prefix the pull request "
+"title with \"[WIP]\"."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:355
+msgid ""
+"In the pull request description, give as much details as possible about your"
+" changes (don't hesitate to give code examples to illustrate your points). "
+"If your pull request is about adding a new feature or modifying an existing "
+"one, explain the rationale for the changes. The pull request description "
+"helps the code review and it serves as a reference when the code is merged "
+"(the pull request description and all its associated comments are part of "
+"the merge commit message)."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:363
+msgid ""
+"In addition to this \"code\" pull request, you must also send a pull request"
+" to the `documentation repository`_ to update the documentation when "
+"appropriate."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:367
+msgid "Rework your Patch"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:369
+msgid ""
+"Based on the feedback on the pull request, you might need to rework your "
+"patch. Before re-submitting the patch, rebase with ``upstream/master`` or "
+"``upstream/2.3``, don't merge; and force the push to the origin:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:380
+msgid ""
+"When doing a ``push --force``, always specify the branch name explicitly to "
+"avoid messing other branches in the repo (``--force`` tells Git that you "
+"really want to mess with things so do it carefully)."
+msgstr ""
+
+#: ../../contributing/code/patches.rst:384
+msgid ""
+"Often, moderators will ask you to \"squash\" your commits. This means you "
+"will convert many commits to one commit. To do this, use the rebase command:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:392
+msgid ""
+"After you type this command, an editor will popup showing a list of commits:"
+msgstr ""
+
+#: ../../contributing/code/patches.rst:400
+msgid ""
+"To squash all commits into the first one, remove the word ``pick`` before "
+"the second and the last commits, and replace it by the word ``squash`` or "
+"just ``s``. When you save, Git will start rebasing, and if successful, will "
+"ask you to edit the commit message, which by default is a listing of the "
+"commit messages of all the commits. When you are finished, execute the push "
+"command."
+msgstr ""

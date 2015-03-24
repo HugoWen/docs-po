@@ -1,0 +1,122 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/console/logging.rst:5
+msgid "How to Enable Logging in Console Commands"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:7
+msgid ""
+"The Console component doesn't provide any logging capabilities out of the "
+"box. Normally, you run console commands manually and observe the output, "
+"which is why logging is not provided. However, there are cases when you "
+"might need logging. For example, if you are running console commands "
+"unattended, such as from cron jobs or deployment scripts, it may be easier "
+"to use Symfony's logging capabilities instead of configuring other tools to "
+"gather console output and process it. This can be especially handful if you "
+"already have some existing setup for aggregating and analyzing Symfony logs."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:18
+msgid "There are basically two logging cases you would need:"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:17
+msgid "Manually logging some information from your command;"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:18
+msgid "Logging uncaught Exceptions."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:21
+msgid "Manually Logging from a Console Command"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:23
+msgid ""
+"This one is really simple. When you create a console command within the full"
+" framework as described in \":doc:`/cookbook/console/console_command`\", "
+"your command extends "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Command\\\\ContainerAwareCommand`."
+" This means that you can simply access the standard logger service through "
+"the container and use it to do the logging::"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:66
+msgid ""
+"Depending on the environment in which you run your command (and your logging"
+" setup), you should see the logged entries in ``app/logs/dev.log`` or "
+"``app/logs/prod.log``."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:70
+msgid "Enabling automatic Exceptions Logging"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:72
+msgid ""
+"To get your console application to automatically log uncaught exceptions for"
+" all of your commands, you can use :doc:`console "
+"events</components/console/events>`."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:75
+msgid "Console events were introduced in Symfony 2.3."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:78
+msgid ""
+"First configure a listener for console exception events in the service "
+"container:"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:128
+#: ../../cookbook/console/logging.rst:226
+msgid "Then implement the actual listener::"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:163
+msgid ""
+"In the code above, when any command throws an exception, the listener will "
+"receive an event. You can simply log it by passing the logger service via "
+"the service configuration. Your method receives a "
+":class:`Symfony\\\\Component\\\\Console\\\\Event\\\\ConsoleExceptionEvent` "
+"object, which has methods to get information about the event and the "
+"exception."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:170
+msgid "Logging non-0 Exit Statuses"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:172
+msgid ""
+"The logging capabilities of the console can be further extended by logging "
+"non-0 exit statuses. This way you will know if a command had any errors, "
+"even if no exceptions were thrown."
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:176
+msgid ""
+"First configure a listener for console terminate events in the service "
+"container:"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:1
+msgid "Console"
+msgstr ""
+
+#: ../../cookbook/console/logging.rst:1
+msgid "Enabling logging"
+msgstr ""

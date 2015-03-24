@@ -1,0 +1,616 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/event_dispatcher/introduction.rst:6
+msgid "The EventDispatcher Component"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:8
+msgid ""
+"The EventDispatcher component provides tools that allow your application "
+"components to communicate with each other by dispatching events and "
+"listening to them."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:13
+msgid "Introduction"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:15
+msgid ""
+"Object Oriented code has gone a long way to ensuring code extensibility. By "
+"creating classes that have well defined responsibilities, your code becomes "
+"more flexible and a developer can extend them with subclasses to modify "
+"their behaviors. But if they want to share the changes with other developers"
+" who have also made their own subclasses, code inheritance is no longer the "
+"answer."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:21
+msgid ""
+"Consider the real-world example where you want to provide a plugin system "
+"for your project. A plugin should be able to add methods, or do something "
+"before or after a method is executed, without interfering with other "
+"plugins. This is not an easy problem to solve with single inheritance, and "
+"multiple inheritance (were it possible with PHP) has its own drawbacks."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:27
+msgid ""
+"The Symfony EventDispatcher component implements the `Mediator`_ pattern in "
+"a simple and effective way to make all these things possible and to make "
+"your projects truly extensible."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:31
+msgid ""
+"Take a simple example from :doc:`/components/http_kernel/introduction`. Once"
+" a ``Response`` object has been created, it may be useful to allow other "
+"elements in the system to modify it (e.g. add some cache headers) before "
+"it's actually used. To make this possible, the Symfony kernel throws an "
+"event - ``kernel.response``. Here's how it works:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:37
+msgid ""
+"A *listener* (PHP object) tells a central *dispatcher* object that it wants "
+"to listen to the ``kernel.response`` event;"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:40
+msgid ""
+"At some point, the Symfony kernel tells the *dispatcher* object to dispatch "
+"the ``kernel.response`` event, passing with it an ``Event`` object that has "
+"access to the ``Response`` object;"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:44
+msgid ""
+"The dispatcher notifies (i.e. calls a method on) all listeners of the "
+"``kernel.response`` event, allowing each of them to make modifications to "
+"the ``Response`` object."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:52
+msgid "Installation"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:54
+msgid "You can install the component in 2 different ways:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:56
+msgid ""
+":doc:`Install it via Composer </components/using_components>` (``symfony"
+"/event-dispatcher`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:57
+msgid ""
+"Use the official Git repository "
+"(https://github.com/symfony/EventDispatcher)."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:60
+msgid "Usage"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:63
+#: ../../components/event_dispatcher/introduction.rst:48
+msgid "Events"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:65
+msgid ""
+"When an event is dispatched, it's identified by a unique name (e.g. "
+"``kernel.response``), which any number of listeners might be listening to. "
+"An :class:`Symfony\\\\Component\\\\EventDispatcher\\\\Event` instance is "
+"also created and passed to all of the listeners. As you'll see later, the "
+"``Event`` object itself often contains data about the event being "
+"dispatched."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:75
+msgid "Naming Conventions"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:77
+msgid ""
+"The unique event name can be any string, but optionally follows a few simple"
+" naming conventions:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:80
+msgid ""
+"use only lowercase letters, numbers, dots (``.``), and underscores (``_``);"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:82
+msgid "prefix names with a namespace followed by a dot (e.g. ``kernel.``);"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:84
+msgid ""
+"end names with a verb that indicates what action is being taken (e.g. "
+"``request``)."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:87
+msgid "Here are some examples of good event names:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:89
+msgid "``kernel.response``"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:90
+msgid "``form.pre_set_data``"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:96
+msgid "Event Names and Event Objects"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:98
+msgid ""
+"When the dispatcher notifies listeners, it passes an actual ``Event`` object"
+" to those listeners. The base ``Event`` class is very simple: it contains a "
+"method for stopping :ref:`event propagation <event_dispatcher-event-"
+"propagation>`, but not much else."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:103
+msgid ""
+"Often times, data about a specific event needs to be passed along with the "
+"``Event`` object so that the listeners have needed information. In the case "
+"of the ``kernel.response`` event, the ``Event`` object that's created and "
+"passed to each listener is actually of type "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent`,"
+" a subclass of the base ``Event`` object. This class contains methods such "
+"as ``getResponse`` and ``setResponse``, allowing listeners to get or even "
+"replace the ``Response`` object."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:112
+msgid ""
+"The moral of the story is this: When creating a listener to an event, the "
+"``Event`` object that's passed to the listener may be a special subclass "
+"that has additional methods for retrieving information from and responding "
+"to the event."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:118
+msgid "The Dispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:120
+msgid ""
+"The dispatcher is the central object of the event dispatcher system. In "
+"general, a single dispatcher is created, which maintains a registry of "
+"listeners. When an event is dispatched via the dispatcher, it notifies all "
+"listeners registered with that event::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:133
+msgid "Connecting Listeners"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:135
+msgid ""
+"To take advantage of an existing event, you need to connect a listener to "
+"the dispatcher so that it can be notified when the event is dispatched. A "
+"call to the dispatcher's ``addListener()`` method associates any valid PHP "
+"callable to an event::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:143
+msgid "The ``addListener()`` method takes up to three arguments:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:145
+msgid "The event name (string) that this listener wants to listen to;"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:147
+msgid ""
+"A PHP callable that will be notified when an event is thrown that it listens"
+" to;"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:150
+msgid ""
+"An optional priority integer (higher equals more important, and therefore "
+"that the listener will be triggered earlier) that determines when a listener"
+" is triggered versus other listeners (defaults to ``0``). If two listeners "
+"have the same priority, they are executed in the order that they were added "
+"to the dispatcher."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:158
+msgid ""
+"A `PHP callable`_ is a PHP variable that can be used by the "
+"``call_user_func()`` function and returns ``true`` when passed to the "
+"``is_callable()`` function. It can be a ``\\Closure`` instance, an object "
+"implementing an ``__invoke`` method (which is what closures are in fact), a "
+"string representing a function, or an array representing an object method or"
+" a class method."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:165
+msgid ""
+"So far, you've seen how PHP objects can be registered as listeners. You can "
+"also register PHP `Closures`_ as event listeners::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:174
+msgid ""
+"Once a listener is registered with the dispatcher, it waits until the event "
+"is notified. In the above example, when the ``foo.action`` event is "
+"dispatched, the dispatcher calls the ``AcmeListener::onFooAction`` method "
+"and passes the ``Event`` object as the single argument::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:191
+msgid ""
+"In many cases, a special ``Event`` subclass that's specific to the given "
+"event is passed to the listener. This gives the listener access to special "
+"information about the event. Check the documentation or implementation of "
+"each event to determine the exact "
+"``Symfony\\Component\\EventDispatcher\\Event`` instance that's being passed."
+" For example, the ``kernel.response`` event passes an instance of "
+"``Symfony\\Component\\HttpKernel\\Event\\FilterResponseEvent``::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:0
+msgid "Registering Event Listeners in the Service Container"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:210
+msgid ""
+"When you are using the "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\ContainerAwareEventDispatcher`"
+" and the :doc:`DependencyInjection component "
+"</components/dependency_injection/introduction>`, you can use the "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\DependencyInjection\\\\RegisterListenersPass`"
+" to tag services as event listeners::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:246
+msgid ""
+"By default, the listeners pass assumes that the event dispatcher's service "
+"id is ``event_dispatcher``, that event listeners are tagged with the "
+"``kernel.event_listener`` tag and that event subscribers are tagged with the"
+" ``kernel.event_subscriber`` tag. You can change these default values by "
+"passing custom values to the constructor of ``RegisterListenersPass``."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:258
+msgid "Creating and Dispatching an Event"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:260
+msgid ""
+"In addition to registering listeners with existing events, you can create "
+"and dispatch your own events. This is useful when creating third-party "
+"libraries and also when you want to keep different components of your own "
+"system flexible and decoupled."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:266
+msgid "The Static ``Events`` Class"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:268
+msgid ""
+"Suppose you want to create a new Event - ``store.order`` - that is "
+"dispatched each time an order is created inside your application. To keep "
+"things organized, start by creating a ``StoreEvents`` class inside your "
+"application that serves to define and document your event::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:289
+msgid ""
+"Notice that this class doesn't actually *do* anything. The purpose of the "
+"``StoreEvents`` class is just to be a location where information about "
+"common events can be centralized. Notice also that a special "
+"``FilterOrderEvent`` class will be passed to each listener of this event."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:295
+msgid "Creating an Event Object"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:297
+msgid ""
+"Later, when you dispatch this new event, you'll create an ``Event`` instance"
+" and pass it to the dispatcher. The dispatcher then passes this same "
+"instance to each of the listeners of the event. If you don't need to pass "
+"any information to your listeners, you can use the default "
+"``Symfony\\Component\\EventDispatcher\\Event`` class. Most of the time, "
+"however, you *will* need to pass information about the event to each "
+"listener. To accomplish this, you'll create a new class that extends "
+"``Symfony\\Component\\EventDispatcher\\Event``."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:306
+msgid ""
+"In this example, each listener will need access to some pretend ``Order`` "
+"object. Create an ``Event`` class that makes this possible::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:329
+msgid ""
+"Each listener now has access to the ``Order`` object via the ``getOrder`` "
+"method."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:333
+msgid "Dispatch the Event"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:335
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\EventDispatcher::dispatch`"
+" method notifies all listeners of the given event. It takes two arguments: "
+"the name of the event to dispatch and the ``Event`` instance to pass to each"
+" listener of that event::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:352
+msgid ""
+"Notice that the special ``FilterOrderEvent`` object is created and passed to"
+" the ``dispatch`` method. Now, any listener to the ``store.order`` event "
+"will receive the ``FilterOrderEvent`` and have access to the ``Order`` "
+"object via the ``getOrder`` method::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:372
+msgid "Using Event Subscribers"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:374
+msgid ""
+"The most common way to listen to an event is to register an *event listener*"
+" with the dispatcher. This listener can listen to one or more events and is "
+"notified each time those events are dispatched."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:378
+msgid ""
+"Another way to listen to events is via an *event subscriber*. An event "
+"subscriber is a PHP class that's able to tell the dispatcher exactly which "
+"events it should subscribe to. It implements the "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\EventSubscriberInterface`"
+" interface, which requires a single static method called "
+"``getSubscribedEvents``. Take the following example of a subscriber that "
+"subscribes to the ``kernel.response`` and ``store.order`` events::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:426
+msgid ""
+"This is very similar to a listener class, except that the class itself can "
+"tell the dispatcher which events it should listen to. To register a "
+"subscriber with the dispatcher, use the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\EventDispatcher::addSubscriber`"
+" method::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:437
+msgid ""
+"The dispatcher will automatically register the subscriber for each event "
+"returned by the ``getSubscribedEvents`` method. This method returns an array"
+" indexed by event names and whose values are either the method name to call "
+"or an array composed of the method name to call and a priority. The example "
+"above shows how to register several listener methods for the same event in "
+"subscriber and also shows how to pass the priority of each listener method. "
+"The higher the priority, the earlier the method is called. In the above "
+"example, when the ``kernel.response`` event is triggered, the methods "
+"``onKernelResponsePre``, ``onKernelResponseMid``, and "
+"``onKernelResponsePost`` are called in that order."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:454
+msgid "Stopping Event Flow/Propagation"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:456
+msgid ""
+"In some cases, it may make sense for a listener to prevent any other "
+"listeners from being called. In other words, the listener needs to be able "
+"to tell the dispatcher to stop all propagation of the event to future "
+"listeners (i.e. to not notify any more listeners). This can be accomplished "
+"from inside a listener via the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\Event::stopPropagation` "
+"method::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:472
+msgid ""
+"Now, any listeners to ``store.order`` that have not yet been called will "
+"*not* be called."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:475
+msgid ""
+"It is possible to detect if an event was stopped by using the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\Event::isPropagationStopped`"
+" method which returns a boolean value::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:490
+msgid "EventDispatcher aware Events and Listeners"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:492
+msgid ""
+"The ``EventDispatcher`` always passes the dispatched event, the event's name"
+" and a reference to itself to the listeners. This can be used in some "
+"advanced usages of the ``EventDispatcher`` like dispatching other events in "
+"listeners, event chaining or even lazy loading of more listeners into the "
+"dispatcher object as shown in the following examples."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:498
+msgid "Lazy loading listeners::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:524
+msgid "Dispatching another event from within a listener::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:542
+msgid ""
+"While this above is sufficient for most uses, if your application uses "
+"multiple ``EventDispatcher`` instances, you might need to specifically "
+"inject a known instance of the ``EventDispatcher`` into your listeners. This"
+" could be done using constructor or setter injection as follows:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:547
+msgid "Constructor injection::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:561
+msgid "Or setter injection::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:575
+msgid ""
+"Choosing between the two is really a matter of taste. Many tend to prefer "
+"the constructor injection as the objects are fully initialized at "
+"construction time. But when you have a long list of dependencies, using "
+"setter injection can be the way to go, especially for optional dependencies."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:586
+msgid "Dispatcher Shortcuts"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:588
+msgid ""
+"The :method:`EventDispatcher::dispatch "
+"<Symfony\\\\Component\\\\EventDispatcher\\\\EventDispatcher::dispatch>` "
+"method always returns an "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\Event` object. This "
+"allows for various shortcuts. For example, if one does not need a custom "
+"event object, one can simply rely on a plain "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\Event` object. You do not"
+" even need to pass this to the dispatcher as it will create one by default "
+"unless you specifically pass one::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:598
+msgid ""
+"Moreover, the EventDispatcher always returns whichever event object that was"
+" dispatched, i.e. either the event that was passed or the event that was "
+"created internally by the dispatcher. This allows for nice shortcuts::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:606
+#: ../../components/event_dispatcher/introduction.rst:611
+msgid "Or::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:615
+msgid "and so on..."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:623
+msgid "Event Name Introspection"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:625
+msgid ""
+"Before Symfony 2.4, the event name and the event dispatcher had to be "
+"requested from the ``Event`` instance. These methods are now deprecated."
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:629
+msgid ""
+"The ``EventDispatcher`` instance, as well as the name of the event that is "
+"dispatched, are passed as arguments to the listener::"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:644
+msgid "Other Dispatchers"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:646
+msgid ""
+"Besides the commonly used ``EventDispatcher``, the component comes with 2 "
+"other dispatchers:"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:649
+msgid ":doc:`/components/event_dispatcher/container_aware_dispatcher`"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:650
+msgid ":doc:`/components/event_dispatcher/immutable_dispatcher`"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:1
+#: ../../components/event_dispatcher/introduction.rst:1
+#: ../../components/event_dispatcher/introduction.rst:48
+#: ../../components/event_dispatcher/introduction.rst:71
+#: ../../components/event_dispatcher/introduction.rst:92
+#: ../../components/event_dispatcher/introduction.rst:129
+#: ../../components/event_dispatcher/introduction.rst:254
+#: ../../components/event_dispatcher/introduction.rst:366
+#: ../../components/event_dispatcher/introduction.rst:448
+#: ../../components/event_dispatcher/introduction.rst:484
+#: ../../components/event_dispatcher/introduction.rst:580
+#: ../../components/event_dispatcher/introduction.rst:617
+msgid "EventDispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:1
+msgid "Components"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:71
+msgid "Naming conventions"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:92
+msgid "Event subclasses"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:129
+msgid "Listeners"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:254
+msgid "Creating and dispatching an event"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:366
+msgid "Event subscribers"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:448
+msgid "Stopping event flow"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:484
+msgid "EventDispatcher aware events and listeners"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:580
+msgid "Dispatcher shortcuts"
+msgstr ""
+
+#: ../../components/event_dispatcher/introduction.rst:617
+msgid "Event name introspection"
+msgstr ""

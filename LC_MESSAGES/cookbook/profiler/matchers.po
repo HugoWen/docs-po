@@ -1,0 +1,101 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/profiler/matchers.rst:5
+msgid "How to Use Matchers to Enable the Profiler Conditionally"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:7
+msgid ""
+"By default, the profiler is only activated in the development environment. "
+"But it's imaginable that a developer may want to see the profiler even in "
+"production. Another situation may be that you want to show the profiler only"
+" when an admin has logged in. You can enable the profiler in these "
+"situations by using matchers."
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:14
+msgid "Using the built-in Matcher"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:16
+msgid ""
+"Symfony provides a :class:`built-in matcher "
+"<Symfony\\\\Component\\\\HttpFoundation\\\\RequestMatcher>` which can match "
+"paths and IPs. For example, if you want to only show the profiler when "
+"accessing the page with the ``168.0.0.1`` IP, then you can use this "
+"configuration:"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:51
+msgid ""
+"You can also set a ``path`` option to define the path on which the profiler "
+"should be enabled. For instance, setting it to ``^/admin/`` will enable the "
+"profiler only for the ``/admin/`` URLs."
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:56
+msgid "Creating a custom Matcher"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:58
+msgid ""
+"You can also create a custom matcher. This is a service that checks whether "
+"the profiler should be enabled or not. To create that service, create a "
+"class which implements "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\RequestMatcherInterface`. "
+"This interface requires one method: "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\RequestMatcherInterface::matches`."
+" This method returns false to disable the profiler and true to enable the "
+"profiler."
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:67
+msgid ""
+"To enable the profiler when a ``ROLE_SUPER_ADMIN`` is logged in, you can use"
+" something like::"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:92
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AuthorizationCheckerInterface`"
+" was introduced in Symfony 2.6. Prior, you had to use the ``isGranted`` "
+"method of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\SecurityContextInterface`."
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:97
+msgid "Then, you need to configure the service:"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:129
+msgid ""
+"The ``security.authorization_checker`` service was introduced in Symfony "
+"2.6. Prior to Symfony 2.6, you had to use the ``isGranted()`` method of the "
+"``security.context`` service."
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:133
+msgid ""
+"Now the service is registered, the only thing left to do is configure the "
+"profiler to use this service as the matcher:"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:1
+msgid "Profiling"
+msgstr ""
+
+#: ../../cookbook/profiler/matchers.rst:1
+msgid "Matchers"
+msgstr ""

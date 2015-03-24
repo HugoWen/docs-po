@@ -1,0 +1,444 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/index.rst:2
+msgid "The Components"
+msgstr ""
+
+#: ../../components/map.rst.inc:1
+msgid ":doc:`/components/using_components`"
+msgstr ""
+
+#: ../../components/map.rst.inc:3
+msgid ":doc:`/components/asset/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:5
+msgid ":doc:`/components/asset/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:7
+msgid ":doc:`/components/class_loader/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:9
+msgid ":doc:`/components/class_loader/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:10
+msgid ":doc:`/components/class_loader/class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:11
+msgid ":doc:`/components/class_loader/psr4_class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:12
+msgid ":doc:`/components/class_loader/map_class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:13
+msgid ":doc:`/components/class_loader/cache_class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:14
+msgid ":doc:`/components/class_loader/debug_class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:15
+msgid ":doc:`/components/class_loader/class_map_generator`"
+msgstr ""
+
+#: ../../components/map.rst.inc:17
+msgid ":doc:`/components/config/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:19
+msgid ":doc:`/components/config/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:20
+msgid ":doc:`/components/config/resources`"
+msgstr ""
+
+#: ../../components/map.rst.inc:21
+msgid ":doc:`/components/config/caching`"
+msgstr ""
+
+#: ../../components/map.rst.inc:22
+msgid ":doc:`/components/config/definition`"
+msgstr ""
+
+#: ../../components/map.rst.inc:24
+msgid ":doc:`/components/console/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:26
+msgid ":doc:`/components/console/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:27
+msgid ":doc:`/components/console/usage`"
+msgstr ""
+
+#: ../../components/map.rst.inc:28
+msgid ":doc:`/components/console/single_command_tool`"
+msgstr ""
+
+#: ../../components/map.rst.inc:29
+msgid ":doc:`/components/console/changing_default_command`"
+msgstr ""
+
+#: ../../components/map.rst.inc:30
+msgid ":doc:`/components/console/console_arguments`"
+msgstr ""
+
+#: ../../components/map.rst.inc:31
+msgid ":doc:`/components/console/events`"
+msgstr ""
+
+#: ../../components/map.rst.inc:32
+msgid ":doc:`/components/console/logger`"
+msgstr ""
+
+#: ../../components/map.rst.inc:33
+msgid ":doc:`/components/console/helpers/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:35
+msgid "**CssSelector**"
+msgstr ""
+
+#: ../../components/map.rst.inc:37
+msgid ":doc:`/components/css_selector`"
+msgstr ""
+
+#: ../../components/map.rst.inc:39
+msgid ":doc:`/components/debug/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:41
+msgid ":doc:`/components/debug/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:42
+msgid ":doc:`/components/debug/class_loader`"
+msgstr ""
+
+#: ../../components/map.rst.inc:44
+msgid ":doc:`/components/dependency_injection/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:46
+msgid ":doc:`/components/dependency_injection/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:47
+msgid ":doc:`/components/dependency_injection/types`"
+msgstr ""
+
+#: ../../components/map.rst.inc:48
+msgid ":doc:`/components/dependency_injection/parameters`"
+msgstr ""
+
+#: ../../components/map.rst.inc:49
+msgid ":doc:`/components/dependency_injection/definitions`"
+msgstr ""
+
+#: ../../components/map.rst.inc:50
+msgid ":doc:`/components/dependency_injection/compilation`"
+msgstr ""
+
+#: ../../components/map.rst.inc:51
+msgid ":doc:`/components/dependency_injection/tags`"
+msgstr ""
+
+#: ../../components/map.rst.inc:52
+msgid ":doc:`/components/dependency_injection/factories`"
+msgstr ""
+
+#: ../../components/map.rst.inc:53
+msgid ":doc:`/components/dependency_injection/configurators`"
+msgstr ""
+
+#: ../../components/map.rst.inc:54
+msgid ":doc:`/components/dependency_injection/parentservices`"
+msgstr ""
+
+#: ../../components/map.rst.inc:55
+msgid ":doc:`/components/dependency_injection/advanced`"
+msgstr ""
+
+#: ../../components/map.rst.inc:56
+msgid ":doc:`/components/dependency_injection/lazy_services`"
+msgstr ""
+
+#: ../../components/map.rst.inc:57
+msgid ":doc:`/components/dependency_injection/workflow`"
+msgstr ""
+
+#: ../../components/map.rst.inc:59
+msgid "**DomCrawler**"
+msgstr ""
+
+#: ../../components/map.rst.inc:61
+msgid ":doc:`/components/dom_crawler`"
+msgstr ""
+
+#: ../../components/map.rst.inc:63
+msgid ":doc:`/components/event_dispatcher/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:65
+msgid ":doc:`/components/event_dispatcher/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:66
+msgid ":doc:`/components/event_dispatcher/container_aware_dispatcher`"
+msgstr ""
+
+#: ../../components/map.rst.inc:67
+msgid ":doc:`/components/event_dispatcher/generic_event`"
+msgstr ""
+
+#: ../../components/map.rst.inc:68
+msgid ":doc:`/components/event_dispatcher/immutable_dispatcher`"
+msgstr ""
+
+#: ../../components/map.rst.inc:69
+msgid ":doc:`/components/event_dispatcher/traceable_dispatcher`"
+msgstr ""
+
+#: ../../components/map.rst.inc:71
+msgid ":doc:`/components/expression_language/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:73
+msgid ":doc:`/components/expression_language/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:74
+msgid ":doc:`/components/expression_language/syntax`"
+msgstr ""
+
+#: ../../components/map.rst.inc:75
+msgid ":doc:`/components/expression_language/extending`"
+msgstr ""
+
+#: ../../components/map.rst.inc:76
+msgid ":doc:`/components/expression_language/caching`"
+msgstr ""
+
+#: ../../components/map.rst.inc:78
+msgid ":doc:`/components/filesystem/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:80
+msgid ":doc:`/components/filesystem/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:81
+msgid ":doc:`/components/filesystem/lock_handler`"
+msgstr ""
+
+#: ../../components/map.rst.inc:83
+msgid "**Finder**"
+msgstr ""
+
+#: ../../components/map.rst.inc:85
+msgid ":doc:`/components/finder`"
+msgstr ""
+
+#: ../../components/map.rst.inc:87
+msgid ":doc:`/components/form/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:89
+msgid ":doc:`/components/form/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:90
+msgid ":doc:`/components/form/form_events`"
+msgstr ""
+
+#: ../../components/map.rst.inc:91
+msgid ":doc:`/components/form/type_guesser`"
+msgstr ""
+
+#: ../../components/map.rst.inc:93
+msgid ":doc:`/components/http_foundation/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:95
+msgid ":doc:`/components/http_foundation/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:96
+msgid ":doc:`/components/http_foundation/sessions`"
+msgstr ""
+
+#: ../../components/map.rst.inc:97
+msgid ":doc:`/components/http_foundation/session_configuration`"
+msgstr ""
+
+#: ../../components/map.rst.inc:98
+msgid ":doc:`/components/http_foundation/session_testing`"
+msgstr ""
+
+#: ../../components/map.rst.inc:99
+msgid ":doc:`/components/http_foundation/session_php_bridge`"
+msgstr ""
+
+#: ../../components/map.rst.inc:100
+msgid ":doc:`/components/http_foundation/trusting_proxies`"
+msgstr ""
+
+#: ../../components/map.rst.inc:102
+msgid ":doc:`/components/http_kernel/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:104
+msgid ":doc:`/components/http_kernel/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:106
+msgid "**Intl**"
+msgstr ""
+
+#: ../../components/map.rst.inc:108
+msgid ":doc:`/components/intl`"
+msgstr ""
+
+#: ../../components/map.rst.inc:110
+msgid "**OptionsResolver**"
+msgstr ""
+
+#: ../../components/map.rst.inc:112
+msgid ":doc:`/components/options_resolver`"
+msgstr ""
+
+#: ../../components/map.rst.inc:114
+msgid "**Process**"
+msgstr ""
+
+#: ../../components/map.rst.inc:116
+msgid ":doc:`/components/process`"
+msgstr ""
+
+#: ../../components/map.rst.inc:118
+msgid ":doc:`/components/property_access/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:120
+msgid ":doc:`/components/property_access/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:122
+msgid ":doc:`/components/routing/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:124
+msgid ":doc:`/components/routing/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:125
+msgid ":doc:`/components/routing/hostname_pattern`"
+msgstr ""
+
+#: ../../components/map.rst.inc:127
+msgid ":doc:`/components/security/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:129
+msgid ":doc:`/components/security/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:130
+msgid ":doc:`/components/security/firewall`"
+msgstr ""
+
+#: ../../components/map.rst.inc:131
+msgid ":doc:`/components/security/authentication`"
+msgstr ""
+
+#: ../../components/map.rst.inc:132
+msgid ":doc:`/components/security/authorization`"
+msgstr ""
+
+#: ../../components/map.rst.inc:133
+msgid ":doc:`/components/security/secure_tools`"
+msgstr ""
+
+#: ../../components/map.rst.inc:135
+msgid "**Serializer**"
+msgstr ""
+
+#: ../../components/map.rst.inc:137
+msgid ":doc:`/components/serializer`"
+msgstr ""
+
+#: ../../components/map.rst.inc:139
+msgid "**Stopwatch**"
+msgstr ""
+
+#: ../../components/map.rst.inc:141
+msgid ":doc:`/components/stopwatch`"
+msgstr ""
+
+#: ../../components/map.rst.inc:143
+msgid ":doc:`/components/templating/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:145
+msgid ":doc:`/components/templating/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:147
+msgid ":doc:`/components/translation/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:149
+msgid ":doc:`/components/translation/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:150
+msgid ":doc:`/components/translation/usage`"
+msgstr ""
+
+#: ../../components/map.rst.inc:151
+msgid ":doc:`/components/translation/custom_formats`"
+msgstr ""
+
+#: ../../components/map.rst.inc:153
+msgid ":doc:`/components/var_dumper/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:155
+msgid ":doc:`/components/var_dumper/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:156
+msgid ":doc:`/components/var_dumper/advanced`"
+msgstr ""
+
+#: ../../components/map.rst.inc:158
+msgid ":doc:`/components/yaml/index`"
+msgstr ""
+
+#: ../../components/map.rst.inc:160
+msgid ":doc:`/components/yaml/introduction`"
+msgstr ""
+
+#: ../../components/map.rst.inc:161
+msgid ":doc:`/components/yaml/yaml_format`"
+msgstr ""

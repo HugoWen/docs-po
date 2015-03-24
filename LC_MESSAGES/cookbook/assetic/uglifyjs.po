@@ -1,0 +1,213 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/assetic/uglifyjs.rst:5
+msgid "How to Minify CSS/JS Files (Using UglifyJS and UglifyCSS)"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:7
+msgid ""
+"`UglifyJS`_ is a JavaScript parser/compressor/beautifier toolkit. It can be "
+"used to combine and minify JavaScript assets so that they require less HTTP "
+"requests and make your site load faster. `UglifyCSS`_ is a CSS "
+"compressor/beautifier that is very similar to UglifyJS."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:12
+msgid ""
+"In this cookbook, the installation, configuration and usage of UglifyJS is "
+"shown in detail. UglifyCSS works pretty much the same way and is only talked"
+" about briefly."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:17
+msgid "Install UglifyJS"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:19
+msgid ""
+"UglifyJS is available as a `Node.js`_ module. First, you need to `install "
+"Node.js`_ and then, decide the installation method: global or local."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:23
+msgid "Global Installation"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:25
+msgid ""
+"The global installation method makes all your projects use the very same "
+"UglifyJS version, which simplifies its maintenance. Open your command "
+"console and execute the following command (you may need to run it as a root "
+"user):"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:33
+msgid ""
+"Now you can execute the global ``uglifyjs`` command anywhere on your system:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:40
+msgid "Local Installation"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:42
+msgid ""
+"It's also possible to install UglifyJS inside your project only, which is "
+"useful when your project requires an specific UglifyJS version. To do this, "
+"install it without the ``-g`` option and specify the path where to put the "
+"module:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:51
+msgid ""
+"It is recommended that you install UglifyJS in your ``app/Resources`` folder"
+" and add the ``node_modules`` folder to version control. Alternatively, you "
+"can create an npm `package.json`_ file and specify your dependencies there."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:55
+msgid ""
+"Now you can execute the ``uglifyjs`` command that lives in the "
+"``node_modules`` directory:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:63
+msgid "Configure the ``uglifyjs2`` Filter"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:65
+msgid ""
+"Now we need to configure Symfony to use the ``uglifyjs2`` filter when "
+"processing your JavaScripts:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:103
+msgid ""
+"The path where UglifyJS is installed may vary depending on your system. To "
+"find out where npm stores the ``bin`` folder, execute the following command:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:110
+msgid ""
+"It should output a folder on your system, inside which you should find the "
+"UglifyJS executable."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:113
+msgid ""
+"If you installed UglifyJS locally, you can find the ``bin`` folder inside "
+"the ``node_modules`` folder. It's called ``.bin`` in this case."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:116
+msgid "You now have access to the ``uglifyjs2`` filter in your application."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:119
+msgid "Configure the ``node`` Binary"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:121
+msgid ""
+"Assetic tries to find the node binary automatically. If it cannot be found, "
+"you can configure its location using the ``node`` key:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:159
+msgid "Minify your Assets"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:161
+msgid ""
+"In order to apply UglifyJS on your assets, add the ``filter`` option in the "
+"asset tags of your templates to tell Assetic to use the ``uglifyjs2`` "
+"filter:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:183
+msgid ""
+"The above example assumes that you have a bundle called AppBundle and your "
+"JavaScript files are in the ``Resources/public/js`` directory under your "
+"bundle. However you can include your JavaScript files no matter where they "
+"are."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:187
+msgid ""
+"With the addition of the ``uglifyjs2`` filter to the asset tags above, you "
+"should now see minified JavaScripts coming over the wire much faster."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:191
+msgid "Disable Minification in Debug Mode"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:193
+msgid ""
+"Minified JavaScripts are very difficult to read, let alone debug. Because of"
+" this, Assetic lets you disable a certain filter when your application is in"
+" debug (e.g. ``app_dev.php``) mode. You can do this by prefixing the filter "
+"name in your template with a question mark: ``?``. This tells Assetic to "
+"only apply this filter when debug mode is off (e.g. ``app.php``):"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:216
+msgid ""
+"To try this out, switch to your ``prod`` environment (``app.php``). But "
+"before you do, don't forget to :ref:`clear your cache <book-page-creation-"
+"prod-cache-clear>` and :ref:`dump your assetic assets <cookbook-assetic-"
+"dump-prod>`."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:222
+msgid ""
+"Instead of adding the filters to the asset tags, you can also configure "
+"which filters to apply for each file in your application configuration file."
+" See :ref:`cookbook-assetic-apply-to` for more details."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:227
+msgid "Install, Configure and Use UglifyCSS"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:229
+msgid ""
+"The usage of UglifyCSS works the same way as UglifyJS. First, make sure the "
+"node package is installed:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:241
+msgid "Next, add the configuration for this filter:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:273
+msgid ""
+"To use the filter for your CSS files, add the filter to the Assetic "
+"``stylesheets`` helper:"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:294
+msgid ""
+"Just like with the ``uglifyjs2`` filter, if you prefix the filter name with "
+"``?`` (i.e. ``?uglifycss``), the minification will only happen when you're "
+"not in debug mode."
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:1
+msgid "Assetic"
+msgstr ""
+
+#: ../../cookbook/assetic/uglifyjs.rst:1
+msgid "UglifyJS"
+msgstr ""

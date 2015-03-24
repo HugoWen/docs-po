@@ -1,0 +1,65 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/scheme.rst:5
+msgid "How to Force Routes to always Use HTTPS or HTTP"
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:7
+msgid ""
+"Sometimes, you want to secure some routes and be sure that they are always "
+"accessed via the HTTPS protocol. The Routing component allows you to enforce"
+" the URI scheme via schemes:"
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:45
+msgid ""
+"The above configuration forces the ``secure`` route to always use HTTPS."
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:47
+msgid ""
+"When generating the ``secure`` URL, and if the current scheme is HTTP, "
+"Symfony will automatically generate an absolute URL with HTTPS as the "
+"scheme:"
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:60
+msgid ""
+"The requirement is also enforced for incoming requests. If you try to access"
+" the ``/secure`` path with HTTP, you will automatically be redirected to the"
+" same URL, but with the HTTPS scheme."
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:64
+msgid ""
+"The above example uses ``https`` for the scheme, but you can also force a "
+"URL to always use ``http``."
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:69
+msgid ""
+"The Security component provides another way to enforce HTTP or HTTPS via the"
+" ``requires_channel`` setting. This alternative method is better suited to "
+"secure an \"area\" of your website (all URLs under ``/admin``) or when you "
+"want to secure URLs defined in a third party bundle (see "
+":doc:`/cookbook/security/force_https` for more details)."
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/scheme.rst:1
+msgid "Scheme requirement"
+msgstr ""

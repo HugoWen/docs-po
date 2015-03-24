@@ -1,0 +1,373 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/access_control.rst:2
+msgid "How Does the Security access_control Work?"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:4
+msgid ""
+"For each incoming request, Symfony checks each ``access_control`` entry to "
+"find *one* that matches the current request. As soon as it finds a matching "
+"``access_control`` entry, it stops - only the **first** matching "
+"``access_control`` is used to enforce access."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:9
+msgid ""
+"Each ``access_control`` has several options that configure two different "
+"things:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:12
+msgid ""
+":ref:`should the incoming request match this access control entry <security-"
+"book-access-control-matching-options>`"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:13
+msgid ""
+":ref:`once it matches, should some sort of access restriction be enforced "
+"<security-book-access-control-enforcement-options>`:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:18
+msgid "1. Matching Options"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:20
+msgid ""
+"Symfony creates an instance of "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\RequestMatcher` for each "
+"``access_control`` entry, which determines whether or not a given access "
+"control should be used on this request. The following ``access_control`` "
+"options are used for matching:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:25
+msgid "``path``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:26
+msgid "``ip`` or ``ips``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:27
+msgid "``host``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:28
+msgid "``methods``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:30
+msgid "Take the following ``access_control`` entries as an example:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:94
+msgid ""
+"For each incoming request, Symfony will decide which ``access_control`` to "
+"use based on the URI, the client's IP address, the incoming host name, and "
+"the request method. Remember, the first rule that matches is used, and if "
+"``ip``, ``host`` or ``method`` are not specified for an entry, that "
+"``access_control`` will match any ``ip``, ``host`` or ``method``:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "URI"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "IP"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "HOST"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "METHOD"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "``access_control``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:101
+msgid "Why?"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+#: ../../cookbook/security/access_control.rst:105
+#: ../../cookbook/security/access_control.rst:109
+#: ../../cookbook/security/access_control.rst:112
+#: ../../cookbook/security/access_control.rst:116
+#: ../../cookbook/security/access_control.rst:119
+msgid "``/admin/user``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+#: ../../cookbook/security/access_control.rst:105
+#: ../../cookbook/security/access_control.rst:123
+msgid "127.0.0.1"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+#: ../../cookbook/security/access_control.rst:116
+#: ../../cookbook/security/access_control.rst:119
+msgid "example.com"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+#: ../../cookbook/security/access_control.rst:105
+#: ../../cookbook/security/access_control.rst:109
+#: ../../cookbook/security/access_control.rst:119
+msgid "GET"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+#: ../../cookbook/security/access_control.rst:105
+msgid "rule #1 (``ROLE_USER_IP``)"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:103
+msgid "The URI matches ``path`` and the IP matches ``ip``."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:105
+#: ../../cookbook/security/access_control.rst:109
+#: ../../cookbook/security/access_control.rst:112
+#: ../../cookbook/security/access_control.rst:123
+msgid "symfony.com"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:105
+msgid ""
+"The ``path`` and ``ip`` still match. This would also match the "
+"``ROLE_USER_HOST`` entry, but *only* the **first** ``access_control`` match "
+"is used."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:109
+#: ../../cookbook/security/access_control.rst:112
+#: ../../cookbook/security/access_control.rst:116
+#: ../../cookbook/security/access_control.rst:119
+msgid "168.0.0.1"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:109
+#: ../../cookbook/security/access_control.rst:112
+msgid "rule #2 (``ROLE_USER_HOST``)"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:109
+msgid ""
+"The ``ip`` doesn't match the first rule, so the second rule (which matches) "
+"is used."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:112
+#: ../../cookbook/security/access_control.rst:116
+#: ../../cookbook/security/access_control.rst:123
+msgid "POST"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:112
+msgid ""
+"The second rule still matches. This would also match the third rule "
+"(``ROLE_USER_METHOD``), but only the **first** matched ``access_control`` is"
+" used."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:116
+msgid "rule #3 (``ROLE_USER_METHOD``)"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:116
+msgid ""
+"The ``ip`` and ``host`` don't match the first two entries, but the third - "
+"``ROLE_USER_METHOD`` - matches and is used."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:119
+msgid "rule #4 (``ROLE_USER``)"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:119
+msgid ""
+"The ``ip``, ``host`` and ``method`` prevent the first three entries from "
+"matching. But since the URI matches the ``path`` pattern of the "
+"``ROLE_USER`` entry, it is used."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:123
+msgid "``/foo``"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:123
+msgid "matches no entries"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:123
+msgid ""
+"This doesn't match any ``access_control`` rules, since its URI doesn't match"
+" any of the ``path`` values."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:130
+msgid "2. Access Enforcement"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:132
+msgid ""
+"Once Symfony has decided which ``access_control`` entry matches (if any), it"
+" then *enforces* access restrictions based on the ``roles``, ``allow_if`` "
+"and ``requires_channel`` options:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:136
+msgid ""
+"``role`` If the user does not have the given role(s), then access is denied "
+"(internally, an "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AccessDeniedException`"
+" is thrown);"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:140
+msgid "``allow_if`` If the expression returns false, then access is denied;"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:142
+msgid ""
+"``requires_channel`` If the incoming request's channel (e.g. ``http``) does "
+"not match this value (e.g. ``https``), the user will be redirected (e.g. "
+"redirected from ``http`` to ``https``, or vice versa)."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:148
+msgid ""
+"If access is denied, the system will try to authenticate the user if not "
+"already (e.g. redirect the user to the login page). If the user is already "
+"logged in, the 403 \"access denied\" error page will be shown. See "
+":doc:`/cookbook/controller/error_pages` for more information."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:156
+msgid "Matching access_control By IP"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:158
+msgid ""
+"Certain situations may arise when you need to have an ``access_control`` "
+"entry that *only* matches requests coming from some IP address or range. For"
+" example, this *could* be used to deny access to a URL pattern to all "
+"requests *except* those from a trusted, internal server."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:165
+msgid ""
+"As you'll read in the explanation below the example, the ``ips`` option does"
+" not restrict to a specific IP address. Instead, using the ``ips`` key means"
+" that the ``access_control`` entry will only match this IP address, and "
+"users accessing it from a different IP address will continue down the "
+"``access_control`` list."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:171
+msgid ""
+"Here is an example of how you configure some example ``/internal*`` URL "
+"pattern so that it is only accessible by requests from the local server "
+"itself:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:224
+msgid ""
+"Here is how it works when the path is ``/internal/something`` coming from "
+"the external IP address ``10.0.0.1``:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:227
+msgid ""
+"The first access control rule is ignored as the ``path`` matches but the IP "
+"address does not match either of the IPs listed;"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:230
+msgid ""
+"The second access control rule is enabled (the only restriction being the "
+"``path``) and so it matches. If you make sure that no users ever have "
+"``ROLE_NO_ACCESS``, then access is denied (``ROLE_NO_ACCESS`` can be "
+"anything that does not match an existing role, it just serves as a trick to "
+"always deny access)."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:236
+msgid ""
+"But if the same request comes from ``127.0.0.1`` or ``::1`` (the IPv6 "
+"loopback address):"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:239
+msgid ""
+"Now, the first access control rule is enabled as both the ``path`` and the "
+"``ip`` match: access is allowed as the user always has the "
+"``IS_AUTHENTICATED_ANONYMOUSLY`` role."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:243
+msgid "The second access rule is not examined as the first rule matched."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:248
+msgid "Securing by an Expression"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:250
+msgid ""
+"Once an ``access_control`` entry is matched, you can deny access via the "
+"``roles`` key or use more complex logic with an expression in the "
+"``allow_if`` key:"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:282
+msgid ""
+"In this case, when the user tries to access any URL starting with "
+"``/_internal/secure``, they will only be granted access if the IP address is"
+" ``127.0.0.1`` or if the user has the ``ROLE_ADMIN`` role."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:286
+msgid ""
+"Inside the expression, you have access to a number of different variables "
+"and functions including ``request``, which is the Symfony "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` object (see :ref"
+":`component-http-foundation-request`)."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:291
+msgid ""
+"For a list of the other functions and variables, see :ref:`functions and "
+"variables <book-security-expression-variables>`."
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:297
+msgid "Forcing a Channel (http, https)"
+msgstr ""
+
+#: ../../cookbook/security/access_control.rst:299
+msgid ""
+"You can also require a user to access a URL via SSL; just use the "
+"``requires_channel`` argument in any ``access_control`` entries. If this "
+"``access_control`` is matched and the request is using the ``http`` channel,"
+" the user will be redirected to ``https``:"
+msgstr ""

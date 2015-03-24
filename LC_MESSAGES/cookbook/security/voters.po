@@ -1,0 +1,194 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/voters.rst:5
+msgid "How to Implement your own Voter to Blacklist IP Addresses"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:7
+msgid ""
+"The Symfony Security component provides several layers to authorize users. "
+"One of the layers is called a \"voter\". A voter is a dedicated class that "
+"checks if the user has the rights to connect to the application or access a "
+"specific resource/URL. For instance, Symfony provides a layer that checks if"
+" the user is fully authorized or if it has some expected roles."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:13
+msgid ""
+"It is sometimes useful to create a custom voter to handle a specific case "
+"not handled by the framework. In this section, you'll learn how to create a "
+"voter that will allow you to blacklist users by their IP."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:18
+msgid "The Voter Interface"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:20
+msgid ""
+"A custom voter must implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface`,"
+" which requires the following three methods:"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:10
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsAttribute`"
+" method is used to check if the voter supports the given user attribute "
+"(i.e: a role like ``ROLE_USER``, an ACL ``EDIT``, etc.)."
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:14
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsClass`"
+" method is used to check if the voter supports the class of the object whose"
+" access is being checked."
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:18
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::vote`"
+" method must implement the business logic that verifies whether or not the "
+"user has access. This method must return one of the following values:"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:22
+msgid ""
+"``VoterInterface::ACCESS_GRANTED``: The authorization will be granted by "
+"this voter;"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:23
+msgid ""
+"``VoterInterface::ACCESS_ABSTAIN``: The voter cannot decide if authorization"
+" should be granted;"
+msgstr ""
+
+#: ../../cookbook/security/voter_interface.rst.inc:24
+msgid ""
+"``VoterInterface::ACCESS_DENIED``: The authorization will be denied by this "
+"voter."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:26
+msgid ""
+"In this example, you'll check if the user's IP address matches against a "
+"list of blacklisted addresses and \"something\" will be the application. If "
+"the user's IP is blacklisted, you'll return "
+"``VoterInterface::ACCESS_DENIED``, otherwise you'll return "
+"``VoterInterface::ACCESS_ABSTAIN`` as this voter's purpose is only to deny "
+"access, not to grant access."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:33
+msgid "Creating a custom Voter"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:35
+msgid ""
+"To blacklist a user based on its IP, you can use the ``request_stack`` "
+"service and compare the IP address against a set of blacklisted IP "
+"addresses:"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:81
+msgid ""
+"That's it! The voter is done. The next step is to inject the voter into the "
+"security layer. This can be done easily through the service container."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:86
+msgid ""
+"Your implementation of the methods "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsAttribute`"
+" and "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface::supportsClass`"
+" are not being called internally by the framework. Once you have registered "
+"your voter the ``vote()`` method will always be called, regardless of "
+"whether or not these two methods return true. Therefore you need to call "
+"those methods in your implementation of the ``vote()`` method and return "
+"``ACCESS_ABSTAIN`` if your voter does not support the class or attribute."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:96
+msgid "Declaring the Voter as a Service"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:98
+msgid ""
+"To inject the voter into the security layer, you must declare it as a "
+"service, and tag it as a ``security.voter``:"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:147
+msgid ""
+"Be sure to import this configuration file from your main application "
+"configuration file (e.g. ``app/config/config.yml``). For more information "
+"see :ref:`service-container-imports-directive`. To read more about defining "
+"services in general, see the :doc:`/book/service_container` chapter."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:155
+msgid "Changing the Access Decision Strategy"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:157
+msgid ""
+"In order for the new voter to take effect, you need to change the default "
+"access decision strategy, which, by default, grants access if *any* voter "
+"grants access."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:161
+msgid ""
+"In this case, choose the ``unanimous`` strategy. Unlike the ``affirmative`` "
+"strategy (the default), with the ``unanimous`` strategy, if only one voter "
+"denies access (e.g. the ``ClientIpVoter``), access is not granted to the end"
+" user."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:166
+msgid ""
+"To do that, override the default ``access_decision_manager`` section of your"
+" application configuration file with the following code."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:197
+msgid ""
+"That's it! Now, when deciding whether or not a user should have access, the "
+"new voter will deny access to any user in the list of blacklisted IPs."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:200
+msgid ""
+"Note that the voters are only called, if any access is actually checked. So "
+"you need at least something like"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:232
+msgid ""
+"For a more advanced usage see :ref:`components-security-access-decision-"
+"manager`."
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/voters.rst:1
+msgid "Voters"
+msgstr ""

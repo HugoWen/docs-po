@@ -1,0 +1,122 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../best_practices/i18n.rst:2
+msgid "Internationalization"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:4
+msgid ""
+"Internationalization and localization adapt the applications and their "
+"contents to the specific region or language of the users. In Symfony this is"
+" an opt-in feature that needs to be enabled before using it. To do this, "
+"uncomment the following ``translator`` configuration option and set your "
+"application locale:"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:22
+msgid "Translation Source File Format"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:24
+msgid ""
+"The Symfony Translation component supports lots of different translation "
+"formats: PHP, Qt, ``.po``, ``.mo``, JSON, CSV, INI, etc."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:0 ../../best_practices/i18n.rst:0
+#: ../../best_practices/i18n.rst:0
+msgid "Best Practice"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:29
+msgid "Use the XLIFF format for your translation files."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:31
+msgid ""
+"Of all the available translation formats, only XLIFF and gettext have broad "
+"support in the tools used by professional translators. And since it's based "
+"on XML, you can validate XLIFF file contents as you write them."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:35
+msgid ""
+"Symfony 2.6 added support for notes inside XLIFF files, making them more "
+"user-friendly for translators. At the end, good translations are all about "
+"context, and these XLIFF notes allow you to define that context."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:41
+msgid ""
+"The Apache-licensed `JMSTranslationBundle`_ offers you a web interface for "
+"viewing and editing these translation files. It also has advanced extractors"
+" that can read your project and automatically update the XLIFF files."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:46
+msgid "Translation Source File Location"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:50
+msgid ""
+"Store the translation files in the ``app/Resources/translations/`` "
+"directory."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:52
+msgid ""
+"Traditionally, Symfony developers have created these files in the "
+"``Resources/translations/`` directory of each bundle."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:55
+msgid ""
+"But since the ``app/Resources/`` directory is considered the global location"
+" for the application's resources, storing translations in "
+"``app/Resources/translations/`` centralizes them *and* gives them priority "
+"over any other translation file. This lets you override translations defined"
+" in third-party bundles."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:61
+msgid "Translation Keys"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:65
+msgid "Always use keys for translations instead of content strings."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:67
+msgid ""
+"Using keys simplifies the management of the translation files because you "
+"can change the original contents without having to update all of the "
+"translation files."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:71
+msgid ""
+"Keys should always describe their *purpose* and *not* their location. For "
+"example, if a form has a field with the label \"Username\", then a nice key "
+"would be ``label.username``, *not* ``edit_form.label.username``."
+msgstr ""
+
+#: ../../best_practices/i18n.rst:76
+msgid "Example Translation File"
+msgstr ""
+
+#: ../../best_practices/i18n.rst:78
+msgid ""
+"Applying all the previous best practices, the sample translation file for "
+"English in the application would be:"
+msgstr ""

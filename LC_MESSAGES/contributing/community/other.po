@@ -1,0 +1,38 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/community/other.rst:2
+msgid "Other Resources"
+msgstr ""
+
+#: ../../contributing/community/other.rst:4
+msgid ""
+"In order to follow what is happening in the community you might find helpful"
+" these additional resources:"
+msgstr ""
+
+#: ../../contributing/community/other.rst:7
+msgid "List of open `pull requests`_"
+msgstr ""
+
+#: ../../contributing/community/other.rst:8
+msgid "List of recent `commits`_"
+msgstr ""
+
+#: ../../contributing/community/other.rst:9
+msgid "List of open `bugs and enhancements`_"
+msgstr ""
+
+#: ../../contributing/community/other.rst:10
+msgid "List of open source `bundles`_"
+msgstr ""

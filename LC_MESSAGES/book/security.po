@@ -1,0 +1,912 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/security.rst:5 ../../book/security.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../book/security.rst:7
+msgid ""
+"Symfony's security system is incredibly powerful, but it can also be "
+"confusing to set up. In this chapter, you'll learn how to set up your "
+"application's security step-by-step, from configuring your firewall and how "
+"you load users to denying access and fetching the User object. Depending on "
+"what you need, sometimes the initial setup can be tough. But once it's done,"
+" Symfony's security system is both flexible and (hopefully) fun to work "
+"with."
+msgstr ""
+
+#: ../../book/security.rst:14
+msgid ""
+"Since there's a lot to talk about, this chapter is organized into a few big "
+"sections:"
+msgstr ""
+
+#: ../../book/security.rst:17
+msgid "Initial ``security.yml`` setup (*authentication*);"
+msgstr ""
+
+#: ../../book/security.rst:19
+msgid "Denying access to your app (*authorization*);"
+msgstr ""
+
+#: ../../book/security.rst:21
+msgid "Fetching the current User object."
+msgstr ""
+
+#: ../../book/security.rst:23
+msgid ""
+"These are followed by a number of small (but still captivating) sections, "
+"like :ref:`logging out <book-security-logging-out>` and :ref:`encoding user "
+"passwords <security-encoding-password>`."
+msgstr ""
+
+#: ../../book/security.rst:29
+msgid "1) Initial security.yml Setup (Authentication)"
+msgstr ""
+
+#: ../../book/security.rst:31
+msgid ""
+"The security system is configured in ``app/config/security.yml``. The "
+"default configuration looks like this:"
+msgstr ""
+
+#: ../../book/security.rst:97
+msgid ""
+"The ``firewalls`` key is the *heart* of your security configuration. The "
+"``dev`` firewall isn't important, it just makes sure that Symfony's "
+"development tools - which live under URLs like ``/_profiler`` and ``/_wdt`` "
+"aren't blocked by your security."
+msgstr ""
+
+#: ../../book/security.rst:104
+msgid ""
+"You can also match a request against other details of the request (e.g. "
+"host). For more information and examples read "
+":doc:`/cookbook/security/firewall_restriction`."
+msgstr ""
+
+#: ../../book/security.rst:107
+msgid ""
+"All other URLs will be handled by the ``default`` firewall (no ``pattern`` "
+"key means it matches *all* URLs). You can think of the firewall like your "
+"security system, and so it usually makes sense to have just one main "
+"firewall. But this does *not* mean that every URL requires authentication - "
+"the ``anonymous`` key takes care of this. In fact, if you go to the homepage"
+" right now, you'll have access and you'll see that you're \"authenticated\" "
+"as ``anon.``. Don't be fooled by the \"Yes\" next to Authenticated, you're "
+"just an anonymous user:"
+msgstr ""
+
+#: ../../book/security.rst:118
+msgid "You'll learn later how to deny access to certain URLs or controllers."
+msgstr ""
+
+#: ../../book/security.rst:122
+msgid ""
+"Security is *highly* configurable and there's a :doc:`Security Configuration"
+" Reference </reference/configuration/security>` that shows all of the "
+"options with some extra explanation."
+msgstr ""
+
+#: ../../book/security.rst:127
+msgid "A) Configuring how your Users will Authenticate"
+msgstr ""
+
+#: ../../book/security.rst:129
+msgid ""
+"The main job of a firewall is to configure *how* your users will "
+"authenticate. Will they use a login form? Http Basic? An API token? All of "
+"the above?"
+msgstr ""
+
+#: ../../book/security.rst:132
+msgid ""
+"Let's start with Http Basic (the old-school pop-up) and work up from there. "
+"To activate this, add the ``http_basic`` key under your firewall:"
+msgstr ""
+
+#: ../../book/security.rst:183
+msgid ""
+"Simple! To try this, you need to require the user to be logged in to see a "
+"page. To make things interesting, create a new page at ``/admin``. For "
+"example, if you use annotations, create something like this::"
+msgstr ""
+
+#: ../../book/security.rst:204
+msgid ""
+"Next, add an ``access_control`` entry to ``security.yml`` that requires the "
+"user to be logged in to access this URL:"
+msgstr ""
+
+#: ../../book/security.rst:264
+msgid ""
+"You'll learn more about this ``ROLE_ADMIN`` thing and denying access later "
+"in the :ref:`security-authorization` section."
+msgstr ""
+
+#: ../../book/security.rst:267
+msgid "Great! Now, if you go to ``/admin``, you'll see the HTTP Basic popup:"
+msgstr ""
+
+#: ../../book/security.rst:272
+msgid "But who can you login as? Where do users come from?"
+msgstr ""
+
+#: ../../book/security.rst:278
+msgid ""
+"Want to use a traditional login form? Great! See "
+":doc:`/cookbook/security/form_login_setup`. What other methods are "
+"supported? See the :doc:`Configuration Reference "
+"</reference/configuration/security>` or :doc:`build your own "
+"</cookbook/security/custom_authentication_provider>`."
+msgstr ""
+
+#: ../../book/security.rst:286
+msgid "B) Configuring how Users are Loaded"
+msgstr ""
+
+#: ../../book/security.rst:288
+msgid ""
+"When you type in your username, Symfony needs to load that user's "
+"information from somewhere. This is called a \"user provider\", and you're "
+"in charge of configuring it. Symfony has a built-in way to :doc:`load users "
+"from the database </cookbook/security/entity_provider>`, or you can "
+":doc:`create your own user provider </cookbook/security/custom_provider>`."
+msgstr ""
+
+#: ../../book/security.rst:294
+msgid ""
+"The easiest (but most limited) way, is to configure Symfony to load "
+"hardcoded users directly from the ``security.yml`` file itself. This is "
+"called an \"in memory\" provider, but it's better to think of it as an \"in "
+"configuration\" provider:"
+msgstr ""
+
+#: ../../book/security.rst:360
+msgid ""
+"Like with ``firewalls``, you can have multiple ``providers``, but you'll "
+"probably only need one. If you *do* have multiple, you can configure which "
+"*one* provider to use for your firewall under its ``provider`` key (e.g. "
+"``provider: in_memory``)."
+msgstr ""
+
+#: ../../book/security.rst:365
+msgid ""
+"Try to login using username ``admin`` and password ``kitten``. You should "
+"see an error!"
+msgstr ""
+
+#: ../../book/security.rst:368
+msgid ""
+"No encoder has been configured for account "
+"\"Symfony\\Component\\Security\\Core\\User\\User\""
+msgstr ""
+
+#: ../../book/security.rst:370
+msgid "To fix this, add an ``encoders`` key:"
+msgstr ""
+
+#: ../../book/security.rst:415
+msgid ""
+"User providers load user information and put it into a ``User`` object. If "
+"you :doc:`load users from the database </cookbook/security/entity_provider>`"
+" or :doc:`some other source </cookbook/security/custom_provider>`, you'll "
+"use your own custom User class. But when you use the \"in memory\" provider,"
+" it gives you a ``Symfony\\Component\\Security\\Core\\User\\User`` object."
+msgstr ""
+
+#: ../../book/security.rst:421
+msgid ""
+"Whatever your User class is, you need to tell Symfony what algorithm was "
+"used to encode the passwords. In this case, the passwords are just "
+"plaintext, but in a second, you'll change this to use ``bcrypt``."
+msgstr ""
+
+#: ../../book/security.rst:425
+msgid ""
+"If you refresh now, you'll be logged in! The web debug toolbar even tells "
+"you who you are and what roles you have:"
+msgstr ""
+
+#: ../../book/security.rst:431
+msgid ""
+"Because this URL requires ``ROLE_ADMIN``, if you had logged in as ``ryan``, "
+"this would deny you access. More on that later (:ref:`security-"
+"authorization-access-control`)."
+msgstr ""
+
+#: ../../book/security.rst:437
+msgid "Loading Users from the Database"
+msgstr ""
+
+#: ../../book/security.rst:439
+msgid ""
+"If you'd like to load your users via the Doctrine ORM, that's easy! See "
+":doc:`/cookbook/security/entity_provider` for all the details."
+msgstr ""
+
+#: ../../book/security.rst:447
+msgid "C) Encoding the User's Password"
+msgstr ""
+
+#: ../../book/security.rst:449
+msgid ""
+"Whether your users are stored in ``security.yml``, in a database or "
+"somewhere else, you'll want to encode their passwords. The best algorithm to"
+" use is ``bcrypt``:"
+msgstr ""
+
+#: ../../cookbook/security/_ircmaxwell_password-compat.rst.inc:3
+msgid ""
+"If you're using PHP 5.4 or lower, you'll need to install the ``ircmaxell"
+"/password-compat`` library via Composer in order to be able to use the "
+"``bcrypt`` encoder:"
+msgstr ""
+
+#: ../../book/security.rst:504
+msgid ""
+"Of course, your user's passwords now need to be encoded with this exact "
+"algorithm. For hardcoded users, you can use an `online tool`_, which will "
+"give you something like this:"
+msgstr ""
+
+#: ../../book/security.rst:571
+msgid ""
+"Everything will now work exactly like before. But if you have dynamic users "
+"(e.g. from a database), how can you programmatically encode the password "
+"before inserting them into the database? Don't worry, see :ref:`security-"
+"encoding-password` for details."
+msgstr ""
+
+#: ../../book/security.rst:578
+msgid ""
+"Supported algorithms for this method depend on your PHP version, but include"
+" the algorithms returned by the PHP function :phpfunction:`hash_algos` as "
+"well as a few others (e.g. bcrypt). See the ``encoders`` key in the "
+":doc:`Security Reference Section </reference/configuration/security>` for "
+"examples."
+msgstr ""
+
+#: ../../book/security.rst:584
+msgid ""
+"It's also possible to use different hashing algorithms on a user-by-user "
+"basis. See :doc:`/cookbook/security/named_encoders` for more details."
+msgstr ""
+
+#: ../../book/security.rst:588
+msgid "D) Configuration Done!"
+msgstr ""
+
+#: ../../book/security.rst:590
+msgid ""
+"Congratulations! You now have a working authentication system that uses Http"
+" Basic and loads users right from the ``security.yml`` file."
+msgstr ""
+
+#: ../../book/security.rst:593
+msgid "Your next steps depend on your setup:"
+msgstr ""
+
+#: ../../book/security.rst:595
+msgid ""
+"Configure a different way for your users to login, like a :ref:`login form "
+"<book-security-form-login>` or :doc:`something completely custom "
+"</cookbook/security/custom_authentication_provider>`;"
+msgstr ""
+
+#: ../../book/security.rst:598
+msgid ""
+"Load users from a different source, like the :doc:`database "
+"</cookbook/security/entity_provider>` or :doc:`some other source "
+"</cookbook/security/custom_provider>`;"
+msgstr ""
+
+#: ../../book/security.rst:601
+msgid ""
+"Learn how to deny access, load the User object and deal with roles in the "
+":ref:`Authorization <security-authorization>` section."
+msgstr ""
+
+#: ../../book/security.rst:607
+msgid "2) Denying Access, Roles and other Authorization"
+msgstr ""
+
+#: ../../book/security.rst:609
+msgid ""
+"Users can now login to your app using ``http_basic`` or some other method. "
+"Great! Now, you need to learn how to deny access and work with the User "
+"object. This is called **authorization**, and its job is to decide if a user"
+" can access some resource (a URL, a model object, a method call, ...)."
+msgstr ""
+
+#: ../../book/security.rst:614
+msgid "The process of authorization has two different sides:"
+msgstr ""
+
+#: ../../book/security.rst:616
+msgid ""
+"The user receives a specific set of roles when logging in (e.g. "
+"``ROLE_ADMIN``)."
+msgstr ""
+
+#: ../../book/security.rst:617
+msgid ""
+"You add code so that a resource (e.g. URL, controller) requires a specific "
+"\"attribute\" (most commonly a role like ``ROLE_ADMIN``) in order to be "
+"accessed."
+msgstr ""
+
+#: ../../book/security.rst:623
+msgid ""
+"In addition to roles (e.g. ``ROLE_ADMIN``), you can protect a resource using"
+" other attributes/strings (e.g. ``EDIT``) and use voters or Symfony's ACL "
+"system to give these meaning. This might come in handy if you need to check "
+"if user A can \"EDIT\" some object B (e.g. a Product with id 5). See :ref"
+":`security-secure-objects`."
+msgstr ""
+
+#: ../../book/security.rst:632
+msgid "Roles"
+msgstr ""
+
+#: ../../book/security.rst:634
+msgid ""
+"When a user logs in, they receive a set of roles (e.g. ``ROLE_ADMIN``). In "
+"the example above, these are hardcoded into ``security.yml``. If you're "
+"loading users from the database, these are probably stored on a column in "
+"your table."
+msgstr ""
+
+#: ../../book/security.rst:641
+msgid ""
+"All roles you assign to a user **must** begin with the ``ROLE_`` prefix. "
+"Otherwise, they won't be handled by Symfony's security system in the normal "
+"way (i.e. unless you're doing something advanced, assigning a role like "
+"``FOO`` to a user and then checking for ``FOO`` as described :ref:`below "
+"<security-role-authorization>` will not work)."
+msgstr ""
+
+#: ../../book/security.rst:647
+msgid ""
+"Roles are simple, and are basically strings that you invent and use as "
+"needed. For example, if you need to start limiting access to the blog admin "
+"section of your website, you could protect that section using a "
+"``ROLE_BLOG_ADMIN`` role. This role doesn't need to be defined anywhere - "
+"you can just start using it."
+msgstr ""
+
+#: ../../book/security.rst:655
+msgid ""
+"Make sure every user has at least *one* role, or your user will look like "
+"they're not authenticated. A common convention is to give *every* user "
+"``ROLE_USER``."
+msgstr ""
+
+#: ../../book/security.rst:659
+msgid ""
+"You can also specify a :ref:`role hierarchy <security-role-hierarchy>` where"
+" some roles automatically mean that you also have other roles."
+msgstr ""
+
+#: ../../book/security.rst:665
+msgid "Add Code to Deny Access"
+msgstr ""
+
+#: ../../book/security.rst:667
+msgid "There are **two** ways to deny access to something:"
+msgstr ""
+
+#: ../../book/security.rst:669
+msgid ""
+":ref:`access_control in security.yml <security-authorization-access-"
+"control>` allows you to protect URL patterns (e.g. ``/admin/*``). This is "
+"easy, but less flexible;"
+msgstr ""
+
+#: ../../book/security.rst:673
+msgid ""
+":ref:`in your code via the security.authorization_checker service <book-"
+"security-securing-controller>`."
+msgstr ""
+
+#: ../../book/security.rst:678
+msgid "Securing URL patterns (access_control)"
+msgstr ""
+
+#: ../../book/security.rst:680
+msgid ""
+"The most basic way to secure part of your application is to secure an entire"
+" URL pattern. You saw this earlier, where anything matching the regular "
+"expression ``^/admin`` requires the ``ROLE_ADMIN`` role:"
+msgstr ""
+
+#: ../../book/security.rst:739
+msgid ""
+"This is great for securing entire sections, but you'll also probably want to"
+" :ref:`secure your individual controllers <book-security-securing-"
+"controller>` as well."
+msgstr ""
+
+#: ../../book/security.rst:743
+msgid ""
+"You can define as many URL patterns as you need - each is a regular "
+"expression. **BUT**, only **one** will be matched. Symfony will look at each"
+" starting at the top, and stop as soon as it finds one ``access_control`` "
+"entry that matches the URL."
+msgstr ""
+
+#: ../../book/security.rst:789
+msgid ""
+"Prepending the path with ``^`` means that only URLs *beginning* with the "
+"pattern are matched. For example, a path of simply ``/admin`` (without the "
+"``^``) would match ``/admin/foo`` but would also match URLs like "
+"``/foo/admin``."
+msgstr ""
+
+#: ../../book/security.rst:0
+msgid "Understanding how ``access_control`` Works"
+msgstr ""
+
+#: ../../book/security.rst:797
+msgid ""
+"The ``access_control`` section is very powerful, but it can also be "
+"dangerous (because it involves security) if you don't understand *how* it "
+"works. In addition to the URL, the ``access_control`` can match on IP "
+"address, host name and HTTP methods. It can also be used to redirect a user "
+"to the ``https`` version of a URL pattern."
+msgstr ""
+
+#: ../../book/security.rst:803
+msgid ""
+"To learn about all of this, see :doc:`/cookbook/security/access_control`."
+msgstr ""
+
+#: ../../book/security.rst:808
+msgid "Securing Controllers and other Code"
+msgstr ""
+
+#: ../../book/security.rst:810
+msgid "You can easily deny access from inside a controller::"
+msgstr ""
+
+#: ../../book/security.rst:827
+msgid ""
+"The ``denyAccessUnlessGranted()`` method was introduced in Symfony 2.6. "
+"Previously (and still now), you could check access directly and throw the "
+"``AccessDeniedException`` as shown in the example above)."
+msgstr ""
+
+#: ../../book/security.rst:832
+msgid ""
+"The ``security.authorization_checker`` service was introduced in Symfony "
+"2.6. Prior to Symfony 2.6, you had to use the ``isGranted()`` method of the "
+"``security.context`` service."
+msgstr ""
+
+#: ../../book/security.rst:836
+msgid ""
+"In both cases, a special "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AccessDeniedException`"
+" is thrown, which ultimately triggers a 403 HTTP response inside Symfony."
+msgstr ""
+
+#: ../../book/security.rst:840
+msgid ""
+"That's it! If the user isn't logged in yet, they will be asked to login "
+"(e.g. redirected to the login page). If they *are* logged in, they'll be "
+"shown the 403 access denied page (which you can :ref:`customize <cookbook-"
+"error-pages-by-status-code>`)."
+msgstr ""
+
+#: ../../book/security.rst:846
+msgid ""
+"Thanks to the SensioFrameworkExtraBundle, you can also secure your "
+"controller using annotations::"
+msgstr ""
+
+#: ../../book/security.rst:860
+msgid "For more information, see the `FrameworkExtraBundle documentation`_."
+msgstr ""
+
+#: ../../book/security.rst:865
+msgid "Access Control in Templates"
+msgstr ""
+
+#: ../../book/security.rst:867
+msgid ""
+"If you want to check if the current user has a role inside a template, use "
+"the built-in helper function:"
+msgstr ""
+
+#: ../../book/security.rst:884
+msgid ""
+"If you use this function and are *not* behind a firewall, an exception will "
+"be thrown. Again, it's almost always a good idea to have a main firewall "
+"that covers all URLs (as has been shown in this chapter)."
+msgstr ""
+
+#: ../../book/security.rst:891
+msgid ""
+"Be careful with this in your layout or on your error pages! Because of some "
+"internal Symfony details, to avoid broken error pages in the ``prod`` "
+"environment, wrap calls in these templates with a check for ``app.user``:"
+msgstr ""
+
+#: ../../book/security.rst:900
+msgid "Securing other Services"
+msgstr ""
+
+#: ../../book/security.rst:902
+msgid ""
+"In fact, anything in Symfony can be protected by doing something similar to "
+"this. For example, suppose you have a service (i.e. a PHP class) whose job "
+"is to send emails. You can restrict use of this class - no matter where it's"
+" being used from - to only certain users."
+msgstr ""
+
+#: ../../book/security.rst:907
+msgid "For more information see :doc:`/cookbook/security/securing_services`."
+msgstr ""
+
+#: ../../book/security.rst:910
+msgid "Checking to see if a User is Logged In (IS_AUTHENTICATED_FULLY)"
+msgstr ""
+
+#: ../../book/security.rst:912
+msgid ""
+"So far, you've checked access based on roles - those strings that start with"
+" ``ROLE_`` and are assigned to users. But if you *only* want to check if a "
+"user is logged in (you don't care about roles), then you can see "
+"``IS_AUTHENTICATED_FULLY``::"
+msgstr ""
+
+#: ../../book/security.rst:929
+msgid "You can of course also use this in ``access_control``."
+msgstr ""
+
+#: ../../book/security.rst:931
+msgid ""
+"``IS_AUTHENTICATED_FULLY`` isn't a role, but it kind of acts like one, and "
+"every user that has successfully logged in will have this. In fact, there "
+"are three special attributes like this:"
+msgstr ""
+
+#: ../../book/security.rst:935
+msgid ""
+"``IS_AUTHENTICATED_REMEMBERED``: *All* logged in users have this, even if "
+"they are logged in because of a \"remember me cookie\". Even if you don't "
+"use the :doc:`remember me functionality </cookbook/security/remember_me>`, "
+"you can use this to check if the user is logged in."
+msgstr ""
+
+#: ../../book/security.rst:940
+msgid ""
+"``IS_AUTHENTICATED_FULLY``: This is similar to "
+"``IS_AUTHENTICATED_REMEMBERED``, but stronger. Users who are logged in only "
+"because of a \"remember me cookie\" will have "
+"``IS_AUTHENTICATED_REMEMBERED`` but will not have "
+"``IS_AUTHENTICATED_FULLY``."
+msgstr ""
+
+#: ../../book/security.rst:944
+msgid ""
+"``IS_AUTHENTICATED_ANONYMOUSLY``: *All* users (even anonymous ones) have "
+"this - this is useful when *whitelisting* URLs to guarantee access - some "
+"details are in :doc:`/cookbook/security/access_control`."
+msgstr ""
+
+#: ../../book/security.rst:950
+msgid "You can also use expressions inside your templates:"
+msgstr ""
+
+#: ../../book/security.rst:970
+msgid ""
+"For more details on expressions and security, see :ref:`book-security-"
+"expressions`."
+msgstr ""
+
+#: ../../book/security.rst:975
+msgid "Access Control Lists (ACLs): Securing individual Database Objects"
+msgstr ""
+
+#: ../../book/security.rst:977
+msgid ""
+"Imagine you are designing a blog where users can comment on your posts. You "
+"also want a user to be able to edit their own comments, but not those of "
+"other users. Also, as the admin user, you yourself want to be able to edit "
+"*all* comments."
+msgstr ""
+
+#: ../../book/security.rst:982
+msgid "To accomplish this you have 2 options:"
+msgstr ""
+
+#: ../../book/security.rst:984
+msgid ""
+":doc:`Voters </cookbook/security/voters_data_permission>` allow you to use "
+"business logic (e.g. the user can edit this post because they were the "
+"creator) to determine access. You'll probably want this option - it's "
+"flexible enough to solve the above situation."
+msgstr ""
+
+#: ../../book/security.rst:989
+msgid ""
+":doc:`ACLs </cookbook/security/acl>` allow you to create a database "
+"structure where you can assign *any* arbitrary user *any* access (e.g. EDIT,"
+" VIEW) to *any* object in your system. Use this if you need an admin user to"
+" be able to grant customized access across your system via some admin "
+"interface."
+msgstr ""
+
+#: ../../book/security.rst:994
+msgid ""
+"In both cases, you'll still deny access using methods similar to what was "
+"shown above."
+msgstr ""
+
+#: ../../book/security.rst:998
+msgid "Retrieving the User Object"
+msgstr ""
+
+#: ../../book/security.rst:1000
+msgid ""
+"The ``security.token_storage`` service was introduced in Symfony 2.6. Prior "
+"to Symfony 2.6, you had to use the ``getToken()`` method of the "
+"``security.context`` service."
+msgstr ""
+
+#: ../../book/security.rst:1004
+msgid ""
+"After authentication, the ``User`` object of the current user can be "
+"accessed via the ``security.token_storage`` service. From inside a "
+"controller, this will look like::"
+msgstr ""
+
+#: ../../book/security.rst:1022
+msgid ""
+"The user will be an object and the class of that object will depend on your "
+":ref:`user provider <security-user-providers>`."
+msgstr ""
+
+#: ../../book/security.rst:1025
+msgid ""
+"Now you can call whatever methods are on *your* User object. For example, if"
+" your User object has a ``getFirstName()`` method, you could use that::"
+msgstr ""
+
+#: ../../book/security.rst:1038
+msgid "Always Check if the User is Logged In"
+msgstr ""
+
+#: ../../book/security.rst:1040
+msgid ""
+"It's important to check if the user is authenticated first. If they're not, "
+"``$user`` will either be ``null`` or the string ``anon.``. Wait, what? Yes, "
+"this is a quirk. If you're not logged in, the user is technically the string"
+" ``anon.``, though the ``getUser()`` controller shortcut converts this to "
+"``null`` for convenience."
+msgstr ""
+
+#: ../../book/security.rst:1046
+msgid ""
+"The point is this: always check to see if the user is logged in before using"
+" the User object, and use the ``isGranted`` method (or :ref:`access_control "
+"<security-authorization-access-control>`) to do this::"
+msgstr ""
+
+#: ../../book/security.rst:1061
+msgid "Retrieving the User in a Template"
+msgstr ""
+
+#: ../../book/security.rst:1063
+msgid ""
+"In a Twig Template this object can be accessed via the `app.user <reference-"
+"twig-global-app>`_ key:"
+msgstr ""
+
+#: ../../book/security.rst:1083
+msgid "Logging Out"
+msgstr ""
+
+#: ../../book/security.rst:1085
+msgid ""
+"Usually, you'll also want your users to be able to log out. Fortunately, the"
+" firewall can handle this automatically for you when you activate the "
+"``logout`` config parameter:"
+msgstr ""
+
+#: ../../book/security.rst:1135
+msgid ""
+"Next, you'll need to create a route for this URL (but not a controller):"
+msgstr ""
+
+#: ../../book/security.rst:1168
+msgid ""
+"And that's it! By sending a user to ``/logout`` (or whatever you configure "
+"the ``path`` to be), Symfony will un-authenticate the current user."
+msgstr ""
+
+#: ../../book/security.rst:1171
+msgid ""
+"Once the user has been logged out, they will be redirected to whatever path "
+"is defined by the ``target`` parameter above (e.g. the ``homepage``)."
+msgstr ""
+
+#: ../../book/security.rst:1176
+msgid ""
+"If you need to do something more interesting after logging out, you can "
+"specify a logout success handler by adding a ``success_handler`` key and "
+"pointing it to a service id of a class that implements "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Logout\\\\LogoutSuccessHandlerInterface`."
+" See :doc:`Security Configuration Reference "
+"</reference/configuration/security>`."
+msgstr ""
+
+#: ../../book/security.rst:1185
+msgid "Dynamically Encoding a Password"
+msgstr ""
+
+#: ../../book/security.rst:1187
+msgid ""
+"If, for example, you're storing users in the database, you'll need to encode"
+" the users' passwords before inserting them. No matter what algorithm you "
+"configure for your user object, the hashed password can always be determined"
+" in the following way from a controller::"
+msgstr ""
+
+#: ../../book/security.rst:1200
+msgid ""
+"The ``security.password_encoder`` service was introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../book/security.rst:1203
+msgid ""
+"In order for this to work, just make sure that you have the encoder for your"
+" user class (e.g. ``AppBundle\\Entity\\User``) configured under the "
+"``encoders`` key in ``app/config/security.yml``."
+msgstr ""
+
+#: ../../book/security.rst:1207
+msgid ""
+"The ``$encoder`` object also has an ``isPasswordValid`` method, which takes "
+"the ``User`` object as the first argument and the plain password to check as"
+" the second argument."
+msgstr ""
+
+#: ../../book/security.rst:1213
+msgid ""
+"When you allow a user to submit a plaintext password (e.g. registration "
+"form, change password form), you *must* have validation that guarantees that"
+" the password is 4096 characters or fewer. Read more details in :ref:`How to"
+" implement a simple Registration Form <cookbook-registration-password-max>`."
+msgstr ""
+
+#: ../../book/security.rst:1221
+msgid "Hierarchical Roles"
+msgstr ""
+
+#: ../../book/security.rst:1223
+msgid ""
+"Instead of associating many roles to users, you can define role inheritance "
+"rules by creating a role hierarchy:"
+msgstr ""
+
+#: ../../book/security.rst:1265
+msgid ""
+"In the above configuration, users with ``ROLE_ADMIN`` role will also have "
+"the ``ROLE_USER`` role. The ``ROLE_SUPER_ADMIN`` role has ``ROLE_ADMIN``, "
+"``ROLE_ALLOWED_TO_SWITCH`` and ``ROLE_USER`` (inherited from "
+"``ROLE_ADMIN``)."
+msgstr ""
+
+#: ../../book/security.rst:1270
+msgid "Stateless Authentication"
+msgstr ""
+
+#: ../../book/security.rst:1272
+msgid ""
+"By default, Symfony relies on a cookie (the Session) to persist the security"
+" context of the user. But if you use certificates or HTTP authentication for"
+" instance, persistence is not needed as credentials are available for each "
+"request. In that case, and if you don't need to store anything else between "
+"requests, you can activate the stateless authentication (which means that no"
+" cookie will be ever created by Symfony):"
+msgstr ""
+
+#: ../../book/security.rst:1318
+msgid ""
+"If you use a form login, Symfony will create a cookie even if you set "
+"``stateless`` to ``true``."
+msgstr ""
+
+#: ../../book/security.rst:1324
+msgid "Checking for Known Security Vulnerabilities in Dependencies"
+msgstr ""
+
+#: ../../book/security.rst:1326
+msgid ""
+"When using lots of dependencies in your Symfony projects, some of them may "
+"contain security vulnerabilities. That's why Symfony includes a command "
+"called ``security:check`` that checks your ``composer.lock`` file to find "
+"any known security vulnerability in your installed dependencies:"
+msgstr ""
+
+#: ../../book/security.rst:1335
+msgid ""
+"A good security practice is to execute this command regularly to be able to "
+"update or replace compromised dependencies as soon as possible. Internally, "
+"this command uses the public `security advisories database`_ published by "
+"the FriendsOfPHP organization."
+msgstr ""
+
+#: ../../book/security.rst:1342
+msgid ""
+"The ``security:check`` command terminates with a non-zero exit code if any "
+"of your dependencies is affected by a known security vulnerability. "
+"Therefore, you can easily integrate it in your build process."
+msgstr ""
+
+#: ../../book/security.rst:1347
+msgid "Final Words"
+msgstr ""
+
+#: ../../book/security.rst:1349
+msgid ""
+"Woh! Nice work! You now know more than the basics of security. The hardest "
+"parts are when you have custom requirements: like a custom authentication "
+"strategy (e.g. API tokens), complex authorization logic and many other "
+"things (because security is complex!)."
+msgstr ""
+
+#: ../../book/security.rst:1354
+msgid ""
+"Fortunately, there are a lot of :doc:`Security Cookbook Articles "
+"</cookbook/security/index>` aimed at describing many of these situations. "
+"Also, see the :doc:`Security Reference Section "
+"</reference/configuration/security>`. Many of the options don't have "
+"specific details, but seeing the full possible configuration tree may be "
+"useful."
+msgstr ""
+
+#: ../../book/security.rst:1360
+msgid "Good luck!"
+msgstr ""
+
+#: ../../book/security.rst:1363
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/security.rst:1365
+msgid ":doc:`Forcing HTTP/HTTPS </cookbook/security/force_https>`"
+msgstr ""
+
+#: ../../book/security.rst:1366
+msgid ":doc:`Impersonating a User </cookbook/security/impersonating_user>`"
+msgstr ""
+
+#: ../../book/security.rst:1367
+msgid ":doc:`/cookbook/security/voters_data_permission`"
+msgstr ""
+
+#: ../../book/security.rst:1368
+msgid ":doc:`Access Control Lists (ACLs) </cookbook/security/acl>`"
+msgstr ""
+
+#: ../../book/security.rst:1369
+msgid ":doc:`/cookbook/security/remember_me`"
+msgstr ""
+
+#: ../../book/security.rst:1370
+msgid ":doc:`/cookbook/security/multiple_user_providers`"
+msgstr ""

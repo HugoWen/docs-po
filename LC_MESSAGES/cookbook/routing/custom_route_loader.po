@@ -1,0 +1,182 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/routing/custom_route_loader.rst:5
+msgid "How to Create a custom Route Loader"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:7
+msgid ""
+"A custom route loader allows you to add routes to an application without "
+"including them, for example, in a YAML file. This comes in handy when you "
+"have a bundle but don't want to manually add the routes for the bundle to "
+"``app/config/routing.yml``. This may be especially important when you want "
+"to make the bundle reusable, or when you have open-sourced it as this would "
+"slow down the installation process and make it error-prone."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:14
+msgid ""
+"Alternatively, you could also use a custom route loader when you want your "
+"routes to be automatically generated or located based on some convention or "
+"pattern. One example is the `FOSRestBundle`_ where routing is generated "
+"based off the names of the action methods in a controller."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:21
+msgid ""
+"There are many bundles out there that use their own route loaders to "
+"accomplish cases like those described above, for instance `FOSRestBundle`_, "
+"`JMSI18nRoutingBundle`_, `KnpRadBundle`_ and `SonataAdminBundle`_."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:26
+msgid "Loading Routes"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:28
+msgid ""
+"The routes in a Symfony application are loaded by the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Routing\\\\DelegatingLoader`."
+" This loader uses several other loaders (delegates) to load resources of "
+"different types, for instance YAML files or ``@Route`` and ``@Method`` "
+"annotations in controller files. The specialized loaders implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface` and "
+"therefore have two important methods: "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" and "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load`."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:38
+msgid ""
+"Take these lines from the ``routing.yml`` in the AcmeDemoBundle of the "
+"Standard Edition:"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:49
+msgid ""
+"When the main loader parses this, it tries all the delegate loaders and "
+"calls their "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" method with the given resource "
+"(``@AcmeDemoBundle/Controller/DemoController.php``) and type "
+"(``annotation``) as arguments. When one of the loader returns ``true``, its "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load` "
+"method will be called, which should return a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection` containing "
+":class:`Symfony\\\\Component\\\\Routing\\\\Route` objects."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:58
+msgid "Creating a custom Loader"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:60
+msgid ""
+"To load routes from some custom source (i.e. from something other than "
+"annotations, YAML or XML files), you need to create a custom route loader. "
+"This loader should implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface`."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:64
+msgid ""
+"The sample loader below supports loading routing resources with a type of "
+"``extra``. The type ``extra`` isn't important - you can just invent any "
+"resource type you want. The resource name itself is not actually used in the"
+" example::"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:125
+msgid "Make sure the controller you specify really exists."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:127
+msgid "Now define a service for the ``ExtraLoader``:"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:165
+msgid ""
+"Notice the tag ``routing.loader``. All services with this tag will be marked"
+" as potential route loaders and added as specialized routers to the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Routing\\\\DelegatingLoader`."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:170
+msgid "Using the custom Loader"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:172
+msgid ""
+"If you did nothing else, your custom routing loader would *not* be called. "
+"Instead, you only need to add a few extra lines to the routing "
+"configuration:"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:204
+msgid ""
+"The important part here is the ``type`` key. Its value should be \"extra\". "
+"This is the type which the ``ExtraLoader`` supports and this will make sure "
+"its ``load()`` method gets called. The ``resource`` key is insignificant for"
+" the ``ExtraLoader``, so it is set to \".\"."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:211
+msgid ""
+"The routes defined using custom route loaders will be automatically cached "
+"by the framework. So whenever you change something in the loader class "
+"itself, don't forget to clear the cache."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:216
+msgid "More advanced Loaders"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:218
+msgid ""
+"In most cases it's better not to implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface` "
+"yourself, but extend from "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\Loader`. This class "
+"knows how to use a "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderResolver` to load "
+"secondary routing resources."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:224
+msgid ""
+"Of course you still need to implement "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" and "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load`."
+" Whenever you want to load another resource - for instance a YAML routing "
+"configuration file - you can call the "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\Loader::import` "
+"method::"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:260
+msgid ""
+"The resource name and type of the imported routing configuration can be "
+"anything that would normally be supported by the routing configuration "
+"loader (YAML, XML, PHP, annotation, etc.)."
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:1
+msgid "Routing"
+msgstr ""
+
+#: ../../cookbook/routing/custom_route_loader.rst:1
+msgid "Custom route loader"
+msgstr ""

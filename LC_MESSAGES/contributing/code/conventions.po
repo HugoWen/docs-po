@@ -1,0 +1,226 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/code/conventions.rst:2
+msgid "Conventions"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:4
+msgid ""
+"The :doc:`standards` document describes the coding standards for the Symfony"
+" projects and the internal and third-party bundles. This document describes "
+"coding standards and conventions used in the core framework to make it more "
+"consistent and predictable. You are encouraged to follow them in your own "
+"code, but you don't need to."
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:11
+msgid "Method Names"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:13
+msgid ""
+"When an object has a \"main\" many relation with related \"things\" "
+"(objects, parameters, ...), the method names are normalized:"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:16
+#: ../../contributing/code/conventions.rst:46
+msgid "``get()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:17
+#: ../../contributing/code/conventions.rst:48
+msgid "``set()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:18
+#: ../../contributing/code/conventions.rst:52
+msgid "``has()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:19
+#: ../../contributing/code/conventions.rst:54
+msgid "``all()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:20
+#: ../../contributing/code/conventions.rst:56
+msgid "``replace()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:21
+#: ../../contributing/code/conventions.rst:58
+msgid "``remove()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:22
+#: ../../contributing/code/conventions.rst:60
+msgid "``clear()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:23
+#: ../../contributing/code/conventions.rst:62
+msgid "``isEmpty()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:24
+#: ../../contributing/code/conventions.rst:64
+msgid "``add()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:25
+#: ../../contributing/code/conventions.rst:66
+msgid "``register()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:26
+#: ../../contributing/code/conventions.rst:68
+msgid "``count()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:27
+#: ../../contributing/code/conventions.rst:70
+msgid "``keys()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:29
+msgid ""
+"The usage of these methods are only allowed when it is clear that there is a"
+" main relation:"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:32
+msgid "a ``CookieJar`` has many ``Cookie`` objects;"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:34
+msgid ""
+"a Service ``Container`` has many services and many parameters (as services "
+"is the main relation, the naming convention is used for this relation);"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:37
+msgid ""
+"a Console ``Input`` has many arguments and many options. There is no "
+"\"main\" relation, and so the naming convention does not apply."
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:40
+msgid ""
+"For many relations where the convention does not apply, the following "
+"methods must be used instead (where ``XXX`` is the name of the related "
+"thing):"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:44
+msgid "Main Relation"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:44
+msgid "Other Relations"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:46
+msgid "``getXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:48
+msgid "``setXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:50
+#: ../../contributing/code/conventions.rst:70
+msgid "n/a"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:50
+msgid "``replaceXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:52
+msgid "``hasXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:54
+msgid "``getXXXs()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:56
+msgid "``setXXXs()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:58
+msgid "``removeXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:60
+msgid "``clearXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:62
+msgid "``isEmptyXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:64
+msgid "``addXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:66
+msgid "``registerXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:68
+msgid "``countXXX()``"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:75
+msgid ""
+"While \"setXXX\" and \"replaceXXX\" are very similar, there is one notable "
+"difference: \"setXXX\" may replace, or add new elements to the relation. "
+"\"replaceXXX\", on the other hand, cannot add new elements. If an "
+"unrecognized key is passed to \"replaceXXX\" it must throw an exception."
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:83
+msgid "Deprecations"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:85
+msgid ""
+"From time to time, some classes and/or methods are deprecated in the "
+"framework; that happens when a feature implementation cannot be changed "
+"because of backward compatibility issues, but we still want to propose a "
+"\"better\" alternative. In that case, the old implementation can simply be "
+"**deprecated**."
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:91
+msgid ""
+"A feature is marked as deprecated by adding a ``@deprecated`` phpdoc to "
+"relevant classes, methods, properties, ...::"
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:98
+msgid ""
+"The deprecation message should indicate the version when the class/method "
+"was deprecated, the version when it will be removed, and whenever possible, "
+"how the feature was replaced."
+msgstr ""
+
+#: ../../contributing/code/conventions.rst:102
+msgid ""
+"A PHP ``E_USER_DEPRECATED`` error must also be triggered to help people with"
+" the migration starting one or two minor versions before the version where "
+"the feature will be removed (depending on the criticality of the removal)::"
+msgstr ""

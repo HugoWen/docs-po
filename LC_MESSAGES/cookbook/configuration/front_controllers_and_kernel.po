@@ -1,0 +1,273 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:6
+msgid ""
+"Understanding how the Front Controller, Kernel and Environments Work "
+"together"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:8
+msgid ""
+"The section :doc:`/cookbook/configuration/environments` explained the basics"
+" on how Symfony uses environments to run your application with different "
+"configuration settings. This section will explain a bit more in-depth what "
+"happens when your application is bootstrapped. To hook into this process, "
+"you need to understand three parts that work together:"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:14
+msgid "`The Front Controller`_"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:15
+msgid "`The Kernel Class`_"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:16
+msgid "`The Environments`_"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:20
+msgid ""
+"Usually, you will not need to define your own front controller or "
+"``AppKernel`` class as the `Symfony Standard Edition`_ provides sensible "
+"default implementations."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:24
+msgid ""
+"This documentation section is provided to explain what is going on behind "
+"the scenes."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:28
+msgid "The Front Controller"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:30
+msgid ""
+"The `front controller`_ is a well-known design pattern; it is a section of "
+"code that *all* requests served by an application run through."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:33
+msgid ""
+"In the `Symfony Standard Edition`_, this role is taken by the `app.php`_ and"
+" `app_dev.php`_ files in the ``web/`` directory. These are the very first "
+"PHP scripts executed when a request is processed."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:37
+msgid ""
+"The main purpose of the front controller is to create an instance of the "
+"``AppKernel`` (more on that in a second), make it handle the request and "
+"return the resulting response to the browser."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:41
+msgid ""
+"Because every request is routed through it, the front controller can be used"
+" to perform global initializations prior to setting up the kernel or to "
+"`decorate`_ the kernel with additional features. Examples include:"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:45
+msgid ""
+"Configuring the autoloader or adding additional autoloading mechanisms;"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:46
+msgid ""
+"Adding HTTP level caching by wrapping the kernel with an instance of "
+":ref:`AppCache <symfony-gateway-cache>`;"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:48
+msgid "Enabling (or skipping) the :doc:`ClassCache </cookbook/debugging>`;"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:49
+msgid "Enabling the :doc:`Debug Component </components/debug/introduction>`."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:51
+msgid "The front controller can be chosen by requesting URLs like:"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:57
+msgid ""
+"As you can see, this URL contains the PHP script to be used as the front "
+"controller. You can use that to easily switch the front controller or use a "
+"custom one by placing it in the ``web/`` directory (e.g. ``app_cache.php``)."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:61
+msgid ""
+"When using Apache and the `RewriteRule shipped with the Standard Edition`_, "
+"you can omit the filename from the URL and the RewriteRule will use "
+"``app.php`` as the default one."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:67
+msgid ""
+"Pretty much every other web server should be able to achieve a behavior "
+"similar to that of the RewriteRule described above. Check your server "
+"documentation for details or see "
+":doc:`/cookbook/configuration/web_server_configuration`."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:74
+msgid ""
+"Make sure you appropriately secure your front controllers against "
+"unauthorized access. For example, you don't want to make a debugging "
+"environment available to arbitrary users in your production environment."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:78
+msgid ""
+"Technically, the `app/console`_ script used when running Symfony on the "
+"command line is also a front controller, only that is not used for web, but "
+"for command line requests."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:83
+msgid "The Kernel Class"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:85
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel` is the core of "
+"Symfony. It is responsible for setting up all the bundles that make up your "
+"application and providing them with the application's configuration. It then"
+" creates the service container before serving requests in its "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernelInterface::handle` "
+"method."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:92
+msgid ""
+"There are two methods declared in the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\KernelInterface` that are left"
+" unimplemented in :class:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel` and "
+"thus serve as `template methods`_:"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:97
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\KernelInterface::registerBundles`,"
+" which must return an array of all bundles needed to run the application;"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:101
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\KernelInterface::registerContainerConfiguration`,"
+" which loads the application configuration."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:104
+msgid ""
+"To fill these (small) blanks, your application needs to subclass the Kernel "
+"and implement these methods. The resulting class is conventionally called "
+"the ``AppKernel``."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:108
+msgid ""
+"Again, the Symfony Standard Edition provides an `AppKernel`_ in the ``app/``"
+" directory. This class uses the name of the environment - which is passed to"
+" the Kernel's :method:`constructor "
+"<Symfony\\\\Component\\\\HttpKernel\\\\Kernel::__construct>` method and is "
+"available via "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getEnvironment` - to "
+"decide which bundles to create. The logic for that is in "
+"``registerBundles()``, a method meant to be extended by you when you start "
+"adding bundles to your application."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:116
+msgid ""
+"You are, of course, free to create your own, alternative or additional "
+"``AppKernel`` variants. All you need is to adapt your (or add a new) front "
+"controller to make use of the new kernel."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:122
+msgid ""
+"The name and location of the ``AppKernel`` is not fixed. When putting "
+"multiple Kernels into a single application, it might therefore make sense to"
+" add additional sub-directories, for example ``app/admin/AdminKernel.php`` "
+"and ``app/api/ApiKernel.php``. All that matters is that your front "
+"controller is able to create an instance of the appropriate kernel."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:130
+msgid ""
+"Having different ``AppKernels`` might be useful to enable different front "
+"controllers (on potentially different servers) to run parts of your "
+"application independently (for example, the admin UI, the frontend UI and "
+"database migrations)."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:136
+msgid ""
+"There's a lot more the ``AppKernel`` can be used for, for example "
+":doc:`overriding the default directory structure "
+"</cookbook/configuration/override_dir_structure>`. But odds are high that "
+"you don't need to change things like this on the fly by having several "
+"``AppKernel`` implementations."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:142
+msgid "The Environments"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:144
+msgid ""
+"As just mentioned, the ``AppKernel`` has to implement another method - "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\KernelInterface::registerContainerConfiguration`."
+" This method is responsible for loading the application's configuration from"
+" the right *environment*."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:149
+msgid ""
+"Environments have been covered extensively :doc:`in the previous chapter "
+"</cookbook/configuration/environments>`, and you probably remember that the "
+"Standard Edition comes with three of them - ``dev``, ``prod`` and ``test``."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:154
+msgid ""
+"More technically, these names are nothing more than strings passed from the "
+"front controller to the ``AppKernel``'s constructor. This name can then be "
+"used in the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\KernelInterface::registerContainerConfiguration`"
+" method to decide which configuration files to load."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:159
+msgid ""
+"The Standard Edition's `AppKernel`_ class implements this method by simply "
+"loading the ``app/config/config_*environment*.yml`` file. You are, of "
+"course, free to implement this method differently if you need a more "
+"sophisticated way of loading your configuration."
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:1
+msgid "How the front controller, ``AppKernel`` and environments"
+msgstr ""
+
+#: ../../cookbook/configuration/front_controllers_and_kernel.rst:1
+msgid "work together"
+msgstr ""

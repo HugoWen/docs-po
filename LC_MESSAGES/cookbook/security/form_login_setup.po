@@ -1,0 +1,275 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/form_login_setup.rst:2
+msgid "How to Build a Traditional Login Form"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:6
+msgid ""
+"If you need a login form and are storing users in some sort of a database, "
+"then you should consider using `FOSUserBundle`_, which helps you build your "
+"``User`` object and gives you many routes and controllers for common tasks "
+"like login, registration and forgot password."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:11
+msgid ""
+"In this entry, you'll build a traditional login form. Of course, when the "
+"user logs in, you can load your users from anywhere - like the database. See"
+" :ref:`security-user-providers` for details."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:15
+msgid ""
+"This chapter assumes that you've followed the beginning of the "
+":doc:`security chapter </book/security>` and have ``http_basic`` "
+"authentication working properly."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:19
+msgid "First, enable form login under your firewall:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:72
+msgid ""
+"The ``login_path`` and ``check_path`` can also be route names (but cannot "
+"have mandatory wildcards - e.g. ``/login/{foo}`` where ``foo`` has no "
+"default value)."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:76
+msgid ""
+"Now, when the security system initiates the authentication process, it will "
+"redirect the user to the login form ``/login``. Implementing this login form"
+" visually is your job. First, create a new ``SecurityController`` inside a "
+"bundle::"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:91
+msgid ""
+"Next, create two routes: one for each of the paths you configured earlier "
+"under your ``form_login`` configuration (``/login`` and ``/login_check``):"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:168
+msgid ""
+"Great! Next, add the logic to ``loginAction`` that will display the login "
+"form::"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:193
+msgid ""
+"The ``security.authentication_utils`` service and the "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Authentication\\\\AuthenticationUtils`"
+" class were introduced in Symfony 2.6."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:198
+msgid ""
+"Don't let this controller confuse you. As you'll see in a moment, when the "
+"user submits the form, the security system automatically handles the form "
+"submission for you. If the user had submitted an invalid username or "
+"password, this controller reads the form submission error from the security "
+"system so that it can be displayed back to the user."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:204
+msgid ""
+"In other words, your job is to *display* the login form and any login errors"
+" that may have occurred, but the security system itself takes care of "
+"checking the submitted username and password and authenticating the user."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:208
+msgid "Finally, create the template:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:263
+msgid ""
+"The ``error`` variable passed into the template is an instance of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AuthenticationException`."
+" It may contain more information - or even sensitive information - about the"
+" authentication failure, so use it wisely!"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:268
+msgid "The form can look like anything, but has a few requirements:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:270
+msgid ""
+"The form must POST to ``/login_check``, since that's what you configured "
+"under the ``form_login`` key in ``security.yml``."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:273
+msgid ""
+"The username must have the name ``_username`` and the password must have the"
+" name ``_password``."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:278
+msgid ""
+"Actually, all of this can be configured under the ``form_login`` key. See "
+":ref:`reference-security-firewall-form-login` for more details."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:283
+msgid ""
+"This login form is currently not protected against CSRF attacks. Read "
+":doc:`/cookbook/security/csrf_in_login_form` on how to protect your login "
+"form."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:287
+msgid ""
+"And that's it! When you submit the form, the security system will "
+"automatically check the user's credentials and either authenticate the user "
+"or send the user back to the login form where the error can be displayed."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:291
+msgid "To review the whole process:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:293
+msgid "The user tries to access a resource that is protected;"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:294
+msgid ""
+"The firewall initiates the authentication process by redirecting the user to"
+" the login form (``/login``);"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:296
+msgid ""
+"The ``/login`` page renders login form via the route and controller created "
+"in this example;"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:298
+msgid "The user submits the login form to ``/login_check``;"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:299
+msgid ""
+"The security system intercepts the request, checks the user's submitted "
+"credentials, authenticates the user if they are correct, and sends the user "
+"back to the login form if they are not."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:304
+msgid "Redirecting after Success"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:306
+msgid ""
+"If the submitted credentials are correct, the user will be redirected to the"
+" original page that was requested (e.g. ``/admin/foo``). If the user "
+"originally went straight to the login page, they'll be redirected to the "
+"homepage. This can all be customized, allowing you to, for example, redirect"
+" the user to a specific URL."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:312
+msgid ""
+"For more details on this and how to customize the form login process in "
+"general, see :doc:`/cookbook/security/form_login`."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:318
+msgid "Avoid common Pitfalls"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:320
+msgid "When setting up your login form, watch out for a few common pitfalls."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:322
+msgid "**1. Create the correct routes**"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:324
+msgid ""
+"First, be sure that you've defined the ``/login`` and ``/login_check`` "
+"routes correctly and that they correspond to the ``login_path`` and "
+"``check_path`` config values. A misconfiguration here can mean that you're "
+"redirected to a 404 page instead of the login page, or that submitting the "
+"login form does nothing (you just see the login form over and over again)."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:331
+msgid "**2. Be sure the login page isn't secure (redirect loop!)**"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:333
+msgid ""
+"Also, be sure that the login page is accessible by anonymous users. For "
+"example, the following configuration - which requires the ``ROLE_ADMIN`` "
+"role for all URLs (including the ``/login`` URL), will cause a redirect "
+"loop:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:365
+msgid ""
+"Adding an access control that matches ``/login/*`` and requires *no* "
+"authentication fixes the problem:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:399
+msgid ""
+"Also, if your firewall does *not* allow for anonymous users (no "
+"``anonymous`` key), you'll need to create a special firewall that allows "
+"anonymous users for the login page:"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:447
+msgid "**3. Be sure /login_check is behind a firewall**"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:449
+msgid ""
+"Next, make sure that your ``check_path`` URL (e.g. ``/login_check``) is "
+"behind the firewall you're using for your form login (in this example, the "
+"single firewall matches *all* URLs, including ``/login_check``). If "
+"``/login_check`` doesn't match any firewall, you'll receive a ``Unable to "
+"find the controller for path \"/login_check\"`` exception."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:455
+msgid "**4. Multiple firewalls don't share the same security context**"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:457
+msgid ""
+"If you're using multiple firewalls and you authenticate against one "
+"firewall, you will *not* be authenticated against any other firewalls "
+"automatically. Different firewalls are like different security systems. To "
+"do this you have to explicitly specify the same :ref:`reference-security-"
+"firewall-context` for different firewalls. But usually for most "
+"applications, having one main firewall is enough."
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:464
+msgid "**5. Routing error pages are not covered by firewalls**"
+msgstr ""
+
+#: ../../cookbook/security/form_login_setup.rst:466
+msgid ""
+"As routing is done *before* security, 404 error pages are not covered by any"
+" firewall. This means you can't check for security or even access the user "
+"object on these pages. See :doc:`/cookbook/controller/error_pages` for more "
+"details."
+msgstr ""

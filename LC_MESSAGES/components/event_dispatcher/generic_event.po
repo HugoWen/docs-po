@@ -1,0 +1,115 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/event_dispatcher/generic_event.rst:5
+msgid "The Generic Event Object"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:7
+msgid ""
+"The base :class:`Symfony\\\\Component\\\\EventDispatcher\\\\Event` class "
+"provided by the EventDispatcher component is deliberately sparse to allow "
+"the creation of API specific event objects by inheritance using OOP. This "
+"allows for elegant and readable code in complex applications."
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:12
+msgid ""
+"The :class:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent` is "
+"available for convenience for those who wish to use just one event object "
+"throughout their application. It is suitable for most purposes straight out "
+"of the box, because it follows the standard observer pattern where the event"
+" object encapsulates an event 'subject', but has the addition of optional "
+"extra arguments."
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:19
+msgid ""
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent` has a "
+"simple API in addition to the base class "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\Event`"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:22
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::__construct`:"
+" Constructor takes the event subject and any arguments;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:25
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::getSubject`:"
+" Get the subject;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:28
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::setArgument`:"
+" Sets an argument by key;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:31
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::setArguments`:"
+" Sets arguments array;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:34
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::getArgument`:"
+" Gets an argument by key;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:37
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::getArguments`:"
+" Getter for all arguments;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:40
+msgid ""
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\GenericEvent::hasArgument`:"
+" Returns true if the argument key exists;"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:43
+msgid ""
+"The ``GenericEvent`` also implements :phpclass:`ArrayAccess` on the event "
+"arguments which makes it very convenient to pass extra arguments regarding "
+"the event subject."
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:47
+msgid ""
+"The following examples show use-cases to give a general idea of the "
+"flexibility. The examples assume event listeners have been added to the "
+"dispatcher."
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:50
+msgid "Simply passing a subject::"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:67
+msgid ""
+"Passing and processing arguments using the :phpclass:`ArrayAccess` API to "
+"access the event arguments::"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:92
+msgid "Filtering data::"
+msgstr ""
+
+#: ../../components/event_dispatcher/generic_event.rst:1
+msgid "EventDispatcher"
+msgstr ""

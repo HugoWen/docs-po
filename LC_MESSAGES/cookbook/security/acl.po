@@ -1,0 +1,212 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/security/acl.rst:5
+msgid "How to Use Access Control Lists (ACLs)"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:7
+msgid ""
+"In complex applications, you will often face the problem that access "
+"decisions cannot only be based on the person (``Token``) who is requesting "
+"access, but also involve a domain object that access is being requested for."
+" This is where the ACL system comes in."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:0
+msgid "Alternatives to ACLs"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:14
+msgid ""
+"Using ACL's isn't trivial, and for simpler use cases, it may be overkill. If"
+" your permission logic could be described by just writing some code (e.g. to"
+" check if a Blog is owned by the current User), then consider using "
+":doc:`voters </cookbook/security/voters_data_permission>`. A voter is passed"
+" the object being voted on, which you can use to make complex decisions and "
+"effectively implement your own ACL. Enforcing authorization (e.g. the "
+"``isGranted`` part) will look similar to what you see in this entry, but "
+"your voter class will handle the logic behind the scenes, instead of the ACL"
+" system."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:23
+msgid ""
+"Imagine you are designing a blog system where your users can comment on your"
+" posts. Now, you want a user to be able to edit their own comments, but not "
+"those of other users; besides, you yourself want to be able to edit all "
+"comments. In this scenario, ``Comment`` would be the domain object that you "
+"want to restrict access to. You could take several approaches to accomplish "
+"this using Symfony, two basic approaches are (non-exhaustive):"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:30
+msgid ""
+"*Enforce security in your business methods*: Basically, that means keeping a"
+" reference inside each ``Comment`` to all users who have access, and then "
+"compare these users to the provided ``Token``."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:33
+msgid ""
+"*Enforce security with roles*: In this approach, you would add a role for "
+"each ``Comment`` object, i.e. ``ROLE_COMMENT_1``, ``ROLE_COMMENT_2``, etc."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:36
+msgid ""
+"Both approaches are perfectly valid. However, they couple your authorization"
+" logic to your business code which makes it less reusable elsewhere, and "
+"also increases the difficulty of unit testing. Besides, you could run into "
+"performance issues if many users would have access to a single domain "
+"object."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:41
+msgid "Fortunately, there is a better way, which you will find out about now."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:44
+msgid "Bootstrapping"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:46
+msgid ""
+"Now, before you can finally get into action, you need to do some "
+"bootstrapping. First, you need to configure the connection the ACL system is"
+" supposed to use:"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:74
+msgid ""
+"The ACL system requires a connection from either Doctrine DBAL (usable by "
+"default) or Doctrine MongoDB (usable with `MongoDBAclBundle`_). However, "
+"that does not mean that you have to use Doctrine ORM or ODM for mapping your"
+" domain objects. You can use whatever mapper you like for your objects, be "
+"it Doctrine ORM, MongoDB ODM, Propel, raw SQL, etc. The choice is yours."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:80
+msgid ""
+"After the connection is configured, you have to import the database "
+"structure. Fortunately, there is a task for this. Simply run the following "
+"command:"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:88
+msgid "Getting Started"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:90
+msgid ""
+"Coming back to the small example from the beginning, you can now implement "
+"ACL for it."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:93
+msgid ""
+"Once the ACL is created, you can grant access to objects by creating an "
+"Access Control Entry (ACE) to solidify the relationship between the entity "
+"and your user."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:98
+msgid "Creating an ACL and Adding an ACE"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:143
+msgid ""
+"There are a couple of important implementation decisions in this code "
+"snippet. For now, I only want to highlight two:"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:146
+msgid ""
+"First, you may have noticed that ``->createAcl()`` does not accept domain "
+"objects directly, but only implementations of the "
+"``ObjectIdentityInterface``. This additional step of indirection allows you "
+"to work with ACLs even when you have no actual domain object instance at "
+"hand. This will be extremely helpful if you want to check permissions for a "
+"large number of objects without actually hydrating these objects."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:153
+msgid ""
+"The other interesting part is the ``->insertObjectAce()`` call. In the "
+"example, you are granting the user who is currently logged in owner access "
+"to the Comment. The ``MaskBuilder::MASK_OWNER`` is a pre-defined integer "
+"bitmask; don't worry the mask builder will abstract away most of the "
+"technical details, but using this technique you can store many different "
+"permissions in one database row which gives a considerable boost in "
+"performance."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:162
+msgid ""
+"The order in which ACEs are checked is significant. As a general rule, you "
+"should place more specific entries at the beginning."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:166
+msgid "Checking Access"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:191
+msgid ""
+"In this example, you check whether the user has the ``EDIT`` permission. "
+"Internally, Symfony maps the permission to several integer bitmasks, and "
+"checks whether the user has any of them."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:197
+msgid ""
+"You can define up to 32 base permissions (depending on your OS PHP might "
+"vary between 30 to 32). In addition, you can also define cumulative "
+"permissions."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:202
+msgid "Cumulative Permissions"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:204
+msgid ""
+"In the first example above, you only granted the user the ``OWNER`` base "
+"permission. While this effectively also allows the user to perform any "
+"operation such as view, edit, etc. on the domain object, there are cases "
+"where you may want to grant these permissions explicitly."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:209
+msgid ""
+"The ``MaskBuilder`` can be used for creating bit masks easily by combining "
+"several base permissions:"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:223
+msgid ""
+"This integer bitmask can then be used to grant a user the base permissions "
+"you added above:"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:231
+msgid "The user is now allowed to view, edit, delete, and un-delete objects."
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:1
+msgid "Security"
+msgstr ""
+
+#: ../../cookbook/security/acl.rst:1
+msgid "Access Control Lists (ACLs)"
+msgstr ""

@@ -1,0 +1,38 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/templating/helpers/index.rst:5
+msgid "The Templating Helpers"
+msgstr ""
+
+#: ../../components/templating/helpers/index.rst:13
+msgid ""
+"The Templating component comes with some useful helpers. These helpers "
+"contain functions to ease some common tasks."
+msgstr ""
+
+#: ../../components/templating/helpers/map.rst.inc:1
+msgid ":doc:`/components/templating/helpers/slotshelper`"
+msgstr ""
+
+#: ../../components/templating/helpers/map.rst.inc:2
+msgid ":doc:`/components/templating/helpers/assetshelper`"
+msgstr ""
+
+#: ../../components/templating/helpers/index.rst:1
+msgid "Templating"
+msgstr ""
+
+#: ../../components/templating/helpers/index.rst:1
+msgid "Templating Helpers"
+msgstr ""

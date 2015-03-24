@@ -1,0 +1,362 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/intl.rst:6
+msgid "The Intl Component"
+msgstr ""
+
+#: ../../components/intl.rst:8
+msgid ""
+"A PHP replacement layer for the C `intl extension`_ that also provides "
+"access to the localization data of the `ICU library`_."
+msgstr ""
+
+#: ../../components/intl.rst:11
+msgid ""
+"The Intl component was introduced in Symfony 2.3. In earlier versions of "
+"Symfony, you should use the Locale component instead."
+msgstr ""
+
+#: ../../components/intl.rst:17
+msgid ""
+"The replacement layer is limited to the locale \"en\". If you want to use "
+"other locales, you should `install the intl extension`_ instead."
+msgstr ""
+
+#: ../../components/intl.rst:21
+msgid "Installation"
+msgstr ""
+
+#: ../../components/intl.rst:23
+msgid "You can install the component in two different ways:"
+msgstr ""
+
+#: ../../components/intl.rst:25
+msgid ""
+":doc:`Install it via Composer</components/using_components>` "
+"(``symfony/intl`` on `Packagist`_);"
+msgstr ""
+
+#: ../../components/intl.rst:26
+msgid "Using the official Git repository (https://github.com/symfony/Intl)."
+msgstr ""
+
+#: ../../components/intl.rst:28
+msgid ""
+"If you install the component via Composer, the following classes and "
+"functions of the intl extension will be automatically provided if the intl "
+"extension is not loaded:"
+msgstr ""
+
+#: ../../components/intl.rst:32
+msgid ":phpclass:`Collator`"
+msgstr ""
+
+#: ../../components/intl.rst:33
+msgid ":phpclass:`IntlDateFormatter`"
+msgstr ""
+
+#: ../../components/intl.rst:34
+msgid ":phpclass:`Locale`"
+msgstr ""
+
+#: ../../components/intl.rst:35
+msgid ":phpclass:`NumberFormatter`"
+msgstr ""
+
+#: ../../components/intl.rst:36
+msgid ":phpfunction:`intl_error_name`"
+msgstr ""
+
+#: ../../components/intl.rst:37
+msgid ":phpfunction:`intl_is_failure`"
+msgstr ""
+
+#: ../../components/intl.rst:38
+msgid ":phpfunction:`intl_get_error_code`"
+msgstr ""
+
+#: ../../components/intl.rst:39
+msgid ":phpfunction:`intl_get_error_message`"
+msgstr ""
+
+#: ../../components/intl.rst:41
+msgid ""
+"When the intl extension is not available, the following classes are used to "
+"replace the intl classes:"
+msgstr ""
+
+#: ../../components/intl.rst:44
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Collator\\\\Collator`"
+msgstr ""
+
+#: ../../components/intl.rst:45
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\DateFormatter\\\\IntlDateFormatter`"
+msgstr ""
+
+#: ../../components/intl.rst:46
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Locale\\\\Locale`"
+msgstr ""
+
+#: ../../components/intl.rst:47
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\NumberFormatter\\\\NumberFormatter`"
+msgstr ""
+
+#: ../../components/intl.rst:48
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Globals\\\\IntlGlobals`"
+msgstr ""
+
+#: ../../components/intl.rst:50
+msgid "Composer automatically exposes these classes in the global namespace."
+msgstr ""
+
+#: ../../components/intl.rst:52
+msgid ""
+"If you don't use Composer but the :doc:`Symfony ClassLoader component "
+"</components/class_loader/introduction>`, you need to expose them manually "
+"by adding the following lines to your autoload code::"
+msgstr ""
+
+#: ../../components/intl.rst:64
+msgid "Writing and Reading Resource Bundles"
+msgstr ""
+
+#: ../../components/intl.rst:66
+msgid ""
+"The :phpclass:`ResourceBundle` class is not currently supported by this "
+"component. Instead, it includes a set of readers and writers for reading and"
+" writing arrays (or array-like objects) from/to resource bundle files. The "
+"following classes are supported:"
+msgstr ""
+
+#: ../../components/intl.rst:71
+msgid "`TextBundleWriter`_"
+msgstr ""
+
+#: ../../components/intl.rst:72
+msgid "`PhpBundleWriter`_"
+msgstr ""
+
+#: ../../components/intl.rst:73
+msgid "`BinaryBundleReader`_"
+msgstr ""
+
+#: ../../components/intl.rst:74
+msgid "`PhpBundleReader`_"
+msgstr ""
+
+#: ../../components/intl.rst:75
+msgid "`BufferedBundleReader`_"
+msgstr ""
+
+#: ../../components/intl.rst:76
+msgid "`StructuredBundleReader`_"
+msgstr ""
+
+#: ../../components/intl.rst:78
+msgid ""
+"Continue reading if you are interested in how to use these classes. "
+"Otherwise skip this section and jump to `Accessing ICU Data`_."
+msgstr ""
+
+#: ../../components/intl.rst:82
+msgid "TextBundleWriter"
+msgstr ""
+
+#: ../../components/intl.rst:84
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Writer\\\\TextBundleWriter`"
+" writes an array or an array-like object to a plain-text resource bundle. "
+"The resulting .txt file can be converted to a binary .res file with the "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Compiler\\\\BundleCompiler`"
+" class::"
+msgstr ""
+
+#: ../../components/intl.rst:105
+msgid ""
+"The command \"genrb\" must be available for the "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Compiler\\\\BundleCompiler`"
+" to work. If the command is located in a non-standard location, you can pass"
+" its path to the "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Compiler\\\\BundleCompiler`"
+" constructor."
+msgstr ""
+
+#: ../../components/intl.rst:113
+msgid "PhpBundleWriter"
+msgstr ""
+
+#: ../../components/intl.rst:115
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Writer\\\\PhpBundleWriter`"
+" writes an array or an array-like object to a .php resource bundle::"
+msgstr ""
+
+#: ../../components/intl.rst:130
+msgid "BinaryBundleReader"
+msgstr ""
+
+#: ../../components/intl.rst:132
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\BinaryBundleReader`"
+" reads binary resource bundle files and returns an array or an array-like "
+"object. This class currently only works with the `intl extension`_ "
+"installed::"
+msgstr ""
+
+#: ../../components/intl.rst:144
+msgid "PhpBundleReader"
+msgstr ""
+
+#: ../../components/intl.rst:146
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\PhpBundleReader`"
+" reads resource bundles from .php files and returns an array or an array-"
+"like object::"
+msgstr ""
+
+#: ../../components/intl.rst:158
+msgid "BufferedBundleReader"
+msgstr ""
+
+#: ../../components/intl.rst:160
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\BufferedBundleReader`"
+" wraps another reader, but keeps the last N reads in a buffer, where N is a "
+"buffer size passed to the constructor::"
+msgstr ""
+
+#: ../../components/intl.rst:179
+msgid "StructuredBundleReader"
+msgstr ""
+
+#: ../../components/intl.rst:181
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\StructuredBundleReader`"
+" wraps another reader and offers a "
+":method:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\StructuredBundleReaderInterface::readEntry`"
+" method for reading an entry of the resource bundle without having to worry "
+"whether array keys are set or not. If a path cannot be resolved, ``null`` is"
+" returned::"
+msgstr ""
+
+#: ../../components/intl.rst:201
+msgid ""
+"Additionally, the "
+":method:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\Reader\\\\StructuredBundleReaderInterface::readEntry`"
+" method resolves fallback locales. For example, the fallback locale of "
+"\"en_GB\" is \"en\". For single-valued entries (strings, numbers etc.), the "
+"entry will be read from the fallback locale if it cannot be found in the "
+"more specific locale. For multi-valued entries (arrays), the values of the "
+"more specific and the fallback locale will be merged. In order to suppress "
+"this behavior, the last parameter ``$fallback`` can be set to ``false``::"
+msgstr ""
+
+#: ../../components/intl.rst:218
+msgid "Accessing ICU Data"
+msgstr ""
+
+#: ../../components/intl.rst:220
+msgid ""
+"The ICU data is located in several \"resource bundles\". You can access a "
+"PHP wrapper of these bundles through the static "
+":class:`Symfony\\\\Component\\\\Intl\\\\Intl` class. At the moment, the "
+"following data is supported:"
+msgstr ""
+
+#: ../../components/intl.rst:225
+msgid "`Language and Script Names`_"
+msgstr ""
+
+#: ../../components/intl.rst:226
+msgid "`Country Names`_"
+msgstr ""
+
+#: ../../components/intl.rst:227
+msgid "`Locales`_"
+msgstr ""
+
+#: ../../components/intl.rst:228
+msgid "`Currencies`_"
+msgstr ""
+
+#: ../../components/intl.rst:231
+msgid "Language and Script Names"
+msgstr ""
+
+#: ../../components/intl.rst:233
+msgid ""
+"The translations of language and script names can be found in the language "
+"bundle::"
+msgstr ""
+
+#: ../../components/intl.rst:255 ../../components/intl.rst:276
+#: ../../components/intl.rst:297
+msgid ""
+"All methods accept the translation locale as the last, optional parameter, "
+"which defaults to the current default locale::"
+msgstr ""
+
+#: ../../components/intl.rst:262
+msgid "Country Names"
+msgstr ""
+
+#: ../../components/intl.rst:264
+msgid "The translations of country names can be found in the region bundle::"
+msgstr ""
+
+#: ../../components/intl.rst:283
+msgid "Locales"
+msgstr ""
+
+#: ../../components/intl.rst:285
+msgid "The translations of locale names can be found in the locale bundle::"
+msgstr ""
+
+#: ../../components/intl.rst:304
+msgid "Currencies"
+msgstr ""
+
+#: ../../components/intl.rst:306
+msgid ""
+"The translations of currency names and other currency-related information "
+"can be found in the currency bundle::"
+msgstr ""
+
+#: ../../components/intl.rst:328
+msgid ""
+"All methods (except for "
+":method:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\CurrencyBundleInterface::getFractionDigits`"
+" and "
+":method:`Symfony\\\\Component\\\\Intl\\\\ResourceBundle\\\\CurrencyBundleInterface::getRoundingIncrement`)"
+" accept the translation locale as the last, optional parameter, which "
+"defaults to the current default locale::"
+msgstr ""
+
+#: ../../components/intl.rst:338
+msgid "That's all you need to know for now. Have fun coding!"
+msgstr ""
+
+#: ../../components/intl.rst:1 ../../components/intl.rst:1
+msgid "Intl"
+msgstr ""
+
+#: ../../components/intl.rst:1
+msgid "Components"
+msgstr ""

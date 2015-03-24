@@ -1,0 +1,104 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cookbook/testing/database.rst:5
+msgid "How to Test Code that Interacts with the Database"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:7
+msgid ""
+"If your code interacts with the database, e.g. reads data from or stores "
+"data into it, you need to adjust your tests to take this into account. There"
+" are many ways how to deal with this. In a unit test, you can create a mock "
+"for a ``Repository`` and use it to return expected objects. In a functional "
+"test, you may need to prepare a test database with predefined values to "
+"ensure that your test always has the same data to work with."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:16
+msgid ""
+"If you want to test your queries directly, see "
+":doc:`/cookbook/testing/doctrine`."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:19
+msgid "Mocking the ``Repository`` in a Unit Test"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:21
+msgid ""
+"If you want to test code which depends on a Doctrine repository in "
+"isolation, you need to mock the ``Repository``. Normally you inject the "
+"``EntityManager`` into your class and use it to get the repository. This "
+"makes things a little more difficult as you need to mock both the "
+"``EntityManager`` and your repository class."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:29
+msgid ""
+"It is possible (and a good idea) to inject your repository directly by "
+"registering your repository as a :doc:`factory service "
+"</components/dependency_injection/factories>`. This is a little bit more "
+"work to setup, but makes testing easier as you only need to mock the "
+"repository."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:34
+msgid "Suppose the class you want to test looks like this::"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:59
+msgid ""
+"Since the ``ObjectManager`` gets injected into the class through the "
+"constructor, it's easy to pass a mock object within a test::"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:100
+msgid ""
+"In this example, you are building the mocks from the inside out, first "
+"creating the employee which gets returned by the ``Repository``, which "
+"itself gets returned by the ``EntityManager``. This way, no real class is "
+"involved in testing."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:106
+msgid "Changing Database Settings for Functional Tests"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:108
+msgid ""
+"If you have functional tests, you want them to interact with a real "
+"database. Most of the time you want to use a dedicated database connection "
+"to make sure not to overwrite data you entered when developing the "
+"application and also to be able to clear the database before every test."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:113
+msgid ""
+"To do this, you can specify a database configuration which overwrites the "
+"default configuration:"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:153
+msgid ""
+"Make sure that your database runs on localhost and has the defined database "
+"and user credentials set up."
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:1
+msgid "Tests"
+msgstr ""
+
+#: ../../cookbook/testing/database.rst:1
+msgid "Database"
+msgstr ""

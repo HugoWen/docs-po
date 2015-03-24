@@ -1,0 +1,60 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:5
+msgid "The Immutable Event Dispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:7
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\ImmutableEventDispatcher`"
+" is a locked or frozen event dispatcher. The dispatcher cannot register new "
+"listeners or subscribers."
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:11
+msgid ""
+"The ``ImmutableEventDispatcher`` takes another event dispatcher with all the"
+" listeners and subscribers. The immutable dispatcher is just a proxy of this"
+" original dispatcher."
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:15
+msgid ""
+"To use it, first create a normal dispatcher (``EventDispatcher`` or "
+"``ContainerAwareEventDispatcher``) and register some listeners or "
+"subscribers::"
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:28
+msgid "Now, inject that into an ``ImmutableEventDispatcher``::"
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:35
+msgid "You'll need to use this new dispatcher in your project."
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:37
+msgid ""
+"If you are trying to execute one of the methods which modifies the "
+"dispatcher (e.g. ``addListener``), a ``BadMethodCallException`` is thrown."
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:1
+msgid "EventDispatcher"
+msgstr ""
+
+#: ../../components/event_dispatcher/immutable_dispatcher.rst:1
+msgid "Immutable"
+msgstr ""

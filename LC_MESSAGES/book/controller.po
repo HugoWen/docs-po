@@ -1,0 +1,788 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../book/controller.rst:5 ../../book/controller.rst:1
+#: ../../book/controller.rst:47 ../../book/controller.rst:83
+#: ../../book/controller.rst:136 ../../book/controller.rst:223
+#: ../../book/controller.rst:389 ../../book/controller.rst:426
+#: ../../book/controller.rst:474 ../../book/controller.rst:506
+#: ../../book/controller.rst:540 ../../book/controller.rst:540
+#: ../../book/controller.rst:580 ../../book/controller.rst:680
+#: ../../book/controller.rst:721 ../../book/controller.rst:761
+msgid "Controller"
+msgstr ""
+
+#: ../../book/controller.rst:7
+msgid ""
+"A controller is a PHP callable you create that takes information from the "
+"HTTP request and constructs and returns an HTTP response (as a Symfony "
+"``Response`` object). The response could be an HTML page, an XML document, a"
+" serialized JSON array, an image, a redirect, a 404 error or anything else "
+"you can dream up. The controller contains whatever arbitrary logic *your "
+"application* needs to render the content of a page."
+msgstr ""
+
+#: ../../book/controller.rst:14
+msgid ""
+"See how simple this is by looking at a Symfony controller in action. This "
+"renders a page that prints the famous ``Hello world!``::"
+msgstr ""
+
+#: ../../book/controller.rst:24
+msgid ""
+"The goal of a controller is always the same: create and return a "
+"``Response`` object. Along the way, it might read information from the "
+"request, load a database resource, send an email, or set information on the "
+"user's session. But in all cases, the controller will eventually return the "
+"``Response`` object that will be delivered back to the client."
+msgstr ""
+
+#: ../../book/controller.rst:30
+msgid ""
+"There's no magic and no other requirements to worry about! Here are a few "
+"common examples:"
+msgstr ""
+
+#: ../../book/controller.rst:33
+msgid ""
+"*Controller A* prepares a ``Response`` object representing the content for "
+"the homepage of the site."
+msgstr ""
+
+#: ../../book/controller.rst:36
+msgid ""
+"*Controller B* reads the ``slug`` parameter from the request to load a blog "
+"entry from the database and create a ``Response`` object displaying that "
+"blog. If the ``slug`` can't be found in the database, it creates and returns"
+" a ``Response`` object with a 404 status code."
+msgstr ""
+
+#: ../../book/controller.rst:41
+msgid ""
+"*Controller C* handles the form submission of a contact form. It reads the "
+"form information from the request, saves the contact information to the "
+"database and emails the contact information to you. Finally, it creates a "
+"``Response`` object that redirects the client's browser to the contact form "
+"\"thank you\" page."
+msgstr ""
+
+#: ../../book/controller.rst:51
+msgid "Requests, Controller, Response Lifecycle"
+msgstr ""
+
+#: ../../book/controller.rst:53
+msgid ""
+"Every request handled by a Symfony project goes through the same simple "
+"lifecycle. The framework takes care of all the repetitive stuff: you just "
+"need to write your custom code in the controller function:"
+msgstr ""
+
+#: ../../book/controller.rst:57
+msgid ""
+"Each request is handled by a single front controller file (e.g. ``app.php`` "
+"or ``app_dev.php``) that bootstraps the application;"
+msgstr ""
+
+#: ../../book/controller.rst:60
+msgid ""
+"The ``Router`` reads information from the request (e.g. the URI), finds a "
+"route that matches that information, and reads the ``_controller`` parameter"
+" from the route;"
+msgstr ""
+
+#: ../../book/controller.rst:64
+msgid ""
+"The controller from the matched route is executed and the code inside the "
+"controller creates and returns a ``Response`` object;"
+msgstr ""
+
+#: ../../book/controller.rst:67
+msgid ""
+"The HTTP headers and content of the ``Response`` object are sent back to the"
+" client."
+msgstr ""
+
+#: ../../book/controller.rst:70
+msgid ""
+"Creating a page is as easy as creating a controller (#3) and making a route "
+"that maps a URL to that controller (#2)."
+msgstr ""
+
+#: ../../book/controller.rst:75
+msgid ""
+"Though similarly named, a \"front controller\" is different from the "
+"\"controllers\" talked about in this chapter. A front controller is a short "
+"PHP file that lives in your web directory and through which all requests are"
+" directed. A typical application will have a production front controller "
+"(e.g. ``app.php``) and a development front controller (e.g. "
+"``app_dev.php``). You'll likely never need to edit, view or worry about the "
+"front controllers in your application."
+msgstr ""
+
+#: ../../book/controller.rst:87
+msgid "A Simple Controller"
+msgstr ""
+
+#: ../../book/controller.rst:89
+msgid ""
+"While a controller can be any PHP callable (a function, method on an object,"
+" or a ``Closure``), a controller is usually a method inside a controller "
+"class. Controllers are also called *actions*."
+msgstr ""
+
+#: ../../book/controller.rst:110
+msgid ""
+"Note that the *controller* is the ``indexAction`` method, which lives inside"
+" a *controller class* (``HelloController``). Don't be confused by the "
+"naming: a *controller class* is simply a convenient way to group several "
+"controllers/actions together. Typically, the controller class will house "
+"several controllers/actions (e.g. ``updateAction``, ``deleteAction``, etc)."
+msgstr ""
+
+#: ../../book/controller.rst:117
+msgid "This controller is pretty straightforward:"
+msgstr ""
+
+#: ../../book/controller.rst:119
+msgid ""
+"*line 4*: Symfony takes advantage of PHP's namespace functionality to "
+"namespace the entire controller class. The ``use`` keyword imports the "
+"``Response`` class, which the controller must return."
+msgstr ""
+
+#: ../../book/controller.rst:123
+msgid ""
+"*line 6*: The class name is the concatenation of a name for the controller "
+"class (i.e. ``Hello``) and the word ``Controller``. This is a convention "
+"that provides consistency to controllers and allows them to be referenced "
+"only by the first part of the name (i.e. ``Hello``) in the routing "
+"configuration."
+msgstr ""
+
+#: ../../book/controller.rst:128
+msgid ""
+"*line 8*: Each action in a controller class is suffixed with ``Action`` and "
+"is referenced in the routing configuration by the action's name (``index``)."
+" In the next section, you'll create a route that maps a URI to this action. "
+"You'll learn how the route's placeholders (``{name}``) become arguments to "
+"the action method (``$name``)."
+msgstr ""
+
+#: ../../book/controller.rst:134
+msgid "*line 10*: The controller creates and returns a ``Response`` object."
+msgstr ""
+
+#: ../../book/controller.rst:140
+msgid "Mapping a URL to a Controller"
+msgstr ""
+
+#: ../../book/controller.rst:142
+msgid ""
+"The new controller returns a simple HTML page. To actually view this page in"
+" your browser, you need to create a route, which maps a specific URL path to"
+" the controller:"
+msgstr ""
+
+#: ../../book/controller.rst:204
+msgid ""
+"Now, you can go to ``/hello/ryan`` (e.g. "
+"``http://localhost:8000/app_dev.php/hello/ryan`` if you're using the :doc"
+":`built-in web server </cookbook/web_server/built_in>`) and Symfony will "
+"execute the ``HelloController::indexAction()`` controller and pass in "
+"``ryan`` for the ``$name`` variable. Creating a \"page\" means simply "
+"creating a controller method and an associated route."
+msgstr ""
+
+#: ../../book/controller.rst:210
+msgid "Simple, right?"
+msgstr ""
+
+#: ../../book/controller.rst:0
+msgid "The AppBundle:Hello:index controller syntax"
+msgstr ""
+
+#: ../../book/controller.rst:214
+msgid ""
+"If you use the YML or XML formats, you'll refer to the controller using a "
+"special shortcut syntax: ``AppBundle:Hello:index``. For more details on the "
+"controller format, see :ref:`controller-string-syntax`."
+msgstr ""
+
+#: ../../book/controller.rst:220
+msgid ""
+"You can learn much more about the routing system in the :doc:`Routing "
+"chapter </book/routing>`."
+msgstr ""
+
+#: ../../book/controller.rst:229
+msgid "Route Parameters as Controller Arguments"
+msgstr ""
+
+#: ../../book/controller.rst:231
+msgid ""
+"You already know that the route points to the "
+"``HelloController::indexAction()`` method that lives inside AppBundle. "
+"What's more interesting is the argument that is passed to that method::"
+msgstr ""
+
+#: ../../book/controller.rst:247
+msgid ""
+"The controller has a single argument, ``$name``, which corresponds to the "
+"``{name}`` parameter from the matched route (``ryan`` if you go to "
+"``/hello/ryan``). When executing your controller, Symfony matches each "
+"argument with a parameter from the route. So the value for ``{name}`` is "
+"passed to ``$name``."
+msgstr ""
+
+#: ../../book/controller.rst:252
+msgid "Take the following more-interesting example:"
+msgstr ""
+
+#: ../../book/controller.rst:308
+msgid "Now, the controller can have two arguments::"
+msgstr ""
+
+#: ../../book/controller.rst:315
+msgid ""
+"Mapping route parameters to controller arguments is easy and flexible. Keep "
+"the following guidelines in mind while you develop."
+msgstr ""
+
+#: ../../book/controller.rst:318
+msgid "**The order of the controller arguments does not matter**"
+msgstr ""
+
+#: ../../book/controller.rst:320
+msgid ""
+"Symfony matches the parameter **names** from the route to the variable "
+"**names** of the controller. The arguments of the controller could be "
+"totally reordered and still work perfectly::"
+msgstr ""
+
+#: ../../book/controller.rst:329
+msgid ""
+"**Each required controller argument must match up with a routing parameter**"
+msgstr ""
+
+#: ../../book/controller.rst:331
+msgid ""
+"The following would throw a ``RuntimeException`` because there is no ``foo``"
+" parameter defined in the route::"
+msgstr ""
+
+#: ../../book/controller.rst:339
+msgid ""
+"Making the argument optional, however, is perfectly ok. The following "
+"example would not throw an exception::"
+msgstr ""
+
+#: ../../book/controller.rst:347
+msgid "**Not all routing parameters need to be arguments on your controller**"
+msgstr ""
+
+#: ../../book/controller.rst:349
+msgid ""
+"If, for example, the ``lastName`` weren't important for your controller, you"
+" could omit it entirely::"
+msgstr ""
+
+#: ../../book/controller.rst:359
+msgid ""
+"Every route also has a special ``_route`` parameter, which is equal to the "
+"name of the route that was matched (e.g. ``hello``). Though not usually "
+"useful, this is also available as a controller argument. You can also pass "
+"other variables from your route to your controller arguments. See "
+":doc:`/cookbook/routing/extra_information`."
+msgstr ""
+
+#: ../../book/controller.rst:368
+msgid "The ``Request`` as a Controller Argument"
+msgstr ""
+
+#: ../../book/controller.rst:370
+msgid ""
+"What if you need to read query parameters, grab a request header or get "
+"access to an uploaded file? All of that information is stored in Symfony's "
+"``Request`` object. To get it in your controller, just add it as an argument"
+" and **type-hint it with the Request class**::"
+msgstr ""
+
+#: ../../book/controller.rst:386
+msgid ""
+"Want to know more about getting information from the request? See "
+":ref:`Access Request Information <component-http-foundation-request>`."
+msgstr ""
+
+#: ../../book/controller.rst:393
+msgid "The Base Controller Class"
+msgstr ""
+
+#: ../../book/controller.rst:395
+msgid ""
+"For convenience, Symfony comes with an optional base ``Controller`` class. "
+"If you extend it, you'll get access to a number of helper methods and all of"
+" your service objects via the container (see :ref:`controller-accessing-"
+"services`)."
+msgstr ""
+
+#: ../../book/controller.rst:399
+msgid ""
+"Add the ``use`` statement atop the ``Controller`` class and then modify the "
+"``HelloController`` to extend it::"
+msgstr ""
+
+#: ../../book/controller.rst:412
+msgid ""
+"This doesn't actually change anything about how your controller works: it "
+"just gives you access to helper methods that the base controller class makes"
+" available. These are just shortcuts to using core Symfony functionality "
+"that's available to you with or without the use of the base ``Controller`` "
+"class. A great way to see the core functionality in action is to look in the"
+" `Controller class`_."
+msgstr ""
+
+#: ../../book/controller.rst:421
+msgid ""
+"If you're curious about how a controller would work that did *not* extend "
+"this base class, check out :doc:`Controllers as Services "
+"</cookbook/controller/service>`. This is optional, but can give you more "
+"control over the exact objects/dependencies that are injected into your "
+"controller."
+msgstr ""
+
+#: ../../book/controller.rst:430 ../../book/controller.rst:426
+msgid "Redirecting"
+msgstr ""
+
+#: ../../book/controller.rst:432
+msgid ""
+"If you want to redirect the user to another page, use the "
+"``redirectToRoute()`` method::"
+msgstr ""
+
+#: ../../book/controller.rst:442
+msgid ""
+"The ``redirectToRoute()`` method was added in Symfony 2.6. Previously (and "
+"still now), you could use ``redirect()`` and ``generateUrl()`` together for "
+"this (see the example above)."
+msgstr ""
+
+#: ../../book/controller.rst:446
+msgid ""
+"Or, if you want to redirect externally, just use ``redirect()`` and pass it "
+"the URL::"
+msgstr ""
+
+#: ../../book/controller.rst:453
+msgid ""
+"By default, the ``redirectToRoute()`` method performs a 302 (temporary) "
+"redirect. To perform a 301 (permanent) redirect, modify the third argument::"
+msgstr ""
+
+#: ../../book/controller.rst:463
+msgid ""
+"The ``redirectToRoute()`` method is simply a shortcut that creates a "
+"``Response`` object that specializes in redirecting the user. It's "
+"equivalent to::"
+msgstr ""
+
+#: ../../book/controller.rst:480
+msgid "Rendering Templates"
+msgstr ""
+
+#: ../../book/controller.rst:482
+msgid ""
+"If you're serving HTML, you'll want to render a template. The ``render()`` "
+"method renders a template **and** puts that content into a ``Response`` "
+"object for you::"
+msgstr ""
+
+#: ../../book/controller.rst:489
+msgid ""
+"You can also put templates in deeper sub-directories. Just try to avoid "
+"creating unnecessarily deep structures::"
+msgstr ""
+
+#: ../../book/controller.rst:495
+msgid ""
+"The Symfony templating engine is explained in great detail in the "
+":doc:`Templating </book/templating>` chapter."
+msgstr ""
+
+#: ../../book/controller.rst:0
+msgid "Referencing Templates that Live inside the Bundle"
+msgstr ""
+
+#: ../../book/controller.rst:500
+msgid ""
+"You can also put templates in the ``Resources/views`` directory of a bundle "
+"and reference them with a ``BundleName:DirectoryName:FileName`` syntax. For "
+"example, ``AppBundle:Hello:index.html.twig`` would refer to the template "
+"located in ``src/AppBundle/Resources/views/Hello/index.html.twig``. See :ref"
+":`template-referencing-in-bundle`."
+msgstr ""
+
+#: ../../book/controller.rst:512
+msgid "Accessing other Services"
+msgstr ""
+
+#: ../../book/controller.rst:514
+msgid ""
+"Symfony comes packed with a lot of useful objects, called services. These "
+"are used for rendering templates, sending emails, querying the database and "
+"any other \"work\" you can think of. When you install a new bundle, it "
+"probably brings in even *more* services."
+msgstr ""
+
+#: ../../book/controller.rst:519
+msgid ""
+"When extending the base controller class, you can access any Symfony service"
+" via the ``get()`` method. Here are several common services you might need::"
+msgstr ""
+
+#: ../../book/controller.rst:528
+msgid ""
+"What other services exist? You can list all services, use the "
+"``debug:container`` console command:"
+msgstr ""
+
+#: ../../book/controller.rst:535
+msgid "Prior to Symfony 2.6, this command was called ``container:debug``."
+msgstr ""
+
+#: ../../book/controller.rst:538
+msgid "For more information, see the :doc:`/book/service_container` chapter."
+msgstr ""
+
+#: ../../book/controller.rst:545
+msgid "Managing Errors and 404 Pages"
+msgstr ""
+
+#: ../../book/controller.rst:547
+msgid ""
+"When things are not found, you should play well with the HTTP protocol and "
+"return a 404 response. To do this, you'll throw a special type of exception."
+" If you're extending the base controller class, do the following::"
+msgstr ""
+
+#: ../../book/controller.rst:562
+msgid ""
+"The ``createNotFoundException()`` method is just a shortcut to create a "
+"special "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException`"
+" object, which ultimately triggers a 404 HTTP response inside Symfony."
+msgstr ""
+
+#: ../../book/controller.rst:566
+msgid ""
+"Of course, you're free to throw any ``Exception`` class in your controller -"
+" Symfony will automatically return a 500 HTTP response code."
+msgstr ""
+
+#: ../../book/controller.rst:573
+msgid ""
+"In every case, an error page is shown to the end user and a full debug error"
+" page is shown to the developer (i.e. when you're using ``app_dev.php`` - "
+"see :ref:`page-creation-environments`)."
+msgstr ""
+
+#: ../../book/controller.rst:577
+msgid ""
+"You'll want to customize the error page your user sees. To do that, see the "
+"\":doc:`/cookbook/controller/error_pages`\" cookbook recipe."
+msgstr ""
+
+#: ../../book/controller.rst:585
+msgid "Managing the Session"
+msgstr ""
+
+#: ../../book/controller.rst:587
+msgid ""
+"Symfony provides a nice session object that you can use to store information"
+" about the user (be it a real person using a browser, a bot, or a web "
+"service) between requests. By default, Symfony stores the attributes in a "
+"cookie by using the native PHP sessions."
+msgstr ""
+
+#: ../../book/controller.rst:592
+msgid ""
+"Storing and retrieving information from the session can be easily achieved "
+"from any controller::"
+msgstr ""
+
+#: ../../book/controller.rst:611
+msgid ""
+"These attributes will remain on the user for the remainder of that user's "
+"session."
+msgstr ""
+
+#: ../../book/controller.rst:618
+msgid "Flash Messages"
+msgstr ""
+
+#: ../../book/controller.rst:620
+msgid ""
+"You can also store small messages that will be stored on the user's session "
+"for exactly one additional request. This is useful when processing a form: "
+"you want to redirect and have a special message shown on the *next* page. "
+"These types of messages are called \"flash\" messages."
+msgstr ""
+
+#: ../../book/controller.rst:625
+msgid "For example, imagine you're processing a form submit::"
+msgstr ""
+
+#: ../../book/controller.rst:651
+msgid ""
+"After processing the request, the controller sets a ``notice`` flash message"
+" in the session and then redirects. The name (``notice``) isn't significant "
+"- it's just something you invent and reference next."
+msgstr ""
+
+#: ../../book/controller.rst:655
+msgid ""
+"In the template of the next action, the following code could be used to "
+"render the ``notice`` message:"
+msgstr ""
+
+#: ../../book/controller.rst:676
+msgid ""
+"By design, flash messages are meant to live for exactly one request (they're"
+" \"gone in a flash\"). They're designed to be used across redirects exactly "
+"as you've done in this example."
+msgstr ""
+
+#: ../../book/controller.rst:684
+msgid "The Response Object"
+msgstr ""
+
+#: ../../book/controller.rst:686
+msgid ""
+"The only requirement for a controller is to return a ``Response`` object. "
+"The :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` class is an "
+"abstraction around the HTTP response: the text-based message filled with "
+"headers and content that's sent back to the client::"
+msgstr ""
+
+#: ../../book/controller.rst:700
+msgid ""
+"The ``headers`` property is a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\HeaderBag` object and has "
+"some nice methods for getting and setting the headers. The header names are "
+"normalized so that using ``Content-Type`` is equivalent to ``content-type`` "
+"or even ``content_type``."
+msgstr ""
+
+#: ../../book/controller.rst:705
+msgid ""
+"There are also special classes to make certain kinds of responses easier:"
+msgstr ""
+
+#: ../../book/controller.rst:707
+msgid ""
+"For JSON, there is "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\JsonResponse`. See :ref"
+":`component-http-foundation-json-response`."
+msgstr ""
+
+#: ../../book/controller.rst:710
+msgid ""
+"For files, there is "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\BinaryFileResponse`. See "
+":ref:`component-http-foundation-serving-files`."
+msgstr ""
+
+#: ../../book/controller.rst:713
+msgid ""
+"For streamed responses, there is "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\StreamedResponse`. See "
+":ref:`streaming-response`."
+msgstr ""
+
+#: ../../book/controller.rst:718
+msgid ""
+"Don't worry! There is a lot more information about the Response object in "
+"the component documentation. See :ref:`component-http-foundation-response`."
+msgstr ""
+
+#: ../../book/controller.rst:725
+msgid "The Request Object"
+msgstr ""
+
+#: ../../book/controller.rst:727
+msgid ""
+"Besides the values of the routing placeholders, the controller also has "
+"access to the ``Request`` object. The framework injects the ``Request`` "
+"object in the controller if a variable is type-hinted with "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request`::"
+msgstr ""
+
+#: ../../book/controller.rst:745
+msgid ""
+"Like the ``Response`` object, the request headers are stored in a "
+"``HeaderBag`` object and are easily accessible."
+msgstr ""
+
+#: ../../book/controller.rst:750
+msgid ""
+"Don't worry! There is a lot more information about the Request object in the"
+" component documentation. See :ref:`component-http-foundation-request`."
+msgstr ""
+
+#: ../../book/controller.rst:754
+msgid "Creating Static Pages"
+msgstr ""
+
+#: ../../book/controller.rst:756
+msgid ""
+"You can create a static page without even creating a controller (only a "
+"route and template are needed)."
+msgstr ""
+
+#: ../../book/controller.rst:759
+msgid "See :doc:`/cookbook/templating/render_without_controller`."
+msgstr ""
+
+#: ../../book/controller.rst:765
+msgid "Forwarding to Another Controller"
+msgstr ""
+
+#: ../../book/controller.rst:767
+msgid ""
+"Though not very common, you can also forward to another controller "
+"internally with the "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\Controller::forward`"
+" method. Instead of redirecting the user's browser, it makes an internal "
+"sub-request, and calls the controller. The ``forward()`` method returns the "
+"``Response`` object that's returned from *that* controller::"
+msgstr ""
+
+#: ../../book/controller.rst:785
+msgid ""
+"Notice that the ``forward()`` method uses a special string representation of"
+" the controller (see :ref:`controller-string-syntax`). In this case, the "
+"target controller function will be ``SomethingController::fancyAction()`` "
+"inside the AppBundle. The array passed to the method becomes the arguments "
+"on the resulting controller. This same idea is used when embedding "
+"controllers into templates (see :ref:`templating-embedding-controller`). The"
+" target controller method would look something like this::"
+msgstr ""
+
+#: ../../book/controller.rst:798
+msgid ""
+"Just like when creating a controller for a route, the order of the arguments"
+" of ``fancyAction`` doesn't matter. Symfony matches the index key names "
+"(e.g. ``name``) with the method argument names (e.g. ``$name``). If you "
+"change the order of the arguments, Symfony will still pass the correct value"
+" to each variable."
+msgstr ""
+
+#: ../../book/controller.rst:805
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../book/controller.rst:807
+msgid ""
+"Whenever you create a page, you'll ultimately need to write some code that "
+"contains the logic for that page. In Symfony, this is called a controller, "
+"and it's a PHP function where you can do anything in order to return the "
+"final ``Response`` object that will be returned to the user."
+msgstr ""
+
+#: ../../book/controller.rst:812
+msgid ""
+"To make life easier, you can choose to extend a base ``Controller`` class, "
+"which contains shortcut methods for many common controller tasks. For "
+"example, since you don't want to put HTML code in your controller, you can "
+"use the ``render()`` method to render and return the content from a "
+"template."
+msgstr ""
+
+#: ../../book/controller.rst:817
+msgid ""
+"In other chapters, you'll see how the controller can be used to persist and "
+"fetch objects from a database, process form submissions, handle caching and "
+"more."
+msgstr ""
+
+#: ../../book/controller.rst:822
+msgid "Learn more from the Cookbook"
+msgstr ""
+
+#: ../../book/controller.rst:824
+msgid ":doc:`/cookbook/controller/error_pages`"
+msgstr ""
+
+#: ../../book/controller.rst:825
+msgid ":doc:`/cookbook/controller/service`"
+msgstr ""
+
+#: ../../book/controller.rst:47
+msgid "Request-controller-response lifecycle"
+msgstr ""
+
+#: ../../book/controller.rst:83
+msgid "Simple example"
+msgstr ""
+
+#: ../../book/controller.rst:136
+msgid "Routes and controllers"
+msgstr ""
+
+#: ../../book/controller.rst:223
+msgid "Controller arguments"
+msgstr ""
+
+#: ../../book/controller.rst:389
+msgid "Base controller class"
+msgstr ""
+
+#: ../../book/controller.rst:474
+msgid "Rendering templates"
+msgstr ""
+
+#: ../../book/controller.rst:506
+msgid "Accessing services"
+msgstr ""
+
+#: ../../book/controller.rst:540
+msgid "Managing errors"
+msgstr ""
+
+#: ../../book/controller.rst:540
+msgid "404 pages"
+msgstr ""
+
+#: ../../book/controller.rst:580
+msgid "The session"
+msgstr ""
+
+#: ../../book/controller.rst:580 ../../book/controller.rst:614
+msgid "Session"
+msgstr ""
+
+#: ../../book/controller.rst:614
+msgid "Flash messages"
+msgstr ""
+
+#: ../../book/controller.rst:680
+msgid "Response object"
+msgstr ""
+
+#: ../../book/controller.rst:721
+msgid "Request object"
+msgstr ""
+
+#: ../../book/controller.rst:761
+msgid "Forwarding"
+msgstr ""

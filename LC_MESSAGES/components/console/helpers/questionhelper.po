@@ -1,0 +1,241 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 10:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../components/console/helpers/questionhelper.rst:5
+#: ../../components/console/helpers/questionhelper.rst:1
+msgid "Question Helper"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:7
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\QuestionHelper` "
+"provides functions to ask the user for more information. It is included in "
+"the default helper set, which you can get by calling "
+":method:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command::getHelperSet`::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:14
+msgid ""
+"The Question Helper has a single method "
+":method:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command::ask` that "
+"needs an "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\InputInterface` "
+"instance as the first argument, an "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` "
+"instance as the second argument and a "
+":class:`Symfony\\\\Component\\\\Console\\\\Question\\\\Question` as last "
+"argument."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:22
+msgid "Asking the User for Confirmation"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:24
+msgid ""
+"Suppose you want to confirm an action before actually executing it. Add the "
+"following to your command::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:37
+msgid ""
+"In this case, the user will be asked \"Continue with this action?\". If the "
+"user answers with ``y`` it returns ``true`` or ``false`` if they answer with"
+" ``n``. The second argument to "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\ConfirmationQuestion::__construct`"
+" is the default value to return if the user doesn't enter any valid input. "
+"If the second argument is not provided, ``true`` is assumed."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:46
+msgid ""
+"You can customize the regex used to check if the answer means \"yes\" in the"
+" third argument of the constructor. For instance, to allow anything that "
+"starts with either ``y`` or ``j``, you would set it to::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:56
+msgid "The regex defaults to ``/^y/i``."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:58
+msgid ""
+"The regex argument was introduced in Symfony 2.7. Before, only answers "
+"starting with ``y`` were considered as \"yes\"."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:63
+msgid "Asking the User for Information"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:65
+msgid ""
+"You can also ask a question with more than a simple yes/no answer. For "
+"instance, if you want to know a bundle name, you can add this to your "
+"command::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:75
+msgid ""
+"The user will be asked \"Please enter the name of the bundle\". They can "
+"type some name which will be returned by the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\QuestionHelper::ask` "
+"method. If they leave it empty, the default value (``AcmeDemoBundle`` here) "
+"is returned."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:81
+msgid "Let the User Choose from a List of Answers"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:83
+msgid ""
+"If you have a predefined set of answers the user can choose from, you could "
+"use a :class:`Symfony\\\\Component\\\\Console\\\\Question\\\\ChoiceQuestion`"
+" which makes sure that the user can only enter a valid string from a "
+"predefined list::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:104
+msgid ""
+"The option which should be selected by default is provided with the third "
+"argument of the constructor. The default is ``null``, which means that no "
+"option is the default one."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:108
+msgid ""
+"If the user enters an invalid string, an error message is shown and the user"
+" is asked to provide the answer another time, until they enter a valid "
+"string or reach the maximum number of attempts. The default value for the "
+"maximum number of attempts is ``null``, which means infinite number of "
+"attempts. You can define your own error message using "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\ChoiceQuestion::setErrorMessage`."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:116
+msgid "Multiple Choices"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:118
+msgid ""
+"Sometimes, multiple answers can be given. The ``ChoiceQuestion`` provides "
+"this feature using comma separated values. This is disabled by default, to "
+"enable this use "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\ChoiceQuestion::setMultiselect`::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:136
+msgid ""
+"Now, when the user enters ``1,2``, the result will be: ``You have just "
+"selected: blue, yellow``."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:139
+msgid ""
+"If the user does not enter anything, the result will be: ``You have just "
+"selected: red, blue``."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:143
+msgid "Autocompletion"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:145
+msgid ""
+"You can also specify an array of potential answers for a given question. "
+"These will be autocompleted as the user types::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:158
+msgid "Hiding the User's Response"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:160
+msgid ""
+"You can also ask a question and hide the response. This is particularly "
+"convenient for passwords::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:174
+msgid ""
+"When you ask for a hidden response, Symfony will use either a binary, change"
+" stty mode or use another trick to hide the response. If none is available, "
+"it will fallback and allow the response to be visible unless you set this "
+"behavior to ``false`` using "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\Question::setHiddenFallback`"
+" like in the example above. In this case, a ``RuntimeException`` would be "
+"thrown."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:183
+msgid "Validating the Answer"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:185
+msgid ""
+"You can even validate the answer. For instance, in a previous example you "
+"asked for the bundle name. Following the Symfony naming conventions, it "
+"should be suffixed with ``Bundle``. You can validate that by using the "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\Question::setValidator`"
+" method::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:207
+msgid ""
+"The ``$validator`` is a callback which handles the validation. It should "
+"throw an exception if there is something wrong. The exception message is "
+"displayed in the console, so it is a good practice to put some useful "
+"information in it. The callback function should also return the value of the"
+" user's input if the validation was successful."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:213
+msgid ""
+"You can set the max number of times to ask with the "
+":method:`Symfony\\\\Component\\\\Console\\\\Question\\\\Question::setMaxAttempts`"
+" method. If you reach this max number it will use the default value. Using "
+"``null`` means the amount of attempts is infinite. The user will be asked as"
+" long as they provide an invalid answer and will only be able to proceed if "
+"their input is valid."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:220
+msgid "Validating a Hidden Response"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:222
+msgid "You can also use a validator with a hidden question::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:244
+msgid "Testing a Command that Expects Input"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:246
+msgid ""
+"If you want to write a unit test for a command which expects some kind of "
+"input from the command line, you need to set the helper input stream::"
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:278
+msgid ""
+"By setting the input stream of the ``QuestionHelper``, you imitate what the "
+"console would do internally with all user input through the cli. This way "
+"you can test any user interaction (even complex ones) by passing an "
+"appropriate input stream."
+msgstr ""
+
+#: ../../components/console/helpers/questionhelper.rst:1
+msgid "Console Helpers"
+msgstr ""
