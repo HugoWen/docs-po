@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:2
 msgid "Configuration"
-msgstr ""
+msgstr "配置参数"
 
 #: ../../best_practices/configuration.rst:4
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:12
 msgid "Infrastructure-Related Configuration"
-msgstr ""
+msgstr "架构相关的配置"
 
 #: ../../best_practices/configuration.rst:0
 #: ../../best_practices/configuration.rst:0
@@ -33,7 +33,7 @@ msgstr ""
 #: ../../best_practices/configuration.rst:0
 #: ../../best_practices/configuration.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/configuration.rst:16
 msgid ""
@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:48
 msgid "Canonical Parameters"
-msgstr ""
+msgstr "默认参数"
 
 #: ../../best_practices/configuration.rst:52
 msgid ""
@@ -86,7 +86,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:67
 msgid "Application-Related Configuration"
-msgstr ""
+msgstr "应用相关的配置"
 
 #: ../../best_practices/configuration.rst:71
 msgid ""
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:86
 msgid "Constants vs Configuration Options"
-msgstr ""
+msgstr "常量 vs 配置"
 
 #: ../../best_practices/configuration.rst:88
 msgid ""
@@ -171,7 +171,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:159
 msgid "Semantic Configuration: Don't Do It"
-msgstr ""
+msgstr "别为难自己：不必按场景配置"
 
 #: ../../best_practices/configuration.rst:163
 msgid ""
@@ -196,7 +196,7 @@ msgstr ""
 
 #: ../../best_practices/configuration.rst:176
 msgid "Moving Sensitive Options Outside of Symfony Entirely"
-msgstr ""
+msgstr "避免在Symfony项目里泄露敏感配置"
 
 #: ../../best_practices/configuration.rst:178
 msgid ""

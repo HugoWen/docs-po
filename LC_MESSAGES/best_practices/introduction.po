@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/introduction.rst:5
 msgid "The Symfony Framework Best Practices"
-msgstr ""
+msgstr "Symfony框架最佳实践"
 
 #: ../../best_practices/introduction.rst:7
 msgid ""
@@ -175,4 +175,4 @@ msgstr ""
 
 #: ../../best_practices/introduction.rst:1
 msgid "Symfony Framework Best Practices"
-msgstr ""
+msgstr "Symfony框架最佳实践"

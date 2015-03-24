@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:2
 msgid "Tests"
-msgstr ""
+msgstr "测试"
 
 #: ../../best_practices/tests.rst:4
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:10
 msgid "Unit Tests"
-msgstr ""
+msgstr "单元测试"
 
 #: ../../best_practices/tests.rst:12
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:18
 msgid "Functional Tests"
-msgstr ""
+msgstr "功能测试"
 
 #: ../../best_practices/tests.rst:20
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:0 ../../best_practices/tests.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/tests.rst:26
 msgid ""
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:74
 msgid "Hardcode URLs in a Functional Test"
-msgstr ""
+msgstr "在功能测试里指定具体URL"
 
 #: ../../best_practices/tests.rst:76
 msgid ""
@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:104
 msgid "Testing JavaScript Functionality"
-msgstr ""
+msgstr "测试Javascript代码"
 
 #: ../../best_practices/tests.rst:106
 msgid ""
@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../../best_practices/tests.rst:114
 msgid "Learn More about Functional Tests"
-msgstr ""
+msgstr "更多信息"
 
 #: ../../best_practices/tests.rst:116
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/i18n.rst:2
 msgid "Internationalization"
-msgstr ""
+msgstr "多语言支持"
 
 #: ../../best_practices/i18n.rst:4
 msgid ""
@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../best_practices/i18n.rst:22
 msgid "Translation Source File Format"
-msgstr ""
+msgstr "翻译项文件格式"
 
 #: ../../best_practices/i18n.rst:24
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 #: ../../best_practices/i18n.rst:0 ../../best_practices/i18n.rst:0
 #: ../../best_practices/i18n.rst:0
 msgid "Best Practice"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../best_practices/i18n.rst:29
 msgid "Use the XLIFF format for your translation files."
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../best_practices/i18n.rst:46
 msgid "Translation Source File Location"
-msgstr ""
+msgstr "翻译项文件的位置"
 
 #: ../../best_practices/i18n.rst:50
 msgid ""
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../../best_practices/i18n.rst:61
 msgid "Translation Keys"
-msgstr ""
+msgstr "翻译项的键名"
 
 #: ../../best_practices/i18n.rst:65
 msgid "Always use keys for translations instead of content strings."
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../best_practices/i18n.rst:76
 msgid "Example Translation File"
-msgstr ""
+msgstr "翻译项文件的例子"
 
 #: ../../best_practices/i18n.rst:78
 msgid ""
