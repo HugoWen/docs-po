@@ -14,7 +14,7 @@ msgstr ""
 #: ../../book/translation.rst:5 ../../book/translation.rst:1
 #: ../../book/translation.rst:532
 msgid "Translations"
-msgstr ""
+msgstr "多语言"
 
 #: ../../book/translation.rst:7
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../book/translation.rst:50
 msgid "Configuration"
-msgstr ""
+msgstr "设置"
 
 #: ../../book/translation.rst:52
 msgid ""
@@ -94,7 +94,7 @@ msgstr ""
 
 #: ../../book/translation.rst:99
 msgid "Basic Translation"
-msgstr ""
+msgstr "翻译基本用法"
 
 #: ../../book/translation.rst:101
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../book/translation.rst:163
 msgid "The Translation Process"
-msgstr ""
+msgstr "翻译过程"
 
 #: ../../book/translation.rst:165
 msgid "To actually translate the message, Symfony uses a simple process:"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ../../book/translation.rst:182
 msgid "Message Placeholders"
-msgstr ""
+msgstr "占位符"
 
 #: ../../book/translation.rst:184
 msgid "Sometimes, a message containing a variable needs to be translated::"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: ../../book/translation.rst:203
 msgid "Pluralization"
-msgstr ""
+msgstr "单复数"
 
 #: ../../book/translation.rst:205
 msgid ""
@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../book/translation.rst:220
 msgid "Translations in Templates"
-msgstr ""
+msgstr "模板里使用翻译"
 
 #: ../../book/translation.rst:222
 msgid ""
@@ -223,7 +223,7 @@ msgstr ""
 
 #: ../../book/translation.rst:228
 msgid "Twig Templates"
-msgstr ""
+msgstr "Twig模板"
 
 #: ../../book/translation.rst:230
 msgid ""
@@ -284,7 +284,7 @@ msgstr ""
 
 #: ../../book/translation.rst:315
 msgid "PHP Templates"
-msgstr ""
+msgstr "PHP模板"
 
 #: ../../book/translation.rst:317
 msgid ""
@@ -294,7 +294,7 @@ msgstr ""
 
 #: ../../book/translation.rst:333
 msgid "Translation Resource/File Names and Locations"
-msgstr ""
+msgstr "翻译文件命名规则以及存放位置"
 
 #: ../../book/translation.rst:335
 msgid ""
@@ -397,7 +397,7 @@ msgstr ""
 
 #: ../../book/translation.rst:393
 msgid "Fallback Translation Locales"
-msgstr ""
+msgstr "设置默认语言"
 
 #: ../../book/translation.rst:395
 msgid ""
@@ -437,7 +437,7 @@ msgstr ""
 
 #: ../../book/translation.rst:420
 msgid "Handling the User's Locale"
-msgstr ""
+msgstr "处理用户语言选择"
 
 #: ../../book/translation.rst:422
 msgid ""
@@ -473,7 +473,7 @@ msgstr ""
 
 #: ../../book/translation.rst:459
 msgid "The Locale and the URL"
-msgstr ""
+msgstr "多语言和URL"
 
 #: ../../book/translation.rst:461
 msgid ""
@@ -516,7 +516,7 @@ msgstr ""
 
 #: ../../book/translation.rst:536
 msgid "Setting a default Locale"
-msgstr ""
+msgstr "设置默认的语言"
 
 #: ../../book/translation.rst:538
 msgid ""
@@ -527,7 +527,7 @@ msgstr ""
 
 #: ../../book/translation.rst:575
 msgid "Translating Constraint Messages"
-msgstr ""
+msgstr "翻译校验错误信息"
 
 #: ../../book/translation.rst:577
 msgid ""
@@ -558,7 +558,7 @@ msgstr ""
 
 #: ../../book/translation.rst:691
 msgid "Translating Database Content"
-msgstr ""
+msgstr "翻译数据库数据"
 
 #: ../../book/translation.rst:693
 msgid ""
@@ -569,7 +569,7 @@ msgstr ""
 
 #: ../../book/translation.rst:698
 msgid "Debugging Translations"
-msgstr ""
+msgstr "翻译调试"
 
 #: ../../book/translation.rst:700
 msgid "Prior to Symfony 2.6, this command was called ``translation:debug``."
@@ -689,7 +689,7 @@ msgstr ""
 
 #: ../../book/translation.rst:866
 msgid "Summary"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/translation.rst:868
 msgid ""

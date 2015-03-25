@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:7
 msgid "Creating Pages in Symfony"
-msgstr ""
+msgstr "创建页面"
 
 #: ../../book/page_creation.rst:9
 msgid "Creating a new page in Symfony is a simple two-step process:"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:33 ../../book/page_creation.rst:27
 msgid "Environments & Front Controllers"
-msgstr ""
+msgstr "运行环境 & Front Controllers"
 
 #: ../../book/page_creation.rst:35
 msgid ""
@@ -95,7 +95,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:67
 msgid "The \"Random Number\" Page"
-msgstr ""
+msgstr "“随机数”页面示例"
 
 #: ../../book/page_creation.rst:69
 msgid ""
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:93
 msgid "Before you begin: Create the Bundle"
-msgstr ""
+msgstr "在您开始之前请先创建Bundle"
 
 #: ../../book/page_creation.rst:95
 msgid ""
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:137
 msgid "Step 1: Create the Route"
-msgstr ""
+msgstr "第一步：创建Route"
 
 #: ../../book/page_creation.rst:139
 msgid ""
@@ -237,7 +237,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:249
 msgid "Step 2: Create the Controller"
-msgstr ""
+msgstr "第二部：创建Controller"
 
 #: ../../book/page_creation.rst:251
 msgid ""
@@ -310,7 +310,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:331
 msgid "Optional Step 3: Create the Template"
-msgstr ""
+msgstr "第三部（可选）：创建模板"
 
 #: ../../book/page_creation.rst:333
 msgid ""
@@ -424,7 +424,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:485
 msgid "The Directory Structure"
-msgstr ""
+msgstr "目录结构"
 
 #: ../../book/page_creation.rst:487
 msgid ""
@@ -481,7 +481,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:516
 msgid "The Web Directory"
-msgstr ""
+msgstr "Web目录"
 
 #: ../../book/page_creation.rst:518
 msgid ""
@@ -521,7 +521,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:560
 msgid "The Application (``app``) Directory"
-msgstr ""
+msgstr "应用（ ``app`` ）目录"
 
 #: ../../book/page_creation.rst:562
 msgid ""
@@ -570,7 +570,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:0
 msgid "Autoloading"
-msgstr ""
+msgstr "自动加载"
 
 #: ../../book/page_creation.rst:590
 msgid ""
@@ -597,7 +597,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:612
 msgid "The Source (``src``) Directory"
-msgstr ""
+msgstr "代码（ ``src`` ）目录"
 
 #: ../../book/page_creation.rst:614
 msgid ""
@@ -613,7 +613,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:624
 msgid "The Bundle System"
-msgstr ""
+msgstr "Bundle系统"
 
 #: ../../book/page_creation.rst:626
 msgid ""
@@ -665,7 +665,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:683
 msgid "Creating a Bundle"
-msgstr ""
+msgstr "创建Bundle"
 
 #: ../../book/page_creation.rst:685
 msgid ""
@@ -741,7 +741,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:755
 msgid "Bundle Directory Structure"
-msgstr ""
+msgstr "Bundle目录结构"
 
 #: ../../book/page_creation.rst:757
 msgid ""
@@ -826,7 +826,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:793
 msgid "Application Configuration"
-msgstr ""
+msgstr "应用配置"
 
 #: ../../book/page_creation.rst:795
 msgid ""
@@ -889,7 +889,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:905
 msgid "Default Configuration Dump"
-msgstr ""
+msgstr "导入默认配置项"
 
 #: ../../book/page_creation.rst:907
 msgid ""
@@ -911,7 +911,7 @@ msgstr ""
 #: ../../book/page_creation.rst:932 ../../book/page_creation.rst:926
 #: ../../book/page_creation.rst:984
 msgid "Environments"
-msgstr ""
+msgstr "运行环境"
 
 #: ../../book/page_creation.rst:934
 msgid ""
@@ -968,7 +968,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:988
 msgid "Environment Configuration"
-msgstr ""
+msgstr "运行环境设置"
 
 #: ../../book/page_creation.rst:990
 msgid ""
@@ -1003,7 +1003,7 @@ msgstr ""
 
 #: ../../book/page_creation.rst:1070
 msgid "Summary"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/page_creation.rst:1072
 msgid ""

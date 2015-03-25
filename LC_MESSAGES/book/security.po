@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/security.rst:5 ../../book/security.rst:1
 msgid "Security"
-msgstr ""
+msgstr "安全性"
 
 #: ../../book/security.rst:7
 msgid ""
@@ -34,15 +34,15 @@ msgstr ""
 
 #: ../../book/security.rst:17
 msgid "Initial ``security.yml`` setup (*authentication*);"
-msgstr ""
+msgstr "设置 ``security.yml`` 文件（*身份鉴定*）"
 
 #: ../../book/security.rst:19
 msgid "Denying access to your app (*authorization*);"
-msgstr ""
+msgstr "设置访问权限（*权限控制*）"
 
 #: ../../book/security.rst:21
 msgid "Fetching the current User object."
-msgstr ""
+msgstr "获取当前用户对象"
 
 #: ../../book/security.rst:23
 msgid ""
@@ -53,7 +53,7 @@ msgstr ""
 
 #: ../../book/security.rst:29
 msgid "1) Initial security.yml Setup (Authentication)"
-msgstr ""
+msgstr "1) 设置security.yml文件（身份鉴定）"
 
 #: ../../book/security.rst:31
 msgid ""
@@ -101,7 +101,7 @@ msgstr ""
 
 #: ../../book/security.rst:127
 msgid "A) Configuring how your Users will Authenticate"
-msgstr ""
+msgstr "A) 设置身份鉴定方式"
 
 #: ../../book/security.rst:129
 msgid ""
@@ -154,7 +154,7 @@ msgstr ""
 
 #: ../../book/security.rst:286
 msgid "B) Configuring how Users are Loaded"
-msgstr ""
+msgstr "B) 配置用户对象载入方式"
 
 #: ../../book/security.rst:288
 msgid ""
@@ -228,7 +228,7 @@ msgstr ""
 
 #: ../../book/security.rst:437
 msgid "Loading Users from the Database"
-msgstr ""
+msgstr "从数据库里载入用户"
 
 #: ../../book/security.rst:439
 msgid ""
@@ -238,7 +238,7 @@ msgstr ""
 
 #: ../../book/security.rst:447
 msgid "C) Encoding the User's Password"
-msgstr ""
+msgstr "C) 给密码加密"
 
 #: ../../book/security.rst:449
 msgid ""
@@ -286,7 +286,7 @@ msgstr ""
 
 #: ../../book/security.rst:588
 msgid "D) Configuration Done!"
-msgstr ""
+msgstr "D) 完成配置！"
 
 #: ../../book/security.rst:590
 msgid ""
@@ -320,7 +320,7 @@ msgstr ""
 
 #: ../../book/security.rst:607
 msgid "2) Denying Access, Roles and other Authorization"
-msgstr ""
+msgstr "2) 访问限制, 角色，以及其他权限验证"
 
 #: ../../book/security.rst:609
 msgid ""
@@ -358,7 +358,7 @@ msgstr ""
 
 #: ../../book/security.rst:632
 msgid "Roles"
-msgstr ""
+msgstr "角色"
 
 #: ../../book/security.rst:634
 msgid ""
@@ -401,7 +401,7 @@ msgstr ""
 
 #: ../../book/security.rst:665
 msgid "Add Code to Deny Access"
-msgstr ""
+msgstr "添加限制访问的代码"
 
 #: ../../book/security.rst:667
 msgid "There are **two** ways to deny access to something:"
@@ -422,7 +422,7 @@ msgstr ""
 
 #: ../../book/security.rst:678
 msgid "Securing URL patterns (access_control)"
-msgstr ""
+msgstr "通过URL进行权限控制（access_control）"
 
 #: ../../book/security.rst:680
 msgid ""
@@ -456,7 +456,7 @@ msgstr ""
 
 #: ../../book/security.rst:0
 msgid "Understanding how ``access_control`` Works"
-msgstr ""
+msgstr "了解 ``access_control`` 是如何工作的"
 
 #: ../../book/security.rst:797
 msgid ""
@@ -474,7 +474,7 @@ msgstr ""
 
 #: ../../book/security.rst:808
 msgid "Securing Controllers and other Code"
-msgstr ""
+msgstr "设置Controller和其他代码的访问限制"
 
 #: ../../book/security.rst:810
 msgid "You can easily deny access from inside a controller::"
@@ -521,7 +521,7 @@ msgstr ""
 
 #: ../../book/security.rst:865
 msgid "Access Control in Templates"
-msgstr ""
+msgstr "在模板中进行权限控制"
 
 #: ../../book/security.rst:867
 msgid ""
@@ -545,7 +545,7 @@ msgstr ""
 
 #: ../../book/security.rst:900
 msgid "Securing other Services"
-msgstr ""
+msgstr "保护其他Service"
 
 #: ../../book/security.rst:902
 msgid ""
@@ -618,7 +618,7 @@ msgstr ""
 
 #: ../../book/security.rst:975
 msgid "Access Control Lists (ACLs): Securing individual Database Objects"
-msgstr ""
+msgstr "权限控制列表（ACLs）: 保护单个数据"
 
 #: ../../book/security.rst:977
 msgid ""
@@ -657,7 +657,7 @@ msgstr ""
 
 #: ../../book/security.rst:998
 msgid "Retrieving the User Object"
-msgstr ""
+msgstr "获取用户对象"
 
 #: ../../book/security.rst:1000
 msgid ""
@@ -687,7 +687,7 @@ msgstr ""
 
 #: ../../book/security.rst:1038
 msgid "Always Check if the User is Logged In"
-msgstr ""
+msgstr "总是检查用户登录状态"
 
 #: ../../book/security.rst:1040
 msgid ""
@@ -707,7 +707,7 @@ msgstr ""
 
 #: ../../book/security.rst:1061
 msgid "Retrieving the User in a Template"
-msgstr ""
+msgstr "从模板里获取用户对象"
 
 #: ../../book/security.rst:1063
 msgid ""
@@ -717,7 +717,7 @@ msgstr ""
 
 #: ../../book/security.rst:1083
 msgid "Logging Out"
-msgstr ""
+msgstr "退出登录"
 
 #: ../../book/security.rst:1085
 msgid ""
@@ -755,7 +755,7 @@ msgstr ""
 
 #: ../../book/security.rst:1185
 msgid "Dynamically Encoding a Password"
-msgstr ""
+msgstr "动态加密密码"
 
 #: ../../book/security.rst:1187
 msgid ""
@@ -794,7 +794,7 @@ msgstr ""
 
 #: ../../book/security.rst:1221
 msgid "Hierarchical Roles"
-msgstr ""
+msgstr "角色的继承"
 
 #: ../../book/security.rst:1223
 msgid ""
@@ -812,7 +812,7 @@ msgstr ""
 
 #: ../../book/security.rst:1270
 msgid "Stateless Authentication"
-msgstr ""
+msgstr "无状态风格（Stateless）身份验证"
 
 #: ../../book/security.rst:1272
 msgid ""
@@ -832,7 +832,7 @@ msgstr ""
 
 #: ../../book/security.rst:1324
 msgid "Checking for Known Security Vulnerabilities in Dependencies"
-msgstr ""
+msgstr "检查依赖中是否包含已知安全漏洞"
 
 #: ../../book/security.rst:1326
 msgid ""
@@ -859,7 +859,7 @@ msgstr ""
 
 #: ../../book/security.rst:1347
 msgid "Final Words"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/security.rst:1349
 msgid ""
@@ -881,11 +881,11 @@ msgstr ""
 
 #: ../../book/security.rst:1360
 msgid "Good luck!"
-msgstr ""
+msgstr "祝好运！"
 
 #: ../../book/security.rst:1363
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/security.rst:1365
 msgid ":doc:`Forcing HTTP/HTTPS </cookbook/security/force_https>`"

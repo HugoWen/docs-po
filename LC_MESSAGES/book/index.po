@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/index.rst:2
 msgid "The Book"
-msgstr ""
+msgstr "教程"
 
 #: ../../book/map.rst.inc:1
 msgid ":doc:`/book/http_fundamentals`"

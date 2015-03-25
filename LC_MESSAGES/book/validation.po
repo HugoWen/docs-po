@@ -18,7 +18,7 @@ msgstr ""
 #: ../../book/validation.rst:504 ../../book/validation.rst:516
 #: ../../book/validation.rst:597 ../../book/validation.rst:891
 msgid "Validation"
-msgstr ""
+msgstr "校验"
 
 #: ../../book/validation.rst:7
 msgid ""
@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../../book/validation.rst:19
 msgid "The Basics of Validation"
-msgstr ""
+msgstr "验证基础用法"
 
 #: ../../book/validation.rst:21
 msgid ""
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../../book/validation.rst:110
 msgid "Using the ``validator`` Service"
-msgstr ""
+msgstr "使用 ``validator`` 服务"
 
 #: ../../book/validation.rst:112
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../book/validation.rst:209
 msgid "Validation and Forms"
-msgstr ""
+msgstr "校验与表单"
 
 #: ../../book/validation.rst:211
 msgid ""
@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../book/validation.rst:255 ../../book/validation.rst:249
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../book/validation.rst:257
 msgid ""
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../book/validation.rst:298 ../../book/validation.rst:292
 msgid "Constraints"
-msgstr ""
+msgstr "校验规则"
 
 #: ../../book/validation.rst:300
 msgid ""
@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../../book/validation.rst:311
 msgid "Supported Constraints"
-msgstr ""
+msgstr "支持的校验种类"
 
 #: ../../book/validation.rst:313
 msgid "Symfony packages many of the most commonly-needed constraints:"
@@ -184,7 +184,7 @@ msgstr ""
 
 #: ../../reference/constraints/map.rst.inc:2
 msgid "Basic Constraints"
-msgstr ""
+msgstr "基本校验规则"
 
 #: ../../reference/constraints/map.rst.inc:4
 msgid ""
@@ -413,7 +413,7 @@ msgstr ""
 
 #: ../../book/validation.rst:326
 msgid "Constraint Configuration"
-msgstr ""
+msgstr "校验规则配置"
 
 #: ../../book/validation.rst:328
 msgid ""
@@ -447,7 +447,7 @@ msgstr ""
 
 #: ../../book/validation.rst:499
 msgid "Translation Constraint Messages"
-msgstr ""
+msgstr "翻译校验错误信息"
 
 #: ../../book/validation.rst:501
 msgid ""
@@ -457,7 +457,7 @@ msgstr ""
 
 #: ../../book/validation.rst:510
 msgid "Constraint Targets"
-msgstr ""
+msgstr "校验的目标"
 
 #: ../../book/validation.rst:512
 msgid ""
@@ -468,7 +468,7 @@ msgstr ""
 
 #: ../../book/validation.rst:522
 msgid "Properties"
-msgstr ""
+msgstr "属性"
 
 #: ../../book/validation.rst:524
 msgid ""
@@ -515,7 +515,7 @@ msgstr ""
 
 #: ../../book/validation.rst:694
 msgid "Classes"
-msgstr ""
+msgstr "类"
 
 #: ../../book/validation.rst:696
 msgid ""
@@ -528,7 +528,7 @@ msgstr ""
 
 #: ../../book/validation.rst:705
 msgid "Validation Groups"
-msgstr ""
+msgstr "校验分组"
 
 #: ../../book/validation.rst:707
 msgid ""
@@ -643,7 +643,7 @@ msgstr ""
 
 #: ../../book/validation.rst:897
 msgid "Group Sequence"
-msgstr ""
+msgstr "校验组顺序"
 
 #: ../../book/validation.rst:899
 msgid ""
@@ -687,7 +687,7 @@ msgstr ""
 
 #: ../../book/validation.rst:1035
 msgid "Group Sequence Providers"
-msgstr ""
+msgstr "选择校验组"
 
 #: ../../book/validation.rst:1037
 msgid ""
@@ -715,7 +715,7 @@ msgstr ""
 
 #: ../../book/validation.rst:1226
 msgid "Validating Values and Arrays"
-msgstr ""
+msgstr "校验值和数组"
 
 #: ../../book/validation.rst:1228
 msgid ""
@@ -746,7 +746,7 @@ msgstr ""
 
 #: ../../book/validation.rst:1282
 msgid "Final Thoughts"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/validation.rst:1284
 msgid ""
@@ -760,7 +760,7 @@ msgstr ""
 
 #: ../../book/validation.rst:1292
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/validation.rst:1294
 msgid ":doc:`/cookbook/validation/custom_constraint`"

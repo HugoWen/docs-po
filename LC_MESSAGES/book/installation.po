@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/installation.rst:5
 msgid "Installing and Configuring Symfony"
-msgstr ""
+msgstr "安装和配置Symfony"
 
 #: ../../book/installation.rst:7
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../../book/installation.rst:13
 msgid "Installing the Symfony Installer"
-msgstr ""
+msgstr "Symfony安装工具"
 
 #: ../../book/installation.rst:15
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../book/installation.rst:30
 msgid "Linux and Mac OS X Systems"
-msgstr ""
+msgstr "Linux和Mac OS X系统"
 
 #: ../../book/installation.rst:32
 msgid "Open your command console and execute the following three commands:"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: ../../book/installation.rst:44
 msgid "Windows Systems"
-msgstr ""
+msgstr "Windows系统"
 
 #: ../../book/installation.rst:46
 msgid "Open your command console and execute the following command:"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../../book/installation.rst:61
 msgid "Creating the Symfony Application"
-msgstr ""
+msgstr "创建Symfony应用"
 
 #: ../../book/installation.rst:63
 msgid ""
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../book/installation.rst:88
 msgid "Basing your Project on a Specific Symfony Version"
-msgstr ""
+msgstr "基于某个Symfony版本来创建应用"
 
 #: ../../book/installation.rst:90
 msgid ""
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../book/installation.rst:119
 msgid "Creating Symfony Applications without the Installer"
-msgstr ""
+msgstr "不使用安装工具创建应用"
 
 #: ../../book/installation.rst:121
 msgid ""
@@ -147,7 +147,7 @@ msgstr ""
 
 #: ../../book/installation.rst:130
 msgid "Installing Composer Globally"
-msgstr ""
+msgstr "全局安装Composer"
 
 #: ../../book/installation.rst:132
 msgid "Start with :doc:`installing Composer globally </cookbook/composer>`."
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../../book/installation.rst:135
 msgid "Creating a Symfony Application with Composer"
-msgstr ""
+msgstr "通过Composer安装Symfony应用"
 
 #: ../../book/installation.rst:137
 msgid ""
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../book/installation.rst:158
 msgid "Running the Symfony Application"
-msgstr ""
+msgstr "运行Symfony应用"
 
 #: ../../book/installation.rst:160
 msgid ""
@@ -226,7 +226,7 @@ msgstr ""
 
 #: ../../book/installation.rst:201
 msgid "Checking Symfony Application Configuration and Setup"
-msgstr ""
+msgstr "检查Symfony应用的配置和运行环境"
 
 #: ../../book/installation.rst:203
 msgid ""
@@ -314,7 +314,7 @@ msgstr ""
 
 #: ../../book/installation.rst:283
 msgid "Updating Symfony Applications"
-msgstr ""
+msgstr "Symfony应用升级"
 
 #: ../../book/installation.rst:285
 msgid ""
@@ -351,7 +351,7 @@ msgstr ""
 
 #: ../../book/installation.rst:317
 msgid "Installing a Symfony Distribution"
-msgstr ""
+msgstr "安装Symfony发行版"
 
 #: ../../book/installation.rst:319
 msgid ""
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../book/installation.rst:338
 msgid "Using Source Control"
-msgstr ""
+msgstr "使用代码管理工具"
 
 #: ../../book/installation.rst:340
 msgid ""
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../book/installation.rst:348
 msgid "Checking out a versioned Symfony Application"
-msgstr ""
+msgstr "检出Symfony应用"
 
 #: ../../book/installation.rst:350
 msgid ""
@@ -433,7 +433,7 @@ msgstr ""
 
 #: ../../book/installation.rst:371
 msgid "Beginning Development"
-msgstr ""
+msgstr "开始开发工作"
 
 #: ../../book/installation.rst:373
 msgid ""

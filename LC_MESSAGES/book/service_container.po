@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:40
 msgid "What is a Service?"
-msgstr ""
+msgstr "什么是Service？"
 
 #: ../../book/service_container.rst:42
 msgid ""
@@ -98,7 +98,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:73
 msgid "What is a Service Container?"
-msgstr ""
+msgstr "什么是Service Container？"
 
 #: ../../book/service_container.rst:75
 msgid ""
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:101
 msgid "Creating/Configuring Services in the Container"
-msgstr ""
+msgstr "在Container中创建/配置Service"
 
 #: ../../book/service_container.rst:103
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:162
 msgid "Service Parameters"
-msgstr ""
+msgstr "Service的参数"
 
 #: ../../book/service_container.rst:164
 msgid ""
@@ -254,7 +254,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:258
 msgid "Array Parameters"
-msgstr ""
+msgstr "数组类型参数"
 
 #: ../../book/service_container.rst:260
 msgid ""
@@ -264,7 +264,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:263
 msgid "Importing other Container Configuration Resources"
-msgstr ""
+msgstr "导入其他Container配置"
 
 #: ../../book/service_container.rst:267
 msgid ""
@@ -294,7 +294,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:290
 msgid "Importing Configuration with ``imports``"
-msgstr ""
+msgstr "使用 ``imports`` 导入"
 
 #: ../../book/service_container.rst:292
 msgid ""
@@ -340,7 +340,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:394
 msgid "Importing Configuration via Container Extensions"
-msgstr ""
+msgstr "使用Container扩展导入配置"
 
 #: ../../book/service_container.rst:396
 msgid ""
@@ -448,7 +448,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:512
 msgid "Referencing (Injecting) Services"
-msgstr ""
+msgstr "引用（注入）Service"
 
 #: ../../book/service_container.rst:514
 msgid ""
@@ -505,7 +505,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:624
 msgid "Using the Expression Language"
-msgstr ""
+msgstr "使用表达式"
 
 #: ../../book/service_container.rst:626
 msgid ""
@@ -570,7 +570,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:730
 msgid "Optional Dependencies: Setter Injection"
-msgstr ""
+msgstr "可选依赖：使用Setter方式注入"
 
 #: ../../book/service_container.rst:732
 msgid ""
@@ -595,7 +595,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:815
 msgid "Injecting the Request"
-msgstr ""
+msgstr "注入Request"
 
 #: ../../book/service_container.rst:817
 msgid ""
@@ -614,7 +614,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:0
 msgid "Why not Inject the ``request`` Service?"
-msgstr ""
+msgstr "为什么不直接注入 ``request`` Service？"
 
 #: ../../book/service_container.rst:888
 msgid ""
@@ -643,7 +643,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:908
 msgid "Making References optional"
-msgstr ""
+msgstr "创建可选依赖"
 
 #: ../../book/service_container.rst:910
 msgid ""
@@ -664,7 +664,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:976
 msgid "Core Symfony and Third-Party Bundle Services"
-msgstr ""
+msgstr "Symfony内置和第三方Bundle的Service"
 
 #: ../../book/service_container.rst:978
 msgid ""
@@ -753,7 +753,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:1140
 msgid "Debugging Services"
-msgstr ""
+msgstr "Service调试"
 
 #: ../../book/service_container.rst:1142
 msgid ""
@@ -787,7 +787,7 @@ msgstr ""
 
 #: ../../book/service_container.rst:1173
 msgid "Learn more"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/service_container.rst:1175
 msgid ":doc:`/components/dependency_injection/parameters`"

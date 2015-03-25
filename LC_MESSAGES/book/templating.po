@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/templating.rst:5
 msgid "Creating and Using Templates"
-msgstr ""
+msgstr "创建和使用模板"
 
 #: ../../book/templating.rst:7
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../book/templating.rst:26
 msgid "Templates"
-msgstr ""
+msgstr "模板"
 
 #: ../../book/templating.rst:28
 msgid ""
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../../book/templating.rst:0
 msgid "Why Twig?"
-msgstr ""
+msgstr "为何选择Twig？"
 
 #: ../../book/templating.rst:131
 msgid ""
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ../../book/templating.rst:158
 msgid "Twig Template Caching"
-msgstr ""
+msgstr "Twig模板缓存"
 
 #: ../../book/templating.rst:160
 msgid ""
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../../book/templating.rst:181
 msgid "Template Inheritance and Layouts"
-msgstr ""
+msgstr "模板继承和布局"
 
 #: ../../book/templating.rst:183
 msgid ""
@@ -291,7 +291,7 @@ msgstr ""
 
 #: ../../book/templating.rst:378
 msgid "Template Naming and Locations"
-msgstr ""
+msgstr "模板命名规则和存放位置"
 
 #: ../../book/templating.rst:380
 msgid "By default, templates can live in two different locations:"
@@ -332,7 +332,7 @@ msgstr ""
 
 #: ../../book/templating.rst:403
 msgid "Referencing Templates in a Bundle"
-msgstr ""
+msgstr "引用Bundle里的模板"
 
 #: ../../book/templating.rst:405
 msgid ""
@@ -400,7 +400,7 @@ msgstr ""
 
 #: ../../book/templating.rst:443
 msgid "Template Suffix"
-msgstr ""
+msgstr "模板后缀"
 
 #: ../../book/templating.rst:445
 msgid ""
@@ -470,7 +470,7 @@ msgstr ""
 
 #: ../../book/templating.rst:476
 msgid "Tags and Helpers"
-msgstr ""
+msgstr "Tag和助手"
 
 #: ../../book/templating.rst:478
 msgid ""
@@ -498,7 +498,7 @@ msgstr ""
 
 #: ../../book/templating.rst:499
 msgid "Including other Templates"
-msgstr ""
+msgstr "包含其他模板"
 
 #: ../../book/templating.rst:501
 msgid ""
@@ -540,7 +540,7 @@ msgstr ""
 
 #: ../../book/templating.rst:586
 msgid "Embedding Controllers"
-msgstr ""
+msgstr "嵌入Controller"
 
 #: ../../book/templating.rst:588
 msgid ""
@@ -586,7 +586,7 @@ msgstr ""
 
 #: ../../book/templating.rst:683
 msgid "Asynchronous Content with hinclude.js"
-msgstr ""
+msgstr "使用hinclude.js异步载入内容"
 
 #: ../../book/templating.rst:685
 msgid ""
@@ -624,7 +624,7 @@ msgstr ""
 
 #: ../../book/templating.rst:837
 msgid "Linking to Pages"
-msgstr ""
+msgstr "创建链接"
 
 #: ../../book/templating.rst:839
 msgid ""
@@ -675,7 +675,7 @@ msgstr ""
 
 #: ../../book/templating.rst:988
 msgid "Linking to Assets"
-msgstr ""
+msgstr "链接静态文件"
 
 #: ../../book/templating.rst:990
 msgid ""
@@ -728,7 +728,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1069
 msgid "Including Stylesheets and JavaScripts in Twig"
-msgstr ""
+msgstr "在Twig里引入CSS和JS"
 
 #: ../../book/templating.rst:1071
 msgid ""
@@ -788,7 +788,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1178
 msgid "Global Template Variables"
-msgstr ""
+msgstr "模板全局变量"
 
 #: ../../book/templating.rst:1180
 msgid ""
@@ -863,7 +863,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1232
 msgid "Configuring and Using the ``templating`` Service"
-msgstr ""
+msgstr "配置和使用 ``templating`` Service"
 
 #: ../../book/templating.rst:1234
 msgid ""
@@ -898,7 +898,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1308
 msgid "Overriding Bundle Templates"
-msgstr ""
+msgstr "重载Bundle的模板"
 
 #: ../../book/templating.rst:1310
 msgid ""
@@ -987,7 +987,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1378
 msgid "Overriding Core Templates"
-msgstr ""
+msgstr "重载内置模板"
 
 #: ../../book/templating.rst:1380
 msgid ""
@@ -1001,7 +1001,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1391
 msgid "Three-level Inheritance"
-msgstr ""
+msgstr "“三层”继承"
 
 #: ../../book/templating.rst:1393
 msgid ""
@@ -1052,7 +1052,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1447
 msgid "Output Escaping"
-msgstr ""
+msgstr "转义"
 
 #: ../../book/templating.rst:1449
 msgid ""
@@ -1097,7 +1097,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1496
 msgid "Output Escaping in Twig"
-msgstr ""
+msgstr "Twig转义功能"
 
 #: ../../book/templating.rst:1498
 msgid ""
@@ -1128,7 +1128,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1519
 msgid "Output Escaping in PHP"
-msgstr ""
+msgstr "PHP中使用转义"
 
 #: ../../book/templating.rst:1521
 msgid ""
@@ -1147,7 +1147,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1542
 msgid "Debugging"
-msgstr ""
+msgstr "调试"
 
 #: ../../book/templating.rst:1544
 msgid ""
@@ -1178,7 +1178,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1588
 msgid "Syntax Checking"
-msgstr ""
+msgstr "语法检查"
 
 #: ../../book/templating.rst:1590
 msgid ""
@@ -1188,7 +1188,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1604
 msgid "Template Formats"
-msgstr ""
+msgstr "模板格式"
 
 #: ../../book/templating.rst:1606
 msgid ""
@@ -1244,7 +1244,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1659
 msgid "Final Thoughts"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/templating.rst:1661
 msgid ""
@@ -1273,7 +1273,7 @@ msgstr ""
 
 #: ../../book/templating.rst:1684
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/templating.rst:1686
 msgid ":doc:`/cookbook/templating/PHP`"

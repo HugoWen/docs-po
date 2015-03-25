@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/testing.rst:5
 msgid "Testing"
-msgstr ""
+msgstr "测试"
 
 #: ../../book/testing.rst:7
 msgid ""
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../book/testing.rst:12
 msgid "The PHPUnit Testing Framework"
-msgstr ""
+msgstr "PHPUnit测试框架"
 
 #: ../../book/testing.rst:14
 msgid ""
@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../book/testing.rst:46
 msgid "Unit Tests"
-msgstr ""
+msgstr "单元测试"
 
 #: ../../book/testing.rst:48
 msgid ""
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../../book/testing.rst:118
 msgid "Functional Tests"
-msgstr ""
+msgstr "功能测试"
 
 #: ../../book/testing.rst:120
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../book/testing.rst:131
 msgid "Your First Functional Test"
-msgstr ""
+msgstr "功能测试示例"
 
 #: ../../book/testing.rst:133
 msgid ""
@@ -227,7 +227,7 @@ msgstr ""
 
 #: ../../book/testing.rst:297
 msgid "Working with the Test Client"
-msgstr ""
+msgstr "使用测试客户端"
 
 #: ../../book/testing.rst:299
 msgid ""
@@ -299,7 +299,7 @@ msgstr ""
 
 #: ../../book/testing.rst:413
 msgid "Browsing"
-msgstr ""
+msgstr "浏览"
 
 #: ../../book/testing.rst:415
 msgid ""
@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../../book/testing.rst:425
 msgid "Accessing Internal Objects"
-msgstr ""
+msgstr "访问内部对象"
 
 #: ../../book/testing.rst:427
 msgid ""
@@ -337,7 +337,7 @@ msgstr ""
 
 #: ../../book/testing.rst:461
 msgid "Accessing the Container"
-msgstr ""
+msgstr "访问Container"
 
 #: ../../book/testing.rst:463
 msgid ""
@@ -366,7 +366,7 @@ msgstr ""
 
 #: ../../book/testing.rst:483
 msgid "Accessing the Profiler Data"
-msgstr ""
+msgstr "访问调试数据"
 
 #: ../../book/testing.rst:485
 msgid ""
@@ -411,7 +411,7 @@ msgstr ""
 
 #: ../../book/testing.rst:528
 msgid "The Crawler"
-msgstr ""
+msgstr "页面抓取工具"
 
 #: ../../book/testing.rst:530
 msgid ""
@@ -422,7 +422,7 @@ msgstr ""
 
 #: ../../book/testing.rst:534
 msgid "Traversing"
-msgstr ""
+msgstr "遍历"
 
 #: ../../book/testing.rst:536
 msgid ""
@@ -538,7 +538,7 @@ msgstr ""
 
 #: ../../book/testing.rst:590
 msgid "Extracting Information"
-msgstr ""
+msgstr "解析数据"
 
 #: ../../book/testing.rst:592
 msgid "The Crawler can extract information from the nodes::"
@@ -546,7 +546,7 @@ msgstr ""
 
 #: ../../book/testing.rst:612
 msgid "Links"
-msgstr ""
+msgstr "链接"
 
 #: ../../book/testing.rst:614
 msgid ""
@@ -571,7 +571,7 @@ msgstr ""
 
 #: ../../book/testing.rst:633
 msgid "Forms"
-msgstr ""
+msgstr "表单"
 
 #: ../../book/testing.rst:635
 msgid ""
@@ -662,7 +662,7 @@ msgstr ""
 
 #: ../../book/testing.rst:720
 msgid "Testing Configuration"
-msgstr ""
+msgstr "测试配置"
 
 #: ../../book/testing.rst:722
 msgid ""
@@ -706,7 +706,7 @@ msgstr ""
 
 #: ../../book/testing.rst:801
 msgid "PHPUnit Configuration"
-msgstr ""
+msgstr "PHPUnit配置"
 
 #: ../../book/testing.rst:803
 msgid ""
@@ -744,7 +744,7 @@ msgstr ""
 
 #: ../../book/testing.rst:872
 msgid "Learn more"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/testing.rst:874
 msgid ""

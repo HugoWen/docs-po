@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:7
 msgid "Symfony and HTTP Fundamentals"
-msgstr ""
+msgstr "Symfony和HTTP基础工具"
 
 #: ../../book/http_fundamentals.rst:9
 msgid ""
@@ -40,7 +40,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:25
 msgid "HTTP is Simple"
-msgstr ""
+msgstr "HTTP很简单"
 
 #: ../../book/http_fundamentals.rst:27
 msgid ""
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:48
 msgid "Step1: The Client Sends a Request"
-msgstr ""
+msgstr "第一步：客户端发出请求"
 
 #: ../../book/http_fundamentals.rst:50
 msgid ""
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:111
 msgid "Step 2: The Server Returns a Response"
-msgstr ""
+msgstr "第二步：服务端返回响应"
 
 #: ../../book/http_fundamentals.rst:113
 msgid ""
@@ -209,7 +209,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:157
 msgid "Requests, Responses and Web Development"
-msgstr ""
+msgstr "Requests, Responses和Web开发"
 
 #: ../../book/http_fundamentals.rst:159
 msgid ""
@@ -240,7 +240,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:181
 msgid "Requests and Responses in PHP"
-msgstr ""
+msgstr "PHP里的请求和响应"
 
 #: ../../book/http_fundamentals.rst:183
 msgid ""
@@ -263,7 +263,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:213
 msgid "Requests and Responses in Symfony"
-msgstr ""
+msgstr "Symfony里的请求和响应"
 
 #: ../../book/http_fundamentals.rst:215
 msgid ""
@@ -337,7 +337,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:304
 msgid "The Journey from the Request to the Response"
-msgstr ""
+msgstr "从Request到Response的旅程"
 
 #: ../../book/http_fundamentals.rst:306
 msgid ""
@@ -419,7 +419,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:360
 msgid "Stay Organized"
-msgstr ""
+msgstr "保持条理清晰"
 
 #: ../../book/http_fundamentals.rst:362
 msgid ""
@@ -437,7 +437,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:387
 msgid "The Symfony Application Flow"
-msgstr ""
+msgstr "Symfony应用的运行流程"
 
 #: ../../book/http_fundamentals.rst:389
 msgid ""
@@ -484,7 +484,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:419
 msgid "A Symfony Request in Action"
-msgstr ""
+msgstr "Symfony请求处理示例"
 
 #: ../../book/http_fundamentals.rst:421
 msgid ""
@@ -517,7 +517,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:491
 msgid "Symfony: Build your App, not your Tools"
-msgstr ""
+msgstr "Symfony：专注项目本身，而不是工具"
 
 #: ../../book/http_fundamentals.rst:493
 msgid ""
@@ -539,7 +539,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:511
 msgid "Standalone Tools: The Symfony *Components*"
-msgstr ""
+msgstr "独立的工具箱: Symfony *组件* "
 
 #: ../../book/http_fundamentals.rst:513
 msgid ""
@@ -628,7 +628,7 @@ msgstr ""
 
 #: ../../book/http_fundamentals.rst:552
 msgid "The Full Solution: The Symfony *Framework*"
-msgstr ""
+msgstr "全方位解决方案: Symfony *框架*"
 
 #: ../../book/http_fundamentals.rst:554
 msgid ""
