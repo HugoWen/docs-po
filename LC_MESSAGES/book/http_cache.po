@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:5
 msgid "HTTP Cache"
-msgstr ""
+msgstr "HTTP缓存"
 
 #: ../../book/http_cache.rst:7
 msgid ""
@@ -38,7 +38,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:20
 msgid "Caching on the Shoulders of Giants"
-msgstr ""
+msgstr "站在巨人的肩膀上缓存"
 
 #: ../../book/http_cache.rst:22
 msgid ""
@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:72
 msgid "Caching with a Gateway Cache"
-msgstr ""
+msgstr "使用网关缓存技术"
 
 #: ../../book/http_cache.rst:74
 msgid ""
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:94
 msgid "Types of Caches"
-msgstr ""
+msgstr "缓存的类型"
 
 #: ../../book/http_cache.rst:96
 msgid ""
@@ -195,7 +195,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:135
 msgid "Symfony Reverse Proxy"
-msgstr ""
+msgstr "Symfony反向代理"
 
 #: ../../book/http_cache.rst:137
 msgid ""
@@ -360,7 +360,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:279
 msgid "Introduction to HTTP Caching"
-msgstr ""
+msgstr "HTTP缓存介绍"
 
 #: ../../book/http_cache.rst:281
 msgid ""
@@ -412,7 +412,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:313
 msgid "The Cache-Control Header"
-msgstr ""
+msgstr "Cache-Control头信息"
 
 #: ../../book/http_cache.rst:315
 msgid ""
@@ -436,7 +436,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:353
 msgid "Public vs Private Responses"
-msgstr ""
+msgstr "公开 vs 私有响应"
 
 #: ../../book/http_cache.rst:355
 msgid ""
@@ -480,7 +480,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:378
 msgid "Safe Methods"
-msgstr ""
+msgstr "安全访问方法"
 
 #: ../../book/http_cache.rst:380
 msgid ""
@@ -508,7 +508,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:398
 msgid "Caching Rules and Defaults"
-msgstr ""
+msgstr "缓存规则和默认规则"
 
 #: ../../book/http_cache.rst:400
 msgid ""
@@ -611,7 +611,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:467
 msgid "Expiration"
-msgstr ""
+msgstr "过期设置"
 
 #: ../../book/http_cache.rst:469
 msgid ""
@@ -629,7 +629,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:482
 msgid "Expiration with the ``Expires`` Header"
-msgstr ""
+msgstr "使用 ``Expires`` 头信息设置过期时间"
 
 #: ../../book/http_cache.rst:484
 msgid ""
@@ -661,7 +661,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:517
 msgid "Expiration with the ``Cache-Control`` Header"
-msgstr ""
+msgstr "使用``Cache-Control``头信息设置过期时间"
 
 #: ../../book/http_cache.rst:519
 msgid ""
@@ -681,7 +681,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:544 ../../book/http_cache.rst:540
 msgid "Validation"
-msgstr ""
+msgstr "验证"
 
 #: ../../book/http_cache.rst:546
 msgid ""
@@ -724,7 +724,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:576
 msgid "Validation with the ``ETag`` Header"
-msgstr ""
+msgstr "通过 ``ETag`` 头信息验证"
 
 #: ../../book/http_cache.rst:578
 msgid ""
@@ -784,7 +784,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:637
 msgid "Validation with the ``Last-Modified`` Header"
-msgstr ""
+msgstr "通过 ``Last-Modified`` 头信息验证"
 
 #: ../../book/http_cache.rst:639
 msgid ""
@@ -823,7 +823,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:701
 msgid "Optimizing your Code with Validation"
-msgstr ""
+msgstr "通过数据校验优化代码"
 
 #: ../../book/http_cache.rst:703
 msgid ""
@@ -893,7 +893,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:802
 msgid "Expiration and Validation"
-msgstr ""
+msgstr "过期时间和内容校验"
 
 #: ../../book/http_cache.rst:804
 msgid ""
@@ -913,7 +913,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:819
 msgid "More Response Methods"
-msgstr ""
+msgstr "Response的其他方法"
 
 #: ../../book/http_cache.rst:821
 msgid ""
@@ -930,7 +930,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:849
 msgid "Cache Invalidation"
-msgstr ""
+msgstr "缓存同步"
 
 #: ../../book/http_cache.rst:851
 msgid ""
@@ -1032,7 +1032,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:955
 msgid "Using Edge Side Includes"
-msgstr ""
+msgstr "使用ESI（Edge Side Includes）"
 
 #: ../../book/http_cache.rst:957
 msgid ""
@@ -1078,7 +1078,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:1004
 msgid "Using ESI in Symfony"
-msgstr ""
+msgstr "在Symfony项目中使用ESI"
 
 #: ../../book/http_cache.rst:1006
 msgid ""
@@ -1212,7 +1212,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:1231
 msgid "Summary"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/http_cache.rst:1233
 msgid ""
@@ -1226,7 +1226,7 @@ msgstr ""
 
 #: ../../book/http_cache.rst:1241
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/http_cache.rst:1243
 msgid ":doc:`/cookbook/cache/varnish`"

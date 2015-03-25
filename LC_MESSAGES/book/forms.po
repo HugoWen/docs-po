@@ -24,7 +24,7 @@ msgstr ""
 #: ../../book/forms.rst:1595 ../../book/forms.rst:1741
 #: ../../book/forms.rst:1809
 msgid "Forms"
-msgstr ""
+msgstr "表单"
 
 #: ../../book/forms.rst:7
 msgid ""
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../book/forms.rst:23
 msgid "Creating a Simple Form"
-msgstr ""
+msgstr "创建一个简单表单"
 
 #: ../../book/forms.rst:25
 msgid ""
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../book/forms.rst:70
 msgid "Building the Form"
-msgstr ""
+msgstr "配置表单"
 
 #: ../../book/forms.rst:72
 msgid ""
@@ -122,7 +122,7 @@ msgstr ""
 
 #: ../../book/forms.rst:136
 msgid "Rendering the Form"
-msgstr ""
+msgstr "生成表单"
 
 #: ../../book/forms.rst:138
 msgid ""
@@ -205,7 +205,7 @@ msgstr ""
 
 #: ../../book/forms.rst:211
 msgid "Handling Form Submissions"
-msgstr ""
+msgstr "表单提交的处理"
 
 #: ../../book/forms.rst:213
 msgid ""
@@ -288,7 +288,7 @@ msgstr ""
 
 #: ../../book/forms.rst:295
 msgid "Submitting Forms with Multiple Buttons"
-msgstr ""
+msgstr "多按钮表单"
 
 #: ../../book/forms.rst:297 ../../book/forms.rst:600
 msgid "Support for buttons in forms was introduced in Symfony 2.3."
@@ -311,7 +311,7 @@ msgstr ""
 
 #: ../../book/forms.rst:331
 msgid "Form Validation"
-msgstr ""
+msgstr "表单验证"
 
 #: ../../book/forms.rst:333
 msgid ""
@@ -369,7 +369,7 @@ msgstr ""
 
 #: ../../book/forms.rst:464
 msgid "Validation Groups"
-msgstr ""
+msgstr "验证规则组"
 
 #: ../../book/forms.rst:466
 msgid ""
@@ -399,7 +399,7 @@ msgstr ""
 
 #: ../../book/forms.rst:497
 msgid "Disabling Validation"
-msgstr ""
+msgstr "关闭验证功能"
 
 #: ../../book/forms.rst:499
 msgid ""
@@ -424,7 +424,7 @@ msgstr ""
 
 #: ../../book/forms.rst:525
 msgid "Groups based on the Submitted Data"
-msgstr ""
+msgstr "基于提交数据的验证规则分组"
 
 #: ../../book/forms.rst:527
 msgid ""
@@ -457,7 +457,7 @@ msgstr ""
 
 #: ../../book/forms.rst:598
 msgid "Groups based on the Clicked Button"
-msgstr ""
+msgstr "基于提交按钮的验证规则分组"
 
 #: ../../book/forms.rst:603
 msgid ""
@@ -488,7 +488,7 @@ msgstr ""
 
 #: ../../book/forms.rst:638
 msgid "Built-in Field Types"
-msgstr ""
+msgstr "内置表单字段类型"
 
 #: ../../book/forms.rst:640
 msgid ""
@@ -661,7 +661,7 @@ msgstr ""
 
 #: ../../book/forms.rst:652
 msgid "Field Type Options"
-msgstr ""
+msgstr "表单字段选项"
 
 #: ../../book/forms.rst:654
 msgid ""
@@ -727,7 +727,7 @@ msgstr ""
 
 #: ../../book/forms.rst:707
 msgid "Field Type Guessing"
-msgstr ""
+msgstr "表单字段类型自动预测"
 
 #: ../../book/forms.rst:709
 msgid ""
@@ -756,7 +756,7 @@ msgstr ""
 
 #: ../../book/forms.rst:742
 msgid "Field Type Options Guessing"
-msgstr ""
+msgstr "表单字段选项自动预测"
 
 #: ../../book/forms.rst:744
 msgid ""
@@ -811,7 +811,7 @@ msgstr ""
 
 #: ../../book/forms.rst:782
 msgid "Rendering a Form in a Template"
-msgstr ""
+msgstr "在模板里生成表单"
 
 #: ../../book/forms.rst:784
 msgid ""
@@ -859,7 +859,7 @@ msgstr ""
 
 #: ../../book/forms.rst:843
 msgid "Rendering each Field by Hand"
-msgstr ""
+msgstr "手动生成每一个表单字段"
 
 #: ../../book/forms.rst:845
 msgid ""
@@ -900,7 +900,7 @@ msgstr ""
 
 #: ../../book/forms.rst:959
 msgid "Twig Template Function Reference"
-msgstr ""
+msgstr "Twig函数参考"
 
 #: ../../book/forms.rst:961
 msgid ""
@@ -912,7 +912,7 @@ msgstr ""
 
 #: ../../book/forms.rst:972
 msgid "Changing the Action and Method of a Form"
-msgstr ""
+msgstr "修改表单的method和action属性"
 
 #: ../../book/forms.rst:974
 msgid ""
@@ -954,7 +954,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1035
 msgid "Creating Form Classes"
-msgstr ""
+msgstr "创建表单类"
 
 #: ../../book/forms.rst:1037
 msgid ""
@@ -1033,7 +1033,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1145
 msgid "Defining your Forms as Services"
-msgstr ""
+msgstr "将表单定义为Service"
 
 #: ../../book/forms.rst:1147
 msgid ""
@@ -1062,7 +1062,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1232
 msgid "Forms and Doctrine"
-msgstr ""
+msgstr "表单和Doctrine"
 
 #: ../../book/forms.rst:1234
 msgid ""
@@ -1096,7 +1096,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1266
 msgid "Embedded Forms"
-msgstr ""
+msgstr "表单嵌表单"
 
 #: ../../book/forms.rst:1268
 msgid ""
@@ -1108,7 +1108,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1276
 msgid "Embedding a Single Object"
-msgstr ""
+msgstr "只嵌单个表单"
 
 #: ../../book/forms.rst:1278
 msgid ""
@@ -1170,7 +1170,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1410
 msgid "Embedding a Collection of Forms"
-msgstr ""
+msgstr "内嵌一组表单"
 
 #: ../../book/forms.rst:1412
 msgid ""
@@ -1188,7 +1188,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1426
 msgid "Form Theming"
-msgstr ""
+msgstr "表单主题"
 
 #: ../../book/forms.rst:1428
 msgid ""
@@ -1271,7 +1271,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1521
 msgid "Form Fragment Naming"
-msgstr ""
+msgstr "表单函数命名规则"
 
 #: ../../book/forms.rst:1523
 msgid ""
@@ -1389,7 +1389,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1572
 msgid "Template Fragment Inheritance"
-msgstr ""
+msgstr "Template片段继承"
 
 #: ../../book/forms.rst:1574
 msgid ""
@@ -1424,7 +1424,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1599
 msgid "Global Form Theming"
-msgstr ""
+msgstr "全局表单主题"
 
 #: ../../book/forms.rst:1601
 msgid ""
@@ -1494,7 +1494,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1747
 msgid "CSRF Protection"
-msgstr ""
+msgstr "CSRF保护"
 
 #: ../../book/forms.rst:1749
 msgid ""
@@ -1557,7 +1557,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1813
 msgid "Using a Form without a Class"
-msgstr ""
+msgstr "不使用类直接创建表单"
 
 #: ../../book/forms.rst:1815
 msgid ""
@@ -1612,7 +1612,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1872
 msgid "Adding Validation"
-msgstr ""
+msgstr "添加校验规则"
 
 #: ../../book/forms.rst:1874
 msgid ""
@@ -1648,7 +1648,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1918
 msgid "Final Thoughts"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/forms.rst:1920
 msgid ""
@@ -1674,7 +1674,7 @@ msgstr ""
 
 #: ../../book/forms.rst:1936
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/forms.rst:1938
 msgid ":doc:`/cookbook/doctrine/file_uploads`"

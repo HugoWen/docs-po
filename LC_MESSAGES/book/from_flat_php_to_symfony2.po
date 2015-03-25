@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:4
 msgid "Symfony versus Flat PHP"
-msgstr ""
+msgstr "Symfony vs 纯PHP"
 
 #: ../../book/from_flat_php_to_symfony2.rst:6
 msgid ""
@@ -45,7 +45,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:22
 msgid "A Simple Blog in Flat PHP"
-msgstr ""
+msgstr "使用纯PHP创建一个简单博客程序"
 
 #: ../../book/from_flat_php_to_symfony2.rst:24
 msgid ""
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:81
 msgid "Isolating the Presentation"
-msgstr ""
+msgstr "展现分离"
 
 #: ../../book/from_flat_php_to_symfony2.rst:83
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:140
 msgid "Isolating the Application (Domain) Logic"
-msgstr ""
+msgstr "业务逻辑分离"
 
 #: ../../book/from_flat_php_to_symfony2.rst:142
 msgid ""
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:203
 msgid "Isolating the Layout"
-msgstr ""
+msgstr "布局分离"
 
 #: ../../book/from_flat_php_to_symfony2.rst:205
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:254
 msgid "Adding a Blog \"show\" Page"
-msgstr ""
+msgstr "添加博客\"show\"页面"
 
 #: ../../book/from_flat_php_to_symfony2.rst:256
 msgid ""
@@ -235,7 +235,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:324
 msgid "A \"Front Controller\" to the Rescue"
-msgstr ""
+msgstr "\"Front Controller\"解决方案"
 
 #: ../../book/from_flat_php_to_symfony2.rst:326
 msgid ""
@@ -262,7 +262,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:352
 msgid "Creating the Front Controller"
-msgstr ""
+msgstr "创建Front Controller"
 
 #: ../../book/from_flat_php_to_symfony2.rst:354
 msgid ""
@@ -313,7 +313,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:423
 msgid "Add a Touch of Symfony"
-msgstr ""
+msgstr "初识Symfony"
 
 #: ../../book/from_flat_php_to_symfony2.rst:425
 msgid ""
@@ -382,7 +382,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:538
 msgid "The Sample Application in Symfony"
-msgstr ""
+msgstr "Symfony简单示例"
 
 #: ../../book/from_flat_php_to_symfony2.rst:540
 msgid ""
@@ -450,7 +450,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:673
 msgid "Where Symfony Delivers"
-msgstr ""
+msgstr "Symfony的优点"
 
 #: ../../book/from_flat_php_to_symfony2.rst:675
 msgid ""
@@ -505,7 +505,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:704
 msgid "Better Templates"
-msgstr ""
+msgstr "更好用的模板引擎"
 
 #: ../../book/from_flat_php_to_symfony2.rst:706
 msgid ""
@@ -530,7 +530,7 @@ msgstr ""
 
 #: ../../book/from_flat_php_to_symfony2.rst:751
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/from_flat_php_to_symfony2.rst:753
 msgid ":doc:`/cookbook/templating/PHP`"

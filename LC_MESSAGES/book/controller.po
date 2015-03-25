@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../../book/controller.rst:51
 msgid "Requests, Controller, Response Lifecycle"
-msgstr ""
+msgstr "Requests->Controller->Response的过程"
 
 #: ../../book/controller.rst:53
 msgid ""
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../book/controller.rst:87
 msgid "A Simple Controller"
-msgstr ""
+msgstr "简单示例"
 
 #: ../../book/controller.rst:89
 msgid ""
@@ -184,7 +184,7 @@ msgstr ""
 
 #: ../../book/controller.rst:140
 msgid "Mapping a URL to a Controller"
-msgstr ""
+msgstr "创建URL->Controller的映射关系"
 
 #: ../../book/controller.rst:142
 msgid ""
@@ -226,7 +226,7 @@ msgstr ""
 
 #: ../../book/controller.rst:229
 msgid "Route Parameters as Controller Arguments"
-msgstr ""
+msgstr "使用Route参数作为Controller参数"
 
 #: ../../book/controller.rst:231
 msgid ""
@@ -307,7 +307,7 @@ msgstr ""
 
 #: ../../book/controller.rst:368
 msgid "The ``Request`` as a Controller Argument"
-msgstr ""
+msgstr "使用 ``Request`` 对象作为Controller参数"
 
 #: ../../book/controller.rst:370
 msgid ""
@@ -325,7 +325,7 @@ msgstr ""
 
 #: ../../book/controller.rst:393
 msgid "The Base Controller Class"
-msgstr ""
+msgstr "Controller基类"
 
 #: ../../book/controller.rst:395
 msgid ""
@@ -398,7 +398,7 @@ msgstr ""
 
 #: ../../book/controller.rst:480
 msgid "Rendering Templates"
-msgstr ""
+msgstr "模板渲染"
 
 #: ../../book/controller.rst:482
 msgid ""
@@ -434,7 +434,7 @@ msgstr ""
 
 #: ../../book/controller.rst:512
 msgid "Accessing other Services"
-msgstr ""
+msgstr "访问其他Services"
 
 #: ../../book/controller.rst:514
 msgid ""
@@ -466,7 +466,7 @@ msgstr ""
 
 #: ../../book/controller.rst:545
 msgid "Managing Errors and 404 Pages"
-msgstr ""
+msgstr "生成404或其他错误页面"
 
 #: ../../book/controller.rst:547
 msgid ""
@@ -504,7 +504,7 @@ msgstr ""
 
 #: ../../book/controller.rst:585
 msgid "Managing the Session"
-msgstr ""
+msgstr "Session管理"
 
 #: ../../book/controller.rst:587
 msgid ""
@@ -528,7 +528,7 @@ msgstr ""
 
 #: ../../book/controller.rst:618
 msgid "Flash Messages"
-msgstr ""
+msgstr "Flash消息"
 
 #: ../../book/controller.rst:620
 msgid ""
@@ -564,7 +564,7 @@ msgstr ""
 
 #: ../../book/controller.rst:684
 msgid "The Response Object"
-msgstr ""
+msgstr "Response对象"
 
 #: ../../book/controller.rst:686
 msgid ""
@@ -617,7 +617,7 @@ msgstr ""
 
 #: ../../book/controller.rst:725
 msgid "The Request Object"
-msgstr ""
+msgstr "Request对象"
 
 #: ../../book/controller.rst:727
 msgid ""
@@ -641,7 +641,7 @@ msgstr ""
 
 #: ../../book/controller.rst:754
 msgid "Creating Static Pages"
-msgstr ""
+msgstr "创建静态页"
 
 #: ../../book/controller.rst:756
 msgid ""
@@ -655,7 +655,7 @@ msgstr ""
 
 #: ../../book/controller.rst:765
 msgid "Forwarding to Another Controller"
-msgstr ""
+msgstr "Forward到其他Controller"
 
 #: ../../book/controller.rst:767
 msgid ""
@@ -689,7 +689,7 @@ msgstr ""
 
 #: ../../book/controller.rst:805
 msgid "Final Thoughts"
-msgstr ""
+msgstr "总结"
 
 #: ../../book/controller.rst:807
 msgid ""
@@ -717,7 +717,7 @@ msgstr ""
 
 #: ../../book/controller.rst:822
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/controller.rst:824
 msgid ":doc:`/cookbook/controller/error_pages`"
@@ -729,43 +729,43 @@ msgstr ""
 
 #: ../../book/controller.rst:47
 msgid "Request-controller-response lifecycle"
-msgstr ""
+msgstr "Request-controller-response过程"
 
 #: ../../book/controller.rst:83
 msgid "Simple example"
-msgstr ""
+msgstr "简单示例"
 
 #: ../../book/controller.rst:136
 msgid "Routes and controllers"
-msgstr ""
+msgstr "Routes和Controllers"
 
 #: ../../book/controller.rst:223
 msgid "Controller arguments"
-msgstr ""
+msgstr "Controller参数"
 
 #: ../../book/controller.rst:389
 msgid "Base controller class"
-msgstr ""
+msgstr "Controller基类"
 
 #: ../../book/controller.rst:474
 msgid "Rendering templates"
-msgstr ""
+msgstr "模板渲染"
 
 #: ../../book/controller.rst:506
 msgid "Accessing services"
-msgstr ""
+msgstr "访问Services"
 
 #: ../../book/controller.rst:540
 msgid "Managing errors"
-msgstr ""
+msgstr "错误管理"
 
 #: ../../book/controller.rst:540
 msgid "404 pages"
-msgstr ""
+msgstr "404页面"
 
 #: ../../book/controller.rst:580
 msgid "The session"
-msgstr ""
+msgstr "Session"
 
 #: ../../book/controller.rst:580 ../../book/controller.rst:614
 msgid "Session"
@@ -773,15 +773,15 @@ msgstr ""
 
 #: ../../book/controller.rst:614
 msgid "Flash messages"
-msgstr ""
+msgstr "Flash消息"
 
 #: ../../book/controller.rst:680
 msgid "Response object"
-msgstr ""
+msgstr "Response对象"
 
 #: ../../book/controller.rst:721
 msgid "Request object"
-msgstr ""
+msgstr "Request对象"
 
 #: ../../book/controller.rst:761
 msgid "Forwarding"
