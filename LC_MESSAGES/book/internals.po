@@ -15,7 +15,7 @@ msgstr ""
 #: ../../book/internals.rst:77 ../../book/internals.rst:93
 #: ../../book/internals.rst:143 ../../book/internals.rst:189
 msgid "Internals"
-msgstr ""
+msgstr "核心功能"
 
 #: ../../book/internals.rst:7
 msgid ""
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../book/internals.rst:17
 msgid "Overview"
-msgstr ""
+msgstr "总览"
 
 #: ../../book/internals.rst:19
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../book/internals.rst:29
 msgid "HttpFoundation Component"
-msgstr ""
+msgstr "HttpFoundation组件"
 
 #: ../../book/internals.rst:31
 msgid ""
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../../book/internals.rst:52
 msgid "HttpKernel Component"
-msgstr ""
+msgstr "HttpKernel组件"
 
 #: ../../book/internals.rst:54
 msgid ""
@@ -129,7 +129,7 @@ msgstr ""
 #: ../../book/internals.rst:81 ../../book/internals.rst:77
 #: ../../book/internals.rst:205
 msgid "Kernel"
-msgstr ""
+msgstr "内核"
 
 #: ../../book/internals.rst:83
 msgid ""
@@ -205,7 +205,7 @@ msgstr ""
 
 #: ../../book/internals.rst:147
 msgid "Handling Requests"
-msgstr ""
+msgstr "处理Requests"
 
 #: ../../book/internals.rst:149
 msgid ""
@@ -648,11 +648,11 @@ msgstr ""
 
 #: ../../book/internals.rst:493
 msgid "Visualizing Profiling Data"
-msgstr ""
+msgstr "可视化的分析数据"
 
 #: ../../book/internals.rst:496
 msgid "Using the Web Debug Toolbar"
-msgstr ""
+msgstr "使用调试工具条"
 
 #: ../../book/internals.rst:498
 msgid ""
@@ -677,7 +677,7 @@ msgstr ""
 
 #: ../../book/internals.rst:512
 msgid "Analyzing Profiling Data with the Web Profiler"
-msgstr ""
+msgstr "使用分析工具做代码分析"
 
 #: ../../book/internals.rst:514
 msgid ""
@@ -689,7 +689,7 @@ msgstr ""
 
 #: ../../book/internals.rst:523
 msgid "Accessing the Profiling information"
-msgstr ""
+msgstr "访问代码分析数据"
 
 #: ../../book/internals.rst:525
 msgid ""
@@ -726,7 +726,7 @@ msgstr ""
 
 #: ../../book/internals.rst:573
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../book/internals.rst:575
 msgid ""
@@ -765,7 +765,7 @@ msgstr ""
 
 #: ../../book/internals.rst:680
 msgid "Learn more from the Cookbook"
-msgstr ""
+msgstr "了解更多"
 
 #: ../../book/internals.rst:682
 msgid ":doc:`/cookbook/testing/profiling`"

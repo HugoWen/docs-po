@@ -14,7 +14,7 @@ msgstr ""
 #: ../../book/performance.rst:5 ../../book/performance.rst:12
 #: ../../book/performance.rst:43 ../../book/performance.rst:103
 msgid "Performance"
-msgstr ""
+msgstr "性能"
 
 #: ../../book/performance.rst:7
 msgid ""
@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../book/performance.rst:16
 msgid "Use a Byte Code Cache (e.g. APC)"
-msgstr ""
+msgstr "使用二进制代码缓存（比如APC）"
 
 #: ../../book/performance.rst:18
 msgid ""
@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../book/performance.rst:29
 msgid "Further Optimizations"
-msgstr ""
+msgstr "更多优化"
 
 #: ../../book/performance.rst:31
 msgid ""
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../../book/performance.rst:47
 msgid "Use Composer's Class Map Functionality"
-msgstr ""
+msgstr "使用Composer类映射表功能"
 
 #: ../../book/performance.rst:49
 msgid ""
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../../book/performance.rst:69
 msgid "Caching the Autoloader with APC"
-msgstr ""
+msgstr "将类载入器缓存到APC"
 
 #: ../../book/performance.rst:71
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../book/performance.rst:107
 msgid "Use Bootstrap Files"
-msgstr ""
+msgstr "使用启动文件"
 
 #: ../../book/performance.rst:109
 msgid ""
@@ -178,7 +178,7 @@ msgstr ""
 
 #: ../../book/performance.rst:135
 msgid "Bootstrap Files and Byte Code Caches"
-msgstr ""
+msgstr "启动文件和二进制代码缓存"
 
 #: ../../book/performance.rst:137
 msgid ""
