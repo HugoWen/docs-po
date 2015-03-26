@@ -13,16 +13,16 @@ msgstr ""
 
 #: ../../index.rst:4
 msgid "Symfony Documentation"
-msgstr ""
+msgstr "Symfony文档"
 
 #: ../../index.rst:12
 msgid "Quick Tour"
-msgstr ""
+msgstr "快速入门"
 
 #: ../../index.rst:14
 msgid ""
 "Get started fast with the Symfony :doc:`Quick Tour <quick_tour/index>`:"
-msgstr ""
+msgstr "更快学会Symfony :doc:`快速入门 <quick_tour/index>`:"
 
 #: ../../index.rst:21
 msgid ":doc:`quick_tour/the_big_picture` >"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../../index.rst:27
 msgid "Book"
-msgstr ""
+msgstr "教程"
 
 #: ../../index.rst:29
 msgid "Dive into Symfony with the topical guides:"
@@ -122,39 +122,39 @@ msgstr ""
 
 #: ../../index.rst:39
 msgid "Cookbook"
-msgstr ""
+msgstr "手册"
 
 #: ../../index.rst:46
 msgid "Read the :doc:`Cookbook </cookbook/index>`."
-msgstr ""
+msgstr "阅读 :doc:`手册 </cookbook/index>`。"
 
 #: ../../index.rst:49
 msgid "Best Practices"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../index.rst:56
 msgid "Read the :doc:`Official Best Practices </best_practices/index>`."
-msgstr ""
+msgstr "阅读 :doc:`最佳实践 </best_practices/index>`。"
 
 #: ../../index.rst:59
 msgid "Components"
-msgstr ""
+msgstr "组件"
 
 #: ../../index.rst:66
 msgid "Read the :doc:`Components </components/index>` documentation."
-msgstr ""
+msgstr "阅读 :doc:`组件 </components/index>` 文档。"
 
 #: ../../index.rst:69
 msgid "Reference Documents"
-msgstr ""
+msgstr "参考"
 
 #: ../../index.rst:71
 msgid "Get answers quickly with reference documents:"
-msgstr ""
+msgstr "从参考中快速获取答案"
 
 #: ../../reference/map.rst.inc:1
 msgid "**Configuration Options**"
-msgstr ""
+msgstr "**配置选项**"
 
 #: ../../reference/map.rst.inc:3
 msgid ""
@@ -240,15 +240,15 @@ msgstr ""
 
 #: ../../index.rst:81
 msgid "Contributing"
-msgstr ""
+msgstr "贡献"
 
 #: ../../index.rst:83
 msgid "Contribute to Symfony:"
-msgstr ""
+msgstr "给Symfony贡献"
 
 #: ../../contributing/map.rst.inc:1
 msgid "**Code**"
-msgstr ""
+msgstr "**代码**"
 
 #: ../../contributing/map.rst.inc:3
 msgid ":doc:`Bugs </contributing/code/bugs>`"
@@ -292,7 +292,7 @@ msgstr ""
 
 #: ../../contributing/map.rst.inc:14
 msgid "**Documentation**"
-msgstr ""
+msgstr "**文档**"
 
 #: ../../contributing/map.rst.inc:16
 msgid ":doc:`Overview </contributing/documentation/overview>`"
@@ -316,7 +316,7 @@ msgstr ""
 
 #: ../../contributing/map.rst.inc:22
 msgid "**Community**"
-msgstr ""
+msgstr "**社区**"
 
 #: ../../contributing/map.rst.inc:24
 msgid ":doc:`Release Process </contributing/community/releases>`"

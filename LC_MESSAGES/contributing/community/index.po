@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../contributing/community/index.rst:2
 msgid "Community"
-msgstr ""
+msgstr "社区"

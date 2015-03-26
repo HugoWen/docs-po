@@ -14,7 +14,7 @@ msgstr ""
 #: ../../cookbook/deployment/tools.rst:7
 #: ../../cookbook/deployment/tools.rst:39
 msgid "How to Deploy a Symfony Application"
-msgstr ""
+msgstr "如何部署Symfony应用"
 
 #: ../../cookbook/deployment/tools.rst:11
 msgid ""

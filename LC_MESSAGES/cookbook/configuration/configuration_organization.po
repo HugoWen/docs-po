@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/configuration_organization.rst:5
 msgid "How to Organize Configuration Files"
-msgstr ""
+msgstr "如何组织配置文件"
 
 #: ../../cookbook/configuration/configuration_organization.rst:7
 msgid ""

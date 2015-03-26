@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/cache/varnish.rst:5
 msgid "How to Use Varnish to Speed up my Website"
-msgstr ""
+msgstr "如何使用Varnish来加速网站访问"
 
 #: ../../cookbook/cache/varnish.rst:7
 msgid ""

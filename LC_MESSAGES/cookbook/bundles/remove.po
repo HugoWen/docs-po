@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/remove.rst:5
 msgid "How to Remove the AcmeDemoBundle"
-msgstr ""
+msgstr "如何删除AcmeDemoBundle"
 
 #: ../../cookbook/bundles/remove.rst:7
 msgid ""

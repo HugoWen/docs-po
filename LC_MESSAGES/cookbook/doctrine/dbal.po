@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/dbal.rst:5
 msgid "How to Use Doctrine DBAL"
-msgstr ""
+msgstr "如何使用Doctrine DBAL"
 
 #: ../../cookbook/doctrine/dbal.rst:9
 msgid ""

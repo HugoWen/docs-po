@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/email/index.rst:2
 msgid "Email"
-msgstr ""
+msgstr "邮件"

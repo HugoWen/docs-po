@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/deployment/index.rst:2
 msgid "Deployment"
-msgstr ""
+msgstr "部署"

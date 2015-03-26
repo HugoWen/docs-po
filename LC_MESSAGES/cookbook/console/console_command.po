@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/console/console_command.rst:5
 msgid "How to Create a Console Command"
-msgstr ""
+msgstr "创建命令行Command"
 
 #: ../../cookbook/console/console_command.rst:7
 msgid ""

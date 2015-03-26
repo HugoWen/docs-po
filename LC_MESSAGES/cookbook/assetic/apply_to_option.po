@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/assetic/apply_to_option.rst:5
 msgid "How to Apply an Assetic Filter to a specific File Extension"
-msgstr ""
+msgstr "如何将Assetic处理器运用在特定的文件类型上"
 
 #: ../../cookbook/assetic/apply_to_option.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/reverse_engineering.rst:5
 msgid "How to Generate Entities from an Existing Database"
-msgstr ""
+msgstr "如何通过已有库反向生成Entity"
 
 #: ../../cookbook/doctrine/reverse_engineering.rst:7
 msgid ""

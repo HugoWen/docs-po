@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../quick_tour/the_architecture.rst:2
 msgid "The Architecture"
-msgstr ""
+msgstr "代码结构"
 
 #: ../../quick_tour/the_architecture.rst:4
 msgid ""

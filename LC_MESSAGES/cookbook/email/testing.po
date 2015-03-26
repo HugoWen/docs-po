@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/email/testing.rst:5
 msgid "How to Test that an Email is Sent in a functional Test"
-msgstr ""
+msgstr "如何在功能测试中测试邮件是否正常发送"
 
 #: ../../cookbook/email/testing.rst:7
 msgid ""

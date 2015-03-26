@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../quick_tour/the_controller.rst:2
 msgid "The Controller"
-msgstr ""
+msgstr "控制器（Controller）"
 
 #: ../../quick_tour/the_controller.rst:4
 msgid ""

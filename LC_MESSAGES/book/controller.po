@@ -20,7 +20,7 @@ msgstr ""
 #: ../../book/controller.rst:580 ../../book/controller.rst:680
 #: ../../book/controller.rst:721 ../../book/controller.rst:761
 msgid "Controller"
-msgstr ""
+msgstr "控制器（Controller）"
 
 #: ../../book/controller.rst:7
 msgid ""

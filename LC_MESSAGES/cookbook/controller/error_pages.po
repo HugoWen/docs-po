@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/controller/error_pages.rst:6
 msgid "How to Customize Error Pages"
-msgstr ""
+msgstr "如何自定义错误页面"
 
 #: ../../cookbook/controller/error_pages.rst:8
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/cache/form_csrf_caching.rst:5
 msgid "Caching Pages that Contain CSRF Protected Forms"
-msgstr ""
+msgstr "缓存带CSRF表单的页面"
 
 #: ../../cookbook/cache/form_csrf_caching.rst:7
 msgid ""

@@ -14,7 +14,7 @@ msgstr ""
 #: ../../cookbook/configuration/using_parameters_in_dic.rst:5
 #: ../../cookbook/configuration/using_parameters_in_dic.rst:1
 msgid "Using Parameters within a Dependency Injection Class"
-msgstr ""
+msgstr "在依赖注入中使用参数"
 
 #: ../../cookbook/configuration/using_parameters_in_dic.rst:7
 msgid ""

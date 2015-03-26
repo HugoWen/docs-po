@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/override_dir_structure.rst:5
 msgid "How to Override Symfony's default Directory Structure"
-msgstr ""
+msgstr "如何重载Symfony默认的目录结构"
 
 #: ../../cookbook/configuration/override_dir_structure.rst:7
 msgid ""

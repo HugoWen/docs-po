@@ -14,7 +14,7 @@ msgstr ""
 #: ../../cookbook/deployment/platformsh.rst:5
 #: ../../cookbook/deployment/platformsh.rst:1
 msgid "Deploying to Platform.sh"
-msgstr ""
+msgstr "部署到Platform.sh"
 
 #: ../../cookbook/deployment/platformsh.rst:7
 msgid ""

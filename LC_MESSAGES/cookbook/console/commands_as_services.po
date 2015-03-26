@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/console/commands_as_services.rst:5
 msgid "How to Define Commands as Services"
-msgstr ""
+msgstr "将Command定义为Service"
 
 #: ../../cookbook/console/commands_as_services.rst:7
 msgid ""

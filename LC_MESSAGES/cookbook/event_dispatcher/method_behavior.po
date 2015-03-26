@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/event_dispatcher/method_behavior.rst:5
 msgid "How to Customize a Method Behavior without Using Inheritance"
-msgstr ""
+msgstr "如何不通过继承改变类方法的行为"
 
 #: ../../cookbook/event_dispatcher/method_behavior.rst:8
 msgid "Doing something before or after a Method Call"

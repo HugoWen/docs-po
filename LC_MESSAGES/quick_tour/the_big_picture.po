@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../quick_tour/the_big_picture.rst:2
 msgid "The Big Picture"
-msgstr ""
+msgstr "总览"
 
 #: ../../quick_tour/the_big_picture.rst:4
 msgid ""

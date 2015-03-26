@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/resolve_target_entity.rst:6
 msgid "How to Define Relationships with Abstract Classes and Interfaces"
-msgstr ""
+msgstr "如何定义抽象类以及接口的关联关系"
 
 #: ../../cookbook/doctrine/resolve_target_entity.rst:8
 msgid ""

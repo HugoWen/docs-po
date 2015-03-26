@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/console/logging.rst:5
 msgid "How to Enable Logging in Console Commands"
-msgstr ""
+msgstr "如何在命令行Command中开启日志功能"
 
 #: ../../cookbook/console/logging.rst:7
 msgid ""

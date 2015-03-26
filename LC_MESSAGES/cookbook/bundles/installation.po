@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/installation.rst:5
 msgid "How to Install 3rd Party Bundles"
-msgstr ""
+msgstr "如何安装第三方Bundle"
 
 #: ../../cookbook/bundles/installation.rst:7
 msgid ""

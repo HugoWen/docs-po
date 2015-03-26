@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/web_server_configuration.rst:5
 msgid "Configuring a Web Server"
-msgstr ""
+msgstr "Web服务器的配置"
 
 #: ../../cookbook/configuration/web_server_configuration.rst:7
 msgid ""

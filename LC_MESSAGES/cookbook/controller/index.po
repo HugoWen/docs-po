@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/controller/index.rst:2
 msgid "Controller"
-msgstr ""
+msgstr "控制器（Controller）"

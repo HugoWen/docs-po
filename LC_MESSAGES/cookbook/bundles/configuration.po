@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/configuration.rst:6
 msgid "How to Create Friendly Configuration for a Bundle"
-msgstr ""
+msgstr "如何给Bundle创建友好的配置项"
 
 #: ../../cookbook/bundles/configuration.rst:8
 msgid ""

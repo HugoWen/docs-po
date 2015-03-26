@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../quick_tour/the_view.rst:2
 msgid "The View"
-msgstr ""
+msgstr "视图"
 
 #: ../../quick_tour/the_view.rst:4
 msgid ""

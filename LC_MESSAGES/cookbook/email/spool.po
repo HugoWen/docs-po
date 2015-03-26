@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/email/spool.rst:5
 msgid "How to Spool Emails"
-msgstr ""
+msgstr "如何使用邮件池"
 
 #: ../../cookbook/email/spool.rst:7
 msgid ""

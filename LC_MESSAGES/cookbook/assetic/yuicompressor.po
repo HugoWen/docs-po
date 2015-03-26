@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/assetic/yuicompressor.rst:5
 msgid "How to Minify JavaScripts and Stylesheets with YUI Compressor"
-msgstr ""
+msgstr "如何使用YUI Compressor压缩JS和CSS"
 
 #: ../../cookbook/assetic/yuicompressor.rst:9
 msgid ""

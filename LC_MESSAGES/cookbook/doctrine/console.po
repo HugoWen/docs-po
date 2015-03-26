@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/console.rst:6
 msgid "Console Commands"
-msgstr ""
+msgstr "Console命令"
 
 #: ../../cookbook/doctrine/console.rst:8
 msgid ""

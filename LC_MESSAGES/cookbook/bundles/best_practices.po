@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../cookbook/bundles/best_practices.rst:5
 msgid "Best Practices for Reusable Bundles"
-msgstr ""
+msgstr "重用Bundle的最佳实践"
 
 #: ../../cookbook/bundles/best_practices.rst:7
 msgid "There are 2 types of bundles:"
-msgstr ""
+msgstr "有两种bundle："
 
 #: ../../cookbook/bundles/best_practices.rst:9
 msgid "Application-specific bundles: only used to build your application;"

@@ -20,7 +20,7 @@ msgstr ""
 #: ../../book/routing.rst:1431 ../../book/routing.rst:1511
 #: ../../book/routing.rst:1549
 msgid "Routing"
-msgstr ""
+msgstr "路由（Routing）"
 
 #: ../../book/routing.rst:7
 msgid ""
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../book/routing.rst:153
 msgid "Creating Routes"
-msgstr "创建规则"
+msgstr "创建Route"
 
 #: ../../book/routing.rst:155
 msgid ""
@@ -799,6 +799,8 @@ msgid ""
 "with the annotations. This can be done by \"importing\" directories into the"
 " routing configuration:"
 msgstr ""
+"所有route都通过一个配置文件被被载入，通常是 ``app/config/routing.yml`` 文件（查阅 `创建Route`_）。"
+"不过如果你使用注解的方式，你得将router指向使用注解的Controller上，这可以通过“importing”指令将配置引入："
 
 #: ../../book/routing.rst:1282
 msgid ""
@@ -1013,7 +1015,7 @@ msgstr ""
 
 #: ../../book/routing.rst:149
 msgid "Creating routes"
-msgstr ""
+msgstr "创建Route"
 
 #: ../../book/routing.rst:270
 msgid "Placeholders"

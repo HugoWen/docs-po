@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/console/usage.rst:5
 msgid "How to Use the Console"
-msgstr ""
+msgstr "如何使用命令行"
 
 #: ../../cookbook/console/usage.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/index.rst:2
 msgid "The Cookbook"
-msgstr ""
+msgstr "手册"
 
 #: ../../cookbook/map.rst.inc:1
 msgid ":doc:`/cookbook/assetic/index`"

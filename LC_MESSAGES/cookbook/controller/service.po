@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/controller/service.rst:5
 msgid "How to Define Controllers as Services"
-msgstr ""
+msgstr "如何将Controller注册为Service"
 
 #: ../../cookbook/controller/service.rst:7
 msgid ""
