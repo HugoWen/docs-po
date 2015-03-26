@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../contributing/documentation/index.rst:2
 msgid "Contributing Documentation"
-msgstr ""
+msgstr "贡献文档"

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/environments.rst:5
 msgid "How to Master and Create new Environments"
-msgstr ""
+msgstr "如何掌握和创建新的运行环境"
 
 #: ../../cookbook/configuration/environments.rst:7
 msgid ""

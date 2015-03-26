@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/console/sending_emails.rst:6
 msgid "How to Generate URLs and Send Emails from the Console"
-msgstr ""
+msgstr "如何在命令行中生成URL并且发送邮件"
 
 #: ../../cookbook/console/sending_emails.rst:8
 msgid ""

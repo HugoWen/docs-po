@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/expression/index.rst:2
 msgid "Expressions"
-msgstr ""
+msgstr "表达式（Expression）"

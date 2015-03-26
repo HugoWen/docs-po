@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/email/dev_environment.rst:5
 msgid "How to Work with Emails during Development"
-msgstr ""
+msgstr "在开发时如何设置邮件发送功能"
 
 #: ../../cookbook/email/dev_environment.rst:7
 msgid ""

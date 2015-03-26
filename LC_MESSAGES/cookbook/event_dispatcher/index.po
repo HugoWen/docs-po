@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/event_dispatcher/index.rst:2
 msgid "Event Dispatcher"
-msgstr ""
+msgstr "事件分发器（Dispatcher）"

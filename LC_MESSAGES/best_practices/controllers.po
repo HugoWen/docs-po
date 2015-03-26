@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/controllers.rst:2
 msgid "Controllers"
-msgstr ""
+msgstr "控制器（Controller）"
 
 #: ../../best_practices/controllers.rst:4
 msgid ""

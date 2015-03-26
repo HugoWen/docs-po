@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/multiple_entity_managers.rst:5
 msgid "How to Work with multiple Entity Managers and Connections"
-msgstr ""
+msgstr "如何使用多Entity管理器以及多个数据库链接"
 
 #: ../../cookbook/doctrine/multiple_entity_managers.rst:7
 msgid ""

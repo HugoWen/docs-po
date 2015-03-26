@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../quick_tour/index.rst:2
 msgid "The Quick Tour"
-msgstr ""
+msgstr "快速入门"

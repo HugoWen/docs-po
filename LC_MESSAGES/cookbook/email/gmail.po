@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/email/gmail.rst:5
 msgid "How to Use Gmail to Send Emails"
-msgstr ""
+msgstr "如何通过Gmail发送邮件"
 
 #: ../../cookbook/email/gmail.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../best_practices/web-assets.rst:2
 msgid "Web Assets"
-msgstr ""
+msgstr "静态文件（Assets）"
 
 #: ../../best_practices/web-assets.rst:4
 msgid ""

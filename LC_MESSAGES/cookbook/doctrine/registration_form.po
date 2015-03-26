@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/registration_form.rst:6
 msgid "How to Implement a simple Registration Form"
-msgstr ""
+msgstr "如何实现简单的用户注册表单"
 
 #: ../../cookbook/doctrine/registration_form.rst:8
 msgid ""

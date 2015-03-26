@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/console/index.rst:2
 msgid "Console"
-msgstr ""
+msgstr "命令行"

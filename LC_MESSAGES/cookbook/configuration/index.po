@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/configuration/index.rst:2
 msgid "Configuration"
-msgstr ""
+msgstr "配置"

@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/assetic/index.rst:2
 msgid "Assetic"
-msgstr ""
+msgstr "静态文件处理（Assetic）"

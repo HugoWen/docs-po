@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/prepend_extension.rst:6
 msgid "How to Simplify Configuration of multiple Bundles"
-msgstr ""
+msgstr "如何简化多个Bundle的配置"
 
 #: ../../cookbook/bundles/prepend_extension.rst:8
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/external_parameters.rst:5
 msgid "How to Set external Parameters in the Service Container"
-msgstr ""
+msgstr "如何将Service Container的参数暴露到外部"
 
 #: ../../cookbook/configuration/external_parameters.rst:7
 msgid ""

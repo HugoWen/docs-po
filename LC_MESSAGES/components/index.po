@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../components/index.rst:2
 msgid "The Components"
-msgstr ""
+msgstr "组件"
 
 #: ../../components/map.rst.inc:1
 msgid ":doc:`/components/using_components`"

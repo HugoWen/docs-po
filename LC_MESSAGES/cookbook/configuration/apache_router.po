@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/apache_router.rst:5
 msgid "How to Use the Apache Router"
-msgstr ""
+msgstr "如何使用Apache Router"
 
 #: ../../cookbook/configuration/apache_router.rst:7
 msgid ""

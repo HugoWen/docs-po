@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/bundles/index.rst:2
 msgid "Bundles"
-msgstr ""
+msgstr "包（Bundle）"

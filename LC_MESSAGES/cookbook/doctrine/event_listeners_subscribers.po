@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/event_listeners_subscribers.rst:7
 msgid "How to Register Event Listeners and Subscribers"
-msgstr ""
+msgstr "如何注册Event Listener以及Subscriber"
 
 #: ../../cookbook/doctrine/event_listeners_subscribers.rst:9
 msgid ""

@@ -14,7 +14,7 @@ msgstr ""
 #: ../../cookbook/deployment/azure-website.rst:5
 #: ../../cookbook/deployment/azure-website.rst:1
 msgid "Deploying to Microsoft Azure Website Cloud"
-msgstr ""
+msgstr "部署到Microsoft Azure Website Cloud"
 
 #: ../../cookbook/deployment/azure-website.rst:7
 msgid ""

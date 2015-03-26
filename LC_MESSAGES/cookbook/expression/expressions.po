@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/expression/expressions.rst:5
 msgid "How to use Expressions in Security, Routing, Services, and Validation"
-msgstr ""
+msgstr "如何在安全、Routing、Service、校验配置里使用Expression"
 
 #: ../../cookbook/expression/expressions.rst:7
 msgid ""

@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../contributing/index.rst:2
 msgid "Contributing"
-msgstr ""
+msgstr "贡献"
 
 #: ../../contributing/map.rst.inc:1
 msgid "**Code**"
-msgstr ""
+msgstr "**代码**"
 
 #: ../../contributing/map.rst.inc:3
 msgid ":doc:`Bugs </contributing/code/bugs>`"
@@ -61,23 +61,23 @@ msgstr ""
 
 #: ../../contributing/map.rst.inc:14
 msgid "**Documentation**"
-msgstr ""
+msgstr "**文档**"
 
 #: ../../contributing/map.rst.inc:16
 msgid ":doc:`Overview </contributing/documentation/overview>`"
-msgstr ""
+msgstr ":doc:`总览 </contributing/documentation/overview>`"
 
 #: ../../contributing/map.rst.inc:17
 msgid ":doc:`Format </contributing/documentation/format>`"
-msgstr ""
+msgstr ":doc:`格式 </contributing/documentation/format>`"
 
 #: ../../contributing/map.rst.inc:18
 msgid ":doc:`Documentation Standards </contributing/documentation/standards>`"
-msgstr ""
+msgstr ":doc:`文档标准 </contributing/documentation/standards>`"
 
 #: ../../contributing/map.rst.inc:19
 msgid ":doc:`Translations </contributing/documentation/translations>`"
-msgstr ""
+msgstr ":doc:`翻译 </contributing/documentation/translations>`"
 
 #: ../../contributing/map.rst.inc:20
 msgid ":doc:`License </contributing/documentation/license>`"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: ../../contributing/map.rst.inc:22
 msgid "**Community**"
-msgstr ""
+msgstr "**社区**"
 
 #: ../../contributing/map.rst.inc:24
 msgid ":doc:`Release Process </contributing/community/releases>`"

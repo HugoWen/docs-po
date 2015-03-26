@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/email/cloud.rst:5
 msgid "How to Use the Cloud to Send Emails"
-msgstr ""
+msgstr "如何使用云服务器发送邮件"
 
 #: ../../cookbook/email/cloud.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/inheritance.rst:5
 msgid "How to Use Bundle Inheritance to Override Parts of a Bundle"
-msgstr ""
+msgstr "如何利用Bundle继承机制来重载Bundle部分功能"
 
 #: ../../cookbook/bundles/inheritance.rst:7
 msgid ""

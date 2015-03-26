@@ -15,7 +15,7 @@ msgstr ""
 msgid ""
 "Understanding how the Front Controller, Kernel and Environments Work "
 "together"
-msgstr ""
+msgstr "理解Front Controller，内核以及运行环境是如何一起工作的"
 
 #: ../../cookbook/configuration/front_controllers_and_kernel.rst:8
 msgid ""

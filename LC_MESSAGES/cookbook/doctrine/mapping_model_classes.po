@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/mapping_model_classes.rst:5
 msgid "How to Provide Model Classes for several Doctrine Implementations"
-msgstr ""
+msgstr "如何给模型类提供多种Doctrine的实现"
 
 #: ../../cookbook/doctrine/mapping_model_classes.rst:7
 msgid ""

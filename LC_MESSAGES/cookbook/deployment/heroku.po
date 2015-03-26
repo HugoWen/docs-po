@@ -14,7 +14,7 @@ msgstr ""
 #: ../../cookbook/deployment/heroku.rst:5
 #: ../../cookbook/deployment/heroku.rst:1
 msgid "Deploying to Heroku Cloud"
-msgstr ""
+msgstr "部署到Heroku Cloud"
 
 #: ../../cookbook/deployment/heroku.rst:7
 msgid ""

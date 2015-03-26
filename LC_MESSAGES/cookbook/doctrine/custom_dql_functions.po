@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/custom_dql_functions.rst:5
 msgid "How to Register custom DQL Functions"
-msgstr ""
+msgstr "如何注册自定义DQL函数"
 
 #: ../../cookbook/doctrine/custom_dql_functions.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/assetic/asset_management.rst:5
 msgid "How to Use Assetic for Asset Management"
-msgstr ""
+msgstr "如何使用Assetic管理静态文件"
 
 #: ../../cookbook/assetic/asset_management.rst:7
 msgid ""

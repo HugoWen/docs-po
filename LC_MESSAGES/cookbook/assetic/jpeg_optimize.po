@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/assetic/jpeg_optimize.rst:5
 msgid "How to Use Assetic for Image Optimization with Twig Functions"
-msgstr ""
+msgstr "如何Asstic和Twig优化图片"
 
 #: ../../cookbook/assetic/jpeg_optimize.rst:7
 msgid ""

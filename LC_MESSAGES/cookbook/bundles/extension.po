@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/extension.rst:6
 msgid "How to Load Service Configuration inside a Bundle"
-msgstr ""
+msgstr "如何在Bundle内部载入Service配置"
 
 #: ../../cookbook/bundles/extension.rst:8
 msgid ""

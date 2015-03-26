@@ -16,7 +16,7 @@ msgstr ""
 #: ../../book/service_container.rst:95 ../../book/service_container.rst:284
 #: ../../book/service_container.rst:388 ../../book/service_container.rst:508
 msgid "Service Container"
-msgstr ""
+msgstr "服务容器（Service Container）"
 
 #: ../../book/service_container.rst:8
 msgid ""

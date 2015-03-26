@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../book/propel.rst:5
 msgid "Databases and Propel"
-msgstr ""
+msgstr "数据库和Propel"
 
 #: ../../book/propel.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/doctrine/file_uploads.rst:5
 msgid "How to Handle File Uploads with Doctrine"
-msgstr ""
+msgstr "如何使用Doctrine处理文件上传"
 
 #: ../../cookbook/doctrine/file_uploads.rst:7
 msgid ""

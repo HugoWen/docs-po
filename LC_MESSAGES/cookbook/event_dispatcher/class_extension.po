@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/event_dispatcher/class_extension.rst:5
 msgid "How to Extend a Class without Using Inheritance"
-msgstr ""
+msgstr "如何不通过继承来扩展类"
 
 #: ../../cookbook/event_dispatcher/class_extension.rst:7
 msgid ""

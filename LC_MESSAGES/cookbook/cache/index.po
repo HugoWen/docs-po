@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../cookbook/cache/index.rst:2
 msgid "Cache"
-msgstr ""
+msgstr "缓存"

@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../reference/index.rst:2
 msgid "Reference Documents"
-msgstr ""
+msgstr "参考"
 
 #: ../../reference/map.rst.inc:1
 msgid "**Configuration Options**"
-msgstr ""
+msgstr "**配置选项**"
 
 #: ../../reference/map.rst.inc:3
 msgid ""

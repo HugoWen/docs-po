@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/configuration/pdo_session_storage.rst:5
 msgid "How to Use PdoSessionHandler to Store Sessions in the Database"
-msgstr ""
+msgstr "如何使用PdoSessionHandler来保存Session到数据库"
 
 #: ../../cookbook/configuration/pdo_session_storage.rst:9
 msgid ""

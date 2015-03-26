@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/bundles/override.rst:5
 msgid "How to Override any Part of a Bundle"
-msgstr ""
+msgstr "如何重载Bundle的某些部分"
 
 #: ../../cookbook/bundles/override.rst:7
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../cookbook/assetic/uglifyjs.rst:5
 msgid "How to Minify CSS/JS Files (Using UglifyJS and UglifyCSS)"
-msgstr ""
+msgstr "如何压缩CSS/JS文件（使用UglifyJS和UglifyCSS）"
 
 #: ../../cookbook/assetic/uglifyjs.rst:7
 msgid ""
