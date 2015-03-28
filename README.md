@@ -50,3 +50,8 @@ Symfony文档中文翻译
 --------
 
 所有中文文档遵循[CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)协议。对于任何形式的使用，请保留译者的署名、网址、联系方式等信息。
+
+英雄大厅
+--------
+
+[shangguokan](https://github.com/shangguokan)
