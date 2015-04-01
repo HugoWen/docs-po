@@ -13,13 +13,13 @@ msgstr ""
 
 #: ../../contributing/documentation/translations.rst:2
 msgid "Translations"
-msgstr ""
+msgstr "翻译"
 
 #: ../../contributing/documentation/translations.rst:4
 msgid ""
 "The Symfony documentation is written in English and many people are involved"
 " in the translation process."
-msgstr ""
+msgstr "Symfony文档用英语书写，许多人都加入到了翻译的进程中。"
 
 #: ../../contributing/documentation/translations.rst:9
 msgid ""
@@ -31,25 +31,26 @@ msgstr ""
 
 #: ../../contributing/documentation/translations.rst:14
 msgid "Contributing"
-msgstr ""
+msgstr "贡献"
 
 #: ../../contributing/documentation/translations.rst:16
 msgid ""
-"First, become familiar with the :doc:`markup language "
-"</contributing/documentation/format>` used by the documentation."
-msgstr ""
+"First, become familiar with the :doc:`markup language </contributing/documentation/format>` used by the documentation."
+msgstr "首先熟悉文档使用的 :doc:`标记语言 </contributing/documentation/format>`。"
 
 #: ../../contributing/documentation/translations.rst:19
 msgid ""
 "Then, subscribe to the `Symfony docs mailing-list`_, as collaboration "
 "happens there."
-msgstr ""
+msgstr "然后加入到 `Symfony docs mailing-list`_ ，通过邮件合作。"
 
 #: ../../contributing/documentation/translations.rst:22
 msgid ""
 "Finally, find the *master* repository for the language you want to "
 "contribute for. Here is the list of the official *master* repositories:"
 msgstr ""
+"最后，找到你想要参与贡献文档的 *master* 主文档库，"
+"下列是官方 *master* 主文档库："
 
 #: ../../contributing/documentation/translations.rst:25
 msgid "*English*:  https://github.com/symfony/symfony-docs"
@@ -80,59 +81,60 @@ msgstr ""
 
 #: ../../contributing/documentation/translations.rst:37
 msgid "Joining the Translation Team"
-msgstr ""
+msgstr "加入翻译团队"
 
 #: ../../contributing/documentation/translations.rst:39
 msgid ""
 "If you want to help translating some documents for your language or fix some"
 " bugs, consider joining us; it's a very easy process:"
 msgstr ""
+"如果你想贡献新语种的文档，请参考："
 
 #: ../../contributing/documentation/translations.rst:42
 msgid "Introduce yourself on the `Symfony docs mailing-list`_;"
-msgstr ""
+msgstr "通过 `Symfony docs mailing-list`_ 介绍自己"
 
 #: ../../contributing/documentation/translations.rst:43
 msgid "*(optional)* Ask which documents you can work on;"
-msgstr ""
+msgstr "*(可选)* 询问你可以参与的文档"
 
 #: ../../contributing/documentation/translations.rst:44
 msgid ""
 "Fork the *master* repository for your language (click the \"Fork\" button on"
 " the GitHub page);"
-msgstr ""
+msgstr "Fork *master* 主文档库"
 
 #: ../../contributing/documentation/translations.rst:46
 msgid "Translate some documents;"
-msgstr ""
+msgstr "翻译"
 
 #: ../../contributing/documentation/translations.rst:47
 msgid ""
 "Ask for a pull request (click on the \"Pull Request\" from your page on "
 "GitHub);"
-msgstr ""
+msgstr "创建 pull request"
 
 #: ../../contributing/documentation/translations.rst:49
 msgid ""
 "The team manager accepts your modifications and merges them into the master "
 "repository;"
-msgstr ""
+msgstr "文档管理员接受你的提交并合并到主文档库"
 
 #: ../../contributing/documentation/translations.rst:51
 msgid ""
 "The documentation website is updated every other night from the master "
 "repository."
-msgstr ""
+msgstr "文档网站自动从主文档库更新"
 
 #: ../../contributing/documentation/translations.rst:57
 msgid "Adding a new Language"
-msgstr ""
+msgstr "添加新语言"
 
 #: ../../contributing/documentation/translations.rst:59
 msgid ""
 "This section gives some guidelines for starting the translation of the "
 "Symfony documentation for a new language."
-msgstr ""
+msgstr "这一小节简要介绍如何添加新的文档库语言"
 
 #: ../../contributing/documentation/translations.rst:62
 msgid ""
@@ -140,20 +142,22 @@ msgid ""
 "`Symfony docs mailing-list`_ and try to find motivated people willing to "
 "help."
 msgstr ""
+"因为翻译工作需要大量精力，所以首先通过邮件组 `Symfony docs mailing-list`_ "
+"谈谈你的计划，并且试着找到合作伙伴。"
 
 #: ../../contributing/documentation/translations.rst:65
 msgid ""
 "When the team is ready, nominate a team manager; they will be responsible "
 "for the *master* repository."
-msgstr ""
+msgstr "当团队人员就绪，选出一名团队管理员，他们将负责 *master* 主文档库。"
 
 #: ../../contributing/documentation/translations.rst:68
 msgid "Create the repository and copy the *English* documents."
-msgstr ""
+msgstr "创建库并复制 *英语* 文档库。"
 
 #: ../../contributing/documentation/translations.rst:70
 msgid "The team can now start the translation process."
-msgstr ""
+msgstr "团队便可以开始翻译了"
 
 #: ../../contributing/documentation/translations.rst:72
 msgid ""
@@ -163,11 +167,11 @@ msgid ""
 " the team manager can ask that the repository is added to the list of "
 "official *master* repositories by sending an email to Fabien (fabien at "
 "symfony.com)."
-msgstr ""
+msgstr "当团队认为文档库已经处于一致并且稳定的状态时（所有文档都被翻译，未翻译的文档从toctrees已经移除），"
 
 #: ../../contributing/documentation/translations.rst:79
 msgid "Maintenance"
-msgstr ""
+msgstr "维护"
 
 #: ../../contributing/documentation/translations.rst:81
 msgid ""
@@ -177,9 +181,11 @@ msgid ""
 "repository and apply changes to the translated documents as soon as "
 "possible."
 msgstr ""
+"文档全部被翻译并不代表所有的事情都已经完成。文档库是不断变更的（新文档被加入，bugs被修正，段落被重新组织）。"
+"翻译团队需要紧随官方英语文档库并且尽快实现翻译后的变更。"
 
 #: ../../contributing/documentation/translations.rst:88
 msgid ""
 "Non maintained languages are removed from the official list of repositories "
 "as obsolete documentation is dangerous."
-msgstr ""
+msgstr "不再被维护的文档库将从官方列表中移除，因为过期的文档对于开发可能会造成不可预料的后果"

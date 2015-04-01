@@ -13,13 +13,13 @@ msgstr ""
 
 #: ../../contributing/documentation/standards.rst:2
 msgid "Documentation Standards"
-msgstr ""
+msgstr "文档标准"
 
 #: ../../contributing/documentation/standards.rst:4
 msgid ""
 "In order to help the reader as much as possible and to create code examples "
 "that look and feel familiar, you should follow these standards."
-msgstr ""
+msgstr "为了尽可能的帮助读者并创建良好的编码，你应遵循如下一些标准。"
 
 #: ../../contributing/documentation/standards.rst:8
 msgid "Sphinx"
@@ -30,13 +30,13 @@ msgid ""
 "The following characters are chosen for different heading levels: level 1 is"
 " ``=`` (equal sign), level 2 ``-`` (dash), level 3 ``~`` (tilde), level 4 "
 "``.`` (dot) and level 5 ``\"`` (double quote);"
-msgstr ""
+msgstr "如下的字符被用来代表文档中标题的大小：一级标题 ``=``，二级标题 ``-``，三级标题 ``~``，四级标题 ``.``，五级标题(段落) ``\"``"
 
 #: ../../contributing/documentation/standards.rst:13
 msgid ""
 "Each line should break approximately after the first word that crosses the "
 "72nd character (so most lines end up being 72-78 characters);"
-msgstr ""
+msgstr "每行应在第72-78个字符左右的位置断行"
 
 #: ../../contributing/documentation/standards.rst:15
 msgid ""
@@ -44,31 +44,35 @@ msgid ""
 "PHP code block (read `the Sphinx documentation`_ to see when you should use "
 "the shorthand);"
 msgstr ""
+"短码（shorthand） ``::`` 等同于 ``.. code-block:: php`` ，用于开始一个PHP代码块"
+"（阅读 `the Sphinx documentation`_ 来了解你应在什么时候使用短码)"
 
 #: ../../contributing/documentation/standards.rst:18
 msgid ""
 "Inline hyperlinks are **not** used. Separate the link and their target "
 "definition, which you add on the bottom of the page;"
 msgstr ""
+"* 在文档中内嵌超链接（指向外部）是 **不** 被推荐的，"
+"你应在文档底部定义链接名称与地址，然后在文档中引用名称来实现超链接"
 
 #: ../../contributing/documentation/standards.rst:20
 msgid "Inline markup should be closed on the same line as the open-string;"
-msgstr ""
+msgstr "标记应在一行内开始并结束"
 
 #: ../../contributing/documentation/standards.rst:23
 #: ../../contributing/documentation/standards.rst:96
 msgid "Example"
-msgstr ""
+msgstr "范例"
 
 #: ../../contributing/documentation/standards.rst:50
 msgid "Code Examples"
-msgstr ""
+msgstr "内嵌代码"
 
 #: ../../contributing/documentation/standards.rst:52
 msgid ""
 "The code follows the :doc:`Symfony Coding Standards "
 "</contributing/code/standards>` as well as the `Twig Coding Standards`_;"
-msgstr ""
+msgstr "代码应遵循 :doc:`Symfony代码标准 </contributing/code/standards>` 以及 `Twig Coding Standards`_"
 
 #: ../../contributing/documentation/standards.rst:54
 msgid ""
@@ -91,7 +95,7 @@ msgstr ""
 msgid ""
 "To avoid horizontal scrolling on code blocks, we prefer to break a line "
 "correctly if it crosses the 85th character;"
-msgstr ""
+msgstr "一行代码请不要超过85个字符"
 
 #: ../../contributing/documentation/standards.rst:62
 msgid ""
@@ -100,41 +104,44 @@ msgid ""
 "(yaml/bash), ``{# ... #}`` (twig), ``<!-- ... -->`` (xml/html), ``; ...`` "
 "(ini), ``...`` (text);"
 msgstr ""
+"当你想要折叠/省略一行或多行代码时，在折叠的位置请将 ``...`` 加入注释中："
+" ``// ...`` (php)，``# ...`` (yaml/bash)，``{# ... #}`` (twig)，"
+" ``<!-- ... -->`` (xml/html)，``; ...`` (ini)，``...`` (text)"
 
 #: ../../contributing/documentation/standards.rst:65
 msgid ""
 "When you fold a part of a line, e.g. a variable value, put ``...`` (without "
 "comment) at the place of the fold;"
-msgstr ""
+msgstr "当你只想折叠/省略一行代码的一部分时，直接用 ``...`` 替换即可"
 
 #: ../../contributing/documentation/standards.rst:67
 msgid "Description of the folded code: (optional)"
-msgstr ""
+msgstr "描述折叠/省略的代码（可选）："
 
 #: ../../contributing/documentation/standards.rst:69
 msgid ""
 "If you fold several lines: the description of the fold can be placed after "
 "the ``...``;"
-msgstr ""
+msgstr "一行或多行：在 ``...`` 后加入描述，"
 
 #: ../../contributing/documentation/standards.rst:70
 msgid ""
 "If you fold only part of a line: the description can be placed before the "
 "line;"
-msgstr ""
+msgstr "行的一部分：将描述放于行前"
 
 #: ../../contributing/documentation/standards.rst:72
 msgid ""
 "If useful to the reader, a PHP code example should start with the namespace "
 "declaration;"
-msgstr ""
+msgstr "如果需要，PHP代码应从命名空间开始"
 
 #: ../../contributing/documentation/standards.rst:74
 msgid ""
 "When referencing classes, be sure to show the ``use`` statements at the top "
 "of your code block. You don't need to show *all* ``use`` statements in every"
 " example, just show what is actually being used in the code block;"
-msgstr ""
+msgstr "当引用它类时，确保 ``use`` 语句在代码块最上方。无需在每个例子中加入 *所有* ``use`` 语句，"
 
 #: ../../contributing/documentation/standards.rst:77
 msgid ""
@@ -142,14 +149,17 @@ msgid ""
 "filename of the file in the code block. Don't place a blank line after this "
 "comment, unless the next line is also a comment;"
 msgstr ""
+"只加入当前所需的部分"
+"如果需要，一个 ``codeblock`` 应当开始于一个注释，当中加入该代码块所在的文件名以及文件路径，"
+"在这个注释后也不要加空行，除非下一行也是一行注释"
 
 #: ../../contributing/documentation/standards.rst:80
 msgid "You should put a ``$`` in front of every bash line."
-msgstr ""
+msgstr "将 ``$`` 插入在bash代码块的每行行首"
 
 #: ../../contributing/documentation/standards.rst:83
 msgid "Formats"
-msgstr ""
+msgstr "格式"
 
 #: ../../contributing/documentation/standards.rst:85
 msgid ""
@@ -157,10 +167,12 @@ msgid ""
 ":ref:`configuration blocks <docs-configuration-blocks>`. The supported "
 "formats (and their orders) are:"
 msgstr ""
+"组合代码块的范例应当提供所有支持的语言格式"
+":ref:`configuration blocks <docs-configuration-blocks>`. The supported "
 
 #: ../../contributing/documentation/standards.rst:89
 msgid "**Configuration** (including services): YAML, XML, PHP"
-msgstr ""
+msgstr "**配置** （服务与路由）: YAML, XML, PHP"
 
 #: ../../contributing/documentation/standards.rst:90
 msgid "**Routing**: Annotations, YAML, XML, PHP"
@@ -168,15 +180,15 @@ msgstr ""
 
 #: ../../contributing/documentation/standards.rst:91
 msgid "**Validation**: Annotations, YAML, XML, PHP"
-msgstr ""
+msgstr "**验证**: YAML, Annotations, XML, PHP"
 
 #: ../../contributing/documentation/standards.rst:92
 msgid "**Doctrine Mapping**: Annotations, YAML, XML, PHP"
-msgstr ""
+msgstr "**Doctrine 映射**: Annotations, YAML, XML, PHP"
 
 #: ../../contributing/documentation/standards.rst:93
 msgid "**Translation**: XML, YAML, PHP"
-msgstr ""
+msgstr "**翻译**: XML, YAML, PHP"
 
 #: ../../contributing/documentation/standards.rst:125
 msgid ""
@@ -184,10 +196,12 @@ msgid ""
 "_controller: ... }``), but this should not be done in Twig (e.g.  ``{'hello'"
 " : 'value'}``)."
 msgstr ""
+"在YAML中 ``{`` 后，和 ``}`` 前都应插入一个空格（如 ``{ _controller: ... }``），"
+"但在Twig没有空格 (如 ``{'hello' : 'value'}``)。"
 
 #: ../../contributing/documentation/standards.rst:129
 msgid "Files and Directories"
-msgstr ""
+msgstr "文件与目录"
 
 #: ../../contributing/documentation/standards.rst:131
 msgid ""
@@ -195,22 +209,24 @@ msgid ""
 "confusions with regular files (e.g. \"execute the ``console`` script located"
 " at the ``app/`` directory\")."
 msgstr ""
+"当引用目录时，在目录名称后加上一个/，以避免与文件名混淆（如 \"execute the ``console`` script located at the ``app/``"
+" 目录\"）。"
 
 #: ../../contributing/documentation/standards.rst:134
 msgid ""
 "When referencing file extensions explicitly, you should include a leading "
 "dot for every extension (e.g. \"XML files use the ``.xml`` extension\")."
-msgstr ""
+msgstr "当显式的引用外部文件时，加上文件扩展名（如 \"XML files use the ``.xml`` extension\"）。"
 
 #: ../../contributing/documentation/standards.rst:136
 msgid ""
 "When you list a Symfony file/directory hierarchy, use ``your-project/`` as "
 "the top level directory. E.g."
-msgstr ""
+msgstr "当需要打印Symfony文件/目录的层级关系时，使用 ``your-project/`` 作为根目录，如："
 
 #: ../../contributing/documentation/standards.rst:148
 msgid "English Language Standards"
-msgstr ""
+msgstr "English Language Standards（英语标准）"
 
 #: ../../contributing/documentation/standards.rst:150
 msgid ""
