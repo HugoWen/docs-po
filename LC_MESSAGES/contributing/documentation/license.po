@@ -13,89 +13,89 @@ msgstr ""
 
 #: ../../contributing/documentation/license.rst:4
 msgid "Symfony Documentation License"
-msgstr ""
+msgstr "Symfony文档协议"
 
 #: ../../contributing/documentation/license.rst:6
 msgid ""
 "The Symfony documentation is licensed under a Creative Commons Attribution-"
 "Share Alike 3.0 Unported License (`CC BY-SA 3.0`_)."
-msgstr ""
+msgstr "Symfony文档遵照Creative Commons Attribution-Share Alike 3.0 Unported License (`CC BY-SA 3.0`_)知识共享协议发布。"
 
 #: ../../contributing/documentation/license.rst:9
 msgid "**You are free:**"
-msgstr ""
+msgstr "**你可自由**"
 
 #: ../../contributing/documentation/license.rst:11
 msgid "to *Share* — to copy, distribute and transmit the work;"
-msgstr ""
+msgstr "*分享* — 复制，分发和传播"
 
 #: ../../contributing/documentation/license.rst:13
 msgid "to *Remix* — to adapt the work."
-msgstr ""
+msgstr "*修改* — 适配你的创作"
 
 #: ../../contributing/documentation/license.rst:15
 msgid "**Under the following conditions:**"
-msgstr ""
+msgstr "**但是需要遵照以下条件：**"
 
 #: ../../contributing/documentation/license.rst:17
 msgid ""
 "*Attribution* — You must attribute the work in the manner specified by the "
 "author or licensor (but not in any way that suggests that they endorse you "
 "or your use of the work);"
-msgstr ""
+msgstr "*归属* — 你必须认同此创作归属于作者或协议许可方"
 
 #: ../../contributing/documentation/license.rst:21
 msgid ""
 "*Share Alike* — If you alter, transform, or build upon this work, you may "
 "distribute the resulting work only under the same or similar license to this"
 " one."
-msgstr ""
+msgstr "*相同方式分享* — 如果你在此创作上修改，转换或进行二次创作，你的创作结果必须跟随与此相同或相似的协议"
 
 #: ../../contributing/documentation/license.rst:25
 msgid "**With the understanding that:**"
-msgstr ""
+msgstr "**需要理解：**"
 
 #: ../../contributing/documentation/license.rst:27
 msgid ""
 "*Waiver* — Any of the above conditions can be waived if you get permission "
 "from the copyright holder;"
-msgstr ""
+msgstr "*豁免* — 如果你从版权持有人获得了允许，以上任何条件可被豁免"
 
 #: ../../contributing/documentation/license.rst:30
 msgid ""
 "*Public Domain* — Where the work or any of its elements is in the public "
 "domain under applicable law, that status is in no way affected by the "
 "license;"
-msgstr ""
+msgstr "*公共领域* — 如果此创作或此创作的一部分在适用的法律下属于公共领域，在此状态下此协议便不在生效"
 
 #: ../../contributing/documentation/license.rst:34
 msgid ""
 "*Other Rights* — In no way are any of the following rights affected by the "
 "license:"
-msgstr ""
+msgstr "*其它权利* — 以下权利决不会通过此协议生效："
 
 #: ../../contributing/documentation/license.rst:37
 msgid ""
 "Your fair dealing or fair use rights, or other applicable copyright "
 "exceptions and limitations;"
-msgstr ""
+msgstr "你的合理使用或公平交易权，或其它版权的免责或限制条款"
 
 #: ../../contributing/documentation/license.rst:40
 msgid "The author's moral rights;"
-msgstr ""
+msgstr "作者的精神权利"
 
 #: ../../contributing/documentation/license.rst:42
 msgid ""
 "Rights other persons may have either in the work itself or in how the work "
 "is used, such as publicity or privacy rights."
-msgstr ""
+msgstr "宣传权或隐私权"
 
 #: ../../contributing/documentation/license.rst:45
 msgid ""
 "*Notice* — For any reuse or distribution, you must make clear to others the "
 "license terms of this work. The best way to do this is with a link to this "
 "web page."
-msgstr ""
+msgstr "*注意* — 对于任何复用或分发，你必须明确的指出此创作所遵照的协议。最好的方式是引用此页的链接"
 
 #: ../../contributing/documentation/license.rst:49
 msgid ""
