@@ -152,6 +152,8 @@ msgid ""
 "``$form->createView()`` in the controller above) and using a set of form "
 "helper functions:"
 msgstr ""
+"创建好表单后让我们来展现它，我们将传递表单的“view”对象给模板（注意 ``$form->createView()`` ）"
+"然后使用form相关的助手函数："
 
 #: ../../book/forms.rst:164
 msgid ""
@@ -159,10 +161,11 @@ msgid ""
 "the same URL that it was displayed in. You will learn later how to change "
 "the request method and the target URL of the form."
 msgstr ""
+"例子里假设你通过“POST”发把表单提交到同一个URL中，之后你会了解如果修改form的action和method属性"
 
 #: ../../book/forms.rst:168
 msgid "That's it! Just three lines are needed to render the complete form:"
-msgstr ""
+msgstr "三行搞定！"
 
 #: ../../book/forms.rst:172
 msgid "``form_start(form)``"
@@ -172,7 +175,7 @@ msgstr ""
 msgid ""
 "Renders the start tag of the form, including the correct enctype attribute "
 "when using file uploads."
-msgstr ""
+msgstr "显示form的开始tag，如有上传文件字段还会包含enctype属性哦"
 
 #: ../../book/forms.rst:176
 msgid "``form_widget(form)``"
@@ -182,7 +185,7 @@ msgstr ""
 msgid ""
 "Renders all the fields, which includes the field element itself, a label and"
 " any validation error messages for the field."
-msgstr ""
+msgstr "显示所有的字段，包括字段本身和label标签，以及错误信息"
 
 #: ../../book/forms.rst:182
 msgid "``form_end(form)``"
@@ -195,6 +198,8 @@ msgid ""
 "rendering hidden fields and taking advantage of the automatic :ref:`CSRF "
 "Protection <forms-csrf>`."
 msgstr ""
+"显示表单结束的tag以及所有表单里有，但是目前还没有被显示的字段。"
+"这个功能超级对于显示隐藏字段超级好用，比如说  :ref:`CSRF Protection <forms-csrf>`"
 
 #: ../../book/forms.rst:186
 msgid ""
@@ -203,6 +208,8 @@ msgid ""
 "You'll learn how to do that in the \":ref:`form-rendering-template`\" "
 "section."
 msgstr ""
+"目前虽然代码简单，但是还不够灵活。一般来说你还是需要了解如何单独显示每一个表单字段，"
+"来完全控制你的表单的样子。请移步“ :ref:`form-rendering-template` ”了解"
 
 #: ../../book/forms.rst:190
 msgid ""
@@ -212,6 +219,8 @@ msgid ""
 "translate it into a format that's suitable for being rendered in an HTML "
 "form."
 msgstr ""
+"继续之前，注意 ``task`` 输入框里的值是如何从 ``$task`` 对象里获取过来的。"
+"form的第一个职责就是从对象属性里获取数据，并且绑定到表单对应的字段的值"
 
 #: ../../book/forms.rst:197
 msgid ""
@@ -223,6 +232,9 @@ msgid ""
 "method (e.g. ``isPublished()`` or ``hasReminder()``) instead of a getter "
 "(e.g. ``getPublished()`` or ``getReminder()``)."
 msgstr ""
+"Form可以非常机制到连 ``getTask`` 和 ``setTask`` 方法都认得。除了`public`的属性，其他的都需要getter和setter，"
+"否则form不能读写属性的数据。如果是布尔类型的，你可以用isser或者hasser，"
+"比如说 ``isPublished()`` 或者 ``hasReminder()``"
 
 #: ../../book/forms.rst:211
 msgid "Handling Form Submissions"
@@ -234,7 +246,7 @@ msgid ""
 "properties of an object. To make this happen, the submitted data from the "
 "user must be written into the form. Add the following functionality to your "
 "controller::"
-msgstr ""
+msgstr "Form的第二职责是将用户提交数据转化回对象，为此表单需将用户用户提交数据写入表对象中::"
 
 #: ../../book/forms.rst:243
 msgid ""
@@ -244,12 +256,15 @@ msgid ""
 " removed in Symfony 3.0. For details on that method, see :ref:`cookbook-"
 "form-submit-request`."
 msgstr ""
+"从Symfony 2.3开始引入 :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` 方法"
+"之前需要将 ``$request`` 传入 ``submit`` 方法，如今已不推荐，并且Symfony 3.0里会完全去掉此方法。"
+"请移步 :ref:`cookbook-form-submit-request` 查看更多信息。"
 
 #: ../../book/forms.rst:249
 msgid ""
 "This controller follows a common pattern for handling forms, and has three "
 "possible paths:"
-msgstr ""
+msgstr "此控制器展现了除了表单的常见思路，包含3中方式："
 
 #: ../../book/forms.rst:252
 msgid ""
@@ -260,6 +275,10 @@ msgid ""
 ":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` returns "
 "``false`` if the form was not submitted."
 msgstr ""
+"当页面被载入时，表单只是被创建然后被显示。"
+" :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"方法能感知表单没有被提交，然后直接让 "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` 返回 ``false``"
 
 #: ../../book/forms.rst:258
 msgid ""
@@ -272,6 +291,12 @@ msgid ""
 "returns ``false`` again, so the form is rendered together with all "
 "validation errors;"
 msgstr ""
+"如果用户提交表单，"
+" :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"也能感知到，然后立马把提交的数据转换成 ``$task`` 对象 ``task`` 和 ``dueDate`` 属性的值。"
+"当然如果数据校验出问题了（数据校验将在下一小节介绍）"
+" :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` 方法也会返回 ``false`` ，"
+"然后表单将重新传给模板重新显示，并且包含了所有错误信息。"
 
 #: ../../book/forms.rst:267
 msgid ""
@@ -280,6 +305,8 @@ msgid ""
 "check whether a form was submitted, regardless of whether or not the "
 "submitted data is actually valid."
 msgstr ""
+"你可以使用 :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isSubmitted` "
+"来检查表单是否被提交，无论表单能否通过校验。"
 
 #: ../../book/forms.rst:271
 msgid ""
@@ -290,13 +317,16 @@ msgid ""
 "``$task`` object (e.g. persisting it to the database) before redirecting the"
 " user to some other page (e.g. a \"thank you\" or \"success\" page)."
 msgstr ""
+"如果用户再次提交表单信息，提交的数据也在此写入表单对象中，如果这次通过了校验，那么"
+" ``isValid`` 会返回 ``true`` 了，我们便可以通过 ``$task`` 对象"
+"在跳转到“提交成功”页之前做一些事情（比如存个库啥的）"
 
 #: ../../book/forms.rst:279
 msgid ""
 "Redirecting a user after a successful form submission prevents the user from"
 " being able to hit the \"Refresh\" button of their browser and re-post the "
 "data."
-msgstr ""
+msgstr "表单成功提交跳转到其他页面有一个好处就是防止用户点击“刷新”按钮重复提交数据"
 
 #: ../../book/forms.rst:285
 msgid ""
@@ -305,7 +335,9 @@ msgid ""
 ":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` for this. "
 "Read more about it :ref:`in the cookbook <cookbook-form-call-submit-"
 "directly>`."
-msgstr ""
+msgstr "如果你想控制表单在什么时候提交，以及提交什么数据到表单对象，请阅读"
+" :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` "
+" 以及 :ref:`in the cookbook <cookbook-form-call-submit-directly>` 。"
 
 #: ../../book/forms.rst:295
 msgid "Submitting Forms with Multiple Buttons"
@@ -313,7 +345,7 @@ msgstr "多按钮表单"
 
 #: ../../book/forms.rst:297 ../../book/forms.rst:600
 msgid "Support for buttons in forms was introduced in Symfony 2.3."
-msgstr ""
+msgstr "从Symfony 2.3开始支持多按钮表单"
 
 #: ../../book/forms.rst:300
 msgid ""
@@ -322,6 +354,7 @@ msgid ""
 "controller. To do this, add a second button with the caption \"Save and "
 "add\" to your form::"
 msgstr ""
+"如果你的表单包含不止一个按钮，而且你又想知道哪一个按钮被点了，你可以这样::"
 
 #: ../../book/forms.rst:311
 msgid ""
@@ -329,6 +362,8 @@ msgid ""
 ":method:`Symfony\\\\Component\\\\Form\\\\ClickableInterface::isClicked` "
 "method for querying if the \"Save and add\" button was clicked::"
 msgstr ""
+"在你的Controller里使用 :method:`Symfony\\\\Component\\\\Form\\\\ClickableInterface::isClicked` "
+"方法来判断“Save and add”按钮是不是被点击过::"
 
 #: ../../book/forms.rst:331
 msgid "Form Validation"
@@ -1010,7 +1045,7 @@ msgstr ""
 
 #: ../../book/forms.rst:0
 msgid "Setting the ``data_class``"
-msgstr ""
+msgstr "设置 ``data_class``"
 
 #: ../../book/forms.rst:1096
 msgid ""
@@ -1045,12 +1080,12 @@ msgstr ""
 
 #: ../../book/forms.rst:1136
 msgid "The field data can be accessed in a controller with::"
-msgstr ""
+msgstr "在Controller里可以这样访问表单字段数据::"
 
 #: ../../book/forms.rst:1140
 msgid ""
 "In addition, the data of an unmapped field can also be modified directly::"
-msgstr ""
+msgstr "另外，没有被映射的字段也可以直接被修改::"
 
 #: ../../book/forms.rst:1145
 msgid "Defining your Forms as Services"
@@ -1060,7 +1095,7 @@ msgstr "将表单定义为Service"
 msgid ""
 "Defining your form type as a service is a good practice and makes it really "
 "easy to use in your application."
-msgstr ""
+msgstr "将表单定义为服务是一个好习惯，他将让表单变得更好用"
 
 #: ../../book/forms.rst:1152
 msgid ""
@@ -1071,15 +1106,15 @@ msgstr ""
 
 #: ../../book/forms.rst:1198
 msgid "That's it! Now you can use your form type directly in a controller::"
-msgstr ""
+msgstr "搞定！ 现在你可以直接在Controller里使用你自己的表单类型"
 
 #: ../../book/forms.rst:1211
 msgid "or even use from within the form type of another form::"
-msgstr ""
+msgstr "甚至可以在其他表单中使用::"
 
 #: ../../book/forms.rst:1226
 msgid "Read :ref:`form-cookbook-form-field-service` for more information."
-msgstr ""
+msgstr "移步至 :ref:`form-cookbook-form-field-service` 了解更多。"
 
 #: ../../book/forms.rst:1232
 msgid "Forms and Doctrine"
@@ -1100,12 +1135,12 @@ msgstr ""
 msgid ""
 "If, for some reason, you don't have access to your original ``$task`` "
 "object, you can fetch it from the form::"
-msgstr ""
+msgstr "你可以不用创建 ``$task`` 对象而直接从表单对象中获取它"
 
 #: ../../book/forms.rst:1255
 msgid ""
 "For more information, see the :doc:`Doctrine ORM chapter </book/doctrine>`."
-msgstr ""
+msgstr "想了解更多？请看  :doc:`Doctrine ORM chapter </book/doctrine>` 。"
 
 #: ../../book/forms.rst:1257
 msgid ""
@@ -1135,11 +1170,11 @@ msgstr "只嵌单个表单"
 msgid ""
 "Suppose that each ``Task`` belongs to a simple ``Category`` object. Start, "
 "of course, by creating the ``Category`` object::"
-msgstr ""
+msgstr "假如 ``Task`` 属于某个 ``Category`` 对象，首先我们得有一个 ``Category`` 对象::"
 
 #: ../../book/forms.rst:1294
 msgid "Next, add a new ``category`` property to the ``Task`` class::"
-msgstr ""
+msgstr "接下来，给 ``Task`` 类添加 ``category`` 属性::"
 
 #: ../../book/forms.rst:1323
 msgid ""
@@ -1173,7 +1208,7 @@ msgstr ""
 msgid ""
 "Render the ``Category`` fields in the same way as the original ``Task`` "
 "fields:"
-msgstr ""
+msgstr "使用跟显示 ``Task`` 同样的方式来显示 ``Category`` 的表单字段："
 
 #: ../../book/forms.rst:1402
 msgid ""
@@ -1275,7 +1310,7 @@ msgstr ""
 msgid ""
 "If several custom themes are provided they will be searched in the listed "
 "order before falling back to the global theme."
-msgstr ""
+msgstr "如果提供了多个自定义主题，他们将会按照顺序挨个尝试使用，如果所有不适用，将会使用全局主题"
 
 #: ../../book/forms.rst:1509
 msgid ""
@@ -1315,6 +1350,8 @@ msgid ""
 "located in the `Resources/views/Form` directory of the framework bundle "
 "(`view on GitHub`_)."
 msgstr ""
+"在PHP代码里，表单片段都是写单独的模板文件。默认都放在framework bundle的 `Resources/views/Form` "
+"中（ `view on GitHub`_ ）。"
 
 #: ../../book/forms.rst:1535
 msgid ""
@@ -1473,7 +1510,7 @@ msgstr ""
 
 #: ../../book/forms.rst:0
 msgid "Customizing Form Output all in a Single File with Twig"
-msgstr ""
+msgstr "在单个Twig文件里自定义表单输出"
 
 #: ../../book/forms.rst:1653
 msgid ""
@@ -1732,71 +1769,71 @@ msgstr ""
 
 #: ../../book/forms.rst:19
 msgid "Create a simple form"
-msgstr ""
+msgstr "创建一个简单表单"
 
 #: ../../book/forms.rst:66
 msgid "Create a form in a controller"
-msgstr ""
+msgstr "在控制器里创建表单"
 
 #: ../../book/forms.rst:132
 msgid "Basic template rendering"
-msgstr ""
+msgstr "基础模板显示"
 
 #: ../../book/forms.rst:205
 msgid "Handling form submissions"
-msgstr ""
+msgstr "处理表单提交"
 
 #: ../../book/forms.rst:289
 msgid "Multiple Submit Buttons"
-msgstr ""
+msgstr "多个提交按钮"
 
 #: ../../book/forms.rst:325
 msgid "Validation"
-msgstr ""
+msgstr "校验"
 
 #: ../../book/forms.rst:458
 msgid "Validation groups"
-msgstr ""
+msgstr "校验组"
 
 #: ../../book/forms.rst:493
 msgid "Disabling validation"
-msgstr ""
+msgstr "关闭数据校验"
 
 #: ../../book/forms.rst:519
 msgid "Validation groups based on submitted data"
-msgstr ""
+msgstr "由提交信息决定的校验组"
 
 #: ../../book/forms.rst:594
 msgid "Validation groups based on clicked button"
-msgstr ""
+msgstr "由点击按钮决定的校验组"
 
 #: ../../book/forms.rst:632
 msgid "Built-in field types"
-msgstr ""
+msgstr "内置表单字段类型"
 
 #: ../../book/forms.rst:648
 msgid "Field type options"
-msgstr ""
+msgstr "表单字段类型选项"
 
 #: ../../book/forms.rst:701 ../../book/forms.rst:738
 msgid "Field type guessing"
-msgstr ""
+msgstr "表单字段类型猜测"
 
 #: ../../book/forms.rst:776
 msgid "Rendering in a template"
-msgstr ""
+msgstr "在模板中显示"
 
 #: ../../book/forms.rst:839
 msgid "Rendering each field by hand"
-msgstr ""
+msgstr "手写各个表单字段"
 
 #: ../../book/forms.rst:966
 msgid "Changing the action and method"
-msgstr ""
+msgstr "修改action和method属性"
 
 #: ../../book/forms.rst:1029
 msgid "Creating form classes"
-msgstr ""
+msgstr "创建表单类"
 
 #: ../../book/forms.rst:1228
 msgid "Doctrine"
@@ -1804,32 +1841,32 @@ msgstr ""
 
 #: ../../book/forms.rst:1262
 msgid "Embedded forms"
-msgstr ""
+msgstr "内嵌表单"
 
 #: ../../book/forms.rst:1419
 msgid "Theming"
-msgstr ""
+msgstr "主题"
 
 #: ../../book/forms.rst:1419
 msgid "Customizing fields"
-msgstr ""
+msgstr "自定义表单字段"
 
 #: ../../book/forms.rst:1515
 msgid "Template fragment naming"
-msgstr ""
+msgstr "模板片段命名规则"
 
 #: ../../book/forms.rst:1568
 msgid "Template fragment inheritance"
-msgstr ""
+msgstr "模板片段继承"
 
 #: ../../book/forms.rst:1595
 msgid "Global Theming"
-msgstr ""
+msgstr "全局主题"
 
 #: ../../book/forms.rst:1741
 msgid "CSRF protection"
-msgstr ""
+msgstr "CSRF 保护"
 
 #: ../../book/forms.rst:1809
 msgid "With no class"
-msgstr ""
+msgstr "不使用类"
