@@ -34,6 +34,9 @@ msgid ""
 "ground up, learning the most important features of the form library along "
 "the way."
 msgstr ""
+"对开发来说处理HTML表单是一个常见又充满挑战的任务。"
+"Symfony整合的的Form组件将处理表单变得更简单。"
+"这一章，你将从0开始创建一个复杂的表单，并从过程中学到许多牛逼的功能。"
 
 #: ../../book/forms.rst:14
 msgid ""
@@ -41,6 +44,8 @@ msgid ""
 "of Symfony projects. For more information, see the :doc:`Form component "
 "documentation </components/form/introduction>` on GitHub."
 msgstr ""
+"Symfony表单组件是可以独立于框架而单独存在的库。想要知道更多信息请上GitHub看"
+" :doc:`Form component documentation </components/form/introduction>`"
 
 #: ../../book/forms.rst:23
 msgid "Creating a Simple Form"
@@ -54,6 +59,8 @@ msgid ""
 "the generic ``Task`` class that represents and stores the data for a single "
 "task::"
 msgstr ""
+"假设你当前要实现一个任务列表这么个功能，你的用户总得创建或者修改任务吧，"
+"所以你得创建个表单。不过在你开始之前，先来看看代表一个任务的 ``Task`` 类。"
 
 #: ../../book/forms.rst:59
 msgid ""
@@ -64,6 +71,10 @@ msgid ""
 "chapter, you'll be able to submit data to a ``Task`` instance (via an HTML "
 "form), validate its data, and persist it to the database."
 msgstr ""
+"这就是一个平淡无奇的经典PHP对象，跟Symfony或者其他库都不占边。"
+"这就是一个你用来解决某一个问题（表示一个任务对象）的普通对象而已。"
+"不过等到你看完这章节的时候，你就知道怎么提交数据到 ``Task`` 对象里（通过HTML表单），"
+"校验数据的正确性，而且还将它存到数据库里。"
 
 #: ../../book/forms.rst:70
 msgid "Building the Form"
@@ -76,6 +87,8 @@ msgid ""
 "object and then rendering it in a template. For now, this can all be done "
 "from inside a controller::"
 msgstr ""
+"目前有了 ``Task`` 类，下一步创建HTML表单。在Symfony里，这一步将通过创建一个表单"
+"对象后然后在模板里渲染它来实现。现在可以直接在Controller里完成::"
 
 #: ../../book/forms.rst:107
 msgid ""
@@ -84,6 +97,9 @@ msgid ""
 "learn how to build your form in a standalone class, which is recommended as "
 "your form becomes reusable."
 msgstr ""
+"此例展示如何在Controller里直接创建form，"
+"接下来在 “ :ref:`book-form-creating-form-classes` ” 小节里"
+"您将了解更推荐更有复用性的方法：在单独的类里创建表单。"
 
 #: ../../book/forms.rst:112
 msgid ""
@@ -92,6 +108,8 @@ msgid ""
 "you to write simple form \"recipes\", and have it do all the heavy-lifting "
 "of actually building the form."
 msgstr ""
+"创建表单不需要太多代码因为Symfony的“表单创建器”做了创建表单工作。"
+"表单创建器的目的就是让你想写“食谱”一样定义表单，然后就没有然后了，创建器来做剩下的重活儿。"
 
 #: ../../book/forms.rst:117
 msgid ""
@@ -101,24 +119,27 @@ msgid ""
 "``date``), which, among other things, determines which HTML form tag(s) is "
 "rendered for that field."
 msgstr ""
+"在这个例子里，你在表单中添加了 ``task`` 和 ``dueDate`` 两个字段，正好对应了 ``Task`` 类"
+"类的两个属性。同时你也定义了两个字段的显示类型（比如 ``text``，``date``），决定了该用什么"
+"HTML标签来生成字段。"
 
 #: ../../book/forms.rst:122
 msgid ""
 "Finally, you added a submit button with a custom label for submitting the "
 "form to the server."
-msgstr ""
+msgstr "最后，你添加好了一个的提交按钮，还是自定义按钮文字的呢。"
 
 #: ../../book/forms.rst:125
 msgid ""
 "Support for submit buttons was introduced in Symfony 2.3. Before that, you "
 "had to add buttons to the form's HTML manually."
-msgstr ""
+msgstr "从Symfony 2.3开始支持创建提交按钮，之前的版本你得自己手写HTML代码"
 
 #: ../../book/forms.rst:129
 msgid ""
 "Symfony comes with many built-in types that will be discussed shortly (see "
 ":ref:`book-forms-type-reference`)."
-msgstr ""
+msgstr "Symfony内置超多字段类型，之后我们会介绍（请看 :ref:`book-forms-type-reference`）。"
 
 #: ../../book/forms.rst:136
 msgid "Rendering the Form"
