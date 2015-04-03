@@ -378,6 +378,10 @@ msgid ""
 "applied the submitted data to it. Calling ``$form->isValid()`` is a shortcut"
 " that asks the ``$task`` object whether or not it has valid data."
 msgstr ""
+"在之前的小节里，你了解到了用户会提交合法和非法的数据。"
+"在Symfony框架里，数据校验是配置在对象上面的，（比如 ``Task`` ）。"
+"换句话说，不是验证你的“表单”数据，而是验证你的 ``$task`` 对象是不是合法的。"
+" ``$form->isValid()`` 也只是一个判断 ``$task`` 对象是否是合法对象的快捷方式而已。"
 
 #: ../../book/forms.rst:340
 msgid ""
@@ -386,16 +390,19 @@ msgid ""
 "field cannot be empty and the ``dueDate`` field cannot be empty and must be "
 "a valid \\DateTime object."
 msgstr ""
+"校验是通过添加一组规则（称之为校验规则）到类上实现的。"
+"为了演示用法，添加一些检验规则，让 ``task`` 属性不能为空，让 ``dueDate`` 属性"
+"也不能为空，并且还必须是个合法的时间对象。"
 
 #: ../../book/forms.rst:420
 msgid ""
 "That's it! If you re-submit the form with invalid data, you'll see the "
 "corresponding errors printed out with the form."
-msgstr ""
+msgstr "搞定！如果你重新提交非法数据，你会在表单上看到错误提示。"
 
 #: ../../book/forms.rst:0
 msgid "HTML5 Validation"
-msgstr ""
+msgstr "HTML5 验证"
 
 #: ../../book/forms.rst:427
 msgid ""
@@ -405,6 +412,9 @@ msgid ""
 " that support HTML5, this will result in a native browser message being "
 "displayed if the user tries to submit the form with that field blank."
 msgstr ""
+"对于HTML5来说，许多浏览器已经实现了在客户端做本地校验。"
+"最常见的就是在表单字段上添加 ``required`` 属性。"
+"只要浏览器支持此HTML5新属性，就会提示你必须输入此字段才能提交。"
 
 #: ../../book/forms.rst:433
 msgid ""
@@ -416,12 +426,16 @@ msgid ""
 "are being prevented by your browser from, for example, submitting blank "
 "fields."
 msgstr ""
+"虽然在客户端通过HTML也可以添加校验了，但有时你也许要把客户端的校验关闭，"
+"比如说在测试服务器端的校验功能的时候。此时需要给form标签添加 ``novalidate`` 属性，"
+"或者在提交按钮上添加 ``formnovalidate`` 属性。"
 
 #: ../../book/forms.rst:455
 msgid ""
 "Validation is a very powerful feature of Symfony and has its own "
 ":doc:`dedicated chapter </book/validation>`."
 msgstr ""
+"校验是一个非常牛逼的功能，他有单独的章节介绍： :doc:`dedicated chapter </book/validation>`"
 
 #: ../../book/forms.rst:464
 msgid "Validation Groups"
@@ -433,12 +447,15 @@ msgid ""
 "validation-groups>`, you'll need to specify which validation group(s) your "
 "form should use::"
 msgstr ""
+"如果你的对象使用了 :ref:`validation groups <book-validation-"
+"validation-groups>` ，你将在表单里设置需要使用哪个校验组来校验。"
 
 #: ../../book/forms.rst:473
 msgid ""
 "The ``configureOptions()`` method was introduced in Symfony 2.7. Previously,"
 " the method was called ``setDefaultOptions()``."
 msgstr ""
+"``configureOptions()`` 方法是在Symfony 2.7里加入的，之前得用 ``setDefaultOptions()`` 方法。"
 
 #: ../../book/forms.rst:477
 msgid ""
@@ -446,12 +463,15 @@ msgid ""
 "good practice), then you'll need to add the following to the "
 "``configureOptions()`` method::"
 msgstr ""
+"如果你正创建 :ref:`form classes <book-form-creating-form-classes>` （"
+"这是最佳实践），你需要添加以下代码到 ``configureOptions()`` 方法::"
 
 #: ../../book/forms.rst:490
 msgid ""
 "In both of these cases, *only* the ``registration`` validation group will be"
 " used to validate the underlying object."
 msgstr ""
+"在这两种情况下， *只有* ``registration`` 校验组会被使用。"
 
 #: ../../book/forms.rst:497
 msgid "Disabling Validation"
@@ -461,13 +481,14 @@ msgstr "关闭验证功能"
 msgid ""
 "The ability to set ``validation_groups`` to false was introduced in Symfony "
 "2.3."
-msgstr ""
+msgstr "关闭 ``validation_groups`` 的功能于Symfony 2.3时加入。"
 
 #: ../../book/forms.rst:502
 msgid ""
 "Sometimes it is useful to suppress the validation of a form altogether. For "
 "these cases you can set the ``validation_groups`` option to ``false``::"
 msgstr ""
+"有时你需要忽略校验，此时你可以设置 ``validation_groups`` 选项为 ``false``::"
 
 #: ../../book/forms.rst:514
 msgid ""
@@ -477,6 +498,10 @@ msgid ""
 ":ref:`POST_SUBMIT event <cookbook-dynamic-form-modification-suppressing-"
 "form-validation>`."
 msgstr ""
+"注意一点如果你这么设置后，表单依然会跑一些基础检查。比如提交文件是否太大，"
+"或者一些必填项没填。如果你想完全忽略任何检查，你可以使用"
+" :ref:`POST_SUBMIT event <cookbook-dynamic-form-modification-suppressing-"
+"form-validation>` 。"
 
 #: ../../book/forms.rst:525
 msgid "Groups based on the Submitted Data"
@@ -488,6 +513,8 @@ msgid ""
 "based on submitted data), you can set the ``validation_groups`` option to an"
 " array callback::"
 msgstr ""
+"如果你程序要一些逻辑来决定使用什么校验组（比如通过提交的数据），"
+"你可以通过给 ``validation_groups`` 指定回调函数的方式实现。"
 
 #: ../../book/forms.rst:544
 msgid ""
@@ -496,6 +523,8 @@ msgid ""
 "executed. The Form object is passed as an argument to that method (see next "
 "example). You can also define whole logic inline by using a ``Closure``::"
 msgstr ""
+"在表单提交后，进行校验前， ``Client`` 类的 ``determinValidationGroups()`` 方法将会被调用。"
+"表单对象将被作为一个参数（请看下一个例子）被传如该方法。你也可以直接传入匿名方法。"
 
 #: ../../book/forms.rst:568
 msgid ""
@@ -503,6 +532,8 @@ msgid ""
 "group which is being used. If you want to validate the default constraints "
 "of the entity as well you have to adjust the option as follows::"
 msgstr ""
+"使用 ``validation_groups`` 参数来重载默认的校验组。如果你也希望使用默认的校验规则，"
+"你需要调整一些选项::"
 
 #: ../../book/forms.rst:591
 msgid ""
@@ -510,6 +541,8 @@ msgid ""
 "default constraints work in the book section about :ref:`validation groups "
 "<book-validation-validation-groups>`."
 msgstr ""
+"你可以找到更多的关于校验组以及默认校验的信息在  :ref:`validation groups "
+"<book-validation-validation-groups>`"
 
 #: ../../book/forms.rst:598
 msgid "Groups based on the Clicked Button"
@@ -523,10 +556,13 @@ msgid ""
 "or go back to the previous step. Also assume that when returning to the "
 "previous step, the data of the form should be saved, but not validated."
 msgstr ""
+"如果表单包含不止一个提交按钮，你可以通过按钮来决定校验组。"
+"比如说有些带步骤的表单，可能提供上一步按钮，如果上一步按钮被点击，"
+"就不应该使用校验，但是数据还是应该保存。"
 
 #: ../../book/forms.rst:609
 msgid "First, we need to add the two buttons to the form::"
-msgstr ""
+msgstr "首先，我们需要添加两个按钮::"
 
 #: ../../book/forms.rst:617
 msgid ""
@@ -534,6 +570,9 @@ msgid ""
 "specific validation groups. In this example, we want it to suppress "
 "validation, so we set its ``validation_groups`` option to false::"
 msgstr ""
+"接着，我们需要配置上一步按钮运行某个特殊的校验组。"
+"在这个例子中，我们希望它压根就不校验，所以我们设置"
+" ``validation_groups`` 为false::"
 
 #: ../../book/forms.rst:628
 msgid ""
@@ -541,6 +580,8 @@ msgid ""
 "basic integrity constraints, such as checking whether an uploaded file was "
 "too large or whether you tried to submit text in a number field."
 msgstr ""
+"这时表单将跳过校验。但他依然会执行一些基础检查，比如是否上传过大的文件，或者在"
+"数字类型字段里输入了非数字。"
 
 #: ../../book/forms.rst:638
 msgid "Built-in Field Types"
@@ -551,10 +592,11 @@ msgid ""
 "Symfony comes standard with a large group of field types that cover all of "
 "the common form fields and data types you'll encounter:"
 msgstr ""
+"Symfony自带一大波表单字段类型，几乎涵盖所有你会遇到的所有需求"
 
 #: ../../reference/forms/types/map.rst.inc:2
 msgid "Text Fields"
-msgstr ""
+msgstr "文字类"
 
 #: ../../reference/forms/types/map.rst.inc:4
 msgid ":doc:`text </reference/forms/types/text>`"
@@ -598,7 +640,7 @@ msgstr ""
 
 #: ../../reference/forms/types/map.rst.inc:16
 msgid "Choice Fields"
-msgstr ""
+msgstr "选择类"
 
 #: ../../reference/forms/types/map.rst.inc:18
 msgid ":doc:`choice </reference/forms/types/choice>`"
@@ -650,7 +692,7 @@ msgstr ""
 
 #: ../../reference/forms/types/map.rst.inc:35
 msgid "Other Fields"
-msgstr ""
+msgstr "其他类"
 
 #: ../../reference/forms/types/map.rst.inc:37
 msgid ":doc:`checkbox </reference/forms/types/checkbox>`"
@@ -686,7 +728,7 @@ msgstr ""
 
 #: ../../reference/forms/types/map.rst.inc:53
 msgid "Buttons"
-msgstr ""
+msgstr "按钮类"
 
 #: ../../reference/forms/types/map.rst.inc:55
 msgid ":doc:`button</reference/forms/types/button>`"
@@ -713,7 +755,7 @@ msgid ""
 "You can also create your own custom field types. This topic is covered in "
 "the \":doc:`/cookbook/form/create_custom_field_type`\" article of the "
 "cookbook."
-msgstr ""
+msgstr "你也可以创建你自己的表单字段类型。这在 :doc:`/cookbook/form/create_custom_field_type` 有讨论"
 
 #: ../../book/forms.rst:652
 msgid "Field Type Options"
@@ -727,6 +769,9 @@ msgid ""
 "configured to be rendered as a single text box (where the user would enter "
 "the date as a string in the box)::"
 msgstr ""
+"每一个字段类型都有一堆选项。比如说 ``dueDate`` 字段就被显示成三个下拉菜单。"
+"不过， :doc:`date field </reference/forms/types/date>` 可以被设置为一个文字输入框，"
+"这样用户就可以直接输入时间文字了::"
 
 #: ../../book/forms.rst:665
 msgid ""
@@ -734,10 +779,11 @@ msgid ""
 "Many of these are specific to the field type and details can be found in the"
 " documentation for each type."
 msgstr ""
+"每一个表单字段有一堆选项独有的选项可以设置，它们在文档里都可以查到。"
 
 #: ../../book/forms.rst:0
 msgid "The ``required`` Option"
-msgstr ""
+msgstr "``required`` 选项"
 
 #: ../../book/forms.rst:671
 msgid ""
@@ -748,6 +794,11 @@ msgid ""
 "option on your field to ``false`` or :ref:`disable HTML5 validation <book-"
 "forms-html5-validation-disable>`."
 msgstr ""
+"最常见的选项就是 ``requried`` ，任何字段都可以使用它。 ``required`` 默认为 ``true`` ，"
+"表示支持HTML5的浏览器将在客户端设置此字段不能不填。"
+"如果你不想使用这个功能，你可以设置 ``required`` 为 ``false`` ， 或者 "
+":ref:`disable HTML5 validation <book-"
+"forms-html5-validation-disable>` 。"
 
 #: ../../book/forms.rst:678
 msgid ""
@@ -757,22 +808,26 @@ msgid ""
 "service, for example), it will be accepted as a valid value unless you use "
 "Symfony's ``NotBlank`` or ``NotNull`` validation constraint."
 msgstr ""
+"注意设置 ``required`` 为 ``true`` 并 **不会** 触发服务器端的非空校验。"
+"或者说，如果客户端太旧不支持HTML5，数据依然会提交，并且如果你不使用 ``NotBlank`` 和 ``NotNull`` "
+"这样的校验规则， 依然算通过校验。"
 
 #: ../../book/forms.rst:684
 msgid ""
 "In other words, the ``required`` option is \"nice\", but true server-side "
 "validation should *always* be used."
-msgstr ""
+msgstr "换句话说， ``required`` 虽好，服务器端校验 *更* 需要"
+
 
 #: ../../book/forms.rst:0
 msgid "The ``label`` Option"
-msgstr ""
+msgstr "``label`` 选项"
 
 #: ../../book/forms.rst:689
 msgid ""
 "The label for the form field can be set using the ``label`` option, which "
 "can be applied to any field::"
-msgstr ""
+msgstr "表单项文字可以通过 ``label`` 选项设置，同样是任何类型的字段都可以用它。"
 
 #: ../../book/forms.rst:697
 msgid ""
@@ -780,6 +835,8 @@ msgid ""
 "see below. If you don't need a label associated to your input, you can "
 "disable it by setting its value to ``false``."
 msgstr ""
+"label也可以在模板中设置，如下所示，如果你不想让某个label跟你的输入框一起显示，"
+"你可以通过设置其为 ``false`` 来关闭它。"
 
 #: ../../book/forms.rst:707
 msgid "Field Type Guessing"
@@ -793,6 +850,10 @@ msgid ""
 "Symfony can guess from the validation rules that both the ``task`` field is "
 "a normal ``text`` field and the ``dueDate`` field is a ``date`` field::"
 msgstr ""
+"目前你已经给 ``Task`` 类添加了校验，Symfony就已经知道很多表单字段信息。"
+"Symfony还可以“推测”表单字段应该是什么类型，然后自动为你设置。"
+"在此例中，Symfony通过校验规则推测出 ``task`` 字段应该是 ``text`` 类型，"
+"而 ``dueDate`` 是 ``date`` 类型::"
 
 #: ../../book/forms.rst:726
 msgid ""
@@ -801,6 +862,9 @@ msgid ""
 "array as the third argument (done for ``dueDate`` above), these options are "
 "applied to the guessed field."
 msgstr ""
+"如果你忽略 ``add()`` 的第二个参数（或者传null给它），“推测”功能便会开启。"
+"如果你传入了选项到第三个参数（上面 ``dueDate`` 就是这么做的），"
+"这些选项就会使用在被推测出来的字段上。"
 
 #: ../../book/forms.rst:733
 msgid ""
@@ -809,6 +873,8 @@ msgid ""
 "(including constraints that are not part of the validation group(s) being "
 "used)."
 msgstr ""
+"如果你的表单将使用某个特别的校验组，字段类型推测功能依然是从所有的验证规则里"
+"去猜测你的字段类型（即包括所使用的校验规则之外的规则）。"
 
 #: ../../book/forms.rst:742
 msgid "Field Type Options Guessing"
@@ -819,6 +885,7 @@ msgid ""
 "In addition to guessing the \"type\" for a field, Symfony can also try to "
 "guess the correct values of a number of field options."
 msgstr ""
+"除了能推测类型，Symfony也可以推测选项。"
 
 #: ../../book/forms.rst:749
 msgid ""
@@ -829,6 +896,9 @@ msgid ""
 " validation, these field type options can then be guessed from that "
 "information."
 msgstr ""
+"当设置完这些选项后，在生成HTML代码时会生成响应的HTML5属性。"
+"只不过，他并不生成相同功能的，服务器端的校验规则（比如说 ``Asset\\Length``）。"
+"所以你得自己添加服务端的校验。这些字段设置可以被它的校验信息推测出来。"
 
 #: ../../book/forms.rst:759
 msgid "``required``"
@@ -841,6 +911,9 @@ msgid ""
 "the field ``nullable``). This is very useful, as your client-side validation"
 " will automatically match your validation rules."
 msgstr ""
+"``required`` 选项可以通过校验规则猜测出来（比如 ``NotBlank`` 或者 ``NotNull``）"
+"甚至是通过Doctrine的配置信息（比如 ``nullable``）。非常方便得让你的客户端和服务"
+"端有相同的校验规则。"
 
 #: ../../book/forms.rst:764
 msgid "``max_length``"
@@ -852,18 +925,23 @@ msgid ""
 "be guessed from the validation constraints (if ``Length`` or ``Range`` is "
 "used) or from the Doctrine metadata (via the field's length)."
 msgstr ""
+"如果是文字输入框， ``max_length`` 将被推测出来（通过 ``Length`` 或者 ``Range``）"
+"甚至是Doctrine的配置信息 （通过响应属性的 length 信息）。"
 
 #: ../../book/forms.rst:768
 msgid ""
 "These field options are *only* guessed if you're using Symfony to guess the "
 "field type (i.e. omit or pass ``null`` as the second argument to ``add()``)."
 msgstr ""
+"这些字段选项 *仅仅* 在让Symfony猜测字段类型的时候才会管用"
+"（即忽略 ``add()`` 的第二个参数）。"
 
 #: ../../book/forms.rst:771
 msgid ""
 "If you'd like to change one of the guessed values, you can override it by "
 "passing the option in the options field array::"
 msgstr ""
+"如果你想改变其中某一个猜测的选项，你可以通过传入选项数组去覆盖它。"
 
 #: ../../book/forms.rst:782
 msgid "Rendering a Form in a Template"
@@ -874,12 +952,15 @@ msgid ""
 "So far, you've seen how an entire form can be rendered with just one line of"
 " code. Of course, you'll usually need much more flexibility when rendering:"
 msgstr ""
+"目前，你已经知道如何用一行代码生成整个表单。"
+"但你有更灵活的方式去生成表单："
 
 #: ../../book/forms.rst:809
 msgid ""
 "You already know the ``form_start()`` and ``form_end()`` functions, but what"
 " do the other functions do?"
 msgstr ""
+"同样你也知道了 ``form_start()`` 和 ``form_end()`` 方法，但其他的方法是干嘛用的？"
 
 #: ../../book/forms.rst:814
 msgid "``form_errors(form)``"
@@ -889,7 +970,7 @@ msgstr ""
 msgid ""
 "Renders any errors global to the whole form (field-specific errors are "
 "displayed next to each field)."
-msgstr ""
+msgstr "显示整个表单的错误（如何参数是某个表单字段，就是此字段的错误）。"
 
 #: ../../book/forms.rst:818
 msgid "``form_row(form.dueDate)``"
@@ -899,7 +980,7 @@ msgstr ""
 msgid ""
 "Renders the label, any errors, and the HTML form widget for the given field "
 "(e.g. ``dueDate``) inside, by default, a ``div`` element."
-msgstr ""
+msgstr "显示label，错误，以及控件，默认情况会被一个 ``div`` 包起来"
 
 #: ../../book/forms.rst:820
 msgid ""
@@ -908,10 +989,13 @@ msgid ""
 " default. In the :ref:`form-theming` section, you'll learn how the "
 "``form_row`` output can be customized on many different levels."
 msgstr ""
+"主要工作都是由 ``form_row`` 助手完成的，"
+"他将显示一个label，错误，以及表单的控件，并默认被一个 ``div`` 包起来。"
+"在 :ref:`form-theming` 中您将知道如何在各个层面自定义它的显示。"
 
 #: ../../book/forms.rst:827
 msgid "You can access the current data of your form via ``form.vars.value``:"
-msgstr ""
+msgstr "您可以通过 ``form.vars.value`` 来访问当前的数据："
 
 #: ../../book/forms.rst:843
 msgid "Rendering each Field by Hand"
@@ -1318,12 +1402,14 @@ msgid ""
 "appropriate fragment. Knowing exactly which block or file to override is the"
 " subject of the next section."
 msgstr ""
+"要自定义表单某个部分的显示，你只需要重载合适的片段代码。"
+"下一个小结会告诉你应该重载哪一部分的代码。"
 
 #: ../../book/forms.rst:1513
 msgid ""
 "For a more extensive discussion, see "
 ":doc:`/cookbook/form/form_customization`."
-msgstr ""
+msgstr "请移步 :doc:`/cookbook/form/form_customization` 了解更多。"
 
 #: ../../book/forms.rst:1521
 msgid "Form Fragment Naming"
@@ -1335,6 +1421,8 @@ msgid ""
 "errors, labels, etc. - is defined in a base theme, which is a collection of "
 "blocks in Twig and a collection of template files in PHP."
 msgstr ""
+"Symfony会把表单的每一个部分都生成HTML表单代码，比如错误信息，表单名称，等等。"
+"而定义他们的是某一个Twig文件的表单模板模块集合，或者一堆PHP写的模板文件。"
 
 #: ../../book/forms.rst:1527
 msgid ""
@@ -1343,6 +1431,9 @@ msgid ""
 "this file, you can see every block needed to render a form and every default"
 " field type."
 msgstr ""
+"Twig里每一个表单模块都定义在 `Twig Bridge`_ 的一个模板文件里（比如 `form_div_layout.html.twig`_ ），"
+"你可以在此文件里看到表单的每一个字段的默认模板。"
+
 
 #: ../../book/forms.rst:1532
 msgid ""
@@ -1358,7 +1449,7 @@ msgid ""
 "Each fragment name follows the same basic pattern and is broken up into two "
 "pieces, separated by a single underscore character (``_``). A few examples "
 "are:"
-msgstr ""
+msgstr "每一个片段名都是同样的规律：分成两个部分，并且用一个下划线分割。一些例子："
 
 #: ../../book/forms.rst:1538
 msgid "``form_row`` - used by ``form_row`` to render most fields;"
@@ -1390,11 +1481,11 @@ msgstr ""
 
 #: ../../book/forms.rst:1550
 msgid "(e.g. ``form_label``)"
-msgstr ""
+msgstr "（比如 ``form_label`` ）"
 
 #: ../../book/forms.rst:1550
 msgid "renders the field's label"
-msgstr ""
+msgstr "显示表单的label"
 
 #: ../../book/forms.rst:1552
 msgid "``widget``"
@@ -1402,11 +1493,11 @@ msgstr ""
 
 #: ../../book/forms.rst:1552
 msgid "(e.g. ``form_widget``)"
-msgstr ""
+msgstr "（比如 ``form_widget`` ）"
 
 #: ../../book/forms.rst:1552
 msgid "renders the field's HTML representation"
-msgstr ""
+msgstr "显示表单字段的HTML"
 
 #: ../../book/forms.rst:1554
 msgid "``errors``"
@@ -1414,11 +1505,11 @@ msgstr ""
 
 #: ../../book/forms.rst:1554
 msgid "(e.g. ``form_errors``)"
-msgstr ""
+msgstr "（比如 ``form_errors`` ）"
 
 #: ../../book/forms.rst:1554
 msgid "renders the field's errors"
-msgstr ""
+msgstr "显示字段错误信息"
 
 #: ../../book/forms.rst:1556
 msgid "``row``"
@@ -1426,17 +1517,17 @@ msgstr ""
 
 #: ../../book/forms.rst:1556
 msgid "(e.g. ``form_row``)"
-msgstr ""
+msgstr "（比如 ``form_row``）"
 
 #: ../../book/forms.rst:1556
 msgid "renders the field's entire row (label, widget & errors)"
-msgstr ""
+msgstr "显示表单字段的row（包括 label, widget 已经 errors）"
 
 #: ../../book/forms.rst:1561
 msgid ""
 "There are actually 2 other *parts* - ``rows`` and ``rest`` - but you should "
 "rarely if ever need to worry about overriding them."
-msgstr ""
+msgstr "事实上有两个 *部分* —— ``rows`` 和 ``rest`` —— 只不过你应该很少去重构他们。"
 
 #: ../../book/forms.rst:1564
 msgid ""
@@ -1444,6 +1535,8 @@ msgid ""
 "customize (e.g. ``widget``), you can construct the fragment name that needs "
 "to be overridden (e.g. ``textarea_widget``)."
 msgstr ""
+"只要知道字段的类型叫什么（比如 ``textarea``），以及你想自定义的地方（比如 ``widget``），"
+"你就可以猜出它的名字重载它了 （比如 ``textarea_widget``）。"
 
 #: ../../book/forms.rst:1572
 msgid "Template Fragment Inheritance"
@@ -1455,6 +1548,8 @@ msgid ""
 " For example, there is no ``textarea_errors`` fragment in the default themes"
 " provided with Symfony. So how are the errors for a textarea field rendered?"
 msgstr ""
+"某些情况，你想自定义的片段可能会找不到，比如说，默认模板没有 ``textarea_errors`` 片段。"
+"那么textarea的错误怎么自定义呢？"
 
 #: ../../book/forms.rst:1578
 msgid ""
@@ -1465,6 +1560,10 @@ msgid ""
 "parent is ``form``), and Symfony uses the fragment for the parent type if "
 "the base fragment doesn't exist."
 msgstr ""
+"答案是： 通过 ``form_errors`` 片段。当Symfony显示textare错误的时候，它会先查找"
+" ``textarea_errors`` 片段，然后查找 ``form_errors``。每一个表单字段都有一个 *父*"
+" 类型（ ``textarea`` 的父类是 ``text``，``text`` 的父类是 ``form``），如果本身的"
+"的错误类型无法找到，Symfony将会使用父类的错误类型。"
 
 #: ../../book/forms.rst:1585
 msgid ""
@@ -1473,12 +1572,16 @@ msgid ""
 " To override the default error rendering for *all* fields, copy and "
 "customize the ``form_errors`` fragment directly."
 msgstr ""
+"所以如果要只重载 ``textarea`` 的错误信息，复制 ``form_errors`` 片段，"
+"将其重命名为 ``textarea_errros`` 然后修改它。"
+"如果要重载 *所有* 的错误信息，复制后直接修改 ``form_errors`` 。"
 
 #: ../../book/forms.rst:1592
 msgid ""
 "The \"parent\" type of each field type is available in the :doc:`form type "
 "reference </reference/forms/types>` for each field type."
-msgstr ""
+msgstr "每一个表单类型的“parent”类型可参考 :doc:`form type "
+"reference </reference/forms/types>`"
 
 #: ../../book/forms.rst:1599
 msgid "Global Form Theming"
@@ -1490,6 +1593,8 @@ msgid ""
 "\"import\" the custom form fragments into *just* that form. You can also "
 "tell Symfony to import form customizations across your entire project."
 msgstr ""
+"在以上的例子中，你需要用 ``form_theme`` 助手方法（Twig）来引入自定义的模板片段。"
+"你也可以让Symfony在整个项目里都加载你自定义的模板。"
 
 #: ../../book/forms.rst:1606
 msgid "Twig"
@@ -1500,13 +1605,13 @@ msgid ""
 "To automatically include the customized blocks from the ``fields.html.twig``"
 " template created earlier in *all* templates, modify your application "
 "configuration file:"
-msgstr ""
+msgstr "你需要修改项目的配置文件，来自动包含你在 ``fields.html.twig`` 文件里定义的模板："
 
 #: ../../book/forms.rst:1648
 msgid ""
 "Any blocks inside the ``fields.html.twig`` template are now used globally to"
 " define form output."
-msgstr ""
+msgstr "所有在 ``fields.html.twig`` 模板里的表单模块现在都可以全局使用了。"
 
 #: ../../book/forms.rst:0
 msgid "Customizing Form Output all in a Single File with Twig"
@@ -1516,7 +1621,7 @@ msgstr "在单个Twig文件里自定义表单输出"
 msgid ""
 "In Twig, you can also customize a form block right inside the template where"
 " that customization is needed:"
-msgstr ""
+msgstr "在Twig里，你可以直接在需要自定义表单显示的模板里，修改表单某个部分的显示"
 
 #: ../../book/forms.rst:1674
 msgid ""
@@ -1525,6 +1630,8 @@ msgid ""
 "method to quickly make form output customizations that will only ever be "
 "needed in a single template."
 msgstr ""
+"``{% form_theme form _self %}`` 让表单可以直接在当前模板做一些自定义修改。"
+"使用此方法可以很快实现在当前模板表单自定义显示。"
 
 #: ../../book/forms.rst:1681
 msgid ""
@@ -1532,6 +1639,8 @@ msgid ""
 "template extends another. If your template does not, you must point "
 "``form_theme`` to a separate template."
 msgstr ""
+"``{% form_theme form _self %}`` 功能 *只能* 在当前模板是继承其他模板的时候管用。"
+"否则，你必须设置 ``form_theme`` 到其他的模板文件。"
 
 #: ../../book/forms.rst:1686
 msgid "PHP"
@@ -1542,13 +1651,13 @@ msgid ""
 "To automatically include the customized templates from the "
 "``app/Resources/views/Form`` directory created earlier in *all* templates, "
 "modify your application configuration file:"
-msgstr ""
+msgstr "你需要修改项目配置文件来从 ``app/Resources/views/Form`` 目录自动载入你的自定义模板"
 
 #: ../../book/forms.rst:1738
 msgid ""
 "Any fragments inside the ``app/Resources/views/Form`` directory are now used"
 " globally to define form output."
-msgstr ""
+msgstr "所有在 ``app/Resources/views/Form`` 目录的模板片段目前可以在全局下使用了。"
 
 #: ../../book/forms.rst:1747
 msgid "CSRF Protection"
@@ -1561,6 +1670,8 @@ msgid ""
 "they don't intend to submit. Fortunately, CSRF attacks can be prevented by "
 "using a CSRF token inside your forms."
 msgstr ""
+"CSRF（ `Cross-site request forgery`_ ）是一种攻击者让用户在无意识下提交一些自己不应该提交的数据的攻击方式。"
+"不过CSRF可以通过在你的表单里加入CSRF Token来避免。"
 
 #: ../../book/forms.rst:1754
 msgid ""
@@ -1569,6 +1680,9 @@ msgid ""
 "protection without doing anything. In fact, every form in this chapter has "
 "taken advantage of the CSRF protection!"
 msgstr ""
+"好消息是，Symfony会自动帮你在表单里添加以及验证CSRF token。"
+"所以你就可以在Symfony的庇护下放心用表单而不用做其他任何事情。"
+"我们上面的例子其实都已经受到了CSRF的保护！"
 
 #: ../../book/forms.rst:1759
 msgid ""
@@ -1578,6 +1692,9 @@ msgid ""
 "the given data. Symfony automatically validates the presence and accuracy of"
 " this token."
 msgstr ""
+"CSRF保护原理：在表单里添加一个token字段。只有服务器和用户才知道。"
+"这将保证只有当前访问用户——而不是其他攻击者——提交了表单。"
+"Symfony将会自动校验Token的正确性"
 
 #: ../../book/forms.rst:1764
 msgid ""
@@ -1585,11 +1702,13 @@ msgid ""
 " you include the ``form_end()`` function in your template, which ensures "
 "that all un-rendered fields are output."
 msgstr ""
+"``_token`` 表单字段是隐藏字段，并且会在 ``form_end()`` 的时候自动被生成，"
+"包括其他所有没有被显示的字段一起都被输出。"
 
 #: ../../book/forms.rst:1768
 msgid ""
 "The CSRF token can be customized on a form-by-form basis. For example::"
-msgstr ""
+msgstr "CSRF也可以被自定义，比如::"
 
 #: ../../book/forms.rst:1792
 msgid ""
@@ -1598,12 +1717,15 @@ msgid ""
 "information, see the :ref:`form configuration reference <reference-"
 "framework-form>` section."
 msgstr ""
+"如果想关闭CSRF保护，请设置表单的 ``csrf_protection`` 选项为false。"
+"当然也可以通过全局设置。请移步至 :ref:`form configuration reference <reference-"
+"framework-form>` 小节查看过多信息。"
 
 #: ../../book/forms.rst:1799
 msgid ""
 "The ``intention`` option is optional but greatly enhances the security of "
 "the generated token by making it different for each form."
-msgstr ""
+msgstr "``intention`` 为可选项，但如果给每一个表单设置不同的值，会极大提高安全性。"
 
 #: ../../book/forms.rst:1804
 msgid ""
@@ -1612,6 +1734,8 @@ msgid ""
 "protection. For more information, see "
 ":doc:`/cookbook/cache/form_csrf_caching`."
 msgstr ""
+"CSRF tokens对于每一个用户都是不一样的，这也意味着如果你想使用页面缓存技术您得注意了。"
+"想了解更多请阅读 :doc:`/cookbook/cache/form_csrf_caching` 。"
 
 #: ../../book/forms.rst:1813
 msgid "Using a Form without a Class"
@@ -1623,12 +1747,15 @@ msgid ""
 "and store their data on the properties of that object. This is exactly what "
 "you've seen so far in this chapter with the `Task` class."
 msgstr ""
+"大部分情况，表单都和某个对象是绑定的，而且表单提交数据将提交到对象的属性上。"
+"这在 ``Task`` 类的例子上已经看到了。"
 
 #: ../../book/forms.rst:1819
 msgid ""
 "But sometimes, you may just want to use a form without a class, and get back"
 " an array of the submitted data. This is actually really easy::"
 msgstr ""
+"不过有时候呢，你可能不想把表单跟一个对象绑定，其实这也是可以轻松做到的::"
 
 #: ../../book/forms.rst:1846
 msgid ""
@@ -1636,16 +1763,20 @@ msgid ""
 "data, instead of an object. There are exactly two ways that you can change "
 "this behavior and tie the form to an object instead:"
 msgstr ""
+"在默认情况下，表单就是尝试绑定一个数组，而不是对象。"
+"有两个方法你可以改变这个行为，而使用对象来替换："
 
 #: ../../book/forms.rst:1850
 msgid ""
 "Pass an object when creating the form (as the first argument to "
 "``createFormBuilder`` or the second argument to ``createForm``);"
 msgstr ""
+"在使用 ``createFormBuilder`` 方法时将对象传入第一个参数，"
+"或者在使用 ``createFormBuilder`` 时将对象传入第二个参数。"
 
 #: ../../book/forms.rst:1853
 msgid "Declare the ``data_class`` option on your form."
-msgstr ""
+msgstr "在表单里定义好 ``data_class`` 参数。"
 
 #: ../../book/forms.rst:1855
 msgid ""
@@ -1654,12 +1785,15 @@ msgid ""
 "``data_class`` option is set), ``$form->getData()`` ultimately returns an "
 "array."
 msgstr ""
+"如果你 *不* 使用上面的方法，那么表单默认返回的数据是个数组。"
+"因为 ``$defaultData`` 不是一个对象 （ ``data_class`` 也没有被设置）。"
+"所以 ``$form->getData()`` 只能返回数组了。"
 
 #: ../../book/forms.rst:1862
 msgid ""
 "You can also access POST values (in this case \"name\") directly through the"
 " request object, like so::"
-msgstr ""
+msgstr "你也可以通过request对象获取POST的数据（这里为“name”），比如这样::"
 
 #: ../../book/forms.rst:1867
 msgid ""
@@ -1667,6 +1801,7 @@ msgid ""
 "better choice, since it returns the data (usually an object) after it's been"
 " transformed by the form framework."
 msgstr ""
+"不过呢，最好还是用 ``getData()`` 方法，因为他返回的是被表单转换化过后的数据。"
 
 #: ../../book/forms.rst:1872
 msgid "Adding Validation"
@@ -1681,13 +1816,16 @@ msgid ""
 "this is almost always the approach you want to use. See "
 ":doc:`/book/validation` for more details."
 msgstr ""
+"唯一没提的是校验。通常，当你执行 ``$form->isValid()`` 时，对象上的校验规则被读取。"
+"但是你得让表和某个对象关联才行（通过 ``data_class``，或者传递一个对象）。"
+"请见 :doc:`/book/validation` 查阅更多。"
 
 #: ../../book/forms.rst:1882
 msgid ""
 "But if the form is not mapped to an object and you instead want to retrieve "
 "a simple array of your submitted data, how can you add constraints to the "
 "data of your form?"
-msgstr ""
+msgstr "但如果表单并没有关联某个对象，你如何给你的表单添加校验规则呢？"
 
 #: ../../book/forms.rst:1886
 msgid ""
@@ -1696,6 +1834,9 @@ msgid ""
 ":ref:`validation chapter <book-validation-raw-values>`, but here's a short "
 "example:"
 msgstr ""
+"答案是你自己创建校验规则，并且将他们添加到单个的表单字段里。主要目的将在 "
+":ref:`validation chapter <book-validation-raw-values>` 得以讨论，但这里也有"
+"一个简单的演示例子："
 
 #: ../../book/forms.rst:1909
 msgid ""
@@ -1703,6 +1844,8 @@ msgid ""
 "``Default`` group when creating the form, or set the correct group on the "
 "constraint you are adding."
 msgstr ""
+"如果你要使用校验组，你要不在创建表单对象时得提到 ``Default`` 组，要不设置一个合适"
+"的组"
 
 #: ../../book/forms.rst:1918
 msgid "Final Thoughts"
@@ -1717,6 +1860,9 @@ msgid ""
 " form is to take the data submitted by the user and to re-apply it to the "
 "object."
 msgstr ""
+"你已经知道所有创建表单必须知道的知识点和功能。当你使用表单时，"
+"请时刻记住表单的目的：一，将一个将对象变成用户可输入的输入框，二，将用户提交数据"
+"变回对象。"
 
 #: ../../book/forms.rst:1926
 msgid ""
@@ -1729,6 +1875,10 @@ msgid ""
 "documentation </reference/forms/types>`, which includes examples of how to "
 "use each field type and its options."
 msgstr ""
+"关于Form的强大还有很多可以说，比如 :doc:`file uploads with Doctrine "
+"</cookbook/doctrine/file_uploads>` ，或者创建一堆动态的子表单 （比如通过javascript创建多个任务框）。"
+"请在手册里查看。另外，请经常参考 :doc:`field type reference "
+"documentation </reference/forms/types>` ， 里面包含了每种字段类型的各种选项解释和各种例子。"
 
 #: ../../book/forms.rst:1936
 msgid "Learn more from the Cookbook"
