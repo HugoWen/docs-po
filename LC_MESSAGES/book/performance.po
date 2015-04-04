@@ -23,6 +23,8 @@ msgid ""
 "you'll explore many of the most common and powerful ways to make your "
 "Symfony application even faster."
 msgstr ""
+"Symfony运行速度是还可以，嗯……如果你还需要加速，有许多方法可以让Symfony跑得更快。"
+"这章就是来告诉你怎么做的。"
 
 #: ../../book/performance.rst:16
 msgid "Use a Byte Code Cache (e.g. APC)"
@@ -37,12 +39,17 @@ msgid ""
 "As of PHP 5.5, PHP comes with `OPcache`_ built-in. For older versions, the "
 "most widely used byte code cache is probably `APC`_"
 msgstr ""
+"最好又最简单的方法，你应该使用二进制代码缓存。二进制代码缓存的原理是直接缓存"
+"PHP文件编译之后的中间代码。目前有各种 `byte code caches`_ ，其中有些还是开源的。"
+"从PHP 5.5开始， PHP自带 `OPcache`_ 。"
+"更早的PHP版本用得最多的应该是  `APC`_"
 
 #: ../../book/performance.rst:25
 msgid ""
 "Using a byte code cache really has no downside, and Symfony has been "
 "architected to perform really well in this type of environment."
 msgstr ""
+"使用二进制代码缓存不会带来任何副作用，而且Symfony在这样的运行环境中跑得也很好。"
 
 #: ../../book/performance.rst:29
 msgid "Further Optimizations"
@@ -54,6 +61,8 @@ msgid ""
 "that if the source of a file changes, the byte code is recompiled "
 "automatically. This is really convenient, but obviously adds overhead."
 msgstr ""
+"二进制缓存一般来说会监控文件是否有变化。如果发现文件变了，就会被重新编译一遍。"
+"这很方便，不过很显然会多消耗运算资源。"
 
 #: ../../book/performance.rst:35
 msgid ""
@@ -62,12 +71,16 @@ msgid ""
 "admin to ensure that the cache is cleared whenever any source files change. "
 "Otherwise, the updates you've made won't be seen."
 msgstr ""
+"基于这个原因，一些二进制代码缓存可以关闭文件检查。如果关闭检查，"
+"就应该让服务器管理来确定源文件是否有变化，"
+"否则即是提更新了源文件也不会看到任何变化。"
 
 #: ../../book/performance.rst:40
 msgid ""
 "For example, to disable these checks in APC, simply add ``apc.stat=0`` to "
 "your ``php.ini`` configuration."
 msgstr ""
+"举个栗子：关闭APC的文件检查，仅需添加 ``apc.stat=0`` 到 ``php.ini`` 即可。"
 
 #: ../../book/performance.rst:47
 msgid "Use Composer's Class Map Functionality"
@@ -80,6 +93,8 @@ msgid ""
 "automatically find any new classes that you've placed in the registered "
 "directories."
 msgstr ""
+"默认情况下，Symfony标准版使用了Composer的自动加载工具也就是 `autoload.php`_ 文件。"
+"此自动加载工具很易于使用，他将帮你自动地在注册过的目录中找到任何新加的类。"
 
 #: ../../book/performance.rst:54
 msgid ""
@@ -87,6 +102,8 @@ msgid ""
 "configured namespaces to find a particular file, making ``file_exists`` "
 "calls until it finally finds the file it's looking for."
 msgstr ""
+"遗憾的是，这样对计算资源有所消耗，因为加载器要不断查找每一个注册的命名空间去找"
+"某个文件，然后通过 ``file_exists`` 来检查文件直到找到为止。"
 
 #: ../../book/performance.rst:58
 msgid ""
@@ -94,12 +111,15 @@ msgid ""
 "big array of the locations of all the classes). This can be done from the "
 "command line, and might become part of your deploy process:"
 msgstr ""
+"最简单的优化方式就是告诉Composer创建一个“类映射表” （比如一个很大的数组，存有所有的类"
+"的存放地址）。可以通过一行命令就搞定，并且应该是你部署项目中的其中一步："
 
 #: ../../book/performance.rst:66
 msgid ""
 "Internally, this builds the big class map array in "
 "``vendor/composer/autoload_classmap.php``."
 msgstr ""
+"在内部，这将创建一个很大的类映射数组到 ``vendor/composer/autoload_classmap.php``。"
 
 #: ../../book/performance.rst:69
 msgid "Caching the Autoloader with APC"
@@ -114,11 +134,15 @@ msgid ""
 "using the Standard Distribution, this code should already be available as "
 "comments in this file::"
 msgstr ""
+"另外一个解决办法是在类被找到之后，缓存每一个类的地址。"
+"Symfony包含了一个叫 :class:`Symfony\\\\Component\\\\ClassLoader\\\\ApcClassLoader`"
+" 的类，就是用来干这个的。要使用这个类，只用在你的前端控制器里改一下。"
+"如果你安装的Symfony标准版。这个代码应该已经有了，只不过被注释掉了而已::"
 
 #: ../../book/performance.rst:92
 msgid ""
 "For more details, see :doc:`/components/class_loader/cache_class_loader`."
-msgstr ""
+msgstr "请看 :doc:`/components/class_loader/cache_class_loader` 查阅更多。"
 
 #: ../../book/performance.rst:96
 msgid ""
@@ -129,10 +153,13 @@ msgid ""
 "autoloader will still be looking at the old location for all classes inside "
 "that namespace."
 msgstr ""
+"当使用APC自动加载器的时候，如果你添加新的类，他们会自动被发现，其他的一如既往"
+"（比如说连运行缓存清理都没有必要）。但是如果你改变了某个命名空间或者前缀，"
+"你还是需要清理APC的缓存的，否则自动加载器依然会去老位置去查找文件。"
 
 #: ../../book/performance.rst:107
 msgid "Use Bootstrap Files"
-msgstr "使用启动文件"
+msgstr "使用引导文件"
 
 #: ../../book/performance.rst:109
 msgid ""
@@ -145,6 +172,11 @@ msgid ""
 "of many of the core classes), Symfony no longer needs to include any of the "
 "source files containing those classes. This will reduce disc IO quite a bit."
 msgstr ""
+"为了保证灵活性以及代码复用性，Symfony包含了大量类以及第三方的组件。"
+"但如果每一个请求都需要把他们全部重新载入一次，肯定会占用一些没必要的计算资源。"
+"为了做些优化，Symfony提供了一个可以生成 `bootstrap file`_ 的脚本，"
+"可以将许多类的定义并接到一个文件中。只要包含了这个文件，就不用再去包含其他文件了，"
+"这种方式可以减少许多不必要的磁盘读写开销。"
 
 #: ../../book/performance.rst:118
 msgid ""
@@ -152,22 +184,26 @@ msgid ""
 "using the bootstrap file. To be sure, open your front controller (usually "
 "``app.php``) and check to make sure that the following line exists::"
 msgstr ""
+"如果你使用的是Symfony标准版，那你应该已经在用引导文件了，你可以通过打开你的"
+"前端控制器（一般来说是 ``app.php`` ）然后检查是否包含以下代码的方式来确认::"
 
 #: ../../book/performance.rst:124
 msgid "Note that there are two disadvantages when using a bootstrap file:"
-msgstr ""
+msgstr "注意使用引导文件有两个不好的地方:"
 
 #: ../../book/performance.rst:126
 msgid ""
 "the file needs to be regenerated whenever any of the original sources change"
 " (i.e. when you update the Symfony source or vendor libraries);"
 msgstr ""
+"只要源代码有一点变化，此文件就需要重新被生成（比如更新了Symfony的源代码或者第三方库）；"
 
 #: ../../book/performance.rst:129
 msgid ""
 "when debugging, one will need to place break points inside the bootstrap "
 "file."
 msgstr ""
+"在调试的时候，只能把断点设置在引导文件里。"
 
 #: ../../book/performance.rst:131
 msgid ""
@@ -175,10 +211,12 @@ msgid ""
 "automatically rebuilt after updating the vendor libraries via the ``composer"
 " install`` command."
 msgstr ""
+"如果你用的是Symfony标准版，引导文件会在每一次执行 ``composer install`` "
+"命令跑完之后都会被更新。"
 
 #: ../../book/performance.rst:135
 msgid "Bootstrap Files and Byte Code Caches"
-msgstr "启动文件和二进制代码缓存"
+msgstr "引导文件和二进制代码缓存"
 
 #: ../../book/performance.rst:137
 msgid ""
@@ -187,19 +225,22 @@ msgid ""
 "course if this feature is disabled in the byte code cache (e.g. "
 "``apc.stat=0`` in APC), there is no longer a reason to use a bootstrap file."
 msgstr ""
+"即是在打开二进制缓存的情况之下，使用引导文件也能使性能有所提升，因为需要"
+"监控的文件变少了。当然如果在关闭文件监控的情况下是无差别的。"
+"（比如在 ``apc.stat=0`` 的时候，没有必要再用启动文件）"
 
 #: ../../book/performance.rst:1
 msgid "Tests"
-msgstr ""
+msgstr "测试"
 
 #: ../../book/performance.rst:12
 msgid "Byte code cache"
-msgstr ""
+msgstr "二进制缓存"
 
 #: ../../book/performance.rst:43
 msgid "Autoloader"
-msgstr ""
+msgstr "自动加载器"
 
 #: ../../book/performance.rst:103
 msgid "Bootstrap files"
-msgstr ""
+msgstr "引导文件"
