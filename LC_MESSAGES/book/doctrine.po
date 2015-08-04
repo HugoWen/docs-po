@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Symfony Framework Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-24 10:10+0800\n"
-"PO-Revision-Date: 2015-07-29 17:22+0800\n"
+"PO-Revision-Date: 2015-08-04 19:02+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,9 +118,10 @@ msgid ""
 "They might even remember to do it the very first time, but forget that it's "
 "all gone after running a relatively common command during development:"
 msgstr ""
-"一个经验丰富的程序员甚至也会犯的错误就是，当开始一个Symfony项目时，忘记设置"
+"当开始一个Symfony项目时，一个经验丰富的程序员甚至也会犯的错误就是，忘记设置"
 "默认字符集和数据库的排序方式，最终得到大多数数据库默认的拉丁文格式的排序方"
-"式。"
+"式。他们甚至可能在第一次的时候记得这件事，却在运行了一系列相关部署命令之后忘"
+"记了。"
 
 #: ../../book/doctrine.rst:134
 msgid ""
@@ -128,18 +129,23 @@ msgid ""
 "be as agnostic as possible in terms of environment configuration. One way "
 "to solve this problem is to configure server-level defaults."
 msgstr ""
+"在Doctrine内是无法设置这些默认选项的，因为它尽可能地与环境设置分离。解决这个"
+"问题的一个方法是配置服务器级的默认值。"
 
 #: ../../book/doctrine.rst:138
 msgid ""
 "Setting UTF8 defaults for MySQL is as simple as adding a few lines to your "
 "configuration file  (typically ``my.cnf``):"
 msgstr ""
+"设置MySQL默认字符集为UTF8格式只是在配置文件中增加几行那么简单 （一般是 ``my."
+"cnf``）："
 
 #: ../../book/doctrine.rst:149
 msgid ""
 "If you want to use SQLite as your database, you need to set the path where "
 "your database file should be stored:"
 msgstr ""
+"如果你想要使用SQLite作为你的数据库，你需要设置好你的数据库世纪存储的路径。"
 
 #: ../../book/doctrine.rst:195
 msgid "Creating an Entity Class"
@@ -152,6 +158,9 @@ msgid ""
 "you need a ``Product`` object to represent those products. Create this "
 "class inside the ``Entity`` directory of your AppBundle::"
 msgstr ""
+"设想你正在开发一个展示产品信息的应用，即使不考虑Doctrine或者数据库，你也已经"
+"知道你需要一个``Product``对象来对应这些产品。在AppBundle的``Entity``目录下创"
+"建这个产品类："
 
 #: ../../book/doctrine.rst:212
 msgid ""
@@ -160,6 +169,9 @@ msgid ""
 "products in your application. This class can't be persisted to a database "
 "yet - it's just a simple PHP class."
 msgstr ""
+"这个经常被叫做 \"entity\" 的类表示 *保存数据的基类* ，这个类是简洁的并且可以"
+"帮助满足你应用中的产品需求。但是这个类还不可以保存到数据库中，这只是一个简单"
+"地PHP类而已。"
 
 #: ../../book/doctrine.rst:219
 msgid ""
@@ -167,6 +179,8 @@ msgid ""
 "simple entity classes for you. This will ask you interactive questions to "
 "help you build any entity:"
 msgstr ""
+"了解了Doctrine得概念之后，你可以使用Doctrine来创建一些简单地entity类。执行下"
+"面的命令将会询问你一些交互式问题来帮助你构建entity"
 
 #: ../../book/doctrine.rst:233
 msgid "Add Mapping Information"
@@ -181,6 +195,9 @@ msgid ""
 "database table, and the properties of that PHP class to columns on the "
 "table:"
 msgstr ""
+"Doctrine可以让你以一种更有趣的方式来操作数据库，而不是仅仅读取列式表中的每一"
+"行数据到数组中。Doctrine允许你将整个 *对象* 从数据库中进行存取，这是通过关联"
+"PHP类到数据库表的方式实现，PHP类的属性对应表的每一列："
 
 #: ../../book/doctrine.rst:244
 msgid ""
@@ -190,6 +207,9 @@ msgid ""
 "specified in a number of different formats including YAML, XML or directly "
 "inside the ``Product`` class via annotations:"
 msgstr ""
+"要用Doctrine来实现这一功能，你只需要创建并配置 \"元数据\" 来告诉Doctrine "
+"``Product`` 类和属性如何与数据库的表进行关联。这一元数据可以以几种不同的方式"
+"定义，包括YAML、XML或直接通过 ``Product`` 类内部注释的形式。"
 
 #: ../../book/doctrine.rst:329
 msgid ""
@@ -197,12 +217,14 @@ msgid ""
 "not possible to mix YAML metadata definitions with annotated PHP entity "
 "class definitions."
 msgstr ""
+"一个bundle只能接受一种元数据的定义形式，比如不可以混合YAML和PHP entity 类注"
+"释的形式来定义。"
 
 #: ../../book/doctrine.rst:335
 msgid ""
 "The table name is optional and if omitted, will be determined automatically "
 "based on the name of the entity class."
-msgstr ""
+msgstr "表名是可选的，加入省略的话会根据entity 类的名字自动确定。"
 
 #: ../../book/doctrine.rst:338
 msgid ""
@@ -210,6 +232,8 @@ msgid ""
 "each with their own options. For information on the available field types, "
 "see the :ref:`book-doctrine-field-types` section."
 msgstr ""
+"Doctrine允许选择多种不同的字段类型，每个字段都可以设置单独的类型。关于可用的"
+"字段类型的信息请参考 :ref:`book-doctrine-field-types` 。"
 
 #: ../../book/doctrine.rst:344
 msgid ""
@@ -220,6 +244,11 @@ msgid ""
 "``use Doctrine\\ORM\\Mapping as ORM;`` statement, which *imports* the "
 "``ORM`` annotations prefix."
 msgstr ""
+"你也可以参考Doctrine `Basic Mapping Documentation`_ 查看详细的关联信息。如果"
+"你使用注释的方式配置，你需要在所有的注释前面加上 ``ORM\\`` （比如  ``ORM"
+"\\Column(...)``），这一点在Doctrine官方文档是没有提到的。你还需要在代码里包"
+"含 ``use Doctrine\\ORM\\Mapping as ORM;`` 语句，用来在注释首部 *导入*  "
+"``ORM` 。"
 
 #: ../../book/doctrine.rst:353
 msgid ""
