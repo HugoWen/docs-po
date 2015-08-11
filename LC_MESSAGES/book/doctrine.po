@@ -4,11 +4,11 @@ msgstr ""
 "Project-Id-Version: Symfony Framework Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-24 10:10+0800\n"
-"PO-Revision-Date: 2015-08-11 18:53+0800\n"
+"PO-Revision-Date: 2015-08-12 00:01+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.7.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: zh_CN\n"
 "Last-Translator: \n"
@@ -342,7 +342,7 @@ msgstr "通过注释  ``@ORM\\Entity(repositoryClass=\"...\")`` 生成repository
 
 #: ../../book/doctrine.rst:412
 msgid "generate the appropriate constructor for 1:n and n:m relations."
-msgstr ""
+msgstr "生成1：1和n：m关系的相应结构"
 
 #: ../../book/doctrine.rst:414
 msgid ""
@@ -352,6 +352,10 @@ msgid ""
 "removed. You can also use the ``--no-backup`` option to prevent generating "
 "these backup files."
 msgstr ""
+" ``doctrine:generate:entities`` 命令会将原来的  ``Product.php`` 做备份为 "
+"``Product.php~`` 文件。在一些情况下，该备份文件可能导致 \"Cannot redeclare "
+"class\" 错误。它可以被安全地删除，也可以使用 ``--no-backup`` 命令选项来避免"
+"生成这些备份文件。"
 
 #: ../../book/doctrine.rst:420
 msgid ""
@@ -361,12 +365,17 @@ msgid ""
 "Since this is a common thing to do when using Doctrine, this command was "
 "created."
 msgstr ""
+"注意你不是 *必须* 使用这个命令，Doctrine并不依赖于代码生成。和普通的PHP类一"
+"样，你只需要确保protected/private属性有对应的getter和setter方法即可。因为这"
+"是使用Doctrine很常见的事情，所以这个命令被创造了。"
 
 #: ../../book/doctrine.rst:426
 msgid ""
 "You can also generate all known entities (i.e. any PHP class with Doctrine "
 "mapping information) of a bundle or an entire namespace:"
 msgstr ""
+"你也可以创建包或者整个命名空间下全部的实体（即任何与Doctrine匹配的类的信"
+"息）："
 
 #: ../../book/doctrine.rst:439
 msgid ""
@@ -375,6 +384,9 @@ msgid ""
 "property. The getters and setters are generated here only because you'll "
 "need them to interact with your PHP object."
 msgstr ""
+"Doctrine并不在意你的属性是否是 ``被保护的`` 或者是 ``私有的``，或者你的属性"
+"是否含有getter和setter方法。在此生成getter和setter方法只是因为你需要使用它们"
+"去和你的PHP对象进行交互。"
 
 #: ../../book/doctrine.rst:447
 msgid "Creating the Database Tables/Schema"
@@ -388,6 +400,10 @@ msgid ""
 "automatically create all the database tables needed for every known entity "
 "in your application. To do this, run:"
 msgstr ""
+"现在你已经拥有了一个可用的有关联信息的 ``Product`` 类，Doctrine根据关联信息"
+"可以清楚地知道如何将它持久化。当然，现在在你的数据库里还没有对应的 "
+"``Product`` 表。幸运的是，Doctrine可以自动创建所有在你的应用中已知的实体对应"
+"的数据库表。实现这个需要运行："
 
 #: ../../book/doctrine.rst:461
 msgid ""
@@ -399,6 +415,10 @@ msgid ""
 "task again, it will generate the \"alter table\" statement needed to add "
 "that new column to the existing ``product`` table."
 msgstr ""
+"实际上，这条命令是极其强大的，它会将你的数据库 *应该* 的样子（根据实体的关联"
+"信息）与 *实际* 的样子作比较，然后生成SQL语句来 *更新* 数据库成应该的样子。"
+"换句话说，如果你用关联的元数据给 ``Product`` 添加一个新的属性并再次运行这一"
+"命令，它将会生成 \"alter table\" 语句用来将新列添加到现有的 ``Product`` 表。"
 
 #: ../../book/doctrine.rst:469
 msgid ""
