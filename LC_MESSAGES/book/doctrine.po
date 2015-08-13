@@ -4,11 +4,11 @@ msgstr ""
 "Project-Id-Version: Symfony Framework Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-24 10:10+0800\n"
-"PO-Revision-Date: 2015-08-12 00:01+0800\n"
+"PO-Revision-Date: 2015-08-13 19:01+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: zh_CN\n"
 "Last-Translator: \n"
@@ -428,12 +428,17 @@ msgid ""
 "server in order to track and migrate your database schema safely and "
 "reliably."
 msgstr ""
+"一个甚至更好地来利用这一功能的方法是通过 `migrations`_ ，它允许你生成这些SQL"
+"语句并存储在迁移类里，可以系统地运行在你的生产服务器中来安全可靠地跟追踪和迁"
+"移数据库模式。"
 
 #: ../../book/doctrine.rst:475
 msgid ""
 "Your database now has a fully-functional ``product`` table with columns "
 "that match the metadata you've specified."
 msgstr ""
+"你的数据库现在有了一个功能完整的 ``product`` 表，包括你指定的元数据对应的"
+"列。"
 
 #: ../../book/doctrine.rst:479
 msgid "Persisting Objects to the Database"
@@ -446,12 +451,15 @@ msgid ""
 "controller, this is pretty easy. Add the following method to the "
 "``DefaultController`` of the bundle::"
 msgstr ""
+"现在有了一个映射的 ``Product`` 实体和相应的 ``product`` 表，你已经准备好将数"
+"据持久化到数据库中，在控制器内部这是很容易实现的。将下面的方法添加到包下面"
+"的 ``DefaultController`` 中::"
 
 #: ../../book/doctrine.rst:511
 msgid ""
 "If you're following along with this example, you'll need to create a route "
 "that points to this action to see it work."
-msgstr ""
+msgstr "如果你跟随着本示例在做，你需要创建一个路由指向这个action来查看效果。"
 
 #: ../../book/doctrine.rst:516
 msgid ""
@@ -462,16 +470,21 @@ msgid ""
 "anywhere else by injecting that service in the service. See :doc:`/book/"
 "service_container` for more on creating your own services."
 msgstr ""
+"这段内容展示了在控制器内使用 :method:`Symfony\\\\Bundle\\\\FrameworkBundle\\"
+"\\Controller\\\\Controller::getDoctrine` 控制器方法来使用Doctrine工作。这个"
+"方法是获得 ``doctrine`` 服务的快捷方式。通过调用这个服务你可以在任何地方使用"
+"Dcotrine服务。请参考：:doc:`/book/service_container` 来创建你自己的服务。"
 
 #: ../../book/doctrine.rst:523
 msgid "Take a look at the previous example in more detail:"
-msgstr ""
+msgstr "详细地看一下之前的示例："
 
 #: ../../book/doctrine.rst:525
 msgid ""
 "**lines 10-13** In this section, you instantiate and work with the ``"
 "$product`` object like any other, normal PHP object."
 msgstr ""
+"**10-13 行**  实例化 ``$product`` 对象，并像其他普通的PHP对象一样进行操作。"
 
 #: ../../book/doctrine.rst:528
 msgid ""
@@ -479,6 +492,8 @@ msgid ""
 "responsible for handling the process of persisting and fetching objects to "
 "and from the database."
 msgstr ""
+"**15行**  这一行调用Doctrine的 *entity manager* 对象，用以处理持久化和获取对"
+"象到数据库。"
 
 #: ../../book/doctrine.rst:532
 msgid ""
@@ -486,6 +501,8 @@ msgid ""
 "$product`` object. This does not actually cause a query to be made to the "
 "database (yet)."
 msgstr ""
+"**16 行**  ``persist()`` 方法告诉Doctrine来“管理” ``$product`` 对象。但这还"
+"没有实际向数据库执行查询语句。"
 
 #: ../../book/doctrine.rst:535
 msgid ""
@@ -495,6 +512,9 @@ msgid ""
 "persisted yet, so the entity manager executes an ``INSERT`` query and a row "
 "is created in the ``product`` table."
 msgstr ""
+"**17 行**  当 ``flush()`` 方法被调用后，Doctrine查询所有管理的对象来检查是否"
+"需要被持久化到数据库中。在这个示例中， ``$product`` 对象还没有被持久化，所以"
+"entity manager会执行 ``INSERT`` 语句并在 ``Product`` 表中插入一条数据。"
 
 #: ../../book/doctrine.rst:543
 msgid ""
@@ -506,6 +526,11 @@ msgid ""
 "Doctrine will execute 100 ``INSERT`` queries using a single prepared "
 "statement object."
 msgstr ""
+"事实上，由于Doctrine可以知道所有管理的实体，当调用 ``flush()`` 方法时，"
+"Doctrine会计算所有的变化并按照正确的顺序执行查询。它利用缓存中准备好的语句来"
+"轻微提高性能。例如，如果你持久化总共100个 ``Product`` 对象然后执行 "
+"``flush()`` 方法，Doctrine会使用一个准备好的语句对象来执行100次 ``INSERT`` "
+"查询。"
 
 #: ../../book/doctrine.rst:550
 msgid ""
@@ -513,6 +538,8 @@ msgid ""
 "next section, you'll see how Doctrine is smart enough to automatically "
 "issue an ``UPDATE`` query if the record already exists in the database."
 msgstr ""
+"创建和更新对象的工作流程总是一样的，在接下来的部分，你会了解到Doctrine是如何"
+"智能的自动解决 ``UPDATE`` 查询时已经数据库存在记录的问题。"
 
 #: ../../book/doctrine.rst:556
 msgid ""
@@ -520,6 +547,8 @@ msgid ""
 "testing data into your project (i.e. \"fixture data\"). For information, "
 "see the \"`DoctrineFixturesBundle`_\" documentation."
 msgstr ""
+"Doctrine提供了一个给项目系统地载入测试数据的库（即 \"fixture data”）。更多信"
+"息请查看文档 \"`DoctrineFixturesBundle`_\" 。"
 
 #: ../../book/doctrine.rst:561
 msgid "Fetching Objects from the Database"
@@ -531,6 +560,8 @@ msgid ""
 "suppose you've configured a route to display a specific ``Product`` based "
 "on its ``id`` value::"
 msgstr ""
+"从数据库中获取对象更加简单，比如，假设你已经配置好了路由基于 ``id`` 来显示一"
+"个指定的 ``Product`` 对象："
 
 #: ../../book/doctrine.rst:584
 msgid ""
@@ -538,6 +569,8 @@ msgid ""
 "the ``@ParamConverter`` shortcut. See the `FrameworkExtraBundle "
 "documentation`_ for more details."
 msgstr ""
+"通过使用  ``@ParamConverter`` 快捷方式，你可以不用写任何代码而获得等效的对"
+"象。更多信息请参考： `FrameworkExtraBundle documentation`_ 。"
 
 #: ../../book/doctrine.rst:588
 msgid ""
@@ -546,6 +579,9 @@ msgid ""
 "only job is to help you fetch entities of a certain class. You can access "
 "the repository object for an entity class via::"
 msgstr ""
+"当你查询一个指定类型的对象时，你总是会使用 “存储库” 。你可以认为一个存储库是"
+"一个工作只是帮助你从指定类获取实体的PHP类。你可以给实体类获得存储库对象通"
+"过："
 
 #: ../../book/doctrine.rst:598
 msgid ""
@@ -554,42 +590,52 @@ msgid ""
 "\\Entity\\Product``). As long as your entity lives under the ``Entity`` "
 "namespace of your bundle, this will work."
 msgstr ""
+"``AppBundle:Product`` 字符串是你在Doctrine的任何地方都可以使用的快捷方式，它"
+"用来代替实体类的全名，即（``AppBundle\\Entity\\Product``）。只要你的实体在你"
+"包的 ``Entity`` 命名空间下，他都会正常工作。"
 
 #: ../../book/doctrine.rst:603
 msgid ""
 "Once you have your repository, you have access to all sorts of helpful "
 "methods::"
-msgstr ""
+msgstr "一旦你拥有了存储库，你获得所有有用的方法::"
 
 #: ../../book/doctrine.rst:620
 msgid ""
 "Of course, you can also issue complex queries, which you'll learn more "
 "about in the :ref:`book-doctrine-queries` section."
 msgstr ""
+"当然，你也可以处理复杂的查询，你在 :ref:`book-doctrine-queries`  这部分获得"
+"更多信息。"
 
 #: ../../book/doctrine.rst:623
 msgid ""
 "You can also take advantage of the useful ``findBy`` and ``findOneBy`` "
 "methods to easily fetch objects based on multiple conditions::"
 msgstr ""
+"你也可以有效地利用 ``findBy`` 和 ``findOneBy`` 方法根据多个条件来简单地获取"
+"对象。"
 
 #: ../../book/doctrine.rst:639
 msgid ""
 "When you render any page, you can see how many queries were made in the "
 "bottom right corner of the web debug toolbar."
 msgstr ""
+"当你渲染页面的时候，你可以通过右下角的调试工具栏来查看执行了多少次的查询。"
 
 #: ../../book/doctrine.rst:647
 msgid ""
 "If you click the icon, the profiler will open, showing you the exact "
 "queries that were made."
-msgstr ""
+msgstr "如果你点击这个图标，详细信息就会展开，展示给你明确的查询信息。"
 
 #: ../../book/doctrine.rst:650
 msgid ""
 "The icon will turn yellow if there were more than 50 queries on the page. "
 "This could indicate that something is not correct."
 msgstr ""
+"如果页面有超过50次的查询，那么这个图标会变成黄色。这也就指示可能会有错误存"
+"在。"
 
 #: ../../book/doctrine.rst:654
 msgid "Updating an Object"
@@ -601,22 +647,24 @@ msgid ""
 "you have a route that maps a product id to an update action in a "
 "controller::"
 msgstr ""
+"一旦你从Doctrine获取了一个对象，更新也是很容易的事情。假设你现在有一个路由，"
+"在控制器里根据产品id去更新关联对象::"
 
 #: ../../book/doctrine.rst:676
 msgid "Updating an object involves just three steps:"
-msgstr ""
+msgstr "更新对象包括以下三步："
 
 #: ../../book/doctrine.rst:678
 msgid "fetching the object from Doctrine;"
-msgstr ""
+msgstr "从Doctrine内获取对象；"
 
 #: ../../book/doctrine.rst:679
 msgid "modifying the object;"
-msgstr ""
+msgstr "修改对象；"
 
 #: ../../book/doctrine.rst:680
 msgid "calling ``flush()`` on the entity manager"
-msgstr ""
+msgstr "在实体管理器中调用 ``flush()`` 方法。"
 
 #: ../../book/doctrine.rst:682
 msgid ""
@@ -625,6 +673,9 @@ msgid ""
 "object. In this case, since you fetched the ``$product`` object from "
 "Doctrine, it's already managed."
 msgstr ""
+"注意调用 ``$em->persist($product)`` 不是必要的。这个方法只是简单地告诉"
+"Doctrine来管理或 “监视” ``$product`` 对象。在这种情况下，你已经从Doctrine中"
+"获取到了 ``$product`` 对象，那么它已经是在管理下的了。"
 
 #: ../../book/doctrine.rst:688
 msgid "Deleting an Object"
@@ -634,7 +685,7 @@ msgstr "删除对象"
 msgid ""
 "Deleting an object is very similar, but requires a call to the ``remove()`` "
 "method of the entity manager::"
-msgstr ""
+msgstr "删除一个对象是相似的，但是需要在实体管理器中调用  ``remove()`` 方法。"
 
 #: ../../book/doctrine.rst:696
 msgid ""
@@ -643,6 +694,8 @@ msgid ""
 "query, however, isn't actually executed until the ``flush()`` method is "
 "called."
 msgstr ""
+"就像你所期望的， ``remove()`` 方法只是告诉Doctrine你想要移除数据库中给定的对"
+"象。然而实际的 ``DELETE`` 查询直到 ``flush()`` 被调用之后才会执行。"
 
 #: ../../book/doctrine.rst:703
 msgid "Querying for Objects"
@@ -652,7 +705,7 @@ msgstr "查找对象"
 msgid ""
 "You've already seen how the repository object allows you to run basic "
 "queries without any work::"
-msgstr ""
+msgstr "你已经看到了存储库对象如何让你不做任何工作就执行基本查询::"
 
 #: ../../book/doctrine.rst:712
 msgid ""
@@ -661,12 +714,17 @@ msgid ""
 "imagine that you're querying for one or more objects of an entity class (e."
 "g. ``Product``) instead of querying for rows on a table (e.g. ``product``)."
 msgstr ""
+"当然，Doctrine也允许你通过使用Doctrine查询语言（DQL）来些更加复杂的查询。DQL"
+"类似于SQL，除了你要设想你正在查询一个或多个实体类（比如 ``Product``）对象而"
+"不是表（比如 ``product``）的行。"
 
 #: ../../book/doctrine.rst:717
 msgid ""
 "When querying in Doctrine, you have two options: writing pure Doctrine "
 "queries or using Doctrine's Query Builder."
 msgstr ""
+"当在Doctrine执行查询时，你有两种选择：书写纯Doctrne查询语句或使用Doctrine 查"
+"询创建器。"
 
 #: ../../book/doctrine.rst:721
 msgid "Querying for Objects Using Doctrine's Query Builder"
@@ -678,6 +736,8 @@ msgid ""
 "cost more than ``19.99``, ordered from cheapest to most expensive. You can "
 "use Doctrine's ``QueryBuilder`` for this::"
 msgstr ""
+"设想你想要查询价格低于 ``19.99`` 的产品，并从便宜到贵来排序，你可以使用"
+"Doctrine的 ``QueryBuilder`` 来实现::"
 
 #: ../../book/doctrine.rst:738
 msgid ""
@@ -685,6 +745,9 @@ msgid ""
 "query. By calling the ``getQuery()`` method, the query builder returns a "
 "normal ``Query`` object, which can be used to get the result of the query."
 msgstr ""
+"``QueryBuilder`` 对象包括你创建查询的所有必须方法。 通过调用 ``getQuery()`` "
+"方法，查询构建器返回一个普通的 ``Query`` 对象，可以通过这个对象获取查询结"
+"果。"
 
 #: ../../book/doctrine.rst:744
 msgid ""
@@ -692,6 +755,8 @@ msgid ""
 "it's always a good idea to set any external values as \"placeholders\" (``:"
 "price`` in the example above) as it prevents SQL injection attacks."
 msgstr ""
+"注意 ``setParameter()`` 方法，当使用Doctrine时，把任何外部变量作为“占位"
+"符”（上面示例的``:price``）是一个好的做法，这样可以避免SQL注入攻击。"
 
 #: ../../book/doctrine.rst:748
 msgid ""
@@ -699,12 +764,16 @@ msgid ""
 "result, you can use ``getSingleResult()`` (which throws an exception if "
 "there is no result) or ``getOneOrNullResult()``::"
 msgstr ""
+" ``getResult()`` 方法返回结果的数组，要是想只获得一个结果，你可以使用  "
+"``getSingleResult()`` 方法（当没有结果时会报错）或者  "
+"``getOneOrNullResult()``::"
 
 #: ../../book/doctrine.rst:754
 msgid ""
 "For more information on Doctrine's Query Builder, consult Doctrine's `Query "
 "Builder`_ documentation."
 msgstr ""
+"更多关于Doctrine查询构建器的信息，查看Doctrine的 `Query Builder`_ 文档。"
 
 #: ../../book/doctrine.rst:758
 msgid "Querying for Objects with DQL"
@@ -714,7 +783,7 @@ msgstr "使用DQL查询对象"
 msgid ""
 "Instead of using the ``QueryBuilder``, you can alternatively write the "
 "queries directly using DQL::"
-msgstr ""
+msgstr "你也可以选择直接使用DQL来替换 ``QueryBuilder`` ::"
 
 #: ../../book/doctrine.rst:773
 msgid ""
@@ -724,6 +793,9 @@ msgid ""
 "``AppBundle:Product`` *object* and then alias it as ``p`` (as you see, this "
 "is equal to what you already did in the previous section)."
 msgstr ""
+"如果你比较习惯于使用SQL，那么使用DQL也会很自然。最大的区别就是你需要考虑 “对"
+"象” 而不是数据库中的行。由于这个原因，你从  ``AppBundle:Product`` *对象* 中"
+"选择并设置别名为 ``p``（如你所见，这和你在前一部分已经做过的是一样的）。"
 
 #: ../../book/doctrine.rst:779
 msgid ""
@@ -732,6 +804,9 @@ msgid ""
 "covered later), group, etc. For more information, see the official "
 "`Doctrine Query Language`_ documentation."
 msgstr ""
+"DQL语法是非常强大的，它允许你轻易地连接不同的实体、组等等（ :ref:`relations "
+"<book-doctrine-relations>`  这篇文章之后将会介绍）。更多的信息请查看官方文"
+"档 `Doctrine Query Language`_ 。"
 
 #: ../../book/doctrine.rst:787
 msgid "Custom Repository Classes"
@@ -744,6 +819,8 @@ msgid ""
 "queries, it's a good practice to create a custom repository class for your "
 "entity and add methods with your query logic there."
 msgstr ""
+"在之前的部分，你开始了在控制器里构建和使用更多的复杂查询语句。为了隔离、测试"
+"和重用这些查询，好的做法是创建定制的存储库类来添加查询逻辑方法来操作实体。"
 
 #: ../../book/doctrine.rst:794
 msgid ""
