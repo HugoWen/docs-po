@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Symfony Framework Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-24 10:10+0800\n"
-"PO-Revision-Date: 2015-08-13 19:01+0800\n"
+"PO-Revision-Date: 2015-08-14 18:26+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -825,13 +825,15 @@ msgstr ""
 #: ../../book/doctrine.rst:794
 msgid ""
 "To do this, add the name of the repository class to your mapping definition:"
-msgstr ""
+msgstr "要实现这一功能，将存储库类的名字添加到关联定义上："
 
 #: ../../book/doctrine.rst:838
 msgid ""
 "Doctrine can generate the repository class for you by running the same "
 "command used earlier to generate the missing getter and setter methods:"
 msgstr ""
+"Doctrine可以帮你生成存储库类，通过之前用到的生成getter和setter方法的同一命"
+"令："
 
 #: ../../book/doctrine.rst:845
 msgid ""
@@ -839,24 +841,28 @@ msgid ""
 "generated repository class. This method will query for all the ``Product`` "
 "entities, ordered alphabetically."
 msgstr ""
+"接下来，添加一个新的方法- ``findAllOrderedByName()`` - 到新生成的存储库类。"
+"这一方法会查询所有 ``Product`` 实体，以字母表顺序排序。"
 
 #: ../../book/doctrine.rst:870
 msgid ""
 "The entity manager can be accessed via ``$this->getEntityManager()`` from "
 "inside the repository."
-msgstr ""
+msgstr "在存储库里实体管理器可以通过 ``$this->getEntityManager()`` 获取到。"
 
 #: ../../book/doctrine.rst:873
 msgid ""
 "You can use this new method just like the default finder methods of the "
 "repository::"
-msgstr ""
+msgstr "你可以像使用存储库默认方法那样使用这个新的方法::"
 
 #: ../../book/doctrine.rst:881
 msgid ""
 "When using a custom repository class, you still have access to the default "
 "finder methods such as ``find()`` and ``findAll()``."
 msgstr ""
+"当使用一个定制的存储库类时，你仍可以访问默认查询方法，比如  ``find()`` 和 "
+"``findAll()``。"
 
 #: ../../book/doctrine.rst:887
 msgid "Entity Relationships/Associations"
@@ -870,12 +876,18 @@ msgid ""
 "``Category`` entity. Since you know that you'll eventually need to persist "
 "the class through Doctrine, you can let Doctrine create the class for you."
 msgstr ""
+"假设在你的应用里的产品都属于明确的一个“类别”。在这种情况下，你需要一个  "
+"``Category`` 对象和关联一个  ``Product`` 对象的方法。开始先创建 "
+"``Category`` 实体，既然你已经知道了最终需要通过Doctrine来持久化类，你可以使"
+"用Doctrine来帮你创建这个类。"
 
 #: ../../book/doctrine.rst:901
 msgid ""
 "This task generates the ``Category`` entity for you, with an ``id`` field, "
 "a ``name`` field and the associated getter and setter functions."
 msgstr ""
+"这条命令帮你生成 ``Category`` 实体，包括 ``id`` 、 ``name`` 字段以及关联的"
+"getter和setter方法。"
 
 #: ../../book/doctrine.rst:905
 msgid "Relationship Mapping Metadata"
@@ -886,6 +898,8 @@ msgid ""
 "To relate the ``Category`` and ``Product`` entities, start by creating a "
 "``products`` property on the ``Category`` class:"
 msgstr ""
+"关联 ``Category`` 和 ``Product`` 实体，首先要在 ``Category`` 类里创建一个 "
+"``products`` 属性。"
 
 #: ../../book/doctrine.rst:970
 msgid ""
@@ -895,6 +909,9 @@ msgid ""
 "makes sense in the application for each ``Category`` to hold an array of "
 "``Product`` objects."
 msgstr ""
+"首先，由于一个 ``Category`` 对象会关联到多个 ``Product`` 对象，那么用一个 "
+"``products`` 数组来保存这些 ``Product`` 对象。此外，这么做不是因为Doctrine需"
+"要这样，而是这样才能使每个 ``Category`` 保存一个 ``Product`` 对象的数组。"
 
 #: ../../book/doctrine.rst:978
 msgid ""
@@ -904,6 +921,10 @@ msgid ""
 "added flexibility. If this makes you uncomfortable, don't worry. Just "
 "imagine that it's an ``array`` and you'll be in good shape."
 msgstr ""
+"``__construct()`` 方法中的代码是很重要的，因为Doctrine需要 ``$products`` 属"
+"性是一个 ``ArrayCollection`` 对象。这个对象看上去和执行上几乎 *明确* 就是一"
+"个数组，但是有一些增加的灵活性。如果这种方式让你感到不舒服，不要着急，想象这"
+"就是一个数组就好了。"
 
 #: ../../book/doctrine.rst:986
 msgid ""
@@ -912,6 +933,9 @@ msgid ""
 "relate to an entity defined in a different class or bundle, enter a full "
 "namespace as the targetEntity."
 msgstr ""
+"上面使用的装饰器内目标实体的值可以引用任何有效命名空间内的实体，而不仅仅是定"
+"义在相同命名空间下的实体。要关联在不同的类或者包下的实体，需要将目标实体写成"
+"完整命名空间。"
 
 #: ../../book/doctrine.rst:991
 msgid ""
@@ -919,6 +943,8 @@ msgid ""
 "object, you'll want to add a ``$category`` property to the ``Product`` "
 "class:"
 msgstr ""
+"接下来，由于每个 ``Product`` 类可以关联到一个明确的 ``Category`` 对象，你要"
+"添加一个 ``$category`` 属性到 ``Product`` 类里："
 
 #: ../../book/doctrine.rst:1048
 msgid ""
@@ -926,6 +952,8 @@ msgid ""
 "``Product`` classes, tell Doctrine to generate the missing getter and "
 "setter methods for you:"
 msgstr ""
+"最后，你已经给 ``Category`` 和 ``Product`` 类都添加了新属性，告诉Doctrine帮"
+"你生成缺失的getter和setter方法："
 
 #: ../../book/doctrine.rst:1056
 msgid ""
@@ -936,6 +964,10 @@ msgid ""
 "you've built your classes in a way that makes sense for your needs. The "
 "fact that the data needs to be persisted to a database is always secondary."
 msgstr ""
+"先暂时忽略一会Doctrine元数据，现在你有两个类-  ``Category`` 和 "
+"``Product`` ，它们是一对多的关系。 ``Category`` 类保存 ``Product`` 对象的数"
+"组，``Product`` 对象保存一个 ``Category`` 对象。换句话说，你根据你自己的需求"
+"来创建好了类。实际上将数据持久化到数据库里总是第二步实现的。"
 
 #: ../../book/doctrine.rst:1063
 msgid ""
@@ -948,6 +980,11 @@ msgid ""
 "relationship by storing the category's id value on a ``category_id`` column "
 "of the ``product`` table."
 msgstr ""
+"现在，看一下 ``Product`` 类  ``$category`` 属性的元数据，这里的信息告诉"
+"Doctrine关联类是 ``Category`` ，并且存储类记录的 ``id`` 到  ``category_id``"
+"字段，这个字段是存在于 ``product`` 表上的。换句话说，关联的 ``Category`` 对"
+"象会存储在 ``$category`` 属性上，但是在幕后Doctrine会通过存储类别的id值到 "
+"``product`` 表的  ``category_id`` 列来持久化这一关系。"
 
 #: ../../book/doctrine.rst:1074
 msgid ""
@@ -955,12 +992,16 @@ msgid ""
 "less important, and simply tells Doctrine to look at the ``Product."
 "category`` property to figure out how the relationship is mapped."
 msgstr ""
+" ``Category`` 对象 ``$products`` 属性上的元数据不是很重要，它只是简单地告诉"
+"Doctrine查看 ``Product.category`` 属性来找出如何匹配关联信息。"
 
 #: ../../book/doctrine.rst:1078
 msgid ""
 "Before you continue, be sure to tell Doctrine to add the new ``category`` "
 "table, and ``product.category_id`` column, and new foreign key:"
 msgstr ""
+"在你继续之前，确保告诉Doctrine添加新的 ``category`` 表、 ``product."
+"category_id`` 列以及新的外键："
 
 #: ../../book/doctrine.rst:1087
 msgid ""
@@ -968,6 +1009,8 @@ msgid ""
 "method of systematically updating your production database, read about "
 "`migrations`_."
 msgstr ""
+"这条命令应该只是在实际部署的时候使用，更多的系统地更新你的生产环境数据库的强"
+"健性方法信息，请参考`migrations`_。"
 
 #: ../../book/doctrine.rst:1092
 msgid "Saving Related Entities"
@@ -977,7 +1020,7 @@ msgstr "保存相互关联的Entities"
 msgid ""
 "Now you can see this new code in action! Imagine you're inside a "
 "controller::"
-msgstr ""
+msgstr "现在你可以查看action里的新的代码啦！想象你现在在一个控制器里::"
 
 #: ../../book/doctrine.rst:1128
 msgid ""
@@ -986,6 +1029,9 @@ msgid ""
 "the ``id`` is of the new category. Doctrine manages the persistence of this "
 "relationship for you."
 msgstr ""
+"现在，一个单行被添加到  ``category`` 和 ``product`` 表里，新的product的 "
+"``product.category_id`` 列被设置成了新的category的id。Doctrine帮你管理关系的"
+"持久化。"
 
 #: ../../book/doctrine.rst:1134
 msgid "Fetching Related Objects"
@@ -997,6 +1043,8 @@ msgid ""
 "did before. First, fetch a ``$product`` object and then access its related "
 "``Category``::"
 msgstr ""
+"当你需要获取关联对象时，你的工作流程看上去是和之前一样的。首先，获取一个 ``"
+"$product`` 对象，然后获取关联的 ``Category``::"
 
 #: ../../book/doctrine.rst:1151
 msgid ""
@@ -1006,7 +1054,7 @@ msgid ""
 "$product->getCategory()->getName()``, Doctrine silently makes a second "
 "query to find the ``Category`` that's related to this ``Product``. It "
 "prepares the ``$category`` object and returns it to you."
-msgstr ""
+msgstr "在这个示例中，你首先要根据产品``id``查询一个 ``Product`` 对象。这个任"
 
 #: ../../book/doctrine.rst:1161
 msgid ""
